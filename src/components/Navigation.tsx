@@ -195,15 +195,19 @@ export function Navigation({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                <span
-                  className="text-sm"
+                <a
+                  href="mailto:hello@talecrafters.studio"
+                  className="text-sm transition-colors duration-200"
                   style={{
                     fontFamily: "var(--font-mono)",
                     color: "var(--brand-concrete-light)",
+                    textDecoration: "none",
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-cyan)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
                 >
                   hello@talecrafters.studio
-                </span>
+                </a>
                 <span
                   className="text-sm"
                   style={{

@@ -25,7 +25,7 @@ export function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <img
                 src="/logo.png"
-                alt="TaleCrafters"
+                alt="TaleCrafters — Synthetic Media Studio Logo"
                 className="w-12 h-12 object-cover rounded-sm"
                 style={{ filter: 'brightness(1.35) saturate(0.75)' }}
               />

@@ -1,6 +1,6 @@
 "use client";
 import { motion } from 'motion/react';
-import { ArrowRight, Clock } from 'lucide-react';
+import { MoveRight, Timer } from 'lucide-react';
 
 const posts = [
   {
@@ -121,7 +121,7 @@ export function BlogSection() {
             <div className="relative aspect-video lg:aspect-auto overflow-hidden">
               <motion.img
                 src={posts[0].image}
-                alt={posts[0].title}
+                alt={`TaleCrafters blog — ${posts[0].title}: ${posts[0].subtitle}`}
                 className="w-full h-full object-cover"
                 style={{ filter: 'grayscale(60%) contrast(1.1)' }}
                 whileHover={{ scale: 1.05 }}
@@ -165,7 +165,7 @@ export function BlogSection() {
                   className="text-xs flex items-center gap-1"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
                 >
-                  <Clock size={14} /> {posts[0].readTime}
+                  <Timer size={14} /> {posts[0].readTime}
                 </span>
                 <span
                   className="text-xs"
@@ -174,7 +174,7 @@ export function BlogSection() {
                   {posts[0].date}
                 </span>
                 <motion.div className="ml-auto" whileHover={{ x: 10 }}>
-                  <ArrowRight size={24} style={{ color: posts[0].color }} />
+                  <MoveRight size={24} style={{ color: posts[0].color }} />
                 </motion.div>
               </div>
             </div>
@@ -219,7 +219,7 @@ export function BlogSection() {
                     className="text-[10px] flex items-center gap-1"
                     style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
                   >
-                    <Clock size={10} /> {post.readTime}
+                    <Timer size={10} /> {post.readTime}
                   </span>
                 </div>
 
@@ -248,7 +248,7 @@ export function BlogSection() {
                     {post.date}
                   </span>
                   <motion.div whileHover={{ x: 5 }}>
-                    <ArrowRight size={18} style={{ color: post.color }} />
+                    <MoveRight size={18} style={{ color: post.color }} />
                   </motion.div>
                 </div>
               </div>

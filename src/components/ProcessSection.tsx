@@ -1,24 +1,24 @@
 "use client";
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
-import { Zap, Target, Handshake } from 'lucide-react';
+import { Rocket, Flame, HeartHandshake } from 'lucide-react';
 
 const pillars = [
   {
-    icon: Zap,
+    icon: Rocket,
     title: "UNRIVALLED QUALITY AT STARTUP SPEED",
     description: "We combine the precision of a film studio with the velocity of a tech startup. No bureaucracy. No endless revisions. Just exceptional work, delivered fast.",
     note: "Days, not months",
     color: 'var(--brand-cyan)',
     details: [
-      "Speed isn't a compromise, it's a competitive advantage.",
+      "We're not spending three weeks in committee meetings arguing about font choices.",
       "We've eliminated the bureaucratic sludge that turns creativity into a death march.",
       "Fast execution. No sacrifice.",
     ],
   },
   {
-    icon: Target,
-    title: "TENSION IS CURRENCY",
+    icon: Flame,
+    title: "ATTENTION IS CURRENCY",
     description: "We don't play it safe. We create controlled friction that makes people stop scrolling. The kind of work that gets shared, debated, remembered.",
     note: "Provoke, don't placate",
     color: 'var(--brand-magenta)',
@@ -29,15 +29,15 @@ const pillars = [
     ],
   },
   {
-    icon: Handshake,
+    icon: HeartHandshake,
     title: "CLIENTS AS CO-CONSPIRATORS",
-    description: "You're not hiring vendors. You're recruiting accomplices. We expect you to challenge us. We'll challenge you right back. Together, we'll build something worth talking about.",
+    description: "You're not just a \"client.\" You're the person crazy enough to trust us with your brand's reputation.",
     note: "Partners in crime",
     color: 'var(--brand-violet)',
     details: [
-      "No jargon olympics. No performative busy work.",
+      "No corporate speak. No performative busy work.",
       "You get honesty, transparency, and work that actually moves the needle.",
-      "Content that doesn't look like content — it looks like culture.",
+      "We're accomplices. Our goal is to make your brand sound like it actually has a pulse.",
     ],
   },
 ];

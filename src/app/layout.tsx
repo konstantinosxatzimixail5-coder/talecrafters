@@ -4,51 +4,66 @@ import { CookieConsent } from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://talecrafters.studio"),
-  title: "TaleCrafters — We Manufacture Attention",
+  title: "TaleCrafters — Synthetic Media Studio | Stories That Convert",
   description:
-    "TaleCrafters is the unholy offspring of a film studio and a technology lab. We combine human taste with machine velocity to create stories that immerse and content that converts. Storytellers drunk on synthetic media.",
+    "TaleCrafters is a synthetic media studio that combines human taste with machine velocity. We create stories that immerse and content that converts.",
   keywords: [
     "TaleCrafters",
-    "creative studio",
-    "content production",
-    "storytelling",
+    "synthetic media studio",
+    "creative content production",
+    "storytelling agency",
     "synthetic media",
     "brand strategy",
     "video production",
     "motion design",
     "digital avatars",
-    "creative agency",
+    "creative agency London",
+    "content-as-service",
+    "AI content creation",
+    "brand narrative",
+    "visual storytelling",
+    "synthetic cinematography",
   ],
-  authors: [{ name: "TaleCrafters Studio" }],
+  authors: [{ name: "TaleCrafters Ltd" }],
   creator: "TaleCrafters",
+  alternates: {
+    canonical: "https://talecrafters.studio",
+  },
   openGraph: {
     type: "website",
     locale: "en_GB",
     url: "https://talecrafters.studio",
     siteName: "TaleCrafters",
-    title: "TaleCrafters — We Manufacture Attention",
+    title: "TaleCrafters — Synthetic Media Studio | We Manufacture Attention",
     description:
-      "The unholy offspring of a film studio and a technology lab. Stories on steroids. We killed boring, buried it, and threw a party on its grave.",
+      "The unholy offspring of a film studio and a technology lab. Human taste × machine velocity. Stories that immerse, content that converts.",
     images: [
       {
         url: "/logo.png",
         width: 512,
         height: 512,
-        alt: "TaleCrafters Logo",
+        alt: "TaleCrafters — Synthetic Media Studio Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TaleCrafters — We Manufacture Attention",
+    title: "TaleCrafters — Synthetic Media Studio",
     description:
-      "The unholy offspring of a film studio and a technology lab. Stories on steroids.",
+      "Human taste × machine velocity. We create stories that immerse and content that converts.",
     images: ["/logo.png"],
     creator: "@talecrafters",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: "/logo.png",

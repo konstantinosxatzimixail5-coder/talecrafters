@@ -1,6 +1,6 @@
 "use client";
 import { motion } from 'motion/react';
-import { ArrowRight, X } from 'lucide-react';
+import { MoveUpRight, Ban } from 'lucide-react';
 
 export function CTASection() {
   return (
@@ -89,7 +89,7 @@ export function CTASection() {
                 >
                   OPTION A
                 </span>
-                <X size={24} style={{ color: 'var(--brand-white)', opacity: 0.3 }} />
+                <Ban size={24} style={{ color: 'var(--brand-white)', opacity: 0.3 }} />
               </div>
 
               <h3
@@ -167,7 +167,7 @@ export function CTASection() {
                 >
                   OPTION B
                 </span>
-                <ArrowRight size={24} style={{ color: 'var(--brand-white)' }} />
+                <MoveUpRight size={24} style={{ color: 'var(--brand-white)' }} />
               </div>
 
               <h3

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export function LogoCube() {
   const [flipped, setFlipped] = useState(false);
@@ -16,105 +16,146 @@ export function LogoCube() {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <div
-      className="w-14 h-14 cursor-pointer"
-      style={{ perspective: '600px' }}
-      onClick={() => setFlipped((f) => !f)}
-    >
-      <motion.div
-        className="relative w-full h-full"
-        style={{ transformStyle: 'preserve-3d' }}
-        animate={{ rotateY: flipped ? 180 : 0 }}
-        transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-      >
-        {/* Front — Imp face */}
-        <div
-          className="absolute inset-0 rounded-sm overflow-hidden"
-          style={{ backfaceVisibility: 'hidden' }}
-        >
-          <img
-            src="/logo.png"
-            alt="TaleCrafters"
-            className="w-full h-full object-cover"
-            style={{ filter: 'brightness(1.35) saturate(0.75)' }}
-          />
-          {/* Glitch overlays */}
-          {glitch && (
-            <>
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background: `linear-gradient(transparent 0%, transparent ${30 + Math.random() * 20}%, var(--brand-cyan) ${30 + Math.random() * 20}%, var(--brand-cyan) ${32 + Math.random() * 20}%, transparent ${32 + Math.random() * 20}%)`,
-                  opacity: 0.4,
-                  mixBlendMode: 'screen',
-                }}
-              />
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  clipPath: `inset(${Math.random() * 40}% 0 ${Math.random() * 40}% 0)`,
-                  transform: `translateX(${Math.random() * 6 - 3}px)`,
-                  background: 'rgba(255,45,111,0.3)',
-                  mixBlendMode: 'screen',
-                }}
-              />
-            </>
-          )}
-          {/* Scanline */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px)',
-            }}
-          />
-        </div>
+  const handleClick = useCallback(() => {
+    setFlipped((f) => !f);
+  }, []);
 
-        {/* Back — TC */}
-        <div
-          className="absolute inset-0 rounded-sm flex items-center justify-center"
-          style={{
-            backfaceVisibility: 'hidden',
-            transform: 'rotateY(180deg)',
-            background: 'linear-gradient(135deg, var(--brand-cyan) 0%, #0ab8a5 100%)',
-            border: '1px solid rgba(0,229,204,0.4)',
-          }}
+  // Name is visible when imp is showing (not flipped)
+  const showName = !flipped;
+
+  return (
+    <div className="flex items-center gap-0">
+      {/* The Cube */}
+      <div
+        className="w-14 h-14 cursor-pointer flex-shrink-0 relative z-10"
+        style={{ perspective: '600px' }}
+        onClick={handleClick}
+      >
+        <motion.div
+          className="relative w-full h-full"
+          style={{ transformStyle: 'preserve-3d' }}
+          animate={{ rotateY: flipped ? 180 : 0 }}
+          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         >
-          <span
-            className="select-none"
+          {/* Front — Imp face */}
+          <div
+            className="absolute inset-0 rounded-sm overflow-hidden"
+            style={{ backfaceVisibility: 'hidden' }}
+          >
+            <img
+              src="/logo.png"
+              alt="TaleCrafters imp mascot logo"
+              className="w-full h-full object-cover"
+              style={{ filter: 'brightness(1.35) saturate(0.75)' }}
+            />
+            {/* Glitch overlays */}
+            {glitch && (
+              <>
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: `linear-gradient(transparent 0%, transparent ${30 + Math.random() * 20}%, var(--brand-cyan) ${30 + Math.random() * 20}%, var(--brand-cyan) ${32 + Math.random() * 20}%, transparent ${32 + Math.random() * 20}%)`,
+                    opacity: 0.4,
+                    mixBlendMode: 'screen',
+                  }}
+                />
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    clipPath: `inset(${Math.random() * 40}% 0 ${Math.random() * 40}% 0)`,
+                    transform: `translateX(${Math.random() * 6 - 3}px)`,
+                    background: 'rgba(255,45,111,0.3)',
+                    mixBlendMode: 'screen',
+                  }}
+                />
+              </>
+            )}
+            {/* Scanline */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px)',
+              }}
+            />
+          </div>
+
+          {/* Back — TC */}
+          <div
+            className="absolute inset-0 rounded-sm flex items-center justify-center"
             style={{
-              fontFamily: 'Georgia, "Times New Roman", serif',
-              fontSize: '1.5rem',
-              fontWeight: 700,
-              fontStyle: 'italic',
-              letterSpacing: '-0.04em',
-              color: '#2A0845',
-              textShadow: '0 1px 2px rgba(0,0,0,0.2)',
+              backfaceVisibility: 'hidden',
+              transform: 'rotateY(180deg)',
+              background: 'linear-gradient(135deg, var(--brand-cyan) 0%, #0ab8a5 100%)',
+              border: '1px solid rgba(0,229,204,0.4)',
             }}
           >
-            TC
-          </span>
-          {/* Glitch on back too */}
-          {glitch && (
+            <span
+              className="select-none"
+              style={{
+                fontFamily: '"Playfair Display", Georgia, serif',
+                fontSize: '2rem',
+                fontWeight: 800,
+                fontStyle: 'italic',
+                letterSpacing: '-0.04em',
+                color: '#2A0845',
+                textShadow: '0 1px 3px rgba(0,0,0,0.25)',
+              }}
+            >
+              TC
+            </span>
+            {/* Glitch on back too */}
+            {glitch && (
+              <div
+                className="absolute inset-0 pointer-events-none rounded-sm"
+                style={{
+                  clipPath: `inset(${Math.random() * 50}% 0 ${Math.random() * 50}% 0)`,
+                  transform: `translateX(${Math.random() * 4 - 2}px)`,
+                  background: 'rgba(42,8,69,0.25)',
+                  mixBlendMode: 'multiply',
+                }}
+              />
+            )}
+            {/* Scanline */}
             <div
               className="absolute inset-0 pointer-events-none rounded-sm"
               style={{
-                clipPath: `inset(${Math.random() * 50}% 0 ${Math.random() * 50}% 0)`,
-                transform: `translateX(${Math.random() * 4 - 2}px)`,
-                background: 'rgba(42,8,69,0.25)',
-                mixBlendMode: 'multiply',
+                background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px)',
               }}
             />
-          )}
-          {/* Scanline */}
-          <div
-            className="absolute inset-0 pointer-events-none rounded-sm"
-            style={{
-              background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px)',
-            }}
-          />
-        </div>
-      </motion.div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* TaleCrafters name that slides out */}
+      <AnimatePresence>
+        {showName && (
+          <motion.div
+            className="overflow-hidden"
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: 'auto', opacity: 1 }}
+            exit={{ width: 0, opacity: 0 }}
+            transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+          >
+            <motion.span
+              className="whitespace-nowrap block pl-3 hidden md:block"
+              style={{
+                fontFamily: '"Playfair Display", Georgia, serif',
+                fontSize: '1.4rem',
+                fontWeight: 600,
+                fontStyle: 'italic',
+                letterSpacing: '-0.02em',
+                color: 'var(--brand-white)',
+              }}
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -20, opacity: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            >
+              TaleCrafters
+            </motion.span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

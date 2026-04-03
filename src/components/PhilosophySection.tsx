@@ -107,29 +107,25 @@ function SkullIcon({ color }: { color: string }) {
   );
 }
 
-function ConspiracyIcon({ color }: { color: string }) {
+function CultureIcon({ color }: { color: string }) {
   return (
     <motion.svg width="36" height="36" viewBox="0 0 36 36" fill="none" whileHover={{ scale: 1.2, rotate: -10 }}>
-      <motion.circle cx="10" cy="12" r="5" stroke={color} strokeWidth="2" fill="none"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }}
+      <motion.rect x="4" y="8" width="28" height="20" rx="2" stroke={color} strokeWidth="2" fill="none"
+        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}
       />
-      <motion.circle cx="26" cy="12" r="5" stroke={color} strokeWidth="2" fill="none"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 0.6, delay: 0.2 }} viewport={{ once: true }}
+      <motion.path d="M4 14 L18 22 L32 14" stroke={color} strokeWidth="1.5" fill="none" opacity="0.6"
+        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 0.6, delay: 0.4 }} viewport={{ once: true }}
       />
-      <motion.path d="M14 14 L22 14" stroke={color} strokeWidth="2"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 0.4, delay: 0.5 }} viewport={{ once: true }}
+      <motion.circle cx="18" cy="18" r="3" fill={color} opacity="0.3"
+        animate={{ scale: [1, 1.5, 1] }} transition={{ duration: 2, repeat: Infinity }}
       />
-      <motion.path d="M8 18 C8 26 18 30 18 30 C18 30 28 26 28 18" stroke={color} strokeWidth="2" fill="none"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 0.8, delay: 0.6 }} viewport={{ once: true }}
-      />
-      <motion.circle cx="18" cy="24" r="2" fill={color} opacity="0.5"
-        animate={{ scale: [1, 1.4, 1] }} transition={{ duration: 1.5, repeat: Infinity }}
-      />
+      <motion.line x1="10" y1="4" x2="10" y2="8" stroke={color} strokeWidth="2" opacity="0.5" />
+      <motion.line x1="26" y1="4" x2="26" y2="8" stroke={color} strokeWidth="2" opacity="0.5" />
     </motion.svg>
   );
 }
 
-const iconComponents = [StoryIcon, VelocityIcon, SacredCowIcon, TensionIcon, SkullIcon, ConspiracyIcon];
+const iconComponents = [StoryIcon, VelocityIcon, SacredCowIcon, TensionIcon, SkullIcon, CultureIcon];
 
 const principles = [
   {
@@ -148,8 +144,8 @@ const principles = [
     accent: 'var(--brand-violet)',
   },
   {
-    title: "TENSION IS CURRENCY",
-    description: "Safe is forgettable. We create controlled chaos that people can\u2019t look away from.",
+    title: "ATTENTION IS CURRENCY",
+    description: "If they\u2019re not stopping mid-scroll, you\u2019ve already lost. We engineer moments that hijack attention and refuse to give it back.",
     accent: 'var(--brand-gold)',
   },
   {
@@ -158,8 +154,8 @@ const principles = [
     accent: 'var(--brand-magenta)',
   },
   {
-    title: "CLIENTS AS CO-CONSPIRATORS",
-    description: "You\u2019re not hiring vendors. You\u2019re recruiting accomplices. We expect you to challenge us. We\u2019ll challenge you right back. Together, we\u2019ll build something worth talking about.",
+    title: "CONTENT = CULTURE",
+    description: "Your content shouldn\u2019t look like an ad that escaped from a boardroom. It should look and feel like the culture your audience already lives in. If people can smell the brief, you\u2019ve already failed.",
     accent: 'var(--brand-cyan)',
   },
 ];

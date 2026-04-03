@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
-import { Film, Zap, Radio, Users, BookOpen, Box, Music, Image, Video, Target, Shield, Mic, Palette, Printer, Sparkles, LayoutGrid, Bot, Globe, Code } from 'lucide-react';
+import { Clapperboard, Flame, Podcast, UserCircle, BookMarked, Boxes, AudioLines, Aperture, MonitorPlay, Crosshair, ShieldCheck, Mic2, PaintBucket, Newspaper, Wand2, LayoutPanelLeft, BrainCircuit, Globe2, CodeXml, Megaphone, ScanFace, Eye } from 'lucide-react';
 
 interface Service {
   name: string;
@@ -20,52 +20,52 @@ const categories: Category[] = [
     title: "VISUAL WARFARE",
     color: 'var(--brand-magenta)',
     services: [
-      { name: "Product Cinematics", desc: "Ads that make people want things they didn't know existed. We turn your product into the main character of a story people can't look away from.", icon: Film },
-      { name: "Short-Form Detonations", desc: "Engineered for attention spans shorter than a goldfish's existential crisis (that's everyone). Content that hits hard and fast.", icon: Video },
-      { name: "Motion Alchemy", desc: "Visuals that move like they've had three espressos. Dynamic, fluid, caffeinated motion design that makes static look dead.", icon: Zap },
-      { name: "Synthetic Cinematography", desc: "Fluid visual storytelling that redefines what's possible without a 50-person film crew and a nervous breakdown.", icon: Sparkles },
-      { name: "Comic Panel Narratives", desc: "Sequential art meets brand storytelling. We craft illustrated panel sequences that hit harder than a full-page ad and stick longer than a viral clip.", icon: LayoutGrid },
+      { name: "Product Cinematics", desc: "Ads that make people want things they didn't know existed. We turn your product into the main character of a story people can't look away from.", icon: Clapperboard },
+      { name: "Short-Form Detonations", desc: "Engineered for attention spans shorter than a goldfish's existential crisis (that's everyone). Content that hits hard and fast.", icon: MonitorPlay },
+      { name: "Motion Alchemy", desc: "Visuals that move like they've had three espressos. Dynamic, fluid, caffeinated motion design that makes static look dead.", icon: Flame },
+      { name: "Synthetic Cinematography", desc: "Fluid visual storytelling that redefines what's possible without a 50-person film crew and a nervous breakdown.", icon: Wand2 },
+      { name: "Comic Panel Narratives", desc: "Sequential art meets brand storytelling. We craft illustrated panel sequences that hit harder than a full-page ad and stick longer than a viral clip.", icon: LayoutPanelLeft },
     ],
   },
   {
     title: "NARRATIVE ENGINEERING",
     color: 'var(--brand-cyan)',
     services: [
-      { name: "Brand Mythology", desc: "We don't write taglines. We architect belief systems. The kind of narrative foundation that turns customers into cultists (the good kind).", icon: Target },
-      { name: "Strategic Storytelling", desc: "Story frameworks that position your brand as the only logical choice. We map the narrative architecture before we touch a single frame.", icon: BookOpen },
-      { name: "Script Architecture", desc: "Words that sell without selling out. Spokesperson scripts, video narratives, brand manifestos that sound like humans wrote them. Because humans did.", icon: Mic },
-      { name: "Blog-to-Video Transmutation", desc: "Your text content, resurrected as video. Because reading is so 2019, and your insights deserve to move.", icon: Video },
+      { name: "Brand Mythology", desc: "Forget taglines. We create belief systems. The kind of narrative foundation that turns customers into cultists (the good kind).", icon: Eye },
+      { name: "Strategic Storytelling", desc: "Story frameworks that position your brand as the only logical choice. We map the narrative architecture before we touch a single frame.", icon: BookMarked },
+      { name: "Script Architecture", desc: "Words that sell without selling out. Spokesperson scripts, video narratives, brand manifestos that sound like humans wrote them. Because humans did.", icon: Mic2 },
+      { name: "Blog-to-Video Transmutation", desc: "Your text content, resurrected as video. Because reading is so 2019, and your insights deserve to move.", icon: Aperture },
     ],
   },
   {
     title: "STRATEGY & REPUTATION",
     color: 'var(--brand-violet)',
     services: [
-      { name: "Brand Strategy", desc: "Before we make anything, we figure out what you should be saying and why anyone should care. Positioning, messaging, the story beneath the story.", icon: Target },
-      { name: "Reputation Architecture", desc: "PR and reputation management for the synthetic media age. We help you control the narrative before someone else does.", icon: Shield },
-      { name: "Crisis Storytelling", desc: "When things go sideways, the story you tell matters more than ever. We help you navigate reputation storms without sounding like a corporate hostage reading a statement.", icon: Shield },
-      { name: "Thought Leadership Systems", desc: "Position your founders and executives as the voices worth following. Content strategies that build authority, not just visibility.", icon: Users },
+      { name: "Brand Strategy", desc: "Before we make anything, we figure out what you should be saying and why anyone should care. Positioning, messaging, the story beneath the story.", icon: Crosshair },
+      { name: "Reputation Architecture", desc: "PR and reputation management for the synthetic media age. We help you control the narrative before someone else does.", icon: ShieldCheck },
+      { name: "Crisis Storytelling", desc: "When things go sideways, the story you tell matters more than ever. We help you navigate reputation storms without sounding like a corporate hostage reading a statement.", icon: Megaphone },
+      { name: "Thought Leadership Systems", desc: "Position your founders and executives as the voices worth following. Content strategies that build authority, not just visibility.", icon: UserCircle },
     ],
   },
   {
     title: "SYNTHETIC BEINGS",
     color: 'var(--brand-gold)',
     services: [
-      { name: "Digital Avatars", desc: "Spokespeople that represent your brand better than your CEO on a bad day. Always on-brand, always available, never hungover.", icon: Users },
-      { name: "Synthetic Voices", desc: "Podcasts and audio content that somehow sound more human than most corporate communications.", icon: Radio },
-      { name: "Autonomous Agents", desc: "Digital operatives that work while you sleep. Custom-built agents that handle workflows, engage audiences, and execute strategy on autopilot.", icon: Bot },
+      { name: "Digital Avatars", desc: "Spokespeople that represent your brand better than your CEO on a bad day. Always on-brand, always available, never hungover.", icon: ScanFace },
+      { name: "Synthetic Voices", desc: "Podcasts and audio content that somehow sound more human than most corporate communications.", icon: Podcast },
+      { name: "Autonomous Agents", desc: "Digital operatives that work while you sleep. Custom-built agents that handle workflows, engage audiences, and execute strategy on autopilot.", icon: BrainCircuit },
     ],
   },
   {
     title: "DESIGN WEAPONRY",
     color: 'var(--brand-magenta)',
     services: [
-      { name: "3D Social Content", desc: "Corporate content that looks like it escaped the metaverse and landed in your LinkedIn feed. Stand out or get buried.", icon: Box },
-      { name: "Visual Systems", desc: "Brand imagery that makes your competitors jealous. Cohesive visual language built for your brand's specific DNA.", icon: Palette },
-      { name: "Print Artillery", desc: "Brochures and flyers with designs that physically refuse to be ignored. Yes, print is alive. We made it dangerous.", icon: Printer },
-      { name: "Algorithmic Soundscapes", desc: "Custom music and audio tailored to your brand's frequency. Because stock music is a war crime against creativity.", icon: Music },
-      { name: "Website Design", desc: "Digital real estate that doesn't look like a template crime scene. We design web experiences that convert visitors into believers.", icon: Globe },
-      { name: "Vibe-Coded Applications", desc: "Apps built at the speed of imagination. We translate creative vision into functional software that feels as good as it works.", icon: Code },
+      { name: "3D Social Content", desc: "Corporate content that looks like it escaped the metaverse and landed in your LinkedIn feed. Stand out or get buried.", icon: Boxes },
+      { name: "Visual Systems", desc: "Brand imagery that makes your competitors jealous. Cohesive visual language built for your brand's specific DNA.", icon: PaintBucket },
+      { name: "Print Artillery", desc: "Brochures and flyers with designs that physically refuse to be ignored. Yes, print is alive. We made it dangerous.", icon: Newspaper },
+      { name: "Algorithmic Soundscapes", desc: "Custom music and audio tailored to your brand's frequency. Because stock music is a war crime against creativity.", icon: AudioLines },
+      { name: "Website Design", desc: "Digital real estate that doesn't look like a template crime scene. We design web experiences that convert visitors into believers.", icon: Globe2 },
+      { name: "Vibe-Coded Applications", desc: "Apps built at the speed of imagination. We translate creative vision into functional software that feels as good as it works.", icon: CodeXml },
     ],
   },
 ];

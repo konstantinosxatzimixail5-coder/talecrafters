@@ -1,7 +1,7 @@
 "use client";
 import { motion } from 'motion/react';
 import { useState } from 'react';
-import { Check, ArrowRight } from 'lucide-react';
+import { CircleCheck, ArrowUpRight } from 'lucide-react';
 
 const packages = [
   {
@@ -134,7 +134,7 @@ export function PricingSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Escalation levels for <span style={{ color: 'var(--brand-magenta)' }}>Content-as-Service</span>
+          Escalation levels for <span style={{ color: 'var(--brand-magenta)' }}>Content-as-Service</span>.
         </motion.p>
 
         {/* Package cards */}
@@ -201,7 +201,7 @@ export function PricingSection() {
                 <div className="space-y-3 mb-6">
                   {pkg.features.map((feature, fi) => (
                     <div key={fi} className="flex items-start gap-3">
-                      <Check
+                      <CircleCheck
                         size={16}
                         className="mt-0.5 flex-shrink-0"
                         style={{ color: pkg.accent ? 'var(--brand-white)' : pkg.color }}
@@ -245,7 +245,7 @@ export function PricingSection() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  LET&apos;S GO <ArrowRight size={18} />
+                  LET&apos;S GO <ArrowUpRight size={18} />
                 </motion.a>
               </div>
 
@@ -289,10 +289,10 @@ export function PricingSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: "Synthetic Media Natives", desc: "We don't just use tools. We architect workflows around them. While others are still figuring out prompts, we're building production pipelines that would make traditional studios weep.", color: 'var(--brand-cyan)' },
+              { title: "Synthetic Media Natives", desc: "We implement content and creative workflows around the tools we use.", color: 'var(--brand-cyan)' },
               { title: "Story-First, Always", desc: "Technology is the vehicle. Narrative is the destination. We obsess over story structure, emotional beats, and psychological hooks before we touch a single tool.", color: 'var(--brand-magenta)' },
-              { title: "Velocity is a Feature", desc: "Speed isn't a compromise, it's a competitive advantage. We've eliminated the bureaucratic sludge that turns creativity into a death march. Fast execution. No sacrifice.", color: 'var(--brand-violet)' },
-              { title: "No Bullshit Guarantee", desc: "We don't do corporate theater. No jargon olympics. No performative busy work. You get honesty, transparency, and work that actually moves the needle.", color: 'var(--brand-gold)' },
+              { title: "Velocity as a Feature", desc: "We use synthetic media to turn speed into a competitive advantage. We produce better results faster.", color: 'var(--brand-violet)' },
+              { title: "No Bullshit Guarantee", desc: "We give zero f*cks about ego, and infinite f*cks about excellence.", color: 'var(--brand-gold)' },
             ].map((item, i) => (
               <motion.div
                 key={i}

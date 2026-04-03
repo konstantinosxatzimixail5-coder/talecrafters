@@ -161,7 +161,7 @@ export function StudioSection() {
             >
               <img
                 src="https://images.unsplash.com/photo-1683189238039-173f232b2338?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkcmFtYXRpYyUyMGNpbmVtYSUyMGNhbWVyYSUyMG1vdGlvbiUyMGJsdXIlMjBsaWdodHN8ZW58MXx8fHwxNzczODMxMTA1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Cinematic production"
+                alt="TaleCrafters cinematic production studio — dramatic lighting and camera motion blur"
                 className="w-full h-full object-cover"
                 style={{ filter: 'contrast(1.3) saturate(1.2)' }}
               />
@@ -185,7 +185,7 @@ export function StudioSection() {
             >
               <img
                 src="/human-taste.png"
-                alt="Human taste — creative studio"
+                alt="TaleCrafters creative director working in red-lit studio — human taste meets machine velocity"
                 className="w-full h-full object-cover"
                 style={{ filter: 'contrast(1.1) saturate(1.1)' }}
               />
