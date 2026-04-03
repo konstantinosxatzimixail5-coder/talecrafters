@@ -80,7 +80,7 @@ export function ContactSection() {
 
     try {
       const formData = new FormData(formRef.current);
-      await fetch('/', {
+      await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData as any).toString(),
@@ -221,9 +221,6 @@ export function ContactSection() {
             ref={formRef}
             name="contact"
             method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            action="/"
           >
             {/* Netlify hidden inputs */}
             <input type="hidden" name="form-name" value="contact" />
