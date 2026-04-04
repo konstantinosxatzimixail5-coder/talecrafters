@@ -137,14 +137,15 @@ export function LogoCube() {
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
             <motion.span
-              className="whitespace-nowrap block pl-3 hidden md:block"
+              className="whitespace-nowrap block pl-4"
               style={{
                 fontFamily: '"Playfair Display", Georgia, serif',
-                fontSize: '1.4rem',
-                fontWeight: 600,
+                fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+                fontWeight: 700,
                 fontStyle: 'italic',
-                letterSpacing: '-0.02em',
+                letterSpacing: '-0.03em',
                 color: 'var(--brand-white)',
+                lineHeight: 1,
               }}
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}

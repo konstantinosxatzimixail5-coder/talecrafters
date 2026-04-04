@@ -18,7 +18,7 @@ const pillars = [
   },
   {
     icon: Flame,
-    title: "ATTENTION IS CURRENCY",
+    title: "ATTENTION AS CURRENCY",
     description: "We don't play it safe. We create controlled friction that makes people stop scrolling. The kind of work that gets shared, debated, remembered.",
     note: "Provoke, don't placate",
     color: 'var(--brand-magenta)',
@@ -244,7 +244,7 @@ export function ProcessSection() {
             style={{ fontFamily: 'var(--font-display)' }}
           >
             We make algorithms jealous of human creativity.{' '}
-            <span style={{ color: 'var(--brand-cyan)' }}>Then we steal their lunch money.</span><br /><br />
+            <span style={{ color: 'var(--brand-cyan)' }}>Then we steal their lunch money.</span>{' '}
             We design stories that make people{' '}
             <span style={{ color: 'var(--brand-magenta)' }}>stop mid-scroll,</span>{' '}
             cancel meetings, and question whether they've been doing content wrong their entire lives.

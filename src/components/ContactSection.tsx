@@ -76,19 +76,35 @@ export function ContactSection() {
   };
 
   const handleSubmit = async () => {
-    if (!formRef.current) return;
+    const servicesStr = selectedTypes.map(t => projectTypes.find(p => p.id === t)?.label).join(', ');
+    const urgencyStr = urgencyLevels.find(u => u.id === urgency)?.label || '';
+    const budgetStr = budgetRanges.find(b => b.id === budget)?.label || 'Not specified';
 
-    try {
-      const formData = new FormData(formRef.current);
-      await fetch('/__forms.html', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
-      });
-      setSubmitted(true);
-    } catch {
-      setSubmitted(true);
+    // Try Netlify Forms first
+    if (formRef.current) {
+      try {
+        const formData = new FormData(formRef.current);
+        const res = await fetch('/__forms.html', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData as any).toString(),
+        });
+        if (res.ok) {
+          setSubmitted(true);
+          return;
+        }
+      } catch {
+        // Netlify Forms failed — fall through to mailto
+      }
     }
+
+    // Fallback: open mailto with all form data pre-filled
+    const subject = encodeURIComponent(`New enquiry from ${name || 'Website visitor'}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'Not specified'}\n\nServices: ${servicesStr}\nTimeline: ${urgencyStr}\nBudget: ${budgetStr}\n\nMessage:\n${message || 'No additional message.'}`
+    );
+    window.open(`mailto:hello@talecrafters.studio?subject=${subject}&body=${body}`, '_blank');
+    setSubmitted(true);
   };
 
   const stepTitles = [

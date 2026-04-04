@@ -144,7 +144,7 @@ const principles = [
     accent: 'var(--brand-violet)',
   },
   {
-    title: "ATTENTION IS CURRENCY",
+    title: "TENSION IS CURRENCY",
     description: "If they\u2019re not stopping mid-scroll, you\u2019ve already lost. We engineer moments that hijack attention and refuse to give it back.",
     accent: 'var(--brand-gold)',
   },

@@ -289,9 +289,9 @@ export function PricingSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: "Synthetic Media Natives", desc: "We implement content and creative workflows around the tools we use.", color: 'var(--brand-cyan)' },
+              { title: "Synthetic Media Natives", desc: "We implement creative workflows around the tools we use. While others are figuring out prompts, we're building production pipelines that would make traditional studios weep.", color: 'var(--brand-cyan)' },
               { title: "Story-First, Always", desc: "Technology is the vehicle. Narrative is the destination. We obsess over story structure, emotional beats, and psychological hooks before we touch a single tool.", color: 'var(--brand-magenta)' },
-              { title: "Velocity as a Feature", desc: "We use synthetic media to turn speed into a competitive advantage. We produce better results faster.", color: 'var(--brand-violet)' },
+              { title: "Content Reinventionists", desc: "Instead of pitching you what we can do, we show you what you can't ignore. We turn content into your competitive advantage.", color: 'var(--brand-violet)' },
               { title: "No Bullshit Guarantee", desc: "We give zero f*cks about ego, and infinite f*cks about excellence.", color: 'var(--brand-gold)' },
             ].map((item, i) => (
               <motion.div

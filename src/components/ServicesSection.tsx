@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
-import { Clapperboard, Flame, Podcast, UserCircle, BookMarked, Boxes, AudioLines, Aperture, MonitorPlay, Crosshair, ShieldCheck, Mic2, PaintBucket, Newspaper, Wand2, LayoutPanelLeft, BrainCircuit, Globe2, CodeXml, Megaphone, ScanFace, Eye } from 'lucide-react';
+import { Clapperboard, Flame, Podcast, UserCircle, BookMarked, Boxes, AudioLines, Aperture, MonitorPlay, Crosshair, ShieldCheck, Mic2, PaintBucket, Newspaper, Wand2, LayoutPanelLeft, BrainCircuit, Globe2, CodeXml, Megaphone, ScanFace, Eye, PenLine, Ghost } from 'lucide-react';
 
 interface Service {
   name: string;
@@ -35,6 +35,8 @@ const categories: Category[] = [
       { name: "Strategic Storytelling", desc: "Story frameworks that position your brand as the only logical choice. We map the narrative architecture before we touch a single frame.", icon: BookMarked },
       { name: "Script Architecture", desc: "Words that sell without selling out. Spokesperson scripts, video narratives, brand manifestos that sound like humans wrote them. Because humans did.", icon: Mic2 },
       { name: "Blog-to-Video Transmutation", desc: "Your text content, resurrected as video. Because reading is so 2019, and your insights deserve to move.", icon: Aperture },
+      { name: "Scriptwriting", desc: "From commercial scripts to documentary narratives — we write the words that make directors cry (in a good way) and audiences lean in.", icon: PenLine },
+      { name: "Ghostwriting", desc: "Your voice, weaponised by professionals. Thought leadership, articles, speeches — all written in your voice, just better. Nobody has to know.", icon: Ghost },
     ],
   },
   {

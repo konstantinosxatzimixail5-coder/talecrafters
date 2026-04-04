@@ -82,9 +82,9 @@ export function Navigation({
         </div>
       </motion.div>
 
-      {/* Logo */}
+      {/* Logo — static at top, not fixed */}
       <motion.div
-        className="fixed top-8 left-8 z-50"
+        className="absolute top-8 left-8 z-50"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
@@ -197,6 +197,8 @@ export function Navigation({
               >
                 <a
                   href="mailto:hello@talecrafters.studio"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm transition-colors duration-200"
                   style={{
                     fontFamily: "var(--font-mono)",
@@ -205,6 +207,7 @@ export function Navigation({
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-cyan)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
+                  onClick={(e) => e.stopPropagation()}
                 >
                   hello@talecrafters.studio
                 </a>
