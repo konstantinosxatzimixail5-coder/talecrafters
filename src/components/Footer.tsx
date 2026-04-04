@@ -30,11 +30,15 @@ export function Footer() {
                 style={{ filter: 'brightness(1.35) saturate(0.75)' }}
               />
               <div
-                className="text-3xl tracking-tighter"
-                style={{ letterSpacing: '-0.03em' }}
+                className="text-3xl"
+                style={{
+                  fontFamily: '"Pacifico", cursive',
+                  fontWeight: 400,
+                  letterSpacing: '0.01em',
+                  color: 'var(--brand-white)',
+                }}
               >
-                <span style={{ fontFamily: '"Playfair Display", Georgia, serif', fontWeight: 700, fontStyle: 'italic' }}>Tale</span>
-                <span style={{ fontFamily: '"JetBrains Mono", monospace', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' as const }}>Crafters</span>
+                TaleCrafters
               </div>
             </div>
             <div

@@ -82,21 +82,23 @@ export function Navigation({
         </div>
       </motion.div>
 
-      {/* Logo — static at top, not fixed */}
-      <motion.div
-        className="absolute top-8 left-8 z-50"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-      >
-        <a
-          href="#"
-          className="flex items-center gap-2"
-          style={{ textDecoration: "none" }}
+      {/* Logo — static at top, not fixed. Hidden when menu is open to avoid collision on mobile */}
+      {!menuOpen && (
+        <motion.div
+          className="absolute top-8 left-8 z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
         >
-          <LogoCube />
-        </a>
-      </motion.div>
+          <a
+            href="#"
+            className="flex items-center gap-2"
+            style={{ textDecoration: "none" }}
+          >
+            <LogoCube />
+          </a>
+        </motion.div>
+      )}
 
       {/* Full-screen overlay menu */}
       <AnimatePresence>
@@ -130,7 +132,7 @@ export function Navigation({
             <nav className="px-8 md:px-16 lg:px-24 w-full relative z-10">
               {/* Section label */}
               <motion.div
-                className="mb-12 flex items-center gap-3"
+                className="mb-6 md:mb-12 flex items-center gap-3"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
@@ -157,7 +159,7 @@ export function Navigation({
                 <motion.a
                   key={item.href}
                   href={item.href}
-                  className="block py-4 md:py-5 text-5xl md:text-7xl lg:text-8xl tracking-tighter transition-all duration-200 group"
+                  className="block py-2 md:py-5 text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter transition-all duration-200 group"
                   style={{
                     fontFamily: "var(--font-display)",
                     color: "var(--brand-white)",
@@ -187,7 +189,7 @@ export function Navigation({
 
               {/* Bottom info */}
               <motion.div
-                className="mt-12 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+                className="mt-6 md:mt-12 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
                 style={{
                   borderTop: "1px solid var(--brand-concrete)",
                 }}

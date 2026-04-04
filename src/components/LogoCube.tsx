@@ -92,11 +92,10 @@ export function LogoCube() {
             <span
               className="select-none"
               style={{
-                fontFamily: '"Playfair Display", Georgia, serif',
-                fontSize: '2rem',
-                fontWeight: 800,
-                fontStyle: 'italic',
-                letterSpacing: '-0.04em',
+                fontFamily: '"Pacifico", cursive',
+                fontSize: '1.6rem',
+                fontWeight: 400,
+                letterSpacing: '0.01em',
                 color: '#2A0845',
                 textShadow: '0 1px 3px rgba(0,0,0,0.25)',
               }}
@@ -137,11 +136,12 @@ export function LogoCube() {
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
             <motion.span
-              className="whitespace-nowrap block pl-4"
+              className="whitespace-nowrap block pl-3"
               style={{
-                fontSize: 'clamp(1.8rem, 4vw, 3rem)',
-                fontWeight: 700,
-                letterSpacing: '-0.03em',
+                fontFamily: '"Pacifico", cursive',
+                fontSize: 'clamp(1.4rem, 3.5vw, 2.4rem)',
+                fontWeight: 400,
+                letterSpacing: '0.01em',
                 color: 'var(--brand-white)',
                 lineHeight: 1,
               }}
@@ -150,8 +150,7 @@ export function LogoCube() {
               exit={{ x: -20, opacity: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              <span style={{ fontFamily: '"Playfair Display", Georgia, serif', fontStyle: 'italic' }}>Tale</span>
-              <span style={{ fontFamily: '"JetBrains Mono", monospace', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' as const }}>Crafters</span>
+              TaleCrafters
             </motion.span>
           </motion.div>
         )}
