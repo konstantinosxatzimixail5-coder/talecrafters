@@ -34,7 +34,7 @@ export function Footer() {
                 style={{ letterSpacing: '-0.03em' }}
               >
                 <span style={{ fontFamily: '"Playfair Display", Georgia, serif', fontWeight: 700, fontStyle: 'italic' }}>Tale</span>
-                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--brand-cyan)' }}>Crafters</span>
+                <span style={{ fontFamily: '"JetBrains Mono", monospace', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' as const }}>Crafters</span>
               </div>
             </div>
             <div

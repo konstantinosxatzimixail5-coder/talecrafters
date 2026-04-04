@@ -151,7 +151,7 @@ export function LogoCube() {
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               <span style={{ fontFamily: '"Playfair Display", Georgia, serif', fontStyle: 'italic' }}>Tale</span>
-              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--brand-cyan)' }}>Crafters</span>
+              <span style={{ fontFamily: '"JetBrains Mono", monospace', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase' as const }}>Crafters</span>
             </motion.span>
           </motion.div>
         )}
