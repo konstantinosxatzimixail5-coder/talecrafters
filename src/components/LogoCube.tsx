@@ -139,10 +139,8 @@ export function LogoCube() {
             <motion.span
               className="whitespace-nowrap block pl-4"
               style={{
-                fontFamily: '"Playfair Display", Georgia, serif',
                 fontSize: 'clamp(1.8rem, 4vw, 3rem)',
                 fontWeight: 700,
-                fontStyle: 'italic',
                 letterSpacing: '-0.03em',
                 color: 'var(--brand-white)',
                 lineHeight: 1,
@@ -152,7 +150,8 @@ export function LogoCube() {
               exit={{ x: -20, opacity: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              TaleCrafters
+              <span style={{ fontFamily: '"Playfair Display", Georgia, serif', fontStyle: 'italic' }}>Tale</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--brand-cyan)' }}>Crafters</span>
             </motion.span>
           </motion.div>
         )}

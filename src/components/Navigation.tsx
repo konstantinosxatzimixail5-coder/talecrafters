@@ -197,8 +197,6 @@ export function Navigation({
               >
                 <a
                   href="mailto:hello@talecrafters.studio"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-sm transition-colors duration-200"
                   style={{
                     fontFamily: "var(--font-mono)",

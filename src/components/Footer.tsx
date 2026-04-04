@@ -31,9 +31,10 @@ export function Footer() {
               />
               <div
                 className="text-3xl tracking-tighter"
-                style={{ fontFamily: '"Playfair Display", Georgia, serif', fontWeight: 700, fontStyle: 'italic', letterSpacing: '-0.03em' }}
+                style={{ letterSpacing: '-0.03em' }}
               >
-                TaleCrafters
+                <span style={{ fontFamily: '"Playfair Display", Georgia, serif', fontWeight: 700, fontStyle: 'italic' }}>Tale</span>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--brand-cyan)' }}>Crafters</span>
               </div>
             </div>
             <div
@@ -112,8 +113,6 @@ export function Footer() {
               <div>
                 <a
                   href="mailto:hello@talecrafters.studio"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="transition-colors duration-200"
                   style={{ color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-gold)')}

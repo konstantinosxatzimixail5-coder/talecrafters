@@ -35,8 +35,8 @@ const categories: Category[] = [
       { name: "Strategic Storytelling", desc: "Story frameworks that position your brand as the only logical choice. We map the narrative architecture before we touch a single frame.", icon: BookMarked },
       { name: "Script Architecture", desc: "Words that sell without selling out. Spokesperson scripts, video narratives, brand manifestos that sound like humans wrote them. Because humans did.", icon: Mic2 },
       { name: "Blog-to-Video Transmutation", desc: "Your text content, resurrected as video. Because reading is so 2019, and your insights deserve to move.", icon: Aperture },
-      { name: "Scriptwriting", desc: "From commercial scripts to documentary narratives — we write the words that make directors cry (in a good way) and audiences lean in.", icon: PenLine },
-      { name: "Ghostwriting", desc: "Your voice, weaponised by professionals. Thought leadership, articles, speeches — all written in your voice, just better. Nobody has to know.", icon: Ghost },
+      { name: "Scriptwriting", desc: "From commercial scripts to documentary narratives, we write the words that make directors cry (in a good way) and audiences lean in.", icon: PenLine },
+      { name: "Ghostwriting", desc: "Your voice, weaponised by professionals. Thought leadership, articles, speeches, all written in your voice, just better. Nobody has to know.", icon: Ghost },
     ],
   },
   {
@@ -287,18 +287,20 @@ export function ServicesSection() {
                 If it moves, speaks, or sparks emotion, we build it. Come with the impossible. Leave with a delivery date. Don't see what you need? If you can imagine it, we can weaponise it.
               </p>
             </div>
-            <motion.button
-              className="px-8 py-4 text-lg tracking-tight whitespace-nowrap"
+            <motion.a
+              href="#contact"
+              className="px-8 py-4 text-lg tracking-tight whitespace-nowrap inline-block"
               style={{
                 fontFamily: 'var(--font-display)',
                 backgroundColor: 'var(--brand-magenta)',
                 color: 'var(--brand-white)',
+                textDecoration: 'none',
               }}
               whileHover={{ scale: 1.05, backgroundColor: 'var(--brand-cyan)', color: 'var(--brand-black)' }}
               whileTap={{ scale: 0.95 }}
             >
-              LET'S TALK →
-            </motion.button>
+              LET&apos;S TALK →
+            </motion.a>
           </div>
 
           {/* Corner decoration */}
