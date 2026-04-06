@@ -32,10 +32,11 @@ export function Footer() {
               <div
                 className="text-3xl"
                 style={{
-                  fontFamily: '"Pacifico", cursive',
+                  fontFamily: '"Lobster", cursive',
                   fontWeight: 400,
-                  letterSpacing: '0.01em',
+                  letterSpacing: '0.02em',
                   color: 'var(--brand-white)',
+                  textShadow: '2px 2px 0px rgba(10,10,10,0.8), -1px -1px 0px rgba(10,10,10,0.4)',
                 }}
               >
                 TaleCrafters

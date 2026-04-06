@@ -92,10 +92,10 @@ export function LogoCube() {
             <span
               className="select-none"
               style={{
-                fontFamily: '"Pacifico", cursive',
-                fontSize: '1.6rem',
+                fontFamily: '"Lobster", cursive',
+                fontSize: '1.8rem',
                 fontWeight: 400,
-                letterSpacing: '0.01em',
+                letterSpacing: '0.02em',
                 color: '#2A0845',
                 textShadow: '0 1px 3px rgba(0,0,0,0.25)',
               }}
@@ -138,12 +138,13 @@ export function LogoCube() {
             <motion.span
               className="whitespace-nowrap block pl-3"
               style={{
-                fontFamily: '"Pacifico", cursive',
-                fontSize: 'clamp(1.4rem, 3.5vw, 2.4rem)',
+                fontFamily: '"Lobster", cursive',
+                fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)',
                 fontWeight: 400,
-                letterSpacing: '0.01em',
+                letterSpacing: '0.02em',
                 color: 'var(--brand-white)',
                 lineHeight: 1,
+                textShadow: '2px 2px 0px rgba(10,10,10,0.8), -1px -1px 0px rgba(10,10,10,0.4)',
               }}
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
