@@ -104,7 +104,7 @@ export function Navigation({
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 flex items-center overflow-hidden"
+            className="fixed inset-0 z-40 flex items-start overflow-y-auto"
             style={{ backgroundColor: "var(--brand-black)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -129,10 +129,10 @@ export function Navigation({
               />
             </div>
 
-            <nav className="px-8 md:px-16 lg:px-24 w-full relative z-10">
+            <nav className="px-8 md:px-16 lg:px-24 w-full relative z-10 pt-20 pb-8 md:pt-16 md:pb-8">
               {/* Section label */}
               <motion.div
-                className="mb-6 md:mb-12 flex items-center gap-3"
+                className="mb-6 md:mb-8 flex items-center gap-3"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
@@ -159,7 +159,7 @@ export function Navigation({
                 <motion.a
                   key={item.href}
                   href={item.href}
-                  className="block py-2 md:py-5 text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter transition-all duration-200 group"
+                  className="block py-1.5 md:py-2 lg:py-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter transition-all duration-200 group"
                   style={{
                     fontFamily: "var(--font-display)",
                     color: "var(--brand-white)",

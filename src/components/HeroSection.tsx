@@ -115,12 +115,12 @@ export function HeroSection() {
 
       {/* Main content */}
       <motion.div
-        className="relative z-10 px-6 md:px-16 lg:px-24 pt-24 md:pt-28"
+        className="relative z-10 px-6 md:px-16 lg:px-24 pt-20 md:pt-20"
         style={{ y: textY, opacity: opacityOut }}
       >
         {/* Top tag line */}
         <motion.div
-          className="mb-8 flex items-center gap-4"
+          className="mb-4 md:mb-6 flex items-center gap-4"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -137,7 +137,7 @@ export function HeroSection() {
         {/* Main headline */}
         <div className="relative">
           <motion.h1
-            className="text-[8vw] sm:text-[7vw] md:text-[4.5vw] lg:text-[4.8vw] xl:text-[5vw] 2xl:text-[5.5vw] leading-[0.9] tracking-tighter"
+            className="text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
             style={{ fontFamily: 'var(--font-display)' }}
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
@@ -146,7 +146,7 @@ export function HeroSection() {
             WE <span style={{ color: 'var(--brand-cyan)' }}>MANUFACTURE</span>
           </motion.h1>
           <motion.h1
-            className="text-[8vw] sm:text-[7vw] md:text-[4.5vw] lg:text-[4.8vw] xl:text-[5vw] 2xl:text-[5.5vw] leading-[0.9] tracking-tighter"
+            className="text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
             style={{ fontFamily: 'var(--font-display)' }}
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
@@ -155,7 +155,7 @@ export function HeroSection() {
             <span style={{ color: 'var(--brand-magenta)' }}>ATTENTION</span> WITH
           </motion.h1>
           <motion.h1
-            className="text-[8vw] sm:text-[7vw] md:text-[4.5vw] lg:text-[4.8vw] xl:text-[5vw] 2xl:text-[5.5vw] leading-[0.9] tracking-tighter"
+            className="text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
             style={{ fontFamily: 'var(--font-display)' }}
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ export function HeroSection() {
             STORIES THAT <span style={{ color: 'var(--brand-gold)' }}>IMMERSE</span>
           </motion.h1>
           <motion.h1
-            className="text-[8vw] sm:text-[7vw] md:text-[4.5vw] lg:text-[4.8vw] xl:text-[5vw] 2xl:text-[5.5vw] leading-[0.9] tracking-tighter"
+            className="text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
             style={{ fontFamily: 'var(--font-display)' }}
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
@@ -173,7 +173,7 @@ export function HeroSection() {
             AND CONTENT
           </motion.h1>
           <motion.h1
-            className="text-[8vw] sm:text-[7vw] md:text-[4.5vw] lg:text-[4.8vw] xl:text-[5vw] 2xl:text-[5.5vw] leading-[0.9] tracking-tighter"
+            className="text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
             style={{ fontFamily: 'var(--font-display)' }}
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
@@ -200,7 +200,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 1.3 }}
         >
           <div
-            className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tighter"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter"
             style={{
               fontFamily: 'var(--font-display)',
               color: 'var(--brand-gold)',
