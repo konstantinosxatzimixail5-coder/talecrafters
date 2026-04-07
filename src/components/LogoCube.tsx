@@ -144,7 +144,9 @@ export function LogoCube() {
                 letterSpacing: '0.02em',
                 color: 'var(--brand-white)',
                 lineHeight: 1,
-                textShadow: '2px 2px 0px rgba(10,10,10,0.8), -1px -1px 0px rgba(10,10,10,0.4)',
+                WebkitTextStroke: '1.5px #2A0845',
+                paintOrder: 'stroke fill' as const,
+                textShadow: '2px 2px 4px rgba(42,8,69,0.5)',
               }}
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
