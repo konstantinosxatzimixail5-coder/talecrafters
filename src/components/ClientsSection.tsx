@@ -163,8 +163,7 @@ export function ClientsSection() {
             fontWeight: 600,
           }}
         >
-          Brands that chose chaos over{' '}
-          <span style={{ color: 'var(--brand-magenta)', fontStyle: 'italic' }}>comfortable</span>.
+          The <span style={{ color: 'var(--brand-magenta)', fontStyle: 'italic' }}>conspirators</span> we&apos;ve armed.
         </h3>
       </motion.div>
 

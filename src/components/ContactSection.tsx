@@ -80,30 +80,34 @@ export function ContactSection() {
     const urgencyStr = urgencyLevels.find(u => u.id === urgency)?.label || '';
     const budgetStr = budgetRanges.find(b => b.id === budget)?.label || 'Not specified';
 
-    // Try Netlify Forms first
-    if (formRef.current) {
-      try {
-        const formData = new FormData(formRef.current);
-        const res = await fetch('/__forms.html', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData as any).toString(),
-        });
-        if (res.ok) {
-          setSubmitted(true);
-          return;
-        }
-      } catch {
-        // Netlify Forms failed — fall through to mailto
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          services: selectedTypes.map(t => projectTypes.find(p => p.id === t)?.label),
+          urgency: urgencyStr,
+          budget: budgetStr,
+          name,
+          email,
+          company,
+          message,
+        }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        return;
       }
+    } catch {
+      // API failed — fall through to mailto
     }
 
     // Fallback: open mailto with all form data pre-filled
     const subject = encodeURIComponent(`New enquiry from ${name || 'Website visitor'}`);
-    const body = encodeURIComponent(
+    const mailBody = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'Not specified'}\n\nServices: ${servicesStr}\nTimeline: ${urgencyStr}\nBudget: ${budgetStr}\n\nMessage:\n${message || 'No additional message.'}`
     );
-    window.open(`mailto:hello@talecrafters.studio?subject=${subject}&body=${body}`, '_blank');
+    window.location.href = `mailto:hello@talecrafters.studio?subject=${subject}&body=${mailBody}`;
     setSubmitted(true);
   };
 
@@ -235,15 +239,8 @@ export function ContactSection() {
         ) : (
           <form
             ref={formRef}
-            name="contact"
-            method="POST"
+            onSubmit={(e) => e.preventDefault()}
           >
-            {/* Netlify hidden inputs */}
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="services" value={servicesValue} />
-            <input type="hidden" name="urgency" value={urgencyValue} />
-            <input type="hidden" name="budget" value={budgetValue} />
 
             {/* Progress bar */}
             <div className="mb-12">

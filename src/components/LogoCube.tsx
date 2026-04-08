@@ -92,9 +92,10 @@ export function LogoCube() {
             <span
               className="select-none"
               style={{
-                fontFamily: '"Lobster", cursive',
-                fontSize: '1.8rem',
-                fontWeight: 400,
+                fontFamily: '"Poppins", sans-serif',
+                fontSize: '1.6rem',
+                fontWeight: 800,
+                fontStyle: 'italic',
                 letterSpacing: '0.02em',
                 color: '#2A0845',
                 textShadow: '0 1px 3px rgba(0,0,0,0.25)',
