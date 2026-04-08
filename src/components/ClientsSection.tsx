@@ -163,7 +163,7 @@ export function ClientsSection() {
             fontWeight: 600,
           }}
         >
-          The <span style={{ color: 'var(--brand-magenta)', fontStyle: 'italic' }}>conspirators</span> we&apos;ve armed.
+          Partners in <span style={{ color: 'var(--brand-magenta)', fontStyle: 'italic' }}>controlled chaos</span>.
         </h3>
       </motion.div>
 

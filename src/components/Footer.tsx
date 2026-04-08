@@ -32,7 +32,7 @@ export function Footer() {
               <img
                 src="/talecrafters-logo.svg"
                 alt="TaleCrafters"
-                className="h-9 w-auto"
+                className="h-11 w-auto"
                 style={{ filter: 'drop-shadow(2px 2px 4px rgba(42,8,69,0.5))' }}
               />
             </div>
