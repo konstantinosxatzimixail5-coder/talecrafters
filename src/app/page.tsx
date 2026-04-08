@@ -13,6 +13,7 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { ContactSection } from '@/components/ContactSection';
 import { ImpCursor } from '@/components/ImpCursor';
+import { ClientsSection } from '@/components/ClientsSection';
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,6 +36,7 @@ export default function HomePage() {
       <PricingSection />
       <BlogSection />
       <CTASection />
+      <ClientsSection />
       <ContactSection />
       <Footer />
     </div>

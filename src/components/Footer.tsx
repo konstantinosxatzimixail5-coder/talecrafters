@@ -128,6 +128,13 @@ export function Footer() {
                   hello@talecrafters.studio
                 </a>
               </div>
+              <div
+                className="text-xs leading-relaxed"
+                style={{ color: 'var(--brand-concrete-light)' }}
+              >
+                71-75 Shelton Street, Covent Garden,<br />
+                London, United Kingdom, WC2H 9JQ
+              </div>
               <div className="pt-4 flex gap-4">
                 {[
                   { label: 'X', color: 'var(--brand-cyan)', href: '#' },
