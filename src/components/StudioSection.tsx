@@ -149,10 +149,10 @@ export function StudioSection() {
           </div>
 
           {/* Right: Layered image collage */}
-          <div className="lg:col-span-6 relative min-h-[500px] md:min-h-[700px]">
+          <div className="lg:col-span-6 relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]">
             {/* Main image */}
             <motion.div
-              className="absolute top-0 right-0 w-[85%] aspect-[3/4] overflow-hidden"
+              className="absolute top-0 right-0 w-[90%] sm:w-[85%] aspect-[3/4] max-h-[500px] md:max-h-none overflow-hidden"
               style={{ y: imgY }}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -176,7 +176,7 @@ export function StudioSection() {
 
             {/* Overlapping secondary image */}
             <motion.div
-              className="absolute bottom-0 left-0 w-[55%] aspect-square overflow-hidden z-10"
+              className="absolute bottom-0 left-0 w-[50%] sm:w-[55%] aspect-square max-h-[300px] md:max-h-none overflow-hidden z-10"
               style={{ y: img2Y }}
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -208,7 +208,7 @@ export function StudioSection() {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-2xl md:text-3xl tracking-tighter text-white">
+              <div className="text-lg sm:text-2xl md:text-3xl tracking-tighter text-white">
                 HUMAN TASTE
               </div>
             </motion.div>
@@ -227,7 +227,7 @@ export function StudioSection() {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-2xl md:text-3xl tracking-tighter">
+              <div className="text-lg sm:text-2xl md:text-3xl tracking-tighter">
                 MACHINE VELOCITY
               </div>
             </motion.div>

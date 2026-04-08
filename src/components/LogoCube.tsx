@@ -135,26 +135,20 @@ export function LogoCube() {
             exit={{ width: 0, opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
-            <motion.span
+            <motion.div
               className="whitespace-nowrap block pl-3"
-              style={{
-                fontFamily: '"Lobster", cursive',
-                fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)',
-                fontWeight: 400,
-                letterSpacing: '0.02em',
-                color: 'var(--brand-white)',
-                lineHeight: 1,
-                WebkitTextStroke: '1.5px #2A0845',
-                paintOrder: 'stroke fill' as const,
-                textShadow: '2px 2px 4px rgba(42,8,69,0.5)',
-              }}
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -20, opacity: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              TaleCrafters
-            </motion.span>
+              <img
+                src="/talecrafters-logo.svg"
+                alt="TaleCrafters"
+                className="h-8 sm:h-9 md:h-10 w-auto"
+                style={{ filter: 'drop-shadow(2px 2px 4px rgba(42,8,69,0.5))' }}
+              />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

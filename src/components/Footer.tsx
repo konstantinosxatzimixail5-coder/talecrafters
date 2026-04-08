@@ -29,20 +29,12 @@ export function Footer() {
                 className="w-12 h-12 object-cover rounded-sm"
                 style={{ filter: 'brightness(1.35) saturate(0.75)' }}
               />
-              <div
-                className="text-3xl"
-                style={{
-                  fontFamily: '"Lobster", cursive',
-                  fontWeight: 400,
-                  letterSpacing: '0.02em',
-                  color: 'var(--brand-white)',
-                  WebkitTextStroke: '1.5px #2A0845',
-                  paintOrder: 'stroke fill' as const,
-                  textShadow: '2px 2px 4px rgba(42,8,69,0.5)',
-                }}
-              >
-                TaleCrafters
-              </div>
+              <img
+                src="/talecrafters-logo.svg"
+                alt="TaleCrafters"
+                className="h-9 w-auto"
+                style={{ filter: 'drop-shadow(2px 2px 4px rgba(42,8,69,0.5))' }}
+              />
             </div>
             <div
               className="text-xs tracking-widest mb-4"

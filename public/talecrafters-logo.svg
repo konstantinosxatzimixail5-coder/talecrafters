@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lobster&amp;display=swap');
+    </style>
+  </defs>
+  <text x="200" y="60" text-anchor="middle" font-family="'Lobster', cursive" font-size="62" fill="#F5F5F0" stroke="#1B1B3A" stroke-width="3" paint-order="stroke fill" letter-spacing="1">TaleCrafters</text>
+</svg>
