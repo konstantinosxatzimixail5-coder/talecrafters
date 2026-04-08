@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 70">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 70">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&amp;display=swap');
     </style>
   </defs>
-  <text x="240" y="52" text-anchor="middle" font-family="'Chakra Petch', sans-serif" font-size="50" font-weight="700" fill="#F5F5F0" stroke="#2E0854" stroke-width="3" paint-order="stroke fill" letter-spacing="2">TaleCrafters</text>
+  <text x="250" y="52" text-anchor="middle" font-family="'Chakra Petch', sans-serif" font-size="50" font-weight="700" font-style="italic" fill="#F5F5F0" stroke="#2E0854" stroke-width="2.5" paint-order="stroke fill" letter-spacing="3">TaleCrafters</text>
 </svg>

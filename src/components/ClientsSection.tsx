@@ -163,7 +163,7 @@ export function ClientsSection() {
             fontWeight: 600,
           }}
         >
-          Partners in <span style={{ color: 'var(--brand-magenta)', fontStyle: 'italic' }}>controlled chaos</span>.
+          Where <span style={{ color: 'var(--brand-magenta)', fontStyle: 'italic' }}>bold brands</span> belong.
         </h3>
       </motion.div>
 

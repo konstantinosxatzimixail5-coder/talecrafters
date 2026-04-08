@@ -24,7 +24,7 @@ export function LogoCube() {
   const showName = !flipped;
 
   return (
-    <div className="flex items-center gap-0 -ml-0.5">
+    <div className="flex items-center gap-0">
       {/* The Cube */}
       <div
         className="w-14 h-14 cursor-pointer flex-shrink-0 relative z-10"
@@ -95,6 +95,7 @@ export function LogoCube() {
                 fontFamily: '"Chakra Petch", sans-serif',
                 fontSize: '1.6rem',
                 fontWeight: 700,
+                fontStyle: 'italic',
                 letterSpacing: '0.05em',
                 color: '#2A0845',
                 textShadow: '0 1px 3px rgba(0,0,0,0.25)',
@@ -136,7 +137,7 @@ export function LogoCube() {
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
             <motion.div
-              className="whitespace-nowrap block pl-1"
+              className="whitespace-nowrap block -ml-1"
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -20, opacity: 0 }}

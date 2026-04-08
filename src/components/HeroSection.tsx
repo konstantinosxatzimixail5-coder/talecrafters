@@ -115,7 +115,7 @@ export function HeroSection() {
 
       {/* Main content */}
       <motion.div
-        className="relative z-10 px-6 md:px-16 lg:px-24 pt-20 md:pt-20"
+        className="relative z-10 px-6 md:px-16 lg:px-24 pt-28 md:pt-20"
         style={{ y: textY, opacity: opacityOut }}
       >
         {/* Top tag line */}
