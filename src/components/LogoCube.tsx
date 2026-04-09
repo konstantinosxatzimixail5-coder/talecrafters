@@ -130,7 +130,7 @@ export function LogoCube() {
       <AnimatePresence>
         {showName && (
           <motion.div
-            className="overflow-hidden -ml-1"
+            className="overflow-hidden ml-2"
             initial={{ width: 0, opacity: 0 }}
             animate={{ width: 'auto', opacity: 1 }}
             exit={{ width: 0, opacity: 0 }}
@@ -146,8 +146,8 @@ export function LogoCube() {
               <img
                 src="/talecrafters-wordmark.webp"
                 alt="TaleCrafters Logo"
-                className="h-20 sm:h-24 md:h-28 w-auto"
-                style={{ mixBlendMode: 'screen' }}
+                className="h-[5rem] sm:h-[5.5rem] md:h-[6rem] w-auto"
+                style={{ mixBlendMode: 'screen', filter: 'brightness(1.15)' }}
               />
             </motion.div>
           </motion.div>
