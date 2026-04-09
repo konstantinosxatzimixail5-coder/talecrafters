@@ -85,8 +85,8 @@ export function LogoCube() {
             style={{
               backfaceVisibility: 'hidden',
               transform: 'rotateY(180deg)',
-              background: 'linear-gradient(135deg, #2E0854 0%, #1a0533 100%)',
-              border: '1px solid rgba(106,13,173,0.4)',
+              background: 'linear-gradient(135deg, var(--brand-cyan) 0%, #0ab8a5 100%)',
+              border: '1px solid rgba(0,229,204,0.4)',
             }}
           >
             <span
@@ -147,7 +147,7 @@ export function LogoCube() {
               <img
                 src="/talecrafters-wordmark.png"
                 alt="TaleCrafters Logo"
-                className="h-[50px] sm:h-[60px] md:h-[80px] w-auto"
+                className="h-[35px] sm:h-[40px] md:h-[45px] w-auto"
               />
             </motion.div>
           </motion.div>
