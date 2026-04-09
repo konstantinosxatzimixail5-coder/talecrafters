@@ -30,10 +30,9 @@ export function Footer() {
                 style={{ filter: 'brightness(1.35) saturate(0.75)' }}
               />
               <img
-                src="/talecrafters-wordmark.webp"
+                src="/talecrafters-wordmark.png"
                 alt="TaleCrafters Logo"
-                className="h-20 w-auto"
-                style={{ mixBlendMode: 'screen', filter: 'brightness(1.15)' }}
+                className="h-[50px] w-auto"
               />
             </div>
             <div

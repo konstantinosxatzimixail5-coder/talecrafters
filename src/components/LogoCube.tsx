@@ -144,10 +144,9 @@ export function LogoCube() {
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               <img
-                src="/talecrafters-wordmark.webp"
+                src="/talecrafters-wordmark.png"
                 alt="TaleCrafters Logo"
-                className="h-[5rem] sm:h-[5.5rem] md:h-[6rem] w-auto"
-                style={{ mixBlendMode: 'screen', filter: 'brightness(1.15)' }}
+                className="h-[40px] sm:h-[50px] md:h-[60px] w-auto"
               />
             </motion.div>
           </motion.div>
