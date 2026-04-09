@@ -97,9 +97,8 @@ export function LogoCube() {
                 fontWeight: 400,
                 fontStyle: 'italic',
                 letterSpacing: '0.02em',
-                color: '#F5F5F0',
-                textShadow: '0 0 8px rgba(106,13,173,0.9), 0 0 20px rgba(106,13,173,0.5), 0 1px 3px rgba(0,0,0,0.4)',
-                WebkitTextStroke: '1px #2E0854',
+                color: '#2E0854',
+                textShadow: '0 1px 3px rgba(0,0,0,0.25)',
               }}
             >
               TC
