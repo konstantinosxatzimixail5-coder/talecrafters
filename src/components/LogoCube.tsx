@@ -85,20 +85,21 @@ export function LogoCube() {
             style={{
               backfaceVisibility: 'hidden',
               transform: 'rotateY(180deg)',
-              background: 'linear-gradient(135deg, var(--brand-cyan) 0%, #0ab8a5 100%)',
-              border: '1px solid rgba(0,229,204,0.4)',
+              background: 'linear-gradient(135deg, #2E0854 0%, #1a0533 100%)',
+              border: '1px solid rgba(106,13,173,0.4)',
             }}
           >
             <span
               className="select-none"
               style={{
-                fontFamily: '"Chakra Petch", sans-serif',
-                fontSize: '1.6rem',
-                fontWeight: 700,
+                fontFamily: '"Lobster", cursive',
+                fontSize: '1.8rem',
+                fontWeight: 400,
                 fontStyle: 'italic',
-                letterSpacing: '0.05em',
-                color: '#2A0845',
-                textShadow: '0 1px 3px rgba(0,0,0,0.25)',
+                letterSpacing: '0.02em',
+                color: '#F5F5F0',
+                textShadow: '0 0 8px rgba(106,13,173,0.9), 0 0 20px rgba(106,13,173,0.5), 0 1px 3px rgba(0,0,0,0.4)',
+                WebkitTextStroke: '1px #2E0854',
               }}
             >
               TC
@@ -146,7 +147,7 @@ export function LogoCube() {
               <img
                 src="/talecrafters-wordmark.png"
                 alt="TaleCrafters Logo"
-                className="h-[40px] sm:h-[50px] md:h-[60px] w-auto"
+                className="h-[50px] sm:h-[60px] md:h-[80px] w-auto"
               />
             </motion.div>
           </motion.div>
