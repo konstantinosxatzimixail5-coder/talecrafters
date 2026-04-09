@@ -22,7 +22,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           {/* Brand column */}
           <div className="md:col-span-4">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-0 mb-4">
               <img
                 src="/logo.png"
                 alt="TaleCrafters — Synthetic Media Studio Logo"
@@ -30,10 +30,10 @@ export function Footer() {
                 style={{ filter: 'brightness(1.35) saturate(0.75)' }}
               />
               <img
-                src="/talecrafters-logo.svg"
-                alt="TaleCrafters"
-                className="h-11 w-auto"
-                style={{ filter: 'drop-shadow(2px 2px 4px rgba(42,8,69,0.5))' }}
+                src="/talecrafters-wordmark.webp"
+                alt="TaleCrafters Logo"
+                className="h-12 w-auto -ml-1"
+                style={{ mixBlendMode: 'screen' }}
               />
             </div>
             <div

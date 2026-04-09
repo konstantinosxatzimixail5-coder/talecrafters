@@ -163,7 +163,7 @@ export function ClientsSection() {
             fontWeight: 600,
           }}
         >
-          Where <span style={{ color: 'var(--brand-magenta)', fontStyle: 'italic' }}>bold brands</span> belong.
+          The brands that <span style={{ color: 'var(--brand-magenta)', fontStyle: 'italic' }}>get it</span>.
         </h3>
       </motion.div>
 
