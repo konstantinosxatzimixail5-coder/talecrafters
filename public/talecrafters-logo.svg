@@ -1,10 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 40">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 36">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&amp;display=swap');
     </style>
   </defs>
-  <g transform="skewX(-3)">
-    <text x="185" y="31" text-anchor="middle" font-family="'Rajdhani', sans-serif" font-size="34" font-weight="700" fill="#F5F5F0" letter-spacing="4">TALECRAFTERS</text>
-  </g>
+  <text x="150" y="27" text-anchor="middle" font-family="'Raleway', sans-serif" font-size="28" font-weight="700" fill="#F5F5F0" letter-spacing="3">TaleCrafters</text>
 </svg>

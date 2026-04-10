@@ -92,10 +92,10 @@ export function LogoCube() {
             <span
               className="select-none"
               style={{
-                fontFamily: '"Rajdhani", sans-serif',
-                fontSize: '1.6rem',
+                fontFamily: '"Raleway", sans-serif',
+                fontSize: '1.5rem',
                 fontWeight: 700,
-                letterSpacing: '0.1em',
+                letterSpacing: '0.08em',
                 color: '#2E0854',
                 textShadow: '0 1px 3px rgba(0,0,0,0.25)',
               }}
@@ -129,7 +129,7 @@ export function LogoCube() {
       <AnimatePresence>
         {showName && (
           <motion.div
-            className="overflow-hidden ml-2"
+            className="overflow-hidden ml-1"
             initial={{ width: 0, opacity: 0 }}
             animate={{ width: 'auto', opacity: 1 }}
             exit={{ width: 0, opacity: 0 }}

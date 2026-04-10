@@ -22,7 +22,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           {/* Brand column */}
           <div className="md:col-span-4">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-1 mb-4">
               <img
                 src="/logo.png"
                 alt="TaleCrafters — Synthetic Media Studio Logo"

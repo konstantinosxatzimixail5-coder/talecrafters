@@ -81,6 +81,23 @@ function CocoonIcon() {
   );
 }
 
+function BaklatsidisIcon() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <rect x="4" y="3" width="18" height="26" rx="2" stroke="url(#bak-grad)" strokeWidth="2.5" fill="none" />
+      <path d="M10 3V29" stroke="url(#bak-grad)" strokeWidth="2.5" />
+      <path d="M10 16H20C22.2 16 24 14.2 24 12V11C24 8.8 22.2 7 20 7H10" stroke="url(#bak-grad)" strokeWidth="2" fill="none" />
+      <path d="M10 16H21C23.8 16 26 18.2 26 21V22C26 24.8 23.8 27 21 27H10" stroke="url(#bak-grad)" strokeWidth="2" fill="none" />
+      <defs>
+        <linearGradient id="bak-grad" x1="4" y1="3" x2="26" y2="29">
+          <stop stopColor="#1A3A4A" />
+          <stop offset="1" stopColor="#0E7C86" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
 const clients = [
   {
     name: 'convene',
@@ -123,6 +140,11 @@ const clients = [
     name: 'COCOON',
     icon: CocoonIcon,
     textStyle: { fontFamily: 'var(--font-display)', fontWeight: 800, color: '#4CAF50', letterSpacing: '0.04em' },
+  },
+  {
+    name: 'BAKLATSIDIS BROS',
+    icon: BaklatsidisIcon,
+    textStyle: { fontFamily: 'var(--font-display)', fontWeight: 700, color: '#0E7C86', letterSpacing: '0.06em' },
   },
 ];
 
