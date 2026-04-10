@@ -92,7 +92,7 @@ export function LogoCube() {
             <span
               className="select-none"
               style={{
-                fontFamily: '"Raleway", sans-serif',
+                fontFamily: '"Sackers Gothic", "Raleway", sans-serif',
                 fontSize: '1.5rem',
                 fontWeight: 700,
                 letterSpacing: '0.08em',
@@ -129,7 +129,7 @@ export function LogoCube() {
       <AnimatePresence>
         {showName && (
           <motion.div
-            className="overflow-hidden ml-1"
+            className="overflow-hidden ml-[6px]"
             initial={{ width: 0, opacity: 0 }}
             animate={{ width: 'auto', opacity: 1 }}
             exit={{ width: 0, opacity: 0 }}
@@ -142,11 +142,17 @@ export function LogoCube() {
               exit={{ x: -20, opacity: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              <img
-                src="/talecrafters-logo.svg"
-                alt="TaleCrafters Logo"
-                className="h-[22px] sm:h-[26px] md:h-[30px] w-auto"
-              />
+              <span
+                className="text-[1rem] sm:text-[1.4rem] md:text-[1.9rem] leading-none"
+                style={{
+                  fontFamily: '"Sackers Gothic", "Raleway", sans-serif',
+                  fontWeight: 700,
+                  color: 'var(--brand-white)',
+                  letterSpacing: '0.12em',
+                }}
+              >
+                TaleCrafters
+              </span>
             </motion.div>
           </motion.div>
         )}
