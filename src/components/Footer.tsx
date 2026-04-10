@@ -30,9 +30,9 @@ export function Footer() {
                 style={{ filter: 'brightness(1.35) saturate(0.75)' }}
               />
               <img
-                src="/talecrafters-wordmark.png"
+                src="/talecrafters-logo.svg"
                 alt="TaleCrafters Logo"
-                className="h-[50px] w-auto"
+                className="h-[28px] w-auto"
               />
             </div>
             <div

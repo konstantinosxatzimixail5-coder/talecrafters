@@ -92,11 +92,10 @@ export function LogoCube() {
             <span
               className="select-none"
               style={{
-                fontFamily: '"Lobster", cursive',
-                fontSize: '1.8rem',
-                fontWeight: 400,
-                fontStyle: 'italic',
-                letterSpacing: '0.02em',
+                fontFamily: '"Rajdhani", sans-serif',
+                fontSize: '1.6rem',
+                fontWeight: 700,
+                letterSpacing: '0.1em',
                 color: '#2E0854',
                 textShadow: '0 1px 3px rgba(0,0,0,0.25)',
               }}
@@ -144,9 +143,9 @@ export function LogoCube() {
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               <img
-                src="/talecrafters-wordmark.png"
+                src="/talecrafters-logo.svg"
                 alt="TaleCrafters Logo"
-                className="h-[35px] sm:h-[40px] md:h-[45px] w-auto"
+                className="h-[22px] sm:h-[26px] md:h-[30px] w-auto"
               />
             </motion.div>
           </motion.div>
