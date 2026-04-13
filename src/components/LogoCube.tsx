@@ -85,15 +85,14 @@ export function LogoCube() {
             style={{
               backfaceVisibility: 'hidden',
               transform: 'rotateY(180deg)',
-              backgroundColor: '#0a0a0a',
-              border: '1px solid rgba(0,229,204,0.3)',
+              background: 'linear-gradient(135deg, var(--brand-cyan) 0%, #0ab8a5 100%)',
+              border: '1px solid rgba(0,229,204,0.4)',
             }}
           >
             <img
               src="/tc-icon.png"
               alt="TC"
-              className="w-[85%] h-[85%] object-contain select-none"
-              style={{ mixBlendMode: 'screen' }}
+              className="w-[88%] h-[88%] object-contain select-none"
             />
             {/* Glitch on back too */}
             {glitch && (

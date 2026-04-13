@@ -7,34 +7,34 @@ import { motion } from 'motion/react';
 /* 1. Story > Everything — open book with glowing pages */
 function StoryIcon({ color }: { color: string }) {
   return (
-    <motion.svg width="40" height="40" viewBox="0 0 40 40" fill="none" whileHover={{ scale: 1.15 }}>
+    <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15 }}>
       {/* Book spine */}
-      <motion.path d="M20 6V34" stroke={color} strokeWidth="2" opacity="0.4" />
+      <motion.path d="M22 6V38" stroke={color} strokeWidth="2.2" opacity="0.5" />
       {/* Left page */}
       <motion.path
-        d="M20 6C16 6 6 7 4 10V32C6 29 16 28 20 28"
-        stroke={color} strokeWidth="1.8" fill="none"
+        d="M22 6C18 6 7 7 5 10V35C7 32 18 31 22 31"
+        stroke={color} strokeWidth="2.2" fill="none"
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
         transition={{ duration: 1 }} viewport={{ once: true }}
       />
       {/* Right page */}
       <motion.path
-        d="M20 6C24 6 34 7 36 10V32C34 29 24 28 20 28"
-        stroke={color} strokeWidth="1.8" fill="none"
+        d="M22 6C26 6 37 7 39 10V35C37 32 26 31 22 31"
+        stroke={color} strokeWidth="2.2" fill="none"
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
         transition={{ duration: 1, delay: 0.2 }} viewport={{ once: true }}
       />
       {/* Glow pulse from center */}
-      <motion.circle cx="20" cy="17" r="5" fill={color} opacity="0.12"
-        animate={{ r: [5, 9, 5], opacity: [0.12, 0.25, 0.12] }}
+      <motion.circle cx="22" cy="18" r="5" fill={color} opacity="0.15"
+        animate={{ r: [5, 10, 5], opacity: [0.15, 0.3, 0.15] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
       />
       {/* Text lines on left page */}
-      <motion.line x1="9" y1="16" x2="17" y2="16" stroke={color} strokeWidth="1" opacity="0.35"
-        animate={{ opacity: [0.2, 0.5, 0.2] }} transition={{ duration: 2.5, repeat: Infinity }}
+      <motion.line x1="10" y1="17" x2="19" y2="17" stroke={color} strokeWidth="1.5" opacity="0.45"
+        animate={{ opacity: [0.3, 0.6, 0.3] }} transition={{ duration: 2.5, repeat: Infinity }}
       />
-      <motion.line x1="9" y1="20" x2="15" y2="20" stroke={color} strokeWidth="1" opacity="0.25" />
-      <motion.line x1="9" y1="24" x2="16" y2="24" stroke={color} strokeWidth="1" opacity="0.25" />
+      <motion.line x1="10" y1="21" x2="17" y2="21" stroke={color} strokeWidth="1.5" opacity="0.35" />
+      <motion.line x1="10" y1="25" x2="18" y2="25" stroke={color} strokeWidth="1.5" opacity="0.35" />
     </motion.svg>
   );
 }
@@ -42,29 +42,29 @@ function StoryIcon({ color }: { color: string }) {
 /* 2. Speed Without Sacrifice — dual arrows racing with trail */
 function VelocityIcon({ color }: { color: string }) {
   return (
-    <motion.svg width="40" height="40" viewBox="0 0 40 40" fill="none" whileHover={{ scale: 1.15 }}>
+    <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15 }}>
       {/* Speed trails */}
-      <motion.line x1="4" y1="14" x2="18" y2="14" stroke={color} strokeWidth="1.5" opacity="0.2"
-        animate={{ x1: [2, 8, 2], opacity: [0.15, 0.35, 0.15] }}
+      <motion.line x1="4" y1="15" x2="20" y2="15" stroke={color} strokeWidth="2" opacity="0.3"
+        animate={{ x1: [2, 9, 2], opacity: [0.2, 0.45, 0.2] }}
         transition={{ duration: 1.5, repeat: Infinity }}
       />
-      <motion.line x1="6" y1="20" x2="22" y2="20" stroke={color} strokeWidth="1.5" opacity="0.2"
-        animate={{ x1: [4, 10, 4], opacity: [0.15, 0.35, 0.15] }}
+      <motion.line x1="6" y1="22" x2="24" y2="22" stroke={color} strokeWidth="2" opacity="0.3"
+        animate={{ x1: [4, 11, 4], opacity: [0.2, 0.45, 0.2] }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
       />
-      <motion.line x1="4" y1="26" x2="18" y2="26" stroke={color} strokeWidth="1.5" opacity="0.2"
-        animate={{ x1: [2, 8, 2], opacity: [0.15, 0.35, 0.15] }}
+      <motion.line x1="4" y1="29" x2="20" y2="29" stroke={color} strokeWidth="2" opacity="0.3"
+        animate={{ x1: [2, 9, 2], opacity: [0.2, 0.45, 0.2] }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }}
       />
       {/* Arrow head */}
       <motion.path
-        d="M24 8L36 20L24 32" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"
+        d="M26 8L40 22L26 36" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
         transition={{ duration: 0.7 }} viewport={{ once: true }}
       />
       {/* Inner arrow */}
       <motion.path
-        d="M18 14L26 20L18 26" stroke={color} strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.5"
+        d="M19 15L28 22L19 29" stroke={color} strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.6"
         animate={{ x: [0, 3, 0] }} transition={{ duration: 1.2, repeat: Infinity }}
       />
     </motion.svg>
@@ -74,30 +74,30 @@ function VelocityIcon({ color }: { color: string }) {
 /* 3. No Sacred Cows — shattered shield */
 function SacredCowIcon({ color }: { color: string }) {
   return (
-    <motion.svg width="40" height="40" viewBox="0 0 40 40" fill="none" whileHover={{ scale: 1.15, rotate: 5 }}>
+    <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15, rotate: 5 }}>
       {/* Shield outline */}
       <motion.path
-        d="M20 4L6 12V22C6 30 20 36 20 36C20 36 34 30 34 22V12L20 4Z"
-        stroke={color} strokeWidth="1.8" fill="none"
+        d="M22 4L7 13V24C7 33 22 40 22 40C22 40 37 33 37 24V13L22 4Z"
+        stroke={color} strokeWidth="2.2" fill="none"
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
         transition={{ duration: 1 }} viewport={{ once: true }}
       />
       {/* Crack lines */}
-      <motion.path d="M20 10L17 18L22 22L18 30" stroke={color} strokeWidth="1.5" fill="none"
+      <motion.path d="M22 10L19 19L24 24L19 33" stroke={color} strokeWidth="2" fill="none"
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
         transition={{ duration: 0.5, delay: 0.8 }} viewport={{ once: true }}
       />
-      <motion.path d="M17 18L12 20" stroke={color} strokeWidth="1.2" fill="none" opacity="0.6"
+      <motion.path d="M19 19L13 21" stroke={color} strokeWidth="1.8" fill="none" opacity="0.7"
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
         transition={{ duration: 0.3, delay: 1.1 }} viewport={{ once: true }}
       />
-      <motion.path d="M22 22L27 21" stroke={color} strokeWidth="1.2" fill="none" opacity="0.6"
+      <motion.path d="M24 24L30 23" stroke={color} strokeWidth="1.8" fill="none" opacity="0.7"
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
         transition={{ duration: 0.3, delay: 1.2 }} viewport={{ once: true }}
       />
       {/* Impact glow */}
-      <motion.circle cx="20" cy="20" r="4" fill={color} opacity="0.1"
-        animate={{ r: [3, 7, 3], opacity: [0.08, 0.2, 0.08] }}
+      <motion.circle cx="22" cy="22" r="5" fill={color} opacity="0.12"
+        animate={{ r: [4, 8, 4], opacity: [0.1, 0.25, 0.1] }}
         transition={{ duration: 2.5, repeat: Infinity }}
       />
     </motion.svg>
@@ -107,65 +107,66 @@ function SacredCowIcon({ color }: { color: string }) {
 /* 4. Tension Is Currency — crosshair with pulsing core */
 function TensionIcon({ color }: { color: string }) {
   return (
-    <motion.svg width="40" height="40" viewBox="0 0 40 40" fill="none" whileHover={{ scale: 1.15 }}>
+    <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15 }}>
       {/* Outer ring */}
-      <motion.circle cx="20" cy="20" r="15" stroke={color} strokeWidth="1.5" fill="none" strokeDasharray="4 3"
+      <motion.circle cx="22" cy="22" r="17" stroke={color} strokeWidth="2" fill="none" strokeDasharray="4 3"
         animate={{ rotate: 360 }} transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-        style={{ transformOrigin: '20px 20px' }}
+        style={{ transformOrigin: '22px 22px' }}
       />
       {/* Inner ring */}
-      <motion.circle cx="20" cy="20" r="8" stroke={color} strokeWidth="1.5" fill="none"
+      <motion.circle cx="22" cy="22" r="9" stroke={color} strokeWidth="2" fill="none"
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
         transition={{ duration: 0.8 }} viewport={{ once: true }}
       />
       {/* Crosshair lines */}
-      <motion.line x1="20" y1="2" x2="20" y2="10" stroke={color} strokeWidth="1.5" opacity="0.5" />
-      <motion.line x1="20" y1="30" x2="20" y2="38" stroke={color} strokeWidth="1.5" opacity="0.5" />
-      <motion.line x1="2" y1="20" x2="10" y2="20" stroke={color} strokeWidth="1.5" opacity="0.5" />
-      <motion.line x1="30" y1="20" x2="38" y2="20" stroke={color} strokeWidth="1.5" opacity="0.5" />
+      <motion.line x1="22" y1="2" x2="22" y2="11" stroke={color} strokeWidth="2" opacity="0.6" />
+      <motion.line x1="22" y1="33" x2="22" y2="42" stroke={color} strokeWidth="2" opacity="0.6" />
+      <motion.line x1="2" y1="22" x2="11" y2="22" stroke={color} strokeWidth="2" opacity="0.6" />
+      <motion.line x1="33" y1="22" x2="42" y2="22" stroke={color} strokeWidth="2" opacity="0.6" />
       {/* Pulsing core */}
-      <motion.circle cx="20" cy="20" r="3" fill={color}
-        animate={{ r: [2.5, 4, 2.5], opacity: [0.6, 1, 0.6] }}
+      <motion.circle cx="22" cy="22" r="3.5" fill={color}
+        animate={{ r: [3, 5, 3], opacity: [0.7, 1, 0.7] }}
         transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
       />
     </motion.svg>
   );
 }
 
-/* 5. Humor Or Death — theatre masks morphing */
+/* 5. Humor Or Death — laughing skull */
 function SkullIcon({ color }: { color: string }) {
   return (
-    <motion.svg width="40" height="40" viewBox="0 0 40 40" fill="none" whileHover={{ scale: 1.15, y: -2 }}>
-      {/* Happy mask */}
+    <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15, y: -2 }}>
+      {/* Skull dome */}
       <motion.path
-        d="M6 12C6 6 12 4 16 4H18C18 4 14 8 14 14C14 18 16 20 16 20"
-        stroke={color} strokeWidth="1.8" fill="none"
+        d="M10 24C8 18 8 8 22 4C36 8 36 18 34 24V30H10V24Z"
+        stroke={color} strokeWidth="2.2" fill="none"
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        transition={{ duration: 0.8 }} viewport={{ once: true }}
+        transition={{ duration: 1 }} viewport={{ once: true }}
       />
-      <motion.circle cx="12" cy="12" r="1.5" fill={color}
-        animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity }}
+      {/* Left eye — winking */}
+      <motion.circle cx="16" cy="17" r="3" fill={color}
+        animate={{ scaleY: [1, 0.2, 1] }}
+        transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
       />
-      <motion.path d="M9 17C10 19 14 19 15 17" stroke={color} strokeWidth="1.5" fill="none" strokeLinecap="round" />
-      {/* Sad mask */}
+      {/* Right eye */}
+      <motion.circle cx="28" cy="17" r="3" fill={color}
+        animate={{ opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 1.5, repeat: Infinity }}
+      />
+      {/* Big grin */}
       <motion.path
-        d="M34 16C34 10 28 8 24 8H22C22 8 26 12 26 18C26 22 24 24 24 24"
-        stroke={color} strokeWidth="1.8" fill="none"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }} viewport={{ once: true }}
+        d="M14 26C16 30 28 30 30 26"
+        stroke={color} strokeWidth="2" fill="none" strokeLinecap="round"
       />
-      <motion.circle cx="28" cy="16" r="1.5" fill={color}
-        animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-      />
-      <motion.path d="M25 23C26 21 30 21 31 23" stroke={color} strokeWidth="1.5" fill="none" strokeLinecap="round" />
-      {/* Connection spark */}
-      <motion.circle cx="20" cy="20" r="2" fill={color} opacity="0.3"
-        animate={{ scale: [1, 1.8, 1], opacity: [0.2, 0.5, 0.2] }}
-        transition={{ duration: 2.5, repeat: Infinity }}
-      />
-      {/* Ribbon */}
-      <motion.path d="M14 28C16 32 24 32 26 28" stroke={color} strokeWidth="1.2" fill="none" opacity="0.4"
-        animate={{ d: ['M14 28C16 32 24 32 26 28', 'M14 28C16 34 24 34 26 28', 'M14 28C16 32 24 32 26 28'] }}
+      {/* Teeth */}
+      <motion.line x1="18" y1="26" x2="18" y2="29" stroke={color} strokeWidth="1.5" opacity="0.7" />
+      <motion.line x1="22" y1="26" x2="22" y2="30" stroke={color} strokeWidth="1.5" opacity="0.7" />
+      <motion.line x1="26" y1="26" x2="26" y2="29" stroke={color} strokeWidth="1.5" opacity="0.7" />
+      {/* Jaw */}
+      <motion.path d="M10 30V34H34V30" stroke={color} strokeWidth="2" fill="none" />
+      {/* Glow behind skull */}
+      <motion.circle cx="22" cy="20" r="12" fill={color} opacity="0.06"
+        animate={{ r: [10, 16, 10], opacity: [0.04, 0.1, 0.04] }}
         transition={{ duration: 3, repeat: Infinity }}
       />
     </motion.svg>
@@ -175,25 +176,25 @@ function SkullIcon({ color }: { color: string }) {
 /* 6. Content = Culture — signal wave broadcasting */
 function CultureIcon({ color }: { color: string }) {
   return (
-    <motion.svg width="40" height="40" viewBox="0 0 40 40" fill="none" whileHover={{ scale: 1.15 }}>
+    <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15 }}>
       {/* Antenna base */}
-      <motion.path d="M20 22V36" stroke={color} strokeWidth="2" opacity="0.5" />
-      <motion.path d="M14 36H26" stroke={color} strokeWidth="2" opacity="0.4" />
+      <motion.path d="M22 24V40" stroke={color} strokeWidth="2.2" opacity="0.6" />
+      <motion.path d="M15 40H29" stroke={color} strokeWidth="2.2" opacity="0.5" />
       {/* Signal dot */}
-      <motion.circle cx="20" cy="18" r="3" fill={color}
-        animate={{ opacity: [0.7, 1, 0.7] }} transition={{ duration: 1.5, repeat: Infinity }}
+      <motion.circle cx="22" cy="20" r="3.5" fill={color}
+        animate={{ opacity: [0.8, 1, 0.8] }} transition={{ duration: 1.5, repeat: Infinity }}
       />
       {/* Wave rings expanding outward */}
-      <motion.path d="M12 18C12 13.5 15.5 10 20 10C24.5 10 28 13.5 28 18" stroke={color} strokeWidth="1.5" fill="none"
-        animate={{ opacity: [0.5, 0.15, 0.5] }}
+      <motion.path d="M13 20C13 15 17 11 22 11C27 11 31 15 31 20" stroke={color} strokeWidth="2" fill="none"
+        animate={{ opacity: [0.6, 0.2, 0.6] }}
         transition={{ duration: 2, repeat: Infinity }}
       />
-      <motion.path d="M7 18C7 10.8 13 5 20 5C27 5 33 10.8 33 18" stroke={color} strokeWidth="1.2" fill="none"
-        animate={{ opacity: [0.3, 0.1, 0.3] }}
+      <motion.path d="M7 20C7 11.7 14 5 22 5C30 5 37 11.7 37 20" stroke={color} strokeWidth="1.8" fill="none"
+        animate={{ opacity: [0.4, 0.15, 0.4] }}
         transition={{ duration: 2, repeat: Infinity, delay: 0.4 }}
       />
-      <motion.path d="M3 18C3 8.6 10.6 1 20 1C29.4 1 37 8.6 37 18" stroke={color} strokeWidth="1" fill="none"
-        animate={{ opacity: [0.15, 0.05, 0.15] }}
+      <motion.path d="M2 20C2 9 11 1 22 1C33 1 42 9 42 20" stroke={color} strokeWidth="1.5" fill="none"
+        animate={{ opacity: [0.25, 0.08, 0.25] }}
         transition={{ duration: 2, repeat: Infinity, delay: 0.8 }}
       />
     </motion.svg>
