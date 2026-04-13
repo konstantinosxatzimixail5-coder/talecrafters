@@ -79,29 +79,22 @@ export function LogoCube() {
             />
           </div>
 
-          {/* Back — TC */}
+          {/* Back — TC icon */}
           <div
-            className="absolute inset-0 rounded-sm flex items-center justify-center"
+            className="absolute inset-0 rounded-sm flex items-center justify-center p-1"
             style={{
               backfaceVisibility: 'hidden',
               transform: 'rotateY(180deg)',
-              background: 'linear-gradient(135deg, var(--brand-cyan) 0%, #0ab8a5 100%)',
-              border: '1px solid rgba(0,229,204,0.4)',
+              backgroundColor: '#0a0a0a',
+              border: '1px solid rgba(0,229,204,0.3)',
             }}
           >
-            <span
-              className="select-none"
-              style={{
-                fontFamily: '"Sackers Gothic", "Raleway", sans-serif',
-                fontSize: '1.5rem',
-                fontWeight: 700,
-                letterSpacing: '0.08em',
-                color: '#2E0854',
-                textShadow: '0 1px 3px rgba(0,0,0,0.25)',
-              }}
-            >
-              TC
-            </span>
+            <img
+              src="/tc-icon.png"
+              alt="TC"
+              className="w-[85%] h-[85%] object-contain select-none"
+              style={{ mixBlendMode: 'screen' }}
+            />
             {/* Glitch on back too */}
             {glitch && (
               <div

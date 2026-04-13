@@ -245,7 +245,7 @@ export function ProcessSection() {
           >
             We make algorithms jealous of human creativity.{' '}
             <span style={{ color: 'var(--brand-cyan)' }}>Then we steal their lunch money.</span>{' '}
-            We design stories that make people{' '}
+            Our stories make people{' '}
             <span style={{ color: 'var(--brand-magenta)' }}>stop mid-scroll,</span>{' '}
             cancel meetings, and question whether they've been doing content wrong their entire lives.
             <span
