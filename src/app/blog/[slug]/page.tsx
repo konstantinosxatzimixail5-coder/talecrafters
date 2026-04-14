@@ -113,7 +113,7 @@ const portableTextComponents = {
     h2: ({ children }: any) => (
       <h2
         className="text-3xl md:text-4xl tracking-tighter mt-12 mb-4"
-        style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-white)' }}
+        style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-cyan)' }}
       >
         {children}
       </h2>
@@ -121,7 +121,7 @@ const portableTextComponents = {
     h3: ({ children }: any) => (
       <h3
         className="text-2xl tracking-tight mt-8 mb-3"
-        style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-white)' }}
+        style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-cyan)' }}
       >
         {children}
       </h3>
@@ -129,26 +129,27 @@ const portableTextComponents = {
     h4: ({ children }: any) => (
       <h4
         className="text-xl tracking-tight mt-6 mb-2"
-        style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-white)' }}
+        style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-cyan)' }}
       >
         {children}
       </h4>
     ),
     blockquote: ({ children }: any) => (
       <blockquote
-        className="my-6 pl-6 py-2"
+        className="my-8 pl-6 py-3"
         style={{
-          borderLeft: '3px solid var(--brand-magenta)',
-          color: 'var(--brand-concrete-light)',
+          borderLeft: '4px solid var(--brand-magenta)',
+          color: '#E0E0E0',
           fontStyle: 'italic',
-          fontSize: '1.1rem',
+          fontSize: '1.2rem',
+          lineHeight: 1.7,
         }}
       >
         {children}
       </blockquote>
     ),
     normal: ({ children }: any) => (
-      <p className="mb-5 leading-relaxed" style={{ color: 'var(--brand-concrete-light)', fontSize: '1.05rem' }}>
+      <p className="mb-5" style={{ color: '#D9D9D9', fontSize: '1.08rem', lineHeight: 1.8 }}>
         {children}
       </p>
     ),
@@ -187,7 +188,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     >
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <div className="max-w-3xl mx-auto px-6 pt-24 pb-24">
+      <div className="mx-auto px-6 pt-24 pb-24" style={{ maxWidth: '750px' }}>
         <Link
           href="/blog"
           className="inline-flex items-center gap-2 text-sm mb-12 transition-colors"
@@ -218,7 +219,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           <h1
             className="text-4xl md:text-5xl lg:text-6xl tracking-tighter mb-6"
-            style={{ fontFamily: 'var(--font-display)', lineHeight: 0.95 }}
+            style={{ fontFamily: 'var(--font-display)', lineHeight: 0.95, color: '#FFFFFF' }}
           >
             {post.title}
           </h1>

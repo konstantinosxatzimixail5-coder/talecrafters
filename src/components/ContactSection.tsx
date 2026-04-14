@@ -29,13 +29,7 @@ const projectTypes = [
   { id: 'wildcard', label: 'Something Unhinged', color: 'var(--brand-violet)', icon: Sparkles },
 ];
 
-const budgetRanges = [
-  { id: 'starter', label: '£2K — £5K', note: 'Testing the waters' },
-  { id: 'serious', label: '£5K — £15K', note: 'Getting serious' },
-  { id: 'arsenal', label: '£15K — £50K', note: 'Full arsenal deployed' },
-  { id: 'unlimited', label: '£50K+', note: 'World domination budget' },
-  { id: 'no-idea', label: 'No clue', note: 'Let\'s figure it out' },
-];
+// Budget is now a free-text input + "No clue" toggle
 
 const urgencyLevels = [
   { id: 'yesterday', label: 'YESTERDAY', color: 'var(--brand-magenta)', desc: 'We needed this last week' },
@@ -78,7 +72,7 @@ export function ContactSection() {
   const handleSubmit = async () => {
     const servicesStr = selectedTypes.map(t => projectTypes.find(p => p.id === t)?.label).join(', ');
     const urgencyStr = urgencyLevels.find(u => u.id === urgency)?.label || '';
-    const budgetStr = budgetRanges.find(b => b.id === budget)?.label || 'Not specified';
+    const budgetStr = budget || 'Not specified';
 
     try {
       const res = await fetch('/api/contact', {
@@ -127,7 +121,7 @@ export function ContactSection() {
 
   const servicesValue = selectedTypes.map(t => projectTypes.find(p => p.id === t)?.label).join(', ');
   const urgencyValue = urgencyLevels.find(u => u.id === urgency)?.label || '';
-  const budgetValue = budgetRanges.find(b => b.id === budget)?.label || '';
+  const budgetValue = budget || '';
 
   return (
     <section
@@ -383,7 +377,7 @@ export function ContactSection() {
                       })}
                     </div>
 
-                    {/* Budget selection */}
+                    {/* Budget input */}
                     <div>
                       <label
                         className="block text-xs tracking-widest mb-4"
@@ -391,28 +385,38 @@ export function ContactSection() {
                       >
                         BUDGET RANGE (OPTIONAL)
                       </label>
-                      <div className="flex flex-wrap gap-2">
-                        {budgetRanges.map((range) => {
-                          const isSelected = budget === range.id;
-                          return (
-                            <motion.button
-                              key={range.id}
-                              type="button"
-                              className="px-4 py-2 text-xs tracking-wider"
-                              style={{
-                                fontFamily: 'var(--font-mono)',
-                                backgroundColor: isSelected ? 'var(--brand-gold)' : 'transparent',
-                                color: isSelected ? 'var(--brand-black)' : 'var(--brand-concrete-light)',
-                                border: `1px solid ${isSelected ? 'var(--brand-gold)' : 'var(--brand-concrete)'}`,
-                              }}
-                              onClick={() => setBudget(isSelected ? '' : range.id)}
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                            >
-                              {range.label}
-                            </motion.button>
-                          );
-                        })}
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <input
+                          type="text"
+                          placeholder="e.g. £5K — £15K"
+                          value={budget === 'No clue' ? '' : budget}
+                          onChange={(e) => setBudget(e.target.value)}
+                          disabled={budget === 'No clue'}
+                          className="flex-1 px-4 py-3 text-sm"
+                          style={{
+                            fontFamily: 'var(--font-mono)',
+                            backgroundColor: budget === 'No clue' ? 'rgba(255,255,255,0.02)' : 'transparent',
+                            color: budget === 'No clue' ? 'var(--brand-concrete)' : 'var(--brand-white)',
+                            border: '1px solid var(--brand-concrete)',
+                            outline: 'none',
+                            opacity: budget === 'No clue' ? 0.4 : 1,
+                          }}
+                        />
+                        <motion.button
+                          type="button"
+                          className="px-4 py-3 text-xs tracking-wider whitespace-nowrap"
+                          style={{
+                            fontFamily: 'var(--font-mono)',
+                            backgroundColor: budget === 'No clue' ? 'var(--brand-gold)' : 'transparent',
+                            color: budget === 'No clue' ? 'var(--brand-black)' : 'var(--brand-concrete-light)',
+                            border: `1px solid ${budget === 'No clue' ? 'var(--brand-gold)' : 'var(--brand-concrete)'}`,
+                          }}
+                          onClick={() => setBudget(budget === 'No clue' ? '' : 'No clue')}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          No clue — let&apos;s figure it out
+                        </motion.button>
                       </div>
                     </div>
                   </div>

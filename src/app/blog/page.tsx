@@ -77,13 +77,13 @@ export default async function BlogPage() {
           className="text-5xl md:text-7xl tracking-tighter mb-4"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          THOUGHTS<span style={{ color: 'var(--brand-magenta)' }}>.</span>
+          THOUGHTS, UNFILTERED<span style={{ color: 'var(--brand-magenta)' }}>.</span>
         </h1>
         <p
           className="text-lg max-w-2xl"
           style={{ color: 'var(--brand-concrete-light)' }}
         >
-          Dispatches from the frontlines of synthetic media, storytelling, and creative chaos.
+          Unfiltered opinions on creativity, technology, and why most brands are terrified of being interesting.
         </p>
       </div>
 
