@@ -77,7 +77,7 @@ export default async function BlogPage() {
           className="text-5xl md:text-7xl tracking-tighter mb-4"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          THOUGHTS, UNFILTERED<span style={{ color: 'var(--brand-magenta)' }}>.</span>
+          THOUGHTS, <span style={{ color: 'var(--brand-cyan)' }}>UNFILTERED</span><span style={{ color: 'var(--brand-magenta)' }}>.</span>
         </h1>
         <p
           className="text-lg max-w-2xl"

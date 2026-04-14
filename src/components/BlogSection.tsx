@@ -7,7 +7,7 @@ const posts = [
   {
     title: "Why Your Brand Looks Like Everyone Else's",
     subtitle: "And how to fix it without firing your entire team",
-    slug: "why-your-brand-looks-like-everyone-elses",
+    slug: "why-your-brand-looks-like-everyone-else-s",
     category: "STRATEGY",
     readTime: "4 min",
     date: "Mar 10, 2026",

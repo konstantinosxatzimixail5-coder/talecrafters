@@ -252,8 +252,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         )}
 
         {/* Body */}
-        <article className="prose-custom">
+        <article className="prose-custom blog-post-body">
           <PortableText value={post.body} components={portableTextComponents as any} />
+          <style>{`
+            .blog-post-body h2:first-of-type {
+              color: var(--brand-gold) !important;
+            }
+          `}</style>
         </article>
 
         {/* Bottom nav */}
