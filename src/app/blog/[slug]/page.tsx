@@ -255,8 +255,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <article className="prose-custom blog-post-body">
           <PortableText value={post.body} components={portableTextComponents as any} />
           <style>{`
-            .blog-post-body h2:first-of-type {
+            .blog-post-body :is(h2, h3, h4) {
               color: var(--brand-gold) !important;
+            }
+            .blog-post-body :is(h2, h3, h4) ~ :is(h2, h3, h4) {
+              color: var(--brand-cyan) !important;
             }
           `}</style>
         </article>
