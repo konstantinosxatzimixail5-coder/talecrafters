@@ -21,7 +21,7 @@ const packages = [
     accent: false,
   },
   {
-    name: "THE ARMOURY",
+    name: "THE FORGE",
     subtitle: "Predictable Content. Relentless Output.",
     price: "",
     period: "",
@@ -121,8 +121,8 @@ export function PricingSection() {
             className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            CHOOSE YOUR<br />
-            <span style={{ color: 'var(--brand-magenta)' }}>WEAPON</span>
+            PICK YOUR<br />
+            <span style={{ color: 'var(--brand-magenta)' }}>PLOT</span>
           </h2>
         </motion.div>
 

@@ -64,16 +64,22 @@ export function Footer() {
               SERVICES
             </div>
             <ul className="space-y-2">
-              {['Visual Warfare', 'Narrative Engineering', 'Synthetic Beings', 'Design Weaponry', 'Strategy'].map((link) => (
-                <li key={link}>
+              {[
+                { label: 'Visual Warfare', hash: '#visual-warfare' },
+                { label: 'Narrative Engineering', hash: '#narrative-engineering' },
+                { label: 'Strategy & Reputation', hash: '#strategy-reputation' },
+                { label: 'Synthetic Beings', hash: '#synthetic-beings' },
+                { label: 'Design Weaponry', hash: '#design-weaponry' },
+              ].map((link) => (
+                <li key={link.label}>
                   <a
-                    href="#services"
+                    href={link.hash}
                     className="text-sm transition-colors duration-200"
                     style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-cyan)')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -89,16 +95,22 @@ export function Footer() {
               COMPANY
             </div>
             <ul className="space-y-2">
-              {['Studio', 'Philosophy', 'Packages', 'Blog', 'Contact'].map((link) => (
-                <li key={link}>
+              {[
+                { label: 'Studio', href: '#process' },
+                { label: 'Philosophy', href: '#philosophy' },
+                { label: 'Packages', href: '#pricing' },
+                { label: 'Blog', href: '#blog' },
+                { label: 'Contact', href: '#contact' },
+              ].map((link) => (
+                <li key={link.label}>
                   <a
-                    href="#"
+                    href={link.href}
                     className="text-sm transition-colors duration-200"
                     style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-magenta)')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}

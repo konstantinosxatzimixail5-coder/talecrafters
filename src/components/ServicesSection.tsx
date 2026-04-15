@@ -1,6 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from 'motion/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Clapperboard, Flame, Podcast, UserCircle, BookMarked, Boxes, AudioLines, Aperture, MonitorPlay, Crosshair, ShieldCheck, Mic2, PaintBucket, Newspaper, Wand2, LayoutPanelLeft, BrainCircuit, Globe2, CodeXml, Megaphone, ScanFace, Eye, PenLine, Ghost } from 'lucide-react';
 
 interface Service {
@@ -72,9 +72,34 @@ const categories: Category[] = [
   },
 ];
 
+const categoryHashMap: Record<string, number> = {
+  'visual-warfare': 0,
+  'narrative-engineering': 1,
+  'strategy-reputation': 2,
+  'synthetic-beings': 3,
+  'design-weaponry': 4,
+};
+
 export function ServicesSection() {
   const [activeCategory, setActiveCategory] = useState(0);
   const [hoveredService, setHoveredService] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash in categoryHashMap) {
+        setActiveCategory(categoryHashMap[hash]);
+        // Clear the hash so it doesn't interfere
+        setTimeout(() => {
+          const el = document.getElementById('services');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
 
   return (
     <section
@@ -284,7 +309,7 @@ export function ServicesSection() {
                 className="text-lg max-w-2xl"
                 style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
               >
-                If it moves, speaks, or sparks emotion, we build it. Come with the impossible. Leave with a delivery date. Don't see what you need? If you can imagine it, we can weaponise it.
+                If it moves, speaks, or sparks emotion, we build it. Come with the impossible. Leave with a delivery date. Don't see what you need? If you can imagine it, we can create it.
               </p>
             </div>
             <motion.a
