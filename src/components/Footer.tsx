@@ -98,7 +98,6 @@ export function Footer() {
               {[
                 { label: 'Studio', href: '#process' },
                 { label: 'Philosophy', href: '#philosophy' },
-                { label: 'Packages', href: '#pricing' },
                 { label: 'Blog', href: '#blog' },
                 { label: 'Contact', href: '#contact' },
               ].map((link) => (

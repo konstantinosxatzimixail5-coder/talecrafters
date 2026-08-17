@@ -35,11 +35,6 @@ export function Navigation({
       color: "var(--brand-gold)",
     },
     {
-      label: "PACKAGES",
-      href: "#pricing",
-      color: "var(--brand-magenta)",
-    },
-    {
       label: "BLOG",
       href: "#blog",
       color: "var(--brand-cyan)",

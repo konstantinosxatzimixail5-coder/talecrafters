@@ -1,6 +1,6 @@
 "use client";
 import { motion } from 'motion/react';
-import { MoveUpRight, Ban } from 'lucide-react';
+import { MoveUpRight } from 'lucide-react';
 
 export function CTASection() {
   return (
@@ -62,111 +62,27 @@ export function CTASection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Choose wisely. <span style={{ color: 'var(--brand-cyan)' }}>The internet is watching.</span>
+            Let's conspire. <span style={{ color: 'var(--brand-cyan)' }}>The internet is watching.</span>
           </motion.p>
         </motion.div>
 
-        {/* Binary choice */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {/* OPTION A: Traditional */}
-          <motion.div
-            className="relative overflow-hidden"
-            style={{
-              backgroundColor: 'var(--brand-concrete)',
-              border: '1px solid var(--brand-concrete)',
-            }}
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="p-8 md:p-12 relative">
-              {/* Header */}
-              <div className="flex items-center justify-between mb-6">
-                <span
-                  className="text-[10px] tracking-widest"
-                  style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-white)', opacity: 0.5 }}
-                >
-                  OPTION A
-                </span>
-                <Ban size={24} style={{ color: 'var(--brand-white)', opacity: 0.3 }} />
-              </div>
-
-              <h3
-                className="text-3xl md:text-5xl tracking-tighter mb-6 leading-[0.9]"
-                style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-white)' }}
-              >
-                HIRE<br />TRADITIONAL
-              </h3>
-
-              <ul
-                className="space-y-3 text-base md:text-lg mb-8"
-                style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-white)', opacity: 0.7 }}
-              >
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-magenta)', opacity: 0.6 }}>→</span>
-                  Spend six months in revisions
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-magenta)', opacity: 0.6 }}>→</span>
-                  Navigate approval chains
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-magenta)', opacity: 0.6 }}>→</span>
-                  Get something safe and boring
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-magenta)', opacity: 0.6 }}>→</span>
-                  Watch your competitors pass you by
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-magenta)', opacity: 0.6 }}>→</span>
-                  Wonder why nothing worked
-                </li>
-              </ul>
-
-              <div
-                className="text-sm"
-                style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-white)', opacity: 0.35 }}
-              >
-                (We don't recommend this)
-              </div>
-            </div>
-
-            {/* Strikethrough */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <motion.div
-                className="w-[150%] h-px rotate-12"
-                style={{ backgroundColor: 'var(--brand-magenta)', opacity: 0.3 }}
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                viewport={{ once: true }}
-              />
-            </div>
-          </motion.div>
-
-          {/* OPTION B: TaleCrafters */}
+        {/* Call to action */}
+        <div className="max-w-2xl mx-auto">
+          {/* TaleCrafters */}
           <motion.div
             className="relative overflow-hidden group cursor-pointer"
             style={{
               background: 'linear-gradient(135deg, var(--brand-violet), var(--brand-magenta))',
             }}
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.02 }}
           >
             <div className="p-8 md:p-12 h-full flex flex-col relative">
               {/* Header */}
-              <div className="flex items-center justify-between mb-6">
-                <span
-                  className="text-[10px] tracking-widest"
-                  style={{ fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.7)' }}
-                >
-                  OPTION B
-                </span>
+              <div className="flex items-center justify-end mb-6">
                 <MoveUpRight size={24} style={{ color: 'var(--brand-white)' }} />
               </div>
 

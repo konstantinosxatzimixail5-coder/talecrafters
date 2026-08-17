@@ -6,7 +6,6 @@ import { StudioSection } from '@/components/StudioSection';
 import { PhilosophySection } from '@/components/PhilosophySection';
 import { ServicesSection } from '@/components/ServicesSection';
 import { ProcessSection } from '@/components/ProcessSection';
-import { PricingSection } from '@/components/PricingSection';
 import { BlogSection } from '@/components/BlogSection';
 import { CTASection } from '@/components/CTASection';
 import { Navigation } from '@/components/Navigation';
@@ -33,7 +32,6 @@ export default function HomePage() {
       <PhilosophySection />
       <ServicesSection />
       <ProcessSection />
-      <PricingSection />
       <BlogSection />
       <CTASection />
       <ClientsSection />
