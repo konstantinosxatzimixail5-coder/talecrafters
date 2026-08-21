@@ -81,6 +81,24 @@ function CocoonIcon() {
   );
 }
 
+function MariposaIcon() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <path d="M16 13C16 13 14 3 8 4C3 5 5 12 16 13Z" fill="url(#mariposa-grad)" />
+      <path d="M16 13C16 13 18 3 24 4C29 5 27 12 16 13Z" fill="url(#mariposa-grad)" />
+      <path d="M16 14C16 14 15 22 10 23C6 24 6 18 16 14Z" fill="url(#mariposa-grad)" />
+      <path d="M16 14C16 14 17 22 22 23C26 24 26 18 16 14Z" fill="url(#mariposa-grad)" />
+      <path d="M16 6V26" stroke="#5C6B2F" strokeWidth="1.5" strokeLinecap="round" />
+      <defs>
+        <linearGradient id="mariposa-grad" x1="4" y1="4" x2="28" y2="24">
+          <stop stopColor="#8BA33F" />
+          <stop offset="1" stopColor="#5C6B2F" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
 function BaklatsidisIcon() {
   return (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -145,6 +163,22 @@ const clients = [
     name: 'BAKLATSIDIS BROS',
     icon: BaklatsidisIcon,
     textStyle: { fontFamily: 'var(--font-display)', fontWeight: 700, color: '#0E7C86', letterSpacing: '0.06em' },
+  },
+  {
+    name: 'MARIPOSA',
+    icon: MariposaIcon,
+    render: () => (
+      <span>
+        <span>MARIPOSA</span>
+        <span
+          className="block text-[9px] md:text-[10px]"
+          style={{ color: '#8BA33F', letterSpacing: '0.35em', fontWeight: 500 }}
+        >
+          RESTAURANT
+        </span>
+      </span>
+    ),
+    textStyle: { fontFamily: 'var(--font-display)', fontWeight: 700, color: '#DCE3C8', letterSpacing: '0.1em', lineHeight: 1.1 },
   },
 ];
 

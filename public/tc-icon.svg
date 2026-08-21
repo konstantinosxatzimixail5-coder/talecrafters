@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="TaleCrafters icon">
+  <defs>
+    <filter id="tc-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="200" height="200" rx="30" fill="#18181F" />
+
+  <!-- Cyan glow beneath the grin -->
+  <path
+    d="M26,124 Q100,198 174,124"
+    fill="none"
+    stroke="#00E5CC"
+    stroke-width="9"
+    stroke-linecap="round"
+    opacity="0.85"
+    filter="url(#tc-glow)"
+  />
+
+  <!-- Grin / filmstrip smile -->
+  <path d="M30,112 Q100,218 170,112 Q100,154 30,112 Z" fill="#F5F5F0" />
+  <rect x="48.2" y="126.8" width="14" height="14" rx="3" fill="#18181F" transform="rotate(-32 55.2 133.8)" />
+  <rect x="66.4" y="136.7" width="14" height="14" rx="3" fill="#18181F" transform="rotate(-16 73.4 143.7)" />
+  <rect x="84.6" y="141.5" width="14" height="14" rx="3" fill="#18181F" transform="rotate(-5 91.6 148.5)" />
+  <rect x="102.8" y="141.3" width="14" height="14" rx="3" fill="#18181F" transform="rotate(5 109.8 148.3)" />
+  <rect x="121" y="136.1" width="14" height="14" rx="3" fill="#18181F" transform="rotate(16 128 143.1)" />
+  <rect x="139.2" y="125.9" width="14" height="14" rx="3" fill="#18181F" transform="rotate(32 146.2 132.9)" />
+
+  <!-- Eyes -->
+  <path d="M38,92 Q54,54 92,60 Q70,94 38,92 Z" fill="#F5F5F0" />
+  <path d="M162,92 Q146,54 108,60 Q130,94 162,92 Z" fill="#F5F5F0" />
+</svg>

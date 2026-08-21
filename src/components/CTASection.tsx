@@ -1,6 +1,6 @@
 "use client";
 import { motion } from 'motion/react';
-import { MoveUpRight, Ban } from 'lucide-react';
+import { MoveUpRight } from 'lucide-react';
 
 export function CTASection() {
   return (
@@ -66,169 +66,94 @@ export function CTASection() {
           </motion.p>
         </motion.div>
 
-        {/* Binary choice */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {/* OPTION A: Traditional */}
+        {/* TaleCrafters offer */}
+        <motion.div
+          className="relative overflow-hidden group cursor-pointer max-w-3xl mx-auto"
+          style={{
+            background: 'linear-gradient(135deg, var(--brand-violet), var(--brand-magenta))',
+          }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.02 }}
+        >
+          <div className="p-10 md:p-16 flex flex-col relative">
+            {/* Header */}
+            <div className="flex items-center justify-between mb-6">
+              <span
+                className="text-[10px] tracking-widest"
+                style={{ fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.7)' }}
+              >
+                THE MOVE
+              </span>
+              <MoveUpRight size={24} style={{ color: 'var(--brand-white)' }} />
+            </div>
+
+            <h3
+              className="text-4xl md:text-6xl tracking-tighter mb-6 leading-[0.9] text-center"
+              style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-white)' }}
+            >
+              LET'S<br />CONSPIRE
+            </h3>
+
+            <ul
+              className="space-y-3 text-base md:text-lg mb-10 max-w-md mx-auto"
+              style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-white)' }}
+            >
+              <li className="flex items-start gap-2">
+                <span style={{ color: 'var(--brand-cyan)' }}>→</span>
+                Ship work in days, not months
+              </li>
+              <li className="flex items-start gap-2">
+                <span style={{ color: 'var(--brand-cyan)' }}>→</span>
+                Get weird, strategic, effective
+              </li>
+              <li className="flex items-start gap-2">
+                <span style={{ color: 'var(--brand-cyan)' }}>→</span>
+                Make your competition nervous
+              </li>
+              <li className="flex items-start gap-2">
+                <span style={{ color: 'var(--brand-cyan)' }}>→</span>
+                Build a brand narrative that outlives the feed
+              </li>
+              <li className="flex items-start gap-2">
+                <span style={{ color: 'var(--brand-cyan)' }}>→</span>
+                Actually enjoy the process
+              </li>
+            </ul>
+
+            {/* CTA Button */}
+            <motion.a
+              href="#contact"
+              className="w-full max-w-md mx-auto py-5 text-2xl md:text-3xl tracking-tight transition-all block text-center"
+              style={{
+                fontFamily: 'var(--font-display)',
+                backgroundColor: 'var(--brand-black)',
+                color: 'var(--brand-white)',
+                textDecoration: 'none',
+              }}
+              whileHover={{ scale: 1.04, backgroundColor: 'var(--brand-cyan)', color: 'var(--brand-black)' }}
+              whileTap={{ scale: 0.95 }}
+            >
+              COLLABORATE WITH US &rarr;
+            </motion.a>
+          </div>
+
+          {/* Animated glow */}
           <motion.div
-            className="relative overflow-hidden"
-            style={{
-              backgroundColor: 'var(--brand-concrete)',
-              border: '1px solid var(--brand-concrete)',
-            }}
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="p-8 md:p-12 relative">
-              {/* Header */}
-              <div className="flex items-center justify-between mb-6">
-                <span
-                  className="text-[10px] tracking-widest"
-                  style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-white)', opacity: 0.5 }}
-                >
-                  OPTION A
-                </span>
-                <Ban size={24} style={{ color: 'var(--brand-white)', opacity: 0.3 }} />
-              </div>
-
-              <h3
-                className="text-3xl md:text-5xl tracking-tighter mb-6 leading-[0.9]"
-                style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-white)' }}
-              >
-                HIRE<br />TRADITIONAL
-              </h3>
-
-              <ul
-                className="space-y-3 text-base md:text-lg mb-8"
-                style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-white)', opacity: 0.7 }}
-              >
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-magenta)', opacity: 0.6 }}>→</span>
-                  Spend six months in revisions
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-magenta)', opacity: 0.6 }}>→</span>
-                  Navigate approval chains
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-magenta)', opacity: 0.6 }}>→</span>
-                  Get something safe and boring
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-magenta)', opacity: 0.6 }}>→</span>
-                  Watch your competitors pass you by
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-magenta)', opacity: 0.6 }}>→</span>
-                  Wonder why nothing worked
-                </li>
-              </ul>
-
-              <div
-                className="text-sm"
-                style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-white)', opacity: 0.35 }}
-              >
-                (We don't recommend this)
-              </div>
-            </div>
-
-            {/* Strikethrough */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <motion.div
-                className="w-[150%] h-px rotate-12"
-                style={{ backgroundColor: 'var(--brand-magenta)', opacity: 0.3 }}
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                viewport={{ once: true }}
-              />
-            </div>
-          </motion.div>
-
-          {/* OPTION B: TaleCrafters */}
+            className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full blur-3xl pointer-events-none"
+            style={{ backgroundColor: 'var(--brand-cyan)', opacity: 0.15 }}
+            animate={{ scale: [1, 1.3, 1], opacity: [0.1, 0.2, 0.1] }}
+            transition={{ duration: 5, repeat: Infinity }}
+          />
           <motion.div
-            className="relative overflow-hidden group cursor-pointer"
-            style={{
-              background: 'linear-gradient(135deg, var(--brand-violet), var(--brand-magenta))',
-            }}
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="p-8 md:p-12 h-full flex flex-col relative">
-              {/* Header */}
-              <div className="flex items-center justify-between mb-6">
-                <span
-                  className="text-[10px] tracking-widest"
-                  style={{ fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.7)' }}
-                >
-                  OPTION B
-                </span>
-                <MoveUpRight size={24} style={{ color: 'var(--brand-white)' }} />
-              </div>
-
-              <h3
-                className="text-3xl md:text-5xl tracking-tighter mb-6 leading-[0.9]"
-                style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-white)' }}
-              >
-                LET'S<br />CONSPIRE
-              </h3>
-
-              <ul
-                className="space-y-3 text-base md:text-lg mb-10 flex-grow"
-                style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-white)' }}
-              >
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-cyan)' }}>→</span>
-                  Ship work in days, not months
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-cyan)' }}>→</span>
-                  Get weird, strategic, effective
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-cyan)' }}>→</span>
-                  Make your competition nervous
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-cyan)' }}>→</span>
-                  Build a brand narrative that outlives the feed
-                </li>
-                <li className="flex items-start gap-2">
-                  <span style={{ color: 'var(--brand-cyan)' }}>→</span>
-                  Actually enjoy the process
-                </li>
-              </ul>
-
-              {/* CTA Button */}
-              <motion.a
-                href="#contact"
-                className="w-full py-5 text-2xl md:text-3xl tracking-tight transition-all block text-center"
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  backgroundColor: 'var(--brand-black)',
-                  color: 'var(--brand-white)',
-                  textDecoration: 'none',
-                }}
-                whileHover={{ scale: 1.04, backgroundColor: 'var(--brand-cyan)', color: 'var(--brand-black)' }}
-                whileTap={{ scale: 0.95 }}
-              >
-                COLLABORATE WITH US &rarr;
-              </motion.a>
-            </div>
-
-            {/* Animated glow */}
-            <motion.div
-              className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full blur-3xl pointer-events-none"
-              style={{ backgroundColor: 'var(--brand-cyan)', opacity: 0.15 }}
-              animate={{ scale: [1, 1.3, 1], opacity: [0.1, 0.2, 0.1] }}
-              transition={{ duration: 5, repeat: Infinity }}
-            />
-          </motion.div>
-        </div>
+            className="absolute -top-16 -left-16 w-56 h-56 rounded-full blur-3xl pointer-events-none"
+            style={{ backgroundColor: 'var(--brand-violet)', opacity: 0.15 }}
+            animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.18, 0.1] }}
+            transition={{ duration: 6, repeat: Infinity }}
+          />
+        </motion.div>
 
         {/* Bottom manifesto */}
         <motion.div

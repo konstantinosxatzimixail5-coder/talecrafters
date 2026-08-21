@@ -24,10 +24,9 @@ export function Footer() {
           <div className="md:col-span-4">
             <div className="flex items-center gap-[6px] mb-4">
               <img
-                src="/logo.png"
+                src="/tc-icon.svg"
                 alt="TaleCrafters — Synthetic Media Studio Logo"
                 className="w-12 h-12 object-cover rounded-sm"
-                style={{ filter: 'brightness(1.35) saturate(0.75)' }}
               />
               <span
                 className="text-[1.5rem] leading-none"
@@ -40,12 +39,6 @@ export function Footer() {
               >
                 TaleCrafters
               </span>
-            </div>
-            <div
-              className="text-xs tracking-widest mb-4"
-              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
-            >
-              STORIES ON STEROIDS
             </div>
             <p
               className="text-sm leading-relaxed max-w-xs"

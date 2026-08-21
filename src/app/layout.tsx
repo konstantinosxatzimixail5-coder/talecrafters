@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       "The unholy offspring of a film studio and a technology lab. Human taste × machine velocity. Stories that immerse, content that converts.",
     images: [
       {
-        url: "/logo.png",
+        url: "/tc-icon.png",
         width: 512,
         height: 512,
         alt: "TaleCrafters — Synthetic Media Studio Logo",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "TaleCrafters — Synthetic Media Studio",
     description:
       "Human taste × machine velocity. We create stories that immerse and content that converts.",
-    images: ["/logo.png"],
+    images: ["/tc-icon.png"],
     creator: "@talecrafters",
   },
   robots: {
@@ -66,8 +66,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/tc-icon.svg",
+    apple: "/tc-icon.png",
   },
 };
 
