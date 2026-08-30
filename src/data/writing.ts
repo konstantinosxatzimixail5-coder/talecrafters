@@ -1,5 +1,5 @@
 // Writing and narrative development. The screenplays are not named here on
-// purpose — an unproduced title tells a marketing client nothing, and the
+// purpose: an unproduced title tells a marketing client nothing, and the
 // credibility comes from the shape of the body of work, not from a list.
 
 export interface WritingItem {
@@ -22,7 +22,7 @@ export const writing: WritingItem[] = [
     summary:
       'Long-form VSLs, ninety-second cutdowns and hook batteries built to be tested against each other rather than admired.',
     detail:
-      'A VSL is not a film with a price at the end. It is an argument with a defined failure point, and the writing job is knowing where the audience stops believing you and putting the proof there. We write the full script, then the hook battery — a dozen openings for the same body — because the opening is the variable that moves the number and the body is the one that does not.',
+      'A VSL is not a film with a price at the end. It is an argument with a defined failure point, and the writing job is knowing where the audience stops believing you and putting the proof there. We write the full script, then the hook battery: a dozen openings for the same body, because the opening is the variable that moves the number and the body is the one that does not.',
     form: 'VSL scripts, 90-second cutdowns, hook batteries, three-script tests on one product',
   },
   {
@@ -53,7 +53,7 @@ export const writing: WritingItem[] = [
     kind: 'Long form',
     color: 'var(--brand-gold)',
     summary:
-      'Reported features on subjects that need a structure before they need a style — including one on money laundering through video games.',
+      'Reported features on subjects that need a structure before they need a style, including one on money laundering through video games.',
     detail:
       'Long-form reporting is where the story-first claim gets stress-tested, because there is no visual to carry a weak argument. The transferable skill is compression: taking a subject that resists a summary and finding the one sequence of facts that makes it obvious.',
     form: 'Features, explainers, research-led articles',
@@ -78,7 +78,7 @@ export const writing: WritingItem[] = [
     summary:
       'Seven completed feature screenplays, plus games, animated concepts and long-form fiction in development. None of it is for sale here.',
     detail:
-      'This is the part with nobody paying us to be right. Seven feature-length screenplays are finished, across thriller, psychological drama and satire; alongside them sit game concepts, animated series development and long-form fiction. The titles stay unlisted — an unproduced screenplay is a private document until it is not — but the body of work is the reason the story-first claim on this site is a description rather than a slogan.',
+      'This is the part with nobody paying us to be right. Seven feature-length screenplays are finished, across thriller, psychological drama and satire; alongside them sit game concepts, animated series development and long-form fiction. The titles stay unlisted, because an unproduced screenplay is a private document until it is not. The body of work is the reason the story-first claim on this site is a description rather than a slogan.',
     form: 'Feature screenplays, series development, game narrative, long-form fiction',
   },
 ];

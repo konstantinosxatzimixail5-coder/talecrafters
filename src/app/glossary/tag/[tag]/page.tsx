@@ -18,7 +18,7 @@ const meta: Record<string, { title: string; lede: string; color: string }> = {
   },
   models: {
     title: 'MODELS',
-    lede: 'What the machinery is actually doing — diffusion, latent space, steps, seeds, adapters — explained in the amount of detail a producer needs and no more.',
+    lede: 'What the machinery is actually doing (diffusion, latent space, steps, seeds, adapters) explained in the amount of detail a producer needs and no more.',
     color: 'var(--brand-cyan)',
   },
   control: {
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: { params: Promise<{ tag: stri
   if (!m) return {};
   const list = termsByTag(tag);
   return pageMeta({
-    title: `${m.title} — Glossary Terms`,
+    title: `${m.title}: Glossary Terms`,
     description: `${list.length} terms on ${tag} from the TaleCrafters glossary of generative and synthetic media: ${list
       .slice(0, 6)
       .map((t) => t.term)
@@ -83,7 +83,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
           breadcrumbSchema(crumbs),
           {
             '@type': 'CollectionPage',
-            name: `${m.title} — glossary terms`,
+            name: `${m.title}: glossary terms`,
             url: abs(`/glossary/tag/${tag}`),
             description: m.lede,
             hasPart: list.map((t) =>

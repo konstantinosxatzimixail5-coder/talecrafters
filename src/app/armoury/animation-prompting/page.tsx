@@ -9,7 +9,7 @@ import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 
 export const metadata = pageMeta({
-  title: 'Prompting Guide by Animation Style — 12 Styles, Free',
+  title: 'Prompting Guide by Animation Style: 12 Styles, Free',
   description:
     'How to prompt cel animation, anime, claymation, stylised 3D, storybook, motion graphics, comic, papercraft, rotoscope, pixel art, watercolour and retro 3D. Scaffold, working keywords, the failure each style invites, and a prompt you can paste.',
   path: '/armoury/animation-prompting',
@@ -41,7 +41,7 @@ const qa = [
   },
   {
     q: 'What order should a style prompt be written in?',
-    a: 'Technique, then surface behaviour, then what must be absent, then the subject. Naming the absence — no gradients, no anti-aliasing, no opaque white — does more work than any adjective.',
+    a: 'Technique, then surface behaviour, then what must be absent, then the subject. Naming the absence (no gradients, no anti-aliasing, no opaque white) does more work than any adjective.',
   },
   {
     q: 'Can I mix two styles?',
@@ -65,7 +65,7 @@ export default function AnimationPromptingPage() {
               'Name the technique, then the surface behaviour, then what must be absent, then the subject.',
             url: abs('/armoury/animation-prompting'),
             step: [
-              { '@type': 'HowToStep', position: 1, name: 'Name the technique', text: 'Open with the production method — hand-drawn 2D cel animation, stop-motion claymation, layered cut paper — rather than a mood.' },
+              { '@type': 'HowToStep', position: 1, name: 'Name the technique', text: 'Open with the production method (hand-drawn 2D cel animation, stop-motion claymation, layered cut paper) rather than a mood.' },
               { '@type': 'HowToStep', position: 2, name: 'Name the surface', text: 'State how the material behaves: paper tooth, thumbprints, line boil, halftone dots, pixel grid.' },
               { '@type': 'HowToStep', position: 3, name: 'Name the absence', text: 'Say what must not appear: no gradients, no anti-aliasing, no opaque white, no rim light. This does more work than any adjective.' },
               { '@type': 'HowToStep', position: 4, name: 'Then the subject', text: 'Describe who is in frame and what they are doing, then the shot.' },
@@ -110,7 +110,7 @@ export default function AnimationPromptingPage() {
             </div>
             <p className="text-base md:text-lg leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.8)' }}>
               A style name is a request. A list of artefacts is an instruction. Every entry below is
-              built the same way — technique, surface, absence, subject — because the thing that
+              built the same way (technique, surface, absence, subject) because the thing that
               produces a style reliably is naming what must <em>not</em> be in the frame.
             </p>
           </div>

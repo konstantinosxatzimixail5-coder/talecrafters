@@ -67,7 +67,7 @@ export default function ConceptProjects() {
         lede="Every brand on this page is invented. Nobody commissioned it, nobody paid for it, and none of these products exist. Each set was built to prove one thing, and each entry says which thing, because a fake brand only earns a page if it states its test."
         meta={[
           { label: 'Brands', value: '4, all invented' },
-          { label: 'Status', value: 'Concept project — not commissioned' },
+          { label: 'Status', value: 'Concept project: not commissioned' },
           { label: 'Purpose', value: 'One stated control per set' },
           { label: 'Pipelines', value: 'Phantom Set, Identity Lock' },
         ]}

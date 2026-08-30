@@ -93,7 +93,7 @@ export function ContactSection({ hideHeading = false }: { hideHeading?: boolean 
         return;
       }
     } catch {
-      // API failed — fall through to mailto
+      // API failed: fall through to mailto
     }
 
     // Fallback: open mailto with all form data pre-filled
@@ -393,7 +393,7 @@ export function ContactSection({ hideHeading = false }: { hideHeading?: boolean 
                       <div className="flex flex-col sm:flex-row gap-3">
                         <input
                           type="text"
-                          placeholder="e.g. £5K — £15K"
+                          placeholder="e.g. £5K: £15K"
                           value={budget === 'No clue' ? '' : budget}
                           onChange={(e) => setBudget(e.target.value)}
                           disabled={budget === 'No clue'}
@@ -420,7 +420,7 @@ export function ContactSection({ hideHeading = false }: { hideHeading?: boolean 
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
-                          No clue — let&apos;s figure it out
+                          No clue: let&apos;s figure it out
                         </motion.button>
                       </div>
                     </div>

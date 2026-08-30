@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const t = getTerm(slug);
   if (!t) return {};
   return pageMeta({
-    title: `${t.term} — Definition`,
+    title: `${t.term}: Definition`,
     description: t.short,
     path: `/glossary/${t.slug}`,
     keywords: [t.term, ...(t.aka ?? []), 'definition', 'synthetic media glossary'],
@@ -64,7 +64,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
           faqSchema(t.qa),
           {
             '@type': 'Article',
-            headline: `${t.term} — definition`,
+            headline: `${t.term}: definition`,
             description: t.short,
             url: abs(`/glossary/${t.slug}`),
             articleSection: 'Glossary',

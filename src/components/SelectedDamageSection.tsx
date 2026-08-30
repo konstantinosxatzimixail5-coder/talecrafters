@@ -9,8 +9,8 @@ import { Frame } from './Frame';
  * The section the site was missing. It sits directly after Our Arsenal, because
  * a list of capabilities is a claim and this is the receipt.
  *
- * Four projects, not sixteen — one film, one site-and-film, one content system,
- * one narrative explainer — so that the breadth reads as deliberate rather than
+ * Four projects, not sixteen (one film, one site-and-film, one content system,
+ * one narrative explainer) so that the breadth reads as deliberate rather than
  * as everything we have ever touched.
  */
 export function SelectedDamageSection() {

@@ -45,7 +45,7 @@ export default function ArmouryIndex() {
           faqSchema(qa),
           {
             '@type': 'CollectionPage',
-            name: 'The Armoury — free resources',
+            name: 'The Armoury: free resources',
             url: abs('/armoury'),
             description: 'Free reference material for generative video and animation production.',
           },

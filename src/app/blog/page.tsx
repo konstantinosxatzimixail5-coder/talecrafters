@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Blog — TaleCrafters | Thoughts on Synthetic Media & Storytelling',
   description: 'Dispatches from the frontlines of synthetic media, storytelling, and creative chaos. Insights, rants, and the occasional manifesto.',
   openGraph: {
-    title: 'Blog — TaleCrafters',
+    title: 'Blog: TaleCrafters',
     description: 'Dispatches from the frontlines of synthetic media, storytelling, and creative chaos.',
     url: 'https://talecrafters.studio/blog',
     siteName: 'TaleCrafters',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog — TaleCrafters',
+    title: 'Blog: TaleCrafters',
     description: 'Dispatches from the frontlines of synthetic media, storytelling, and creative chaos.',
   },
   alternates: { canonical: 'https://talecrafters.studio/blog' },

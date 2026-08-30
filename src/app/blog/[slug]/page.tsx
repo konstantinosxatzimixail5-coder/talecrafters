@@ -50,12 +50,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) return { title: 'Post Not Found' };
 
   const title = post.metaTitle || post.title;
-  const description = post.metaDescription || post.excerpt || `${post.title} — TaleCrafters Blog`;
+  const description = post.metaDescription || post.excerpt || `${post.title}: TaleCrafters Blog`;
   const imageUrl = post.featuredImage ? urlFor(post.featuredImage).width(1200).height(630).url() : undefined;
   const url = `https://talecrafters.studio/blog/${post.slug.current}`;
 
   return {
-    title: `${title} — TaleCrafters Blog`,
+    title: `${title}: TaleCrafters Blog`,
     description,
     openGraph: {
       title,

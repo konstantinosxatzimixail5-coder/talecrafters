@@ -34,7 +34,7 @@ const crumbs = [
 const qa = [
   {
     q: 'Which camera movements work best in AI video generation?',
-    a: 'Single, clearly named moves with one intention: slow dolly in, truck left with parallax, crane down, rack focus. Compound moves — orbiting while craning while pulling focus — fail far more often, because the model has to satisfy three constraints at once.',
+    a: 'Single, clearly named moves with one intention: slow dolly in, truck left with parallax, crane down, rack focus. Compound moves (orbiting while craning while pulling focus) fail far more often, because the model has to satisfy three constraints at once.',
   },
   {
     q: 'Why does my AI video ignore the camera direction?',
@@ -66,7 +66,7 @@ export default function CameraMovementsPage() {
               'Name the move in camera-department language, put it first and alone, then describe the subject and the light.',
             url: abs('/armoury/camera-movements'),
             step: [
-              { '@type': 'HowToStep', position: 1, name: 'Name the move', text: 'Open with the movement in camera vocabulary — SLOW DOLLY IN, TRUCK LEFT, CRANE DOWN — as its own sentence.' },
+              { '@type': 'HowToStep', position: 1, name: 'Name the move', text: 'Open with the movement in camera vocabulary (SLOW DOLLY IN, TRUCK LEFT, CRANE DOWN) as its own sentence.' },
               { '@type': 'HowToStep', position: 2, name: 'Keep it single', text: 'One move per shot. Compound moves fail because the model has to satisfy several constraints at once.' },
               { '@type': 'HowToStep', position: 3, name: 'Then the subject', text: 'Describe who or what is in frame, and what they are doing, after the move is fixed.' },
               { '@type': 'HowToStep', position: 4, name: 'Then the light', text: 'State one key direction and one time of day. Mood adjectives go last, or not at all.' },
@@ -112,7 +112,7 @@ export default function CameraMovementsPage() {
             <p className="text-base md:text-lg leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.8)' }}>
               Models trained on film respond to film language. Put the move first, in camera-department
               vocabulary, in its own sentence. Then the subject. Then one key light direction. Mood
-              adjectives go last, or not at all — “make it cinematic” is the single most reliable way to
+              adjectives go last, or not at all: “make it cinematic” is the single most reliable way to
               lose control of a shot.
             </p>
           </div>

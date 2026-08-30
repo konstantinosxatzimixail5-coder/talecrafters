@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — TaleCrafters",
+  title: "Privacy Policy: TaleCrafters",
   description:
     "TaleCrafters Ltd Privacy Policy. How we collect, use, store, share, and protect your personal data.",
 };

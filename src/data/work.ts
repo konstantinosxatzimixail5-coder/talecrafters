@@ -94,7 +94,7 @@ export const work: CaseStudy[] = [
       { src: 'mariposa/film-03', alt: 'A frame from the film: a drawn white plate of saffron risotto crowned with a single scampi on a deep yellow ground, headed Carnaroli and Saffron.', label: 'from the film', focus: '72% 50%' },
       { src: 'mariposa/film-01', alt: 'A frame from the film: a drawn kitchen garden in flat warm colour, young vegetables in dark soil, one tall plant in white flower and a yellow butterfly beside it.', label: 'from the film' },
       { src: 'mariposa/film-04', alt: 'The end card: the word Mariposa in cream serif with two butterfly wings above it and the line the hidden gem above the Aegean underneath.', label: 'end card' },
-      { src: 'mariposa/food-02', alt: 'Grilled octopus curled over yellow fava purée in a stone bowl, topped with pickled onion and dill, shot at the table at night.', label: 'reference plate — what the drawn octopus was measured against' },
+      { src: 'mariposa/food-02', alt: 'Grilled octopus curled over yellow fava purée in a stone bowl, topped with pickled onion and dill, shot at the table at night.', label: 'reference plate: what the drawn octopus was measured against' },
       { src: 'mariposa/shrimp-mariposa', alt: 'Shrimp on saffron risotto in a dark bowl, topped with basil and cracked pepper, shot from above.', label: 'reference plate, shot on site' },
       { src: 'mariposa/mariposa-mousaka', alt: 'A slice of moussaka on a white plate, photographed on the restaurant terrace in daylight with a wine glass behind it.', label: 'reference plate, shot on site' },
       { src: 'mariposa/beef-stifado', alt: 'Beef stifado in a dark sauce in a metal bowl under a nest of shoestring fries and a sprig of rosemary.', label: 'reference plate, shot on site' },
@@ -121,7 +121,7 @@ export const work: CaseStudy[] = [
     summary:
       'A consultancy needed to say “Dutch expertise, global business” without a word of voiceover. One unbroken camera move said it instead.',
     problem:
-      'IB-NL places Dutch expertise with businesses outside the Netherlands. The line under the mark is where Dutch expertise meets global business, and the film had to land that line as a picture before anyone read it. A corporate consultancy has three stock options — a handshake, a map with arcs on it, or a presenter — and all three have been used so often they carry no information.',
+      'IB-NL places Dutch expertise with businesses outside the Netherlands. The line under the mark is where Dutch expertise meets global business, and the film had to land that line as a picture before anyone read it. A corporate consultancy has three stock options (a handshake, a map with arcs on it, or a presenter) and all three have been used so often they carry no information.',
     idea:
       'Put the argument in the camera move instead of the script. Open on a polder at sunrise, tulip rows and working windmills along a canal, and never cut. Keep rising through Amsterdam at dusk, past the canal ring, until the coastline flattens and the Netherlands is a lit smudge on the night side of Europe seen from orbit. Nobody has to say the word global, because the camera has already done it.',
     made: [
@@ -151,7 +151,7 @@ export const work: CaseStudy[] = [
     },
     gallery: [
       { src: 'ib-nl/amsterdam', alt: 'Amsterdam from high above at dusk, the canal ring lit warm orange against blue water, river and coast at the top of frame.', label: 'city band' },
-      { src: 'ib-nl/orbit', alt: 'Europe at night from orbit, city lights across the continent, the curve of the Earth against black space.', label: 'orbital band — the seam that had to match' },
+      { src: 'ib-nl/orbit', alt: 'Europe at night from orbit, city lights across the continent, the curve of the Earth against black space.', label: 'orbital band: the seam that had to match' },
       { src: 'ib-nl/boardroom', alt: 'An empty boardroom high in a tower, long dark table set with glasses, floor-to-ceiling windows onto a high-rise skyline.', label: 'the descent, somewhere else' },
       { src: 'ib-nl/map', alt: 'A dark world map in thin gold outline with the Netherlands lit in warm yellow, everything else unlit.', label: 'end frame' },
     ],
@@ -178,7 +178,7 @@ export const work: CaseStudy[] = [
     problem:
       'Big Blue Data Academy teaches data science to career changers. The audience is on a phone, mid-scroll, and has already learned to skip anything shaped like a course advert. The ask was volume: not one film with a long approval cycle, but a run of short pieces that could go out week after week and keep working.',
     idea:
-      'Invert the house style. Volume and sameness normally arrive together — a house style makes the second piece cheap and the fifth piece invisible, because by then the audience has learned the shape of it. So the constraint was set the other way: every piece had to look like it came from a different production company, and the brand had to survive all of them.',
+      'Invert the house style. Volume and sameness normally arrive together: a house style makes the second piece cheap and the fifth piece invisible, because by then the audience has learned the shape of it. So the constraint was set the other way: every piece had to look like it came from a different production company, and the brand had to survive all of them.',
     made: [
       'A photoreal punk figure in a dark office, head made of a pie chart, mohawk made of bars.',
       'A 3D cartoon detective in a paper-flooded room, magnifier over a stack of reports.',
@@ -195,9 +195,9 @@ export const work: CaseStudy[] = [
       { label: 'Plate sets', detail: 'One per register, nothing reused between them' },
     ],
     method:
-      'Operator Stack — the pipeline for work where the value is in the run rather than in any single film. The registers were chosen first and written down as a list before a frame was made, so that no two briefs could drift into the same look under deadline. A register is a decision about lighting model, edge quality and how much the world is allowed to be wrong. Each got its own plate set and prompt vocabulary, and nothing was reused between them, because reuse is exactly what produces the sameness the job was built to avoid.',
+      'Operator Stack: the pipeline for work where the value is in the run rather than in any single film. The registers were chosen first and written down as a list before a frame was made, so that no two briefs could drift into the same look under deadline. A register is a decision about lighting model, edge quality and how much the world is allowed to be wrong. Each got its own plate set and prompt vocabulary, and nothing was reused between them, because reuse is exactly what produces the sameness the job was built to avoid.',
     gates: [
-      { name: 'Brand gate', test: 'The mark, the blue and the lockup survive a register change without being redrawn. The mark is composited, never generated — a model asked to draw a logo gets it nearly right, and nearly right on a logo is worse than absent.' },
+      { name: 'Brand gate', test: 'The mark, the blue and the lockup survive a register change without being redrawn. The mark is composited, never generated: a model asked to draw a logo gets it nearly right, and nearly right on a logo is worse than absent.' },
       { name: 'Anatomy gate', test: 'Every frame with a held object gets checked before it enters a cut. Cartoon registers fail here first: a magnifier, a guitar neck, a clipboard held by something with no thumbs.' },
     ],
     hero: {
@@ -208,7 +208,7 @@ export const work: CaseStudy[] = [
     gallery: [
       { src: 'bbda/detective', alt: 'A 3D cartoon detective in a brown hat and green coat holding a magnifying glass over his eye, the lens filled with spreadsheets, office knee-deep in loose paper.', label: 'register two, 3D cartoon' },
       { src: 'bbda/python', alt: 'A storybook illustration of a blue snake in black reading glasses holding a clipboard, taking notes from a young man on a therapy couch.', label: 'register three, storybook' },
-      { src: 'bbda/western', alt: 'A man in a blue cowboy hat and denim shirt playing guitar in a wooden saloon under a painted Big Blue Data Academy sign, pie charts floating around him.', label: 'register four — the one frame where the mark sits inside the world', focus: '50% 22%' },
+      { src: 'bbda/western', alt: 'A man in a blue cowboy hat and denim shirt playing guitar in a wooden saloon under a painted Big Blue Data Academy sign, pie charts floating around him.', label: 'register four: the one frame where the mark sits inside the world', focus: '50% 22%' },
     ],
     stack: [
       { stage: 'Register list', tool: 'Fixed before any frame, seven entries' },
@@ -234,7 +234,7 @@ export const work: CaseStudy[] = [
     problem:
       'COCOON is a Horizon Europe project on cooperative cyber protection for modern power grids, run across a consortium. The audience is mixed: engineers on one side, policy people, reviewers and the public on the other, who need the same story without the vocabulary.',
     idea:
-      'Treat it as a writing job, not a generation job. Nothing could be shot — live substations and pilot sites are not places a camera crew walks into, and the attack being described has never happened to the equipment on screen. So the grant text and technical diagrams were read down into a single chain of events (entry point, lateral move, control layer, physical effect) and one diagram vocabulary was agreed early and held across all four pieces. Colour carries state and nothing else, so a consortium partner can point at a frame and say which stage is wrong.',
+      'Treat it as a writing job, not a generation job. Nothing could be shot: live substations and pilot sites are not places a camera crew walks into, and the attack being described has never happened to the equipment on screen. So the grant text and technical diagrams were read down into a single chain of events (entry point, lateral move, control layer, physical effect) and one diagram vocabulary was agreed early and held across all four pieces. Colour carries state and nothing else, so a consortium partner can point at a frame and say which stage is wrong.',
     made: [
       'A project promo.',
       'Two pilot films.',
@@ -287,7 +287,7 @@ export const work: CaseStudy[] = [
     problem:
       'A dealership wanted a hero film for one motorcycle, cut for vertical feed. The bike is the product; everything else in frame is set dressing, and set dressing is the part a dealership never has budget for.',
     idea:
-      'Build the set once and never rebuild it. A motorcycle is the worst possible subject for a generated frame — badge, tank graphic, headlamp cluster that riders know by heart, and spokes, which fall apart the moment a model starts inventing detail. So the machine was locked into a master plate before any environment existed, and the street, canal houses, wet cobbles and reflected lamplight were written once as a set specification and reused across every frame.',
+      'Build the set once and never rebuild it. A motorcycle is the worst possible subject for a generated frame: badge, tank graphic, headlamp cluster that riders know by heart, and spokes, which fall apart the moment a model starts inventing detail. So the machine was locked into a master plate before any environment existed, and the street, canal houses, wet cobbles and reflected lamplight were written once as a set specification and reused across every frame.',
     made: [
       'A hero film for the Indian Elite, cut vertical.',
       'A locked master plate of the machine, handed over as a reusable file.',

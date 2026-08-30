@@ -163,7 +163,7 @@ export const arms: Arm[] = [
     color: 'var(--brand-violet)',
     href: '/systems',
     blurb:
-      'Where the unusual advantage lives. Content production systems, agentic workflows, marketing automations, research systems, lead-generation workflows, repurposing engines, creative pipelines, internal tools, lightweight applications, AI-powered websites, interactive experiences and prototypes — built through agentic development environments and modern development infrastructure, and handed over as functional digital products.',
+      'Where the unusual advantage lives. Content production systems, agentic workflows, marketing automations, research systems, lead-generation workflows, repurposing engines, creative pipelines, internal tools, lightweight applications, AI-powered websites, interactive experiences and prototypes: built through agentic development environments and modern development infrastructure, and handed over as functional digital products.',
     covers: [
       'Content production systems',
       'Agentic workflows',

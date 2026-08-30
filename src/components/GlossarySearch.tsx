@@ -38,7 +38,7 @@ export function GlossarySearch({ terms }: { terms: Term[] }) {
           type="search"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Search 47 terms — try “drift”, “LoRA”, “disclosure”"
+          placeholder="Search 47 terms: try “drift”, “LoRA”, “disclosure”"
           aria-label="Search the glossary"
           className="w-full bg-transparent outline-none"
           style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: 'var(--brand-white)' }}

@@ -32,7 +32,7 @@ export const animationStyles: AnimationStyle[] = [
     scaffold: [
       'Name the technique first: hand-drawn 2D cel animation.',
       'State line weight and colour count: bold uniform ink line, three flat tones per character.',
-      'Separate character treatment from background treatment — cel characters usually sit on a softer painted background.',
+      'Separate character treatment from background treatment: cel characters usually sit on a softer painted background.',
       'Then the subject, then the shot.',
     ],
     works: ['flat cel shading', 'uniform ink outline', 'limited palette', 'painted background', 'hand-inked', 'no gradients on character'],
@@ -51,7 +51,7 @@ export const animationStyles: AnimationStyle[] = [
       'Not one style. TV anime, film anime and 1980s OVA look nothing alike, and a prompt that says only “anime” averages all three into the flattest possible version. Pick an era and a production register.',
     scaffold: [
       'Pick the register: TV anime, theatrical anime, 90s OVA, modern digital.',
-      'State the eye and face treatment explicitly — it is the single strongest signal.',
+      'State the eye and face treatment explicitly. It is the single strongest signal.',
       'State background treatment separately: detailed painted backgrounds are a film-anime tell.',
       'Then the shot, in film language.',
     ],
@@ -112,7 +112,7 @@ export const animationStyles: AnimationStyle[] = [
     scaffold: [
       'Name the medium and the surface: gouache on cold-press paper, visible tooth.',
       'Name the mark: loose ink line, uneven edges, colour slightly outside the line.',
-      'Keep lighting flat — a storybook illustration is not lit, it is coloured.',
+      'Keep lighting flat: a storybook illustration is not lit, it is coloured.',
       'Then the subject.',
     ],
     works: ['gouache on textured paper', 'visible paper grain', 'loose ink line', 'flat colour wash', 'colour registration slightly off'],
@@ -152,7 +152,7 @@ export const animationStyles: AnimationStyle[] = [
     scaffold: [
       'Name the inking: heavy spotted blacks, or clean uniform ligne claire line.',
       'Name the colour era: flat separated colour, or halftone dot screen, or modern digital flats.',
-      'Name the panel treatment if you want panels — otherwise the model will invent gutters.',
+      'Name the panel treatment if you want panels: otherwise the model will invent gutters.',
       'Then the shot, in comic terms: low angle, close on the eyes.',
     ],
     works: ['heavy spotted blacks', 'ligne claire', 'halftone dot screen', 'flat separated colour', 'strong panel composition', 'dramatic low angle'],
@@ -177,7 +177,7 @@ export const animationStyles: AnimationStyle[] = [
     ],
     works: ['layered cut paper', 'torn fibrous edges', 'soft shadow between layers', 'shallow diorama depth', 'single soft key light'],
     breaks:
-      'Flat vector wearing a paper texture. Ask explicitly for shadows cast between layers — that is what makes it physical.',
+      'Flat vector wearing a paper texture. Ask explicitly for shadows cast between layers. That is what makes it physical.',
     example:
       'Layered cut-paper diorama, scalpel-cut clean edges, three planes of depth with soft shadows between them, single soft key from the left. A city skyline at dusk with a small figure on a rooftop.',
   },
@@ -188,11 +188,11 @@ export const animationStyles: AnimationStyle[] = [
     aka: 'traced live action, painted-over footage',
     color: 'var(--brand-cyan)',
     what:
-      'Real human motion under a drawn surface. The tension between accurate weight and unstable line is the entire appeal, so ask for the boil — the line shifting slightly frame to frame — rather than a clean trace.',
+      'Real human motion under a drawn surface. The tension between accurate weight and unstable line is the entire appeal, so ask for the boil (the line shifting slightly frame to frame) rather than a clean trace.',
     scaffold: [
       'Name the source behaviour: traced from live-action, naturalistic human weight and timing.',
       'Name the surface: painted-over, visible brush edges, line boil between frames.',
-      'Name the palette limit — rotoscope tends to work with fewer colours than you expect.',
+      'Name the palette limit: rotoscope tends to work with fewer colours than you expect.',
       'Then the shot.',
     ],
     works: ['rotoscoped', 'traced from live action', 'line boil', 'painterly fill', 'naturalistic motion, stylised surface'],
@@ -213,11 +213,11 @@ export const animationStyles: AnimationStyle[] = [
       'Give a resolution and a palette count: 64×64, sixteen colours.',
       'Forbid anti-aliasing and gradients directly.',
       'Name the dithering if you want the era: ordered dithering reads as 16-bit.',
-      'Then the subject, kept simple — detail does not survive the grid.',
+      'Then the subject, kept simple: detail does not survive the grid.',
     ],
     works: ['16-bit pixel art', 'limited palette', 'no anti-aliasing', 'ordered dithering', 'crisp pixel grid', 'side-scroller perspective'],
     breaks:
-      'Smooth edges and thousands of colours — a photo with a pixel filter over it. Numbers in the prompt are the only reliable fix.',
+      'Smooth edges and thousands of colours: a photo with a pixel filter over it. Numbers in the prompt are the only reliable fix.',
     example:
       '16-bit pixel art, 96×96, sixteen-colour palette, no anti-aliasing, ordered dithering for shadows, crisp pixel grid. A lone traveller at a campfire outside a walled town at night.',
   },
@@ -248,7 +248,7 @@ export const animationStyles: AnimationStyle[] = [
     aka: 'low-poly, PS1, early CGI, vaporwave',
     color: 'var(--brand-violet)',
     what:
-      'A period style built from technical limitations: low polygon counts, affine texture warping, vertex wobble and hard-edged shadows. Naming the limitations is what produces it — naming the aesthetic produces a modern render in pastel colours.',
+      'A period style built from technical limitations: low polygon counts, affine texture warping, vertex wobble and hard-edged shadows. Naming the limitations is what produces it: naming the aesthetic produces a modern render in pastel colours.',
     scaffold: [
       'Name the limitation set: low polygon count, low-resolution textures, no anti-aliasing.',
       'Name the era artefact: affine texture warping, vertex jitter, hard shadow edges.',

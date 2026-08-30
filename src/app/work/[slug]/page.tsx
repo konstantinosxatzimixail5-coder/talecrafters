@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const w = getCase(slug);
   if (!w) return {};
   return pageMeta({
-    title: `${w.client} — ${w.title}`,
+    title: `${w.client}: ${w.title}`,
     description: w.summary,
     path: `/work/${w.slug}`,
     image: `/img/${w.hero.src}-960.webp`,

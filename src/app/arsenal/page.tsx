@@ -50,7 +50,7 @@ export default function ArsenalPage() {
           breadcrumbSchema(crumbs),
           ...categories.map((c) =>
             serviceSchema({
-              name: `${c.title} — ${c.descriptor}`,
+              name: `${c.title}: ${c.descriptor}`,
               description: c.intro,
               path: `/arsenal#${c.slug}`,
               serviceType: c.descriptor,
@@ -88,7 +88,7 @@ export default function ArsenalPage() {
         ]}
       />
 
-      {/* Arm strip — the three-line version of the whole company */}
+      {/* Arm strip: the three-line version of the whole company */}
       <section className="px-5 md:px-10 lg:px-14 pb-10">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-3">
           {arms.map((a) => (

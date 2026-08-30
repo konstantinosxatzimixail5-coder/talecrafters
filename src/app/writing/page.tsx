@@ -8,7 +8,7 @@ import { pageMeta, breadcrumbSchema, serviceSchema } from '@/lib/seo';
 export const metadata = pageMeta({
   title: 'Writing & Narrative — Scripts, VSLs and Original IP',
   description:
-    'Direct-response scripts, brand films, ghostwriting, editorial features, treatments and production breakdowns — plus seven completed feature screenplays and a slate of original IP.',
+    'Direct-response scripts, brand films, ghostwriting, editorial features, treatments and production breakdowns, plus seven completed feature screenplays and a slate of original IP.',
   path: '/writing',
   keywords: [
     'VSL scriptwriting',

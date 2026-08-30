@@ -39,7 +39,7 @@ const qa = [
   },
   {
     q: 'What can you actually automate?',
-    a: 'Drafting, variants, format matrices, renaming, render queueing, repurposing, research, qualification and reporting. Not the brief and not the final approval — those keep a person, at any volume.',
+    a: 'Drafting, variants, format matrices, renaming, render queueing, repurposing, research, qualification and reporting. Not the brief and not the final approval: those keep a person, at any volume.',
   },
 ];
 

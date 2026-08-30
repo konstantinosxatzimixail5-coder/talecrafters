@@ -129,7 +129,7 @@ export function BlogSection() {
               <div className="relative aspect-video lg:aspect-auto overflow-hidden">
                 <motion.img
                   src={posts[0].image}
-                  alt={`TaleCrafters blog — ${posts[0].title}: ${posts[0].subtitle}`}
+                  alt={`TaleCrafters blog: ${posts[0].title}: ${posts[0].subtitle}`}
                   className="w-full h-full object-cover"
                   style={{ filter: 'grayscale(60%) contrast(1.1)' }}
                   whileHover={{ scale: 1.05 }}

@@ -39,7 +39,7 @@ export function CookieConsent() {
       // Re-dispatch on load so scripts that mounted late can pick it up
       dispatchConsentEvent(stored);
     } else {
-      // First visit — show banner after a short delay
+      // First visit: show banner after a short delay
       const timer = setTimeout(() => setVisible(true), 1200);
       return () => clearTimeout(timer);
     }

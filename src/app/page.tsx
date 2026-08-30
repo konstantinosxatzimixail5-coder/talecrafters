@@ -35,7 +35,7 @@ export default function HomePage() {
           faqSchema(homeFaqs),
           ...categories.map((c) =>
             serviceSchema({
-              name: `${c.title} — ${c.descriptor}`,
+              name: `${c.title}: ${c.descriptor}`,
               description: c.intro,
               path: `/arsenal#${c.slug}`,
               serviceType: c.descriptor,

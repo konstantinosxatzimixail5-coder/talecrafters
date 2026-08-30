@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getPipeline(slug);
   if (!p) return {};
   return pageMeta({
-    title: `${p.name} — ${p.title}`,
+    title: `${p.name}: ${p.title}`,
     description: p.summary,
     path: `/pipelines/${p.slug}`,
     keywords: [p.name, 'generative production pipeline', 'AI workflow', p.mechanism],

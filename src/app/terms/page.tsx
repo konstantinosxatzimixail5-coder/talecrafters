@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — TaleCrafters",
+  title: "Terms of Service: TaleCrafters",
   description:
     "TaleCrafters Ltd Terms of Service. Terms and conditions governing the use of our website.",
 };

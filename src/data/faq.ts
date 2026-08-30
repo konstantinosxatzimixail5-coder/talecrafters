@@ -15,11 +15,11 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: 'What does TaleCrafters actually do?',
-        a: 'Three things. We make campaigns, films and visual worlds. We build the systems that produce, distribute and scale creative work — agentic workflows, content engines, internal tools, sites and prototypes. And we develop our own original IP: films, games and stories. Most clients arrive for the first and stay for the second.',
+        a: 'Three things. We make campaigns, films and visual worlds. We build the systems that produce, distribute and scale creative work: agentic workflows, content engines, internal tools, sites and prototypes. And we develop our own original IP: films, games and stories. Most clients arrive for the first and stay for the second.',
       },
       {
         q: 'How fast can you deliver?',
-        a: 'A product still set is two working days from an approved plate. A creator campaign with a trained presenter is four days from casting brief to nine finished variants. A brand film depends on how many altitude bands, registers or characters it needs — we give a date with the quote, and the date is the one we work to.',
+        a: 'A product still set is two working days from an approved plate. A creator campaign with a trained presenter is four days from casting brief to nine finished variants. A brand film depends on how many altitude bands, registers or characters it needs. We give a date with the quote, and the date is the one we work to.',
       },
       {
         q: 'What does a project cost?',
@@ -57,7 +57,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'Do you do live-action too?',
-        a: 'We work hybrid where a brief needs it — real footage with generated environments, a real product with a generated set, a real voice with a generated read. Knowing which half should be synthetic is most of the skill.',
+        a: 'We work hybrid where a brief needs it: real footage with generated environments, a real product with a generated set, a real voice with a generated read. Knowing which half should be synthetic is most of the skill.',
       },
     ],
   },

@@ -49,7 +49,7 @@ export const terms: Term[] = [
     qa: [
       {
         q: 'What is the difference between an agentic workflow and automation?',
-        a: 'Classic automation follows a fixed path someone drew in advance. An agentic workflow decides its own path within stated boundaries, which makes it useful for work that varies — briefs, research, drafting — and dangerous for work that must never vary, like billing.',
+        a: 'Classic automation follows a fixed path someone drew in advance. An agentic workflow decides its own path within stated boundaries, which makes it useful for work that varies (briefs, research, drafting) and dangerous for work that must never vary, like billing.',
       },
       {
         q: 'Do agentic workflows replace the creative team?',
@@ -70,13 +70,13 @@ export const terms: Term[] = [
     tags: ['strategy', 'ethics'],
     body: [
       'Slop is not a technical failure. Most of it is technically clean: correct anatomy, pleasant lighting, no artefacts. What it lacks is a decision. Nobody chose the lens, nobody chose what to leave out, and nobody was willing to make the frame worse in one way to make it better in another. The audience reads that absence instantly, even when they cannot name it.',
-      'The commercial cost is specific. Slop trains an audience to skip a format. Once a feed has taught someone that a certain gloss means nothing worth reading, every subsequent piece in that register pays the tax — including the good one.',
+      'The commercial cost is specific. Slop trains an audience to skip a format. Once a feed has taught someone that a certain gloss means nothing worth reading, every subsequent piece in that register pays the tax, including the good one.',
       'The fix is not less generation. It is a person with taste holding a veto, and a brief that states what the piece is allowed to be bad at.',
     ],
     qa: [
       {
         q: 'How do you tell AI slop from good generative work?',
-        a: 'Ask what the piece is refusing to do. Good work makes a choice you could argue with — a strange crop, an ugly colour, a beat held too long. Slop makes no choice at all, which is why every piece of it looks like every other piece.',
+        a: 'Ask what the piece is refusing to do. Good work makes a choice you could argue with: a strange crop, an ugly colour, a beat held too long. Slop makes no choice at all, which is why every piece of it looks like every other piece.',
       },
       {
         q: 'Does using AI automatically produce slop?',
@@ -114,7 +114,7 @@ export const terms: Term[] = [
     term: 'Camera Control',
     aka: ['camera motion control', 'AI camera moves'],
     short:
-      'Directing a generative video model with the vocabulary of a camera department — dolly, truck, crane, rack focus — instead of describing what the shot should feel like.',
+      'Directing a generative video model with the vocabulary of a camera department (dolly, truck, crane, rack focus) instead of describing what the shot should feel like.',
     tags: ['production', 'control'],
     body: [
       'Models trained on film respond to film language. "Dolly in slowly on the subject" produces a repeatable result; "make it cinematic and emotional" produces a lottery. The gain is not aesthetic, it is variance: a named move gives you a shot you can ask for twice.',
@@ -124,7 +124,7 @@ export const terms: Term[] = [
     qa: [
       {
         q: 'Which camera moves work best in AI video generation?',
-        a: 'Single, clearly named moves with one intention: slow dolly in, truck left with parallax, crane down, rack focus. Compound moves — orbit while craning while pulling focus — fail more often, because the model has to satisfy three constraints at once.',
+        a: 'Single, clearly named moves with one intention: slow dolly in, truck left with parallax, crane down, rack focus. Compound moves (orbit while craning while pulling focus) fail more often, because the model has to satisfy three constraints at once.',
       },
       {
         q: 'Why does my AI video ignore the camera direction?',
@@ -142,7 +142,7 @@ export const terms: Term[] = [
     tags: ['models', 'control'],
     body: [
       'Low guidance lets the model wander: prettier, looser, less like what you asked for. High guidance forces compliance: closer to the prompt, and past a threshold, burnt contrast, over-saturated colour and a plasticky surface. The useful range is narrower than the slider suggests.',
-      'Practically it is a diagnostic. If a frame keeps ignoring one element of the brief, raising guidance is the wrong first move — rewriting the prompt so that element leads the sentence is usually the right one. Guidance is for fine adjustment, not for arguing with the model.',
+      'Practically it is a diagnostic. If a frame keeps ignoring one element of the brief, raising guidance is the wrong first move: rewriting the prompt so that element leads the sentence is usually the right one. Guidance is for fine adjustment, not for arguing with the model.',
     ],
     qa: [
       {
@@ -182,10 +182,10 @@ export const terms: Term[] = [
     slug: 'controlnet',
     term: 'ControlNet',
     short:
-      'A conditioning layer that constrains a diffusion model with structural input — a pose skeleton, a depth map, an edge trace — so composition survives a change of style.',
+      'A conditioning layer that constrains a diffusion model with structural input (a pose skeleton, a depth map, an edge trace) so composition survives a change of style.',
     tags: ['models', 'control'],
     body: [
-      'ControlNet answers the question text cannot: exactly where. You supply structure — the pose of a figure, the depth of a room, the outline of a product — and the model fills it with the look you asked for while respecting the geometry you gave it.',
+      'ControlNet answers the question text cannot: exactly where. You supply structure (the pose of a figure, the depth of a room, the outline of a product) and the model fills it with the look you asked for while respecting the geometry you gave it.',
       'In production the point is repeatability. The same depth map rendered in four registers gives four styles of the same shot, which is how a campaign holds its layout while changing its skin. It is also the cheapest fix for a composition the model keeps refusing to build.',
     ],
     qa: [
@@ -218,7 +218,7 @@ export const terms: Term[] = [
       },
       {
         q: 'Is generative production actually cheaper?',
-        a: 'For the right brief, substantially — no crew, no location, no reshoot. For a brief that needs a real face, a real place and a real product on the same day, often not. We say which one you have before quoting.',
+        a: 'For the right brief, substantially: no crew, no location, no reshoot. For a brief that needs a real face, a real place and a real product on the same day, often not. We say which one you have before quoting.',
       },
     ],
     related: ['agentic-workflow', 'operator-stack', 'gate'],
@@ -253,13 +253,13 @@ export const terms: Term[] = [
       'How many passes a diffusion model takes to walk an image from noise to a finished frame.',
     tags: ['models'],
     body: [
-      'Fewer steps is faster and rougher. More steps is slower and, up to a point, cleaner — then it stops improving and only costs money. Every model has a plateau, and finding it once for the model you use saves more budget than any prompt trick.',
+      'Fewer steps is faster and rougher. More steps is slower and, up to a point, cleaner: then it stops improving and only costs money. Every model has a plateau, and finding it once for the model you use saves more budget than any prompt trick.',
       'For iteration, run low steps: you are judging composition, not surface. Only the frames that survive selection are worth rendering at full step count. Teams that render everything at maximum quality spend their budget rejecting beautiful pictures.',
     ],
     qa: [
       {
         q: 'How many steps should I use for image generation?',
-        a: 'Run a ladder once — the same seed and prompt at several step counts — and look for where the difference stops being visible. That number is your ceiling for that model. Iterate well below it.',
+        a: 'Run a ladder once, holding the seed and prompt across several step counts, and look for where the difference stops being visible. That number is your ceiling for that model. Iterate well below it.',
       },
     ],
     related: ['diffusion-model', 'seed', 'cfg-scale', 'cost-per-accepted-asset'],
@@ -272,7 +272,7 @@ export const terms: Term[] = [
     tags: ['models'],
     body: [
       'Training teaches the model to destroy pictures in a controlled way and to undo that destruction. Generation runs the undoing on pure noise, steered by your prompt, your reference image and whatever structural conditioning you supply. That is the whole idea; everything else is engineering.',
-      'Two practical consequences follow. First, output is stochastic — the same prompt gives different frames unless you fix the seed. Second, the model has no concept of the object it is drawing, only of what pictures of it tend to look like, which is exactly why labels, spoke counts and hands need gates.',
+      'Two practical consequences follow. First, output is stochastic: the same prompt gives different frames unless you fix the seed. Second, the model has no concept of the object it is drawing, only of what pictures of it tend to look like, which is exactly why labels, spoke counts and hands need gates.',
     ],
     qa: [
       {
@@ -295,7 +295,7 @@ export const terms: Term[] = [
     tags: ['ethics', 'strategy'],
     body: [
       'Disclosure is now a mix of platform policy, advertising code and, in some markets, statute. The practical rule is simpler than the legal landscape: label to the strictest standard that applies, and put the label where the viewer is, not in a caption nobody expands.',
-      'The commercial fear — that admitting a piece is synthetic destroys its credibility — has largely not survived contact with reality. What destroys credibility is being caught. Brands that label early get to compete on whether the work is good.',
+      'The commercial fear, that admitting a piece is synthetic destroys its credibility, has largely not survived contact with reality. What destroys credibility is being caught. Brands that label early get to compete on whether the work is good.',
     ],
     qa: [
       {
@@ -313,11 +313,11 @@ export const terms: Term[] = [
     slug: 'drift',
     term: 'Drift',
     short:
-      'The slow, cumulative change in a subject across a set of generations — a face, a product, a colour — where no single frame looks wrong but the run does.',
+      'The slow, cumulative change in a subject across a set of generations (a face, a product, a colour) where no single frame looks wrong but the run does.',
     tags: ['production', 'control'],
     body: [
       'Drift is dangerous precisely because it is invisible at the frame level. Reviewed one at a time, every image passes. Played in sequence, the jaw has narrowed, the can has grown a millimetre and the key light has swung fifteen degrees.',
-      'Every gate we run exists to catch it: stack and flick for faces, silhouette overlay for products, one stated key direction for a set. The rule underneath all three is the same — compare against the locked reference, never against the previous frame, because comparing to the previous frame is how drift accumulates unnoticed.',
+      'Every gate we run exists to catch it: stack and flick for faces, silhouette overlay for products, one stated key direction for a set. The rule underneath all three is the same: compare against the locked reference, never against the previous frame, because comparing to the previous frame is how drift accumulates unnoticed.',
     ],
     qa: [
       {
@@ -376,7 +376,7 @@ export const terms: Term[] = [
     tags: ['models'],
     body: [
       'The commercial significance of a foundation model is that it is a substrate, not a product. Everything useful gets built on top: adapters, skills, tool access, retrieval, and the guard rails a client will actually sign off.',
-      'For a studio the practical consequence is churn. Models are replaced faster than pipelines are, so anything valuable belongs in the pipeline — the plates, the identity sheets, the gates, the ledger — and not in a particular model’s quirks.',
+      'For a studio the practical consequence is churn. Models are replaced faster than pipelines are, so anything valuable belongs in the pipeline (the plates, the identity sheets, the gates, the ledger) and not in a particular model’s quirks.',
     ],
     qa: [
       {
@@ -395,7 +395,7 @@ export const terms: Term[] = [
     tags: ['production', 'systems'],
     body: [
       'A gate is not a vibe check. It has a test that two people would run the same way, and a defined consequence. "Zoom to full resolution and read every word on the packaging; a fail returns to the master plate" is a gate. "Make sure it looks right" is a hope.',
-      'Gates are also what makes volume safe. At four assets a week, taste catches everything. At four hundred, only a checklist does, and the checklist has to name the failure modes that particular subject invites — labels for packaging, spoke counts for motorcycles, hands for anything held.',
+      'Gates are also what makes volume safe. At four assets a week, taste catches everything. At four hundred, only a checklist does, and the checklist has to name the failure modes that particular subject invites: labels for packaging, spoke counts for motorcycles, hands for anything held.',
     ],
     qa: [
       {
@@ -413,7 +413,7 @@ export const terms: Term[] = [
     slug: 'hallucination',
     term: 'Hallucination',
     short:
-      'Confident invention — a model producing a certification mark, a statistic, a limb or a citation that does not exist.',
+      'Confident invention: a model producing a certification mark, a statistic, a limb or a citation that does not exist.',
     tags: ['models', 'ethics'],
     body: [
       'A generative model optimises for plausibility, not truth. It has no mechanism for knowing that the award badge it has drawn on your packaging is fictional, because it is not drawing an award badge; it is drawing what award badges look like.',
@@ -472,7 +472,7 @@ export const terms: Term[] = [
       'Generating a moving shot from a still you have already approved, rather than from text alone.',
     tags: ['production'],
     body: [
-      'This is the default working method for anything that has to look like a specific thing. You settle composition, lighting, product and wardrobe as a still — cheap, fast, reviewable — and only then spend a video render on it. Text-to-video is for exploration; image-to-video is for delivery.',
+      'This is the default working method for anything that has to look like a specific thing. You settle composition, lighting, product and wardrobe as a still (cheap, fast, reviewable) and only then spend a video render on it. Text-to-video is for exploration; image-to-video is for delivery.',
       'It also puts the gates in the right place. A label that fails at the still stage costs one image. The same failure discovered after motion costs the clip.',
     ],
     qa: [
@@ -509,7 +509,7 @@ export const terms: Term[] = [
       'The compressed mathematical space a generative model actually works in, where similar concepts sit near each other.',
     tags: ['models'],
     body: [
-      'Models do not manipulate pixels; they manipulate a much smaller encoded representation and decode it at the end. That is why generation is tractable at all, and why a small change to a prompt can produce a large change to a frame — you have moved to a different neighbourhood.',
+      'Models do not manipulate pixels; they manipulate a much smaller encoded representation and decode it at the end. That is why generation is tractable at all, and why a small change to a prompt can produce a large change to a frame. You have moved to a different neighbourhood.',
       'The practical use is interpolation. Moving smoothly between two points in latent space is what produces a morph, a style blend or a coherent transition, and it is the mechanism underneath first–last frame video.',
     ],
     qa: [
@@ -551,7 +551,7 @@ export const terms: Term[] = [
     tags: ['production', 'control'],
     body: [
       'One clean frame of the product on a transparent background: correct shape, correct label, correct proportions, nothing else in the picture. Every subsequent angle, set and motion clip references that file instead of a fresh prompt.',
-      'The plate is also the arbiter. When a frame is questioned, it is checked against the plate at forty per cent opacity — not against the previous frame, and not against memory. That single discipline is what makes ninety frames of one product survivable.',
+      'The plate is also the arbiter. When a frame is questioned, it is checked against the plate at forty per cent opacity: not against the previous frame, and not against memory. That single discipline is what makes ninety frames of one product survivable.',
     ],
     qa: [
       {
@@ -575,7 +575,7 @@ export const terms: Term[] = [
     qa: [
       {
         q: 'What is MCP used for?',
-        a: 'Giving a model controlled access to real systems — files, databases, APIs, internal tools — through one standard interface rather than a bespoke integration each time.',
+        a: 'Giving a model controlled access to real systems (files, databases, APIs, internal tools) through one standard interface rather than a bespoke integration each time.',
       },
     ],
     related: ['agentic-workflow', 'operator-stack', 'foundation-model'],
@@ -584,7 +584,7 @@ export const terms: Term[] = [
     slug: 'multimodal-model',
     term: 'Multimodal Model',
     short:
-      'A model that takes and produces more than one kind of input — text, image, audio, video — inside a single system.',
+      'A model that takes and produces more than one kind of input (text, image, audio, video) inside a single system.',
     tags: ['models'],
     body: [
       'The practical gain is that a brief, a reference frame and a voice note can go into the same conversation and come out as a shot list, a plate and a script. The handoffs that used to lose information between tools happen inside one context instead.',
@@ -660,13 +660,13 @@ export const terms: Term[] = [
       'Our pipeline for any subject a customer can hold up against the picture: lock a master plate, specify the set once, then generate every angle from the plate.',
     tags: ['production', 'systems'],
     body: [
-      'Plate, label lock, set specification, angles, motion, formats. Two rounds — thirty frames for selection, then ninety frames and six clips — with layered files landing in two working days.',
+      'Plate, label lock, set specification, angles, motion, formats. Two rounds (thirty frames for selection, then ninety frames and six clips) with layered files landing in two working days.',
       'Four gates hold it together: read every word on the packaging at full zoom, overlay each render on the plate at forty per cent opacity, keep one key direction across the whole set, and let no invented certification, award or ingredient claim survive.',
     ],
     qa: [
       {
         q: 'Can AI product photography match a real studio shoot?',
-        a: 'For packaging, food, hard goods and anything that can be plate-locked, routinely. For a product with unusual translucency or a finish the model has not seen, a real shoot still wins — and we will say so.',
+        a: 'For packaging, food, hard goods and anything that can be plate-locked, routinely. For a product with unusual translucency or a finish the model has not seen, a real shoot still wins, and we will say so.',
       },
     ],
     related: ['master-plate', 'gate', 'drift', 'image-to-video'],
@@ -721,7 +721,7 @@ export const terms: Term[] = [
     tags: ['control'],
     body: [
       'A reference does what a paragraph of adjectives cannot: it shows the model the thing. It is the fastest route to a specific look, and the most common cause of confusion when a team supplies four references pulling in different directions.',
-      'One reference, one job. Style here, composition there, subject somewhere else — and say which is which, because a model given a mood board will average it, and an averaged mood board is exactly what slop looks like.',
+      'One reference, one job. Style here, composition there, subject somewhere else, and say which is which, because a model given a mood board will average it, and an averaged mood board is exactly what slop looks like.',
     ],
     qa: [
       {
@@ -735,7 +735,7 @@ export const terms: Term[] = [
     slug: 'register',
     term: 'Register',
     short:
-      'A deliberate visual dialect — a decision about lighting model, edge quality and how much the world is allowed to be wrong.',
+      'A deliberate visual dialect: a decision about lighting model, edge quality and how much the world is allowed to be wrong.',
     tags: ['strategy', 'production'],
     body: [
       'Photoreal, 3D cartoon, storybook illustration, live-action pastiche. Each is a register, and the choice is strategic rather than decorative: it decides what the audience will forgive and what they will notice.',
@@ -816,7 +816,7 @@ export const terms: Term[] = [
     qa: [
       {
         q: 'What counts as synthetic media?',
-        a: 'Anything generated or materially altered by a model — including a real photograph with a generated background, or a real recording with a cloned voice.',
+        a: 'Anything generated or materially altered by a model, including a real photograph with a generated background, or a real recording with a cloned voice.',
       },
       {
         q: 'Is synthetic media the same as AI-generated content?',
@@ -829,7 +829,7 @@ export const terms: Term[] = [
     slug: 'synthetic-ugc',
     term: 'Synthetic UGC',
     short:
-      'Creator-style content — presenter to camera, phone-look, room lighting — produced with a trained identity rather than a booked creator.',
+      'Creator-style content (presenter to camera, phone-look, room lighting) produced with a trained identity rather than a booked creator.',
     tags: ['production', 'strategy'],
     body: [
       'The commercial case is variance testing. A paid social test needs the same person delivering six openings and four asks, then needs them again next month when the offer changes. Booking a creator for that is expensive and slow; a trained identity makes variant forty cost what variant ten did.',
@@ -851,7 +851,7 @@ export const terms: Term[] = [
     slug: 'temporal-coherence',
     term: 'Temporal Coherence',
     short:
-      'Whether a generated clip holds together across time — the same face, the same coat, the same number of fingers, from first frame to last.',
+      'Whether a generated clip holds together across time: the same face, the same coat, the same number of fingers, from first frame to last.',
     tags: ['production', 'models'],
     body: [
       'A single generated frame can be perfect while the clip it belongs to is unusable, because the model has no persistent memory of the object between frames. Textures crawl, patterns swim, and a logo reassembles itself slightly differently four times a second.',
@@ -888,7 +888,7 @@ export const terms: Term[] = [
     slug: 'token',
     term: 'Token',
     short:
-      'The unit a language model reads and writes — roughly a short word or a fragment of one — and the unit most models are billed by.',
+      'The unit a language model reads and writes, roughly a short word or a fragment of one. It is also the unit most models are billed by.',
     tags: ['models', 'systems'],
     body: [
       'Tokens matter commercially because they are the meter. A workflow that re-sends the same brand book on every call is paying for it every time, which is why caching and retrieval are cost decisions as much as engineering ones.',
@@ -911,7 +911,7 @@ export const terms: Term[] = [
     tags: ['production', 'control'],
     body: [
       'The sheet is the whole job: twenty or more stills of one face, varied angles and expressions, one full-height frame, even lighting, no sunglasses, no crop through the jaw. A weak sheet produces an identity that drifts, and no amount of downstream prompting recovers it.',
-      'Once trained, the identity becomes an asset the client owns. That is the difference between hiring a face and building one — the second one is still there next quarter, at the same cost per variant.',
+      'Once trained, the identity becomes an asset the client owns. That is the difference between hiring a face and building one: the second one is still there next quarter, at the same cost per variant.',
     ],
     qa: [
       {
@@ -946,7 +946,7 @@ export const terms: Term[] = [
       'Building a synthetic voice from recordings of a real one, either quickly from a short sample or properly from a long one.',
     tags: ['production', 'ethics'],
     body: [
-      'An instant clone needs one to three minutes of clean mono audio and is good enough for a scratch read. A professionally trained clone needs thirty minutes at minimum, two to three hours for the strongest result, and holds emotional range far better — which is the part that decides whether a listener stays.',
+      'An instant clone needs one to three minutes of clean mono audio and is good enough for a scratch read. A professionally trained clone needs thirty minutes at minimum, two to three hours for the strongest result, and holds emotional range far better, which is the part that decides whether a listener stays.',
       'Consent is not a formality here. A signed release for the voice sits in the folder before anything renders, and that applies to a founder’s own voice as much as to anyone else’s.',
     ],
     qa: [
@@ -975,7 +975,7 @@ export const terms: Term[] = [
     qa: [
       {
         q: 'Can you detect AI-generated images?',
-        a: 'Reliably when the generator embedded a watermark and you have the matching detector. Unreliably otherwise — general-purpose "AI detectors" produce enough false positives to be unsafe as evidence.',
+        a: 'Reliably when the generator embedded a watermark and you have the matching detector. Unreliably otherwise: general-purpose "AI detectors" produce enough false positives to be unsafe as evidence.',
       },
     ],
     related: ['c2pa', 'disclosure', 'deepfake', 'synthetic-media'],
