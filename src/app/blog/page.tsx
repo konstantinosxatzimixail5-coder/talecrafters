@@ -33,12 +33,17 @@ interface Post {
   author?: string;
 }
 
+// An unreachable dataset renders an empty index rather than a 500.
 async function getPosts(): Promise<Post[]> {
-  return client.fetch(
-    `*[_type == "post"] | order(publishedAt desc) {
-      _id, title, slug, excerpt, publishedAt, featuredImage, tags, author
-    }`
-  );
+  try {
+    return await client.fetch(
+      `*[_type == "post"] | order(publishedAt desc) {
+        _id, title, slug, excerpt, publishedAt, featuredImage, tags, author
+      }`
+    );
+  } catch {
+    return [];
+  }
 }
 
 export default async function BlogPage() {

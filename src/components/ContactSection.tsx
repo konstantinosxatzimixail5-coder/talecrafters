@@ -38,7 +38,7 @@ const urgencyLevels = [
   { id: 'exploring', label: 'JUST EXPLORING', color: 'var(--brand-violet)', desc: 'Kicking tyres' },
 ];
 
-export function ContactSection() {
+export function ContactSection({ hideHeading = false }: { hideHeading?: boolean } = {}) {
   const [step, setStep] = useState(0);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [urgency, setUrgency] = useState('');
@@ -145,55 +145,60 @@ export function ContactSection() {
         />
       </div>
 
-      {/* Section counter */}
-      <motion.div
-        className="absolute top-12 right-8 md:right-16 flex items-center gap-3"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="h-px w-8" style={{ backgroundColor: 'var(--brand-cyan)' }} />
-        <span
-          className="text-xs tracking-[0.3em]"
-          style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
+      {/* Section counter. The /contact route carries its own header, so both
+          the counter and the headline are suppressed there. */}
+      {!hideHeading && (
+        <motion.div
+          className="absolute top-12 right-8 md:right-16 flex items-center gap-3"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          007 / START A CONSPIRACY
-        </span>
-      </motion.div>
+          <div className="h-px w-8" style={{ backgroundColor: 'var(--brand-cyan)' }} />
+          <span
+            className="text-xs tracking-[0.3em]"
+            style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
+          >
+            007 / START A CONSPIRACY
+          </span>
+        </motion.div>
+      )}
 
       <div className="px-6 md:px-16 lg:px-24 max-w-5xl mx-auto">
         {/* Headline */}
-        <motion.div
-          className="mb-16 md:mb-24"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2
-            className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            LET&apos;S<br />
-            <span style={{ color: 'var(--brand-cyan)' }}>CONSPIRE</span>
-          </h2>
+        {!hideHeading && (
           <motion.div
-            className="mt-6 flex items-center gap-4"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mb-16 md:mb-24"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="h-px w-16" style={{ background: 'linear-gradient(to right, var(--brand-cyan), var(--brand-magenta))' }} />
-            <span
-              className="text-sm tracking-widest"
-              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+            <h2
+              className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
+              style={{ fontFamily: 'var(--font-display)' }}
             >
-              Consider this your audition. Ours too.
-            </span>
+              LET&apos;S<br />
+              <span style={{ color: 'var(--brand-cyan)' }}>CONSPIRE</span>
+            </h2>
+            <motion.div
+              className="mt-6 flex items-center gap-4"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="h-px w-16" style={{ background: 'linear-gradient(to right, var(--brand-cyan), var(--brand-magenta))' }} />
+              <span
+                className="text-sm tracking-widest"
+                style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+              >
+                Consider this your audition. Ours too.
+              </span>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        )}
 
         {submitted ? (
           <motion.div

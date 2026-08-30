@@ -70,7 +70,7 @@ const packages = [
   },
 ];
 
-export function PricingSection() {
+export function PricingSection({ hideHeading = false }: { hideHeading?: boolean } = {}) {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   return (
@@ -109,22 +109,25 @@ export function PricingSection() {
       </motion.div>
 
       <div className="px-6 md:px-16 lg:px-24">
-        {/* Headline */}
-        <motion.div
-          className="mb-8"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2
-            className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
-            style={{ fontFamily: 'var(--font-display)' }}
+        {/* Headline. The dedicated /packages route supplies its own, so it is
+            suppressed there rather than repeated. */}
+        {!hideHeading && (
+          <motion.div
+            className="mb-8"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           >
-            PICK YOUR<br />
-            <span style={{ color: 'var(--brand-magenta)' }}>PLOT</span>
-          </h2>
-        </motion.div>
+            <h2
+              className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              PICK YOUR<br />
+              <span style={{ color: 'var(--brand-magenta)' }}>PLOT</span>
+            </h2>
+          </motion.div>
+        )}
 
         <motion.p
           className="text-lg md:text-2xl mb-16 md:mb-24 max-w-2xl"
@@ -289,9 +292,9 @@ export function PricingSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: "Synthetic Media Natives", desc: "We implement creative workflows around the tools we use. While others are figuring out prompts, we're building production pipelines that would make traditional studios weep.", color: 'var(--brand-cyan)' },
+              { title: "Synthetic Media Natives", desc: "We build the pipeline before the prompt: a locked master plate, a written set specification, four control gates and a ledger of what each accepted asset cost. Seven of them exist. Three are published on this site.", color: 'var(--brand-cyan)' },
               { title: "Story-First, Always", desc: "Technology is the vehicle. Narrative is the destination. We obsess over story structure, emotional beats, and psychological hooks before we touch a single tool.", color: 'var(--brand-magenta)' },
-              { title: "Content Reinventionists", desc: "Instead of pitching you what we can do, we show you what you can't ignore. We turn content into your competitive advantage.", color: 'var(--brand-violet)' },
+              { title: "Content Reinventionists", desc: "Every case study on this site carries the problem, the idea, what we made, the result and the artefacts. Read one before the call and you will already know how we work.", color: 'var(--brand-violet)' },
               { title: "No Bullshit Guarantee", desc: "We give zero f*cks about ego, and infinite f*cks about excellence.", color: 'var(--brand-gold)' },
             ].map((item, i) => (
               <motion.div
