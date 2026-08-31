@@ -164,7 +164,7 @@ export const resources: Resource[] = [
     count: '5 sections',
     format: 'Worksheet, PDF and on this page',
     blurb:
-      'The arithmetic we quote from, including the acceptance-rate table per shot type that most studios treat as commercially sensitive. Work through it and you get a cost per accepted asset rather than a cost per generation, which is the difference between a number you can plan with and a number that flatters everybody.',
+      'The arithmetic we quote from, with a starting acceptance-rate table per shot type to budget against until you have logged your own. Work through it and you get a cost per accepted asset rather than a cost per generation, which is the difference between a number you can plan with and a number that flatters everybody.',
     forWhom: 'Anyone comparing generative quotes, or working out whether a brief should be generative at all.',
     pdf: '/downloads/talecrafters-ai-video-cost-calculator.pdf',
     metaTitle: 'AI Video Cost Calculator: Cost Per Accepted Asset Worksheet',

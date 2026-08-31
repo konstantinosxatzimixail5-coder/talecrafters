@@ -25,11 +25,11 @@ export const post: Post = {
   imageAlt:
     'A cost ledger rendered as stacked luminous bars against a dark studio wall, each bar labelled with a production stage.',
   standfirst:
-    'In 2026 a generative video costs anywhere from about £0.05 per second in raw model credits to £30,000 or more for a produced campaign, and the gap between those numbers is not margin. It is everything that happens before and after the model runs. Here is what each tier actually buys.',
+    'In 2026 a generative video costs anywhere from about five cents a second in raw model credits to £30,000 or more for a produced campaign, and the gap between those numbers is not margin. It is everything that happens before and after the model runs. Here is what each tier actually buys.',
   body: [
     {
       t: 'p',
-      text: 'Everybody asking this question has seen two numbers and cannot reconcile them. One is the per-second price on a model provider’s pricing page, which in 2026 sits somewhere between five and forty pence a second depending on the model and the resolution. The other is a studio quote with a comma in it. The reasonable conclusion is that somebody is lying.',
+      text: 'Everybody asking this question has seen two numbers and cannot reconcile them. One is the per-second price on a model provider’s pricing page, which in 2026 runs from roughly five cents to forty cents a second depending on the model and the resolution. The other is a studio quote with a comma in it. The reasonable conclusion is that somebody is lying.',
     },
     {
       t: 'p',
@@ -42,18 +42,19 @@ export const post: Post = {
     },
     {
       t: 'table',
-      caption: 'Generative video production, by tier, 2026',
+      caption:
+        'Generative video production, by tier, 2026. Model and tool prices are quoted in dollars because that is how providers publish them; production figures are in pounds because that is what a UK studio invoices.',
       head: ['Tier', 'Typical cost', 'What you are buying', 'Where it breaks'],
       rows: [
         [
           'Raw model credits',
-          '£0.05 to £0.40 per second of output',
+          '$0.05 to $0.40 per second of output',
           'One clip, from one prompt, with no guarantee about the next one',
           'The second clip does not match the first',
         ],
         [
           'Subscription tools',
-          '£20 to £250 per month',
+          '$20 to $300 per month',
           'A seat, a credit allowance, templates and an export',
           'Brand control, licensing clarity, anything at campaign scale',
         ],
@@ -154,7 +155,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'How much does an AI video cost in 2026?',
-      a: 'Raw model output runs roughly £0.05 to £0.40 per second. A subscription tool is £20 to £250 a month. A freelance operator on a single project is typically £400 to £3,000. A produced studio engagement with locked pipelines, control gates and licensing runs £3,000 to £30,000 and up, depending mostly on how much legible type and how many recurring faces the brief contains.',
+      a: 'Raw model output runs roughly $0.05 to $0.40 per second, and subscription tools $20 to $300 a month, both quoted in dollars because that is how providers publish them. A freelance operator on a single project is typically £400 to £3,000. A produced studio engagement with locked pipelines, control gates and licensing runs £3,000 to £30,000 and up, depending mostly on how much legible type and how many recurring faces the brief contains.',
     },
     {
       q: 'Why is AI video production so much cheaper than traditional production?',

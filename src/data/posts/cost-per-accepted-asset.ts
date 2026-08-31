@@ -44,11 +44,12 @@ export const post: Post = {
     { t: 'h2', text: 'Worked example' },
     {
       t: 'p',
-      text: 'A supplements brand wants nine paid-social variants with one presenter, plus thirty product stills. Two batches, two very different profiles.',
+      text: 'Take a supplements brand wanting nine paid-social variants with one presenter, plus thirty product stills. Two batches, two very different profiles. The rates below are illustrative rather than a rate card, and the arithmetic is what matters.',
     },
     {
       t: 'table',
-      caption: 'Two batches on one engagement',
+      caption:
+        'A worked example, with illustrative rates and figures. The shape is the point; put your own numbers in the cells.',
       head: ['', 'Presenter variants', 'Product stills'],
       rows: [
         ['Assets required', '9', '30'],
@@ -63,7 +64,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The interesting line is not the total. It is that the presenter variants cost three times per asset what the stills did, despite fewer renders, because the human hours are where the money went. If you had measured cost per generation you would have concluded the opposite: £5.53 a render for the presenter work against £3.02 for the stills, a difference of nothing much.',
+      text: 'The interesting line is not the total. It is that the presenter variants cost roughly three times per asset what the stills did, despite fewer renders, because the human hours are where the money went. Measured per generation you would have concluded the opposite: the two look almost identical, and the difference that matters disappears.',
     },
     { t: 'h2', text: 'What the number tells you that nothing else does' },
     {

@@ -22,7 +22,7 @@ export const additionalTerms: Term[] = [
     tags: ['production', 'strategy'],
     body: [
       'If a batch produces sixty frames and four are used, the acceptance rate is around seven per cent and the real cost of each shipped frame is fifteen renders. This is the number that turns a per-second price into a production budget, and it is the number most studios do not track.',
-      'It varies enormously by difficulty. Legible packaging type runs fifteen to thirty per cent in our production. Environment plates with no product and no face run seventy to ninety. Averaging the two produces a figure that describes neither and misleads on both.',
+      'It varies enormously by difficulty. Shots with legible packaging type sit far lower than environment plates with no product and no face in them, often by a factor of three or four. Averaging the two produces a figure that describes neither and misleads on both, which is why the number is only useful measured per shot type against your own logs.',
       'Track it per shot type, log it automatically, and quote from it. A studio that can tell you its acceptance rate on the hardest shot in your brief has run this before.',
     ],
     qa: [

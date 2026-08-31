@@ -2,6 +2,8 @@
 // overlay and the footer. Both read this file, so a new page cannot appear in
 // one and go missing from the other.
 
+import { terms } from '@/data/glossary';
+
 export interface NavLeaf {
   label: string;
   href: string;
@@ -48,7 +50,7 @@ export const primaryNav: NavEntry[] = [
     color: MAGENTA,
     items: [
       { label: 'Blog', href: '/blog', note: 'Dispatches from the frontline' },
-      { label: 'Glossary', href: '/glossary', note: '47 terms, no fog' },
+      { label: 'Glossary', href: '/glossary', note: `${terms.length} terms, no fog` },
     ],
   },
 ];
@@ -87,7 +89,7 @@ export const navGroups: NavGroup[] = [
       { label: 'Free Resources', href: '/armoury', note: 'Take them. No email gate.' },
       { label: 'GenAI Workflows', href: '/pipelines', note: 'How the work actually gets made' },
       { label: 'Blog', href: '/blog', note: 'Dispatches from the frontline' },
-      { label: 'Glossary', href: '/glossary', note: '47 terms, no fog' },
+      { label: 'Glossary', href: '/glossary', note: `${terms.length} terms, no fog` },
       { label: 'FAQ', href: '/faq', note: 'The questions everyone asks' },
     ],
   },

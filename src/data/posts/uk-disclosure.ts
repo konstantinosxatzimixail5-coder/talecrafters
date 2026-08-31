@@ -35,11 +35,19 @@ export const post: Post = {
     { t: 'h2', text: 'What the CAP Code actually says' },
     {
       t: 'p',
-      text: 'As of the second half of 2026, the UK Advertising Codes still contain no AI-specific rule. The Committee of Advertising Practice has been consistent that the existing rules apply regardless of how the content was made, which means the operative provision is the general prohibition on misleading by inaccuracy, ambiguity, exaggeration or omission.',
+      text: 'The UK Advertising Codes contain no AI-specific rule, and as of late 2026 there is no sign of one coming. The Committee of Advertising Practice has been consistent that the Code is media-neutral and applies regardless of how content was made, which means the operative provision is the general prohibition on misleading by inaccuracy, ambiguity, exaggeration or omission.',
     },
     {
       t: 'p',
       text: 'CAP frames the practical test as two questions. Would the audience be misled if the use of AI were not disclosed? And, where there is a risk of misleading, would a disclosure clarify the ad or contradict its overall message? That second question is the one people miss. A disclosure that undermines the claim the ad is making is not a fix; it is evidence the claim was the problem.',
+    },
+    {
+      t: 'p',
+      text: 'The ASA set this out again in June 2026, in guidance aimed squarely at deepfakes and automated campaigns. Four points, none of them surprising and all of them worth having in writing: the Code is media-neutral and there is no exception for generated content; deepfakes get no free pass on misleading claims or on endorsements; AI bias is a compliance problem rather than only a technical one, because a biased output can carry a harmful stereotype into an advert; and using an automated tool does not move responsibility away from the advertiser.',
+    },
+    {
+      t: 'p',
+      text: 'That last point is the one to take to a platform-buying conversation. An automated campaign that generates its own variants is still your advert, and "the tool made it" has never been a defence.',
     },
     {
       t: 'note',
@@ -49,7 +57,7 @@ export const post: Post = {
     { t: 'h2', text: 'Where silence stops being defensible' },
     {
       t: 'p',
-      text: 'Four categories, in our experience, where an undisclosed generative asset moves from a judgement call to a problem.',
+      text: 'Four categories where an undisclosed generative asset moves from a judgement call to a problem.',
     },
     {
       t: 'ul',
@@ -151,6 +159,16 @@ export const post: Post = {
   ],
   resources: ['ai-advertising-disclosure-checklist', 'synthetic-ugc-consent-template'],
   sources: [
+    {
+      label: 'AI and deepfakes: four things advertisers need to know before they hit “Run”',
+      href: 'https://www.asa.org.uk/news/ai-and-deepfakes-four-things-advertisers-need-to-know-before-they-hit-run.html',
+      publisher: 'ASA / CAP',
+    },
+    {
+      label: 'Disclosure of AI in advertising: striking the balance between creativity and responsibility',
+      href: 'https://www.asa.org.uk/news/disclosure-of-ai-in-advertising-striking-the-balance-between-creativity-and-responsibility.html',
+      publisher: 'ASA / CAP',
+    },
     {
       label: 'Transparency obligations under Article 50 of the AI Act',
       href: 'https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act',

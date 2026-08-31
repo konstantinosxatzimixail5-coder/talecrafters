@@ -87,7 +87,12 @@ export const post: Post = {
     { t: 'h2', text: 'Penalties' },
     {
       t: 'p',
-      text: 'Non-compliance with the transparency obligations attracts fines up to fifteen million euro or three per cent of worldwide annual turnover, whichever is higher. That is the tier below the prohibited-practices maximum and well above a nuisance.',
+      text: 'Article 99 sets three tiers. Prohibited practices sit at thirty-five million euro or seven per cent of worldwide annual turnover. Supplying incorrect information sits at seven and a half million or one per cent. The Article 50 transparency duties sit in the middle tier: fifteen million euro or three per cent of worldwide annual turnover, whichever is higher.',
+    },
+    {
+      t: 'note',
+      title: 'The SME inversion',
+      text: 'For SMEs and start-ups the calculation flips: the fine is the lower of the fixed amount and the turnover percentage rather than the higher. For most agencies and studios reading this, that turns a headline number into a proportionate one. It is a real relief and it is not a reason to skip the process change, which costs nothing per asset once it is made.',
     },
     { t: 'h2', text: 'What to change this quarter' },
     {
@@ -164,6 +169,11 @@ export const post: Post = {
       label: 'The AI Act’s transparency obligations: rules, scope and timeline',
       href: 'https://www.stibbe.com/publications-and-insights/the-ai-acts-transparency-obligations-rules-scope-and-timeline',
       publisher: 'Stibbe',
+    },
+    {
+      label: 'Article 99: Penalties',
+      href: 'https://artificialintelligenceact.eu/article/99/',
+      publisher: 'artificialintelligenceact.eu',
     },
   ],
 };

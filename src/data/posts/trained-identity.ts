@@ -86,7 +86,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'The number to watch',
-      text: 'Acceptance rate on presenter shots. Reference conditioning across a multi-week campaign typically lands in the twenties. A trained identity commonly moves that into the sixties. That difference pays for a day of setup in about one batch.',
+      text: 'Acceptance rate on presenter shots, logged per batch. Reference conditioning drifts across a multi-week campaign and a trained identity does not, so the gap widens the longer the campaign runs. Watch your own two numbers rather than anybody else’s: the point at which they diverge is the point the setup paid for itself.'
     },
     { t: 'h2', text: 'The licensing question, which is not optional' },
     {
@@ -141,8 +141,8 @@ export const post: Post = {
       a: 'A release that explicitly permits derivative training, names the scope of output, states territory and duration, and specifies what happens to the trained artefact at the end of the term. Photography releases drafted before generative production almost never cover this.',
     },
     {
-      q: 'How much does a trained identity improve acceptance rates?',
-      a: 'In our production, presenter-shot acceptance across a multi-week campaign typically moves from the twenties on reference conditioning into the sixties on a trained identity, which recovers the setup cost within about one batch.',
+      q: 'Is a trained identity worth the setup time?',
+      a: 'Enough that it usually recovers a day of setup within about one batch, because the regeneration you stop paying for compounds across every asset. The size of the gain depends on your shot type and how long the campaign runs, so log presenter acceptance per batch and let your own numbers make the case.',
     },
   ],
   terms: ['character-consistency', 'master-plate', 'synthetic-ugc', 'cost-per-accepted-asset'],

@@ -25,7 +25,7 @@ export const post: Post = {
   imageAlt:
     'A contact sheet of one hundred product frames, each aligned to the same silhouette, a handful marked with a red rejection cross.',
   standfirst:
-    'Consistency across a large generative set is not a prompting problem. It is a lock, a written specification, and four tests applied mechanically to every frame. On a hundred-shot set we expect to render three hundred and ship a hundred, and we plan the budget on that ratio rather than hoping for a better one.',
+    'Consistency across a large generative set is not a prompting problem. It is a lock, a written specification, and four tests applied mechanically to every frame. Plan a hundred-shot set as a three-hundred-render job and budget against that ratio rather than hoping for a better one. The figures below are planning assumptions to start from, not published benchmarks: log your own and replace them after two batches.',
   body: [
     {
       t: 'p',
@@ -80,7 +80,8 @@ export const post: Post = {
     },
     {
       t: 'table',
-      caption: 'The four gates and the acceptance rates we plan against',
+      caption:
+        'The four gates, with starting planning assumptions for acceptance. These are a place to begin budgeting, not measured benchmarks: log your own and replace them.',
       head: ['Gate', 'Test', 'Typical pass rate, hard shots', 'Typical pass rate, easy shots'],
       rows: [
         ['Type', 'Every printed word read at 100% against the artwork', '15 to 30%', '70 to 90%'],
@@ -130,7 +131,7 @@ export const post: Post = {
     },
     {
       q: 'How many renders does a hundred-shot generative set actually take?',
-      a: 'Around three hundred, in our experience, though it depends almost entirely on how much legible printed type the shots contain. Type is where acceptance rates collapse: fifteen to thirty per cent on hard packaging shots against seventy to ninety on shots without readable text.',
+      a: 'Plan for around three hundred, though it depends almost entirely on how much legible printed type the shots contain. Type is where acceptance rates collapse, so a set full of readable packaging behaves very differently from one without. Treat any published range as a starting assumption and replace it with your own logged figures after two batches.',
     },
     {
       q: 'Why not just retouch the frames that are nearly right?',

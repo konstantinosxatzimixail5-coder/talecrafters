@@ -8,9 +8,9 @@ import { pageMeta, breadcrumbSchema, definedTermSchema } from '@/lib/seo';
 import { abs, SITE_URL } from '@/lib/site';
 
 export const metadata = pageMeta({
-  title: 'Generative & Synthetic Media Glossary — 47 Terms',
+  title: `Generative & Synthetic Media Glossary — ${terms.length} Terms`,
   description:
-    'Forty-seven terms from generative and synthetic media production, defined the way a producer needs them: agentic workflows, drift, master plates, LoRA, temporal coherence, disclosure, C2PA, cost per accepted asset and more.',
+    `${terms.length} terms from generative and synthetic media production, defined the way a producer needs them: agentic workflows, drift, master plates, acceptance rate, temporal coherence, disclosure, Article 50, cost per accepted asset and more.`,
   path: '/glossary',
   keywords: [
     'generative AI glossary',
@@ -52,7 +52,7 @@ export default function GlossaryIndex() {
             name: 'The TaleCrafters Glossary of Generative & Synthetic Media',
             url: abs('/glossary'),
             description:
-              'Forty-seven terms from generative and synthetic media production, defined for people who have to ship the work.',
+              `${terms.length} terms from generative and synthetic media production, defined for people who have to ship the work.`,
             publisher: { '@id': `${SITE_URL}/#organization` },
             hasDefinedTerm: terms.map((t) =>
               definedTermSchema({ term: t.term, slug: t.slug, short: t.short, tags: t.tags })
@@ -63,7 +63,7 @@ export default function GlossaryIndex() {
 
       <PageHeader
         eyebrow="THE GLOSSARY"
-        title="47 TERMS,"
+        title={`${terms.length} TERMS,`}
         accentWord="NO FOG"
         color="var(--brand-gold)"
         crumbs={crumbs}

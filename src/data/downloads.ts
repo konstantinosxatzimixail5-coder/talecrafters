@@ -205,7 +205,7 @@ export const tools: Tool[] = [
     slug: 'generative-film-shot-consistency-checklist',
     intro: [
       'Nine ways a generative sequence gives itself away, arranged by the stage at which each one has to be caught. Applied before the render, all of them are free. Applied after, most of them are a regeneration.',
-      'This is the checklist our own operators run. Nothing on it is model-specific, and none of it stops being true when the models improve.',
+      'Nothing on it is model-specific, and none of it stops being true when the models improve. Run it as written or cut it down to the gates your shot types actually need.',
     ],
     howToUse: [
       'Run section 1 before generating anything. It is a set of decisions, and it takes twenty minutes.',
@@ -329,7 +329,7 @@ export const tools: Tool[] = [
               [
                 'European Union',
                 'AI Act Article 50, enforceable from 2 August 2026. Deployers producing deepfakes must disclose that content is artificially generated, clearly and at first exposure.',
-                'Applies wherever the output reaches EU audiences, regardless of where you are established. Penalties to €15m or 3% of worldwide turnover.',
+                'Applies wherever the output reaches EU audiences, regardless of where you are established. Penalties to €15m or 3% of worldwide turnover, whichever is higher; for SMEs the calculation inverts to the lower of the two.',
               ],
               [
                 'Platforms',
@@ -603,7 +603,7 @@ export const tools: Tool[] = [
   {
     slug: 'ai-video-cost-calculator',
     intro: [
-      'The arithmetic we use to quote, published in full including the acceptance-rate assumptions. Work through it and you will have a cost per accepted asset, which is the only generative production number that survives contact with a finance team.',
+      'The arithmetic we use to quote, published in full including the acceptance-rate assumptions it starts from. Work through it and you will have a cost per accepted asset, which is the only generative production number that survives contact with a finance team.',
       'Cost per generation is the number studios quote. Cost per accepted asset is the number that appears on the invoice.',
     ],
     howToUse: [
@@ -623,7 +623,8 @@ export const tools: Tool[] = [
       },
       {
         title: '2. Acceptance rates to plan against',
-        kicker: 'Replace with your own as soon as you have logged two batches',
+        kicker:
+          'Starting assumptions, not benchmarks. Replace every row with your own as soon as you have logged two batches.',
         blocks: [
           {
             t: 'table',

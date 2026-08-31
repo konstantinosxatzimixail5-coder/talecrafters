@@ -6,7 +6,7 @@ import { Search } from 'lucide-react';
 import type { Term } from '@/data/glossary';
 
 /**
- * Forty-seven terms is past the point where an A–Z index alone is enough:
+ * A hundred-plus terms is past the point where an A–Z index alone is enough:
  * people arrive knowing the word, not the letter. Filtering happens on the
  * client over an already-rendered list, so the page still works without JS —
  * the full index sits below in the letter sections.
@@ -38,7 +38,7 @@ export function GlossarySearch({ terms }: { terms: Term[] }) {
           type="search"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Search 47 terms: try “drift”, “LoRA”, “disclosure”"
+          placeholder={`Search ${terms.length} terms: try “drift”, “LoRA”, “disclosure”`}
           aria-label="Search the glossary"
           className="w-full bg-transparent outline-none"
           style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: 'var(--brand-white)' }}
