@@ -73,6 +73,9 @@ export interface CaseStudy {
   videos?: CaseVideo[];
 }
 
+// The running order is the portfolio's. These are one body of client work
+// published on two sites, so the sequence, the frames and the facts are held
+// the same in both places; only the page furniture around them differs.
 export const work: CaseStudy[] = [
   {
     slug: 'mariposa',
@@ -118,18 +121,19 @@ export const work: CaseStudy[] = [
       label: 'the room, as shot',
     },
     gallery: [
+      { src: 'mariposa/film-01', alt: 'A frame from the film: a drawn kitchen garden in flat warm colour, young vegetables in dark soil, one tall plant in white flower and a yellow butterfly beside it.', label: 'from the film' },
       { src: 'mariposa/film-02', alt: 'A frame from the film: a drawn octopus over glowing orange coals in the dark, titled Grilled Octopus.', label: 'from the film', focus: '45% 50%' },
       { src: 'mariposa/film-03', alt: 'A frame from the film: a drawn white plate of saffron risotto crowned with a single scampi on a deep yellow ground, headed Carnaroli and Saffron.', label: 'from the film', focus: '72% 50%' },
-      { src: 'mariposa/film-01', alt: 'A frame from the film: a drawn kitchen garden in flat warm colour, young vegetables in dark soil, one tall plant in white flower and a yellow butterfly beside it.', label: 'from the film' },
-      { src: 'mariposa/film-04', alt: 'The end card: the word Mariposa in cream serif with two butterfly wings above it and the line the hidden gem above the Aegean underneath.', label: 'end card' },
-      { src: 'mariposa/food-02', alt: 'Grilled octopus curled over yellow fava purée in a stone bowl, topped with pickled onion and dill, shot at the table at night.', label: 'reference plate: what the drawn octopus was measured against' },
-      { src: 'mariposa/shrimp-mariposa', alt: 'Shrimp on saffron risotto in a dark bowl, topped with basil and cracked pepper, shot from above.', label: 'reference plate, shot on site' },
+      { src: 'mariposa/film-04', alt: 'The end card: the word Mariposa in cream serif with two butterfly wings above it and the line the hidden gem above the Aegean underneath.', label: 'from the film, end card' },
       { src: 'mariposa/mariposa-mousaka', alt: 'A slice of moussaka on a white plate, photographed on the restaurant terrace in daylight with a wine glass behind it.', label: 'reference plate, shot on site' },
-      { src: 'mariposa/beef-stifado', alt: 'Beef stifado in a dark sauce in a metal bowl under a nest of shoestring fries and a sprig of rosemary.', label: 'reference plate, shot on site' },
+      { src: 'mariposa/shrimp-mariposa', alt: 'Shrimp on saffron risotto in a dark bowl, topped with basil and cracked pepper, shot from above.', label: 'reference plate, shot on site' },
+      { src: 'mariposa/beef-stifado', alt: 'Beef stifado in a dark sauce in a metal bowl under a nest of shoestring fries and a sprig of rosemary, a long slice of grilled bread beside it.', label: 'reference plate, shot on site' },
+      { src: 'mariposa/food-01', alt: 'Grilled cheese over rocket, tomato and pomegranate on a wide white plate, photographed at the table.', label: 'reference plate, shot on site' },
+      { src: 'mariposa/food-02', alt: 'Grilled octopus curled over yellow fava purée in a stone bowl, topped with pickled onion and dill, shot at the table at night with a glass of white wine behind it.', label: 'reference plate, and the dish the drawn octopus was measured against' },
     ],
     stack: [
       { stage: 'Master plate', tool: 'Nano Banana Pro' },
-      { stage: 'Variations', tool: 'Image-to-image from the plate' },
+      { stage: 'Variations', tool: 'Nano Banana Pro, image to image from the plate' },
       { stage: 'Motion', tool: 'Higgsfield Cinema Studio' },
       { stage: 'Cut', tool: 'CapCut' },
       { stage: 'Site', tool: 'WordPress, Figma, Claude Code' },
@@ -194,6 +198,60 @@ export const work: CaseStudy[] = [
     genre: 'Brand film',
   },
   {
+    slug: 'bike-barn',
+    title: 'Indian Elite',
+    client: 'Bike Barn',
+    kind: 'Client work',
+    discipline: 'Hero film · Product cinematics',
+    year: '2026',
+    place: 'Greece',
+    featured: false,
+    accent: 'var(--brand-magenta)',
+    summary:
+      'A wet cobbled street at night, with no location, no rain machine, no night permit and no rider.',
+    problem:
+      'A dealership wanted a hero film for one motorcycle, cut for vertical feed. The bike is the product; everything else in frame is set dressing, and set dressing is the part a dealership never has budget for.',
+    idea:
+      'Build the set once and never rebuild it. A motorcycle is the worst possible subject for a generated frame: badge, tank graphic, headlamp cluster that riders know by heart, and spokes, which fall apart the moment a model starts inventing detail. So the machine was locked into a master plate before any environment existed, and the street, canal houses, wet cobbles and reflected lamplight were written once as a set specification and reused across every frame.',
+    made: [
+      'A hero film for the Indian Elite, cut vertical.',
+      'A locked master plate of the machine, handed over as a reusable file.',
+    ],
+    result:
+      'Delivered as the hero cut for the model, with the plate handed over so the next film starts from a correct bike rather than a fresh prompt.',
+    resultKind: 'Delivered',
+    artefacts: [
+      { label: 'Film', detail: 'Hero cut, 9:16' },
+      { label: 'Master plate', detail: 'The machine alone, correct badge, fairing and wheel count' },
+      { label: 'Set specification', detail: 'Street, weather and lamplight, written once' },
+    ],
+    method:
+      'Phantom Set with the gates turned up. Plate first: the bike alone, correct badge, correct fairing, correct wheel count, nothing else in the picture.',
+    gates: [
+      { name: 'Silhouette gate', test: 'Overlay the render on the plate at 40% opacity. Any change in the outline of the tank or fairing kills the frame.' },
+      { name: 'Spoke rule', test: 'If the spoke count changes between frames, the shot returns to the plate rather than going into a retouching pass.' },
+      { name: 'Rights gate', test: 'Two earlier pieces for this client leaned on licensed characters. Those are not on this site, for that reason.' },
+    ],
+    hero: {
+      src: 'bike-barn/frame-01',
+      alt: 'A rider on an Indian motorcycle on wet cobbles at night, canal houses and street lamps behind, sparks trailing from the road surface.',
+      label: 'hero frame',
+    },
+    gallery: [
+      { src: 'bike-barn/ad-01', alt: 'A close view of the machine on a canal street at night, rider low over the bars, the Indian script badge legible on the orange tank.', label: 'badge and tank graphic, held' },
+      { src: 'bike-barn/ad-02', alt: 'The same machine from a lower angle on wet cobbles, front wheel spokes in full view, a tram and canal houses blurred behind.', label: 'spoke count, held between frames' },
+      { src: 'bike-barn/ad-03', alt: 'The rider head-on down a flooded canal street at night, one headlamp burning, the Bike-Barn wordmark beside him.', label: 'end frame from the cut', focus: '90% 50%' },
+    ],
+    stack: [
+      { stage: 'Master plate', tool: 'Nano Banana Pro' },
+      { stage: 'Set specification', tool: 'Written once, reused per frame' },
+      { stage: 'Motion', tool: 'Kling, image to video' },
+      { stage: 'Cut', tool: 'CapCut' },
+    ],
+    links: [],
+    genre: 'Hero film and product cinematics',
+  },
+  {
     slug: 'big-blue-data-academy',
     title: 'Seven pieces, seven registers, one school',
     client: 'Big Blue Data Academy',
@@ -251,114 +309,6 @@ export const work: CaseStudy[] = [
     genre: 'Content system and social campaign',
   },
   {
-    slug: 'cocoon',
-    title: 'A grid cyberattack, explained to people who do not work on grids',
-    client: 'SEleNe CC',
-    kind: 'Client work',
-    discipline: 'Explainer · Narrative engineering · Public-sector comms',
-    year: '2025',
-    place: 'Horizon Europe, grant 101120221',
-    featured: true,
-    accent: 'var(--brand-violet)',
-    summary:
-      'Four films for a Horizon Europe consortium, built entirely from a grant document, because nothing in them could be filmed.',
-    problem:
-      'COCOON is a Horizon Europe project on cooperative cyber protection for modern power grids, run across a consortium. The audience is mixed: engineers on one side, policy people, reviewers and the public on the other, who need the same story without the vocabulary.',
-    idea:
-      'Treat it as a writing job, not a generation job. Nothing could be shot: live substations and pilot sites are not places a camera crew walks into, and the attack being described has never happened to the equipment on screen. So the grant text and technical diagrams were read down into a single chain of events (entry point, lateral move, control layer, physical effect) and one diagram vocabulary was agreed early and held across all four pieces. Colour carries state and nothing else, so a consortium partner can point at a frame and say which stage is wrong.',
-    made: [
-      'A project promo.',
-      'Two pilot films.',
-      'A vector attack explainer that walks an intrusion through a grid, one hop at a time.',
-    ],
-    result:
-      'Delivered to SEleNe CC for the COCOON consortium. The project is publicly documented under Horizon Europe grant agreement 101120221.',
-    resultKind: 'Delivered',
-    artefacts: [
-      { label: 'Films', detail: 'Promo, two pilot films, one explainer' },
-      { label: 'Storyboard', detail: 'One event chain, written then boarded by hand' },
-      { label: 'Diagram system', detail: 'One vocabulary across four pieces, colour as state' },
-    ],
-    method:
-      'This one ran on the writing. Generation covered environments, establishing shots and the abstracted grid. Every technical claim went back to the consortium before it went into a render.',
-    gates: [
-      { name: 'Claim gate', test: 'Nothing appears on screen that the grant text does not support.' },
-      { name: 'Vocabulary gate', test: 'One diagram system across all four pieces. A new shape means a new meaning, or it does not get drawn.' },
-    ],
-    hero: {
-      src: 'selene-cc/explainer-title',
-      alt: 'The title card of the vector attack explainer, reading Attack Vector Deployment in cyan display type over a dark network mesh, with the COCOON mark above it.',
-      label: 'explainer, title card',
-    },
-    gallery: [
-      { src: 'selene-cc/explainer-spoof', alt: 'An explainer frame headed DNS Spoofing, with two paragraphs setting out how an attacker redirects an operator to a fraudulent site.', label: 'the scenario, stated before it is drawn' },
-      { src: 'selene-cc/explainer-chain', alt: 'The full attack diagram: a hacker icon above a DNS server, a dashed line from an operator into the server, a red path branching to a fake website and a green path to the real one.', label: 'one vocabulary, colour carries state' },
-      { src: 'selene-cc/logo-dark', alt: 'The COCOON project mark, a stylised power pylon and solar panel inside a green cocoon, with the line Cooperative Cyber Protection for Modern Power Grids around it.', label: 'consortium mark, supplied' },
-    ],
-    stack: [
-      { stage: 'Source', tool: 'Grant text and consortium diagrams' },
-      { stage: 'Storyboard', tool: 'Written, then boarded by hand' },
-      { stage: 'Frames', tool: 'Nano Banana Pro' },
-      { stage: 'Motion and assembly', tool: 'Higgsfield, CapCut' },
-    ],
-    links: [{ label: 'cyber-cocoon.eu', href: 'https://cyber-cocoon.eu/' }],
-    genre: 'Explainer film',
-  },
-  {
-    slug: 'bike-barn',
-    title: 'Indian Elite',
-    client: 'Bike Barn',
-    kind: 'Client work',
-    discipline: 'Hero film · Product cinematics',
-    year: '2026',
-    place: 'Greece',
-    featured: false,
-    accent: 'var(--brand-magenta)',
-    summary:
-      'A wet cobbled street at night, with no location, no rain machine, no night permit and no rider.',
-    problem:
-      'A dealership wanted a hero film for one motorcycle, cut for vertical feed. The bike is the product; everything else in frame is set dressing, and set dressing is the part a dealership never has budget for.',
-    idea:
-      'Build the set once and never rebuild it. A motorcycle is the worst possible subject for a generated frame: badge, tank graphic, headlamp cluster that riders know by heart, and spokes, which fall apart the moment a model starts inventing detail. So the machine was locked into a master plate before any environment existed, and the street, canal houses, wet cobbles and reflected lamplight were written once as a set specification and reused across every frame.',
-    made: [
-      'A hero film for the Indian Elite, cut vertical.',
-      'A locked master plate of the machine, handed over as a reusable file.',
-    ],
-    result:
-      'Delivered as the hero cut for the model, with the plate handed over so the next film starts from a correct bike rather than a fresh prompt.',
-    resultKind: 'Delivered',
-    artefacts: [
-      { label: 'Film', detail: 'Hero cut, 9:16' },
-      { label: 'Master plate', detail: 'The machine alone, correct badge, fairing and wheel count' },
-      { label: 'Set specification', detail: 'Street, weather and lamplight, written once' },
-    ],
-    method:
-      'Phantom Set with the gates turned up. Plate first: the bike alone, correct badge, correct fairing, correct wheel count, nothing else in the picture.',
-    gates: [
-      { name: 'Silhouette gate', test: 'Overlay the render on the plate at 40% opacity. Any change in the outline of the tank or fairing kills the frame.' },
-      { name: 'Spoke rule', test: 'If the spoke count changes between frames, the shot returns to the plate rather than going into a retouching pass.' },
-      { name: 'Rights gate', test: 'Two earlier pieces for this client leaned on licensed characters. Those are not on this site, for that reason.' },
-    ],
-    hero: {
-      src: 'bike-barn/frame-01',
-      alt: 'A rider on an Indian motorcycle on wet cobbles at night, canal houses and street lamps behind, sparks trailing from the road surface.',
-      label: 'hero frame',
-    },
-    gallery: [
-      { src: 'bike-barn/ad-01', alt: 'A close view of the machine on a canal street at night, rider low over the bars, the Indian script badge legible on the orange tank.', label: 'badge and tank graphic, held' },
-      { src: 'bike-barn/ad-02', alt: 'The same machine from a lower angle on wet cobbles, front wheel spokes in full view, a tram and canal houses blurred behind.', label: 'spoke count, held between frames' },
-      { src: 'bike-barn/ad-03', alt: 'The rider head-on down a flooded canal street at night, one headlamp burning, the Bike-Barn wordmark beside him.', label: 'end frame from the cut', focus: '90% 50%' },
-    ],
-    stack: [
-      { stage: 'Master plate', tool: 'Nano Banana Pro' },
-      { stage: 'Set specification', tool: 'Written once, reused per frame' },
-      { stage: 'Motion', tool: 'Kling, image to video' },
-      { stage: 'Cut', tool: 'CapCut' },
-    ],
-    links: [],
-    genre: 'Hero film and product cinematics',
-  },
-  {
     slug: 'amino-alliance',
     title: 'A presenter who can film the pitch as often as it is rewritten',
     client: 'Amino Alliance',
@@ -414,6 +364,61 @@ export const work: CaseStudy[] = [
     links: [],
     genre: 'Synthetic UGC and paid social',
   },
+  {
+    slug: 'cocoon',
+    title: 'A grid cyberattack, explained to people who do not work on grids',
+    client: 'SEleNe CC',
+    kind: 'Client work',
+    discipline: 'Explainer · Narrative engineering · Public-sector comms',
+    year: '2025',
+    place: 'Horizon Europe, grant 101120221',
+    featured: true,
+    accent: 'var(--brand-violet)',
+    summary:
+      'Four films for a Horizon Europe consortium, built entirely from a grant document, because nothing in them could be filmed.',
+    problem:
+      'COCOON is a Horizon Europe project on cooperative cyber protection for modern power grids, run across a consortium. The audience is mixed: engineers on one side, policy people, reviewers and the public on the other, who need the same story without the vocabulary.',
+    idea:
+      'Treat it as a writing job, not a generation job. Nothing could be shot: live substations and pilot sites are not places a camera crew walks into, and the attack being described has never happened to the equipment on screen. So the grant text and technical diagrams were read down into a single chain of events (entry point, lateral move, control layer, physical effect) and one diagram vocabulary was agreed early and held across all four pieces. Colour carries state and nothing else, so a consortium partner can point at a frame and say which stage is wrong.',
+    made: [
+      'A project promo.',
+      'Two pilot films.',
+      'A vector attack explainer that walks an intrusion through a grid, one hop at a time.',
+    ],
+    result:
+      'Delivered to SEleNe CC for the COCOON consortium. The project is publicly documented under Horizon Europe grant agreement 101120221.',
+    resultKind: 'Delivered',
+    artefacts: [
+      { label: 'Films', detail: 'Promo, two pilot films, one explainer' },
+      { label: 'Storyboard', detail: 'One event chain, written then boarded by hand' },
+      { label: 'Diagram system', detail: 'One vocabulary across four pieces, colour as state' },
+    ],
+    method:
+      'This one ran on the writing. Generation covered environments, establishing shots and the abstracted grid. Every technical claim went back to the consortium before it went into a render.',
+    gates: [
+      { name: 'Claim gate', test: 'Nothing appears on screen that the grant text does not support.' },
+      { name: 'Vocabulary gate', test: 'One diagram system across all four pieces. A new shape means a new meaning, or it does not get drawn.' },
+    ],
+    hero: {
+      src: 'selene-cc/explainer-title',
+      alt: 'The title card of the vector attack explainer, reading Attack Vector Deployment in cyan display type over a dark network mesh, with the COCOON mark above it.',
+      label: 'explainer, title card',
+    },
+    gallery: [
+      { src: 'selene-cc/explainer-spoof', alt: 'An explainer frame headed DNS Spoofing, with two paragraphs setting out how an attacker redirects an operator to a fraudulent site.', label: 'the scenario, stated before it is drawn' },
+      { src: 'selene-cc/explainer-chain', alt: 'The full attack diagram: a hacker icon above a DNS server, a dashed line from an operator into the server, a red path branching to a fake website and a green path to the real one.', label: 'one vocabulary, colour carries state' },
+      { src: 'selene-cc/logo-dark', alt: 'The COCOON project mark, a stylised power pylon and solar panel inside a green cocoon, with the line Cooperative Cyber Protection for Modern Power Grids around it.', label: 'consortium mark, supplied' },
+    ],
+    stack: [
+      { stage: 'Source', tool: 'Grant text and consortium diagrams' },
+      { stage: 'Storyboard', tool: 'Written, then boarded by hand' },
+      { stage: 'Frames', tool: 'Nano Banana Pro' },
+      { stage: 'Motion and assembly', tool: 'Higgsfield, CapCut' },
+    ],
+    links: [{ label: 'cyber-cocoon.eu', href: 'https://cyber-cocoon.eu/' }],
+    genre: 'Explainer film',
+  },
+
 ];
 
 export const featuredWork = work.filter((w) => w.featured);
