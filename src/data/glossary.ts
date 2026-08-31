@@ -1,5 +1,10 @@
-// The glossary. Forty-two terms from generative and synthetic media production,
-// defined the way a producer needs them rather than the way a paper defines them.
+// The glossary. Terms from generative and synthetic media production, defined
+// the way a producer needs them rather than the way a paper defines them.
+//
+// The set below is the original core. Sixty further terms live in
+// glossary-additions.ts and are concatenated into `terms` at the foot of this
+// file: one file of a thousand lines was already at the limit of what anybody
+// wants to scroll, and splitting it changes nothing else.
 //
 // Every entry carries a one-line definition for the snippet, two or three
 // paragraphs of body, and the questions people actually type. Each gets its own
@@ -23,6 +28,9 @@ export interface Term {
   related: string[];
 }
 
+// Type-only in the other direction, so there is no runtime cycle.
+import { additionalTerms } from './glossary-additions';
+
 export const GLOSSARY_TAGS = [
   'production',
   'models',
@@ -33,7 +41,7 @@ export const GLOSSARY_TAGS = [
   'strategy',
 ] as const;
 
-export const terms: Term[] = [
+const coreTerms: Term[] = [
   {
     slug: 'agentic-workflow',
     term: 'Agentic Workflow',
@@ -366,7 +374,7 @@ export const terms: Term[] = [
         a: 'Supply the first and last frame rather than describing the move. If the model only accepts one image, supply the first frame and keep the requested move to a single named camera action.',
       },
     ],
-    related: ['image-to-video', 'camera-control', 'temporal-coherence', 'continuity-spine'],
+    related: ['image-to-video', 'camera-control', 'temporal-coherence', 'autoregressive-video-model'],
   },
   {
     slug: 'foundation-model',
@@ -981,6 +989,8 @@ export const terms: Term[] = [
     related: ['c2pa', 'disclosure', 'deepfake', 'synthetic-media'],
   },
 ];
+
+export const terms: Term[] = [...coreTerms, ...additionalTerms];
 
 export const getTerm = (slug: string) => terms.find((t) => t.slug === slug);
 

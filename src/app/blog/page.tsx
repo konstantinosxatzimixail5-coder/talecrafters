@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { JsonLd } from '@/components/JsonLd';
 import { blogSchema, breadcrumbSchema, pageMeta } from '@/lib/seo';
 import { posts as localPosts, readingMinutes } from '@/data/posts';
+import { heroExists, heroSrc } from '@/lib/blog-images';
 
 export const metadata: Metadata = pageMeta({
   title: 'Blog — Synthetic Media Production, Costs, Compliance and Craft',
@@ -75,7 +76,7 @@ async function getCards(): Promise<Card[]> {
       excerpt: p.excerpt,
       published: p.published,
       tags: p.tags,
-      image: `/img/blog/${p.image}-960.webp`,
+      image: heroExists(p.image) ? heroSrc(p.image, 960) : undefined,
       imageAlt: p.imageAlt,
       minutes: readingMinutes(p),
     })),

@@ -5,9 +5,7 @@ import { articleSchema, breadcrumbSchema, faqSchema, imageObjectSchema } from '@
 import { getPost, readingMinutes, wordCount, type Post } from '@/data/posts';
 import { getResource } from '@/data/resources';
 import { getTerm } from '@/data/glossary';
-
-/** Hero images ship at three widths. Same convention as the case studies. */
-const heroSrc = (image: string, w: 480 | 960 | 1600) => `/img/blog/${image}-${w}.webp`;
+import { heroExists, heroSrc, heroSrcSet } from '@/lib/blog-images';
 
 export function LocalPostArticle({ post }: { post: Post }) {
   const crumbs = [
@@ -39,19 +37,24 @@ export function LocalPostArticle({ post }: { post: Post }) {
             published: post.published,
             modified: post.modified,
             author: post.author,
-            image: heroSrc(post.image, 1600),
-            imageAlt: post.imageAlt,
+            ...(heroExists(post.image)
+              ? { image: heroSrc(post.image, 1600), imageAlt: post.imageAlt }
+              : {}),
             tags: post.tags,
             section: post.section,
             wordCount: wordCount(post),
             mentions: post.terms,
           }),
-          imageObjectSchema({
-            url: heroSrc(post.image, 1600),
-            caption: post.imageAlt,
-            width: 1536,
-            height: 864,
-          }),
+          ...(heroExists(post.image)
+            ? [
+                imageObjectSchema({
+                  url: heroSrc(post.image, 1600),
+                  caption: post.imageAlt,
+                  width: 1536,
+                  height: 864,
+                }),
+              ]
+            : []),
           faqSchema(post.faqs),
         ]}
       />
@@ -107,18 +110,39 @@ export function LocalPostArticle({ post }: { post: Post }) {
           </div>
         </header>
 
-        <figure className="mb-10 overflow-hidden" style={{ border: '1px solid var(--brand-concrete)' }}>
-          <img
-            src={heroSrc(post.image, 960)}
-            srcSet={`${heroSrc(post.image, 480)} 480w, ${heroSrc(post.image, 960)} 960w, ${heroSrc(post.image, 1600)} 1600w`}
-            sizes="(max-width: 768px) 100vw, 750px"
-            alt={post.imageAlt}
-            width={1600}
-            height={900}
-            className="w-full"
-            style={{ display: 'block' }}
-          />
-        </figure>
+        {heroExists(post.image) ? (
+          <figure className="mb-10 overflow-hidden" style={{ border: '1px solid var(--brand-concrete)' }}>
+            <img
+              src={heroSrc(post.image, 960)}
+              srcSet={heroSrcSet(post.image)}
+              sizes="(max-width: 768px) 100vw, 750px"
+              alt={post.imageAlt}
+              width={1600}
+              height={900}
+              className="w-full"
+              style={{ display: 'block' }}
+            />
+          </figure>
+        ) : (
+          // No hero on disk yet. A coloured plate reads as a design decision;
+          // a broken image icon reads as a broken site.
+          <div
+            className="mb-10 flex items-end p-6"
+            style={{
+              border: '1px solid var(--brand-concrete)',
+              aspectRatio: '16 / 9',
+              background:
+                'radial-gradient(120% 100% at 15% 0%, rgba(0,229,204,0.10), transparent 60%), var(--brand-black)',
+            }}
+          >
+            <span
+              className="text-[10px] tracking-[0.28em]"
+              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+            >
+              {post.section.toUpperCase()}
+            </span>
+          </div>
+        )}
 
         {/* The standfirst states the answer in the first fifty words. A model
             quoting this page quotes something complete rather than a hook. */}
