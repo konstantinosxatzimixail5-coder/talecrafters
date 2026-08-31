@@ -1,7 +1,7 @@
 import { PricingSection } from '@/components/PricingSection';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { JsonLd } from '@/components/JsonLd';
-import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
+import { pageMeta, breadcrumbSchema, faqSchema, serviceSchema } from '@/lib/seo';
 import { faqGroups } from '@/data/faq';
 
 export const metadata = pageMeta({
@@ -28,7 +28,30 @@ const qa = faqGroups.find((g) => g.title === 'WORKING WITH US')!.items;
 export default function PackagesPage() {
   return (
     <>
-      <JsonLd graph={[breadcrumbSchema(crumbs), faqSchema(qa)]} />
+      <JsonLd
+        graph={[
+          breadcrumbSchema(crumbs),
+          // A packages page is a commercial page, so it gets a Service node
+          // with the four shapes as an offer catalogue. No `price` on any of
+          // them: nothing here is a rate card, and a Offer carrying a number we
+          // do not actually publish would be a false claim in the markup even
+          // though the visible page is honest about it.
+          serviceSchema({
+            name: 'Content-as-Service engagements',
+            description:
+              'Four ways to engage TaleCrafters: an ongoing creative partnership, a fixed monthly output subscription, a single project, and white-label production for agencies and studios.',
+            path: '/packages',
+            serviceType: 'Creative production engagement',
+            offers: [
+              { name: 'The Alliance', detail: 'Ongoing creative partnership with dedicated monthly capacity' },
+              { name: 'The Forge', detail: 'Predictable fixed monthly output, delivered to a schedule' },
+              { name: 'The Mission', detail: 'A single project with one deliverable and maximum focus' },
+              { name: 'The Shadow Protocol', detail: 'White-label production for agencies, studios and consultancies' },
+            ],
+          }),
+          faqSchema(qa),
+        ]}
+      />
       <PageHeader
         eyebrow="007 / PACKAGES"
         title="PICK YOUR"

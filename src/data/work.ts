@@ -19,6 +19,30 @@ export interface Shot {
   focus?: string;
 }
 
+/**
+ * A film that actually exists somewhere a crawler can reach.
+ *
+ * Populate this only when there is a real file or player page. A VideoObject
+ * describing a video nobody can fetch is a claim that gets discounted, and it
+ * drags the credibility of the rest of the graph down with it. Several of the
+ * cases below shipped films that currently live on a client's own domain
+ * rather than ours; those get an entry the day we host or embed them.
+ */
+export interface CaseVideo {
+  name: string;
+  description: string;
+  /** ISO 8601, e.g. PT1M30S for ninety seconds. */
+  duration?: string;
+  /** Direct file on our domain, or absolute. */
+  contentUrl?: string;
+  /** Player page: YouTube, Vimeo. */
+  embedUrl?: string;
+  /** Poster frame. Defaults to the case hero. */
+  thumbnail?: string;
+  /** YYYY-MM-DD. */
+  uploadDate: string;
+}
+
 export interface CaseStudy {
   slug: string;
   title: string;
@@ -43,6 +67,10 @@ export interface CaseStudy {
   gallery: Shot[];
   stack: StackStep[];
   links: { label: string; href: string }[];
+  /** Genre for the CreativeWork node, e.g. "Brand film". */
+  genre?: string;
+  /** Films delivered on this engagement that are publicly reachable. */
+  videos?: CaseVideo[];
 }
 
 export const work: CaseStudy[] = [
@@ -107,6 +135,7 @@ export const work: CaseStudy[] = [
       { stage: 'Site', tool: 'WordPress, Figma, Claude Code' },
     ],
     links: [{ label: 'mariposa.restaurant', href: 'https://mariposa.restaurant/' }],
+    genre: 'Brand film and synthetic photography',
   },
   {
     slug: 'ib-nl',
@@ -162,6 +191,7 @@ export const work: CaseStudy[] = [
       { stage: 'Cut', tool: 'CapCut' },
     ],
     links: [],
+    genre: 'Brand film',
   },
   {
     slug: 'big-blue-data-academy',
@@ -218,6 +248,7 @@ export const work: CaseStudy[] = [
       { stage: 'Cut', tool: 'CapCut' },
     ],
     links: [],
+    genre: 'Content system and social campaign',
   },
   {
     slug: 'cocoon',
@@ -271,6 +302,7 @@ export const work: CaseStudy[] = [
       { stage: 'Motion and assembly', tool: 'Higgsfield, CapCut' },
     ],
     links: [{ label: 'cyber-cocoon.eu', href: 'https://cyber-cocoon.eu/' }],
+    genre: 'Explainer film',
   },
   {
     slug: 'bike-barn',
@@ -324,6 +356,7 @@ export const work: CaseStudy[] = [
       { stage: 'Cut', tool: 'CapCut' },
     ],
     links: [],
+    genre: 'Hero film and product cinematics',
   },
   {
     slug: 'amino-alliance',
@@ -379,6 +412,7 @@ export const work: CaseStudy[] = [
       { stage: 'Voice', tool: 'ElevenLabs' },
     ],
     links: [],
+    genre: 'Synthetic UGC and paid social',
   },
 ];
 

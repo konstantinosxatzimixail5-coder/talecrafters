@@ -34,8 +34,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-14">
           <div className="md:col-span-4">
             <Link href="/" className="flex items-center gap-2.5 mb-5" style={{ textDecoration: 'none' }}>
-              <img src="/brand/mark.png" alt="" aria-hidden width={1024} height={812} className="h-11 w-auto" />
-              <Wordmark size={24} />
+              <img src="/brand/mark.png" alt="" aria-hidden width={1024} height={812} className="h-9 w-auto" />
+              <Wordmark size={31} />
             </Link>
             <div
               className="text-xs tracking-[0.25em] mb-4"

@@ -6,7 +6,7 @@ import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
-import { orgSchema, websiteSchema } from "@/lib/seo";
+import { orgSchema, websiteSchema, hreflangFor } from "@/lib/seo";
 import { SITE_URL, site } from "@/lib/site";
 
 const GOOGLE_TAG_MANAGER_ID = "GTM-PKWLJBJL";
@@ -69,7 +69,9 @@ export const metadata: Metadata = {
   authors: [{ name: site.legalName }],
   creator: "TaleCrafters",
   publisher: site.legalName,
-  alternates: { canonical: SITE_URL },
+  // The default hreflang cluster. Every page overrides it with its own set via
+  // pageMeta; this covers the routes that declare metadata by hand.
+  alternates: { canonical: SITE_URL, languages: hreflangFor('/') },
   openGraph: {
     type: "website",
     locale: "en_GB",

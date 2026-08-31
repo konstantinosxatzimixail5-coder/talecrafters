@@ -61,6 +61,11 @@ export default async function SolutionPage({ params }: { params: Promise<{ solut
             description: s.metaDescription,
             path: `/${s.slug}`,
             serviceType: s.plainName,
+            // The deliverables are already written down; turning them into an
+            // offer catalogue is what makes the Service node say what is
+            // actually bought rather than only what the page is called.
+            offers: s.deliverables.map((d) => ({ name: d.name, detail: d.detail })),
+            market: s.market,
           }),
           faqSchema(s.faqs),
           {

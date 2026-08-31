@@ -35,6 +35,13 @@ export interface Solution {
   terms: string[];
   faqs: SolutionFaq[];
   cta: { title: string; body: string };
+  /**
+   * ISO country code when the page targets one market specifically. It narrows
+   * the Service node's `areaServed` to that country and adds a Place node, so a
+   * market page claims its market instead of repeating the global list every
+   * other page already carries.
+   */
+  market?: string;
 }
 
 export const solutions: Solution[] = [
@@ -131,7 +138,7 @@ export const solutions: Solution[] = [
       { label: 'Category', value: 'Synthetic media production' },
       { label: 'Registered', value: 'London, United Kingdom' },
       { label: 'Working', value: 'UK, Europe, United States' },
-      { label: 'Founded', value: '2024' },
+      { label: 'Founded', value: '2023' },
     ],
     body: [
       'The term is broader and more useful than "AI content", because it covers the middle ground where most professional work actually sits: a real shoot with a generated environment, a real product with a generated set, a real voice with a generated read. That middle ground is where a studio earns its fee, and it is also where the disclosure question gets interesting.',
@@ -182,10 +189,15 @@ export const solutions: Solution[] = [
     title: 'CREATIVE',
     accentWord: 'AUTOMATION',
     plainName: 'Creative automation',
-    metaTitle: 'Creative Automation — Agentic Workflows and Content Infrastructure',
+    metaTitle: 'Creative Workflow Automation & Agentic Content Systems',
     metaDescription:
-      'We build the machinery that produces, repurposes and distributes creative work: content production systems, agentic workflows, marketing automations, repurposing engines, internal tools and prototypes. Handed over running inside your own accounts.',
+      'Creative automation for content and marketing teams: content production systems, agentic workflows, marketing automations, repurposing engines, internal tools and prototypes. Mapped, built and handed over running inside your own accounts with a cost ledger attached.',
     keywords: [
+      'creative workflow automation',
+      'agentic content systems',
+      'creative automation for content teams',
+      'creative automation for marketing teams',
+      'content operations automation',
       'creative automation',
       'creative automation agency',
       'agentic workflows',
@@ -197,7 +209,7 @@ export const solutions: Solution[] = [
     ],
     color: 'var(--brand-violet-text)',
     lede:
-      'Your team is not slow. Your process is. Creative automation is the machinery that produces, repurposes and distributes the work, and it keeps running after the campaign is over.',
+      'Creative automation for content and marketing teams. Your team is not slow, your process is: creative workflow automation is the machinery that produces, repurposes and distributes the work, and agentic content systems are the part of it that keeps deciding after the campaign is over.',
     meta: [
       { label: 'Engagement', value: 'Map, build, hand over' },
       { label: 'Typical length', value: '2 to 3 weeks' },
@@ -312,6 +324,86 @@ export const solutions: Solution[] = [
       title: 'London hours, remote everything else.',
       body: 'Send the brief and the deadline. You will get a date with the quote, and the date is the one we work to.',
     },
+    market: 'GB',
+  },
+  {
+    slug: 'ai-video-production-greece',
+    title: 'AI VIDEO PRODUCTION',
+    accentWord: 'IN GREECE',
+    plainName: 'AI video production in Greece',
+    metaTitle: 'AI Video Production in Greece — Generative Film and Campaign Studio',
+    metaDescription:
+      'Generative video, brand films, synthetic food and product photography and creative automation for Greek brands, hotels, restaurants and agencies. Three delivered engagements in Greece, UK contracting, work and reporting in English.',
+    keywords: [
+      'AI video production Greece',
+      'AI video production Athens',
+      'generative video agency Greece',
+      'synthetic media studio Greece',
+      'AI video production company Greece',
+      'AI content production Athens',
+      'AI food photography Greece',
+      'hotel video production Greece',
+      'AI advertising Greece',
+      'creative automation Greece',
+    ],
+    color: 'var(--brand-cyan)',
+    lede:
+      'Three of the six engagements written up on this site were made for Greek clients: a restaurant on Rhodes, a data school in Athens and a motorcycle dealership. The studio contracts from London and works in English. Greece is not a new market for us, it is where a lot of the method was built.',
+    meta: [
+      { label: 'Delivered in Greece', value: 'Rhodes, Athens, motorcycle retail' },
+      { label: 'Contracting', value: 'UK entity, EU invoicing' },
+      { label: 'Working language', value: 'English' },
+      { label: 'Travel', value: 'Not required for any of it' },
+    ],
+    body: [
+      'Greek brands hit the same wall as everybody else, only sooner, because the budgets are tighter and a two-day shoot with a crew, a stylist and a food photographer is often simply not happening. A restaurant on Rhodes came to us with a menu that had never been photographed and no realistic way to photograph it in season. What it got was a set of plate-locked stills, a ninety-second film and a website, produced without a camera ever arriving.',
+      'That is the honest case for generative production in this market. Not that it is more impressive than a shoot, but that it exists at a price and a timescale where the shoot does not. A hotel that needs forty rooms shot before June, a dealership with a bike that has not landed yet, a school that needs seven pieces in seven registers before an intake closes: those are the briefs where the arithmetic changes.',
+      'The method does not change by country. A product becomes a master plate before anything is generated. A presenter becomes a trained identity built from a sheet of stills. A set becomes a written specification with one key direction and one stated colour temperature. Then every frame is tested against the lock: read the printed words at full resolution, overlay the render on its plate at forty per cent, hold one light direction across the set, and let no invented claim survive.',
+      'Everything is delivered, briefed and reported in English. Treatments and breakdowns have been written in Greek before and can be again, but the working language of the engagement, the documentation and this site is English, and we would rather say that plainly than imply a bilingual service we do not run.',
+      'Contracting is through the UK entity. For a Greek client that means a UK invoice and, for VAT-registered businesses in Greece, the usual EU reverse-charge treatment, which your accountant will find unremarkable. Nothing about the production requires anybody to be in the same country, which is how all three of the engagements below were made.',
+    ],
+    deliverables: [
+      { name: 'Food and hospitality stills', detail: 'Plate-locked sets for restaurants and hotels that were never photographed' },
+      { name: 'Brand films', detail: 'Hero pieces, 30 to 90 seconds, for Greek and EU brands' },
+      { name: 'Product cinematics', detail: 'Retail and dealership work from a locked master plate' },
+      { name: 'Social campaign systems', detail: 'Runs built in several registers so the fifth piece still gets watched' },
+      { name: 'Websites and digital experiences', detail: 'Designed and shipped in English, ready for a Greek-language pass by your team' },
+      { name: 'Creative workflow automation', detail: 'The content machinery, handed over running inside your own accounts' },
+    ],
+    pipelines: ['phantom-set', 'identity-lock', 'operator-stack'],
+    cases: ['mariposa', 'big-blue-data-academy', 'bike-barn'],
+    terms: ['master-plate', 'synthetic-media', 'disclosure', 'cost-per-accepted-asset'],
+    faqs: [
+      {
+        q: 'Do you work with Greek clients?',
+        a: 'Three of the six engagements written up on this site were delivered for clients in Greece: Mariposa on Rhodes, Big Blue Data Academy in Athens and Bike Barn. Each one is published in full with the problem, what we made, the result and the artefacts.',
+      },
+      {
+        q: 'Do you have an office in Athens?',
+        a: 'No. TaleCrafters Ltd is registered in London and the production is remote-native. We are saying that plainly rather than listing a serviced address in Athens, because none of the Greek work needed anyone to be in the country and pretending otherwise would be the only dishonest thing on this page.',
+      },
+      {
+        q: 'Do you work in Greek?',
+        a: 'The engagement, the documentation and this site are in English. Treatments and production breakdowns have been written in Greek on past work, and scripts can be delivered for a Greek-language voice or subtitle pass, but we do not run a bilingual service and will not sell one.',
+      },
+      {
+        q: 'How does invoicing work from Greece?',
+        a: 'Through the UK entity, in GBP or EUR. For a VAT-registered business in Greece that is standard EU reverse-charge treatment on a UK invoice. Your accountant has seen it before.',
+      },
+      {
+        q: 'Is generative production actually cheaper for a Greek brand?',
+        a: 'Usually, and for a specific reason: it removes the crew, the location, the stylist and the reshoot, which are the line items that make a conventional shoot unaffordable at this budget level rather than merely expensive. For a brief that needs a real face in a real place on a real day, it is not, and we say so before quoting.',
+      },
+      {
+        q: 'Can you shoot a hotel or restaurant that has never been photographed?',
+        a: 'That is the exact brief Mariposa arrived with. A menu with no photography, out of season, no realistic shoot window. The answer was a master plate per dish, a written set specification, and a full still set plus a ninety-second film produced without a camera.',
+      },
+    ],
+    cta: {
+      title: 'Greek brief, English engagement.',
+      body: 'Send the brief and the deadline. You will get a shape, a stack and a number back, and an honest answer about whether this should be generative at all.',
+    },
+    market: 'GR',
   },
 ];
 

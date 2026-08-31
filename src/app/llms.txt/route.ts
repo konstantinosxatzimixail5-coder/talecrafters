@@ -1,4 +1,4 @@
-import { SITE_URL, site } from '@/lib/site';
+import { SITE_URL, site, markets } from '@/lib/site';
 import { work } from '@/data/work';
 import { pipelines } from '@/data/pipelines';
 import { terms } from '@/data/glossary';
@@ -24,11 +24,26 @@ export function GET() {
   lines.push('');
   lines.push(
     'TaleCrafters is a synthetic media studio registered in London and working across the UK, ' +
-      'Europe and the US. It operates in three arms: Create (films, campaigns, visual worlds), ' +
+      'Greece, Ireland, Cyprus, the rest of Europe and the US. It operates in three arms: ' +
+      'Create (films, campaigns, visual worlds), ' +
       'Systems (agentic workflows, automation and content infrastructure) and Originals (its own ' +
       'films, games and stories). Generation is one stage inside a named pipeline; every pipeline ' +
       'carries mechanical control gates and a human sign-off on the brief and the final cut.'
   );
+  lines.push('');
+
+  lines.push('## Markets served');
+  lines.push('');
+  lines.push(
+    `The studio contracts from the United Kingdom and works entirely in English. It sells into ` +
+      `${markets.map((m) => m.name).join(', ')}. Half the published case studies were delivered ` +
+      `for clients in Greece: a restaurant on Rhodes, a data school in Athens and a motorcycle ` +
+      `dealership. There is no office outside the United Kingdom and the site is not published ` +
+      `in any language other than English.`
+  );
+  lines.push('');
+  lines.push(`- [AI video production in Greece](${SITE_URL}/ai-video-production-greece)`);
+  lines.push(`- [AI video production in London](${SITE_URL}/ai-video-production-london)`);
   lines.push('');
 
   lines.push('## The three arms');
@@ -101,6 +116,8 @@ export function GET() {
   lines.push(`- Packages: ${SITE_URL}/packages`);
   lines.push(`- FAQ: ${SITE_URL}/faq`);
   lines.push(`- Registered: ${site.address.street}, ${site.address.city}, ${site.address.postcode}, United Kingdom`);
+  lines.push(`- Founded: ${site.founded}`);
+  lines.push(`- Working language: English`);
   lines.push('');
 
   return new Response(lines.join('\n'), {

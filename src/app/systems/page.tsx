@@ -8,11 +8,18 @@ import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, serviceSchema, faqSchema } from '@/lib/seo';
 
 export const metadata = pageMeta({
-  title: 'Creative Systems — Agentic Workflows, Automation & Content Infrastructure',
+  // The title carries the two phrases buyers actually search separately:
+  // "creative workflow automation" and "agentic content systems". The root
+  // layout appends "| TaleCrafters".
+  title: 'Creative Workflow Automation & Agentic Content Systems',
   description:
-    'We build the machinery that produces, repurposes and distributes creative work: content production systems, agentic workflows, marketing automations, lead-gen workflows, internal tools, AI-powered sites and prototypes. Handed over running inside your own accounts.',
+    'Creative automation for content and marketing teams. We map how your creative work runs, build the content production systems, agentic workflows and repurposing engines that carry it, and hand the machinery over running inside your own accounts with a cost ledger attached.',
   path: '/systems',
   keywords: [
+    'creative workflow automation',
+    'agentic content systems',
+    'creative automation for marketing teams',
+    'content operations automation',
     'agentic workflows',
     'creative automation agency',
     'content production system',
@@ -77,19 +84,20 @@ export default function SystemsPage() {
             { name: 'Systems', path: '/systems' },
           ]),
           serviceSchema({
-            name: 'Creative Systems',
+            name: 'Creative Workflow Automation & Agentic Content Systems',
             description: arm.blurb,
             path: '/systems',
-            serviceType: 'Agentic workflows, automation and content infrastructure',
+            serviceType: 'Creative workflow automation and agentic content systems',
+            offers: built.map((name) => ({ name })),
           }),
           faqSchema(qa),
         ]}
       />
       <ArmPage
         arm={arm}
-        eyebrow="02 / TALECRAFTERS SYSTEMS"
-        title="THE TECHNOLOGY LAB"
-        accentWord="SELLS TECHNOLOGY"
+        eyebrow="02 / CREATIVE WORKFLOW AUTOMATION & AGENTIC CONTENT SYSTEMS"
+        title="CREATIVE AUTOMATION FOR"
+        accentWord="CONTENT & MARKETING TEAMS"
         meta={[
           { label: 'Engagement', value: 'Map, build, hand over' },
           { label: 'Typical length', value: '2 to 3 weeks' },
@@ -105,17 +113,22 @@ export default function SystemsPage() {
           <div className="max-w-[1400px] mx-auto">
             <Reveal>
               <div className="max-w-3xl">
-                <Eyebrow color="var(--brand-violet)">WHY THIS EXISTS</Eyebrow>
+                <Eyebrow color="var(--brand-violet)">WHAT THIS IS</Eyebrow>
                 <p className="mt-6 text-xl md:text-2xl leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-                  Most studios describe the technology they used to make a film. That is a tooling
-                  note, not a product. The interesting half is the machinery itself: the systems that
-                  produce, repurpose and distribute the work, running after the campaign is over.
+                  Creative workflow automation is the machinery that produces, repurposes and
+                  distributes creative work. Agentic content systems are the half of that machinery
+                  that decides its own next step instead of following a diagram somebody drew in
+                  advance. We build both, and hand them over running inside your accounts.
                 </p>
                 <p className="mt-5 text-lg leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.7)' }}>
-                  Prompting is the easy part. What earns its keep is the directory structure, the
-                  skills, the connectors and the ledger telling you what every accepted asset actually
-                  cost. That is the layer we build, and it is the one that is still working next
-                  quarter.
+                  Prompting is the easy part. The value sits in the directory of skills, the
+                  connectors into software you already run, the naming convention that makes last
+                  quarter&rsquo;s output findable, and a ledger showing what every accepted asset
+                  cost. Skip that and you get a demo that works once, in front of an audience.
+                </p>
+                <p className="mt-5 text-lg leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.7)' }}>
+                  A person signs off the brief and the final output at any volume. That rule has
+                  never been worth an exception.
                 </p>
               </div>
             </Reveal>

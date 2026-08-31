@@ -5,7 +5,7 @@ import { Frame } from '@/components/Frame';
 import { PageHeader, Eyebrow, SpecBlock, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
-import { pageMeta, breadcrumbSchema, caseStudySchema } from '@/lib/seo';
+import { pageMeta, breadcrumbSchema, caseStudySchema, videoObjectSchema, imageObjectSchema } from '@/lib/seo';
 
 export function generateStaticParams() {
   return work.map((w) => ({ slug: w.slug }));
@@ -50,7 +50,32 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
             slug: w.slug,
             summary: w.summary,
             image: `/img/${w.hero.src}-960.webp`,
+            genre: w.genre,
+            keywords: [w.client, w.discipline, ...(w.place ? [w.place] : [])],
           }),
+          // Every frame on the page, described rather than merely linked. A
+          // case study is mostly pictures, so leaving them as bare <img> src
+          // values throws away the only content the page really has.
+          ...[w.hero, ...w.gallery].map((shot) =>
+            imageObjectSchema({
+              url: `/img/${shot.src}-960.webp`,
+              caption: shot.alt,
+              width: 960,
+            })
+          ),
+          // Only emitted for films that are actually reachable. See CaseVideo.
+          ...(w.videos ?? []).map((v) =>
+            videoObjectSchema({
+              name: v.name,
+              description: v.description,
+              thumbnailUrl: v.thumbnail ?? `/img/${w.hero.src}-960.webp`,
+              uploadDate: v.uploadDate,
+              duration: v.duration,
+              contentUrl: v.contentUrl,
+              embedUrl: v.embedUrl,
+              path: `/work/${w.slug}`,
+            })
+          ),
         ]}
       />
 
