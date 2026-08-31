@@ -7,11 +7,12 @@ import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 
 export const metadata = pageMeta({
-  title: 'Pipelines — How the Work Actually Gets Made',
+  title: 'GenAI Workflows — How the Work Actually Gets Made',
   description:
-    'Three of our seven production pipelines, published in full: Identity Lock for trained presenters, Phantom Set for products, Operator Stack for the automation layer. Stages, timings and the gates each one fails on.',
+    'Three of our seven generative production workflows, published in full: Identity Lock for trained presenters, Phantom Set for products, Operator Stack for the automation layer. Stages, timings and the gates each one fails on.',
   path: '/pipelines',
   keywords: [
+    'GenAI workflows',
     'AI filmmaking workflow',
     'generative production pipeline',
     'synthetic media workflow',
@@ -22,7 +23,7 @@ export const metadata = pageMeta({
 
 const crumbs = [
   { name: 'Home', path: '/' },
-  { name: 'Pipelines', path: '/pipelines' },
+  { name: 'GenAI Workflows', path: '/pipelines' },
 ];
 
 const qa = [
@@ -49,15 +50,15 @@ export default function PipelinesIndex() {
           faqSchema(qa),
           {
             '@type': 'CollectionPage',
-            name: 'Pipelines',
+            name: 'GenAI Workflows',
             url: abs('/pipelines'),
-            description: 'Three published production pipelines with stages, timings and control gates.',
+            description: 'Three published generative production workflows with stages, timings and control gates.',
           },
         ]}
       />
 
       <PageHeader
-        eyebrow="PIPELINES"
+        eyebrow="GENAI WORKFLOWS"
         title="THE PART"
         accentWord="NOBODY POSTS"
         color="var(--brand-violet)"

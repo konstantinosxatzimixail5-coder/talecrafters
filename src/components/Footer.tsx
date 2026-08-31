@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ImpMark } from './brand/ImpMark';
 import { Wordmark } from './brand/Wordmark';
 import { navGroups } from '@/lib/nav';
 import { site } from '@/lib/site';
@@ -32,7 +31,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-14">
           <div className="md:col-span-4">
             <Link href="/" className="flex items-center gap-2.5 mb-5" style={{ textDecoration: 'none' }}>
-              <ImpMark size={46} />
+              <img src="/brand/mark.png" alt="" aria-hidden width={1024} height={812} className="h-11 w-auto" />
               <Wordmark size={24} />
             </Link>
             <div

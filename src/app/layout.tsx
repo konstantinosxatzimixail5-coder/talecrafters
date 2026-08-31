@@ -44,14 +44,14 @@ export const metadata: Metadata = {
     description:
       "The unholy offspring of a film studio and a technology lab. We make campaigns and films, build the systems that produce and scale them, and develop our own original IP.",
     images: [
-      { url: "/logo.png", width: 512, height: 512, alt: "TaleCrafters — Synthetic Media Studio" },
+      { url: "/brand/mark-square.png", width: 1024, height: 1024, alt: "TaleCrafters — Synthetic Media Studio" },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "TaleCrafters — Synthetic Media Studio",
     description: "Human taste × machine velocity. Films, systems and original IP.",
-    images: ["/logo.png"],
+    images: ["/brand/mark-square.png"],
     creator: "@talecrafters",
   },
   robots: {
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  icons: { icon: "/logo.png", apple: "/logo.png" },
+  icons: { icon: "/brand/mark-square.png", apple: "/brand/mark-square.png" },
   category: "Creative production",
 };
 

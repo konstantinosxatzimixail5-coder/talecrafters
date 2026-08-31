@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${p.name}: ${p.title}`,
     description: p.summary,
     path: `/pipelines/${p.slug}`,
-    keywords: [p.name, 'generative production pipeline', 'AI workflow', p.mechanism],
+    keywords: [p.name, 'GenAI workflow', 'generative production pipeline', 'AI workflow', p.mechanism],
   });
 }
 
@@ -29,7 +29,7 @@ export default async function PipelinePage({ params }: { params: Promise<{ slug:
 
   const crumbs = [
     { name: 'Home', path: '/' },
-    { name: 'Pipelines', path: '/pipelines' },
+    { name: 'GenAI Workflows', path: '/pipelines' },
     { name: p.name, path: `/pipelines/${p.slug}` },
   ];
 
@@ -50,7 +50,7 @@ export default async function PipelinePage({ params }: { params: Promise<{ slug:
       />
 
       <PageHeader
-        eyebrow={`PIPELINE ${p.num} · ${p.mechanism}`}
+        eyebrow={`GENAI WORKFLOW ${p.num} · ${p.mechanism}`}
         title={p.name.toUpperCase()}
         color={p.accent}
         crumbs={crumbs}

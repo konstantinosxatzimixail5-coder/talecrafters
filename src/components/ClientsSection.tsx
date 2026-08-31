@@ -98,6 +98,48 @@ function BaklatsidisIcon() {
   );
 }
 
+function MariposaIcon() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      {/* Antennae */}
+      <path d="M15 11C14 7 12.5 5 11 3.5" stroke="#8A9A2B" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M17 11C18 7 19.5 5 21 3.5" stroke="#8A9A2B" strokeWidth="1.4" strokeLinecap="round" />
+      {/* Upper wings, drawn as the mark's nested leaf scrolls */}
+      <path d="M15 12C15 8 12 6 7 6C2.6 6 2 8.5 2.6 11.5C3.3 15 6 17 10 17C13 17 15 15.5 15 12Z" stroke="#8A9A2B" strokeWidth="1.5" fill="none" />
+      <path d="M13 12C13 10 11.5 8.8 9 8.8C6.6 8.8 5.4 10 5.6 11.6C5.9 13.4 7.5 14.6 9.6 14.6C11.6 14.6 13 13.6 13 12Z" stroke="#8A9A2B" strokeWidth="1.2" fill="none" />
+      <path d="M17 12C17 8 20 6 25 6C29.4 6 30 8.5 29.4 11.5C28.7 15 26 17 22 17C19 17 17 15.5 17 12Z" stroke="#8A9A2B" strokeWidth="1.5" fill="none" />
+      <path d="M19 12C19 10 20.5 8.8 23 8.8C25.4 8.8 26.6 10 26.4 11.6C26.1 13.4 24.5 14.6 22.4 14.6C20.4 14.6 19 13.6 19 12Z" stroke="#8A9A2B" strokeWidth="1.2" fill="none" />
+      {/* Lower wings */}
+      <path d="M15 19C15 16.5 12.8 15 9.5 15C5.5 15 3.6 17 3.9 20.4C4.2 24.4 7 27 11 27C13.6 27 15 25 15 19Z" stroke="#8A9A2B" strokeWidth="1.5" fill="none" />
+      <path d="M17 19C17 16.5 19.2 15 22.5 15C26.5 15 28.4 17 28.1 20.4C27.8 24.4 25 27 21 27C18.4 27 17 25 17 19Z" stroke="#8A9A2B" strokeWidth="1.5" fill="none" />
+    </svg>
+  );
+}
+
+function JarfisIcon() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      {/* A lotus: one upright petal flanked by two pairs sweeping outward */}
+      <path d="M16 3C13.4 6.6 12.4 10.4 13 14.6C13.9 16.2 18.1 16.2 19 14.6C19.6 10.4 18.6 6.6 16 3Z" fill="#111318" />
+      <path d="M12.6 15.4C9.6 12.2 6.4 10.6 3 10.4C3.6 15 5.8 18.4 9.6 20.4C11.6 20.6 13.4 18.4 12.6 15.4Z" fill="#111318" />
+      <path d="M19.4 15.4C22.4 12.2 25.6 10.6 29 10.4C28.4 15 26.2 18.4 22.4 20.4C20.4 20.6 18.6 18.4 19.4 15.4Z" fill="#111318" />
+      <path d="M14.4 17C12.6 19.6 11.8 22.6 12.2 26C14 27.2 18 27.2 19.8 26C20.2 22.6 19.4 19.6 17.6 17C16.6 16.4 15.4 16.4 14.4 17Z" fill="#111318" />
+    </svg>
+  );
+}
+
+function BbdaIcon() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      {/* Data bars rising out of a deep-blue ground */}
+      <rect x="3" y="3" width="26" height="26" rx="5" fill="#123A6B" />
+      <rect x="8" y="17" width="4" height="8" rx="1" fill="#4FC3F7" />
+      <rect x="14" y="12" width="4" height="13" rx="1" fill="#81D4FA" />
+      <rect x="20" y="7" width="4" height="18" rx="1" fill="#FFFFFF" opacity="0.92" />
+    </svg>
+  );
+}
+
 const clients = [
   {
     name: 'convene',
@@ -140,6 +182,29 @@ const clients = [
     name: 'COCOON',
     icon: CocoonIcon,
     textStyle: { fontFamily: 'var(--font-display)', fontWeight: 800, color: '#4CAF50', letterSpacing: '0.04em' },
+  },
+  {
+    name: 'Big Blue Data Academy',
+    icon: BbdaIcon,
+    textStyle: { fontFamily: 'var(--font-display)', fontWeight: 700, color: '#4FC3F7', letterSpacing: '0.02em' },
+  },
+  {
+    name: 'MARIPOSA',
+    icon: MariposaIcon,
+    textStyle: { fontFamily: 'var(--font-display)', fontWeight: 600, color: '#A8B84A', letterSpacing: '0.22em' },
+  },
+  {
+    name: 'JARFIS',
+    icon: JarfisIcon,
+    render: () => (
+      <span>
+        <span style={{ letterSpacing: '0.1em' }}>JARFIS</span>
+        <span style={{ fontSize: '0.55em', letterSpacing: '0.24em', opacity: 0.7, marginLeft: '0.5em' }}>
+          PROPERTY GROUP
+        </span>
+      </span>
+    ),
+    textStyle: { fontFamily: 'var(--font-display)', fontWeight: 800, color: '#C7CBD1' },
   },
   {
     name: 'BAKLATSIDIS BROS',
