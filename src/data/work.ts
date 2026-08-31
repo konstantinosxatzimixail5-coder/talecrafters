@@ -88,7 +88,7 @@ export const work: CaseStudy[] = [
     featured: true,
     accent: 'var(--brand-gold)',
     summary:
-      'Website, ninety-second film and a full set of plate stills for a restaurant whose menu had never been shot.',
+      'Website, brand film and a full set of plate stills for a restaurant whose menu had never been shot.',
     problem:
       'A restaurant on Rhodes needed a website, a film and pictures of dishes nobody had ever photographed. Its own photography covered part of the menu, shot honestly on the terrace under real light, and stopped there.',
     idea:
@@ -104,7 +104,7 @@ export const work: CaseStudy[] = [
     resultKind: 'Delivered',
     artefacts: [
       { label: 'Website', detail: 'WordPress build, live' },
-      { label: 'Film', detail: '90 seconds, illustrated, plus vertical cutdowns' },
+      { label: 'Film', detail: 'Illustrated, plus vertical cutdowns' },
       { label: 'Script', detail: '90-second VSL' },
       { label: 'Stills', detail: 'Plate set, master-plate locked per dish' },
     ],
@@ -322,7 +322,7 @@ export const work: CaseStudy[] = [
     problem:
       'Amino Alliance sells a supplement in a printed pouch and needed creator-style pieces for paid social. The requirement underneath that is volume: a paid test needs the same person delivering several openings and several asks, then needs them again next month when the offer changes.',
     idea:
-      'Cast once, then treat the cast as an asset. Two presenters trained from a stills sheet, reused across the whole set, so variant forty costs what variant ten did. The pouch runs the other line: a real printed object with a real mark, a product name and a block of small type down the front, none of which can be approximated at arm’s length in daylight.',
+      'Cast once, then treat the cast as an asset. Two presenters trained from a stills sheet, reused across the whole set, so a later variant costs what an early one did. The pouch runs the other line: a real printed object with a real mark, a product name and a block of small type down the front, none of which can be approximated at arm’s length in daylight.',
     made: [
       'Creator pieces for paid social, presenter to camera, product in hand.',
       'Product frames for the still placements.',
