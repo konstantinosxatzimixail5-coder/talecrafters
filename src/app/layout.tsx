@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { CookieConsent } from "@/components/CookieConsent";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://talecrafters.studio"),
@@ -79,6 +80,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <GoogleAnalytics />
         {children}
         <CookieConsent />
       </body>
