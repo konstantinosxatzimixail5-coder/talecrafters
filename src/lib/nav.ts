@@ -35,7 +35,6 @@ export const primaryNav: NavEntry[] = [
       { label: 'TaleCrafters / Create', href: '/create', note: 'Films, campaigns and visual worlds' },
       { label: 'TaleCrafters / Systems', href: '/systems', note: 'Agents, automation and content engines' },
       { label: 'TaleCrafters / Originals', href: '/originals', note: 'Our own films, games and stories' },
-      { label: 'AI Filmmaking Workflows', href: '/films', note: 'Two originals, published with their process' },
     ],
   },
   {
@@ -43,6 +42,7 @@ export const primaryNav: NavEntry[] = [
     color: GOLD,
     items: [
       { label: 'Free Resources', href: '/armoury', note: '38 camera moves and 12 animation styles' },
+      { label: 'AI Filmmaking Workflows', href: '/films', note: 'Two originals, published with their process' },
       { label: 'GenAI Workflows', href: '/pipelines', note: 'The production pipelines, published in full' },
     ],
   },
@@ -68,7 +68,6 @@ export const navGroups: NavGroup[] = [
     color: MAGENTA,
     items: [
       { label: 'Selected Damage', href: '/work', note: 'Case studies with the receipts' },
-      { label: 'AI Filmmaking Workflows', href: '/films', note: 'Two originals, with the sheet behind each' },
       { label: 'Concept Projects', href: '/concept-projects', note: 'Invented brands, real capability' },
       { label: 'Photoreal Captures', href: '/captures', note: 'Eight frames, eight hard problems' },
       { label: 'Writing & Narrative', href: '/writing', note: 'Scripts, VSLs and original IP' },
@@ -90,6 +89,7 @@ export const navGroups: NavGroup[] = [
     color: GOLD,
     items: [
       { label: 'Free Resources', href: '/armoury', note: 'Take them. No email gate.' },
+      { label: 'AI Filmmaking Workflows', href: '/films', note: 'Two originals, with the sheet behind each' },
       { label: 'GenAI Workflows', href: '/pipelines', note: 'How the work actually gets made' },
       { label: 'Blog', href: '/blog', note: 'Dispatches from the frontline' },
       { label: 'Glossary', href: '/glossary', note: `${terms.length} terms, no fog` },
