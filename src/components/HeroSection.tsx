@@ -230,9 +230,10 @@ export function HeroSection() {
           creative systems that make and distribute them, and develop our own original IP.
         </motion.p>
 
-        {/* Terminal readout */}
+        {/* Terminal readout, kept close under the paragraph above it rather
+            than floating in its own band of space. */}
         <motion.div
-          className="mt-12 max-w-lg p-4"
+          className="mt-5 max-w-lg p-4"
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: '12px',

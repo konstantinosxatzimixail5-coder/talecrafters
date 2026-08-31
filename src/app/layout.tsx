@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter, JetBrains_Mono, Anton } from "next/font/google";
 import "@/styles/globals.css";
 import { CookieConsent } from "@/components/CookieConsent";
 import { SiteHeader } from "@/components/SiteHeader";
+import { ImpCursor } from "@/components/ImpCursor";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { orgSchema, websiteSchema } from "@/lib/seo";
@@ -133,6 +134,8 @@ export default function RootLayout({
         <a href="#main" className="skip-link">
           Skip to content
         </a>
+        {/* Site-wide: it was mounted on the landing page only. */}
+        <ImpCursor />
         <SiteHeader />
         <main id="main">{children}</main>
         <Footer />

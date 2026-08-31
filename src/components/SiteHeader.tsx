@@ -105,11 +105,11 @@ export function SiteHeader() {
               aria-hidden
               width={1024}
               height={812}
-              className="h-8 sm:h-9 md:h-10 w-auto flex-shrink-0"
+              className="h-9 sm:h-10 md:h-12 w-auto flex-shrink-0"
               whileHover={{ rotate: -5, scale: 1.06 }}
               transition={{ type: 'spring', stiffness: 300, damping: 18 }}
             />
-            <Wordmark size="clamp(15px, 4.4vw, 21px)" />
+            <Wordmark size="clamp(18px, 5.2vw, 27px)" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-0.5" aria-label="Primary">

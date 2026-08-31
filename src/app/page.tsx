@@ -9,7 +9,6 @@ import { PricingSection } from '@/components/PricingSection';
 import { BlogSection } from '@/components/BlogSection';
 import { CTASection } from '@/components/CTASection';
 import { ContactSection } from '@/components/ContactSection';
-import { ImpCursor } from '@/components/ImpCursor';
 import { ClientsSection } from '@/components/ClientsSection';
 import { JsonLd } from '@/components/JsonLd';
 import { serviceSchema, caseStudySchema } from '@/lib/seo';
@@ -49,8 +48,6 @@ export default function HomePage() {
           ),
         ]}
       />
-
-      <ImpCursor />
 
       <HeroSection />
       <StudioSection />
