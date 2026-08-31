@@ -186,9 +186,9 @@ export const solutions: Solution[] = [
   },
   {
     slug: 'creative-automation',
-    title: 'CREATIVE',
-    accentWord: 'AUTOMATION',
-    plainName: 'Creative automation',
+    title: 'CREATIVE AUTOMATION &',
+    accentWord: 'AI CONTENT SYSTEMS',
+    plainName: 'Creative automation and AI content systems',
     metaTitle: 'Creative Workflow Automation & Agentic Content Systems',
     metaDescription:
       'Creative automation for content and marketing teams: content production systems, agentic workflows, marketing automations, repurposing engines, internal tools and prototypes. Mapped, built and handed over running inside your own accounts with a cost ledger attached.',
@@ -404,6 +404,83 @@ export const solutions: Solution[] = [
       body: 'Send the brief and the deadline. You will get a shape, a stack and a number back, and an honest answer about whether this should be generative at all.',
     },
     market: 'GR',
+  },
+  {
+    slug: 'content-and-communications-strategy',
+    title: 'CONTENT & COMMUNICATIONS',
+    accentWord: 'STRATEGY',
+    plainName: 'Content and communications strategy',
+    metaTitle: 'Content & Communications Strategy — Positioning, Messaging and the Plan Under It',
+    metaDescription:
+      'Content and communications strategy for brands that already produce plenty and are not landing: positioning, message architecture, the register map, the channel plan and the measurement that tells you which part is working.',
+    keywords: [
+      'content strategy',
+      'communications strategy',
+      'content strategy agency',
+      'brand messaging framework',
+      'message architecture',
+      'content strategy consultant',
+      'B2B content strategy',
+      'editorial strategy',
+      'positioning and messaging',
+    ],
+    color: 'var(--brand-gold)',
+    lede:
+      'Most brands producing content do not have a volume problem. They have a decision problem: nobody wrote down what the company claims, who it is arguing with, or which of the nine things it says is the one that matters. Strategy is that document, and then the plan that spends against it.',
+    meta: [
+      { label: 'Engagement', value: 'Two to four weeks' },
+      { label: 'You get', value: 'Positioning, message architecture, channel plan' },
+      { label: 'Runs on', value: 'Your team, with or without us' },
+      { label: 'Measured by', value: 'What moves, not what publishes' },
+    ],
+    body: [
+      'The symptom is always the same. A team is publishing steadily, the calendar is full, and nothing compounds. Ask five people in that company what the brand claims and you get five answers, all reasonable, none the same. That is not an execution problem and more execution will not fix it.',
+      'So the first artefact is a claim. One sentence a stranger could act on, that the company can actually support, and that is not true of its three closest competitors. Most of the work is the last clause: a claim everyone in the category could make is a description, not a position.',
+      'Under it goes the message architecture: the two or three arguments that carry the claim, the evidence each one rests on, and the objection each one exists to answer. This is what turns a brand voice document from a list of adjectives into something a writer can use at four in the afternoon.',
+      'Then the register map. The same argument sounds different on a landing page, in a founder post, in a paid script and in an answer-engine snippet, and a team without a register map flattens all four into the same middle voice. We write the registers down and give each one a rule about what it may and may not do.',
+      'Last is the plan, and the plan is mostly subtraction. Which channels to stop, which formats to stop, and what the remaining capacity buys. A strategy that adds work to a team already at capacity is a strategy nobody will follow past week three.',
+    ],
+    deliverables: [
+      { name: 'Positioning', detail: 'The claim, in one sentence, with the reason it is defensible written underneath' },
+      { name: 'Message architecture', detail: 'Two or three arguments, the evidence under each, the objection each answers' },
+      { name: 'Register map', detail: 'How the argument sounds per surface, with a rule per register' },
+      { name: 'Channel and format plan', detail: 'What to run, what to stop, and what stopping buys back' },
+      { name: 'Editorial calendar', detail: 'Twelve weeks, mapped to the arguments rather than to the months' },
+      { name: 'Measurement frame', detail: 'The two or three numbers that would actually change a decision' },
+    ],
+    pipelines: ['operator-stack'],
+    cases: ['big-blue-data-academy', 'cocoon'],
+    terms: ['register', 'content-atomisation', 'topical-authority', 'answer-engine-optimisation', 'entity-graph'],
+    faqs: [
+      {
+        q: 'What is content and communications strategy?',
+        a: 'The document that decides what a company claims, which arguments carry that claim, what evidence each one rests on and how it should sound per surface, plus the plan that spends against it. Without it, a content team is producing volume and hoping.',
+      },
+      {
+        q: 'How is this different from a content calendar?',
+        a: 'A calendar says what publishes and when. A strategy says why any of it should exist. A calendar built without one is a schedule of unrelated posts that happens to be full.',
+      },
+      {
+        q: 'We already produce a lot of content and it is not working. Is this the fix?',
+        a: 'Usually, and the reason is uncomfortable: more output rarely fixes an unclear claim, it just distributes the confusion more widely. The first question is whether five people in your company would describe the brand the same way.',
+      },
+      {
+        q: 'How long does a strategy engagement take?',
+        a: 'Two to four weeks depending on how much internal disagreement there is about the claim, which is the real variable. The research and the writing are predictable; the alignment is not.',
+      },
+      {
+        q: 'Do you execute it as well?',
+        a: 'We can, and the strategy is written to be executable by your team without us. A plan that only works with its author in the room is a retainer disguised as a document.',
+      },
+      {
+        q: 'How does this connect to the automation work?',
+        a: 'Directly. A content system built before the strategy automates the production of things nobody decided to say. Strategy first, then the machinery that produces it at volume.',
+      },
+    ],
+    cta: {
+      title: 'Publishing plenty, landing little?',
+      body: 'Tell us what the company claims. If two people give us two answers, we have found the problem and you already know the shape of the work.',
+    },
   },
 ];
 

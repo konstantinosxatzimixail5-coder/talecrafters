@@ -177,3 +177,58 @@ body {
     font-size: 12px;
   }
 }
+
+/* --- the imp cursor -------------------------------------------------------
+   Site-wide, and in CSS rather than JavaScript.
+
+   It used to be a client component on the home page only: it loaded a 96px
+   plate, drew it into a 48x48 canvas, read the canvas back as a data URL and
+   injected a stylesheet. That meant the cursor existed on one page out of a
+   hundred and seventy-five, and on that page it arrived a beat after the rest
+   of it, because none of that can start until React has hydrated.
+
+   A committed 48px file and one rule does the same job before the first paint.
+   image-set gives the 96px plate to retina pointers, so it stays crisp without
+   the 1x cursor being drawn at 96px, which is what pointing straight at the
+   larger file would have done. The hotspot is the middle of the 48px box.
+
+   Scoped to pointer:fine. A touch device has no cursor to style, and a coarse
+   pointer would only be downloading a picture it can never show. */
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  summary,
+  label,
+  [role='button'],
+  [role='link'],
+  input[type='submit'],
+  input[type='button'],
+  input[type='checkbox'],
+  input[type='radio'],
+  select {
+    cursor:
+      image-set(
+        url('/brand/cursor-48.png') 1x,
+        url('/brand/cursor-96.png') 2x
+      )
+      24 24,
+      auto;
+  }
+
+  /* Text entry keeps the I-beam. The old rule was `* { cursor: ... }` with an
+     !important on it, which took the caret away from every field on the site
+     and told a disabled control it was clickable. A custom cursor is worth
+     having; it is not worth losing what the pointer is telling you. */
+  input:not([type='submit']):not([type='button']):not([type='checkbox']):not([type='radio']),
+  textarea,
+  [contenteditable='true'] {
+    cursor: text;
+  }
+
+  :disabled,
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}

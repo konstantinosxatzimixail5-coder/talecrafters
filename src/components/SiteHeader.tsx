@@ -138,7 +138,6 @@ export function SiteHeader() {
                           : 'var(--brand-concrete-light)',
                       background: 'transparent',
                       border: 'none',
-                      cursor: 'pointer',
                     }}
                   >
                     {entry.label}

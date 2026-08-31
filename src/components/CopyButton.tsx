@@ -31,7 +31,6 @@ export function CopyButton({ text, color = 'var(--brand-cyan)' }: { text: string
         border: `1px solid ${copied ? color : 'rgba(255,255,255,0.16)'}`,
         color: copied ? color : 'var(--brand-concrete-light)',
         background: 'transparent',
-        cursor: 'pointer',
       }}
     >
       {copied ? <Check size={12} /> : <Copy size={12} />}

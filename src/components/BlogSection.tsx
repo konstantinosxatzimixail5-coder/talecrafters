@@ -271,7 +271,6 @@ export function BlogSection({ posts }: { posts: TeaserPost[] }) {
                 border: '1px solid var(--brand-concrete)',
                 color: 'var(--brand-white)',
                 backgroundColor: 'rgba(0,0,0,0)',
-                cursor: 'pointer',
               }}
               whileHover={{
                 backgroundColor: 'var(--brand-cyan)',
