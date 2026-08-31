@@ -7,6 +7,7 @@ import { CopyButton } from '@/components/CopyButton';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: '38 Cinematic Camera Movements for AI Video (Free Prompt Reference)',
@@ -50,7 +51,8 @@ const qa = [
   },
 ];
 
-export default function CameraMovementsPage() {
+export default async function CameraMovementsPage() {
+  const copy = await pageCopy('cameraMovements');
   const r = getResource('camera-movements')!;
 
   return (
@@ -88,18 +90,13 @@ export default function CameraMovementsPage() {
       />
 
       <PageHeader
-        eyebrow="FREE RESOURCE 01 · THE ARMOURY"
-        title="38 CAMERA"
-        accentWord="MOVEMENTS"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-cyan)"
         crumbs={crumbs}
-        lede={r.blurb}
-        meta={[
-          { label: 'Moves', value: '38' },
-          { label: 'Families', value: '7' },
-          { label: 'Each entry', value: 'Direction + working prompt' },
-          { label: 'Gate', value: 'None. Take it.' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       >
         <Reveal delay={0.18}>
           <div

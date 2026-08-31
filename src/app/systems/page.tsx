@@ -6,6 +6,7 @@ import { Eyebrow } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, serviceSchema, faqSchema } from '@/lib/seo';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   // The title carries the two phrases buyers actually search separately:
@@ -71,7 +72,8 @@ const built = [
   'Working prototypes',
 ];
 
-export default function SystemsPage() {
+export default async function SystemsPage() {
+  const copy = await pageCopy('systems');
   const arm = getArm('systems')!;
   const stack = getPipeline('operator-stack')!;
 
@@ -95,15 +97,10 @@ export default function SystemsPage() {
       />
       <ArmPage
         arm={arm}
-        eyebrow="02 / CREATIVE WORKFLOW AUTOMATION & AGENTIC CONTENT SYSTEMS"
-        title="CREATIVE AUTOMATION FOR"
-        accentWord="CONTENT & MARKETING TEAMS"
-        meta={[
-          { label: 'Engagement', value: 'Map, build, hand over' },
-          { label: 'Typical length', value: '2 to 3 weeks' },
-          { label: 'Where it runs', value: 'Your accounts, not ours' },
-          { label: 'What you get', value: 'A process, the machinery, a cost ledger' },
-        ]}
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
+        meta={copy.header.meta}
         cta={{
           title: 'Your team is not slow. Your process is.',
           body: 'Tell us where the week actually goes. We will map it, build the half a machine can do, and leave you operating it.',

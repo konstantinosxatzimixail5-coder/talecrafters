@@ -5,6 +5,7 @@ import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'GenAI Workflows — How the Work Actually Gets Made',
@@ -41,7 +42,8 @@ const qa = [
   },
 ];
 
-export default function PipelinesIndex() {
+export default async function PipelinesIndex() {
+  const copy = await pageCopy('pipelines');
   return (
     <>
       <JsonLd
@@ -58,18 +60,13 @@ export default function PipelinesIndex() {
       />
 
       <PageHeader
-        eyebrow="GENAI WORKFLOWS"
-        title="THE PART"
-        accentWord="NOBODY POSTS"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-violet)"
         crumbs={crumbs}
-        lede="A prompt is not a pipeline. A pipeline is the order the work happens in, the one file everything downstream references, and the four tests a frame has to survive before a client sees it. Three of ours are published in full below. The other four stay in the studio."
-        meta={[
-          { label: 'Published', value: '3 of 7' },
-          { label: 'Format', value: 'Stages, timings, gates' },
-          { label: 'Gates each', value: '4 named tests' },
-          { label: 'Use', value: 'Free to copy. Hard to run.' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       />
 
       <section className="px-5 md:px-10 lg:px-14 pb-24">

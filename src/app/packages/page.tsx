@@ -3,6 +3,7 @@ import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema, serviceSchema } from '@/lib/seo';
 import { faqGroups } from '@/data/faq';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'Packages — Four Ways to Work With Us',
@@ -25,7 +26,9 @@ const crumbs = [
 
 const qa = faqGroups.find((g) => g.title === 'WORKING WITH US')!.items;
 
-export default function PackagesPage() {
+export default async function PackagesPage() {
+  const home = await pageCopy('home');
+  const copy = await pageCopy('packages');
   return (
     <>
       <JsonLd
@@ -53,20 +56,15 @@ export default function PackagesPage() {
         ]}
       />
       <PageHeader
-        eyebrow="007 / PACKAGES"
-        title="PICK YOUR"
-        accentWord="PLOT"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-magenta)"
         crumbs={crumbs}
-        lede="Four escalation levels for Content-as-Service. Nothing here is a rate card, because a run of forty variants from one trained identity and a single hero film are not the same job with a different number on it. Pick the shape, and we will quote the work."
-        meta={[
-          { label: 'Ongoing', value: 'The Alliance' },
-          { label: 'Fixed monthly output', value: 'The Forge' },
-          { label: 'Single project', value: 'The Mission' },
-          { label: 'White label', value: 'The Shadow Protocol' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       />
-      <PricingSection hideHeading />
+      <PricingSection copy={home.pricing} hideHeading />
       <section className="px-5 md:px-10 lg:px-14 py-12">
         <div className="max-w-[1400px] mx-auto">
           <Eyebrow color="var(--brand-magenta)">BEFORE YOU ASK</Eyebrow>

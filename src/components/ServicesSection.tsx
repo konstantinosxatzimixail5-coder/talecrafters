@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { categories } from '@/data/arsenal';
+import type { HomeCopy } from '@/content/copy';
 
 const icons: Record<string, LucideIcon> = {
   Clapperboard, MonitorPlay, Flame, Wand2, LayoutPanelLeft, Eye, BookMarked, Mic2, Aperture,
@@ -19,7 +20,7 @@ const icons: Record<string, LucideIcon> = {
   ScanFace, Podcast, Bot,
 };
 
-export function ServicesSection() {
+export function ServicesSection({ copy }: { copy: HomeCopy['services'] }) {
   const [activeCategory, setActiveCategory] = useState(0);
   const [hoveredService, setHoveredService] = useState<number | null>(null);
 
@@ -72,7 +73,7 @@ export function ServicesSection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-violet-text)' }}
         >
-          004 / WHAT WE WEAPONISE
+          {copy.flag}
         </span>
       </motion.div>
 
@@ -88,8 +89,8 @@ export function ServicesSection() {
             className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            OUR<br />
-            <span style={{ color: 'var(--brand-cyan)' }}>ARSENAL</span>
+            {copy.heading}<br />
+            <span style={{ color: 'var(--brand-cyan)' }}>{copy.accentWord}</span>
           </h2>
         </motion.div>
 
@@ -101,9 +102,7 @@ export function ServicesSection() {
           transition={{ duration: 0.8, delay: 0.15 }}
           viewport={{ once: true }}
         >
-          Six groups, thirty services. The group names are ours and they stay. The line underneath
-          each one is deliberately boring, because the person forwarding this page to a finance
-          director needs a phrase that survives the forward.
+          {copy.lede}
         </motion.p>
 
         <motion.div

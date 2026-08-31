@@ -6,6 +6,7 @@ import { GlossarySearch } from '@/components/GlossarySearch';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, definedTermSchema } from '@/lib/seo';
 import { abs, SITE_URL } from '@/lib/site';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: `Generative & Synthetic Media Glossary — ${terms.length} Terms`,
@@ -37,7 +38,8 @@ const tagColor: Record<string, string> = {
   strategy: 'var(--brand-violet)',
 };
 
-export default function GlossaryIndex() {
+export default async function GlossaryIndex() {
+  const copy = await pageCopy('glossary');
   const grouped = byLetter();
   const live = alphabet.filter((l) => grouped.has(l));
 
@@ -62,18 +64,13 @@ export default function GlossaryIndex() {
       />
 
       <PageHeader
-        eyebrow="THE GLOSSARY"
-        title={`${terms.length} TERMS,`}
-        accentWord="NO FOG"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-gold)"
         crumbs={crumbs}
-        lede="Every term here is defined the way a producer needs it rather than the way a paper defines it: what it is, what it costs you when it goes wrong, and what to do about that. Each one has its own page with the questions people actually type."
-        meta={[
-          { label: 'Terms', value: `${terms.length}` },
-          { label: 'Topics', value: `${GLOSSARY_TAGS.length}` },
-          { label: 'Written by', value: 'People who ship the work' },
-          { label: 'Gate', value: 'None' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       >
         <Reveal delay={0.18}>
           <div className="mt-10">

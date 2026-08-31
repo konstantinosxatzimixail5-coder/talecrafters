@@ -3,6 +3,7 @@ import { films } from '@/data/films';
 import { Frame } from '@/components/Frame';
 import { Reveal } from '@/components/Reveal';
 import { Eyebrow } from '@/components/kit';
+import { pageCopy } from '@/content/copy';
 
 /**
  * The two original shorts, as a section of the Armoury.
@@ -15,8 +16,10 @@ import { Eyebrow } from '@/components/kit';
  * at card width is too small to carry a title and reads as decoration instead
  * of as a film.
  */
-export function FilmsSection() {
+export async function FilmsSection() {
   if (films.length === 0) return null;
+
+  const copy = (await pageCopy('filmsSection')).main;
 
   return (
     <section
@@ -25,23 +28,21 @@ export function FilmsSection() {
       style={{ backgroundColor: 'var(--brand-black)' }}
     >
       <div className="max-w-[1400px] mx-auto">
-        <Eyebrow color="var(--brand-magenta)">AI FILMMAKING WORKFLOWS</Eyebrow>
+        <Eyebrow color="var(--brand-magenta)">{copy.eyebrow}</Eyebrow>
 
         <h2
           className="mt-6 mb-5 text-3xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.94]"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          TWO ORIGINALS,{' '}
-          <span style={{ color: 'var(--brand-magenta)' }}>PUBLISHED WITH THEIR PROCESS</span>
+          {copy.heading}{' '}
+          <span style={{ color: 'var(--brand-magenta)' }}>{copy.accentWord}</span>
         </h2>
 
         <p
           className="max-w-3xl text-lg md:text-xl leading-relaxed mb-12"
           style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.72)' }}
         >
-          Written, designed, directed and cut inside a generative pipeline. The films are here and
-          so is the sheet behind each one: every generation block, the prompt as it was written, and
-          the locks that stopped the world drifting between shots.
+          {copy.lede}
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">

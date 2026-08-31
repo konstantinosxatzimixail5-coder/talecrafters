@@ -6,6 +6,7 @@ import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
+import { pageCopy } from '@/content/copy';
 
 /** Counted, not typed, and counted before the metadata so the description, the
  *  structured data and the page itself cannot disagree. The brand count said
@@ -53,7 +54,8 @@ const qa = [
   },
 ];
 
-export default function ConceptProjects() {
+export default async function ConceptProjects() {
+  const copy = await pageCopy('conceptProjects');
   return (
     <>
       <JsonLd
@@ -70,18 +72,13 @@ export default function ConceptProjects() {
       />
 
       <PageHeader
-        eyebrow="CONCEPT PROJECTS"
-        title="NOBODY"
-        accentWord="ASKED FOR THIS"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-cyan)"
         crumbs={crumbs}
-        lede={`${Words(brandCount)} brands that do not exist, ${frameCount} frames, none of it commissioned and none of it paid for. Each set was built to prove one thing, and each entry says which thing, because a fake brand only earns a page if it states its test.`}
-        meta={[
-          { label: 'Brands', value: `${brandCount}, all invented` },
-          { label: 'Frames', value: `${frameCount}, none commissioned` },
-          { label: 'Purpose', value: 'One stated control per set' },
-          { label: 'Pipelines', value: 'Phantom Set, Identity Lock' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       />
 
       {conceptBrands.map((b) => (
@@ -181,7 +178,7 @@ export default function ConceptProjects() {
 
       <section className="px-5 md:px-10 lg:px-14 pb-20">
         <div className="max-w-[1400px] mx-auto">
-          <Eyebrow color="var(--brand-gold)">THE OBVIOUS QUESTIONS</Eyebrow>
+          <Eyebrow color="var(--brand-gold)">{copy.questions.eyebrow}</Eyebrow>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
             {qa.map((item) => (
               <div key={item.q} className="p-6" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>

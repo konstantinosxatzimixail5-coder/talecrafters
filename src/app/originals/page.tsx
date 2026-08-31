@@ -5,6 +5,7 @@ import { Eyebrow } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'Originals — Our Own Films, Games and Stories',
@@ -45,7 +46,8 @@ const slate = [
   { n: '07', k: 'Experimental interactive', v: 'Formats where the audience does something instead of watching something.' },
 ];
 
-export default function OriginalsPage() {
+export default async function OriginalsPage() {
+  const copy = await pageCopy('originals');
   const arm = getArm('originals')!;
   return (
     <>
@@ -60,15 +62,10 @@ export default function OriginalsPage() {
       />
       <ArmPage
         arm={arm}
-        eyebrow="03 / TALECRAFTERS ORIGINALS"
-        title="NOBODY PAID US"
-        accentWord="TO BE RIGHT"
-        meta={[
-          { label: 'Screenplays', value: '7 completed features' },
-          { label: 'In development', value: 'Games, series, long-form fiction' },
-          { label: 'Titles', value: 'Unlisted, on purpose' },
-          { label: 'Why it is here', value: 'Story-first needs evidence' },
-        ]}
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
+        meta={copy.header.meta}
         cta={{
           title: 'Own something instead of renting attention.',
           body: 'Branded narrative, owned series and character-led formats, developed on the same discipline as our own slate rather than as a campaign with a story bolted on.',

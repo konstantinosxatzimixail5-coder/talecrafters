@@ -7,6 +7,7 @@ import { CopyButton } from '@/components/CopyButton';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'Prompting Guide by Animation Style: 12 Styles, Free',
@@ -49,7 +50,8 @@ const qa = [
   },
 ];
 
-export default function AnimationPromptingPage() {
+export default async function AnimationPromptingPage() {
+  const copy = await pageCopy('animationPrompting');
   const r = getResource('animation-prompting')!;
 
   return (
@@ -87,18 +89,13 @@ export default function AnimationPromptingPage() {
       />
 
       <PageHeader
-        eyebrow="FREE RESOURCE 02 · THE ARMOURY"
-        title="PROMPTING BY"
-        accentWord="ANIMATION STYLE"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-magenta)"
         crumbs={crumbs}
-        lede={r.blurb}
-        meta={[
-          { label: 'Styles', value: '12' },
-          { label: 'Each entry', value: 'Scaffold, keywords, failure, example' },
-          { label: 'The rule', value: 'Name the absence, not the mood' },
-          { label: 'Gate', value: 'None. Take it.' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       >
         <Reveal delay={0.18}>
           <div

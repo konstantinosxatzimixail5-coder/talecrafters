@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useRef } from 'react';
 import { Send, ChevronRight, Compass, BookMarked, Crosshair, Cpu, Swords, Sparkles } from 'lucide-react';
+import type { HomeCopy } from '@/content/copy';
 
 function HandshakeAnimIcon() {
   return (
@@ -38,7 +39,7 @@ const urgencyLevels = [
   { id: 'exploring', label: 'JUST EXPLORING', color: 'var(--brand-violet-text)', desc: 'Kicking tyres' },
 ];
 
-export function ContactSection({ hideHeading = false }: { hideHeading?: boolean } = {}) {
+export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['contact']; hideHeading?: boolean }) {
   const [step, setStep] = useState(0);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [urgency, setUrgency] = useState('');
@@ -160,7 +161,7 @@ export function ContactSection({ hideHeading = false }: { hideHeading?: boolean 
             className="text-xs tracking-[0.3em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
           >
-            009 / START A CONSPIRACY
+            {copy.flag}
           </span>
         </motion.div>
       )}
@@ -179,8 +180,8 @@ export function ContactSection({ hideHeading = false }: { hideHeading?: boolean 
               className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              LET&apos;S<br />
-              <span style={{ color: 'var(--brand-cyan)' }}>CONSPIRE</span>
+              {copy.heading}<br />
+              <span style={{ color: 'var(--brand-cyan)' }}>{copy.accentWord}</span>
             </h2>
             <motion.div
               className="mt-6 flex items-center gap-4"

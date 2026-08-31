@@ -4,6 +4,7 @@ import { people, abs } from '@/lib/site';
 import { PageHeader } from '@/components/kit';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, personSchema } from '@/lib/seo';
+import { pageCopy } from '@/content/copy';
 
 /**
  * The author index. Returns a 404 while `people` is empty rather than
@@ -21,7 +22,8 @@ const crumbs = [
   { name: 'Authors', path: '/authors' },
 ];
 
-export default function AuthorsIndex() {
+export default async function AuthorsIndex() {
+  const copy = await pageCopy('authors');
   if (!people.length) notFound();
 
   return (
@@ -52,10 +54,10 @@ export default function AuthorsIndex() {
       />
 
       <PageHeader
-        eyebrow="BYLINES"
-        title="AUTHORS"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
         color="var(--brand-cyan)"
-        lede="The people whose names go on the work."
+        lede={copy.header.lede}
         crumbs={crumbs}
       />
 

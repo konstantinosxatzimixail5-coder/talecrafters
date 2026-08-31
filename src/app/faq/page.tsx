@@ -5,6 +5,7 @@ import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'FAQ — The Questions Everyone Asks',
@@ -25,24 +26,20 @@ const crumbs = [
   { name: 'FAQ', path: '/faq' },
 ];
 
-export default function FaqPage() {
+export default async function FaqPage() {
+  const copy = await pageCopy('faq');
   return (
     <>
       <JsonLd graph={[breadcrumbSchema(crumbs), faqSchema(allFaqs)]} />
 
       <PageHeader
-        eyebrow="FAQ"
-        title="ASK THE"
-        accentWord="AWKWARD ONES"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-cyan)"
         crumbs={crumbs}
-        lede="Everything below is the answer we would give on a call, written down so nobody has to book one to get it. Where the honest answer is “it depends”, we have said what it depends on."
-        meta={[
-          { label: 'Questions', value: `${allFaqs.length}` },
-          { label: 'Sections', value: `${faqGroups.length}` },
-          { label: 'Sales voice', value: 'Left at the door' },
-          { label: 'Still stuck?', value: 'hello@talecrafters.studio' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       />
 
       <nav className="px-5 md:px-10 lg:px-14 pb-10" aria-label="FAQ sections">

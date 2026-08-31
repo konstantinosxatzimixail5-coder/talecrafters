@@ -3,13 +3,14 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { arms } from '@/data/arsenal';
+import type { HomeCopy } from '@/content/copy';
 
 /**
  * The three arms, on the landing page. Without this the site reads as a video
  * shop that also mentions technology; with it the shape of the company is
  * visible in ten seconds.
  */
-export function UniverseSection() {
+export function UniverseSection({ copy }: { copy: HomeCopy['universe'] }) {
   return (
     <section
       id="universe"
@@ -34,7 +35,7 @@ export function UniverseSection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
         >
-          002 / THE DIVISIONS
+          {copy.flag}
         </span>
       </motion.div>
 
@@ -63,7 +64,7 @@ export function UniverseSection() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          THREE ARMS. ONE <span style={{ color: 'var(--brand-cyan)' }}>STUDIO.</span>
+          {copy.heading} <span style={{ color: 'var(--brand-cyan)' }}>{copy.accentWord}</span>
         </motion.h2>
 
         <motion.p
@@ -74,8 +75,7 @@ export function UniverseSection() {
           transition={{ duration: 0.7, delay: 0.12 }}
           viewport={{ once: true }}
         >
-          Most studios describe the technology they used to make a film. We sell the film
-          <em> and</em> the machinery, and we keep a third arm for the work nobody commissions.
+          {copy.lede}
         </motion.p>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">

@@ -1,4 +1,5 @@
 import { defineType, defineField } from 'sanity';
+import { copyTypes } from './pageTypes';
 
 export const post = defineType({
   name: 'post',
@@ -137,4 +138,6 @@ export const post = defineType({
   ],
 });
 
-export const schemaTypes = [post];
+// Blog posts, plus the generated page-copy documents. The second list is
+// derived from src/content/registry.ts and is not maintained here.
+export const schemaTypes = [post, ...copyTypes];

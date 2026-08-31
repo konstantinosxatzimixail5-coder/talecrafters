@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { Rocket, Flame, HeartHandshake } from 'lucide-react';
+import type { HomeCopy } from '@/content/copy';
 
 const pillars = [
   {
@@ -45,7 +46,7 @@ const pillars = [
   },
 ];
 
-export function ProcessSection() {
+export function ProcessSection({ copy }: { copy: HomeCopy['process'] }) {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -88,7 +89,7 @@ export function ProcessSection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}
         >
-          006 / HOW WE OPERATE
+          {copy.flag}
         </span>
       </motion.div>
 
@@ -105,8 +106,8 @@ export function ProcessSection() {
             className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            THE ANTI-<br />
-            <span style={{ color: 'var(--brand-gold)' }}>PROCESS</span>
+            {copy.heading}<br />
+            <span style={{ color: 'var(--brand-gold)' }}>{copy.accentWord}</span>
           </h2>
         </motion.div>
 

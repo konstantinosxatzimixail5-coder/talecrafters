@@ -2,6 +2,7 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import { CircleCheck, ArrowUpRight } from 'lucide-react';
+import type { HomeCopy } from '@/content/copy';
 
 const packages = [
   {
@@ -70,7 +71,7 @@ const packages = [
   },
 ];
 
-export function PricingSection({ hideHeading = false }: { hideHeading?: boolean } = {}) {
+export function PricingSection({ copy, hideHeading = false }: { copy: HomeCopy['pricing']; hideHeading?: boolean }) {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   return (
@@ -105,7 +106,7 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}
         >
-          007 / PACKAGES
+          {copy.flag}
         </span>
       </motion.div>
 
@@ -124,8 +125,8 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
               className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              PICK YOUR<br />
-              <span style={{ color: 'var(--brand-magenta)' }}>PLOT</span>
+              {copy.heading}<br />
+              <span style={{ color: 'var(--brand-magenta)' }}>{copy.accentWord}</span>
             </h2>
           </motion.div>
         )}

@@ -6,6 +6,7 @@ import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, imageObjectSchema } from '@/lib/seo';
 import { abs, SITE_URL } from '@/lib/site';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'AI Filmmaking Workflows — Two Original Shorts, Published With Their Process',
@@ -28,7 +29,8 @@ const crumbs = [
   { name: 'AI Filmmaking Workflows', path: '/films' },
 ];
 
-export default function FilmsIndex() {
+export default async function FilmsIndex() {
+  const copy = await pageCopy('films');
   return (
     <>
       <JsonLd
@@ -60,18 +62,13 @@ export default function FilmsIndex() {
       />
 
       <PageHeader
-        eyebrow="AI FILMMAKING WORKFLOWS"
-        title="TWO ORIGINALS,"
-        accentWord="PUBLISHED IN FULL"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-magenta)"
         crumbs={crumbs}
-        lede="Two original shorts, written, designed, directed and cut inside a generative pipeline. The films are here and so is the sheet behind each one: every generation block, the prompt as it was written, the design references, and the locks that stopped the world drifting between shots."
-        meta={[
-          { label: 'Films', value: `${films.length} originals` },
-          { label: 'Published', value: 'Process sheet per film' },
-          { label: 'Video model', value: 'Seedance 2.0' },
-          { label: 'Rights', value: 'Original characters and worlds' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       />
 
       <section className="px-5 md:px-10 lg:px-14 pb-20">

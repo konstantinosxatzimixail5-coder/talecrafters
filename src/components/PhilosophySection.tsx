@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'motion/react';
+import type { HomeCopy } from '@/content/copy';
 
 /* Premium animated icon components */
 
@@ -236,7 +237,7 @@ const principles = [
   },
 ];
 
-export function PhilosophySection() {
+export function PhilosophySection({ copy }: { copy: HomeCopy['philosophy'] }) {
   return (
     <section
       id="philosophy"
@@ -279,7 +280,7 @@ export function PhilosophySection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}
         >
-          003 / PHILOSOPHY
+          {copy.flag}
         </span>
       </motion.div>
 
@@ -296,8 +297,8 @@ export function PhilosophySection() {
             className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            THE NON-<br />
-            <span style={{ color: 'var(--brand-violet-text)' }}>NEGOTIABLES</span>
+            {copy.heading}<br />
+            <span style={{ color: 'var(--brand-violet-text)' }}>{copy.accentWord}</span>
           </h2>
           <motion.div
             className="mt-6 flex items-center gap-4"

@@ -1,8 +1,9 @@
 "use client";
 import { motion } from 'motion/react';
 import { MoveUpRight, Ban } from 'lucide-react';
+import type { HomeCopy } from '@/content/copy';
 
-export function CTASection() {
+export function CTASection({ copy }: { copy: HomeCopy['cta'] }) {
   return (
     <section
       className="relative min-h-screen py-32 md:py-48 flex items-center justify-center overflow-hidden"
@@ -50,8 +51,8 @@ export function CTASection() {
             className="text-6xl md:text-[10vw] tracking-tighter leading-[0.82]"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            YOUR<br />
-            <span style={{ color: 'var(--brand-magenta)' }}>MOVE.</span>
+            {copy.heading}<br />
+            <span style={{ color: 'var(--brand-magenta)' }}>{copy.accentWord}</span>
           </h2>
 
           <motion.p

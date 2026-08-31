@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { featuredWork } from '@/data/work';
 import { Frame } from './Frame';
+import type { HomeCopy } from '@/content/copy';
 
 /**
  * The section the site was missing. It sits directly after Our Arsenal, because
@@ -13,7 +14,7 @@ import { Frame } from './Frame';
  * one narrative explainer) so that the breadth reads as deliberate rather than
  * as everything we have ever touched.
  */
-export function SelectedDamageSection() {
+export function SelectedDamageSection({ copy }: { copy: HomeCopy['selectedDamage'] }) {
   return (
     <section
       id="work"
@@ -40,7 +41,7 @@ export function SelectedDamageSection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}
         >
-          005 / SELECTED DAMAGE
+          {copy.flag}
         </span>
       </motion.div>
 
@@ -56,8 +57,8 @@ export function SelectedDamageSection() {
             className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            SELECTED<br />
-            <span style={{ color: 'var(--brand-magenta)' }}>DAMAGE</span>
+            {copy.heading}<br />
+            <span style={{ color: 'var(--brand-magenta)' }}>{copy.accentWord}</span>
           </h2>
         </motion.div>
 

@@ -7,6 +7,7 @@ import { Eyebrow } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, serviceSchema } from '@/lib/seo';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'Create — Films, Campaigns & Visual Worlds',
@@ -23,7 +24,8 @@ export const metadata = pageMeta({
   ],
 });
 
-export default function CreatePage() {
+export default async function CreatePage() {
+  const copy = await pageCopy('create');
   const arm = getArm('create')!;
   return (
     <>
@@ -43,15 +45,10 @@ export default function CreatePage() {
       />
       <ArmPage
         arm={arm}
-        eyebrow="01 / TALECRAFTERS CREATE"
-        title="WE SELL"
-        accentWord="PRODUCTION"
-        meta={[
-          { label: 'Output', value: 'Films, campaigns, stills, identities' },
-          { label: 'Method', value: 'Hybrid generative and post-production' },
-          { label: 'Typical turnaround', value: '2 days to 3 weeks' },
-          { label: 'What you keep', value: 'Plates, identities, specifications' },
-        ]}
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
+        meta={copy.header.meta}
         cta={{
           title: 'Come with the impossible.',
           body: 'Leave with a delivery date. Bring the launch, the deadline and the constraint you think kills it.',

@@ -5,6 +5,7 @@ import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, imageObjectSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'Photoreal Captures — Eight Generated Human Frames, and What Each Breaks',
@@ -26,7 +27,8 @@ const crumbs = [
   { name: 'Photoreal Captures', path: '/captures' },
 ];
 
-export default function CapturesPage() {
+export default async function CapturesPage() {
+  const copy = await pageCopy('captures');
   return (
     <>
       <JsonLd
@@ -47,18 +49,13 @@ export default function CapturesPage() {
       />
 
       <PageHeader
-        eyebrow="PHOTOREAL CAPTURES"
-        title="EIGHT FRAMES,"
-        accentWord="EIGHT HARD PROBLEMS"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-cyan)"
         crumbs={crumbs}
-        lede="A gallery of pretty faces proves nothing, because a pretty face at rest is the easiest thing these models make. Every frame here was kept because it is hard in a specific way, and each one says which way. All of them are generated, and all of them say so."
-        meta={[
-          { label: 'Frames', value: `${captures.length} generated` },
-          { label: 'Labelled', value: 'Generated, every one' },
-          { label: 'Kept for', value: 'The problem each one breaks' },
-          { label: 'Registers', value: 'Documentary through to studio' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       />
 
       <section className="px-5 md:px-10 lg:px-14 pb-20">

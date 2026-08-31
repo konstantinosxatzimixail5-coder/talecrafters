@@ -2,6 +2,7 @@
 import { motion } from 'motion/react';
 import { MoveRight, Timer } from 'lucide-react';
 import Link from 'next/link';
+import type { HomeCopy } from '@/content/copy';
 
 /**
  * The teaser rows are supplied by the page rather than written here.
@@ -25,7 +26,7 @@ export interface TeaserPost {
 }
 
 
-export function BlogSection({ posts }: { posts: TeaserPost[] }) {
+export function BlogSection({ copy, posts }: { copy: HomeCopy['blog']; posts: TeaserPost[] }) {
   // Nothing to tease is a reason to render nothing, not a reason to invent
   // something.
   if (posts.length === 0) return null;
@@ -49,7 +50,7 @@ export function BlogSection({ posts }: { posts: TeaserPost[] }) {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
         >
-          008 / THE BLOG
+          {copy.flag}
         </span>
       </motion.div>
 
@@ -66,8 +67,8 @@ export function BlogSection({ posts }: { posts: TeaserPost[] }) {
             className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            THOUGHTS,<br />
-            <span style={{ color: 'var(--brand-cyan)' }}>UNFILTERED</span>
+            {copy.heading}<br />
+            <span style={{ color: 'var(--brand-cyan)' }}>{copy.accentWord}</span>
           </h2>
         </motion.div>
 

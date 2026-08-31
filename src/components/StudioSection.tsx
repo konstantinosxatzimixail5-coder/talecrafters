@@ -2,8 +2,9 @@
 
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
+import type { HomeCopy } from '@/content/copy';
 
-export function StudioSection() {
+export function StudioSection({ copy }: { copy: HomeCopy['studio'] }) {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -62,7 +63,7 @@ export function StudioSection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
         >
-          001 / THE STUDIO
+          {copy.flag}
         </span>
       </motion.div>
 

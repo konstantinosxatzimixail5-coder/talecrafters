@@ -13,6 +13,7 @@ import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, serviceSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'The Arsenal — Every Capability, Listed Plainly',
@@ -41,7 +42,8 @@ const crumbs = [
   { name: 'Arsenal', path: '/arsenal' },
 ];
 
-export default function ArsenalPage() {
+export default async function ArsenalPage() {
+  const copy = await pageCopy('arsenal');
   const total = categories.reduce((n, c) => n + c.services.length, 0);
 
   return (
@@ -75,18 +77,13 @@ export default function ArsenalPage() {
       />
 
       <PageHeader
-        eyebrow="004 / WHAT WE WEAPONISE"
-        title="OUR"
-        accentWord="ARSENAL"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-cyan)"
         crumbs={crumbs}
-        lede="Six groups, thirty services. The group names are ours and they stay. The line underneath each one is deliberately boring, because the person forwarding this page to a finance director needs a phrase that survives the forward."
-        meta={[
-          { label: 'Capability groups', value: '6' },
-          { label: 'Services', value: `${total}` },
-          { label: 'Arms', value: 'Create · Systems · Originals' },
-          { label: 'Custom work', value: 'If you can imagine it, we can create it' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       />
 
       {/* Arm strip: the three-line version of the whole company */}

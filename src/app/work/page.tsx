@@ -7,11 +7,12 @@ import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, caseStudySchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'Selected Damage — Case Studies',
   description:
-    'Six delivered engagements with the problem, the idea, what we made, the result and the artefacts. Restaurants, consultancies, dealerships, data schools and a Horizon Europe consortium.',
+    `${work.length} delivered engagements with the problem, the idea, what we made, the result and the artefacts. A restaurant, a consultancy, a motorcycle dealership, a data school, a supplement brand and a Horizon Europe consortium.`,
   path: '/work',
   keywords: [
     'creative agency case studies',
@@ -27,7 +28,8 @@ const crumbs = [
   { name: 'Selected Damage', path: '/work' },
 ];
 
-export default function WorkIndex() {
+export default async function WorkIndex() {
+  const copy = await pageCopy('work');
   return (
     <>
       <JsonLd
@@ -54,18 +56,13 @@ export default function WorkIndex() {
       />
 
       <PageHeader
-        eyebrow="005 / SELECTED DAMAGE"
-        title="SELECTED"
-        accentWord="DAMAGE"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-magenta)"
         crumbs={crumbs}
-        lede="Six engagements, written the sober way. Every one carries the problem it started from, the idea that solved it, what we actually made, what happened, and the files the client kept. If a claim here can be checked, we have written it so it can be."
-        meta={[
-          { label: 'Engagements', value: '6 delivered' },
-          { label: 'Sectors', value: 'Hospitality, energy, education, retail, consulting' },
-          { label: 'Disciplines', value: 'Film, websites, content systems, synthetic UGC' },
-          { label: 'Years', value: '2025 – 2026' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       />
 
       <section className="px-5 md:px-10 lg:px-14 pb-24">
@@ -153,7 +150,7 @@ export default function WorkIndex() {
 
       <section className="px-5 md:px-10 lg:px-14 pb-8">
         <div className="max-w-[1400px] mx-auto">
-          <Eyebrow color="var(--brand-cyan)">ALSO WORTH YOUR TIME</Eyebrow>
+          <Eyebrow color="var(--brand-cyan)">{copy.alsoWorthYourTime.eyebrow}</Eyebrow>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-3">
             {[
               { href: '/concept-projects', title: 'Concept Projects', note: `${conceptBrands.length} invented brands built to prove one control each. Nobody commissioned them, and we say so.` },

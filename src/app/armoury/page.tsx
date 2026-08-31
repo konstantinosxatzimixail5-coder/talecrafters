@@ -7,6 +7,7 @@ import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'The Armoury — Free Templates, Checklists and Reference',
@@ -43,7 +44,8 @@ const qa = [
   },
 ];
 
-export default function ArmouryIndex() {
+export default async function ArmouryIndex() {
+  const copy = await pageCopy('armoury');
   return (
     <>
       <JsonLd
@@ -60,18 +62,13 @@ export default function ArmouryIndex() {
       />
 
       <PageHeader
-        eyebrow="THE ARMOURY"
-        title="TAKE IT."
-        accentWord="NO EMAIL GATE."
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-gold)"
         crumbs={crumbs}
-        lede="The templates, checklists and reference sheets we actually use, published in full and downloadable as PDFs. No form, no download wall, no drip sequence waiting on the other side. Use them commercially, change them, put your own name on the version you end up with."
-        meta={[
-          { label: 'Resources', value: `${resources.length} and counting` },
-          { label: 'Gate', value: 'None' },
-          { label: 'Licence', value: 'Use it, commercially' },
-          { label: 'Cost', value: 'Nothing' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       />
 
       <section className="px-5 md:px-10 lg:px-14 pb-20">
@@ -125,7 +122,7 @@ export default function ArmouryIndex() {
 
       <section className="px-5 md:px-10 lg:px-14 pb-16">
         <div className="max-w-[1400px] mx-auto">
-          <Eyebrow color="var(--brand-cyan)">ALSO FREE</Eyebrow>
+          <Eyebrow color="var(--brand-cyan)">{copy.alsoFree.eyebrow}</Eyebrow>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-3">
             {[
               { href: '/glossary', t: 'The Glossary', n: `${terms.length} terms from generative and synthetic media, defined the way a producer needs them.` },

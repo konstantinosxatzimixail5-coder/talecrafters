@@ -3,6 +3,7 @@ import { PageHeader } from '@/components/kit';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema } from '@/lib/seo';
 import { site, abs, SITE_URL } from '@/lib/site';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'Contact — Start a Conspiracy',
@@ -17,7 +18,9 @@ const crumbs = [
   { name: 'Contact', path: '/contact' },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const home = await pageCopy('home');
+  const copy = await pageCopy('contact');
   return (
     <>
       <JsonLd
@@ -39,20 +42,15 @@ export default function ContactPage() {
         ]}
       />
       <PageHeader
-        eyebrow="009 / START A CONSPIRACY"
-        title="TELL US WHAT"
-        accentWord="YOU'RE PLOTTING"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-gold)"
         crumbs={crumbs}
-        lede="Bring the launch, the deadline and the constraint you think kills it. You will get a shape, a stack and a number back, not a discovery workshop and a deck about our values."
-        meta={[
-          { label: 'Email', value: site.email },
-          { label: 'Registered', value: 'London, United Kingdom' },
-          { label: 'Working', value: 'UK, Europe, US' },
-          { label: 'Languages', value: 'English, Greek' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       />
-      <ContactSection hideHeading />
+      <ContactSection copy={home.contact} hideHeading />
     </>
   );
 }

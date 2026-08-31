@@ -16,6 +16,7 @@ import { categories } from '@/data/arsenal';
 import { featuredWork } from '@/data/work';
 import { posts, readingMinutes } from '@/data/posts';
 import { heroExists, heroSrc } from '@/lib/blog-images';
+import { pageCopy } from '@/content/copy';
 
 // The teaser takes the six newest published posts. It used to carry six
 // invented ones with stock photography, each linking to a slug that did not
@@ -43,7 +44,8 @@ const teaserPosts = posts.slice(0, 6).map((p, i) => ({
   ...(heroExists(p.image) ? { image: heroSrc(p.image, 960) } : {}),
 }));
 
-export default function HomePage() {
+export default async function HomePage() {
+  const copy = await pageCopy('home');
   return (
     <div
       className="relative"
@@ -78,20 +80,20 @@ export default function HomePage() {
       />
 
       <HeroSection />
-      <StudioSection />
+      <StudioSection copy={copy.studio} />
       {/* The three arms, right after the studio intro: what the company is,
           before what it sells. */}
-      <UniverseSection />
-      <PhilosophySection />
-      <ServicesSection />
+      <UniverseSection copy={copy.universe} />
+      <PhilosophySection copy={copy.philosophy} />
+      <ServicesSection copy={copy.services} />
       {/* The receipts, immediately after the claims. */}
-      <SelectedDamageSection />
-      <ProcessSection />
-      <PricingSection />
-      <BlogSection posts={teaserPosts} />
-      <CTASection />
+      <SelectedDamageSection copy={copy.selectedDamage} />
+      <ProcessSection copy={copy.process} />
+      <PricingSection copy={copy.pricing} />
+      <BlogSection copy={copy.blog} posts={teaserPosts} />
+      <CTASection copy={copy.cta} />
       <ClientsSection />
-      <ContactSection />
+      <ContactSection copy={copy.contact} />
     </div>
   );
 }

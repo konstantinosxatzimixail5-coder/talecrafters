@@ -4,6 +4,7 @@ import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, serviceSchema } from '@/lib/seo';
+import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
   title: 'Writing & Narrative — Scripts, VSLs and Original IP',
@@ -25,7 +26,8 @@ const crumbs = [
   { name: 'Writing & Narrative', path: '/writing' },
 ];
 
-export default function WritingPage() {
+export default async function WritingPage() {
+  const copy = await pageCopy('writing');
   return (
     <>
       <JsonLd
@@ -42,18 +44,13 @@ export default function WritingPage() {
       />
 
       <PageHeader
-        eyebrow="WRITING & NARRATIVE"
-        title="STORY IS"
-        accentWord="THE SIGNAL"
+        eyebrow={copy.header.eyebrow}
+        title={copy.header.title}
+        accentWord={copy.header.accentWord}
         color="var(--brand-magenta)"
         crumbs={crumbs}
-        lede="Technology is the amplifier. This is the part it amplifies. Commercial writing that has to move a number, voice work that has to sound like somebody else, and a body of original narrative nobody paid us to finish."
-        meta={[
-          { label: 'Commercial', value: 'VSLs, brand films, spokesperson scripts' },
-          { label: 'Voice', value: 'Ghostwriting, thought leadership' },
-          { label: 'Long form', value: 'Editorial, treatments, breakdowns' },
-          { label: 'Originals', value: '7 completed feature screenplays' },
-        ]}
+        lede={copy.header.lede}
+        meta={copy.header.meta}
       />
 
       <section className="px-5 md:px-10 lg:px-14 pb-24">

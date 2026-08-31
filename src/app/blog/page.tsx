@@ -5,6 +5,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { blogSchema, breadcrumbSchema, pageMeta } from '@/lib/seo';
 import { posts as localPosts, readingMinutes } from '@/data/posts';
 import { heroExists, heroSrc } from '@/lib/blog-images';
+import { pageCopy } from '@/content/copy';
 
 export const metadata: Metadata = pageMeta({
   title: 'Blog — Synthetic Media Production, Costs, Compliance and Craft',
@@ -99,6 +100,7 @@ async function getCards(): Promise<Card[]> {
 }
 
 export default async function BlogPage() {
+  const copy = (await pageCopy('blog')).header;
   const posts = await getCards();
 
   return (
@@ -142,7 +144,7 @@ export default async function BlogPage() {
             className="text-[10px] tracking-[0.3em] uppercase"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}
           >
-            The Blog
+            {copy.eyebrow}
           </span>
         </div>
 
@@ -150,15 +152,13 @@ export default async function BlogPage() {
           className="text-5xl md:text-7xl tracking-tighter mb-4"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          THOUGHTS, <span style={{ color: 'var(--brand-cyan)' }}>UNFILTERED</span><span style={{ color: 'var(--brand-magenta)' }}>.</span>
+          {copy.heading} <span style={{ color: 'var(--brand-cyan)' }}>{copy.accentWord}</span><span style={{ color: 'var(--brand-magenta)' }}>.</span>
         </h1>
         <p
           className="text-lg max-w-2xl"
           style={{ color: 'var(--brand-concrete-light)' }}
         >
-          What generative production actually costs, how to keep a product consistent across a hundred shots,
-          what has to be disclosed, and where creative automation saves a week. Working notes rather than
-          thought leadership.
+          {copy.lede}
         </p>
       </div>
 
