@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { resources } from '@/data/resources';
 import { terms } from '@/data/glossary';
+import { FilmsSection } from '@/components/FilmsSection';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
@@ -119,6 +120,8 @@ export default function ArmouryIndex() {
           ))}
         </div>
       </section>
+
+      <FilmsSection />
 
       <section className="px-5 md:px-10 lg:px-14 pb-16">
         <div className="max-w-[1400px] mx-auto">

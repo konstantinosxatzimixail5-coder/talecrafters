@@ -2336,6 +2336,25 @@
     ],
     "fallback": "/img/spec/feral/ugc-02-629.webp"
   },
+  "spec/feral/ugc-03": {
+    "key": "spec/feral/ugc-03",
+    "width": 480,
+    "height": 860,
+    "aspect": 0.5581,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/feral/ugc-03-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/feral/ugc-03-480.webp"
+      }
+    ],
+    "fallback": "/img/spec/feral/ugc-03-480.webp"
+  },
   "spec/feral/ugc-04": {
     "key": "spec/feral/ugc-04",
     "width": 621,
@@ -2362,6 +2381,168 @@
       }
     ],
     "fallback": "/img/spec/feral/ugc-04-621.webp"
+  },
+  "spec/grain-01/cutaway": {
+    "key": "spec/grain-01/cutaway",
+    "width": 960,
+    "height": 640,
+    "aspect": 1.5,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/cutaway-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/cutaway-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/cutaway-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/cutaway-960.webp"
+      }
+    ],
+    "fallback": "/img/spec/grain-01/cutaway-960.webp"
+  },
+  "spec/grain-01/product-01": {
+    "key": "spec/grain-01/product-01",
+    "width": 960,
+    "height": 524,
+    "aspect": 1.8321,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/product-01-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/product-01-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/product-01-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/product-01-960.webp"
+      }
+    ],
+    "fallback": "/img/spec/grain-01/product-01-960.webp"
+  },
+  "spec/grain-01/product-02": {
+    "key": "spec/grain-01/product-02",
+    "width": 960,
+    "height": 644,
+    "aspect": 1.4907,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/product-02-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/product-02-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/product-02-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/product-02-960.webp"
+      }
+    ],
+    "fallback": "/img/spec/grain-01/product-02-960.webp"
+  },
+  "spec/grain-01/product-03": {
+    "key": "spec/grain-01/product-03",
+    "width": 960,
+    "height": 960,
+    "aspect": 1,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/product-03-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/product-03-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/product-03-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/product-03-960.webp"
+      }
+    ],
+    "fallback": "/img/spec/grain-01/product-03-960.webp"
+  },
+  "spec/grain-01/product-04": {
+    "key": "spec/grain-01/product-04",
+    "width": 960,
+    "height": 644,
+    "aspect": 1.4907,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/product-04-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/product-04-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/product-04-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/product-04-960.webp"
+      }
+    ],
+    "fallback": "/img/spec/grain-01/product-04-960.webp"
+  },
+  "spec/grain-01/spec-sheet": {
+    "key": "spec/grain-01/spec-sheet",
+    "width": 960,
+    "height": 1440,
+    "aspect": 0.6667,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/spec-sheet-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/spec-sheet-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/spec-sheet-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/spec-sheet-960.webp"
+      }
+    ],
+    "fallback": "/img/spec/grain-01/spec-sheet-960.webp"
   },
   "spec/grain-01/ugc-02": {
     "key": "spec/grain-01/ugc-02",
@@ -2443,6 +2624,71 @@
       }
     ],
     "fallback": "/img/spec/grain-01/ugc-04-622.webp"
+  },
+  "spec/klnwork/product-01": {
+    "key": "spec/klnwork/product-01",
+    "width": 480,
+    "height": 596,
+    "aspect": 0.8054,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/klnwork/product-01-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/klnwork/product-01-480.webp"
+      }
+    ],
+    "fallback": "/img/spec/klnwork/product-01-480.webp"
+  },
+  "spec/klnwork/product-02": {
+    "key": "spec/klnwork/product-02",
+    "width": 960,
+    "height": 960,
+    "aspect": 1,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/klnwork/product-02-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/klnwork/product-02-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/klnwork/product-02-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/klnwork/product-02-960.webp"
+      }
+    ],
+    "fallback": "/img/spec/klnwork/product-02-960.webp"
+  },
+  "spec/klnwork/product-03": {
+    "key": "spec/klnwork/product-03",
+    "width": 480,
+    "height": 596,
+    "aspect": 0.8054,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/klnwork/product-03-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/klnwork/product-03-480.webp"
+      }
+    ],
+    "fallback": "/img/spec/klnwork/product-03-480.webp"
   },
   "spec/knuckle/fighter": {
     "key": "spec/knuckle/fighter",
@@ -2587,6 +2833,25 @@
     ],
     "fallback": "/img/spec/slab/ugc-01-751.webp"
   },
+  "spec/slab/ugc-02": {
+    "key": "spec/slab/ugc-02",
+    "width": 480,
+    "height": 860,
+    "aspect": 0.5581,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/slab/ugc-02-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/slab/ugc-02-480.webp"
+      }
+    ],
+    "fallback": "/img/spec/slab/ugc-02-480.webp"
+  },
   "spec/slab/ugc-03": {
     "key": "spec/slab/ugc-03",
     "width": 627,
@@ -2613,6 +2878,128 @@
       }
     ],
     "fallback": "/img/spec/slab/ugc-03-627.webp"
+  },
+  "spec/slab/ugc-04": {
+    "key": "spec/slab/ugc-04",
+    "width": 480,
+    "height": 860,
+    "aspect": 0.5581,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/slab/ugc-04-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/slab/ugc-04-480.webp"
+      }
+    ],
+    "fallback": "/img/spec/slab/ugc-04-480.webp"
+  },
+  "spec/slab/ugc-05": {
+    "key": "spec/slab/ugc-05",
+    "width": 480,
+    "height": 860,
+    "aspect": 0.5581,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/slab/ugc-05-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/slab/ugc-05-480.webp"
+      }
+    ],
+    "fallback": "/img/spec/slab/ugc-05-480.webp"
+  },
+  "spec/slab/ugc-06": {
+    "key": "spec/slab/ugc-06",
+    "width": 480,
+    "height": 709,
+    "aspect": 0.677,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/slab/ugc-06-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/slab/ugc-06-480.webp"
+      }
+    ],
+    "fallback": "/img/spec/slab/ugc-06-480.webp"
+  },
+  "spec/soie/product-01": {
+    "key": "spec/soie/product-01",
+    "width": 480,
+    "height": 596,
+    "aspect": 0.8054,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/soie/product-01-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/soie/product-01-480.webp"
+      }
+    ],
+    "fallback": "/img/spec/soie/product-01-480.webp"
+  },
+  "spec/soie/product-02": {
+    "key": "spec/soie/product-02",
+    "width": 480,
+    "height": 596,
+    "aspect": 0.8054,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/soie/product-02-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/soie/product-02-480.webp"
+      }
+    ],
+    "fallback": "/img/spec/soie/product-02-480.webp"
+  },
+  "spec/soie/product-03": {
+    "key": "spec/soie/product-03",
+    "width": 960,
+    "height": 960,
+    "aspect": 1,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/soie/product-03-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/soie/product-03-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/soie/product-03-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/soie/product-03-960.webp"
+      }
+    ],
+    "fallback": "/img/spec/soie/product-03-960.webp"
   },
   "talecrafters/logo": {
     "key": "talecrafters/logo",

@@ -5,7 +5,11 @@ import { Reveal } from '@/components/Reveal';
 import { Eyebrow } from '@/components/kit';
 
 /**
- * The two original shorts on the front page.
+ * The two original shorts, as a section of the Armoury.
+ *
+ * They sit here rather than on the front page because the Armoury is where the
+ * things given away in full already live, and a published process sheet is the
+ * largest of them.
  *
  * They lead with their key art rather than a contact strip: a four-frame strip
  * at card width is too small to carry a title and reads as decoration instead
@@ -17,14 +21,14 @@ export function FilmsSection() {
   return (
     <section
       id="films"
-      className="relative px-5 md:px-10 lg:px-14 py-24 md:py-32"
+      className="relative px-5 md:px-10 lg:px-14 py-16 md:py-24"
       style={{ backgroundColor: 'var(--brand-black)' }}
     >
       <div className="max-w-[1400px] mx-auto">
         <Eyebrow color="var(--brand-magenta)">AI FILMMAKING WORKFLOWS</Eyebrow>
 
         <h2
-          className="mt-6 mb-5 text-4xl md:text-6xl lg:text-7xl tracking-tighter leading-[0.92]"
+          className="mt-6 mb-5 text-3xl md:text-5xl lg:text-6xl tracking-tighter leading-[0.94]"
           style={{ fontFamily: 'var(--font-display)' }}
         >
           TWO ORIGINALS,{' '}

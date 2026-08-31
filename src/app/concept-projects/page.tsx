@@ -7,10 +7,22 @@ import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 
+/** Counted, not typed, and counted before the metadata so the description, the
+ *  structured data and the page itself cannot disagree. The brand count said
+ *  four against a real six for as long as it was a literal, in three separate
+ *  places, which is the whole argument for deriving it. */
+const brandCount = conceptBrands.length;
+const frameCount = conceptBrands.reduce((n, b) => n + b.shots.length, 0);
+
+/** Small numbers read better as words at the head of a sentence. */
+const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+const words = (n: number) => WORDS[n] ?? String(n);
+const Words = (n: number) => words(n).replace(/^./, (c) => c.toUpperCase());
+
 export const metadata = pageMeta({
   title: 'Concept Projects — Invented Brands, Real Capability',
   description:
-    'Four invented brands built as control experiments: label lock across five sets, four moulded flavour names, a pack claim held to camera, and one face across three light sources. Nobody commissioned any of it, and we say so.',
+    `${brandCount} invented brands built as control experiments: label lock across five sets, four moulded flavour names, a pack claim held to camera, one face across three light sources, frosted glass with liquid behind it, and a live flame across three rooms. Nobody commissioned any of it, and we say so.`,
   path: '/concept-projects',
   keywords: [
     'AI product photography',
@@ -52,8 +64,7 @@ export default function ConceptProjects() {
             '@type': 'CollectionPage',
             name: 'Concept Projects',
             url: abs('/concept-projects'),
-            description:
-              'Four invented brands, each built to prove one specific control in generative production.',
+            description: `${brandCount} invented brands and ${frameCount} frames, each set built to prove one specific control in generative production.`,
           },
         ]}
       />
@@ -64,10 +75,10 @@ export default function ConceptProjects() {
         accentWord="ASKED FOR THIS"
         color="var(--brand-cyan)"
         crumbs={crumbs}
-        lede="Every brand on this page is invented. Nobody commissioned it, nobody paid for it, and none of these products exist. Each set was built to prove one thing, and each entry says which thing, because a fake brand only earns a page if it states its test."
+        lede={`${Words(brandCount)} brands that do not exist, ${frameCount} frames, none of it commissioned and none of it paid for. Each set was built to prove one thing, and each entry says which thing, because a fake brand only earns a page if it states its test.`}
         meta={[
-          { label: 'Brands', value: '4, all invented' },
-          { label: 'Status', value: 'Concept project: not commissioned' },
+          { label: 'Brands', value: `${brandCount}, all invented` },
+          { label: 'Frames', value: `${frameCount}, none commissioned` },
           { label: 'Purpose', value: 'One stated control per set' },
           { label: 'Pipelines', value: 'Phantom Set, Identity Lock' },
         ]}

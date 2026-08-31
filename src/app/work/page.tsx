@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { work } from '@/data/work';
+import { conceptBrands } from '@/data/concept';
 import { Frame } from '@/components/Frame';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
@@ -155,7 +156,7 @@ export default function WorkIndex() {
           <Eyebrow color="var(--brand-cyan)">ALSO WORTH YOUR TIME</Eyebrow>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-3">
             {[
-              { href: '/concept-projects', title: 'Concept Projects', note: 'Four invented brands built to prove one control each. Nobody commissioned them, and we say so.' },
+              { href: '/concept-projects', title: 'Concept Projects', note: `${conceptBrands.length} invented brands built to prove one control each. Nobody commissioned them, and we say so.` },
               { href: '/pipelines', title: 'Pipelines', note: 'The three named production systems behind the work above, with their stages and their failure gates.' },
               { href: '/writing', title: 'Writing & Narrative', note: 'Scripts, VSLs, editorial and the original IP the story-first claim rests on.' },
             ].map((c) => (
