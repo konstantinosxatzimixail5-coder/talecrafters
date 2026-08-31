@@ -63,7 +63,7 @@ export function Footer() {
             <div className="pt-5 flex gap-5">
               <a
                 href={`mailto:${site.email}`}
-                className="text-xs tracking-wider transition-colors"
+                className="text-xs tracking-wider transition-colors inline-flex items-center min-h-[24px] min-w-[24px]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-cyan)')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
@@ -77,7 +77,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={p.title}
-                  className="text-xs tracking-wider transition-colors"
+                  className="text-xs tracking-wider transition-colors inline-flex items-center justify-center min-h-[24px] min-w-[24px]"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = p.color)}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
@@ -101,7 +101,7 @@ export function Footer() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-sm transition-colors"
+                      className="text-sm transition-colors inline-flex items-center min-h-[24px]"
                       style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
                     >
                       {item.label}
@@ -130,7 +130,7 @@ export function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-sm transition-colors"
+                    className="text-sm transition-colors inline-flex items-center min-h-[24px]"
                     style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
                   >
                     {l.label}
@@ -155,7 +155,7 @@ export function Footer() {
               <li key={s.slug}>
                 <Link
                   href={`/${s.slug}`}
-                  className="text-sm transition-colors"
+                  className="text-sm transition-colors inline-flex items-center min-h-[24px]"
                   style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
                 >
                   {s.plainName}
@@ -177,7 +177,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs transition-colors"
+                className="text-xs transition-colors inline-flex items-center min-h-[24px]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
               >
                 {link.label}

@@ -40,7 +40,7 @@ export function GlossarySearch({ terms }: { terms: Term[] }) {
           onChange={(e) => setQ(e.target.value)}
           placeholder={`Search ${terms.length} terms: try “drift”, “LoRA”, “disclosure”`}
           aria-label="Search the glossary"
-          className="w-full bg-transparent outline-none"
+          className="w-full bg-transparent outline-none py-1.5"
           style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: 'var(--brand-white)' }}
         />
       </div>

@@ -188,7 +188,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
               </p>
               <Link
                 href="/pipelines"
-                className="text-sm"
+                className="text-sm inline-flex items-center min-h-[24px]"
                 style={{ fontFamily: 'var(--font-display)', color, textDecoration: 'none' }}
               >
                 SEE THE PIPELINES →

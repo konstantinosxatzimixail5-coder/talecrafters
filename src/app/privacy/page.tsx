@@ -96,7 +96,7 @@ export default function PrivacyPage() {
               protecting and respecting your privacy. This Privacy Policy
               explains how we collect, use, store, share, and protect your
               personal data when you visit our website at
-              www.talecrafters.studio, use our services, or interact with us in
+              talecrafters.studio, use our services, or interact with us in
               any way.
             </p>
             <p className="mb-4">
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
                 <strong>Email:</strong> hello@talecrafters.studio
               </li>
               <li>
-                <strong>Website:</strong> www.talecrafters.studio
+                <strong>Website:</strong> talecrafters.studio
               </li>
             </ul>
             <p>
@@ -940,7 +940,7 @@ export default function PrivacyPage() {
                 London, United Kingdom, WC2H 9JQ
               </li>
               <li>
-                <strong>Website:</strong> www.talecrafters.studio
+                <strong>Website:</strong> talecrafters.studio
               </li>
             </ul>
           </section>

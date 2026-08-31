@@ -60,11 +60,17 @@ export function PageHeader({
               {crumbs.map((c, i) => (
                 <li key={c.path} className="flex items-center gap-2">
                   {i > 0 && (
-                    <span style={{ color: 'var(--brand-concrete)', fontSize: 11 }}>/</span>
+                    <span
+                      aria-hidden
+                      className="inline-flex items-center min-h-[24px]"
+                      style={{ color: 'var(--brand-concrete)', fontSize: 11 }}
+                    >
+                      /
+                    </span>
                   )}
                   <Link
                     href={c.path}
-                    className="text-[11px] tracking-wider transition-colors"
+                    className="text-[11px] tracking-wider transition-colors inline-flex items-center min-h-[24px]"
                     style={{
                       fontFamily: 'var(--font-mono)',
                       color: i === crumbs.length - 1 ? 'var(--brand-concrete-light)' : color,

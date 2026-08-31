@@ -62,7 +62,7 @@ export function LocalPostArticle({ post }: { post: Post }) {
       <div className="mx-auto px-6 pt-24 pb-24" style={{ maxWidth: '750px' }}>
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-sm mb-12"
+          className="inline-flex items-center gap-2 text-sm mb-12 min-h-[24px]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)', textDecoration: 'none' }}
         >
           &larr; All posts
@@ -326,7 +326,7 @@ export function LocalPostArticle({ post }: { post: Post }) {
         <div className="mt-16 pt-8" style={{ borderTop: '1px solid var(--brand-concrete)' }}>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm"
+            className="inline-flex items-center gap-2 text-sm min-h-[24px]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)', textDecoration: 'none' }}
           >
             &larr; Back to all posts

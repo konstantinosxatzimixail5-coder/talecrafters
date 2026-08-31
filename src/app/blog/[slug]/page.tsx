@@ -240,7 +240,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <div className="mx-auto px-6 pt-24 pb-24" style={{ maxWidth: '750px' }}>
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-sm mb-12 transition-colors"
+          className="inline-flex items-center gap-2 text-sm mb-12 transition-colors min-h-[24px]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)', textDecoration: 'none' }}
         >
           &larr; All posts
@@ -317,7 +317,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="mt-20 pt-8" style={{ borderTop: '1px solid var(--brand-concrete)' }}>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm transition-colors"
+            className="inline-flex items-center gap-2 text-sm transition-colors min-h-[24px]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)', textDecoration: 'none' }}
           >
             &larr; Back to all posts

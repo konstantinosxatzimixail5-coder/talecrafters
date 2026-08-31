@@ -130,7 +130,7 @@ export default async function BlogPage() {
       <div className="px-6 md:px-16 lg:px-24 pt-24 pb-16">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-sm mb-8 transition-colors min-h-[24px]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)', textDecoration: 'none' }}
         >
           &larr; Back to home

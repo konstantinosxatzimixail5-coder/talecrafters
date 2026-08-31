@@ -80,7 +80,7 @@ export default function TermsPage() {
             1. Acceptance of Terms
           </h2>
           <p className="leading-relaxed mb-4" style={{ color: "var(--brand-white)", opacity: 0.85 }}>
-            By accessing or using the TaleCrafters website at www.talecrafters.studio (the
+            By accessing or using the TaleCrafters website at talecrafters.studio (the
             &ldquo;Website&rdquo;), you agree to be bound by these Terms of Service
             (&ldquo;Terms&rdquo;). If you do not agree to all of these Terms, you must not access or
             use the Website.
@@ -460,11 +460,11 @@ export default function TermsPage() {
             <li className="leading-relaxed">
               Website:{" "}
               <a
-                href="https://www.talecrafters.studio"
+                href="/"
                 className="transition-opacity hover:opacity-70"
                 style={{ color: "var(--brand-cyan)" }}
               >
-                www.talecrafters.studio
+                talecrafters.studio
               </a>
             </li>
           </ul>

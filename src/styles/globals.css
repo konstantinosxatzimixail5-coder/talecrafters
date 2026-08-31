@@ -161,3 +161,19 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* --- micro type on phones ------------------------------------------------
+   The eyebrows, chips, rail labels and spec keys are set at a flat 10px, which
+   was chosen against a wide desktop container. The same 10px on a 375px screen
+   sits in a container a quarter of that width and reads noticeably smaller.
+   This lifts the two smallest steps by roughly a pixel and a half under 640px
+   and leaves every larger viewport exactly as it was. Scoped to the classes
+   Tailwind generates for the arbitrary sizes so nothing else is caught. */
+@media (max-width: 640px) {
+  .text-\[10px\] {
+    font-size: 11.5px;
+  }
+  .text-\[11px\] {
+    font-size: 12px;
+  }
+}

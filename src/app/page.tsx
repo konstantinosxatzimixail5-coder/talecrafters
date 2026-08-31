@@ -15,6 +15,34 @@ import { JsonLd } from '@/components/JsonLd';
 import { serviceSchema, caseStudySchema } from '@/lib/seo';
 import { categories } from '@/data/arsenal';
 import { featuredWork } from '@/data/work';
+import { posts, readingMinutes } from '@/data/posts';
+import { heroExists, heroSrc } from '@/lib/blog-images';
+
+// The teaser takes the six newest published posts. It used to carry six
+// invented ones with stock photography, each linking to a slug that did not
+// exist, so the front page shipped six 404s. Reading the real list means the
+// section cannot describe a post that is not there.
+const TEASER_COLORS = [
+  'var(--brand-cyan)',
+  'var(--brand-magenta)',
+  'var(--brand-gold)',
+  'var(--brand-violet-text)',
+];
+
+const teaserPosts = posts.slice(0, 6).map((p, i) => ({
+  title: p.title,
+  subtitle: p.excerpt,
+  slug: p.slug,
+  category: p.section.toUpperCase(),
+  readTime: `${readingMinutes(p)} min`,
+  date: new Date(p.published).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  }),
+  color: TEASER_COLORS[i % TEASER_COLORS.length],
+  ...(heroExists(p.image) ? { image: heroSrc(p.image, 960) } : {}),
+}));
 
 export default function HomePage() {
   return (
@@ -63,7 +91,7 @@ export default function HomePage() {
       <SelectedDamageSection />
       <ProcessSection />
       <PricingSection />
-      <BlogSection />
+      <BlogSection posts={teaserPosts} />
       <CTASection />
       <ClientsSection />
       <ContactSection />

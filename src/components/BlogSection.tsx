@@ -3,65 +3,33 @@ import { motion } from 'motion/react';
 import { MoveRight, Timer } from 'lucide-react';
 import Link from 'next/link';
 
-const posts = [
-  {
-    title: "Why Your Brand Looks Like Everyone Else's",
-    subtitle: "And how to fix it without firing your entire team",
-    slug: "why-your-brand-looks-like-everyone-else-s",
-    category: "STRATEGY",
-    readTime: "4 min",
-    date: "Mar 10, 2026",
-    color: 'var(--brand-cyan)',
-    image: "https://images.unsplash.com/photo-1767496437763-5c5d3dc912a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjBlZGl0b3JpYWwlMjB0ZXh0dXJlJTIwbW9vZHl8ZW58MXx8fHwxNzczNzQxNzE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-  },
-  {
-    title: "The Death of Authenticity",
-    subtitle: "Everyone's authentic now. Which means no one is.",
-    slug: "the-death-of-authenticity",
-    category: "CULTURE",
-    readTime: "6 min",
-    date: "Mar 8, 2026",
-    color: 'var(--brand-magenta)',
-  },
-  {
-    title: "Speed Kills (Your Competition)",
-    subtitle: "How we ship in days what takes others months",
-    slug: "speed-kills-your-competition",
-    category: "PROCESS",
-    readTime: "5 min",
-    date: "Mar 3, 2026",
-    color: 'var(--brand-violet-text)',
-  },
-  {
-    title: "Against Minimalism",
-    subtitle: "A defense of maximalism in a world of beige",
-    slug: "against-minimalism",
-    category: "DESIGN",
-    readTime: "7 min",
-    date: "Feb 28, 2026",
-    color: 'var(--brand-gold)',
-  },
-  {
-    title: "The Attention Recession",
-    subtitle: "Why content marketing is dead (and what comes next)",
-    slug: "the-attention-recession",
-    category: "TRENDS",
-    readTime: "8 min",
-    date: "Feb 25, 2026",
-    color: 'var(--brand-cyan)',
-  },
-  {
-    title: "Hire Taste, Train Tools",
-    subtitle: "Technology changes. Aesthetic judgment doesn't.",
-    slug: "hire-taste-train-tools",
-    category: "PHILOSOPHY",
-    readTime: "5 min",
-    date: "Feb 20, 2026",
-    color: 'var(--brand-magenta)',
-  },
-];
+/**
+ * The teaser rows are supplied by the page rather than written here.
+ *
+ * This block used to hold six invented posts with Unsplash stock behind them,
+ * and every one of the six linked to a slug that has never existed: six 404s
+ * off the front page, illustrated with exactly the kind of picture the rest of
+ * the site argues against. Now it takes the real posts and cannot describe
+ * anything that is not published.
+ */
+export interface TeaserPost {
+  title: string;
+  subtitle: string;
+  slug: string;
+  category: string;
+  readTime: string;
+  date: string;
+  color: string;
+  /** Absent until the hero images land. The card falls back to a plate. */
+  image?: string;
+}
 
-export function BlogSection() {
+
+export function BlogSection({ posts }: { posts: TeaserPost[] }) {
+  // Nothing to tease is a reason to render nothing, not a reason to invent
+  // something.
+  if (posts.length === 0) return null;
+
   return (
     <section
       id="blog"
@@ -127,14 +95,24 @@ export function BlogSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Image side */}
               <div className="relative aspect-video lg:aspect-auto overflow-hidden">
-                <motion.img
-                  src={posts[0].image}
-                  alt={`TaleCrafters blog: ${posts[0].title}: ${posts[0].subtitle}`}
-                  className="w-full h-full object-cover"
-                  style={{ filter: 'grayscale(60%) contrast(1.1)' }}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.6 }}
-                />
+                {posts[0].image ? (
+                  <motion.img
+                    src={posts[0].image}
+                    alt={`TaleCrafters blog: ${posts[0].title}: ${posts[0].subtitle}`}
+                    className="w-full h-full object-cover"
+                    style={{ filter: 'grayscale(60%) contrast(1.1)' }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.6 }}
+                  />
+                ) : (
+                  <div
+                    className="w-full h-full"
+                    style={{
+                      minHeight: 220,
+                      background: `radial-gradient(120% 100% at 20% 0%, ${posts[0].color}22, transparent 62%), var(--brand-black)`,
+                    }}
+                  />
+                )}
                 <div
                   className="absolute inset-0"
                   style={{ background: `linear-gradient(135deg, ${posts[0].color}30, transparent 60%)` }}
@@ -285,7 +263,7 @@ export function BlogSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <Link href="https://www.talecrafters.studio/blog" style={{ textDecoration: 'none' }}>
+          <Link href="/blog" className="inline-block" style={{ textDecoration: 'none' }}>
             <motion.button
               className="px-10 py-4 text-lg tracking-tight"
               style={{

@@ -449,7 +449,7 @@ export default async function ArmouryToolPage({ params }: { params: Promise<{ sl
 
           <Link
             href="/armoury"
-            className="text-sm"
+            className="text-sm inline-flex items-center min-h-[24px]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)', textDecoration: 'none' }}
           >
             &larr; Everything in the Armoury
