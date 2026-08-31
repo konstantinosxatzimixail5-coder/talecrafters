@@ -23,10 +23,10 @@ function HandshakeAnimIcon() {
 const projectTypes = [
   { id: 'visual-warfare', label: 'Visual Warfare', color: 'var(--brand-magenta)', icon: Compass },
   { id: 'narrative', label: 'Narrative Engineering', color: 'var(--brand-cyan)', icon: BookMarked },
-  { id: 'strategy', label: 'Strategy & Reputation', color: 'var(--brand-violet)', icon: Crosshair },
+  { id: 'strategy', label: 'Strategy & Reputation', color: 'var(--brand-violet-text)', icon: Crosshair },
   { id: 'synthetic', label: 'Synthetic Beings', color: 'var(--brand-gold)', icon: Cpu },
   { id: 'design', label: 'Design Weaponry', color: 'var(--brand-magenta)', icon: Swords },
-  { id: 'wildcard', label: 'Something Unhinged', color: 'var(--brand-violet)', icon: Sparkles },
+  { id: 'wildcard', label: 'Something Unhinged', color: 'var(--brand-violet-text)', icon: Sparkles },
 ];
 
 // Budget is now a free-text input + "No clue" toggle
@@ -35,10 +35,10 @@ const urgencyLevels = [
   { id: 'yesterday', label: 'YESTERDAY', color: 'var(--brand-magenta)', desc: 'We needed this last week' },
   { id: 'soon', label: 'THIS MONTH', color: 'var(--brand-gold)', desc: 'Time is ticking' },
   { id: 'planned', label: 'THIS QUARTER', color: 'var(--brand-cyan)', desc: 'Strategically planned' },
-  { id: 'exploring', label: 'JUST EXPLORING', color: 'var(--brand-violet)', desc: 'Kicking tyres' },
+  { id: 'exploring', label: 'JUST EXPLORING', color: 'var(--brand-violet-text)', desc: 'Kicking tyres' },
 ];
 
-export function ContactSection() {
+export function ContactSection({ hideHeading = false }: { hideHeading?: boolean } = {}) {
   const [step, setStep] = useState(0);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [urgency, setUrgency] = useState('');
@@ -93,7 +93,7 @@ export function ContactSection() {
         return;
       }
     } catch {
-      // API failed — fall through to mailto
+      // API failed: fall through to mailto
     }
 
     // Fallback: open mailto with all form data pre-filled
@@ -145,55 +145,60 @@ export function ContactSection() {
         />
       </div>
 
-      {/* Section counter */}
-      <motion.div
-        className="absolute top-12 right-8 md:right-16 flex items-center gap-3"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="h-px w-8" style={{ backgroundColor: 'var(--brand-cyan)' }} />
-        <span
-          className="text-xs tracking-[0.3em]"
-          style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
+      {/* Section counter. The /contact route carries its own header, so both
+          the counter and the headline are suppressed there. */}
+      {!hideHeading && (
+        <motion.div
+          className="absolute top-12 right-8 md:right-16 flex items-center gap-3"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          007 / START A CONSPIRACY
-        </span>
-      </motion.div>
+          <div className="h-px w-8" style={{ backgroundColor: 'var(--brand-cyan)' }} />
+          <span
+            className="text-xs tracking-[0.3em]"
+            style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
+          >
+            009 / START A CONSPIRACY
+          </span>
+        </motion.div>
+      )}
 
       <div className="px-6 md:px-16 lg:px-24 max-w-5xl mx-auto">
         {/* Headline */}
-        <motion.div
-          className="mb-16 md:mb-24"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2
-            className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            LET&apos;S<br />
-            <span style={{ color: 'var(--brand-cyan)' }}>CONSPIRE</span>
-          </h2>
+        {!hideHeading && (
           <motion.div
-            className="mt-6 flex items-center gap-4"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mb-16 md:mb-24"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="h-px w-16" style={{ background: 'linear-gradient(to right, var(--brand-cyan), var(--brand-magenta))' }} />
-            <span
-              className="text-sm tracking-widest"
-              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+            <h2
+              className="text-5xl md:text-8xl lg:text-[7vw] leading-[0.85] tracking-tighter"
+              style={{ fontFamily: 'var(--font-display)' }}
             >
-              Consider this your audition. Ours too.
-            </span>
+              LET&apos;S<br />
+              <span style={{ color: 'var(--brand-cyan)' }}>CONSPIRE</span>
+            </h2>
+            <motion.div
+              className="mt-6 flex items-center gap-4"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="h-px w-16" style={{ background: 'linear-gradient(to right, var(--brand-cyan), var(--brand-magenta))' }} />
+              <span
+                className="text-sm tracking-widest"
+                style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+              >
+                Consider this your audition. Ours too.
+              </span>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        )}
 
         {submitted ? (
           <motion.div
@@ -388,7 +393,7 @@ export function ContactSection() {
                       <div className="flex flex-col sm:flex-row gap-3">
                         <input
                           type="text"
-                          placeholder="e.g. £5K — £15K"
+                          placeholder="e.g. £5K: £15K"
                           value={budget === 'No clue' ? '' : budget}
                           onChange={(e) => setBudget(e.target.value)}
                           disabled={budget === 'No clue'}
@@ -415,7 +420,7 @@ export function ContactSection() {
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
-                          No clue — let&apos;s figure it out
+                          No clue: let&apos;s figure it out
                         </motion.button>
                       </div>
                     </div>
@@ -554,7 +559,7 @@ export function ContactSection() {
                           {budgetValue || '—'}
                         </div>
                         <div>
-                          <span style={{ color: 'var(--brand-violet)' }}>agent:</span>{' '}
+                          <span style={{ color: 'var(--brand-violet-text)' }}>agent:</span>{' '}
                           {name || '—'}{company ? ` @ ${company}` : ''}
                         </div>
                       </div>
@@ -593,9 +598,10 @@ export function ContactSection() {
                     style={{
                       fontFamily: 'var(--font-display)',
                       backgroundColor: canProceed() ? 'var(--brand-cyan)' : 'var(--brand-concrete)',
-                      color: canProceed() ? 'var(--brand-black)' : 'var(--brand-concrete-light)',
-                      opacity: canProceed() ? 1 : 0.5,
+                      color: canProceed() ? 'var(--brand-black)' : '#B9B9B9',
+                      cursor: canProceed() ? 'pointer' : 'not-allowed',
                     }}
+                    aria-disabled={!canProceed()}
                     onClick={() => canProceed() && setStep(step + 1)}
                     whileHover={canProceed() ? { scale: 1.05 } : {}}
                     whileTap={canProceed() ? { scale: 0.95 } : {}}

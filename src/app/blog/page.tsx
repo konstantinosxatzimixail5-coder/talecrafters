@@ -1,12 +1,14 @@
 import { client, urlFor } from '@/sanity/client';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { JsonLd } from '@/components/JsonLd';
+import { blogSchema, breadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Blog — TaleCrafters | Thoughts on Synthetic Media & Storytelling',
   description: 'Dispatches from the frontlines of synthetic media, storytelling, and creative chaos. Insights, rants, and the occasional manifesto.',
   openGraph: {
-    title: 'Blog — TaleCrafters',
+    title: 'Blog: TaleCrafters',
     description: 'Dispatches from the frontlines of synthetic media, storytelling, and creative chaos.',
     url: 'https://talecrafters.studio/blog',
     siteName: 'TaleCrafters',
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog — TaleCrafters',
+    title: 'Blog: TaleCrafters',
     description: 'Dispatches from the frontlines of synthetic media, storytelling, and creative chaos.',
   },
   alternates: { canonical: 'https://talecrafters.studio/blog' },
@@ -33,12 +35,17 @@ interface Post {
   author?: string;
 }
 
+// An unreachable dataset renders an empty index rather than a 500.
 async function getPosts(): Promise<Post[]> {
-  return client.fetch(
-    `*[_type == "post"] | order(publishedAt desc) {
-      _id, title, slug, excerpt, publishedAt, featuredImage, tags, author
-    }`
-  );
+  try {
+    return await client.fetch(
+      `*[_type == "post"] | order(publishedAt desc) {
+        _id, title, slug, excerpt, publishedAt, featuredImage, tags, author
+      }`
+    );
+  } catch {
+    return [];
+  }
 }
 
 export default async function BlogPage() {
@@ -53,6 +60,22 @@ export default async function BlogPage() {
         minHeight: '100vh',
       }}
     >
+      <JsonLd
+        graph={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+          ]),
+          blogSchema(
+            posts.map((p) => ({
+              title: p.title,
+              slug: p.slug.current,
+              published: p.publishedAt,
+            }))
+          ),
+        ]}
+      />
+
       {/* Header */}
       <div className="px-6 md:px-16 lg:px-24 pt-24 pb-16">
         <Link

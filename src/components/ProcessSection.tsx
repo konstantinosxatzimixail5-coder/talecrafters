@@ -7,36 +7,39 @@ const pillars = [
   {
     icon: Rocket,
     title: "UNRIVALLED QUALITY AT STARTUP SPEED",
-    description: "We combine the precision of a film studio with the velocity of a tech startup. No bureaucracy. No endless revisions. Just exceptional work, delivered fast.",
-    note: "Days, not months",
+    description:
+      "A product still set lands two working days after the plate is approved. A trained presenter goes from casting brief to nine finished variants in four days. Those are the numbers we quote from, and they are the numbers we hit.",
+    note: "Two days for a still set",
     color: 'var(--brand-cyan)',
     details: [
-      "We're not spending three weeks in committee meetings arguing about font choices.",
-      "We've eliminated the bureaucratic sludge that turns creativity into a death march.",
-      "Fast execution. No sacrifice.",
+      "Round one is thirty frames for selection. Round two is ninety frames and six clips, with layered files.",
+      "One person owns the brief and signs the final cut. Nobody else needs to be in the room.",
+      "Every batch runs against a credit ceiling agreed before it starts, so the speed never arrives as a surprise invoice.",
     ],
   },
   {
     icon: Flame,
     title: "ATTENTION AS CURRENCY",
-    description: "We don't play it safe. We create controlled friction that makes people stop scrolling. The kind of work that gets shared, debated, remembered.",
+    description:
+      "We build controlled friction into the work: a beat held a second too long, a register nobody expects from your category. People stop, and some of them argue.",
     note: "Provoke, don't placate",
     color: 'var(--brand-magenta)',
     details: [
       "Safe content is forgettable content.",
-      "We create the kind of work that gets shared, debated, and remembered.",
+      "One client run went out in seven visual registers in a fortnight, so the fifth piece would still get looked at.",
       "Controversy with purpose. Tension with taste.",
     ],
   },
   {
     icon: HeartHandshake,
     title: "CLIENTS AS CO-CONSPIRATORS",
-    description: "You're not just a \"client.\" You're the person crazy enough to trust us with your brand's reputation.",
+    description:
+      "You signed off on this, which earns you our actual opinion. Including the one about the thing you already paid for.",
     note: "Partners in crime",
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
     details: [
-      "No corporate speak. No performative busy work.",
-      "You get honesty, transparency, and work that actually moves the needle.",
+      "You get the version of our opinion we would give each other.",
+      "When your brand guidelines are getting in the way, you hear it in the first week rather than the last.",
       "We're accomplices. Our goal is to make your brand sound like it actually has a pulse.",
     ],
   },
@@ -85,7 +88,7 @@ export function ProcessSection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}
         >
-          004 / HOW WE OPERATE
+          006 / HOW WE OPERATE
         </span>
       </motion.div>
 

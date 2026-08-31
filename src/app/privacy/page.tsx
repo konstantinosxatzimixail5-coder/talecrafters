@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — TaleCrafters",
+  title: "Privacy Policy",
   description:
     "TaleCrafters Ltd Privacy Policy. How we collect, use, store, share, and protect your personal data.",
+  alternates: { canonical: `${SITE_URL}/privacy` },
+  openGraph: {
+    title: "Privacy Policy — TaleCrafters",
+    url: `${SITE_URL}/privacy`,
+    siteName: "TaleCrafters",
+    type: "website",
+  },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 };
 
 export default function PrivacyPage() {
@@ -18,7 +27,7 @@ export default function PrivacyPage() {
       }}
     >
       {/* Back Link */}
-      <div className="px-6 pt-8 md:px-12 lg:px-24">
+      <div className="px-6 pt-28 md:px-12 md:pt-32 lg:px-24">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
@@ -163,7 +172,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -195,7 +204,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -225,7 +234,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -258,7 +267,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -278,7 +287,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -295,7 +304,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -314,7 +323,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -373,7 +382,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -391,7 +400,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -408,7 +417,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -470,7 +479,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -486,7 +495,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -516,7 +525,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -534,7 +543,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >
@@ -551,7 +560,7 @@ export default function PrivacyPage() {
             <h3
               className="mb-3 text-xl font-semibold"
               style={{
-                color: "var(--brand-violet)",
+                color: "var(--brand-violet-text)",
                 fontFamily: "var(--font-display)",
               }}
             >

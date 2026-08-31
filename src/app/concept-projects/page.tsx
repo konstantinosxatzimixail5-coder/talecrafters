@@ -1,0 +1,197 @@
+import Link from 'next/link';
+import { conceptBrands } from '@/data/concept';
+import { Frame } from '@/components/Frame';
+import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
+import { Reveal } from '@/components/Reveal';
+import { JsonLd } from '@/components/JsonLd';
+import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
+import { abs } from '@/lib/site';
+
+export const metadata = pageMeta({
+  title: 'Concept Projects — Invented Brands, Real Capability',
+  description:
+    'Four invented brands built as control experiments: label lock across five sets, four moulded flavour names, a pack claim held to camera, and one face across three light sources. Nobody commissioned any of it, and we say so.',
+  path: '/concept-projects',
+  keywords: [
+    'AI product photography',
+    'spec creative work',
+    'synthetic UGC examples',
+    'generative product shoot',
+    'concept brand campaign',
+  ],
+});
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Concept Projects', path: '/concept-projects' },
+];
+
+const qa = [
+  {
+    q: 'Are these real brands?',
+    a: 'No. Every brand on this page is invented. Nobody commissioned any of it, nobody paid for it, and none of these products exist. They are labelled Concept Project rather than presented as commissioned work.',
+  },
+  {
+    q: 'Why show work nobody paid for?',
+    a: 'Because each set is a control experiment with a stated test. A spec shelf that does not say what it was proving is a showreel. One that does is evidence.',
+  },
+  {
+    q: 'Can AI product photography hold a real label?',
+    a: 'Yes, when the packaging is locked as a master plate first and every frame is generated from that file. The test is literal: zoom to full resolution and read every printed word. A fail returns to the plate rather than to a retouching tool.',
+  },
+];
+
+export default function ConceptProjects() {
+  return (
+    <>
+      <JsonLd
+        graph={[
+          breadcrumbSchema(crumbs),
+          faqSchema(qa),
+          {
+            '@type': 'CollectionPage',
+            name: 'Concept Projects',
+            url: abs('/concept-projects'),
+            description:
+              'Four invented brands, each built to prove one specific control in generative production.',
+          },
+        ]}
+      />
+
+      <PageHeader
+        eyebrow="CONCEPT PROJECTS"
+        title="NOBODY"
+        accentWord="ASKED FOR THIS"
+        color="var(--brand-cyan)"
+        crumbs={crumbs}
+        lede="Every brand on this page is invented. Nobody commissioned it, nobody paid for it, and none of these products exist. Each set was built to prove one thing, and each entry says which thing, because a fake brand only earns a page if it states its test."
+        meta={[
+          { label: 'Brands', value: '4, all invented' },
+          { label: 'Status', value: 'Concept project: not commissioned' },
+          { label: 'Purpose', value: 'One stated control per set' },
+          { label: 'Pipelines', value: 'Phantom Set, Identity Lock' },
+        ]}
+      />
+
+      {conceptBrands.map((b) => (
+        <section key={b.slug} id={b.slug} className="px-5 md:px-10 lg:px-14 pb-20 md:pb-28 scroll-mt-24">
+          <div className="max-w-[1400px] mx-auto">
+            <Reveal>
+              <div
+                className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 mb-8"
+                style={{ borderBottom: `2px solid ${b.accent}` }}
+              >
+                <div>
+                  <div
+                    className="text-[10px] tracking-[0.3em] mb-3"
+                    style={{ fontFamily: 'var(--font-mono)', color: b.accent }}
+                  >
+                    {b.num} / CONCEPT PROJECT
+                  </div>
+                  <h2
+                    className="text-5xl md:text-7xl lg:text-[5.5vw] leading-[0.85] tracking-tighter"
+                    style={{ fontFamily: 'var(--font-display)', color: b.accent }}
+                  >
+                    {b.name}
+                  </h2>
+                  <p
+                    className="mt-3 text-base"
+                    style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+                  >
+                    {b.product}
+                  </p>
+                </div>
+                <div className="md:text-right md:max-w-sm">
+                  <div
+                    className="text-[10px] tracking-[0.28em] mb-2"
+                    style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+                  >
+                    WHAT IT PROVES
+                  </div>
+                  <p className="text-base leading-snug" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-white)' }}>
+                    {b.proves}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.06}>
+              <p
+                className="max-w-3xl text-base md:text-lg leading-relaxed mb-8"
+                style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.7)' }}
+              >
+                {b.note}
+              </p>
+              <div className="flex flex-wrap gap-3 mb-10">
+                {b.pipelines.map((p) => (
+                  <Link
+                    key={p.href}
+                    href={p.href}
+                    className="px-4 py-2 text-xs tracking-wider transition-colors"
+                    style={{ fontFamily: 'var(--font-mono)', border: `1px solid ${b.accent}55`, color: b.accent, textDecoration: 'none' }}
+                  >
+                    {p.label} →
+                  </Link>
+                ))}
+              </div>
+            </Reveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {b.shots.map((s, i) => (
+                <Reveal key={s.src} delay={(i % 3) * 0.05}>
+                  <figure
+                    className="relative overflow-hidden group h-full"
+                    style={{ border: '1px solid rgba(255,255,255,0.07)' }}
+                  >
+                    <Frame
+                      src={s.src}
+                      alt={s.alt}
+                      focus={s.focus}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="w-full h-full object-cover block transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                    <figcaption
+                      className="absolute bottom-0 left-0 right-0 px-3 py-2 text-[10px] tracking-[0.16em]"
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        background: 'linear-gradient(to top, rgba(10,10,12,0.94), transparent)',
+                        color: 'rgba(245,245,240,0.85)',
+                      }}
+                    >
+                      {s.label}
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+
+      <section className="px-5 md:px-10 lg:px-14 pb-20">
+        <div className="max-w-[1400px] mx-auto">
+          <Eyebrow color="var(--brand-gold)">THE OBVIOUS QUESTIONS</Eyebrow>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
+            {qa.map((item) => (
+              <div key={item.q} className="p-6" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                <h3 className="text-lg mb-3 leading-snug" style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-white)' }}>
+                  {item.q}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CtaBar
+        color="var(--brand-cyan)"
+        eyebrow="COMMISSION SOMETHING REAL"
+        title="Your product deserves better than a fake one."
+        body="These sets were built to prove the controls. Point them at something that actually exists and the same discipline applies, with your kitchen or your packaging team holding the last gate."
+      />
+    </>
+  );
+}

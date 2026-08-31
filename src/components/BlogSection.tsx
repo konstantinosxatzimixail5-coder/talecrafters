@@ -30,7 +30,7 @@ const posts = [
     category: "PROCESS",
     readTime: "5 min",
     date: "Mar 3, 2026",
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
   },
   {
     title: "Against Minimalism",
@@ -81,7 +81,7 @@ export function BlogSection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
         >
-          006 / THE BLOG
+          008 / THE BLOG
         </span>
       </motion.div>
 
@@ -129,7 +129,7 @@ export function BlogSection() {
               <div className="relative aspect-video lg:aspect-auto overflow-hidden">
                 <motion.img
                   src={posts[0].image}
-                  alt={`TaleCrafters blog — ${posts[0].title}: ${posts[0].subtitle}`}
+                  alt={`TaleCrafters blog: ${posts[0].title}: ${posts[0].subtitle}`}
                   className="w-full h-full object-cover"
                   style={{ filter: 'grayscale(60%) contrast(1.1)' }}
                   whileHover={{ scale: 1.05 }}

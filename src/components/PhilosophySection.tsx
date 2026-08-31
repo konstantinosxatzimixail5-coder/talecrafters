@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 /* Premium animated icon components */
 
-/* 1. Story > Everything — open book with glowing pages */
+/* 1. Story > Everything: open book with glowing pages */
 function StoryIcon({ color }: { color: string }) {
   return (
     <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15 }}>
@@ -39,7 +39,7 @@ function StoryIcon({ color }: { color: string }) {
   );
 }
 
-/* 2. Speed Without Sacrifice — dual arrows racing with trail */
+/* 2. Speed Without Sacrifice: dual arrows racing with trail */
 function VelocityIcon({ color }: { color: string }) {
   return (
     <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15 }}>
@@ -71,7 +71,7 @@ function VelocityIcon({ color }: { color: string }) {
   );
 }
 
-/* 3. No Sacred Cows — shattered shield */
+/* 3. No Sacred Cows: shattered shield */
 function SacredCowIcon({ color }: { color: string }) {
   return (
     <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15, rotate: 5 }}>
@@ -104,7 +104,7 @@ function SacredCowIcon({ color }: { color: string }) {
   );
 }
 
-/* 4. Tension Is Currency — crosshair with pulsing core */
+/* 4. Tension Is Currency: crosshair with pulsing core */
 function TensionIcon({ color }: { color: string }) {
   return (
     <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15 }}>
@@ -132,7 +132,7 @@ function TensionIcon({ color }: { color: string }) {
   );
 }
 
-/* 5. Humor Or Death — laughing skull */
+/* 5. Humor Or Death: laughing skull */
 function SkullIcon({ color }: { color: string }) {
   return (
     <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15, y: -2 }}>
@@ -143,7 +143,7 @@ function SkullIcon({ color }: { color: string }) {
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
         transition={{ duration: 1 }} viewport={{ once: true }}
       />
-      {/* Left eye — winking */}
+      {/* Left eye: winking */}
       <motion.circle cx="16" cy="17" r="3" fill={color}
         animate={{ scaleY: [1, 0.2, 1] }}
         transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
@@ -173,7 +173,7 @@ function SkullIcon({ color }: { color: string }) {
   );
 }
 
-/* 6. Content = Culture — signal wave broadcasting */
+/* 6. Content = Culture: signal wave broadcasting */
 function CultureIcon({ color }: { color: string }) {
   return (
     <motion.svg width="44" height="44" viewBox="0 0 44 44" fill="none" whileHover={{ scale: 1.15 }}>
@@ -246,6 +246,7 @@ export function PhilosophySection() {
       {/* Background: Large watermark text */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] leading-none tracking-tighter pointer-events-none select-none whitespace-nowrap"
+        aria-hidden
         style={{
           fontFamily: 'var(--font-display)',
           color: 'var(--brand-white)',
@@ -278,7 +279,7 @@ export function PhilosophySection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}
         >
-          002 / PHILOSOPHY
+          003 / PHILOSOPHY
         </span>
       </motion.div>
 
@@ -296,7 +297,7 @@ export function PhilosophySection() {
             style={{ fontFamily: 'var(--font-display)' }}
           >
             THE NON-<br />
-            <span style={{ color: 'var(--brand-violet)' }}>NEGOTIABLES</span>
+            <span style={{ color: 'var(--brand-violet-text)' }}>NEGOTIABLES</span>
           </h2>
           <motion.div
             className="mt-6 flex items-center gap-4"

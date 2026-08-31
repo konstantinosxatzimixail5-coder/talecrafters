@@ -1,205 +1,191 @@
 "use client";
 
+import Link from 'next/link';
 import { motion } from 'motion/react';
+import { Wordmark } from './brand/Wordmark';
+import { navGroups } from '@/lib/nav';
+import { solutions } from '@/data/solutions';
+import { site } from '@/lib/site';
+
+const legal = [
+  { label: 'Terms of Service', href: '/terms' },
+  { label: 'Privacy Policy', href: '/privacy' },
+];
+
+// Only profiles that exist. Adding a link here means adding the same URL to
+// `site.sameAs`, so the footer and the Organization node never disagree about
+// who this company is.
+const social = [
+  { label: 'LI', title: 'LinkedIn', color: 'var(--brand-violet-text)', href: 'https://www.linkedin.com/company/talecrafterss/' },
+];
 
 export function Footer() {
   return (
     <footer
-      className="relative py-16 px-6 md:px-16 lg:px-24 overflow-hidden"
-      style={{
-        backgroundColor: 'var(--brand-black)',
-        color: 'var(--brand-white)',
-      }}
+      className="relative py-16 px-5 md:px-10 lg:px-14 overflow-hidden"
+      style={{ backgroundColor: 'var(--brand-black)', color: 'var(--brand-white)' }}
     >
-      {/* Top divider */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
         style={{ background: 'linear-gradient(to right, transparent, var(--brand-concrete), transparent)' }}
       />
 
-      <div className="max-w-7xl mx-auto">
-        {/* Main footer grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-          {/* Brand column */}
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-14">
           <div className="md:col-span-4">
-            <div className="flex items-center gap-[6px] mb-4">
-              <img
-                src="/logo.png"
-                alt="TaleCrafters — Synthetic Media Studio Logo"
-                className="w-12 h-12 object-cover rounded-sm"
-                style={{ filter: 'brightness(1.35) saturate(0.75)' }}
-              />
-              <span
-                className="text-[1.5rem] leading-none"
-                style={{
-                  fontFamily: '"Sackers Gothic", "Raleway", sans-serif',
-                  fontWeight: 700,
-                  color: 'var(--brand-white)',
-                  letterSpacing: '0.12em',
-                }}
-              >
-                TaleCrafters
-              </span>
-            </div>
+            <Link href="/" className="flex items-center gap-2.5 mb-5" style={{ textDecoration: 'none' }}>
+              <img src="/brand/mark.png" alt="" aria-hidden width={1024} height={812} className="h-11 w-auto" />
+              <Wordmark size={24} />
+            </Link>
             <div
-              className="text-xs tracking-widest mb-4"
-              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+              className="text-xs tracking-[0.25em] mb-4"
+              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
             >
               STORIES ON STEROIDS
             </div>
             <p
-              className="text-sm leading-relaxed max-w-xs"
+              className="text-sm leading-relaxed max-w-xs mb-6"
               style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
             >
-              The unholy offspring of a film studio and a technology lab.
+              The unholy offspring of a film studio and a technology lab. We make the work,
+              we build the systems that make the work, and we write our own.
             </p>
-          </div>
-
-          {/* Services */}
-          <div className="md:col-span-2">
-            <div
-              className="text-[10px] tracking-widest mb-4"
-              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
+            <address
+              className="not-italic text-xs leading-relaxed"
+              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
             >
-              SERVICES
-            </div>
-            <ul className="space-y-2">
-              {[
-                { label: 'Visual Warfare', hash: '#visual-warfare' },
-                { label: 'Narrative Engineering', hash: '#narrative-engineering' },
-                { label: 'Strategy & Reputation', hash: '#strategy-reputation' },
-                { label: 'Synthetic Beings', hash: '#synthetic-beings' },
-                { label: 'Design Weaponry', hash: '#design-weaponry' },
-              ].map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.hash}
-                    className="text-sm transition-colors duration-200"
-                    style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-cyan)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div className="md:col-span-2">
-            <div
-              className="text-[10px] tracking-widest mb-4"
-              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}
-            >
-              COMPANY
-            </div>
-            <ul className="space-y-2">
-              {[
-                { label: 'Studio', href: '#process' },
-                { label: 'Philosophy', href: '#philosophy' },
-                { label: 'Packages', href: '#pricing' },
-                { label: 'Blog', href: '#blog' },
-                { label: 'Contact', href: '#contact' },
-              ].map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm transition-colors duration-200"
-                    style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-magenta)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div className="md:col-span-4">
-            <div
-              className="text-[10px] tracking-widest mb-4"
-              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}
-            >
-              CONTACT
-            </div>
-            <div className="space-y-3 text-sm" style={{ fontFamily: 'var(--font-body)' }}>
-              <div>
+              {site.legalName}
+              <br />
+              {site.address.street}
+              <br />
+              {site.address.city}, United Kingdom, {site.address.postcode}
+            </address>
+            <div className="pt-5 flex gap-5">
+              <a
+                href={`mailto:${site.email}`}
+                className="text-xs tracking-wider transition-colors"
+                style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-cyan)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
+              >
+                EMAIL
+              </a>
+              {social.map((p) => (
                 <a
-                  href="mailto:hello@talecrafters.studio"
-                  className="transition-colors duration-200"
-                  style={{ color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-gold)')}
+                  key={p.label}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={p.title}
+                  className="text-xs tracking-wider transition-colors"
+                  style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = p.color)}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
                 >
-                  hello@talecrafters.studio
+                  {p.label}
                 </a>
-              </div>
-              <div
-                className="text-xs leading-relaxed"
-                style={{ color: 'var(--brand-concrete-light)' }}
-              >
-                71-75 Shelton Street, Covent Garden,<br />
-                London, United Kingdom, WC2H 9JQ
-              </div>
-              <div className="pt-4 flex gap-4">
-                {[
-                  { label: 'X', color: 'var(--brand-cyan)', href: '#' },
-                  { label: 'IG', color: 'var(--brand-magenta)', href: '#' },
-                  { label: 'LI', color: 'var(--brand-violet)', href: 'https://www.linkedin.com/company/talecrafterss/' },
-                ].map((platform) => (
-                  <a
-                    key={platform.label}
-                    href={platform.href}
-                    target={platform.href.startsWith('http') ? '_blank' : undefined}
-                    rel={platform.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="text-xs tracking-wider transition-colors duration-200"
-                    style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = platform.color)}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
-                  >
-                    {platform.label}
-                  </a>
-                ))}
-              </div>
+              ))}
             </div>
+          </div>
+
+          {navGroups.map((group) => (
+            <div key={group.title} className="md:col-span-2">
+              <div
+                className="text-[10px] tracking-[0.28em] mb-4"
+                style={{ fontFamily: 'var(--font-mono)', color: group.color }}
+              >
+                {group.title}
+              </div>
+              <ul className="space-y-2">
+                {group.items.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-sm transition-colors"
+                      style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div className="md:col-span-2">
+            <div
+              className="text-[10px] tracking-[0.28em] mb-4"
+              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-white)' }}
+            >
+              TALK
+            </div>
+            <ul className="space-y-2">
+              {[
+                { label: 'Start a project', href: '/contact' },
+                { label: 'Packages', href: '/packages' },
+                { label: 'FAQ', href: '/faq' },
+                { label: 'Terms', href: '/terms' },
+                { label: 'Privacy', href: '/privacy' },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="text-sm transition-colors"
+                    style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div
-          className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
-          style={{ borderTop: '1px solid var(--brand-concrete)', borderColor: 'rgba(255,255,255,0.08)' }}
-        >
+        {/* The plain-language index. The Arsenal keeps our names for these
+            things; this row uses the ones people search for. */}
+        <div className="pb-10">
           <div
-            className="text-xs"
+            className="text-[10px] tracking-[0.28em] mb-4"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
           >
-            © 2026 TaleCrafters. All rights reserved. We own our chaos.
+            WHAT WE ARE HIRED FOR
           </div>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            {solutions.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/${s.slug}`}
+                  className="text-sm transition-colors"
+                  style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
+                >
+                  {s.plainName}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
+        <div
+          className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
+        >
+          <div className="text-xs" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
+            © {new Date().getFullYear()} TaleCrafters. All rights reserved. We own our chaos.
+          </div>
           <div className="flex gap-6">
-            {[
-              { label: 'Terms of Service', href: '/terms' },
-              { label: 'Privacy Policy', href: '/privacy' },
-            ].map((link) => (
-              <a
-                key={link.label}
+            {legal.map((link) => (
+              <Link
+                key={link.href}
                 href={link.href}
-                className="text-xs transition-colors duration-200"
-                style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-violet)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--brand-concrete-light)')}
+                className="text-xs transition-colors"
+                style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
 
-        {/* Easter egg */}
         <motion.div
           className="mt-8 text-center"
           initial={{ opacity: 0 }}
@@ -209,11 +195,7 @@ export function Footer() {
         >
           <div
             className="text-[10px] tracking-widest"
-            style={{
-              fontFamily: 'var(--font-mono)',
-              color: 'var(--brand-concrete)',
-              opacity: 0.25,
-            }}
+            style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete)', opacity: 0.25 }}
           >
             [REDACTED] × [CLASSIFIED] × [DATA EXPUNGED]
           </div>

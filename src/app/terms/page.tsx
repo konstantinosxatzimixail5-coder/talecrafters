@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — TaleCrafters",
+  title: "Terms of Service",
   description:
     "TaleCrafters Ltd Terms of Service. Terms and conditions governing the use of our website.",
+  alternates: { canonical: `${SITE_URL}/terms` },
+  openGraph: {
+    title: "Terms of Service — TaleCrafters",
+    url: `${SITE_URL}/terms`,
+    siteName: "TaleCrafters",
+    type: "website",
+  },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 };
 
 export default function TermsPage() {
@@ -18,7 +27,7 @@ export default function TermsPage() {
       }}
     >
       {/* Back Link */}
-      <div className="px-6 pt-8 md:px-12 lg:px-24">
+      <div className="px-6 pt-28 md:px-12 md:pt-32 lg:px-24">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
@@ -123,7 +132,7 @@ export default function TermsPage() {
 
           <h3
             className="text-xl tracking-tight mb-4"
-            style={{ fontFamily: "var(--font-display)", color: "var(--brand-violet)" }}
+            style={{ fontFamily: "var(--font-display)", color: "var(--brand-violet-text)" }}
           >
             3.1 Our Intellectual Property
           </h3>
@@ -142,7 +151,7 @@ export default function TermsPage() {
 
           <h3
             className="text-xl tracking-tight mb-4"
-            style={{ fontFamily: "var(--font-display)", color: "var(--brand-violet)" }}
+            style={{ fontFamily: "var(--font-display)", color: "var(--brand-violet-text)" }}
           >
             3.2 Limited Licence
           </h3>
@@ -156,7 +165,7 @@ export default function TermsPage() {
 
           <h3
             className="text-xl tracking-tight mb-4"
-            style={{ fontFamily: "var(--font-display)", color: "var(--brand-violet)" }}
+            style={{ fontFamily: "var(--font-display)", color: "var(--brand-violet-text)" }}
           >
             3.3 Portfolio and Case Studies
           </h3>

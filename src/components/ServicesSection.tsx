@@ -1,98 +1,39 @@
 "use client";
+
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from 'react';
-import { Clapperboard, Flame, Podcast, UserCircle, BookMarked, Boxes, AudioLines, Aperture, MonitorPlay, Crosshair, ShieldCheck, Mic2, PaintBucket, Newspaper, Wand2, LayoutPanelLeft, BrainCircuit, Globe2, CodeXml, Megaphone, ScanFace, Eye, PenLine, Ghost } from 'lucide-react';
+import {
+  Clapperboard, MonitorPlay, Flame, Wand2, LayoutPanelLeft, Eye, BookMarked, Mic2, Aperture,
+  PenLine, Ghost, Boxes, BrainCircuit, Workflow, Repeat, Radar, CodeXml, Globe2, PaintBucket,
+  Box, Newspaper, AudioLines, MousePointerClick, Crosshair, ShieldCheck, Megaphone, UserCircle,
+  ScanFace, Podcast, Bot,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { categories } from '@/data/arsenal';
 
-interface Service {
-  name: string;
-  desc: string;
-  icon: any;
-}
-
-interface Category {
-  title: string;
-  color: string;
-  services: Service[];
-}
-
-const categories: Category[] = [
-  {
-    title: "VISUAL WARFARE",
-    color: 'var(--brand-magenta)',
-    services: [
-      { name: "Product Cinematics", desc: "Ads that make people want things they didn't know existed. We turn your product into the main character of a story people can't look away from.", icon: Clapperboard },
-      { name: "Short-Form Detonations", desc: "Engineered for attention spans shorter than a goldfish's existential crisis (that's everyone). Content that hits hard and fast.", icon: MonitorPlay },
-      { name: "Motion Alchemy", desc: "Visuals that move like they've had three espressos. Dynamic, fluid, caffeinated motion design that makes static look dead.", icon: Flame },
-      { name: "Synthetic Cinematography", desc: "Fluid visual storytelling that redefines what's possible without a 50-person film crew and a nervous breakdown.", icon: Wand2 },
-      { name: "Comic Panel Narratives", desc: "Sequential art meets brand storytelling. We craft illustrated panel sequences that hit harder than a full-page ad and stick longer than a viral clip.", icon: LayoutPanelLeft },
-    ],
-  },
-  {
-    title: "NARRATIVE ENGINEERING",
-    color: 'var(--brand-cyan)',
-    services: [
-      { name: "Brand Mythology", desc: "Forget taglines. We create belief systems. The kind of narrative foundation that turns customers into cultists (the good kind).", icon: Eye },
-      { name: "Strategic Storytelling", desc: "Story frameworks that position your brand as the only logical choice. We map the narrative architecture before we touch a single frame.", icon: BookMarked },
-      { name: "Script Architecture", desc: "Words that sell without selling out. Spokesperson scripts, video narratives, brand manifestos that sound like humans wrote them. Because humans did.", icon: Mic2 },
-      { name: "Blog-to-Video Transmutation", desc: "Your text content, resurrected as video. Because reading is so 2019, and your insights deserve to move.", icon: Aperture },
-      { name: "Scriptwriting", desc: "From commercial scripts to documentary narratives, we write the words that make directors cry (in a good way) and audiences lean in.", icon: PenLine },
-      { name: "Ghostwriting", desc: "Your voice, weaponised by professionals. Thought leadership, articles, speeches, all written in your voice, just better. Nobody has to know.", icon: Ghost },
-    ],
-  },
-  {
-    title: "STRATEGY & REPUTATION",
-    color: 'var(--brand-violet)',
-    services: [
-      { name: "Brand Strategy", desc: "Before we make anything, we figure out what you should be saying and why anyone should care. Positioning, messaging, the story beneath the story.", icon: Crosshair },
-      { name: "Reputation Architecture", desc: "PR and reputation management for the synthetic media age. We help you control the narrative before someone else does.", icon: ShieldCheck },
-      { name: "Crisis Storytelling", desc: "When things go sideways, the story you tell matters more than ever. We help you navigate reputation storms without sounding like a corporate hostage reading a statement.", icon: Megaphone },
-      { name: "Thought Leadership Systems", desc: "Position your founders and executives as the voices worth following. Content strategies that build authority, not just visibility.", icon: UserCircle },
-    ],
-  },
-  {
-    title: "SYNTHETIC BEINGS",
-    color: 'var(--brand-gold)',
-    services: [
-      { name: "Digital Avatars", desc: "Spokespeople that represent your brand better than your CEO on a bad day. Always on-brand, always available, never hungover.", icon: ScanFace },
-      { name: "Synthetic Voices", desc: "Podcasts and audio content that somehow sound more human than most corporate communications.", icon: Podcast },
-      { name: "Autonomous Agents", desc: "Digital operatives that work while you sleep. Custom-built agents that handle workflows, engage audiences, and execute strategy on autopilot.", icon: BrainCircuit },
-    ],
-  },
-  {
-    title: "DESIGN WEAPONRY",
-    color: 'var(--brand-magenta)',
-    services: [
-      { name: "3D Social Content", desc: "Corporate content that looks like it escaped the metaverse and landed in your LinkedIn feed. Stand out or get buried.", icon: Boxes },
-      { name: "Visual Systems", desc: "Brand imagery that makes your competitors jealous. Cohesive visual language built for your brand's specific DNA.", icon: PaintBucket },
-      { name: "Print Artillery", desc: "Brochures and flyers with designs that physically refuse to be ignored. Yes, print is alive. We made it dangerous.", icon: Newspaper },
-      { name: "Algorithmic Soundscapes", desc: "Custom music and audio tailored to your brand's frequency. Because stock music is a war crime against creativity.", icon: AudioLines },
-      { name: "Website Design", desc: "Digital real estate that doesn't look like a template crime scene. We design web experiences that convert visitors into believers.", icon: Globe2 },
-      { name: "Vibe-Coded Applications", desc: "Apps built at the speed of imagination. We translate creative vision into functional software that feels as good as it works.", icon: CodeXml },
-    ],
-  },
-];
-
-const categoryHashMap: Record<string, number> = {
-  'visual-warfare': 0,
-  'narrative-engineering': 1,
-  'strategy-reputation': 2,
-  'synthetic-beings': 3,
-  'design-weaponry': 4,
+const icons: Record<string, LucideIcon> = {
+  Clapperboard, MonitorPlay, Flame, Wand2, LayoutPanelLeft, Eye, BookMarked, Mic2, Aperture,
+  PenLine, Ghost, Boxes, BrainCircuit, Workflow, Repeat, Radar, CodeXml, Globe2, PaintBucket,
+  Box, Newspaper, AudioLines, MousePointerClick, Crosshair, ShieldCheck, Megaphone, UserCircle,
+  ScanFace, Podcast, Bot,
 };
 
 export function ServicesSection() {
   const [activeCategory, setActiveCategory] = useState(0);
   const [hoveredService, setHoveredService] = useState<number | null>(null);
 
+  // Footer links point at a category by hash. The tab index is derived from the
+  // data rather than kept in a second hand-maintained map, so adding a category
+  // cannot silently break the deep links.
   useEffect(() => {
     const handleHash = () => {
       const hash = window.location.hash.replace('#', '');
-      if (hash in categoryHashMap) {
-        setActiveCategory(categoryHashMap[hash]);
-        // Clear the hash so it doesn't interfere
+      const i = categories.findIndex((c) => c.slug === hash);
+      if (i >= 0) {
+        setActiveCategory(i);
         setTimeout(() => {
-          const el = document.getElementById('services');
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
+          document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
     };
@@ -101,21 +42,24 @@ export function ServicesSection() {
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
+  const active = categories[activeCategory];
+
   return (
     <section
       id="services"
       className="relative py-32 md:py-48 overflow-hidden"
       style={{ backgroundColor: '#111111' }}
     >
-      {/* Background pattern */}
       <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.03 }}>
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 60px, var(--brand-white) 60px, var(--brand-white) 61px),
-            repeating-linear-gradient(90deg, transparent, transparent 60px, var(--brand-white) 60px, var(--brand-white) 61px)`,
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 60px, var(--brand-white) 60px, var(--brand-white) 61px),
+              repeating-linear-gradient(90deg, transparent, transparent 60px, var(--brand-white) 60px, var(--brand-white) 61px)`,
+          }}
+        />
       </div>
 
-      {/* Section counter */}
       <motion.div
         className="absolute top-12 right-8 md:right-16 flex items-center gap-3"
         initial={{ opacity: 0 }}
@@ -126,16 +70,15 @@ export function ServicesSection() {
         <div className="h-px w-8" style={{ backgroundColor: 'var(--brand-violet)' }} />
         <span
           className="text-xs tracking-[0.3em]"
-          style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-violet)' }}
+          style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-violet-text)' }}
         >
-          003 / WHAT WE WEAPONISE
+          004 / WHAT WE WEAPONISE
         </span>
       </motion.div>
 
       <div className="px-6 md:px-16 lg:px-24">
-        {/* Headline */}
         <motion.div
-          className="mb-16 md:mb-24"
+          className="mb-6"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -150,7 +93,19 @@ export function ServicesSection() {
           </h2>
         </motion.div>
 
-        {/* Category tabs */}
+        <motion.p
+          className="mb-14 md:mb-16 max-w-3xl text-base md:text-lg leading-relaxed"
+          style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          viewport={{ once: true }}
+        >
+          Six groups, thirty services. The group names are ours and they stay. The line underneath
+          each one is deliberately boring, because the person forwarding this page to a finance
+          director needs a phrase that survives the forward.
+        </motion.p>
+
         <motion.div
           className="flex flex-wrap gap-2 mb-12"
           initial={{ opacity: 0 }}
@@ -158,26 +113,32 @@ export function ServicesSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          {categories.map((cat, i) => (
-            <motion.button
-              key={i}
-              className="px-4 py-2 text-xs md:text-sm tracking-widest transition-all"
-              style={{
-                fontFamily: 'var(--font-mono)',
-                backgroundColor: activeCategory === i ? cat.color : 'rgba(0,0,0,0)',
-                color: activeCategory === i ? (cat.color === 'var(--brand-gold)' || cat.color === 'var(--brand-cyan)' ? 'var(--brand-black)' : 'var(--brand-white)') : 'var(--brand-concrete-light)',
-                border: `1px solid ${activeCategory === i ? cat.color : 'var(--brand-concrete)'}`,
-              }}
-              onClick={() => { setActiveCategory(i); setHoveredService(null); }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {cat.title}
-            </motion.button>
-          ))}
+          {categories.map((cat, i) => {
+            const on = activeCategory === i;
+            const darkText = cat.color === 'var(--brand-gold)' || cat.color === 'var(--brand-cyan)';
+            return (
+              <motion.button
+                key={cat.slug}
+                className="px-4 py-2 text-xs md:text-sm tracking-widest transition-all"
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  backgroundColor: on ? cat.color : 'rgba(0,0,0,0)',
+                  color: on ? (darkText ? 'var(--brand-black)' : 'var(--brand-white)') : 'var(--brand-concrete-light)',
+                  border: `1px solid ${on ? cat.color : 'var(--brand-concrete)'}`,
+                }}
+                onClick={() => {
+                  setActiveCategory(i);
+                  setHoveredService(null);
+                }}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+              >
+                {cat.title}
+              </motion.button>
+            );
+          })}
         </motion.div>
 
-        {/* Active category content */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
@@ -186,46 +147,51 @@ export function ServicesSection() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
           >
-            {/* Category title bar */}
-            <div
-              className="flex items-center gap-4 mb-8 pb-4"
-              style={{ borderBottom: `2px solid ${categories[activeCategory].color}` }}
-            >
-              <div
-                className="w-3 h-3"
-                style={{ backgroundColor: categories[activeCategory].color }}
-              />
-              <h3
-                className="text-3xl md:text-5xl tracking-tighter"
-                style={{ fontFamily: 'var(--font-display)', color: categories[activeCategory].color }}
+            <div className="mb-8 pb-4" style={{ borderBottom: `2px solid ${active.color}` }}>
+              <div className="flex items-center gap-4">
+                <div className="w-3 h-3 flex-shrink-0" style={{ backgroundColor: active.color }} />
+                <h3
+                  className="text-3xl md:text-5xl tracking-tighter"
+                  style={{ fontFamily: 'var(--font-display)', color: active.color }}
+                >
+                  {active.title}
+                </h3>
+              </div>
+              {/* The boringly clear descriptor. Non-negotiable. */}
+              <p
+                className="mt-2 ml-7 text-base md:text-xl"
+                style={{ fontFamily: 'var(--font-mono)', color: 'rgba(245,245,240,0.85)' }}
               >
-                {categories[activeCategory].title}
-              </h3>
+                {active.descriptor}
+              </p>
+              <p
+                className="mt-3 ml-7 max-w-3xl text-sm md:text-base leading-relaxed"
+                style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
+              >
+                {active.intro}
+              </p>
             </div>
 
-            {/* Services grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              {categories[activeCategory].services.map((service, i) => {
-                const Icon = service.icon;
+              {active.services.map((service, i) => {
+                const Icon = icons[service.icon] ?? Boxes;
                 const isHovered = hoveredService === i;
-
                 return (
                   <motion.div
-                    key={`${activeCategory}-${i}`}
-                    className="relative group cursor-pointer overflow-hidden"
+                    key={`${active.slug}-${service.name}`}
+                    className="relative group cursor-default overflow-hidden"
                     style={{
-                      backgroundColor: isHovered ? `${categories[activeCategory].color}15` : 'rgba(255,255,255,0.02)',
-                      borderLeft: `3px solid ${isHovered ? categories[activeCategory].color : 'transparent'}`,
+                      backgroundColor: isHovered ? `${active.color}15` : 'rgba(255,255,255,0.02)',
+                      borderLeft: `3px solid ${isHovered ? active.color : 'transparent'}`,
                     }}
                     onMouseEnter={() => setHoveredService(i)}
                     onMouseLeave={() => setHoveredService(null)}
                     initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
                     whileHover={{ x: 8 }}
                   >
                     <div className="p-6 md:p-8 flex gap-5">
-                      {/* Icon */}
                       <motion.div
                         className="flex-shrink-0 mt-1"
                         animate={{ rotate: isHovered ? 10 : 0, scale: isHovered ? 1.15 : 1 }}
@@ -233,40 +199,31 @@ export function ServicesSection() {
                       >
                         <Icon
                           size={28}
-                          style={{ color: isHovered ? categories[activeCategory].color : 'var(--brand-concrete-light)' }}
+                          style={{ color: isHovered ? active.color : 'var(--brand-concrete-light)' }}
                         />
                       </motion.div>
-
                       <div>
-                        {/* Service name */}
                         <h4
                           className="text-xl md:text-2xl tracking-tighter mb-2"
                           style={{
                             fontFamily: 'var(--font-display)',
-                            color: isHovered ? categories[activeCategory].color : 'var(--brand-white)',
+                            color: isHovered ? active.color : 'var(--brand-white)',
                           }}
                         >
                           {service.name}
                         </h4>
-
-                        {/* Description */}
                         <p
                           className="text-sm md:text-base leading-relaxed"
-                          style={{
-                            fontFamily: 'var(--font-body)',
-                            color: 'var(--brand-concrete-light)',
-                          }}
+                          style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
                         >
                           {service.desc}
                         </p>
                       </div>
                     </div>
-
-                    {/* Hover scanline effect */}
                     {isHovered && (
                       <motion.div
                         className="absolute top-0 left-0 right-0 h-px"
-                        style={{ backgroundColor: categories[activeCategory].color, opacity: 0.4 }}
+                        style={{ backgroundColor: active.color, opacity: 0.4 }}
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ duration: 0.3 }}
@@ -279,7 +236,6 @@ export function ServicesSection() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Wild card section */}
         <motion.div
           className="mt-16 relative overflow-hidden"
           style={{
@@ -299,17 +255,12 @@ export function ServicesSection() {
               >
                 THE WILD CARD
               </div>
-              <h3
-                className="text-3xl md:text-4xl tracking-tighter mb-3"
-                style={{ fontFamily: 'var(--font-display)' }}
-              >
+              <h3 className="text-3xl md:text-4xl tracking-tighter mb-3" style={{ fontFamily: 'var(--font-display)' }}>
                 Custom <span style={{ color: 'var(--brand-cyan)' }}>Everything</span>
               </h3>
-              <p
-                className="text-lg max-w-2xl"
-                style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
-              >
-                If it moves, speaks, or sparks emotion, we build it. Come with the impossible. Leave with a delivery date. Don't see what you need? If you can imagine it, we can create it.
+              <p className="text-lg max-w-2xl" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
+                If it moves, speaks, or sparks emotion, we build it. Come with the impossible. Leave
+                with a delivery date. Don&apos;t see what you need? If you can imagine it, we can create it.
               </p>
             </div>
             <motion.a
@@ -327,16 +278,31 @@ export function ServicesSection() {
               LET&apos;S TALK →
             </motion.a>
           </div>
-
-          {/* Corner decoration */}
           <div
             className="absolute top-0 right-0 w-16 h-16"
-            style={{
-              borderBottom: '1px solid var(--brand-gold)',
-              borderLeft: '1px solid var(--brand-gold)',
-              opacity: 0.3,
-            }}
+            style={{ borderBottom: '1px solid var(--brand-gold)', borderLeft: '1px solid var(--brand-gold)', opacity: 0.3 }}
           />
+        </motion.div>
+
+        <motion.div
+          className="mt-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <Link
+            href="/arsenal"
+            className="inline-block px-7 py-4 text-base tracking-tight"
+            style={{
+              fontFamily: 'var(--font-display)',
+              border: '1px solid var(--brand-cyan)',
+              color: 'var(--brand-cyan)',
+              textDecoration: 'none',
+            }}
+          >
+            THE FULL ARSENAL, ON ONE PAGE →
+          </Link>
         </motion.div>
       </div>
     </section>
