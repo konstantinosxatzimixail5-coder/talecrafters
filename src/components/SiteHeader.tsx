@@ -17,6 +17,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [solid, setSolid] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [wide, setWide] = useState(true);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const barRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
@@ -24,6 +25,14 @@ export function SiteHeader() {
   // The bar starts transparent over the hero and takes a background once there
   // is content behind it. Without this it either fights the hero or disappears
   // against a paler section further down.
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const sync = () => setWide(mq.matches);
+    sync();
+    mq.addEventListener('change', sync);
+    return () => mq.removeEventListener('change', sync);
+  }, []);
+
   useEffect(() => {
     const onScroll = () => setSolid(window.scrollY > 24);
     onScroll();
@@ -88,7 +97,9 @@ export function SiteHeader() {
         className="fixed top-0 left-0 right-0 z-[80] transition-all duration-300"
         style={{
           backgroundColor: solid || open || openMenu ? 'rgba(14,14,18,0.9)' : 'transparent',
-          backdropFilter: solid || open || openMenu ? 'blur(14px)' : 'none',
+          // Only above the mobile breakpoint: blurring a fixed bar forces a
+          // recomposite on every scroll frame.
+          backdropFilter: (solid || open || openMenu) && wide ? 'blur(14px)' : 'none',
           borderBottom: solid && !open ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
         }}
       >

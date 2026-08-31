@@ -19,7 +19,7 @@ export function StudioSection() {
     <section
       id="studio"
       ref={sectionRef}
-      className="relative py-32 md:py-48 overflow-hidden"
+      className="defer-paint relative py-32 md:py-48 overflow-hidden"
       style={{ backgroundColor: 'var(--brand-black)', position: 'relative' }}
     >
       {/* Background texture strips */}

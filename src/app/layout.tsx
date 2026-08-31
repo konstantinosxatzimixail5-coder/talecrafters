@@ -4,6 +4,8 @@ import "@/styles/globals.css";
 import { CookieConsent } from "@/components/CookieConsent";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ImpCursor } from "@/components/ImpCursor";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { orgSchema, websiteSchema } from "@/lib/seo";
@@ -12,23 +14,28 @@ import { SITE_URL, site } from "@/lib/site";
 // Self-hosted at build time. This removes the render-blocking request to
 // fonts.googleapis.com that the CSS @import used to make, and the swap flash
 // that came with it. Each face exposes a variable that theme.css aliases.
+//
+// Weights are listed rather than left to the variable axis: the variable files
+// measured larger than the static subsets here. Only the weights the site
+// actually sets are requested — 300 was never used, and the mono is only ever
+// regular or medium.
 const display = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--tc-display",
   display: "swap",
 });
 
 const body = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--tc-body",
   display: "swap",
 });
 
 const mono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500"],
   variable: "--tc-mono",
   display: "swap",
 });
@@ -140,6 +147,8 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <Footer />
         <CookieConsent />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -213,8 +213,9 @@ const clients = [
   },
 ];
 
-// Quadruple for seamless loop
-const repeatedClients = [...clients, ...clients, ...clients, ...clients];
+// Two copies is what a -50% translate needs to loop seamlessly. Four was
+// double the DOM and double the SVG the compositor keeps alive while it runs.
+const repeatedClients = [...clients, ...clients];
 
 export function ClientsSection() {
   return (

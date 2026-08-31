@@ -240,7 +240,7 @@ export function PhilosophySection() {
   return (
     <section
       id="philosophy"
-      className="relative py-32 md:py-48 overflow-hidden"
+      className="defer-paint relative py-32 md:py-48 overflow-hidden"
       style={{ backgroundColor: '#0D0D0D' }}
     >
       {/* Background: Large watermark text */}

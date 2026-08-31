@@ -126,7 +126,7 @@ export function ContactSection({ hideHeading = false }: { hideHeading?: boolean 
   return (
     <section
       id="contact"
-      className="relative py-32 md:py-48 overflow-hidden"
+      className="defer-paint relative py-32 md:py-48 overflow-hidden"
       style={{ backgroundColor: '#080808' }}
     >
       {/* Background elements */}

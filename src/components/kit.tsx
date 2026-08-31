@@ -56,7 +56,7 @@ export function PageHeader({
       <div className="relative max-w-[1400px] mx-auto">
         {crumbs && crumbs.length > 0 && (
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center gap-2">
+            <ol className="tap-inline flex flex-wrap items-center gap-2">
               {crumbs.map((c, i) => (
                 <li key={c.path} className="flex items-center gap-2">
                   {i > 0 && (
@@ -81,34 +81,30 @@ export function PageHeader({
 
         <Eyebrow color={color}>{eyebrow}</Eyebrow>
 
-        <Reveal delay={0.05}>
-          <h1
-            className="mt-5 text-[13vw] sm:text-[10vw] md:text-[7vw] lg:text-[6vw] leading-[0.86] tracking-tighter max-w-[16ch]"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            {title}
-            {accentWord && (
-              <>
-                <br />
-                <span style={{ color }}>{accentWord}</span>
-              </>
-            )}
-          </h1>
-        </Reveal>
+        <h1
+          className="hero-rise mt-5 text-[13vw] sm:text-[10vw] md:text-[7vw] lg:text-[6vw] leading-[0.86] tracking-tighter max-w-[16ch]"
+          style={{ fontFamily: 'var(--font-display)', animationDelay: '0.04s' }}
+        >
+          {title}
+          {accentWord && (
+            <>
+              <br />
+              <span style={{ color }}>{accentWord}</span>
+            </>
+          )}
+        </h1>
 
         {lede && (
-          <Reveal delay={0.12}>
-            <p
-              className="mt-8 text-lg md:text-xl leading-relaxed max-w-3xl"
-              style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.72)' }}
-            >
-              {lede}
-            </p>
-          </Reveal>
+          <p
+            className="hero-rise mt-8 text-lg md:text-xl leading-relaxed max-w-3xl"
+            style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.72)', animationDelay: '0.12s' }}
+          >
+            {lede}
+          </p>
         )}
 
         {meta && meta.length > 0 && (
-          <Reveal delay={0.18}>
+          <div className="hero-rise" style={{ animationDelay: '0.2s' }}>
             <dl className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px" style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}>
               {meta.map((m) => (
                 <div key={m.label} className="p-4" style={{ backgroundColor: 'var(--brand-black)' }}>
@@ -127,7 +123,7 @@ export function PageHeader({
                 </div>
               ))}
             </dl>
-          </Reveal>
+          </div>
         )}
 
         {children}

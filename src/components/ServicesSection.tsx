@@ -47,7 +47,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-32 md:py-48 overflow-hidden"
+      className="defer-paint relative py-32 md:py-48 overflow-hidden"
       style={{ backgroundColor: '#111111' }}
     >
       <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.03 }}>

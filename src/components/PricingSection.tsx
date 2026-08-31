@@ -76,7 +76,7 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
   return (
     <section
       id="pricing"
-      className="relative py-32 md:py-48 overflow-hidden"
+      className="defer-paint relative py-32 md:py-48 overflow-hidden"
       style={{ backgroundColor: '#0A0A0A' }}
     >
       {/* Background watermark */}

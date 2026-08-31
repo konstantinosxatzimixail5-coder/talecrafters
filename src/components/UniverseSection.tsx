@@ -13,7 +13,7 @@ export function UniverseSection() {
   return (
     <section
       id="universe"
-      className="relative py-24 md:py-36 overflow-hidden"
+      className="defer-paint relative py-24 md:py-36 overflow-hidden"
       style={{ backgroundColor: 'var(--brand-black)' }}
     >
       <div

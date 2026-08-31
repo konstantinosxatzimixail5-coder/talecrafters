@@ -44,11 +44,21 @@ export function Footer() {
               STORIES ON STEROIDS
             </div>
             <p
+              className="text-sm leading-relaxed max-w-sm mb-3"
+              style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.72)' }}
+            >
+              TaleCrafters is a London-based{' '}
+              <strong style={{ color: 'var(--brand-white)', fontWeight: 500 }}>
+                synthetic media and creative systems studio
+              </strong>
+              . We produce generative films, campaigns and visual worlds, build the automated
+              creative systems that make and distribute them, and develop our own original IP.
+            </p>
+            <p
               className="text-sm leading-relaxed max-w-xs mb-6"
               style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
             >
-              The unholy offspring of a film studio and a technology lab. We make the work,
-              we build the systems that make the work, and we write our own.
+              The unholy offspring of a film studio and a technology lab.
             </p>
             <address
               className="not-italic text-xs leading-relaxed"
@@ -60,7 +70,7 @@ export function Footer() {
               <br />
               {site.address.city}, United Kingdom, {site.address.postcode}
             </address>
-            <div className="pt-5 flex gap-5">
+            <div className="tap-inline pt-5 flex gap-5">
               <a
                 href={`mailto:${site.email}`}
                 className="text-xs tracking-wider transition-colors"
@@ -96,7 +106,7 @@ export function Footer() {
               >
                 {group.title}
               </div>
-              <ul className="space-y-2">
+              <ul className="tap-list space-y-2">
                 {group.items.map((item) => (
                   <li key={item.href}>
                     <Link
@@ -119,7 +129,7 @@ export function Footer() {
             >
               TALK
             </div>
-            <ul className="space-y-2">
+            <ul className="tap-list space-y-2">
               {[
                 { label: 'Start a project', href: '/contact' },
                 { label: 'Packages', href: '/packages' },
@@ -150,7 +160,7 @@ export function Footer() {
           >
             WHAT WE ARE HIRED FOR
           </div>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="tap-list flex flex-wrap gap-x-6 gap-y-2">
             {solutions.map((s) => (
               <li key={s.slug}>
                 <Link
@@ -172,7 +182,7 @@ export function Footer() {
           <div className="text-xs" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
             © {new Date().getFullYear()} TaleCrafters. All rights reserved. We own our chaos.
           </div>
-          <div className="flex gap-6">
+          <div className="tap-inline flex gap-6">
             {legal.map((link) => (
               <Link
                 key={link.href}

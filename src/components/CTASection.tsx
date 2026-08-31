@@ -5,7 +5,7 @@ import { MoveUpRight, Ban } from 'lucide-react';
 export function CTASection() {
   return (
     <section
-      className="relative min-h-screen py-32 md:py-48 flex items-center justify-center overflow-hidden"
+      className="defer-paint relative min-h-screen py-32 md:py-48 flex items-center justify-center overflow-hidden"
       style={{ backgroundColor: 'var(--brand-black)', color: 'var(--brand-white)' }}
     >
       {/* Background animated elements */}

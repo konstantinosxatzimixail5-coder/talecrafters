@@ -17,7 +17,7 @@ export function SelectedDamageSection() {
   return (
     <section
       id="work"
-      className="relative py-28 md:py-40 overflow-hidden"
+      className="defer-paint relative py-28 md:py-40 overflow-hidden"
       style={{ backgroundColor: '#0B0B0F' }}
     >
       <div

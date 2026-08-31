@@ -65,7 +65,7 @@ export function BlogSection() {
   return (
     <section
       id="blog"
-      className="relative py-32 md:py-48 overflow-hidden"
+      className="defer-paint relative py-32 md:py-48 overflow-hidden"
       style={{ backgroundColor: '#0E0E0E' }}
     >
       {/* Section counter */}

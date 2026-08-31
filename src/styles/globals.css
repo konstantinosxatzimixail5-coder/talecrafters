@@ -161,3 +161,126 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Skip rendering work for sections that are not on screen yet.
+   The landing page is nine tall sections deep and most of them carry
+   viewport-unit type and running animations, which made Style & Layout the
+   single most expensive thing on mobile. The intrinsic size is generous so the
+   scrollbar does not jump as sections resolve. */
+.defer-paint {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+/* An in-page anchor must not land inside a section the browser has skipped. */
+.defer-paint:target,
+.defer-paint:has(:target) {
+  content-visibility: visible;
+}
+
+/* Hero entrance.
+   These were framer-motion animations starting from opacity 0, which meant the
+   headline and the strapline — the two largest things on the page — were not
+   painted until React had hydrated and the delay had elapsed. On a throttled
+   phone that pushed LCP past five seconds. As CSS they start at first paint,
+   before any JavaScript runs, and the cascade is the same. */
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 42px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes heroSlideIn {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-rise {
+  animation: heroRise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-slide {
+  animation: heroSlideIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroBracket {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.hero-bracket {
+  transform-origin: top;
+  animation: heroBracket 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+}
+
+/* The terminal caret. Was a framer-motion loop; CSS costs nothing. */
+@keyframes caretBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.caret-blink {
+  animation: caretBlink 1s steps(1, end) infinite;
+}
+
+/* Hero decoration. These were framer-motion loops on the first screen, which
+   meant the animation library had to load and hydrate before anything above
+   the fold settled. As CSS they run on the compositor and cost the main
+   thread nothing. */
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+@keyframes spinPulse {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(-180deg) scale(1.2); }
+  100% { transform: rotate(-360deg) scale(1); }
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.3); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(8px); }
+}
+@keyframes scanIn { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+.spin-slow   { animation: spinSlow 30s linear infinite; }
+.spin-pulse  { animation: spinPulse 20s linear infinite; }
+.breathe     { animation: breathe 8s ease-in-out infinite; }
+.bob         { animation: bob 2s ease-in-out infinite; }
+.scan-in     { transform-origin: left; animation: scanIn 1.5s ease-out both; }
+
+@keyframes edgeFade { from { opacity: 0; } to { opacity: 0.4; } }
+.edge-fade { animation: edgeFade 1.4s ease-out 0.5s both; }
+
+/* Tap targets.
+   Link lists in the footer and the breadcrumb trail render at around 17px
+   tall, which is fine to click and awkward to tap. On touch-sized screens the
+   hit area grows without moving the text, so the layout is unchanged and the
+   target is not. */
+@media (max-width: 900px) {
+  .tap-list a,
+  .tap-list button {
+    display: inline-block;
+    padding-block: 8px;
+  }
+  .tap-inline a,
+  .tap-inline button {
+    display: inline-block;
+    padding: 6px 8px;
+    margin-inline: -8px;
+  }
+}
