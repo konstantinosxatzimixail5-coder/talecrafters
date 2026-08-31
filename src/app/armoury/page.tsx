@@ -136,6 +136,24 @@ export default function ArmouryIndex() {
         </div>
       </section>
 
+      <section className="px-5 md:px-10 lg:px-14 pb-16">
+        <div className="max-w-[1400px] mx-auto">
+          <Eyebrow color="var(--brand-gold)">THE OBVIOUS QUESTIONS</Eyebrow>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-3">
+            {qa.map((item) => (
+              <div key={item.q} className="p-6" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                <h2 className="text-lg mb-3 leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
+                  {item.q}
+                </h2>
+                <p className="text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CtaBar
         color="var(--brand-gold)"
         eyebrow="OR SKIP THE READING"

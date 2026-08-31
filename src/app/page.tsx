@@ -12,14 +12,11 @@ import { ContactSection } from '@/components/ContactSection';
 import { ImpCursor } from '@/components/ImpCursor';
 import { ClientsSection } from '@/components/ClientsSection';
 import { JsonLd } from '@/components/JsonLd';
-import { faqSchema, serviceSchema, caseStudySchema } from '@/lib/seo';
-import { faqGroups } from '@/data/faq';
+import { serviceSchema, caseStudySchema } from '@/lib/seo';
 import { categories } from '@/data/arsenal';
 import { featuredWork } from '@/data/work';
 
 export default function HomePage() {
-  const homeFaqs = faqGroups.find((g) => g.title === 'WORKING WITH US')!.items;
-
   return (
     <div
       className="relative"
@@ -32,7 +29,6 @@ export default function HomePage() {
     >
       <JsonLd
         graph={[
-          faqSchema(homeFaqs),
           ...categories.map((c) =>
             serviceSchema({
               name: `${c.title}: ${c.descriptor}`,

@@ -4,6 +4,7 @@ import { pipelines } from '@/data/pipelines';
 import { terms } from '@/data/glossary';
 import { categories, arms } from '@/data/arsenal';
 import { resources } from '@/data/resources';
+import { solutions } from '@/data/solutions';
 
 export const dynamic = 'force-static';
 
@@ -34,6 +35,13 @@ export function GET() {
   lines.push('');
   for (const a of arms) {
     lines.push(`- [${a.name}](${SITE_URL}${a.href}): ${a.line} ${a.blurb}`);
+  }
+  lines.push('');
+
+  lines.push('## What we are hired for');
+  lines.push('');
+  for (const s of solutions) {
+    lines.push(`- [${s.plainName}](${SITE_URL}/${s.slug}): ${s.metaDescription}`);
   }
   lines.push('');
 

@@ -58,7 +58,7 @@ export const categories: Category[] = [
     title: 'CREATIVE SYSTEMS',
     descriptor: 'Agentic Workflows, Automation & Content Infrastructure',
     arm: 'systems',
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
     intro:
       'The technology lab half, sold as technology rather than described as a tool we happen to use. We build the machinery that produces, repurposes and distributes creative work, and hand it over running inside your own accounts.',
     services: [
@@ -160,7 +160,7 @@ export const arms: Arm[] = [
     num: '02',
     name: 'TALECRAFTERS / SYSTEMS',
     line: 'We build the systems that produce, distribute and scale creative work.',
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
     href: '/systems',
     blurb:
       'Where the unusual advantage lives. Content production systems, agentic workflows, marketing automations, research systems, lead-generation workflows, repurposing engines, creative pipelines, internal tools, lightweight applications, AI-powered websites, interactive experiences and prototypes: built through agentic development environments and modern development infrastructure, and handed over as functional digital products.',

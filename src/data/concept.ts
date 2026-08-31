@@ -90,7 +90,7 @@ export const conceptBrands: ConceptBrand[] = [
     name: 'GRAIN 01',
     product: 'Compact digital camera',
     proves: 'One face across three light sources: a bedroom, a club and a rooftop at sunset',
-    accent: 'var(--brand-violet)',
+    accent: 'var(--brand-violet-text)',
     note:
       'This set exists to test drift. The same creator appears in warm string lights, in red club light with a flash, and in low sun on a roof. Nothing about the face is allowed to move between them, and the camera she is holding has to stay the same object in all three. Stack the frames, flick through at speed, and the jaw is where a fail shows first.',
     pipelines: [{ label: 'Identity Lock', href: '/pipelines/identity-lock' }],

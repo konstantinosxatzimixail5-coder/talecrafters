@@ -24,7 +24,7 @@ const meta: Record<string, { title: string; lede: string; color: string }> = {
   control: {
     title: 'CONTROL',
     lede: 'Every lever between a prompt and a predictable frame: conditioning, references, guidance, negatives and the trained identity.',
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
   },
   ethics: {
     title: 'ETHICS & RIGHTS',
@@ -44,7 +44,7 @@ const meta: Record<string, { title: string; lede: string; color: string }> = {
   strategy: {
     title: 'STRATEGY',
     lede: 'The commercial terms: what synthetic media is, what slop costs you, how registers keep volume from turning into wallpaper, and how to budget any of it.',
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
   },
 };
 

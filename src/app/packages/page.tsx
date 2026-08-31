@@ -1,5 +1,5 @@
 import { PricingSection } from '@/components/PricingSection';
-import { PageHeader, CtaBar } from '@/components/kit';
+import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { faqGroups } from '@/data/faq';
@@ -44,6 +44,24 @@ export default function PackagesPage() {
         ]}
       />
       <PricingSection hideHeading />
+      <section className="px-5 md:px-10 lg:px-14 py-12">
+        <div className="max-w-[1400px] mx-auto">
+          <Eyebrow color="var(--brand-magenta)">BEFORE YOU ASK</Eyebrow>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-3">
+            {qa.map((item) => (
+              <div key={item.q} className="p-6" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                <h2 className="text-lg mb-3 leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
+                  {item.q}
+                </h2>
+                <p className="text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CtaBar
         title="None of these fit?"
         body="Then it is a conversation rather than a package. Tell us the shape of the problem and we will tell you honestly whether we are the right studio for it."

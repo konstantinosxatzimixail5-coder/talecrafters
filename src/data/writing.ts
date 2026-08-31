@@ -40,7 +40,7 @@ export const writing: WritingItem[] = [
     slug: 'ghostwriting',
     title: 'Ghostwriting and thought leadership',
     kind: 'Voice work',
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
     summary:
       'Executive posts and articles written in somebody else’s voice, close enough that their own team cannot tell.',
     detail:

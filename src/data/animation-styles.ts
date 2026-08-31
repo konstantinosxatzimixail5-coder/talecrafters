@@ -86,7 +86,7 @@ export const animationStyles: AnimationStyle[] = [
     num: '04',
     name: 'Stylised 3D',
     aka: 'Pixar-flavoured, feature-animation 3D',
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
     what:
       'Appealing proportions, soft global illumination, subsurface scattering on skin, and materials that read as slightly idealised versions of the real thing. The technical vocabulary works here better than any style name, and it avoids naming a studio.',
     scaffold: [
@@ -166,7 +166,7 @@ export const animationStyles: AnimationStyle[] = [
     num: '08',
     name: 'Papercraft & Collage',
     aka: 'cut paper, layered paper, mixed-media collage',
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
     what:
       'Physical layers casting real shadows. The convincing detail is the edge: torn paper has a fibrous white edge, cut paper does not, and choosing between them is the whole style decision.',
     scaffold: [
@@ -246,7 +246,7 @@ export const animationStyles: AnimationStyle[] = [
     num: '12',
     name: 'Retro 3D',
     aka: 'low-poly, PS1, early CGI, vaporwave',
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
     what:
       'A period style built from technical limitations: low polygon counts, affine texture warping, vertex wobble and hard-edged shadows. Naming the limitations is what produces it: naming the aesthetic produces a modern render in pastel colours.',
     scaffold: [

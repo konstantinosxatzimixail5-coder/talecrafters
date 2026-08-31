@@ -70,7 +70,7 @@ export function ServicesSection() {
         <div className="h-px w-8" style={{ backgroundColor: 'var(--brand-violet)' }} />
         <span
           className="text-xs tracking-[0.3em]"
-          style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-violet)' }}
+          style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-violet-text)' }}
         >
           004 / WHAT WE WEAPONISE
         </span>

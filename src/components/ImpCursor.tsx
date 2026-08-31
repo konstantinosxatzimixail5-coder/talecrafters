@@ -28,7 +28,9 @@ export function ImpCursor() {
 
       document.head.appendChild(style);
     };
-    img.src = '/imp-cursor.png';
+    // 96px covers the 48px canvas at 2x. The original was a 2000px,
+    // 88kB plate being downscaled on every page load.
+    img.src = '/brand/cursor-96.png';
 
     return () => {
       const existing = document.getElementById('imp-cursor-style');

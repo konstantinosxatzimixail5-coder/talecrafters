@@ -27,7 +27,7 @@ export type FamilyKey =
 export const families: { key: FamilyKey; name: string; note: string; color: string }[] = [
   { key: 'push-pull', name: 'Push & Pull', note: 'Moving the camera along its own axis. The most emotionally loaded family, and the easiest to overspend.', color: 'var(--brand-magenta)' },
   { key: 'reveal', name: 'Framing & Reveal', note: 'Shots that withhold something and then give it up. Most of the tension in a short piece lives here.', color: 'var(--brand-cyan)' },
-  { key: 'axis', name: 'Axis Moves', note: 'Tilt, truck and pedestal. Small, mechanical, and the ones a model gets right most reliably.', color: 'var(--brand-violet)' },
+  { key: 'axis', name: 'Axis Moves', note: 'Tilt, truck and pedestal. Small, mechanical, and the ones a model gets right most reliably.', color: 'var(--brand-violet-text)' },
   { key: 'orbit', name: 'Orbits & Arcs', note: 'Circling the subject. Speed changes the meaning completely — the same path fast is adrenaline, slow is thought.', color: 'var(--brand-gold)' },
   { key: 'altitude', name: 'Crane & Altitude', note: 'Leaving the ground. Endings, arrivals and establishing scale, plus the moves only an imaginary camera can make.', color: 'var(--brand-cyan)' },
   { key: 'lens', name: 'Lens Moves', note: 'The camera body stays put and only the glass changes. It feels different from a dolly, and audiences know it.', color: 'var(--brand-magenta)' },

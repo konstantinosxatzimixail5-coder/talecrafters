@@ -63,7 +63,7 @@ export const faqGroups: FaqGroup[] = [
   },
   {
     title: 'RIGHTS, ETHICS AND THE BORING PART',
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
     items: [
       {
         q: 'Who owns the output?',

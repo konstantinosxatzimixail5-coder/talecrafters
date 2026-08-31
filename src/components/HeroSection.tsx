@@ -134,53 +134,52 @@ export function HeroSection() {
           </span>
         </motion.div>
 
-        {/* Main headline */}
+        {/* Main headline. One h1 for the page: the five lines are spans inside
+            it, so the stagger survives without handing a crawler five competing
+            top-level headings. */}
         <div className="relative">
-          <motion.h1
-            className="text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
-            style={{ fontFamily: 'var(--font-display)' }}
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.4 }}
-          >
-            WE <span style={{ color: 'var(--brand-cyan)' }}>MANUFACTURE</span>
-          </motion.h1>
-          <motion.h1
-            className="text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
-            style={{ fontFamily: 'var(--font-display)' }}
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.55 }}
-          >
-            <span style={{ color: 'var(--brand-magenta)' }}>ATTENTION</span> WITH
-          </motion.h1>
-          <motion.h1
-            className="text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
-            style={{ fontFamily: 'var(--font-display)' }}
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.7 }}
-          >
-            STORIES THAT <span style={{ color: 'var(--brand-gold)' }}>IMMERSE</span>
-          </motion.h1>
-          <motion.h1
-            className="text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
-            style={{ fontFamily: 'var(--font-display)' }}
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.85 }}
-          >
-            AND CONTENT
-          </motion.h1>
-          <motion.h1
-            className="text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
-            style={{ fontFamily: 'var(--font-display)' }}
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 1.0 }}
-          >
-            THAT <span style={{ color: 'var(--brand-violet)' }}>CONVERTS</span>
-          </motion.h1>
+          <h1 style={{ margin: 0 }}>
+            <motion.span
+              className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.4 }}
+            >
+              WE <span style={{ color: 'var(--brand-cyan)' }}>MANUFACTURE</span>
+            </motion.span>
+            <motion.span
+              className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.55 }}
+            >
+              <span style={{ color: 'var(--brand-magenta)' }}>ATTENTION</span> WITH
+            </motion.span>
+            <motion.span
+              className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.7 }}
+            >
+              STORIES THAT <span style={{ color: 'var(--brand-gold)' }}>IMMERSE</span>
+            </motion.span>
+            <motion.span
+              className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.85 }}
+            >
+              AND CONTENT
+            </motion.span>
+            <motion.span
+              className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 1.0 }}
+            >
+              THAT <span style={{ color: 'var(--brand-violet-text)' }}>CONVERTS</span>
+              </motion.span>
+          </h1>
 
           {/* Decorative bracket */}
           <motion.div
@@ -211,6 +210,25 @@ export function HeroSection() {
             Storytellers Drunk on Synthetic Media.
           </div>
         </motion.div>
+
+        {/* The literal classification, directly under the strapline.
+            "Storytellers drunk on synthetic media" is what a person remembers;
+            this is what a search engine and an answer engine classify from.
+            Both belong on the page, and neither replaces the other. */}
+        <motion.p
+          className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed"
+          style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.62)' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
+        >
+          TaleCrafters is a London-based{' '}
+          <strong style={{ color: 'var(--brand-white)', fontWeight: 500 }}>
+            synthetic media and creative systems studio
+          </strong>
+          . We produce generative films, campaigns and visual worlds, build the automated
+          creative systems that make and distribute them, and develop our own original IP.
+        </motion.p>
 
         {/* Terminal readout */}
         <motion.div

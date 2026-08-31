@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { categories, arms } from '@/data/arsenal';
+import { solutions } from '@/data/solutions';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
@@ -195,6 +196,39 @@ export default function ArsenalPage() {
             >
               LET&apos;S TALK →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 md:px-10 lg:px-14 pb-14">
+        <div className="max-w-[1400px] mx-auto">
+          <Eyebrow color="var(--brand-concrete-light)">THE SAME THINGS, IN PLAIN ENGLISH</Eyebrow>
+          <p
+            className="mt-5 mb-6 max-w-2xl text-base leading-relaxed"
+            style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
+          >
+            Nobody searches for visual warfare. These pages cover the same work under the names
+            people actually use, with the methodology, the cases and the answers attached.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {solutions.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/${s.slug}`}
+                className="block p-6 h-full"
+                style={{ border: `1px solid ${s.color}30`, backgroundColor: 'rgba(255,255,255,0.02)', textDecoration: 'none' }}
+              >
+                <div
+                  className="text-xl leading-tight tracking-tighter mb-2"
+                  style={{ fontFamily: 'var(--font-display)', color: s.color }}
+                >
+                  {s.plainName}
+                </div>
+                <p className="text-sm leading-snug" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
+                  {s.lede.split('. ')[0]}.
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

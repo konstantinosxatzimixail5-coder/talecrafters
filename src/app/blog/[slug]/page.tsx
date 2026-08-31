@@ -3,6 +3,8 @@ import { PortableText } from 'next-sanity';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { JsonLd } from '@/components/JsonLd';
+import { articleSchema, breadcrumbSchema } from '@/lib/seo';
 
 interface Post {
   _id: string;
@@ -173,21 +175,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = await getPost(slug);
   if (!post) notFound();
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    description: post.excerpt || post.metaDescription || '',
-    author: { '@type': 'Person', name: post.author || 'TaleCrafters' },
-    datePublished: post.publishedAt,
-    publisher: {
-      '@type': 'Organization',
-      name: 'TaleCrafters',
-      url: 'https://talecrafters.studio',
-    },
-    mainEntityOfPage: `https://talecrafters.studio/blog/${post.slug.current}`,
-    image: post.featuredImage ? urlFor(post.featuredImage).width(1200).height(630).url() : undefined,
-  };
+  const crumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
+    { name: post.title, path: `/blog/${post.slug.current}` },
+  ];
 
   return (
     <div
@@ -198,7 +190,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         minHeight: '100vh',
       }}
     >
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd
+        graph={[
+          breadcrumbSchema(crumbs),
+          articleSchema({
+            title: post.title,
+            description: post.excerpt || post.metaDescription || '',
+            slug: post.slug.current,
+            published: post.publishedAt,
+            author: post.author,
+            tags: post.tags,
+            image: post.featuredImage
+              ? urlFor(post.featuredImage).width(1200).height(630).url()
+              : undefined,
+          }),
+        ]}
+      />
 
       <div className="mx-auto px-6 pt-24 pb-24" style={{ maxWidth: '750px' }}>
         <Link

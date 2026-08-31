@@ -5,6 +5,7 @@ import { work } from '@/data/work';
 import { pipelines } from '@/data/pipelines';
 import { terms, GLOSSARY_TAGS } from '@/data/glossary';
 import { resources } from '@/data/resources';
+import { solutions } from '@/data/solutions';
 
 type Entry = MetadataRoute.Sitemap[number];
 
@@ -19,6 +20,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [
     page('', 1, 'weekly'),
     page('/work', 0.9, 'weekly'),
+    // Search-intent pages sit at the root and rank for the words buyers type.
+    ...solutions.map((s) => page(`/${s.slug}`, 0.9, 'monthly')),
     page('/arsenal', 0.9, 'monthly'),
     page('/systems', 0.9, 'monthly'),
     page('/create', 0.8, 'monthly'),

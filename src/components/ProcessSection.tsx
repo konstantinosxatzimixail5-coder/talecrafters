@@ -36,7 +36,7 @@ const pillars = [
     description:
       "You signed off on this, which earns you our actual opinion. Including the one about the thing you already paid for.",
     note: "Partners in crime",
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
     details: [
       "You get the version of our opinion we would give each other.",
       "When your brand guidelines are getting in the way, you hear it in the first week rather than the last.",

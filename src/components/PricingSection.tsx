@@ -49,7 +49,7 @@ const packages = [
       "Brand films and hero content",
     ],
     bestFor: "Brands that need something exceptional for a specific moment.",
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
     accent: false,
   },
   {
@@ -82,6 +82,7 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
       {/* Background watermark */}
       <div
         className="absolute top-1/3 left-1/2 -translate-x-1/2 text-[15vw] leading-none tracking-tighter pointer-events-none select-none whitespace-nowrap"
+        aria-hidden
         style={{
           fontFamily: 'var(--font-display)',
           color: 'var(--brand-white)',
@@ -294,7 +295,7 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
             {[
               { title: "Synthetic Media Natives", desc: "We build the pipeline before the prompt: a locked master plate, a written set specification, four control gates and a ledger of what each accepted asset cost. Seven of them exist. Three are published on this site.", color: 'var(--brand-cyan)' },
               { title: "Story-First, Always", desc: "Technology is the vehicle. Narrative is the destination. We obsess over story structure, emotional beats, and psychological hooks before we touch a single tool.", color: 'var(--brand-magenta)' },
-              { title: "Content Reinventionists", desc: "Every case study on this site carries the problem, the idea, what we made, the result and the artefacts. Read one before the call and you will already know how we work.", color: 'var(--brand-violet)' },
+              { title: "Content Reinventionists", desc: "Every case study on this site carries the problem, the idea, what we made, the result and the artefacts. Read one before the call and you will already know how we work.", color: 'var(--brand-violet-text)' },
               { title: "No Bullshit Guarantee", desc: "We give zero f*cks about ego, and infinite f*cks about excellence.", color: 'var(--brand-gold)' },
             ].map((item, i) => (
               <motion.div

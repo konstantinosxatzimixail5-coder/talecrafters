@@ -19,7 +19,7 @@ export interface NavEntry {
 
 const CYAN = 'var(--brand-cyan)';
 const MAGENTA = 'var(--brand-magenta)';
-const VIOLET = 'var(--brand-violet)';
+const VIOLET = 'var(--brand-violet-text)';
 const GOLD = 'var(--brand-gold)';
 
 export const primaryNav: NavEntry[] = [

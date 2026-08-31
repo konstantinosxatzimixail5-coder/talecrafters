@@ -1,6 +1,8 @@
 import { client, urlFor } from '@/sanity/client';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { JsonLd } from '@/components/JsonLd';
+import { blogSchema, breadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Blog — TaleCrafters | Thoughts on Synthetic Media & Storytelling',
@@ -58,6 +60,22 @@ export default async function BlogPage() {
         minHeight: '100vh',
       }}
     >
+      <JsonLd
+        graph={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+          ]),
+          blogSchema(
+            posts.map((p) => ({
+              title: p.title,
+              slug: p.slug.current,
+              published: p.publishedAt,
+            }))
+          ),
+        ]}
+      />
+
       {/* Header */}
       <div className="px-6 md:px-16 lg:px-24 pt-24 pb-16">
         <Link

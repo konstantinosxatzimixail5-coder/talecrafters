@@ -276,16 +276,16 @@ export function ClientsSection() {
                 key={`client-${i}`}
                 className="flex-shrink-0 flex items-center gap-3 px-2 transition-all duration-300 hover:scale-105 cursor-default"
                 style={{
-                  filter: 'grayscale(0.8) brightness(0.7)',
-                  opacity: 0.6,
+                  filter: 'grayscale(0.8)',
+                  opacity: 1,
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.filter = 'grayscale(0) brightness(1)';
                   e.currentTarget.style.opacity = '1';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.filter = 'grayscale(0.8) brightness(0.7)';
-                  e.currentTarget.style.opacity = '0.6';
+                  e.currentTarget.style.filter = 'grayscale(0.8)';
+                  e.currentTarget.style.opacity = '1';
                 }}
               >
                 {client.icon && <client.icon />}

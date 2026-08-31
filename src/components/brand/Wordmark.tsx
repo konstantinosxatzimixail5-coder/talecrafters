@@ -1,24 +1,27 @@
 "use client";
 
 /**
- * TALECRAFTERS set as live text rather than an image: three stacked copies of
- * the same word, magenta behind and cyan in front, offset a couple of pixels
- * each way. It is the misregistered-print look, and doing it in type means it
- * stays sharp on any screen and can be read by a crawler as the company name.
+ * TALECRAFTERS with the misregistered-print look: white type with a magenta
+ * and a cyan copy offset behind it.
+ *
+ * Drawn with text-shadow rather than stacked copies of the word. Three stacked
+ * spans put the company name into the page three times, which reads as
+ * duplicated text to a crawler and breaks the accessible-name check on any link
+ * that wraps it. One text node fixes both and renders identically.
  *
  * `offset` scales the misregistration with the type size. At 14px a 3px shift
  * is a smear; at 120px it is invisible. Keeping it proportional fixes both.
  */
 export function Wordmark({
   size = 28,
-  /** Misregistration in px. Derived from `size` when that is a number; pass it
-   *  explicitly when `size` is a CSS length the component cannot measure. */
   offset,
   className,
   as: Tag = 'span',
   text = 'TALECRAFTERS',
 }: {
   size?: number | string;
+  /** Misregistration in px. Derived from `size` when that is a number; pass it
+   *  explicitly when `size` is a CSS length the component cannot measure. */
   offset?: number;
   className?: string;
   as?: 'span' | 'h1' | 'div';
@@ -26,35 +29,21 @@ export function Wordmark({
 }) {
   const d = offset ?? (typeof size === 'number' ? Math.max(1.5, size * 0.05) : 1.5);
 
-  const base: React.CSSProperties = {
-    fontFamily: '"Anton", "Sackers Gothic", "Space Grotesk", sans-serif',
-    fontSize: size,
-    lineHeight: 0.86,
-    letterSpacing: '-0.005em',
-    display: 'block',
-    whiteSpace: 'nowrap',
-  };
-
-  const ghost: React.CSSProperties = {
-    ...base,
-    position: 'absolute',
-    inset: 0,
-    pointerEvents: 'none',
-    userSelect: 'none',
-  };
-
   return (
     <Tag
       className={className}
-      style={{ position: 'relative', display: 'inline-block', lineHeight: 0.86 }}
+      style={{
+        fontFamily: 'var(--font-wordmark), "Sackers Gothic", var(--font-display), sans-serif',
+        fontSize: size,
+        lineHeight: 0.86,
+        letterSpacing: '-0.005em',
+        display: 'inline-block',
+        whiteSpace: 'nowrap',
+        color: 'var(--brand-white)',
+        textShadow: `${-d}px ${d * 0.7}px 0 var(--brand-magenta), ${d}px ${-d * 0.7}px 0 var(--brand-cyan)`,
+      }}
     >
-      <span aria-hidden style={{ ...ghost, color: 'var(--brand-magenta)', transform: `translate(${-d}px, ${d * 0.7}px)` }}>
-        {text}
-      </span>
-      <span aria-hidden style={{ ...ghost, color: 'var(--brand-cyan)', transform: `translate(${d}px, ${-d * 0.7}px)` }}>
-        {text}
-      </span>
-      <span style={{ ...base, position: 'relative', color: 'var(--brand-white)' }}>{text}</span>
+      {text}
     </Tag>
   );
 }

@@ -246,6 +246,7 @@ export function PhilosophySection() {
       {/* Background: Large watermark text */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] leading-none tracking-tighter pointer-events-none select-none whitespace-nowrap"
+        aria-hidden
         style={{
           fontFamily: 'var(--font-display)',
           color: 'var(--brand-white)',
@@ -296,7 +297,7 @@ export function PhilosophySection() {
             style={{ fontFamily: 'var(--font-display)' }}
           >
             THE NON-<br />
-            <span style={{ color: 'var(--brand-violet)' }}>NEGOTIABLES</span>
+            <span style={{ color: 'var(--brand-violet-text)' }}>NEGOTIABLES</span>
           </h2>
           <motion.div
             className="mt-6 flex items-center gap-4"

@@ -22,6 +22,7 @@ export function SelectedDamageSection() {
     >
       <div
         className="absolute top-1/4 left-1/2 -translate-x-1/2 text-[16vw] leading-none tracking-tighter pointer-events-none select-none whitespace-nowrap"
+        aria-hidden
         style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-white)', opacity: 0.017 }}
       >
         RECEIPTS

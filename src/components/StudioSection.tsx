@@ -121,7 +121,7 @@ export function StudioSection() {
               {[
                 { value: '0.003s', label: 'RENDER TIME', color: 'var(--brand-cyan)' },
                 { value: '\u221E', label: 'CREATIVE OUTPUT', color: 'var(--brand-magenta)' },
-                { value: 'NULL', label: 'BORING FACTOR', color: 'var(--brand-violet)' },
+                { value: 'NULL', label: 'BORING FACTOR', color: 'var(--brand-violet-text)' },
               ].map((stat, i) => (
                 <div
                   key={i}
@@ -161,7 +161,9 @@ export function StudioSection() {
             >
               <img
                 src="https://images.unsplash.com/photo-1683189238039-173f232b2338?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkcmFtYXRpYyUyMGNpbmVtYSUyMGNhbWVyYSUyMG1vdGlvbiUyMGJsdXIlMjBsaWdodHN8ZW58MXx8fHwxNzczODMxMTA1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="TaleCrafters cinematic production studio: dramatic lighting and camera motion blur"
+                alt="TaleCrafters cinematic production studio, dramatic lighting and camera motion blur"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
                 style={{ filter: 'contrast(1.3) saturate(1.2)' }}
               />
@@ -183,12 +185,30 @@ export function StudioSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              <img
-                src="/human-taste.png"
-                alt="TaleCrafters creative director working in red-lit studio: human taste meets machine velocity"
-                className="w-full h-full object-cover"
-                style={{ filter: 'contrast(1.1) saturate(1.1)' }}
-              />
+              {/* Was a 2MB PNG served raw, which made it the heaviest request
+                  on the site by a factor of six. Same picture, AVIF first. */}
+              <picture>
+                <source
+                  type="image/avif"
+                  srcSet="/img/studio/human-taste-480.avif 480w, /img/studio/human-taste-960.avif 960w"
+                  sizes="(max-width: 1024px) 55vw, 28vw"
+                />
+                <source
+                  type="image/webp"
+                  srcSet="/img/studio/human-taste-480.webp 480w, /img/studio/human-taste-960.webp 960w"
+                  sizes="(max-width: 1024px) 55vw, 28vw"
+                />
+                <img
+                  src="/img/studio/human-taste-960.webp"
+                  alt="TaleCrafters creative director working in a red-lit studio, human taste meeting machine velocity"
+                  width={960}
+                  height={960}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                  style={{ filter: 'contrast(1.1) saturate(1.1)' }}
+                />
+              </picture>
               <div
                 className="absolute inset-0"
                 style={{ background: 'linear-gradient(to top, rgba(255,45,111,0.15), transparent 50%)' }}

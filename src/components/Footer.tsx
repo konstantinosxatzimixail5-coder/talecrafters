@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Wordmark } from './brand/Wordmark';
 import { navGroups } from '@/lib/nav';
+import { solutions } from '@/data/solutions';
 import { site } from '@/lib/site';
 
 const legal = [
@@ -11,9 +12,11 @@ const legal = [
   { label: 'Privacy Policy', href: '/privacy' },
 ];
 
+// Only profiles that exist. Adding a link here means adding the same URL to
+// `site.sameAs`, so the footer and the Organization node never disagree about
+// who this company is.
 const social = [
-  { label: 'LI', title: 'LinkedIn', color: 'var(--brand-violet)', href: 'https://www.linkedin.com/company/talecrafterss/' },
-  { label: 'IG', title: 'Instagram', color: 'var(--brand-magenta)', href: 'https://www.instagram.com/talecrafters.studio/' },
+  { label: 'LI', title: 'LinkedIn', color: 'var(--brand-violet-text)', href: 'https://www.linkedin.com/company/talecrafterss/' },
 ];
 
 export function Footer() {
@@ -136,6 +139,30 @@ export function Footer() {
               ))}
             </ul>
           </div>
+        </div>
+
+        {/* The plain-language index. The Arsenal keeps our names for these
+            things; this row uses the ones people search for. */}
+        <div className="pb-10">
+          <div
+            className="text-[10px] tracking-[0.28em] mb-4"
+            style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+          >
+            WHAT WE ARE HIRED FOR
+          </div>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            {solutions.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/${s.slug}`}
+                  className="text-sm transition-colors"
+                  style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
+                >
+                  {s.plainName}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div

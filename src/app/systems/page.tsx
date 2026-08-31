@@ -131,7 +131,7 @@ export default function SystemsPage() {
                   <div className="p-7 h-full relative" style={{ border: '1px solid rgba(139,0,255,0.28)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
                     <div className="h-[3px] absolute top-0 left-0 right-0" style={{ backgroundColor: 'var(--brand-violet)' }} />
                     <div className="flex items-baseline justify-between mb-4">
-                      <span className="text-4xl tracking-tighter" style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-violet)', opacity: 0.45 }}>
+                      <span className="text-4xl tracking-tighter" style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-violet-text)', opacity: 0.45 }}>
                         {e.n}
                       </span>
                       <span className="text-[11px] tracking-[0.2em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
@@ -196,7 +196,7 @@ export default function SystemsPage() {
               <Link
                 href="/pipelines/operator-stack"
                 className="inline-block px-6 py-3 text-sm tracking-wider"
-                style={{ fontFamily: 'var(--font-mono)', border: '1px solid var(--brand-violet)', color: 'var(--brand-violet)', textDecoration: 'none' }}
+                style={{ fontFamily: 'var(--font-mono)', border: '1px solid var(--brand-violet)', color: 'var(--brand-violet-text)', textDecoration: 'none' }}
               >
                 READ THE OPERATOR STACK PIPELINE →
               </Link>

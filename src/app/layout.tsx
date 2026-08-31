@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Space_Grotesk, Inter, JetBrains_Mono, Anton } from "next/font/google";
 import "@/styles/globals.css";
 import { CookieConsent } from "@/components/CookieConsent";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -7,13 +8,44 @@ import { JsonLd } from "@/components/JsonLd";
 import { orgSchema, websiteSchema } from "@/lib/seo";
 import { SITE_URL, site } from "@/lib/site";
 
+// Self-hosted at build time. This removes the render-blocking request to
+// fonts.googleapis.com that the CSS @import used to make, and the swap flash
+// that came with it. Each face exposes a variable that theme.css aliases.
+const display = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--tc-display",
+  display: "swap",
+});
+
+const body = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--tc-body",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--tc-mono",
+  display: "swap",
+});
+
+const wordmark = Anton({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--tc-wordmark",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "TaleCrafters — Synthetic Media Studio | Films, Systems & Original IP",
     template: "%s | TaleCrafters",
   },
-  description: site.description,
+  description: site.classification,
   applicationName: "TaleCrafters",
   keywords: [
     "TaleCrafters",
@@ -65,7 +97,15 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  icons: { icon: "/brand/mark-square.png", apple: "/brand/mark-square.png" },
+  icons: {
+    // A 1024px PNG is the right size for a link preview and the wrong size for
+    // a browser tab.
+    icon: [
+      { url: "/brand/icon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/brand/mark-square.png", sizes: "1024x1024", type: "image/png" },
+    ],
+    apple: { url: "/brand/apple-icon.png", sizes: "180x180" },
+  },
   category: "Creative production",
 };
 
@@ -78,7 +118,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB">
+    <html
+      lang="en-GB"
+      className={`${display.variable} ${body.variable} ${mono.variable} ${wordmark.variable}`}
+    >
       <body
         style={{
           backgroundColor: "var(--brand-black)",

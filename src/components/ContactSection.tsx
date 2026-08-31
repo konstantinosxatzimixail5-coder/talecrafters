@@ -23,10 +23,10 @@ function HandshakeAnimIcon() {
 const projectTypes = [
   { id: 'visual-warfare', label: 'Visual Warfare', color: 'var(--brand-magenta)', icon: Compass },
   { id: 'narrative', label: 'Narrative Engineering', color: 'var(--brand-cyan)', icon: BookMarked },
-  { id: 'strategy', label: 'Strategy & Reputation', color: 'var(--brand-violet)', icon: Crosshair },
+  { id: 'strategy', label: 'Strategy & Reputation', color: 'var(--brand-violet-text)', icon: Crosshair },
   { id: 'synthetic', label: 'Synthetic Beings', color: 'var(--brand-gold)', icon: Cpu },
   { id: 'design', label: 'Design Weaponry', color: 'var(--brand-magenta)', icon: Swords },
-  { id: 'wildcard', label: 'Something Unhinged', color: 'var(--brand-violet)', icon: Sparkles },
+  { id: 'wildcard', label: 'Something Unhinged', color: 'var(--brand-violet-text)', icon: Sparkles },
 ];
 
 // Budget is now a free-text input + "No clue" toggle
@@ -35,7 +35,7 @@ const urgencyLevels = [
   { id: 'yesterday', label: 'YESTERDAY', color: 'var(--brand-magenta)', desc: 'We needed this last week' },
   { id: 'soon', label: 'THIS MONTH', color: 'var(--brand-gold)', desc: 'Time is ticking' },
   { id: 'planned', label: 'THIS QUARTER', color: 'var(--brand-cyan)', desc: 'Strategically planned' },
-  { id: 'exploring', label: 'JUST EXPLORING', color: 'var(--brand-violet)', desc: 'Kicking tyres' },
+  { id: 'exploring', label: 'JUST EXPLORING', color: 'var(--brand-violet-text)', desc: 'Kicking tyres' },
 ];
 
 export function ContactSection({ hideHeading = false }: { hideHeading?: boolean } = {}) {
@@ -559,7 +559,7 @@ export function ContactSection({ hideHeading = false }: { hideHeading?: boolean 
                           {budgetValue || '—'}
                         </div>
                         <div>
-                          <span style={{ color: 'var(--brand-violet)' }}>agent:</span>{' '}
+                          <span style={{ color: 'var(--brand-violet-text)' }}>agent:</span>{' '}
                           {name || '—'}{company ? ` @ ${company}` : ''}
                         </div>
                       </div>
@@ -598,9 +598,10 @@ export function ContactSection({ hideHeading = false }: { hideHeading?: boolean 
                     style={{
                       fontFamily: 'var(--font-display)',
                       backgroundColor: canProceed() ? 'var(--brand-cyan)' : 'var(--brand-concrete)',
-                      color: canProceed() ? 'var(--brand-black)' : 'var(--brand-concrete-light)',
-                      opacity: canProceed() ? 1 : 0.5,
+                      color: canProceed() ? 'var(--brand-black)' : '#B9B9B9',
+                      cursor: canProceed() ? 'pointer' : 'not-allowed',
                     }}
+                    aria-disabled={!canProceed()}
                     onClick={() => canProceed() && setStep(step + 1)}
                     whileHover={canProceed() ? { scale: 1.05 } : {}}
                     whileTap={canProceed() ? { scale: 0.95 } : {}}

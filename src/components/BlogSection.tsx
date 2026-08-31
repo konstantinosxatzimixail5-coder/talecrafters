@@ -30,7 +30,7 @@ const posts = [
     category: "PROCESS",
     readTime: "5 min",
     date: "Mar 3, 2026",
-    color: 'var(--brand-violet)',
+    color: 'var(--brand-violet-text)',
   },
   {
     title: "Against Minimalism",

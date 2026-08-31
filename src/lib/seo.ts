@@ -54,13 +54,19 @@ export function pageMeta({
 // Everything below returns a plain object. The <JsonLd> component serialises it.
 
 export const orgSchema = () => ({
-  '@type': 'Organization',
+  '@type': ['Organization', 'ProfessionalService'],
   '@id': `${SITE_URL}/#organization`,
   name: site.name,
   legalName: site.legalName,
+  // The trading name people search for, distinct from the registered entity.
+  alternateName: [...new Set([site.alternateName, site.legalName])],
   url: SITE_URL,
   logo: { '@type': 'ImageObject', url: abs('/brand/mark-square.png'), width: 1024, height: 1024 },
-  description: site.description,
+  image: abs('/brand/mark-square.png'),
+  // The literal classification, not the strapline. This is the sentence a
+  // search engine uses to work out what kind of company this is.
+  description: site.classification,
+  slogan: site.strapline,
   email: site.email,
   foundingDate: site.founded,
   sameAs: [...site.sameAs],
@@ -68,17 +74,43 @@ export const orgSchema = () => ({
     '@type': 'PostalAddress',
     streetAddress: site.address.street,
     addressLocality: site.address.city,
+    addressRegion: 'England',
     postalCode: site.address.postcode,
     addressCountry: site.address.country,
   },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'Sales',
+      email: site.email,
+      url: abs('/contact'),
+      areaServed: ['GB', 'EU', 'US'],
+      availableLanguage: ['English', 'Greek'],
+    },
+  ],
+  areaServed: [
+    { '@type': 'Country', name: 'United Kingdom' },
+    { '@type': 'Place', name: 'Europe' },
+    { '@type': 'Country', name: 'United States' },
+  ],
   knowsAbout: [
     'Synthetic media production',
-    'Generative video',
+    'Generative video production',
+    'AI video production',
     'Creative direction',
     'Brand strategy',
     'Agentic workflows',
-    'Content automation',
+    'Creative automation',
+    'Content infrastructure',
     'Narrative design',
+    'Synthetic UGC',
+    'AI product photography',
+  ],
+  makesOffer: [
+    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Generative film, advertising and motion' } },
+    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Creative strategy, storytelling and IP' } },
+    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Agentic workflows, automation and content infrastructure' } },
+    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Websites, digital experiences and brand design' } },
   ],
 });
 
@@ -86,8 +118,11 @@ export const websiteSchema = () => ({
   '@type': 'WebSite',
   '@id': `${SITE_URL}/#website`,
   url: SITE_URL,
+  // `name` is what Google uses for the site name in results, so it stays the
+  // short form people actually type.
   name: site.name,
-  description: site.description,
+  alternateName: [site.alternateName, site.legalName],
+  description: site.classification,
   publisher: { '@id': `${SITE_URL}/#organization` },
   inLanguage: 'en-GB',
 });
@@ -175,5 +210,51 @@ export const howToSchema = (h: {
     position: i + 1,
     name: s.name,
     text: s.text,
+  })),
+});
+
+export const articleSchema = (a: {
+  title: string;
+  description: string;
+  slug: string;
+  published: string;
+  modified?: string;
+  author?: string;
+  image?: string;
+  tags?: string[];
+}) => ({
+  '@type': 'BlogPosting',
+  '@id': abs(`/blog/${a.slug}/#article`),
+  headline: a.title.slice(0, 110), // Google truncates past ~110 characters
+  description: a.description,
+  url: abs(`/blog/${a.slug}`),
+  datePublished: a.published,
+  dateModified: a.modified ?? a.published,
+  author: a.author && a.author !== 'TaleCrafters'
+    ? { '@type': 'Person', name: a.author }
+    : { '@id': `${SITE_URL}/#organization` },
+  publisher: { '@id': `${SITE_URL}/#organization` },
+  isPartOf: { '@id': `${SITE_URL}/blog/#blog` },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': abs(`/blog/${a.slug}`) },
+  inLanguage: 'en-GB',
+  ...(a.image ? { image: [a.image] } : {}),
+  ...(a.tags?.length ? { keywords: a.tags.join(', ') } : {}),
+});
+
+export const blogSchema = (posts: { title: string; slug: string; published: string }[]) => ({
+  '@type': 'Blog',
+  '@id': `${SITE_URL}/blog/#blog`,
+  url: abs('/blog'),
+  name: 'The TaleCrafters Blog',
+  description:
+    'Dispatches on synthetic media production, generative video, creative systems and the craft behind them.',
+  publisher: { '@id': `${SITE_URL}/#organization` },
+  inLanguage: 'en-GB',
+  blogPost: posts.map((p) => ({
+    '@type': 'BlogPosting',
+    '@id': abs(`/blog/${p.slug}/#article`),
+    headline: p.title.slice(0, 110),
+    url: abs(`/blog/${p.slug}`),
+    datePublished: p.published,
   })),
 });
