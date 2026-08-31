@@ -72,7 +72,7 @@ export function ServicesSection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-violet)' }}
         >
-          003 / WHAT WE WEAPONISE
+          004 / WHAT WE WEAPONISE
         </span>
       </motion.div>
 

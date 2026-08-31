@@ -53,7 +53,7 @@ export default function WorkIndex() {
       />
 
       <PageHeader
-        eyebrow="004 / SELECTED DAMAGE"
+        eyebrow="005 / SELECTED DAMAGE"
         title="SELECTED"
         accentWord="DAMAGE"
         color="var(--brand-magenta)"

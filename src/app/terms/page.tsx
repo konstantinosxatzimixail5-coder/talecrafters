@@ -18,7 +18,7 @@ export default function TermsPage() {
       }}
     >
       {/* Back Link */}
-      <div className="px-6 pt-8 md:px-12 lg:px-24">
+      <div className="px-6 pt-28 md:px-12 md:pt-32 lg:px-24">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm transition-opacity hover:opacity-70"

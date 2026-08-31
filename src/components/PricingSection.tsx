@@ -104,7 +104,7 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}
         >
-          005 / PACKAGES
+          007 / PACKAGES
         </span>
       </motion.div>
 

@@ -278,7 +278,7 @@ export function PhilosophySection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}
         >
-          002 / PHILOSOPHY
+          003 / PHILOSOPHY
         </span>
       </motion.div>
 

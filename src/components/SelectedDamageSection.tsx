@@ -39,7 +39,7 @@ export function SelectedDamageSection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}
         >
-          004 / SELECTED DAMAGE
+          005 / SELECTED DAMAGE
         </span>
       </motion.div>
 

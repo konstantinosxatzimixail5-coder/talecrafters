@@ -30,7 +30,7 @@ export default function PackagesPage() {
     <>
       <JsonLd graph={[breadcrumbSchema(crumbs), faqSchema(qa)]} />
       <PageHeader
-        eyebrow="005 / PACKAGES"
+        eyebrow="007 / PACKAGES"
         title="PICK YOUR"
         accentWord="PLOT"
         color="var(--brand-magenta)"

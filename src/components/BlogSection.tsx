@@ -81,7 +81,7 @@ export function BlogSection() {
           className="text-xs tracking-[0.3em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
         >
-          006 / THE BLOG
+          008 / THE BLOG
         </span>
       </motion.div>
 

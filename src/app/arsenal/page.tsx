@@ -74,7 +74,7 @@ export default function ArsenalPage() {
       />
 
       <PageHeader
-        eyebrow="003 / WHAT WE WEAPONISE"
+        eyebrow="004 / WHAT WE WEAPONISE"
         title="OUR"
         accentWord="ARSENAL"
         color="var(--brand-cyan)"

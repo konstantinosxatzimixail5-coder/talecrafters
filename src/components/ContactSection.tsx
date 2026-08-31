@@ -160,7 +160,7 @@ export function ContactSection({ hideHeading = false }: { hideHeading?: boolean 
             className="text-xs tracking-[0.3em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
           >
-            007 / START A CONSPIRACY
+            009 / START A CONSPIRACY
           </span>
         </motion.div>
       )}
