@@ -2,29 +2,27 @@ import { client, urlFor } from '@/sanity/client';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/JsonLd';
-import { blogSchema, breadcrumbSchema } from '@/lib/seo';
+import { blogSchema, breadcrumbSchema, pageMeta } from '@/lib/seo';
+import { posts as localPosts, readingMinutes } from '@/data/posts';
 
-export const metadata: Metadata = {
-  title: 'Blog — TaleCrafters | Thoughts on Synthetic Media & Storytelling',
-  description: 'Dispatches from the frontlines of synthetic media, storytelling, and creative chaos. Insights, rants, and the occasional manifesto.',
-  openGraph: {
-    title: 'Blog: TaleCrafters',
-    description: 'Dispatches from the frontlines of synthetic media, storytelling, and creative chaos.',
-    url: 'https://talecrafters.studio/blog',
-    siteName: 'TaleCrafters',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Blog: TaleCrafters',
-    description: 'Dispatches from the frontlines of synthetic media, storytelling, and creative chaos.',
-  },
-  alternates: { canonical: 'https://talecrafters.studio/blog' },
-};
+export const metadata: Metadata = pageMeta({
+  title: 'Blog — Synthetic Media Production, Costs, Compliance and Craft',
+  description:
+    'Working notes from a synthetic media studio: what generative production costs, how to keep a product consistent across a hundred shots, what has to be disclosed, and where creative automation actually saves a week.',
+  path: '/blog',
+  keywords: [
+    'synthetic media blog',
+    'generative video production',
+    'AI video production costs',
+    'creative automation',
+    'AI advertising disclosure',
+    'AI video craft',
+  ],
+});
 
 export const revalidate = 60;
 
-interface Post {
+interface CmsPost {
   _id: string;
   title: string;
   slug: { current: string };
@@ -35,8 +33,25 @@ interface Post {
   author?: string;
 }
 
-// An unreachable dataset renders an empty index rather than a 500.
-async function getPosts(): Promise<Post[]> {
+/**
+ * One card shape, two sources. The index does not care where a post came from,
+ * so normalising here keeps the branch out of the markup.
+ */
+interface Card {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt?: string;
+  published: string;
+  tags: string[];
+  image?: string;
+  imageAlt?: string;
+  /** Present on repo-native posts, which know their own length. */
+  minutes?: number;
+}
+
+// An unreachable dataset costs us the CMS cards, not the page.
+async function getCmsPosts(): Promise<CmsPost[]> {
   try {
     return await client.fetch(
       `*[_type == "post"] | order(publishedAt desc) {
@@ -48,8 +63,42 @@ async function getPosts(): Promise<Post[]> {
   }
 }
 
+async function getCards(): Promise<Card[]> {
+  const cms = await getCmsPosts();
+  const localSlugs = new Set(localPosts.map((p) => p.slug));
+
+  const cards: Card[] = [
+    ...localPosts.map((p) => ({
+      id: p.slug,
+      title: p.title,
+      slug: p.slug,
+      excerpt: p.excerpt,
+      published: p.published,
+      tags: p.tags,
+      image: `/img/blog/${p.image}-960.webp`,
+      imageAlt: p.imageAlt,
+      minutes: readingMinutes(p),
+    })),
+    // A repo slug wins a collision, so the CMS cannot shadow a reviewed file.
+    ...cms
+      .filter((p) => p.slug?.current && !localSlugs.has(p.slug.current))
+      .map((p) => ({
+        id: p._id,
+        title: p.title,
+        slug: p.slug.current,
+        excerpt: p.excerpt,
+        published: p.publishedAt,
+        tags: p.tags ?? [],
+        image: p.featuredImage ? urlFor(p.featuredImage).width(600).height(338).url() : undefined,
+        imageAlt: p.featuredImage?.alt ?? p.title,
+      })),
+  ];
+
+  return cards.sort((a, b) => b.published.localeCompare(a.published));
+}
+
 export default async function BlogPage() {
-  const posts = await getPosts();
+  const posts = await getCards();
 
   return (
     <div
@@ -69,8 +118,8 @@ export default async function BlogPage() {
           blogSchema(
             posts.map((p) => ({
               title: p.title,
-              slug: p.slug.current,
-              published: p.publishedAt,
+              slug: p.slug,
+              published: p.published,
             }))
           ),
         ]}
@@ -106,7 +155,9 @@ export default async function BlogPage() {
           className="text-lg max-w-2xl"
           style={{ color: 'var(--brand-concrete-light)' }}
         >
-          Unfiltered opinions on creativity, technology, and why most brands are terrified of being interesting.
+          What generative production actually costs, how to keep a product consistent across a hundred shots,
+          what has to be disclosed, and where creative automation saves a week. Working notes rather than
+          thought leadership.
         </p>
       </div>
 
@@ -124,8 +175,8 @@ export default async function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post) => (
               <Link
-                key={post._id}
-                href={`/blog/${post.slug.current}`}
+                key={post.id}
+                href={`/blog/${post.slug}`}
                 className="group block transition-transform duration-300 hover:-translate-y-1"
                 style={{ textDecoration: 'none' }}
               >
@@ -136,17 +187,18 @@ export default async function BlogPage() {
                     backgroundColor: 'rgba(255,255,255,0.02)',
                   }}
                 >
-                  {post.featuredImage && (
+                  {post.image && (
                     <div className="aspect-[16/9] overflow-hidden">
                       <img
-                        src={urlFor(post.featuredImage).width(600).height(338).url()}
-                        alt={post.featuredImage.alt || post.title}
+                        src={post.image}
+                        alt={post.imageAlt ?? ''}
+                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   )}
                   <div className="p-6">
-                    {post.tags && post.tags.length > 0 && (
+                    {post.tags.length > 0 && (
                       <div className="flex gap-2 mb-3 flex-wrap">
                         {post.tags.slice(0, 3).map((tag) => (
                           <span
@@ -182,11 +234,12 @@ export default async function BlogPage() {
                         className="text-xs"
                         style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
                       >
-                        {new Date(post.publishedAt).toLocaleDateString('en-GB', {
+                        {new Date(post.published).toLocaleDateString('en-GB', {
                           day: 'numeric',
                           month: 'short',
                           year: 'numeric',
                         })}
+                        {post.minutes ? ` · ${post.minutes} min` : ''}
                       </span>
                       <span
                         className="text-sm transition-colors group-hover:text-[var(--brand-magenta)]"

@@ -5,6 +5,7 @@ import { terms } from '@/data/glossary';
 import { categories, arms } from '@/data/arsenal';
 import { resources } from '@/data/resources';
 import { solutions } from '@/data/solutions';
+import { posts } from '@/data/posts';
 
 export const dynamic = 'force-static';
 
@@ -95,6 +96,20 @@ export function GET() {
   lines.push('');
   for (const r of resources) {
     lines.push(`- [${r.title}](${SITE_URL}/armoury/${r.slug}): ${r.count}. ${r.blurb}`);
+  }
+  lines.push('');
+
+  lines.push('## Writing');
+  lines.push('');
+  lines.push(
+    `Working notes on synthetic media production, published in full at ${SITE_URL}/blog. Every piece states ` +
+      `its answer in the opening paragraph and carries its own questions and answers at the foot.`
+  );
+  lines.push('');
+  for (const p of posts) {
+    lines.push(
+      `- [${p.title}](${SITE_URL}/blog/${p.slug}) (${p.published}): ${p.standfirst}`
+    );
   }
   lines.push('');
 

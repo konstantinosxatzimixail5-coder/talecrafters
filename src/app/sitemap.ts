@@ -6,6 +6,8 @@ import { pipelines } from '@/data/pipelines';
 import { terms, GLOSSARY_TAGS } from '@/data/glossary';
 import { resources } from '@/data/resources';
 import { solutions } from '@/data/solutions';
+import { posts as localPosts } from '@/data/posts';
+import { people } from '@/lib/site';
 
 type Entry = MetadataRoute.Sitemap[number];
 
@@ -42,9 +44,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const generated: MetadataRoute.Sitemap = [
     ...work.map((w) => page(`/work/${w.slug}`, 0.8, 'monthly')),
     ...pipelines.map((p) => page(`/pipelines/${p.slug}`, 0.7, 'monthly')),
-    ...resources.map((r) => page(`/armoury/${r.slug}`, 0.7, 'monthly')),
+    ...resources.map((r) => page(`/armoury/${r.slug}`, 0.75, 'monthly')),
+    ...resources.filter((r) => r.pdf).map((r) => page(r.pdf!, 0.5, 'yearly')),
     ...terms.map((t) => page(`/glossary/${t.slug}`, 0.6, 'monthly')),
     ...GLOSSARY_TAGS.map((t) => page(`/glossary/tag/${t}`, 0.5, 'monthly')),
+    // Repo-native posts. These have a real lastModified rather than "now",
+    // which is the whole reason a hand-maintained sitemap is worth having.
+    ...localPosts.map((p) =>
+      page(`/blog/${p.slug}`, 0.7, 'monthly', new Date(p.modified ?? p.published))
+    ),
+    // Empty until somebody is on an author page, and the index 404s until then,
+    // so it must not appear in the sitemap before that.
+    ...(people.length ? [page('/authors', 0.5, 'monthly')] : []),
+    ...people.map((p) => page(`/authors/${p.slug}`, 0.5, 'monthly')),
   ];
 
   // The blog lives in Sanity. A dataset that is unreachable at build time
@@ -54,9 +66,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const posts = await client.fetch<{ slug: string; publishedAt: string }[]>(
       `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) { "slug": slug.current, publishedAt }`
     );
-    blogPages = posts.map((p) =>
-      page(`/blog/${p.slug}`, 0.6, 'weekly', new Date(p.publishedAt))
-    );
+    // A repo slug wins a collision, so the CMS never emits a duplicate URL.
+    const localSlugs = new Set(localPosts.map((p) => p.slug));
+    blogPages = posts
+      .filter((p) => !localSlugs.has(p.slug))
+      .map((p) => page(`/blog/${p.slug}`, 0.6, 'weekly', new Date(p.publishedAt)));
   } catch {
     blogPages = [];
   }

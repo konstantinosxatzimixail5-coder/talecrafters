@@ -4,7 +4,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { JsonLd } from '@/components/JsonLd';
-import { articleSchema, breadcrumbSchema } from '@/lib/seo';
+import { articleSchema, breadcrumbSchema, pageMeta } from '@/lib/seo';
+import { LocalPostArticle } from '@/components/LocalPostArticle';
+import { posts, getPost as getLocalPost } from '@/data/posts';
 
 interface Post {
   _id: string;
@@ -33,21 +35,44 @@ async function getPost(slug: string): Promise<Post | null> {
   }
 }
 
-// A dataset that is unreachable at build time should cost us the pre-rendered
-// post pages, not the whole deploy. The route still renders on demand.
+/**
+ * Two sources, one route.
+ *
+ * Posts written into the repo always pre-render. Posts in Sanity pre-render
+ * when the dataset is reachable at build time and render on demand when it is
+ * not, so an unreachable CMS costs us those pages rather than the whole deploy.
+ * A repo slug wins a collision: the file is the reviewable version.
+ */
 export async function generateStaticParams() {
+  const local = posts.map((p) => ({ slug: p.slug }));
   try {
-    const posts = await client.fetch<{ slug: string }[]>(
+    const cms = await client.fetch<{ slug: string }[]>(
       `*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`
     );
-    return posts.map((post) => ({ slug: post.slug }));
+    const seen = new Set(local.map((p) => p.slug));
+    return [...local, ...cms.filter((p) => !seen.has(p.slug)).map((p) => ({ slug: p.slug }))];
   } catch {
-    return [];
+    return local;
   }
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+
+  const local = getLocalPost(slug);
+  if (local) {
+    return pageMeta({
+      title: local.metaTitle ?? local.title,
+      description: local.metaDescription,
+      path: `/blog/${local.slug}`,
+      image: `/img/blog/${local.image}-1600.webp`,
+      type: 'article',
+      publishedTime: local.published,
+      modifiedTime: local.modified ?? local.published,
+      keywords: local.keywords,
+    });
+  }
+
   const post = await getPost(slug);
   if (!post) return { title: 'Post Not Found' };
 
@@ -172,6 +197,10 @@ const portableTextComponents = {
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+
+  const local = getLocalPost(slug);
+  if (local) return <LocalPostArticle post={local} />;
+
   const post = await getPost(slug);
   if (!post) notFound();
 

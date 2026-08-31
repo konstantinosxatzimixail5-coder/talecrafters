@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { resources } from '@/data/resources';
+import { terms } from '@/data/glossary';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
@@ -7,11 +8,16 @@ import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 
 export const metadata = pageMeta({
-  title: 'The Armoury — Free Resources',
+  title: 'The Armoury — Free Templates, Checklists and Reference',
   description:
-    'Free reference material from the studio: 38 cinematic camera movements with working prompts, and a prompting guide covering twelve animation styles. No email gate, no download form.',
+    'Nine free resources from the studio: a production brief template, a shot consistency checklist, an AI advertising disclosure checklist, a synthetic UGC consent template, a workflow canvas, a cost calculator, a readiness scorecard, 38 camera movements and a prompting guide. No email gate.',
   path: '/armoury',
   keywords: [
+    'AI video production brief template',
+    'AI advertising disclosure checklist',
+    'synthetic UGC consent template',
+    'creative automation canvas',
+    'AI video cost calculator',
     'free AI video prompts',
     'camera movement prompts',
     'AI animation prompting guide',
@@ -58,7 +64,7 @@ export default function ArmouryIndex() {
         accentWord="NO EMAIL GATE."
         color="var(--brand-gold)"
         crumbs={crumbs}
-        lede="The reference sheets we actually use, published in full. No form, no download wall, no drip sequence waiting on the other side. Use them commercially, change them, put your own name on the version you end up with."
+        lede="The templates, checklists and reference sheets we actually use, published in full and downloadable as PDFs. No form, no download wall, no drip sequence waiting on the other side. Use them commercially, change them, put your own name on the version you end up with."
         meta={[
           { label: 'Resources', value: `${resources.length} and counting` },
           { label: 'Gate', value: 'None' },
@@ -119,9 +125,9 @@ export default function ArmouryIndex() {
           <Eyebrow color="var(--brand-cyan)">ALSO FREE</Eyebrow>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-3">
             {[
-              { href: '/glossary', t: 'The Glossary', n: '47 terms from generative and synthetic media, defined the way a producer needs them.' },
+              { href: '/glossary', t: 'The Glossary', n: `${terms.length} terms from generative and synthetic media, defined the way a producer needs them.` },
               { href: '/pipelines', t: 'The Pipelines', n: 'Three of our seven production pipelines, published with their stages and their gates.' },
-              { href: '/blog', t: 'The Blog', n: 'Dispatches from the frontline, with fewer manifestos than that sounds.' },
+              { href: '/blog', t: 'The Blog', n: 'What generative production costs, what has to be disclosed, and where automation saves a week.' },
             ].map((c) => (
               <Link key={c.href} href={c.href} className="block p-6" style={{ border: '1px solid rgba(255,255,255,0.08)', textDecoration: 'none' }}>
                 <div className="text-2xl tracking-tighter mb-2" style={{ fontFamily: 'var(--font-display)' }}>
