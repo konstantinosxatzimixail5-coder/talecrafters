@@ -7,6 +7,7 @@ import { terms, GLOSSARY_TAGS } from '@/data/glossary';
 import { resources } from '@/data/resources';
 import { solutions } from '@/data/solutions';
 import { posts as localPosts } from '@/data/posts';
+import { films } from '@/data/films';
 import { people } from '@/lib/site';
 
 type Entry = MetadataRoute.Sitemap[number];
@@ -28,7 +29,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     page('/systems', 0.9, 'monthly'),
     page('/create', 0.8, 'monthly'),
     page('/originals', 0.7, 'monthly'),
-    page('/concept-projects', 0.8, 'monthly'),
+    page('/concept-projects', 0.85, 'monthly'),
+    page('/captures', 0.8, 'monthly'),
+    page('/films', 0.85, 'monthly'),
+    ...films.map((f) => page(`/films/${f.slug}`, 0.8, 'monthly')),
     page('/pipelines', 0.8, 'monthly'),
     page('/writing', 0.7, 'monthly'),
     page('/armoury', 0.8, 'monthly'),

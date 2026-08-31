@@ -6,6 +6,9 @@ import { categories, arms } from '@/data/arsenal';
 import { resources } from '@/data/resources';
 import { solutions } from '@/data/solutions';
 import { posts } from '@/data/posts';
+import { films } from '@/data/films';
+import { captures } from '@/data/captures';
+import { conceptBrands } from '@/data/concept';
 
 export const dynamic = 'force-static';
 
@@ -78,6 +81,48 @@ export function GET() {
     lines.push(
       `- [${w.client} — ${w.title}](${SITE_URL}/work/${w.slug}): ${w.summary} Discipline: ${w.discipline}. Year: ${w.year}. Result: ${w.result}`
     );
+  }
+  lines.push('');
+
+  lines.push('## Original short films, with their process sheets');
+  lines.push('');
+  lines.push(
+    'Two original shorts written, designed, directed and cut inside a generative pipeline. ' +
+      'Each is published with the full process document behind it: every generation block, the ' +
+      'prompt as written, the design references and the locks that stopped the world drifting.'
+  );
+  lines.push('');
+  for (const f of films) {
+    lines.push(
+      `- [${f.title}](${SITE_URL}/films/${f.slug}) (${f.runtime}): ${f.logline} Process document: ${SITE_URL}${f.doc.path}`
+    );
+  }
+  lines.push('');
+
+  lines.push('## Concept projects (spec work, invented brands)');
+  lines.push('');
+  lines.push(
+    'Every brand below is invented. Nobody commissioned any of it and none of these products ' +
+      'exist. Each entry states the control gate it was built to test, which is the only reason ' +
+      'a fake brand earns a page.'
+  );
+  lines.push('');
+  for (const b of conceptBrands) {
+    lines.push(
+      `- [${b.name}](${SITE_URL}/concept-projects#${b.slug}): ${b.product}. Proves: ${b.proves}`
+    );
+  }
+  lines.push('');
+
+  lines.push('## Photoreal captures');
+  lines.push('');
+  lines.push(
+    `${captures.length} generated human frames, each kept because it is hard in a specific way, ` +
+      `and each labelled as generated: ${SITE_URL}/captures`
+  );
+  lines.push('');
+  for (const c of captures) {
+    lines.push(`- ${c.title}: ${c.proves}`);
   }
   lines.push('');
 

@@ -358,6 +358,1126 @@
     ],
     "fallback": "/img/bike-barn/frame-01-960.webp"
   },
+  "captures/capture-bus-stop": {
+    "key": "captures/capture-bus-stop",
+    "width": 1408,
+    "height": 768,
+    "aspect": 1.8333,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-bus-stop-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-bus-stop-960.avif"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-bus-stop-1408.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-bus-stop-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-bus-stop-960.webp"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-bus-stop-1408.webp"
+      }
+    ],
+    "fallback": "/img/captures/capture-bus-stop-1408.webp"
+  },
+  "captures/capture-crossing": {
+    "key": "captures/capture-crossing",
+    "width": 1408,
+    "height": 768,
+    "aspect": 1.8333,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-crossing-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-crossing-960.avif"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-crossing-1408.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-crossing-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-crossing-960.webp"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-crossing-1408.webp"
+      }
+    ],
+    "fallback": "/img/captures/capture-crossing-1408.webp"
+  },
+  "captures/capture-doorstep": {
+    "key": "captures/capture-doorstep",
+    "width": 1536,
+    "height": 1024,
+    "aspect": 1.5,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-doorstep-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-doorstep-960.avif"
+      },
+      {
+        "w": 1536,
+        "src": "/img/captures/capture-doorstep-1536.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-doorstep-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-doorstep-960.webp"
+      },
+      {
+        "w": 1536,
+        "src": "/img/captures/capture-doorstep-1536.webp"
+      }
+    ],
+    "fallback": "/img/captures/capture-doorstep-1536.webp"
+  },
+  "captures/capture-kitchen": {
+    "key": "captures/capture-kitchen",
+    "width": 1536,
+    "height": 1024,
+    "aspect": 1.5,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-kitchen-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-kitchen-960.avif"
+      },
+      {
+        "w": 1536,
+        "src": "/img/captures/capture-kitchen-1536.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-kitchen-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-kitchen-960.webp"
+      },
+      {
+        "w": 1536,
+        "src": "/img/captures/capture-kitchen-1536.webp"
+      }
+    ],
+    "fallback": "/img/captures/capture-kitchen-1536.webp"
+  },
+  "captures/capture-late-shift": {
+    "key": "captures/capture-late-shift",
+    "width": 1408,
+    "height": 768,
+    "aspect": 1.8333,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-late-shift-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-late-shift-960.avif"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-late-shift-1408.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-late-shift-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-late-shift-960.webp"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-late-shift-1408.webp"
+      }
+    ],
+    "fallback": "/img/captures/capture-late-shift-1408.webp"
+  },
+  "captures/capture-runway": {
+    "key": "captures/capture-runway",
+    "width": 1408,
+    "height": 768,
+    "aspect": 1.8333,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-runway-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-runway-960.avif"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-runway-1408.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-runway-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-runway-960.webp"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-runway-1408.webp"
+      }
+    ],
+    "fallback": "/img/captures/capture-runway-1408.webp"
+  },
+  "captures/capture-saddler": {
+    "key": "captures/capture-saddler",
+    "width": 1408,
+    "height": 768,
+    "aspect": 1.8333,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-saddler-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-saddler-960.avif"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-saddler-1408.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-saddler-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-saddler-960.webp"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-saddler-1408.webp"
+      }
+    ],
+    "fallback": "/img/captures/capture-saddler-1408.webp"
+  },
+  "captures/capture-sunday-league": {
+    "key": "captures/capture-sunday-league",
+    "width": 1408,
+    "height": 768,
+    "aspect": 1.8333,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-sunday-league-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-sunday-league-960.avif"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-sunday-league-1408.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/captures/capture-sunday-league-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/captures/capture-sunday-league-960.webp"
+      },
+      {
+        "w": 1408,
+        "src": "/img/captures/capture-sunday-league-1408.webp"
+      }
+    ],
+    "fallback": "/img/captures/capture-sunday-league-1408.webp"
+  },
+  "films/skyrunner/sr-a-launch": {
+    "key": "films/skyrunner/sr-a-launch",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-a-launch-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-a-launch-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-a-launch-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-a-launch-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-a-launch-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-a-launch-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-a-launch-1600.webp"
+  },
+  "films/skyrunner/sr-b-rings": {
+    "key": "films/skyrunner/sr-b-rings",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-b-rings-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-b-rings-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-b-rings-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-b-rings-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-b-rings-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-b-rings-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-b-rings-1600.webp"
+  },
+  "films/skyrunner/sr-c-canyon": {
+    "key": "films/skyrunner/sr-c-canyon",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-c-canyon-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-c-canyon-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-c-canyon-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-c-canyon-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-c-canyon-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-c-canyon-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-c-canyon-1600.webp"
+  },
+  "films/skyrunner/sr-d-vortex": {
+    "key": "films/skyrunner/sr-d-vortex",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-d-vortex-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-d-vortex-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-d-vortex-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-d-vortex-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-d-vortex-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-d-vortex-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-d-vortex-1600.webp"
+  },
+  "films/skyrunner/sr-e-dismount": {
+    "key": "films/skyrunner/sr-e-dismount",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-e-dismount-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-e-dismount-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-e-dismount-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-e-dismount-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-e-dismount-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-e-dismount-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-e-dismount-1600.webp"
+  },
+  "films/skyrunner/sr-e-touchdown": {
+    "key": "films/skyrunner/sr-e-touchdown",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-e-touchdown-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-e-touchdown-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-e-touchdown-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-e-touchdown-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-e-touchdown-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-e-touchdown-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-e-touchdown-1600.webp"
+  },
+  "films/skyrunner/sr-f-terrace": {
+    "key": "films/skyrunner/sr-f-terrace",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-f-terrace-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-f-terrace-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-f-terrace-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-f-terrace-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-f-terrace-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-f-terrace-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-f-terrace-1600.webp"
+  },
+  "films/skyrunner/sr-final": {
+    "key": "films/skyrunner/sr-final",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-final-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-final-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-final-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-final-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-final-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-final-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-final-1600.webp"
+  },
+  "films/skyrunner/sr-hero": {
+    "key": "films/skyrunner/sr-hero",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-hero-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-hero-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-hero-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-hero-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-hero-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-hero-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-hero-1600.webp"
+  },
+  "films/skyrunner/sr-poster": {
+    "key": "films/skyrunner/sr-poster",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7768,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-poster-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-poster-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-poster-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-poster-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-poster-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-poster-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-poster-1600.webp"
+  },
+  "films/skyrunner/sr-route-map": {
+    "key": "films/skyrunner/sr-route-map",
+    "width": 1600,
+    "height": 834,
+    "aspect": 1.9187,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-route-map-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-route-map-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-route-map-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-route-map-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-route-map-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-route-map-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-route-map-1600.webp"
+  },
+  "films/skyrunner/sr-strip": {
+    "key": "films/skyrunner/sr-strip",
+    "width": 1600,
+    "height": 225,
+    "aspect": 7.1146,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-strip-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-strip-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-strip-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/skyrunner/sr-strip-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/skyrunner/sr-strip-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/skyrunner/sr-strip-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/skyrunner/sr-strip-1600.webp"
+  },
+  "films/twin-moons/tm-a-contact": {
+    "key": "films/twin-moons/tm-a-contact",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-a-contact-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-a-contact-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-a-contact-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-a-contact-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-a-contact-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-a-contact-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-a-contact-1600.webp"
+  },
+  "films/twin-moons/tm-b-brute": {
+    "key": "films/twin-moons/tm-b-brute",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-b-brute-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-b-brute-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-b-brute-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-b-brute-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-b-brute-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-b-brute-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-b-brute-1600.webp"
+  },
+  "films/twin-moons/tm-c-mound": {
+    "key": "films/twin-moons/tm-c-mound",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-c-mound-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-c-mound-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-c-mound-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-c-mound-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-c-mound-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-c-mound-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-c-mound-1600.webp"
+  },
+  "films/twin-moons/tm-d-shockwave": {
+    "key": "films/twin-moons/tm-d-shockwave",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-d-shockwave-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-d-shockwave-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-d-shockwave-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-d-shockwave-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-d-shockwave-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-d-shockwave-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-d-shockwave-1600.webp"
+  },
+  "films/twin-moons/tm-e-tracer": {
+    "key": "films/twin-moons/tm-e-tracer",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-e-tracer-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-e-tracer-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-e-tracer-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-e-tracer-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-e-tracer-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-e-tracer-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-e-tracer-1600.webp"
+  },
+  "films/twin-moons/tm-f-fireball": {
+    "key": "films/twin-moons/tm-f-fireball",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-f-fireball-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-f-fireball-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-f-fireball-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-f-fireball-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-f-fireball-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-f-fireball-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-f-fireball-1600.webp"
+  },
+  "films/twin-moons/tm-final": {
+    "key": "films/twin-moons/tm-final",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-final-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-final-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-final-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-final-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-final-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-final-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-final-1600.webp"
+  },
+  "films/twin-moons/tm-g-meeting": {
+    "key": "films/twin-moons/tm-g-meeting",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-g-meeting-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-g-meeting-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-g-meeting-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-g-meeting-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-g-meeting-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-g-meeting-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-g-meeting-1600.webp"
+  },
+  "films/twin-moons/tm-h-lock": {
+    "key": "films/twin-moons/tm-h-lock",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-h-lock-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-h-lock-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-h-lock-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-h-lock-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-h-lock-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-h-lock-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-h-lock-1600.webp"
+  },
+  "films/twin-moons/tm-hero": {
+    "key": "films/twin-moons/tm-hero",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-hero-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-hero-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-hero-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-hero-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-hero-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-hero-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-hero-1600.webp"
+  },
+  "films/twin-moons/tm-poster": {
+    "key": "films/twin-moons/tm-poster",
+    "width": 1600,
+    "height": 900,
+    "aspect": 1.7768,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-poster-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-poster-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-poster-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-poster-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-poster-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-poster-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-poster-1600.webp"
+  },
+  "films/twin-moons/tm-strip": {
+    "key": "films/twin-moons/tm-strip",
+    "width": 1600,
+    "height": 225,
+    "aspect": 7.1146,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-strip-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-strip-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-strip-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/twin-moons/tm-strip-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/twin-moons/tm-strip-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/twin-moons/tm-strip-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/twin-moons/tm-strip-1600.webp"
+  },
   "ib-nl/amsterdam": {
     "key": "ib-nl/amsterdam",
     "width": 1600,
@@ -784,6 +1904,25 @@
     ],
     "fallback": "/img/mariposa/logo-480.webp"
   },
+  "mariposa/mariposa": {
+    "key": "mariposa/mariposa",
+    "width": 382,
+    "height": 318,
+    "aspect": 1.2013,
+    "avif": [
+      {
+        "w": 382,
+        "src": "/img/mariposa/mariposa-382.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 382,
+        "src": "/img/mariposa/mariposa-382.webp"
+      }
+    ],
+    "fallback": "/img/mariposa/mariposa-382.webp"
+  },
   "mariposa/mariposa-mousaka": {
     "key": "mariposa/mariposa-mousaka",
     "width": 960,
@@ -810,25 +1949,6 @@
       }
     ],
     "fallback": "/img/mariposa/mariposa-mousaka-960.webp"
-  },
-  "mariposa/mariposa": {
-    "key": "mariposa/mariposa",
-    "width": 382,
-    "height": 318,
-    "aspect": 1.2013,
-    "avif": [
-      {
-        "w": 382,
-        "src": "/img/mariposa/mariposa-382.avif"
-      }
-    ],
-    "webp": [
-      {
-        "w": 382,
-        "src": "/img/mariposa/mariposa-382.webp"
-      }
-    ],
-    "fallback": "/img/mariposa/mariposa-382.webp"
   },
   "mariposa/shrimp-mariposa": {
     "key": "mariposa/shrimp-mariposa",
@@ -973,25 +2093,6 @@
     ],
     "fallback": "/img/selene-cc/explainer-title-960.webp"
   },
-  "selene-cc/logo-dark": {
-    "key": "selene-cc/logo-dark",
-    "width": 480,
-    "height": 243,
-    "aspect": 1.9746,
-    "avif": [
-      {
-        "w": 480,
-        "src": "/img/selene-cc/logo-dark-480.avif"
-      }
-    ],
-    "webp": [
-      {
-        "w": 480,
-        "src": "/img/selene-cc/logo-dark-480.webp"
-      }
-    ],
-    "fallback": "/img/selene-cc/logo-dark-480.webp"
-  },
   "selene-cc/logo": {
     "key": "selene-cc/logo",
     "width": 480,
@@ -1011,43 +2112,78 @@
     ],
     "fallback": "/img/selene-cc/logo-480.webp"
   },
+  "selene-cc/logo-dark": {
+    "key": "selene-cc/logo-dark",
+    "width": 480,
+    "height": 243,
+    "aspect": 1.9746,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/selene-cc/logo-dark-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/selene-cc/logo-dark-480.webp"
+      }
+    ],
+    "fallback": "/img/selene-cc/logo-dark-480.webp"
+  },
   "spec/feral/product-01": {
     "key": "spec/feral/product-01",
-    "width": 480,
-    "height": 596,
+    "width": 928,
+    "height": 1152,
     "aspect": 0.8056,
     "avif": [
       {
         "w": 480,
         "src": "/img/spec/feral/product-01-480.avif"
+      },
+      {
+        "w": 928,
+        "src": "/img/spec/feral/product-01-928.avif"
       }
     ],
     "webp": [
       {
         "w": 480,
         "src": "/img/spec/feral/product-01-480.webp"
+      },
+      {
+        "w": 928,
+        "src": "/img/spec/feral/product-01-928.webp"
       }
     ],
-    "fallback": "/img/spec/feral/product-01-480.webp"
+    "fallback": "/img/spec/feral/product-01-928.webp"
   },
   "spec/feral/product-02": {
     "key": "spec/feral/product-02",
-    "width": 480,
-    "height": 596,
+    "width": 928,
+    "height": 1152,
     "aspect": 0.8056,
     "avif": [
       {
         "w": 480,
         "src": "/img/spec/feral/product-02-480.avif"
+      },
+      {
+        "w": 928,
+        "src": "/img/spec/feral/product-02-928.avif"
       }
     ],
     "webp": [
       {
         "w": 480,
         "src": "/img/spec/feral/product-02-480.webp"
+      },
+      {
+        "w": 928,
+        "src": "/img/spec/feral/product-02-928.webp"
       }
     ],
-    "fallback": "/img/spec/feral/product-02-480.webp"
+    "fallback": "/img/spec/feral/product-02-928.webp"
   },
   "spec/feral/product-03": {
     "key": "spec/feral/product-03",
@@ -1148,117 +2284,165 @@
   },
   "spec/feral/ugc-01": {
     "key": "spec/feral/ugc-01",
-    "width": 480,
-    "height": 773,
+    "width": 622,
+    "height": 1002,
     "aspect": 0.6208,
     "avif": [
       {
         "w": 480,
         "src": "/img/spec/feral/ugc-01-480.avif"
+      },
+      {
+        "w": 622,
+        "src": "/img/spec/feral/ugc-01-622.avif"
       }
     ],
     "webp": [
       {
         "w": 480,
         "src": "/img/spec/feral/ugc-01-480.webp"
+      },
+      {
+        "w": 622,
+        "src": "/img/spec/feral/ugc-01-622.webp"
       }
     ],
-    "fallback": "/img/spec/feral/ugc-01-480.webp"
+    "fallback": "/img/spec/feral/ugc-01-622.webp"
   },
   "spec/feral/ugc-02": {
     "key": "spec/feral/ugc-02",
-    "width": 480,
-    "height": 754,
+    "width": 629,
+    "height": 988,
     "aspect": 0.6366,
     "avif": [
       {
         "w": 480,
         "src": "/img/spec/feral/ugc-02-480.avif"
+      },
+      {
+        "w": 629,
+        "src": "/img/spec/feral/ugc-02-629.avif"
       }
     ],
     "webp": [
       {
         "w": 480,
         "src": "/img/spec/feral/ugc-02-480.webp"
+      },
+      {
+        "w": 629,
+        "src": "/img/spec/feral/ugc-02-629.webp"
       }
     ],
-    "fallback": "/img/spec/feral/ugc-02-480.webp"
+    "fallback": "/img/spec/feral/ugc-02-629.webp"
   },
   "spec/feral/ugc-04": {
     "key": "spec/feral/ugc-04",
-    "width": 480,
-    "height": 758,
+    "width": 621,
+    "height": 981,
     "aspect": 0.633,
     "avif": [
       {
         "w": 480,
         "src": "/img/spec/feral/ugc-04-480.avif"
+      },
+      {
+        "w": 621,
+        "src": "/img/spec/feral/ugc-04-621.avif"
       }
     ],
     "webp": [
       {
         "w": 480,
         "src": "/img/spec/feral/ugc-04-480.webp"
+      },
+      {
+        "w": 621,
+        "src": "/img/spec/feral/ugc-04-621.webp"
       }
     ],
-    "fallback": "/img/spec/feral/ugc-04-480.webp"
+    "fallback": "/img/spec/feral/ugc-04-621.webp"
   },
   "spec/grain-01/ugc-02": {
     "key": "spec/grain-01/ugc-02",
-    "width": 480,
-    "height": 758,
+    "width": 622,
+    "height": 982,
     "aspect": 0.6334,
     "avif": [
       {
         "w": 480,
         "src": "/img/spec/grain-01/ugc-02-480.avif"
+      },
+      {
+        "w": 622,
+        "src": "/img/spec/grain-01/ugc-02-622.avif"
       }
     ],
     "webp": [
       {
         "w": 480,
         "src": "/img/spec/grain-01/ugc-02-480.webp"
+      },
+      {
+        "w": 622,
+        "src": "/img/spec/grain-01/ugc-02-622.webp"
       }
     ],
-    "fallback": "/img/spec/grain-01/ugc-02-480.webp"
+    "fallback": "/img/spec/grain-01/ugc-02-622.webp"
   },
   "spec/grain-01/ugc-03": {
     "key": "spec/grain-01/ugc-03",
-    "width": 480,
-    "height": 759,
+    "width": 626,
+    "height": 990,
     "aspect": 0.6323,
     "avif": [
       {
         "w": 480,
         "src": "/img/spec/grain-01/ugc-03-480.avif"
+      },
+      {
+        "w": 626,
+        "src": "/img/spec/grain-01/ugc-03-626.avif"
       }
     ],
     "webp": [
       {
         "w": 480,
         "src": "/img/spec/grain-01/ugc-03-480.webp"
+      },
+      {
+        "w": 626,
+        "src": "/img/spec/grain-01/ugc-03-626.webp"
       }
     ],
-    "fallback": "/img/spec/grain-01/ugc-03-480.webp"
+    "fallback": "/img/spec/grain-01/ugc-03-626.webp"
   },
   "spec/grain-01/ugc-04": {
     "key": "spec/grain-01/ugc-04",
-    "width": 480,
-    "height": 767,
+    "width": 622,
+    "height": 994,
     "aspect": 0.6258,
     "avif": [
       {
         "w": 480,
         "src": "/img/spec/grain-01/ugc-04-480.avif"
+      },
+      {
+        "w": 622,
+        "src": "/img/spec/grain-01/ugc-04-622.avif"
       }
     ],
     "webp": [
       {
         "w": 480,
         "src": "/img/spec/grain-01/ugc-04-480.webp"
+      },
+      {
+        "w": 622,
+        "src": "/img/spec/grain-01/ugc-04-622.webp"
       }
     ],
-    "fallback": "/img/spec/grain-01/ugc-04-480.webp"
+    "fallback": "/img/spec/grain-01/ugc-04-622.webp"
   },
   "spec/knuckle/fighter": {
     "key": "spec/knuckle/fighter",
@@ -1281,8 +2465,8 @@
   },
   "spec/knuckle/product-01": {
     "key": "spec/knuckle/product-01",
-    "width": 960,
-    "height": 1200,
+    "width": 1122,
+    "height": 1402,
     "aspect": 0.8003,
     "avif": [
       {
@@ -1292,6 +2476,10 @@
       {
         "w": 960,
         "src": "/img/spec/knuckle/product-01-960.avif"
+      },
+      {
+        "w": 1122,
+        "src": "/img/spec/knuckle/product-01-1122.avif"
       }
     ],
     "webp": [
@@ -1302,14 +2490,18 @@
       {
         "w": 960,
         "src": "/img/spec/knuckle/product-01-960.webp"
+      },
+      {
+        "w": 1122,
+        "src": "/img/spec/knuckle/product-01-1122.webp"
       }
     ],
-    "fallback": "/img/spec/knuckle/product-01-960.webp"
+    "fallback": "/img/spec/knuckle/product-01-1122.webp"
   },
   "spec/knuckle/product-02": {
     "key": "spec/knuckle/product-02",
-    "width": 960,
-    "height": 1200,
+    "width": 1122,
+    "height": 1402,
     "aspect": 0.8003,
     "avif": [
       {
@@ -1319,6 +2511,10 @@
       {
         "w": 960,
         "src": "/img/spec/knuckle/product-02-960.avif"
+      },
+      {
+        "w": 1122,
+        "src": "/img/spec/knuckle/product-02-1122.avif"
       }
     ],
     "webp": [
@@ -1329,66 +2525,94 @@
       {
         "w": 960,
         "src": "/img/spec/knuckle/product-02-960.webp"
+      },
+      {
+        "w": 1122,
+        "src": "/img/spec/knuckle/product-02-1122.webp"
       }
     ],
-    "fallback": "/img/spec/knuckle/product-02-960.webp"
+    "fallback": "/img/spec/knuckle/product-02-1122.webp"
   },
   "spec/slab/product-01": {
     "key": "spec/slab/product-01",
-    "width": 480,
-    "height": 562,
+    "width": 870,
+    "height": 1019,
     "aspect": 0.8538,
     "avif": [
       {
         "w": 480,
         "src": "/img/spec/slab/product-01-480.avif"
+      },
+      {
+        "w": 870,
+        "src": "/img/spec/slab/product-01-870.avif"
       }
     ],
     "webp": [
       {
         "w": 480,
         "src": "/img/spec/slab/product-01-480.webp"
+      },
+      {
+        "w": 870,
+        "src": "/img/spec/slab/product-01-870.webp"
       }
     ],
-    "fallback": "/img/spec/slab/product-01-480.webp"
+    "fallback": "/img/spec/slab/product-01-870.webp"
   },
   "spec/slab/ugc-01": {
     "key": "spec/slab/ugc-01",
-    "width": 480,
-    "height": 709,
+    "width": 751,
+    "height": 1110,
     "aspect": 0.6766,
     "avif": [
       {
         "w": 480,
         "src": "/img/spec/slab/ugc-01-480.avif"
+      },
+      {
+        "w": 751,
+        "src": "/img/spec/slab/ugc-01-751.avif"
       }
     ],
     "webp": [
       {
         "w": 480,
         "src": "/img/spec/slab/ugc-01-480.webp"
+      },
+      {
+        "w": 751,
+        "src": "/img/spec/slab/ugc-01-751.webp"
       }
     ],
-    "fallback": "/img/spec/slab/ugc-01-480.webp"
+    "fallback": "/img/spec/slab/ugc-01-751.webp"
   },
   "spec/slab/ugc-03": {
     "key": "spec/slab/ugc-03",
-    "width": 480,
-    "height": 759,
+    "width": 627,
+    "height": 991,
     "aspect": 0.6327,
     "avif": [
       {
         "w": 480,
         "src": "/img/spec/slab/ugc-03-480.avif"
+      },
+      {
+        "w": 627,
+        "src": "/img/spec/slab/ugc-03-627.avif"
       }
     ],
     "webp": [
       {
         "w": 480,
         "src": "/img/spec/slab/ugc-03-480.webp"
+      },
+      {
+        "w": 627,
+        "src": "/img/spec/slab/ugc-03-627.webp"
       }
     ],
-    "fallback": "/img/spec/slab/ugc-03-480.webp"
+    "fallback": "/img/spec/slab/ugc-03-627.webp"
   },
   "talecrafters/logo": {
     "key": "talecrafters/logo",

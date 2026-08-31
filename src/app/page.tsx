@@ -4,6 +4,7 @@ import { UniverseSection } from '@/components/UniverseSection';
 import { PhilosophySection } from '@/components/PhilosophySection';
 import { ServicesSection } from '@/components/ServicesSection';
 import { SelectedDamageSection } from '@/components/SelectedDamageSection';
+import { FilmsSection } from '@/components/FilmsSection';
 import { ProcessSection } from '@/components/ProcessSection';
 import { PricingSection } from '@/components/PricingSection';
 import { BlogSection } from '@/components/BlogSection';
@@ -89,6 +90,9 @@ export default function HomePage() {
       <ServicesSection />
       {/* The receipts, immediately after the claims. */}
       <SelectedDamageSection />
+      {/* The originals, where the whole method is published rather than
+          described: client work proves we deliver, the films prove how. */}
+      <FilmsSection />
       <ProcessSection />
       <PricingSection />
       <BlogSection posts={teaserPosts} />
