@@ -12,7 +12,7 @@ import { pageCopy } from '@/content/copy';
 export const metadata = pageMeta({
   title: 'Selected Damage — Case Studies',
   description:
-    `${work.length} delivered engagements with the problem, the idea, what we made, the result and the artefacts. A restaurant, a consultancy, a motorcycle dealership, a data school, a supplement brand and a Horizon Europe consortium.`,
+    `${work.length} delivered engagements with the problem, the idea, what we made, the result and the artefacts. A restaurant, a consultancy, a motorcycle dealership, a data school, a supplement brand, a Horizon Europe consortium and a property group.`,
   path: '/work',
   keywords: [
     'creative agency case studies',

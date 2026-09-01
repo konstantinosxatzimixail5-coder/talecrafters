@@ -211,25 +211,6 @@ export function HeroSection() {
           </div>
         </motion.div>
 
-        {/* The literal classification, directly under the strapline.
-            "Storytellers drunk on synthetic media" is what a person remembers;
-            this is what a search engine and an answer engine classify from.
-            Both belong on the page, and neither replaces the other. */}
-        <motion.p
-          className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed"
-          style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.62)' }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-        >
-          TaleCrafters is a London-based{' '}
-          <strong style={{ color: 'var(--brand-white)', fontWeight: 500 }}>
-            synthetic media and creative systems studio
-          </strong>
-          . We produce generative films, campaigns and visual worlds, build the automated
-          creative systems that make and distribute them, and develop our own original IP.
-        </motion.p>
-
         {/* Terminal readout */}
         <motion.div
           className="mt-12 max-w-lg p-4"

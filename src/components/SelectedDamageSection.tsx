@@ -2,7 +2,11 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { featuredWork } from '@/data/work';
+import { featuredWork, work } from '@/data/work';
+
+/** The button counts the cases rather than naming a number that goes stale. */
+const COUNT_WORDS = ['NO', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE', 'TEN'];
+const countWord = (n: number) => COUNT_WORDS[n] ?? String(n);
 import { Frame } from './Frame';
 import type { HomeCopy } from '@/content/copy';
 
@@ -188,7 +192,7 @@ export function SelectedDamageSection({ copy }: { copy: HomeCopy['selectedDamage
             className="px-7 py-4 text-base tracking-tight"
             style={{ fontFamily: 'var(--font-display)', backgroundColor: 'var(--brand-magenta)', color: 'var(--brand-white)', textDecoration: 'none' }}
           >
-            ALL SIX CASES →
+            ALL {countWord(work.length)} CASES →
           </Link>
           <Link
             href="/concept-projects"

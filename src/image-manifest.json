@@ -64,6 +64,90 @@
     ],
     "fallback": "/img/amino-alliance/ugc-01-480.webp"
   },
+  "amino-alliance/ugc-02": {
+    "key": "amino-alliance/ugc-02",
+    "width": 478,
+    "height": 852,
+    "aspect": 0.561,
+    "avif": [
+      {
+        "w": 478,
+        "src": "/img/amino-alliance/ugc-02-478.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 478,
+        "src": "/img/amino-alliance/ugc-02-478.webp"
+      }
+    ],
+    "fallback": "/img/amino-alliance/ugc-02-478.webp"
+  },
+  "amino-alliance/ugc-03": {
+    "key": "amino-alliance/ugc-03",
+    "width": 472,
+    "height": 850,
+    "aspect": 0.5553,
+    "avif": [
+      {
+        "w": 472,
+        "src": "/img/amino-alliance/ugc-03-472.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 472,
+        "src": "/img/amino-alliance/ugc-03-472.webp"
+      }
+    ],
+    "fallback": "/img/amino-alliance/ugc-03-472.webp"
+  },
+  "bbda/bootcamp-ad": {
+    "key": "bbda/bootcamp-ad",
+    "width": 960,
+    "height": 530,
+    "aspect": 1.8113,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/bbda/bootcamp-ad-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/bbda/bootcamp-ad-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/bbda/bootcamp-ad-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/bbda/bootcamp-ad-960.webp"
+      }
+    ],
+    "fallback": "/img/bbda/bootcamp-ad-960.webp"
+  },
+  "bbda/carousel-simpsons": {
+    "key": "bbda/carousel-simpsons",
+    "width": 480,
+    "height": 598,
+    "aspect": 0.8027,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/bbda/carousel-simpsons-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/bbda/carousel-simpsons-480.webp"
+      }
+    ],
+    "fallback": "/img/bbda/carousel-simpsons-480.webp"
+  },
   "bbda/datapunk": {
     "key": "bbda/datapunk",
     "width": 960,
@@ -126,6 +210,33 @@
     ],
     "fallback": "/img/bbda/detective-1600.webp"
   },
+  "bbda/info-session": {
+    "key": "bbda/info-session",
+    "width": 960,
+    "height": 538,
+    "aspect": 1.7844,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/bbda/info-session-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/bbda/info-session-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/bbda/info-session-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/bbda/info-session-960.webp"
+      }
+    ],
+    "fallback": "/img/bbda/info-session-960.webp"
+  },
   "bbda/post-03": {
     "key": "bbda/post-03",
     "width": 960,
@@ -179,6 +290,44 @@
       }
     ],
     "fallback": "/img/bbda/post-03b-960.webp"
+  },
+  "bbda/post-superheroes": {
+    "key": "bbda/post-superheroes",
+    "width": 480,
+    "height": 479,
+    "aspect": 1.0021,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/bbda/post-superheroes-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/bbda/post-superheroes-480.webp"
+      }
+    ],
+    "fallback": "/img/bbda/post-superheroes-480.webp"
+  },
+  "bbda/post-viral": {
+    "key": "bbda/post-viral",
+    "width": 480,
+    "height": 889,
+    "aspect": 0.5399,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/bbda/post-viral-480.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/bbda/post-viral-480.webp"
+      }
+    ],
+    "fallback": "/img/bbda/post-viral-480.webp"
   },
   "bbda/python": {
     "key": "bbda/python",
@@ -331,6 +480,33 @@
     ],
     "fallback": "/img/bike-barn/ad-03-1600.webp"
   },
+  "bike-barn/closeup": {
+    "key": "bike-barn/closeup",
+    "width": 960,
+    "height": 536,
+    "aspect": 1.791,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/bike-barn/closeup-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/bike-barn/closeup-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/bike-barn/closeup-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/bike-barn/closeup-960.webp"
+      }
+    ],
+    "fallback": "/img/bike-barn/closeup-960.webp"
+  },
   "bike-barn/frame-01": {
     "key": "bike-barn/frame-01",
     "width": 960,
@@ -357,6 +533,33 @@
       }
     ],
     "fallback": "/img/bike-barn/frame-01-960.webp"
+  },
+  "bike-barn/pov": {
+    "key": "bike-barn/pov",
+    "width": 960,
+    "height": 535,
+    "aspect": 1.7944,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/bike-barn/pov-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/bike-barn/pov-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/bike-barn/pov-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/bike-barn/pov-960.webp"
+      }
+    ],
+    "fallback": "/img/bike-barn/pov-960.webp"
   },
   "captures/capture-bus-stop": {
     "key": "captures/capture-bus-stop",
@@ -1653,6 +1856,52 @@
     ],
     "fallback": "/img/ib-nl/tulips-1600.webp"
   },
+  "jarfis/spokesperson": {
+    "key": "jarfis/spokesperson",
+    "width": 960,
+    "height": 538,
+    "aspect": 1.7844,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/jarfis/spokesperson-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/jarfis/spokesperson-960.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/jarfis/spokesperson-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/jarfis/spokesperson-960.webp"
+      }
+    ],
+    "fallback": "/img/jarfis/spokesperson-960.webp"
+  },
+  "jarfis/tour-frame": {
+    "key": "jarfis/tour-frame",
+    "width": 373,
+    "height": 660,
+    "aspect": 0.5652,
+    "avif": [
+      {
+        "w": 373,
+        "src": "/img/jarfis/tour-frame-373.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 373,
+        "src": "/img/jarfis/tour-frame-373.webp"
+      }
+    ],
+    "fallback": "/img/jarfis/tour-frame-373.webp"
+  },
   "mariposa/beef-stifado": {
     "key": "mariposa/beef-stifado",
     "width": 1600,
@@ -1903,6 +2152,41 @@
       }
     ],
     "fallback": "/img/mariposa/logo-480.webp"
+  },
+  "mariposa/logo-photoreal": {
+    "key": "mariposa/logo-photoreal",
+    "width": 1600,
+    "height": 1600,
+    "aspect": 1,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/mariposa/logo-photoreal-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/mariposa/logo-photoreal-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/mariposa/logo-photoreal-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/mariposa/logo-photoreal-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/mariposa/logo-photoreal-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/mariposa/logo-photoreal-1600.webp"
+      }
+    ],
+    "fallback": "/img/mariposa/logo-photoreal-1600.webp"
   },
   "mariposa/mariposa": {
     "key": "mariposa/mariposa",

@@ -1,4 +1,4 @@
-// Selected Damage. Six delivered engagements, written the sober way on purpose:
+// Selected Damage. The delivered client engagements, written the sober way on purpose:
 // the headlines upstairs are feral, so everything down here is specific or it
 // is nothing. Every claim in this file is one a client could check.
 
@@ -88,13 +88,13 @@ export const work: CaseStudy[] = [
     featured: true,
     accent: 'var(--brand-gold)',
     summary:
-      'Website, brand film and a full set of plate stills for a restaurant whose menu had never been shot.',
+      'A site built for search and answer engines, a film, dish stills from angles the camera never reached, and synthetic social content.',
     problem:
-      'A restaurant on Rhodes needed a website, a film and pictures of dishes nobody had ever photographed. Its own photography covered part of the menu, shot honestly on the terrace under real light, and stopped there.',
+      'A restaurant on Rhodes needed a fully SEO- and AIO-optimised site, a film, realistic dish photos from several angles, and synthetic social content. Its own photography covered part of the menu, shot honestly on the terrace under real light, and stopped there. The realism standard was high: everything had to survive a customer sitting down and being handed the actual plate.',
     idea:
       'Do not fake the plates. A generated dish that looks better than the kitchen is a lie a diner catches the moment the plate arrives, so the still work was locked to the restaurant’s own reference frames and the film went the other way entirely: openly illustrated, a garden and a fire and a long day by the water, in the warm palette the room already has. An illustrated film cannot be caught pretending to be the room. A photoreal one is caught every second it runs.',
     made: [
-      'A WordPress site, designed and shipped.',
+      'A Next.js site, designed and shipped.',
       'A ninety-second VSL script.',
       'An illustrated brand film, plus short vertical cuts for social.',
       'Generated plate stills covering the dishes the camera never reached.',
@@ -103,7 +103,7 @@ export const work: CaseStudy[] = [
       'Live at mariposa.restaurant, site and film together. Every generated plate was signed off by someone from the kitchen before it shipped.',
     resultKind: 'Delivered',
     artefacts: [
-      { label: 'Website', detail: 'WordPress build, live' },
+      { label: 'Website', detail: 'Next.js build, live' },
       { label: 'Film', detail: 'Illustrated, plus vertical cutdowns' },
       { label: 'Script', detail: '90-second VSL' },
       { label: 'Stills', detail: 'Plate set, master-plate locked per dish' },
@@ -125,6 +125,7 @@ export const work: CaseStudy[] = [
       { src: 'mariposa/film-02', alt: 'A frame from the film: a drawn octopus over glowing orange coals in the dark, titled Grilled Octopus.', label: 'from the film', focus: '45% 50%' },
       { src: 'mariposa/film-03', alt: 'A frame from the film: a drawn white plate of saffron risotto crowned with a single scampi on a deep yellow ground, headed Carnaroli and Saffron.', label: 'from the film', focus: '72% 50%' },
       { src: 'mariposa/film-04', alt: 'The end card: the word Mariposa in cream serif with two butterfly wings above it and the line the hidden gem above the Aegean underneath.', label: 'from the film, end card' },
+      { src: 'mariposa/logo-photoreal', alt: 'A photorealistic green and cream butterfly with spiral markings on its wings, resting on pale stone: the Mariposa mark rendered as a real specimen.', label: 'logo, photorealistic' },
       { src: 'mariposa/mariposa-mousaka', alt: 'A slice of moussaka on a white plate, photographed on the restaurant terrace in daylight with a wine glass behind it.', label: 'reference plate, shot on site' },
       { src: 'mariposa/shrimp-mariposa', alt: 'Shrimp on saffron risotto in a dark bowl, topped with basil and cracked pepper, shot from above.', label: 'reference plate, shot on site' },
       { src: 'mariposa/beef-stifado', alt: 'Beef stifado in a dark sauce in a metal bowl under a nest of shoestring fries and a sprig of rosemary, a long slice of grilled bread beside it.', label: 'reference plate, shot on site' },
@@ -133,10 +134,10 @@ export const work: CaseStudy[] = [
     ],
     stack: [
       { stage: 'Master plate', tool: 'Nano Banana Pro' },
-      { stage: 'Variations', tool: 'Nano Banana Pro, image to image from the plate' },
+      { stage: 'Variations', tool: 'Nano Banana 2, image to image from the plate, ChatGPT Image 2' },
       { stage: 'Motion', tool: 'Higgsfield Cinema Studio' },
       { stage: 'Cut', tool: 'CapCut' },
-      { stage: 'Site', tool: 'WordPress, Figma, Claude Code' },
+      { stage: 'Site', tool: 'Vercel, Figma, Claude Code, Sanity' },
     ],
     links: [{ label: 'mariposa.restaurant', href: 'https://mariposa.restaurant/' }],
     genre: 'Brand film and synthetic photography',
@@ -199,18 +200,18 @@ export const work: CaseStudy[] = [
   },
   {
     slug: 'bike-barn',
-    title: 'Indian Elite',
+    title: 'Indian Elite Models',
     client: 'Bike Barn',
     kind: 'Client work',
     discipline: 'Hero film · Product cinematics',
     year: '2026',
-    place: 'Greece',
+    place: 'The Netherlands',
     featured: false,
     accent: 'var(--brand-magenta)',
     summary:
       'A wet cobbled street at night, with no location, no rain machine, no night permit and no rider.',
     problem:
-      'A dealership wanted a hero film for one motorcycle, cut for vertical feed. The bike is the product; everything else in frame is set dressing, and set dressing is the part a dealership never has budget for.',
+      'A dealership wanted two hero films for their motorcycles, without getting out of the showroom. The bikes are the product; everything else in frame is set dressing, and set dressing is the part a dealership never has budget for.',
     idea:
       'Build the set once and never rebuild it. A motorcycle is the worst possible subject for a generated frame: badge, tank graphic, headlamp cluster that riders know by heart, and spokes, which fall apart the moment a model starts inventing detail. So the machine was locked into a master plate before any environment existed, and the street, canal houses, wet cobbles and reflected lamplight were written once as a set specification and reused across every frame.',
     made: [
@@ -240,6 +241,8 @@ export const work: CaseStudy[] = [
     gallery: [
       { src: 'bike-barn/ad-01', alt: 'A close view of the machine on a canal street at night, rider low over the bars, the Indian script badge legible on the orange tank.', label: 'badge and tank graphic, held' },
       { src: 'bike-barn/ad-02', alt: 'The same machine from a lower angle on wet cobbles, front wheel spokes in full view, a tram and canal houses blurred behind.', label: 'spoke count, held between frames' },
+      { src: 'bike-barn/pov', alt: 'A rider-eye view over the handlebars and instrument pod of the Indian Elite, down a wet canal street at night with lit windows down both sides.', label: 'POV shot' },
+      { src: 'bike-barn/closeup', alt: 'A close, low three-quarter view of the Indian Elite on wet cobbles at night, chrome and lamplight running along the tank and the fairing.', label: 'close up shot' },
       { src: 'bike-barn/ad-03', alt: 'The rider head-on down a flooded canal street at night, one headlamp burning, the Bike-Barn wordmark beside him.', label: 'end frame from the cut', focus: '90% 50%' },
     ],
     stack: [
@@ -253,7 +256,7 @@ export const work: CaseStudy[] = [
   },
   {
     slug: 'big-blue-data-academy',
-    title: 'Seven pieces, seven registers, one school',
+    title: 'The Unconventional Social Strategy That Became Mainstream',
     client: 'Big Blue Data Academy',
     kind: 'Client work',
     discipline: 'Content system · Social campaign · Creative direction',
@@ -262,15 +265,15 @@ export const work: CaseStudy[] = [
     featured: true,
     accent: 'var(--brand-magenta)',
     summary:
-      'A run of social pieces where no two look like they came from the same production company, and all seven are unmistakably one school.',
+      'A dynamic, if unconventional, content calendar that blended pop culture with data education, and lifted the brand image with it.',
     problem:
-      'Big Blue Data Academy teaches data science to career changers. The audience is on a phone, mid-scroll, and has already learned to skip anything shaped like a course advert. The ask was volume: not one film with a long approval cycle, but a run of short pieces that could go out week after week and keep working.',
+      'Big Blue Data Academy teaches data science to career changers. The audience is on a phone, mid-scroll, and has already learned to skip anything shaped like a course advert. The ask was volume: not one film with a long approval cycle, but a run of short pieces that could go out week after week and keep working. We ran the social strategy and the paid media campaigns, from the brainstorm to the final cut.',
     idea:
       'Invert the house style. Volume and sameness normally arrive together: a house style makes the second piece cheap and the fifth piece invisible, because by then the audience has learned the shape of it. So the constraint was set the other way: every piece had to look like it came from a different production company, and the brand had to survive all of them.',
     made: [
+      'Promo ads, LinkedIn and Meta posts, and ad creatives.',
       'A photoreal punk figure in a dark office, head made of a pie chart, mohawk made of bars.',
       'A 3D cartoon detective in a paper-flooded room, magnifier over a stack of reports.',
-      'A storybook snake in reading glasses, taking notes while a patient lies on a couch.',
       'A country singer in a blue Stetson under a saloon sign, playing a song about data.',
       'Three more registers in the same fortnight, cut 9:16 for feed and 16:9 for wide.',
     ],
@@ -296,14 +299,21 @@ export const work: CaseStudy[] = [
     gallery: [
       { src: 'bbda/detective', alt: 'A 3D cartoon detective in a brown hat and green coat holding a magnifying glass over his eye, the lens filled with spreadsheets, office knee-deep in loose paper.', label: 'register two, 3D cartoon' },
       { src: 'bbda/python', alt: 'A storybook illustration of a blue snake in black reading glasses holding a clipboard, taking notes from a young man on a therapy couch.', label: 'register three, storybook' },
+      { src: 'bbda/bootcamp-ad', alt: 'A frame from the AI Engineering Bootcamp advert, set in a wide cinematic register.', label: 'AI Engineering Bootcamp ad frame' },
+      { src: 'bbda/info-session', alt: 'A frame from the info session promo, drawn in the flat cut-paper style of South Park.', label: 'info session promo, South Park register' },
+      { src: 'bbda/carousel-simpsons', alt: 'A carousel card for LinkedIn drawn in a yellow-skinned cartoon register borrowed from The Simpsons.', label: 'carousel post, Simpsons register' },
+      { src: 'bbda/post-superheroes', alt: 'A square LinkedIn post built on a superhero conceit, data roles cast as comic-book characters.', label: 'LinkedIn post, superheroes' },
+      { src: 'bbda/post-viral', alt: 'The LinkedIn post that ran furthest, a sitcom-still joke card about learning data.', label: 'the post that travelled' },
       { src: 'bbda/western', alt: 'A man in a blue cowboy hat and denim shirt playing guitar in a wooden saloon under a painted Big Blue Data Academy sign, pie charts floating around him.', label: 'register four: the one frame where the mark sits inside the world', focus: '50% 22%' },
     ],
     stack: [
-      { stage: 'Register list', tool: 'Fixed before any frame, seven entries' },
+      { stage: 'Register list', tool: 'Fixed before any frame' },
       { stage: 'Plates', tool: 'Nano Banana Pro, separate set per register' },
       { stage: 'Motion', tool: 'Higgsfield Cinema Studio' },
       { stage: 'Mark', tool: 'Composited in the cut, never generated' },
       { stage: 'Cut', tool: 'CapCut' },
+      { stage: 'Implementation', tool: 'Google Veo 3' },
+      { stage: 'Creative ideation', tool: 'Canva' },
     ],
     links: [],
     genre: 'Content system and social campaign',
@@ -314,13 +324,13 @@ export const work: CaseStudy[] = [
     client: 'Amino Alliance',
     kind: 'Client work',
     discipline: 'Synthetic UGC · Paid social · Product stills',
-    year: '2026',
+    year: '2025',
     featured: false,
     accent: 'var(--brand-gold)',
     summary:
       'Two trained presenters and one product plate, reused across a paid-social test that changes its offer every month.',
     problem:
-      'Amino Alliance sells a supplement in a printed pouch and needed creator-style pieces for paid social. The requirement underneath that is volume: a paid test needs the same person delivering several openings and several asks, then needs them again next month when the offer changes.',
+      'Amino Alliance sells a supplement in a printed pouch and needed realistic AI creator-style pieces for paid social. The requirement underneath that is volume: a paid test needs the same person delivering several openings and several asks, then needs them again next month when the offer changes.',
     idea:
       'Cast once, then treat the cast as an asset. Two presenters trained from a stills sheet, reused across the whole set, so a later variant costs what an early one did. The pouch runs the other line: a real printed object with a real mark, a product name and a block of small type down the front, none of which can be approximated at arm’s length in daylight.',
     made: [
@@ -352,6 +362,8 @@ export const work: CaseStudy[] = [
     gallery: [
       { src: 'amino-alliance/product-01', alt: 'A man in a black jumper holding an Amino Alliance pouch to camera with a thumbs up, green foliage behind him.', label: 'presenter one', focus: '50% 20%' },
       { src: 'amino-alliance/ugc-01', alt: 'A woman in a pale blazer holding an Amino Alliance pouch to camera outside an office building, with a caption reading I am a management consultant.', label: 'presenter two, opening variant', focus: '50% 20%' },
+      { src: 'amino-alliance/ugc-02', alt: 'A man in a navy gilet and open-collared shirt holding an Amino Alliance carton to camera outside a glass office block, mid-sentence.', label: 'presenter one, video ad frame', focus: '50% 25%' },
+      { src: 'amino-alliance/ugc-03', alt: 'A man in a black training top holding an Amino Alliance shaker outside on a bare winter path, the brand mark locked to the top of frame.', label: 'athlete, video ad frame', focus: '50% 20%' },
     ],
     stack: [
       { stage: 'Presenter identity', tool: 'Higgsfield Soul ID' },
@@ -383,7 +395,7 @@ export const work: CaseStudy[] = [
     made: [
       'A project promo.',
       'Two pilot films.',
-      'A vector attack explainer that walks an intrusion through a grid, one hop at a time.',
+      'A vector attack explainer that walks an intrusion through a grid, one hop at a time. It holds one visual system from the first frame to the last, so a viewer who does not know what a substation is can still follow which box just went dark and why.',
     ],
     result:
       'Delivered to SEleNe CC for the COCOON consortium. The project is publicly documented under Horizon Europe grant agreement 101120221.',
@@ -419,6 +431,57 @@ export const work: CaseStudy[] = [
     genre: 'Explainer film',
   },
 
+  {
+    slug: 'jarfis-property-group',
+    title: 'A spokesperson who sounds like the person on the call',
+    client: 'Jarfis Property Group',
+    kind: 'Client work',
+    discipline: 'Synthetic UGC · Voice cloning · Property film',
+    year: '2026',
+    place: 'Bali and the Netherlands',
+    featured: false,
+    accent: 'var(--brand-cyan)',
+    summary:
+      'A cloned-voice spokesperson for Instagram and a generative tour of two real listings, both reconstructed from the stills already on the client\u2019s site.',
+    problem:
+      'Jarfis Property Group sells Bali real estate to Dutch and international investors. They wanted social-first UGC for Instagram, plus a longer narrative piece that could sit on the homepage and carry the pitch on its own.',
+    idea:
+      'Rebuild the villas from the pictures that already exist, and keep the presenter the same person off screen as on. The villas are in Bali, the company is in the Netherlands, and there was no budget to put a camera in either, so every frame had to be reconstructed from the stills already sitting on their site. The voice matters for the same reason: an investor who watches a clip today speaks to that same person on a call next week, so a stock read would break the moment the phone rang.',
+    made: [
+      'Vertical UGC spots with a presenter talking straight to the viewer.',
+      'One short generative film cut around two real listed properties.',
+      'A cloned voice, trained on the presenter\u2019s own recordings and used across all of it.',
+    ],
+    result:
+      'Used across their international client base and as ad creative, with the spots carrying the offer on paid placements.',
+    resultKind: 'Delivered',
+    artefacts: [
+      { label: 'Films', detail: 'Vertical UGC spots, presenter to camera' },
+      { label: 'Property film', detail: 'One narrative cut across two listings' },
+      { label: 'Voice', detail: 'Cloned from the presenter\u2019s own audio' },
+    ],
+    method:
+      'Everything starts from the source images. They are cleaned and upscaled first, then image-to-video is driven with camera moves that respect the geometry of each room, so the walls stay where they are and the viewer reads one continuous space rather than a series of guesses. The voice model is trained on the presenter\u2019s own audio, timed to the performance and lip-synced. The final grade is matched to the light in the original photography, because a room that is graded away from its own stills stops being that room.',
+    gates: [
+      { name: 'Geometry gate', test: 'Walls, openings and floor lines must hold across a move. A room that changes shape between two seconds of footage goes back to the source still.' },
+      { name: 'Voice gate', test: 'The delivery on screen has to match the person who picks up the phone. Trained on their own recordings, never on a stock read.' },
+      { name: 'Grade gate', test: 'The final grade matches the light in the original photography, so the film and the listing pictures read as the same property.' },
+    ],
+    hero: {
+      src: 'jarfis/spokesperson',
+      alt: 'The open-plan living space of a Bali villa: polished floor, a low sofa under a ceiling fan, pendant lights over a kitchen counter and a green rug down the middle.',
+      label: 'frame from the generated tour',
+    },
+    gallery: [
+      { src: 'jarfis/tour-frame', alt: 'The presenter standing in front of a villa and its pool in soft daylight, a phone on a tripod set up facing them.', label: 'the spokesperson, on location', focus: '50% 25%' },
+    ],
+    stack: [
+      { stage: 'Voice and motion', tool: 'ElevenLabs, Higgsfield Cinema Studio, Seedance 2' },
+      { stage: 'Cut', tool: 'CapCut, Canva' },
+    ],
+    links: [],
+    genre: 'Synthetic UGC and property film',
+  },
 ];
 
 export const featuredWork = work.filter((w) => w.featured);

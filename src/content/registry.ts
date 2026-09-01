@@ -221,10 +221,10 @@ export const copyRegistry = {
         eyebrow: '005 / SELECTED DAMAGE',
         title: 'SELECTED',
         accentWord: 'DAMAGE',
-        lede: 'Six engagements, written the sober way. Every one carries the problem it started from, the idea that solved it, what we actually made, what happened, and the files the client kept. If a claim here can be checked, we have written it so it can be.',
+        lede: `${work.length} engagements, written the sober way. Every one carries the problem it started from, the idea that solved it, what we actually made, what happened, and the files the client kept. If a claim here can be checked, we have written it so it can be.`,
         meta: [
           { label: 'Engagements', value: `${work.length} delivered` },
-          { label: 'Sectors', value: 'Hospitality, consulting, retail, education, supplements, energy' },
+          { label: 'Sectors', value: 'Hospitality, consulting, motorcycles, education, supplements, energy, property' },
           { label: 'Disciplines', value: 'Film, websites, content systems, synthetic UGC' },
           { label: 'Years', value: '2025 – 2026' },
         ],

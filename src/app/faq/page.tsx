@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { faqGroups, allFaqs } from '@/data/faq';
 import { terms } from '@/data/glossary';
+import { work } from '@/data/work';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
@@ -103,7 +104,7 @@ export default async function FaqPage() {
             {[
               { href: '/pipelines', t: 'The Pipelines', n: 'Three published production pipelines, with the stages, the timings and the gates.' },
               { href: '/glossary', t: 'The Glossary', n: `${terms.length} terms defined the way a producer needs them, each with its own page.` },
-              { href: '/work', t: 'Selected Damage', n: 'Six delivered engagements with the problem, the idea, the result and the artefacts.' },
+              { href: '/work', t: 'Selected Damage', n: `${work.length} delivered engagements with the problem, the idea, the result and the artefacts.` },
             ].map((c) => (
               <Link key={c.href} href={c.href} className="block p-6" style={{ border: '1px solid rgba(255,255,255,0.08)', textDecoration: 'none' }}>
                 <div className="text-2xl tracking-tighter mb-2" style={{ fontFamily: 'var(--font-display)' }}>

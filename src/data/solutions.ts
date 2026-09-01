@@ -144,7 +144,7 @@ export const solutions: Solution[] = [
       'The term is broader and more useful than "AI content", because it covers the middle ground where most professional work actually sits: a real shoot with a generated environment, a real product with a generated set, a real voice with a generated read. That middle ground is where a studio earns its fee, and it is also where the disclosure question gets interesting.',
       'Almost anyone can produce a striking single frame now. What separates a studio from a subscription is everything the frame does not show you: whether the packaging type survives a full-resolution zoom, whether the presenter has the same jawline in advert nine as in advert one, whether the light comes from the same direction across the set, and whether a person with authority signed off before it went live.',
       'Ask any studio you are considering four things. What is locked before you generate anything? What is the test that a frame has to pass, and what happens when it fails? Who owns the reusable files afterwards? And what is your cost per accepted asset, not per generation? A studio that cannot answer those is selling you the cheapest part of the job.',
-      'Our answers are on this site rather than in a deck. Three of our seven production pipelines are published in full, with their stages, their timings and the four gates each one fails on. Six delivered engagements carry the problem, the idea, what we made and the artefacts the client kept. Over a hundred terms are defined the way a producer needs them.',
+      'Our answers are on this site rather than in a deck. Three of our seven production pipelines are published in full, with their stages, their timings and the four gates each one fails on. Every delivered engagement carries the problem, the idea, what we made and the artefacts the client kept. Over a hundred terms are defined the way a producer needs them.',
     ],
     deliverables: [
       { name: 'Films and campaigns', detail: 'Commercials, brand films, social runs, product cinematics' },
@@ -317,7 +317,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'Which sectors have you delivered in?',
-        a: 'Hospitality, energy and critical infrastructure, education, retail and motorcycles, supplements, and professional consulting. Six delivered engagements are written up in full, with the problem, the idea, what we made and the artefacts.',
+        a: 'Hospitality, energy and critical infrastructure, education, motorcycles, supplements, property and professional consulting. Every delivered engagement is written up in full, with the problem, the idea, what we made and the artefacts.',
       },
     ],
     cta: {
@@ -348,7 +348,7 @@ export const solutions: Solution[] = [
     ],
     color: 'var(--brand-cyan)',
     lede:
-      'Three of the six engagements written up on this site were made for Greek clients: a restaurant on Rhodes, a data school in Athens and a motorcycle dealership. The studio contracts from London and works in English. Greece is not a new market for us, it is where a lot of the method was built.',
+      'Two of the engagements written up on this site were made for Greek clients: a restaurant on Rhodes and a data school in Athens. The studio contracts from London and works in English. Greece is not a new market for us, it is where a lot of the method was built.',
     meta: [
       { label: 'Delivered in Greece', value: 'Rhodes, Athens, motorcycle retail' },
       { label: 'Contracting', value: 'UK entity, EU invoicing' },
@@ -376,7 +376,7 @@ export const solutions: Solution[] = [
     faqs: [
       {
         q: 'Do you work with Greek clients?',
-        a: 'Three of the six engagements written up on this site were delivered for clients in Greece: Mariposa on Rhodes, Big Blue Data Academy in Athens and Bike Barn. Each one is published in full with the problem, what we made, the result and the artefacts.',
+        a: 'Two of the engagements written up on this site were delivered for clients in Greece: Mariposa on Rhodes and Big Blue Data Academy in Athens. Each one is published in full with the problem, what we made, the result and the artefacts.',
       },
       {
         q: 'Do you have an office in Athens?',

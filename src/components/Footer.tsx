@@ -165,6 +165,25 @@ export function Footer() {
           </ul>
         </div>
 
+        {/* The literal classification. "Storytellers drunk on synthetic media"
+            is what a person remembers; this is what a search engine and an
+            answer engine classify from. It used to sit under the strapline on
+            the front page and now sits here, which keeps the same words in the
+            same document on every page rather than on one. The meta
+            description and the Organization node read site.ts and are not
+            affected by where this paragraph is printed. */}
+        <p
+          className="max-w-3xl mb-10 text-sm md:text-base leading-relaxed"
+          style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
+        >
+          TaleCrafters is a London-based{' '}
+          <strong style={{ color: 'var(--brand-white)', fontWeight: 500 }}>
+            synthetic media and creative systems studio
+          </strong>
+          . We produce generative films, campaigns and visual worlds, build the automated
+          creative systems that make and distribute them, and develop our own original IP.
+        </p>
+
         <div
           className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
           style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
