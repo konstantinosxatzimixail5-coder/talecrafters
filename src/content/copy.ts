@@ -123,3 +123,6 @@ export function defaultCopy<P extends PageId>(pageId: P): PageCopy<(typeof copyR
 
 /** The front page's copy, for the client sections that receive it as a prop. */
 export type HomeCopy = PageCopy<(typeof copyRegistry)['home']>;
+
+/** The footer's copy. The footer is a client component in the root layout. */
+export type FooterCopy = PageCopy<(typeof copyRegistry)['footer']>;

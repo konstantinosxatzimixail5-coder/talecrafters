@@ -262,3 +262,38 @@ export function CtaBar({
     </section>
   );
 }
+
+/**
+ * A line of display type with one word or phrase in the accent colour.
+ *
+ * The colour break used to be markup: the word sat inside its own <span> in
+ * the component, so changing the sentence meant changing the file. Here the
+ * line and the accented part are two plain strings, which is a shape an editor
+ * can type into. The accent is matched inside the line rather than positioned,
+ * so it works whether the colour falls at the start, the end or the middle.
+ *
+ * An accent that is empty, or that does not appear in the line, prints the
+ * line unchanged. That is the right failure: a typo in the Studio costs the
+ * colour, never the sentence.
+ */
+export function Accented({
+  text,
+  accent,
+  color,
+  style,
+}: {
+  text: string;
+  accent?: string;
+  color: string;
+  style?: React.CSSProperties;
+}) {
+  const at = accent && accent.trim() ? text.indexOf(accent) : -1;
+  if (at < 0) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, at)}
+      <span style={{ color, ...style }}>{accent}</span>
+      {text.slice(at + accent!.length)}
+    </>
+  );
+}

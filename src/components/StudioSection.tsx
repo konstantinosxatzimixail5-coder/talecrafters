@@ -100,14 +100,10 @@ export function StudioSection({ copy }: { copy: HomeCopy['studio'] }) {
               viewport={{ once: true }}
             >
               <p className="text-xl md:text-2xl leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-                We&apos;re the unholy offspring of a film studio and a technology lab.
-                Part strategists, part visual anarchists, fully committed to making
-                your competition wonder what just happened.
+                {copy.body1}
               </p>
               <p className="text-lg leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
-                We designed a system that combines human taste with machine velocity.
-                The creative instincts that make stories resonate, accelerated by
-                technology that refuses to sleep.
+                {copy.body2}
               </p>
             </motion.div>
 

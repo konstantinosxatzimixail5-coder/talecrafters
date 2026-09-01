@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import Link from "next/link";
+import { pageCopy } from '@/content/copy';
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -16,7 +17,8 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 };
 
-export default function TermsPage() {
+export default async function TermsPage() {
+  const copy = await pageCopy('terms');
   return (
     <div
       className="min-h-screen"
@@ -44,7 +46,7 @@ export default function TermsPage() {
           className="text-4xl md:text-5xl lg:text-6xl tracking-tighter mb-2"
           style={{ fontFamily: "var(--font-display)", color: "var(--brand-magenta)" }}
         >
-          Terms of Service
+          {copy.header.title}
         </h1>
 
         <p

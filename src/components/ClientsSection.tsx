@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from 'motion/react';
+import { Accented } from '@/components/kit';
+import type { HomeCopy } from '@/content/copy';
 
 function ConveneIcon() {
   return (
@@ -216,7 +218,7 @@ const clients = [
 // Quadruple for seamless loop
 const repeatedClients = [...clients, ...clients, ...clients, ...clients];
 
-export function ClientsSection() {
+export function ClientsSection({ copy }: { copy: HomeCopy['clients'] }) {
   return (
     <section
       className="relative py-10 md:py-14 overflow-hidden"
@@ -240,7 +242,7 @@ export function ClientsSection() {
           className="text-[10px] tracking-[0.3em] uppercase mb-3"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
         >
-          Trusted By
+          {copy.eyebrow}
         </div>
         <h3
           className="text-xl sm:text-2xl md:text-3xl tracking-tight"
@@ -250,7 +252,12 @@ export function ClientsSection() {
             fontWeight: 600,
           }}
         >
-          The brands that <span style={{ color: 'var(--brand-magenta)', fontStyle: 'italic' }}>get it</span>.
+          <Accented
+            text={copy.heading}
+            accent={copy.headingAccent}
+            color="var(--brand-magenta)"
+            style={{ fontStyle: 'italic' }}
+          />
         </h3>
       </motion.div>
 

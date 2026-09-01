@@ -79,7 +79,7 @@ export default async function HomePage() {
         ]}
       />
 
-      <HeroSection />
+      <HeroSection copy={copy.hero} />
       <StudioSection copy={copy.studio} />
       {/* The three arms, right after the studio intro: what the company is,
           before what it sells. */}
@@ -92,7 +92,7 @@ export default async function HomePage() {
       <PricingSection copy={copy.pricing} />
       <BlogSection copy={copy.blog} posts={teaserPosts} />
       <CTASection copy={copy.cta} />
-      <ClientsSection />
+      <ClientsSection copy={copy.clients} />
       <ContactSection copy={copy.contact} />
     </div>
   );

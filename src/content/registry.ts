@@ -126,8 +126,25 @@ export const copyRegistry = {
       // colour break inside a word ("UN|HOLY"), which is drawn type rather than
       // a sentence: arbitrary text cannot render through it, so offering a box
       // that silently mangles the heading would be worse than offering none.
+      hero: section('Hero', {
+        eyebrow: str('Eyebrow', 'TaleCrafters Studio', 'The small mono label above the headline.'),
+        line1: str('Headline line 1', 'WE MANUFACTURE'),
+        line1Accent: str('Line 1, coloured part', 'MANUFACTURE', 'A word or phrase from the line above. It takes the accent colour wherever it falls. Leave empty for a line with no colour.'),
+        line2: str('Headline line 2', 'ATTENTION WITH'),
+        line2Accent: str('Line 2, coloured part', 'ATTENTION'),
+        line3: str('Headline line 3', 'STORIES THAT IMMERSE'),
+        line3Accent: str('Line 3, coloured part', 'IMMERSE'),
+        line4: str('Headline line 4', 'AND CONTENT'),
+        line4Accent: str('Line 4, coloured part', ''),
+        line5: str('Headline line 5', 'THAT CONVERTS'),
+        line5Accent: str('Line 5, coloured part', 'CONVERTS'),
+        strapline: str('Strapline', 'Storytellers Drunk on Synthetic Media.', 'The gold line under the headline.'),
+        terminal: str('Terminal line', "// Not your grandma's creative agency.", 'Typed out in the mono box under the strapline.'),
+      }, 'The first screen. Five headline lines, each with one coloured part.'),
       studio: section('The Studio', {
-        flag: str('Section number and label', '001 / THE STUDIO', 'The mono line in the top corner. The headline below it is set in code.'),
+        flag: str('Section number and label', '001 / THE STUDIO', 'The mono line in the top corner. The headline below it is drawn type and is set in code.'),
+        body1: text('First paragraph', 'We’re the unholy offspring of a film studio and a technology lab. Part strategists, part visual anarchists, fully committed to making your competition wonder what just happened.', 4),
+        body2: text('Second paragraph', 'We designed a system that combines human taste with machine velocity. The creative instincts that make stories resonate, accelerated by technology that refuses to sleep.', 4),
       }),
       universe: homeSection({
         title: 'The Divisions',
@@ -183,6 +200,11 @@ export const copyRegistry = {
         heading: 'LET’S',
         accentWord: 'CONSPIRE',
       }),
+      clients: section('Trusted by', {
+        eyebrow: str('Eyebrow', 'Trusted By'),
+        heading: str('Heading', 'The brands that get it.'),
+        headingAccent: str('Heading, coloured part', 'get it', 'Printed in magenta italic wherever it falls in the heading.'),
+      }),
       cta: section('Closing call to action', {
         heading: str('Heading', 'YOUR', 'The first line of the closing heading.'),
         accentWord: str('Heading, accented line', 'MOVE.', 'The second line, in magenta.'),
@@ -208,6 +230,53 @@ export const copyRegistry = {
         },
         'The two originals, as they appear inside the Armoury page.'
       ),
+    },
+  },
+
+  footer: {
+    title: 'Footer',
+    path: '/',
+    order: 25,
+    sections: {
+      main: section('Footer', {
+        strapline: str('Strapline', 'STORIES ON STEROIDS', 'The cyan mono line under the wordmark.'),
+        description: text(
+          'Description',
+          'TaleCrafters is a London-based synthetic media and creative systems studio. We produce generative films, campaigns and visual worlds, build the automated creative systems that make and distribute them, and develop our own original IP.',
+          6,
+          'What the studio is, in the words a search engine and an answer engine classify from. The footer is on every page, so this paragraph is too. The meta description and the Organization node are separate and are not changed by editing this.'
+        ),
+        descriptionAccent: str(
+          'Description, emphasised phrase',
+          'synthetic media and creative systems studio',
+          'Set in white inside the paragraph above. It has to appear in that paragraph word for word, or nothing is emphasised.'
+        ),
+        signoff: str('Sign-off', 'The unholy offspring of a film studio and a technology lab.', 'The display line above the copyright.'),
+        hiredForLabel: str('Services label', 'WHAT WE ARE HIRED FOR', 'Above the row of service links.'),
+        rights: str('Copyright line', 'All rights reserved. We own our chaos.', 'Printed after the year.'),
+      }),
+    },
+  },
+
+  privacy: {
+    title: 'Privacy policy',
+    path: '/privacy',
+    order: 200,
+    sections: {
+      header: section('Header', {
+        title: str('Title', 'Privacy Policy'),
+      }),
+    },
+  },
+
+  terms: {
+    title: 'Terms of service',
+    path: '/terms',
+    order: 210,
+    sections: {
+      header: section('Header', {
+        title: str('Title', 'Terms of Service'),
+      }),
     },
   },
 

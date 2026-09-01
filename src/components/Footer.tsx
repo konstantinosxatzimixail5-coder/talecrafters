@@ -6,6 +6,8 @@ import { Wordmark } from './brand/Wordmark';
 import { navGroups } from '@/lib/nav';
 import { solutions } from '@/data/solutions';
 import { site } from '@/lib/site';
+import { Accented } from '@/components/kit';
+import type { FooterCopy } from '@/content/copy';
 
 const legal = [
   { label: 'Terms of Service', href: '/terms' },
@@ -19,7 +21,7 @@ const social = [
   { label: 'LI', title: 'LinkedIn', color: 'var(--brand-violet-text)', href: 'https://www.linkedin.com/company/talecrafterss/' },
 ];
 
-export function Footer() {
+export function Footer({ copy }: { copy: FooterCopy['main'] }) {
   return (
     <footer
       className="relative py-16 px-5 md:px-10 lg:px-14 overflow-hidden"
@@ -41,14 +43,25 @@ export function Footer() {
               className="text-xs tracking-[0.25em] mb-4"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
             >
-              STORIES ON STEROIDS
+              {copy.strapline}
             </div>
+            {/* The literal classification, in the column under the strapline.
+                "Storytellers drunk on synthetic media" is what a person
+                remembers; this is what a search engine and an answer engine
+                classify from. The footer is rendered by the root layout, so
+                these words are on every page. The meta description and the
+                Organization node read site.ts and do not depend on where this
+                paragraph is printed. */}
             <p
               className="text-sm leading-relaxed max-w-xs mb-6"
               style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
             >
-              The unholy offspring of a film studio and a technology lab. We make the work,
-              we build the systems that make the work, and we write our own.
+              <Accented
+                text={copy.description}
+                accent={copy.descriptionAccent}
+                color="var(--brand-white)"
+                style={{ fontWeight: 500 }}
+              />
             </p>
             <address
               className="not-italic text-xs leading-relaxed"
@@ -148,7 +161,7 @@ export function Footer() {
             className="text-[10px] tracking-[0.28em] mb-4"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
           >
-            WHAT WE ARE HIRED FOR
+            {copy.hiredForLabel}
           </div>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             {solutions.map((s) => (
@@ -165,23 +178,15 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* The literal classification. "Storytellers drunk on synthetic media"
-            is what a person remembers; this is what a search engine and an
-            answer engine classify from. It used to sit under the strapline on
-            the front page and now sits here, which keeps the same words in the
-            same document on every page rather than on one. The meta
-            description and the Organization node read site.ts and are not
-            affected by where this paragraph is printed. */}
+        {/* The sign-off. It used to carry the three-part claim as well, which
+            the classification paragraph now makes in the column above; saying
+            it twice in one footer made both weaker. What is left is the half
+            that paragraph cannot do, which is sound like us. */}
         <p
-          className="max-w-3xl mb-10 text-sm md:text-base leading-relaxed"
-          style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
+          className="max-w-2xl mb-10 text-base md:text-lg leading-snug"
+          style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-concrete-light)' }}
         >
-          TaleCrafters is a London-based{' '}
-          <strong style={{ color: 'var(--brand-white)', fontWeight: 500 }}>
-            synthetic media and creative systems studio
-          </strong>
-          . We produce generative films, campaigns and visual worlds, build the automated
-          creative systems that make and distribute them, and develop our own original IP.
+          {copy.signoff}
         </p>
 
         <div
@@ -189,7 +194,7 @@ export function Footer() {
           style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
         >
           <div className="text-xs" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
-            © {new Date().getFullYear()} TaleCrafters. All rights reserved. We own our chaos.
+            © {new Date().getFullYear()} TaleCrafters. {copy.rights}
           </div>
           <div className="flex gap-6">
             {legal.map((link) => (

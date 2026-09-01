@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 import Link from "next/link";
+import { pageCopy } from '@/content/copy';
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -16,7 +17,8 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 };
 
-export default function PrivacyPage() {
+export default async function PrivacyPage() {
+  const copy = await pageCopy('privacy');
   return (
     <div
       className="min-h-screen"
@@ -47,7 +49,7 @@ export default function PrivacyPage() {
             fontFamily: "var(--font-display)",
           }}
         >
-          Privacy Policy
+          {copy.header.title}
         </h1>
         <p
           className="mb-1 text-lg font-semibold"

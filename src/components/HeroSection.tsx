@@ -2,6 +2,8 @@
 
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useEffect, useState } from 'react';
+import { Accented } from '@/components/kit';
+import type { HomeCopy } from '@/content/copy';
 
 function TypewriterText({ text, delay = 0 }: { text: string; delay?: number }) {
   const [displayed, setDisplayed] = useState('');
@@ -40,7 +42,7 @@ function TypewriterText({ text, delay = 0 }: { text: string; delay?: number }) {
   );
 }
 
-export function HeroSection() {
+export function HeroSection({ copy }: { copy: HomeCopy['hero'] }) {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -130,7 +132,7 @@ export function HeroSection() {
             className="text-xs tracking-[0.3em] uppercase"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
           >
-            TaleCrafters Studio
+            {copy.eyebrow}
           </span>
         </motion.div>
 
@@ -145,7 +147,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.4 }}
             >
-              WE <span style={{ color: 'var(--brand-cyan)' }}>MANUFACTURE</span>
+              <Accented text={copy.line1} accent={copy.line1Accent} color="var(--brand-cyan)" />
             </motion.span>
             <motion.span
               className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
@@ -153,7 +155,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.55 }}
             >
-              <span style={{ color: 'var(--brand-magenta)' }}>ATTENTION</span> WITH
+              <Accented text={copy.line2} accent={copy.line2Accent} color="var(--brand-magenta)" />
             </motion.span>
             <motion.span
               className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
@@ -161,7 +163,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.7 }}
             >
-              STORIES THAT <span style={{ color: 'var(--brand-gold)' }}>IMMERSE</span>
+              <Accented text={copy.line3} accent={copy.line3Accent} color="var(--brand-gold)" />
             </motion.span>
             <motion.span
               className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
@@ -169,7 +171,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.85 }}
             >
-              AND CONTENT
+              <Accented text={copy.line4} accent={copy.line4Accent} color="var(--brand-cyan)" />
             </motion.span>
             <motion.span
               className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
@@ -177,7 +179,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 1.0 }}
             >
-              THAT <span style={{ color: 'var(--brand-violet-text)' }}>CONVERTS</span>
+              <Accented text={copy.line5} accent={copy.line5Accent} color="var(--brand-violet-text)" />
               </motion.span>
           </h1>
 
@@ -207,7 +209,7 @@ export function HeroSection() {
               letterSpacing: '-0.04em',
             }}
           >
-            Storytellers Drunk on Synthetic Media.
+            {copy.strapline}
           </div>
         </motion.div>
 
@@ -226,7 +228,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 1.8 }}
         >
           <TypewriterText
-            text="// Not your grandma's creative agency."
+            text={copy.terminal}
             delay={2200}
           />
         </motion.div>
