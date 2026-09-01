@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { cameraMoves, families, movesInFamily } from '@/data/camera-moves';
+import { cameraMoves as repoCameraMoves, families } from '@/data/camera-moves';
 import { getResource } from '@/data/resources';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
@@ -8,6 +8,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
+import { getCameraMoves } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: '38 Cinematic Camera Movements for AI Video (Free Prompt Reference)',
@@ -53,6 +54,9 @@ const qa = [
 
 export default async function CameraMovementsPage() {
   const copy = await pageCopy('cameraMovements');
+  const cameraMoves = await getCameraMoves();
+  /** Grouped from what was read, so a move added in the Studio lands in its family. */
+  const movesInFamily = (f: string) => cameraMoves.filter((m) => m.family === f);
   const r = getResource('camera-movements')!;
 
   return (

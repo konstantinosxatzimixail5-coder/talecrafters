@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { orgSchema, websiteSchema } from "@/lib/seo";
 import { pageCopy } from "@/content/copy";
+import { getSolutions } from "@/content/collections";
 
 /**
  * How often a rendered page goes back to the dataset.
@@ -24,6 +25,7 @@ export const revalidate = 60;
  */
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
   const footerCopy = (await pageCopy("footer")).main;
+  const solutions = await getSolutions();
   return (
     <>
       <GoogleAnalytics />
@@ -33,7 +35,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       </a>
       <SiteHeader />
       <main id="main">{children}</main>
-      <Footer copy={footerCopy} />
+      <Footer copy={footerCopy} solutions={solutions} />
       <CookieConsent />
     </>
   );

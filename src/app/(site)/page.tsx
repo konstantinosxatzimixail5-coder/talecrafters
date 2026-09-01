@@ -12,11 +12,12 @@ import { ContactSection } from '@/components/ContactSection';
 import { ClientsSection } from '@/components/ClientsSection';
 import { JsonLd } from '@/components/JsonLd';
 import { serviceSchema, caseStudySchema } from '@/lib/seo';
-import { categories } from '@/data/arsenal';
+
 import { featuredWork } from '@/data/work';
 import { posts, readingMinutes } from '@/data/posts';
 import { heroExists, heroSrc } from '@/lib/blog-images';
 import { pageCopy } from '@/content/copy';
+import { getCategories } from '@/content/collections';
 
 // The teaser takes the six newest published posts. It used to carry six
 // invented ones with stock photography, each linking to a slug that did not
@@ -46,6 +47,7 @@ const teaserPosts = posts.slice(0, 6).map((p, i) => ({
 
 export default async function HomePage() {
   const copy = await pageCopy('home');
+  const categories = await getCategories();
   return (
     <div
       className="relative"
@@ -85,7 +87,7 @@ export default async function HomePage() {
           before what it sells. */}
       <UniverseSection copy={copy.universe} />
       <PhilosophySection copy={copy.philosophy} />
-      <ServicesSection copy={copy.services} />
+      <ServicesSection copy={copy.services} categories={categories} />
       {/* The receipts, immediately after the claims. */}
       <SelectedDamageSection copy={copy.selectedDamage} />
       <ProcessSection copy={copy.process} />

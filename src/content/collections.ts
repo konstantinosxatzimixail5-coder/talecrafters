@@ -24,6 +24,11 @@ import { resources as repoResources } from '@/data/resources';
 import { writing as repoWriting } from '@/data/writing';
 import { films as repoFilms } from '@/data/films';
 import { pipelines as repoPipelines } from '@/data/pipelines';
+import { categories as repoCategories } from '@/data/arsenal';
+import { solutions as repoSolutions } from '@/data/solutions';
+import { cameraMoves as repoCameraMoves } from '@/data/camera-moves';
+import { animationStyles as repoAnimationStyles } from '@/data/animation-styles';
+import { tools as repoTools } from '@/data/downloads';
 
 /** A picture as the Studio stores it: a manifest key, an upload, or both. */
 export interface StoredShot {
@@ -56,7 +61,12 @@ const QUERY = `{
   "resource": *[_type == "resource"] | order(order asc) { ..., "slug": slug.current },
   "writingSample": *[_type == "writingSample"] | order(order asc) { ..., "slug": slug.current },
   "film": *[_type == "film"] | order(order asc) { ..., "slug": slug.current },
-  "pipeline": *[_type == "pipeline"] | order(order asc) { ..., "slug": slug.current }
+  "pipeline": *[_type == "pipeline"] | order(order asc) { ..., "slug": slug.current },
+  "arsenalCategory": *[_type == "arsenalCategory"] | order(order asc) { ..., "slug": slug.current },
+  "solution": *[_type == "solution"] | order(order asc) { ..., "slug": slug.current },
+  "cameraMove": *[_type == "cameraMove"] | order(order asc) { ..., "slug": slug.current },
+  "animationStyle": *[_type == "animationStyle"] | order(order asc) { ..., "slug": slug.current },
+  "tool": *[_type == "tool"] | order(order asc) { ..., "slug": slug.current }
 }`;
 
 async function fetchAll(): Promise<Bundle> {
@@ -324,3 +334,93 @@ export const getPipelines = () =>
     stages: arr(d.stages, (x) => ({ name: x.name ?? '', tool: x.tool ?? '', fixes: x.fixes ?? '', time: x.time ?? '' })),
     gates: arr(d.gates, (g) => ({ name: g.name ?? '', test: g.test ?? '', fail: g.fail ?? '' })),
   })) as Promise<(typeof repoPipelines)[number][]>;
+
+const toolBlock = (b: any): any => {
+  const t = String(b?._type ?? '').replace(/^tool_/, '');
+  switch (t) {
+    case 'check':
+      return { t, title: b.title, items: strArr(b.items) };
+    case 'fields':
+      return { t, title: b.title, fields: arr(b.fields, (f) => ({ label: f.label ?? '', hint: f.hint, lines: f.lines })) };
+    case 'table':
+      return { t, head: strArr(b.head), rows: tableRows(b.rows) };
+    case 'scale':
+      return { t, title: b.title, items: arr(b.items, (i) => ({ label: i.label ?? '', detail: i.detail ?? '' })) };
+    case 'note':
+      return { t, text: b.text ?? '' };
+    default:
+      return { t: 'para', text: b?.text ?? '' };
+  }
+};
+
+export const getCategories = () =>
+  listOf('arsenalCategory', repoCategories, (d) => ({
+    slug: d.slug,
+    title: d.title,
+    descriptor: d.descriptor ?? '',
+    arm: (d.arm ?? 'create') as 'create' | 'systems' | 'originals',
+    color: d.color ?? 'var(--brand-cyan)',
+    intro: d.intro ?? '',
+    services: arr(d.services, (x) => ({ name: x.name ?? '', desc: x.desc ?? '', icon: x.icon ?? '' })),
+  })) as Promise<(typeof repoCategories)[number][]>;
+
+export const getSolutions = () =>
+  listOf('solution', repoSolutions, (d) => ({
+    slug: d.slug,
+    title: d.title ?? '',
+    accentWord: d.accentWord ?? '',
+    plainName: d.plainName,
+    metaTitle: d.metaTitle ?? '',
+    metaDescription: d.metaDescription ?? '',
+    keywords: strArr(d.keywords),
+    color: d.color ?? 'var(--brand-cyan)',
+    lede: d.lede ?? '',
+    meta: arr(d.meta, (m) => ({ label: m.label ?? '', value: m.value ?? '' })),
+    body: strArr(d.body),
+    deliverables: arr(d.deliverables, (x) => ({ name: x.name ?? '', detail: x.detail ?? '' })),
+    pipelines: strArr(d.pipelines),
+    cases: strArr(d.cases),
+    terms: strArr(d.terms),
+    faqs: arr(d.faqs, (q) => ({ q: q.q ?? '', a: q.a ?? '' })),
+    cta: { title: d.ctaTitle ?? '', body: d.ctaBody ?? '' },
+    market: d.market,
+  })) as Promise<(typeof repoSolutions)[number][]>;
+
+export const getCameraMoves = () =>
+  listOf('cameraMove', repoCameraMoves, (d) => ({
+    num: d.num ?? '',
+    slug: d.slug,
+    name: d.name,
+    family: d.family,
+    camera: d.camera ?? '',
+    prompt: d.prompt ?? '',
+    useFor: d.useFor ?? '',
+  })) as Promise<(typeof repoCameraMoves)[number][]>;
+
+export const getAnimationStyles = () =>
+  listOf('animationStyle', repoAnimationStyles, (d) => ({
+    slug: d.slug,
+    num: d.num ?? '',
+    name: d.name,
+    aka: d.aka ?? '',
+    color: d.color ?? 'var(--brand-cyan)',
+    what: d.what ?? '',
+    scaffold: strArr(d.scaffold),
+    works: strArr(d.works),
+    breaks: d.breaks ?? '',
+    example: d.example ?? '',
+  })) as Promise<(typeof repoAnimationStyles)[number][]>;
+
+export const getTools = () =>
+  listOf('tool', repoTools, (d) => ({
+    slug: d.slug,
+    intro: strArr(d.intro),
+    howToUse: strArr(d.howToUse),
+    sections: arr(d.sections, (sec) => ({
+      title: sec.title ?? '',
+      kicker: sec.kicker,
+      blocks: arr(sec.blocks, toolBlock),
+    })),
+    bands: arr(d.bands, (b) => ({ range: b.range ?? '', verdict: b.verdict ?? '', action: b.action ?? '' })),
+    licence: d.licence ?? '',
+  })) as Promise<(typeof repoTools)[number][]>;

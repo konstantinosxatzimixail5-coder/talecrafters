@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { Download } from 'lucide-react';
 import { getResource, downloadableResources } from '@/data/resources';
 import { getTool, type ToolBlock } from '@/data/downloads';
+import { getTools } from '@/content/collections';
 import { postsForResource } from '@/data/posts';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
@@ -209,7 +210,7 @@ function Blocks({ blocks, color }: { blocks: ToolBlock[]; color: string }) {
 export default async function ArmouryToolPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const r = getResource(slug);
-  const tool = getTool(slug);
+  const tool = (await getTools()).find((t) => t.slug === slug) ?? getTool(slug);
   if (!r?.pdf || !tool) notFound();
 
   const crumbs = [

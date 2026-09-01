@@ -326,7 +326,144 @@ export const pipeline = defineType({
   preview: { select: { title: 'name', subtitle: 'title' } },
 });
 
+
+/* ------------------------------------------------ arsenal (the services) -- */
+
+export const arsenalCategory = defineType({
+  name: 'arsenalCategory',
+  title: 'Capability group',
+  type: 'document',
+  fields: [
+    defineField({ name: 'title', title: 'Title', type: 'string', validation: (R) => R.required() }),
+    slug('title'),
+    defineField({ name: 'descriptor', title: 'Descriptor', type: 'string', description: 'The boring, searchable version. Sits directly under the title.' }),
+    defineField({
+      name: 'arm', title: 'Arm', type: 'string',
+      options: { list: ['create', 'systems', 'originals'] },
+      description: 'Which of the three arms this group belongs to.',
+    }),
+    defineField({ name: 'color', title: 'Accent colour', type: 'string' }),
+    defineField({ name: 'intro', title: 'Intro', type: 'text', rows: 5 }),
+    arrayOf('services', 'Services', 'service'),
+    order,
+  ],
+  orderings: [{ title: 'Running order', name: 'order', by: [{ field: 'order', direction: 'asc' }] }],
+  preview: { select: { title: 'title', subtitle: 'descriptor' } },
+});
+
+/* ------------------------------------------------------------- solution -- */
+
+export const solution = defineType({
+  name: 'solution',
+  title: 'Solution page',
+  type: 'document',
+  groups: [
+    { name: 'main', title: 'Page', default: true },
+    { name: 'body', title: 'Body' },
+    { name: 'links', title: 'What proves it' },
+    { name: 'seo', title: 'SEO' },
+  ],
+  fields: [
+    defineField({ name: 'plainName', title: 'Name', type: 'string', group: 'main', validation: (R) => R.required(), description: 'The plain name, used in the eyebrow, the breadcrumb and the structured data.' }),
+    { ...slug('plainName'), group: 'main' } as any,
+    defineField({ name: 'title', title: 'Headline', type: 'string', group: 'main' }),
+    defineField({ name: 'accentWord', title: 'Headline, accented line', type: 'string', group: 'main' }),
+    defineField({ name: 'color', title: 'Accent colour', type: 'string', group: 'main' }),
+    defineField({ name: 'lede', title: 'Lede', type: 'text', rows: 5, group: 'main' }),
+    { ...arrayOf('meta', 'Meta strip', 'copyPair'), group: 'main' } as any,
+    defineField({ name: 'market', title: 'Market', type: 'string', group: 'main', description: 'An ISO country code when the page targets one market, e.g. GR. It narrows the Service node to that country.' }),
+    { ...order, group: 'main' } as any,
+    defineField({
+      name: 'body', title: 'Body', type: 'array', group: 'body',
+      of: [defineArrayMember({ type: 'text', rows: 6 } as any)],
+      description: 'One entry per paragraph. Two to four of them.',
+    }),
+    { ...arrayOf('deliverables', 'Deliverables', 'deliverable'), group: 'body' } as any,
+    { ...arrayOf('faqs', 'Questions', 'qa'), group: 'body' } as any,
+    defineField({ name: 'ctaTitle', title: 'Call to action, title', type: 'string', group: 'body' }),
+    defineField({ name: 'ctaBody', title: 'Call to action, body', type: 'text', rows: 3, group: 'body' }),
+    { ...strings('pipelines', 'Pipelines', 'Slugs of the pipelines that carry this work.'), group: 'links' } as any,
+    { ...strings('cases', 'Case studies', 'Slugs of the case studies that prove it.'), group: 'links' } as any,
+    { ...strings('terms', 'Glossary terms', 'Slugs worth defining alongside it.'), group: 'links' } as any,
+    defineField({ name: 'metaTitle', title: 'Meta title', type: 'string', group: 'seo' }),
+    defineField({ name: 'metaDescription', title: 'Meta description', type: 'text', rows: 3, group: 'seo' }),
+    { ...strings('keywords', 'Keywords'), group: 'seo' } as any,
+  ],
+  preview: { select: { title: 'plainName', subtitle: 'metaTitle' } },
+});
+
+/* ----------------------------------------------------- reference sheets -- */
+
+export const cameraMove = defineType({
+  name: 'cameraMove',
+  title: 'Camera movement',
+  type: 'document',
+  fields: [
+    defineField({ name: 'name', title: 'Name', type: 'string', validation: (R) => R.required() }),
+    slug('name'),
+    defineField({ name: 'num', title: 'Number', type: 'string' }),
+    defineField({ name: 'family', title: 'Family', type: 'string', description: 'One of the seven families, e.g. push-pull, reveal, axis, orbit, altitude.' }),
+    defineField({ name: 'camera', title: 'Direction', type: 'text', rows: 3, description: 'The move in camera-department language.' }),
+    defineField({ name: 'prompt', title: 'Prompt', type: 'text', rows: 4, description: 'A prompt that produces it. Copy, change the subject, run.' }),
+    defineField({ name: 'useFor', title: 'Use for', type: 'text', rows: 3 }),
+    order,
+  ],
+  orderings: [{ title: 'Sheet order', name: 'order', by: [{ field: 'order', direction: 'asc' }] }],
+  preview: { select: { title: 'name', subtitle: 'family' } },
+});
+
+export const animationStyle = defineType({
+  name: 'animationStyle',
+  title: 'Animation style',
+  type: 'document',
+  fields: [
+    defineField({ name: 'name', title: 'Name', type: 'string', validation: (R) => R.required() }),
+    slug('name'),
+    defineField({ name: 'num', title: 'Number', type: 'string' }),
+    defineField({ name: 'aka', title: 'Also known as', type: 'string' }),
+    defineField({ name: 'color', title: 'Accent colour', type: 'string' }),
+    defineField({ name: 'what', title: 'What it is', type: 'text', rows: 4, description: 'In production terms, not mood words.' }),
+    strings('scaffold', 'Scaffold', 'The order the prompt should be written in.'),
+    strings('works', 'Words that work', 'Words that reliably move the model toward the style.'),
+    defineField({ name: 'breaks', title: 'What breaks', type: 'text', rows: 4, description: 'The failure this style invites, and the fix.' }),
+    defineField({ name: 'example', title: 'Example prompt', type: 'text', rows: 5 }),
+    order,
+  ],
+  orderings: [{ title: 'Sheet order', name: 'order', by: [{ field: 'order', direction: 'asc' }] }],
+  preview: { select: { title: 'name', subtitle: 'aka' } },
+});
+
+/* ------------------------------------------------------ downloadable tool -- */
+
+export const tool = defineType({
+  name: 'tool',
+  title: 'Downloadable tool',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'slug', title: 'Resource', type: 'slug',
+      validation: (R) => R.required(),
+      description: 'Must match the Armoury resource this document belongs to. The same definition renders the page and the branded PDF.',
+    }),
+    defineField({
+      name: 'intro', title: 'Intro', type: 'array',
+      of: [defineArrayMember({ type: 'text', rows: 4 } as any)],
+      description: 'One entry per paragraph.',
+    }),
+    defineField({
+      name: 'howToUse', title: 'How to use it', type: 'array',
+      of: [defineArrayMember({ type: 'text', rows: 3 } as any)],
+    }),
+    arrayOf('sections', 'Sections', 'toolSection'),
+    arrayOf('bands', 'Scoring bands', 'band'),
+    defineField({ name: 'licence', title: 'Licence', type: 'text', rows: 3 }),
+    order,
+  ],
+  preview: { select: { subtitle: 'slug.current' }, prepare: (v: any) => ({ title: v.subtitle ?? 'Tool', subtitle: 'Downloadable tool' }) },
+});
+
 export const collectionTypes = [
-  post, caseStudy, film, pipeline, glossaryTerm, conceptBrand, capture, faqGroup,
-  resource, writingSample,
+  post, caseStudy, film, pipeline, arsenalCategory, solution, glossaryTerm,
+  conceptBrand, capture, faqGroup, resource, writingSample, tool,
+  cameraMove, animationStyle,
 ];

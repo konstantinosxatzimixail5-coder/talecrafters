@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { solutions, getSolution } from '@/data/solutions';
+import { solutions as repoSolutions, getSolution } from '@/data/solutions';
+import { getSolutions } from '@/content/collections';
 import { getPipeline } from '@/data/pipelines';
 import { getCase } from '@/data/work';
 import { getTerm } from '@/data/glossary';
@@ -21,12 +22,12 @@ import { abs, SITE_URL } from '@/lib/site';
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return solutions.map((s) => ({ solution: s.slug }));
+  return repoSolutions.map((s) => ({ solution: s.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ solution: string }> }) {
   const { solution } = await params;
-  const s = getSolution(solution);
+  const s = (await getSolutions()).find((x) => x.slug === solution) ?? getSolution(solution);
   if (!s) return {};
   return pageMeta({
     title: s.metaTitle,
@@ -38,13 +39,14 @@ export async function generateMetadata({ params }: { params: Promise<{ solution:
 
 export default async function SolutionPage({ params }: { params: Promise<{ solution: string }> }) {
   const { solution } = await params;
-  const s = getSolution(solution);
+  const all = await getSolutions();
+  const s = all.find((x) => x.slug === solution) ?? getSolution(solution);
   if (!s) notFound();
 
   const pipelines = s.pipelines.map(getPipeline).filter((p): p is NonNullable<typeof p> => Boolean(p));
   const cases = s.cases.map(getCase).filter((c): c is NonNullable<typeof c> => Boolean(c));
   const terms = s.terms.map(getTerm).filter((t): t is NonNullable<typeof t> => Boolean(t));
-  const others = solutions.filter((x) => x.slug !== s.slug);
+  const others = all.filter((x) => x.slug !== s.slug);
 
   const crumbs = [
     { name: 'Home', path: '/' },

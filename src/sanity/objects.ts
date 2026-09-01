@@ -305,3 +305,110 @@ export const objectTypes: any[] = [
   keyValue, namedRole, beat, designSheet, filmStep,
   lookGroup, lock, waypoint, stage, pipelineGate,
 ];
+
+/* ------------------------------ services, solutions, reference sheets -- */
+
+export const service = defineType({
+  name: 'service',
+  title: 'Service',
+  type: 'object',
+  fields: [
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
+    defineField({ name: 'desc', title: 'Description', type: 'text', rows: 2, description: 'The boring, searchable version. It has to survive being forwarded to a finance director.' }),
+    defineField({ name: 'icon', title: 'Icon', type: 'string', description: 'A lucide icon name, e.g. Clapperboard. An unknown name falls back to a default.' }),
+  ],
+  preview: { select: { title: 'name', subtitle: 'desc' } },
+});
+
+export const deliverable = pair('deliverable', 'Deliverable', 'name', 'detail');
+
+/** The blocks a downloadable tool is built from, mirroring the closed union
+ *  that both the Armoury page and the PDF renderer accept. */
+export const toolField = defineType({
+  name: 'toolField',
+  title: 'Field',
+  type: 'object',
+  fields: [
+    defineField({ name: 'label', title: 'Label', type: 'string' }),
+    defineField({ name: 'hint', title: 'Hint', type: 'string' }),
+    defineField({ name: 'lines', title: 'Writing lines', type: 'number', description: 'How much space to leave on the printed version.' }),
+  ],
+  preview: { select: { title: 'label', subtitle: 'hint' } },
+});
+
+export const scaleItem = pair('scaleItem', 'Scored row', 'label', 'detail');
+
+export const toolPara = defineType({
+  name: 'tool_para', title: 'Paragraph', type: 'object',
+  fields: [defineField({ name: 'text', title: 'Text', type: 'text', rows: 4 })],
+  preview: { select: { title: 'text' }, prepare: (v: any) => ({ title: v.title, subtitle: 'Paragraph' }) },
+});
+export const toolNote = defineType({
+  name: 'tool_note', title: 'Note', type: 'object',
+  fields: [defineField({ name: 'text', title: 'Text', type: 'text', rows: 3 })],
+  preview: { select: { title: 'text' }, prepare: (v: any) => ({ title: v.title, subtitle: 'Note' }) },
+});
+export const toolCheck = defineType({
+  name: 'tool_check', title: 'Checklist', type: 'object',
+  fields: [
+    defineField({ name: 'title', title: 'Title', type: 'string' }),
+    defineField({ name: 'items', title: 'Items', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
+  ],
+  preview: { select: { title: 'title', items: 'items' }, prepare: (v: any) => ({ title: v.title || 'Checklist', subtitle: `${(v.items ?? []).length} items` }) },
+});
+export const toolFields = defineType({
+  name: 'tool_fields', title: 'Fill-in fields', type: 'object',
+  fields: [
+    defineField({ name: 'title', title: 'Title', type: 'string' }),
+    defineField({ name: 'fields', title: 'Fields', type: 'array', of: [defineArrayMember({ type: 'toolField' })] }),
+  ],
+  preview: { select: { title: 'title' }, prepare: (v: any) => ({ title: v.title || 'Fields', subtitle: 'Fill-in fields' }) },
+});
+export const toolTable = defineType({
+  name: 'tool_table', title: 'Table', type: 'object',
+  fields: [
+    defineField({ name: 'head', title: 'Header row', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
+    defineField({ name: 'rows', title: 'Rows', type: 'array', description: 'One entry per row, cells separated by a vertical bar.', of: [defineArrayMember({ type: 'string' })] }),
+  ],
+  preview: { prepare: () => ({ title: 'Table' }) },
+});
+export const toolScale = defineType({
+  name: 'tool_scale', title: 'Scored rows', type: 'object',
+  fields: [
+    defineField({ name: 'title', title: 'Title', type: 'string' }),
+    defineField({ name: 'items', title: 'Rows', type: 'array', of: [defineArrayMember({ type: 'scaleItem' })] }),
+  ],
+  preview: { select: { title: 'title' }, prepare: (v: any) => ({ title: v.title || 'Scored rows', subtitle: 'Rated 0 to 5' }) },
+});
+
+export const toolBlocks = ['tool_para', 'tool_check', 'tool_fields', 'tool_table', 'tool_note', 'tool_scale']
+  .map((type) => defineArrayMember({ type }));
+
+export const toolSection = defineType({
+  name: 'toolSection',
+  title: 'Section',
+  type: 'object',
+  fields: [
+    defineField({ name: 'title', title: 'Title', type: 'string' }),
+    defineField({ name: 'kicker', title: 'Kicker', type: 'string' }),
+    defineField({ name: 'blocks', title: 'Blocks', type: 'array', of: toolBlocks }),
+  ],
+  preview: { select: { title: 'title', subtitle: 'kicker' } },
+});
+
+export const band = defineType({
+  name: 'band',
+  title: 'Scoring band',
+  type: 'object',
+  fields: [
+    defineField({ name: 'range', title: 'Range', type: 'string' }),
+    defineField({ name: 'verdict', title: 'Verdict', type: 'string' }),
+    defineField({ name: 'action', title: 'Action', type: 'text', rows: 2 }),
+  ],
+  preview: { select: { title: 'range', subtitle: 'verdict' } },
+});
+
+objectTypes.push(
+  service, deliverable, toolField, scaleItem,
+  toolPara, toolNote, toolCheck, toolFields, toolTable, toolScale, toolSection, band
+);

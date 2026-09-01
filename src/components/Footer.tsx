@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Wordmark } from './brand/Wordmark';
 import { navGroups } from '@/lib/nav';
-import { solutions } from '@/data/solutions';
+import type { Solution } from '@/data/solutions';
 import { site } from '@/lib/site';
 import { Accented } from '@/components/kit';
 import type { FooterCopy } from '@/content/copy';
@@ -21,7 +21,7 @@ const social = [
   { label: 'LI', title: 'LinkedIn', color: 'var(--brand-violet-text)', href: 'https://www.linkedin.com/company/talecrafterss/' },
 ];
 
-export function Footer({ copy }: { copy: FooterCopy['main'] }) {
+export function Footer({ copy, solutions }: { copy: FooterCopy['main']; solutions: Solution[] }) {
   return (
     <footer
       className="relative py-16 px-5 md:px-10 lg:px-14 overflow-hidden"

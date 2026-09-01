@@ -10,7 +10,7 @@ import {
   ScanFace, Podcast, Bot,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { categories } from '@/data/arsenal';
+import type { Category } from '@/data/arsenal';
 import type { HomeCopy } from '@/content/copy';
 
 const icons: Record<string, LucideIcon> = {
@@ -20,7 +20,7 @@ const icons: Record<string, LucideIcon> = {
   ScanFace, Podcast, Bot,
 };
 
-export function ServicesSection({ copy }: { copy: HomeCopy['services'] }) {
+export function ServicesSection({ copy, categories }: { copy: HomeCopy['services']; categories: Category[] }) {
   const [activeCategory, setActiveCategory] = useState(0);
   const [hoveredService, setHoveredService] = useState<number | null>(null);
 

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { animationStyles } from '@/data/animation-styles';
+import { animationStyles as repoAnimationStyles } from '@/data/animation-styles';
 import { getResource } from '@/data/resources';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
@@ -8,6 +8,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
+import { getAnimationStyles } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: 'Prompting Guide by Animation Style: 12 Styles, Free',
@@ -52,6 +53,7 @@ const qa = [
 
 export default async function AnimationPromptingPage() {
   const copy = await pageCopy('animationPrompting');
+  const animationStyles = await getAnimationStyles();
   const r = getResource('animation-prompting')!;
 
   return (

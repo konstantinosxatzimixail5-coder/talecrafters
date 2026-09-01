@@ -60,6 +60,11 @@ import { resources } from '../../src/data/resources';
 import { writing } from '../../src/data/writing';
 import { films } from '../../src/data/films';
 import { pipelines } from '../../src/data/pipelines';
+import { categories } from '../../src/data/arsenal';
+import { solutions } from '../../src/data/solutions';
+import { cameraMoves } from '../../src/data/camera-moves';
+import { animationStyles } from '../../src/data/animation-styles';
+import { tools } from '../../src/data/downloads';
 import manifest from '../../src/image-manifest.json';
 
 const args = process.argv.slice(2);
@@ -278,6 +283,59 @@ async function buildDocs() {
     summary: p.summary, loop: p.loop, useWhen: p.useWhen,
     stages: keyed(p.stages, 's').map((r: any) => ({ ...r, _type: 'stage' })),
     gates: keyed(p.gates, 'g').map((r: any) => ({ ...r, _type: 'pipelineGate' })),
+  }));
+
+  out.arsenalCategory = categories.map((c, i) => ({
+    _id: id('arsenalCategory', c.slug), _type: 'arsenalCategory', order: i + 1,
+    title: c.title, slug: { _type: 'slug', current: c.slug },
+    descriptor: c.descriptor, arm: c.arm, color: c.color, intro: c.intro,
+    services: keyed(c.services, 'v').map((r: any) => ({ ...r, _type: 'service' })),
+  }));
+
+  out.solution = solutions.map((x, i) => ({
+    _id: id('solution', x.slug), _type: 'solution', order: i + 1,
+    plainName: x.plainName, slug: { _type: 'slug', current: x.slug },
+    title: x.title, accentWord: x.accentWord, color: x.color, lede: x.lede,
+    meta: keyed(x.meta, 'm').map((r: any) => ({ ...r, _type: 'copyPair' })),
+    body: x.body,
+    deliverables: keyed(x.deliverables, 'd').map((r: any) => ({ ...r, _type: 'deliverable' })),
+    faqs: keyed(x.faqs, 'q').map((r: any) => ({ ...r, _type: 'qa' })),
+    ctaTitle: x.cta.title, ctaBody: x.cta.body,
+    pipelines: x.pipelines, cases: x.cases, terms: x.terms,
+    market: x.market,
+    metaTitle: x.metaTitle, metaDescription: x.metaDescription, keywords: x.keywords,
+  }));
+
+  out.cameraMove = cameraMoves.map((m, i) => ({
+    _id: id('cameraMove', m.slug), _type: 'cameraMove', order: i + 1,
+    name: m.name, slug: { _type: 'slug', current: m.slug },
+    num: m.num, family: m.family, camera: m.camera, prompt: m.prompt, useFor: m.useFor,
+  }));
+
+  out.animationStyle = animationStyles.map((a, i) => ({
+    _id: id('animationStyle', a.slug), _type: 'animationStyle', order: i + 1,
+    name: a.name, slug: { _type: 'slug', current: a.slug },
+    num: a.num, aka: a.aka, color: a.color, what: a.what,
+    scaffold: a.scaffold, works: a.works, breaks: a.breaks, example: a.example,
+  }));
+
+  out.tool = tools.map((t, i) => ({
+    _id: id('tool', t.slug), _type: 'tool', order: i + 1,
+    slug: { _type: 'slug', current: t.slug },
+    intro: t.intro, howToUse: t.howToUse, licence: t.licence,
+    bands: t.bands ? keyed(t.bands, 'n').map((r: any) => ({ ...r, _type: 'band' })) : undefined,
+    sections: t.sections.map((sec, j) => ({
+      _key: key(j, 'sec'), _type: 'toolSection',
+      title: sec.title, kicker: sec.kicker,
+      blocks: sec.blocks.map((b: any, k: number) => {
+        const base = { _key: key(k, 'tb'), _type: `tool_${b.t}` };
+        if (b.t === 'check') return { ...base, title: b.title, items: b.items };
+        if (b.t === 'fields') return { ...base, title: b.title, fields: keyed(b.fields, 'f').map((f: any) => ({ ...f, _type: 'toolField' })) };
+        if (b.t === 'table') return { ...base, head: b.head, rows: rowsOut(b.rows) };
+        if (b.t === 'scale') return { ...base, title: b.title, items: keyed(b.items, 'i').map((x: any) => ({ ...x, _type: 'scaleItem' })) };
+        return { ...base, text: b.text };
+      }),
+    })),
   }));
 
   return out;

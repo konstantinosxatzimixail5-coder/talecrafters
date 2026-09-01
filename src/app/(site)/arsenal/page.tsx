@@ -6,14 +6,15 @@ import {
   ScanFace, Podcast, Bot,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { categories, arms } from '@/data/arsenal';
-import { solutions } from '@/data/solutions';
+import { categories as repoCategories, arms } from '@/data/arsenal';
+import { solutions as repoSolutions } from '@/data/solutions';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, serviceSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
+import { getCategories, getSolutions } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: 'The Arsenal — Every Capability, Listed Plainly',
@@ -44,6 +45,8 @@ const crumbs = [
 
 export default async function ArsenalPage() {
   const copy = await pageCopy('arsenal');
+  const categories = await getCategories();
+  const solutions = await getSolutions();
   const total = categories.reduce((n, c) => n + c.services.length, 0);
 
   return (
