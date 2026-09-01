@@ -92,8 +92,13 @@ if (COMMIT && !token) {
 
 const client = createClient({ projectId, dataset, apiVersion: '2024-01-01', token, useCdn: false });
 
-/** Stable ids, so a second run updates rather than duplicates. */
-const id = (type: string, key: string) => `${type}.${key.replace(/[^A-Za-z0-9_.-]/g, '-')}`;
+/** Stable ids, so a second run updates rather than duplicates.
+ *
+ *  Joined with a hyphen and stripped of dots. A dot in a document id makes it a
+ *  private path in Sanity, which is how `drafts.` works, and a private document
+ *  is invisible to an unauthenticated reader. The site reads without a token,
+ *  so a dotted id seeds a dataset the site cannot see. */
+const id = (type: string, key: string) => `${type}-${key.replace(/[^A-Za-z0-9_-]/g, '-')}`;
 const key = (i: number, p = 'k') => `${p}${i}`;
 const keyed = <T extends object>(rows: readonly T[] | undefined, p = 'k') =>
   (rows ?? []).map((r, i) => ({ _key: key(i, p), ...r }));

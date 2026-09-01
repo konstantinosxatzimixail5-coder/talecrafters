@@ -113,10 +113,23 @@ const strArr = (v: unknown): string[] => (Array.isArray(v) ? v.filter((x) => typ
 const tableRows = (rows: unknown): string[][] =>
   strArr(rows).map((r) => r.split('|').map((c) => c.trim()));
 
+/** Portable text, which is what the six posts written in the Studio before
+ *  this schema existed are made of. Their style maps onto the union directly
+ *  and the spans join back into one string; anything richer than that (marks,
+ *  links) flattens to text rather than being dropped. */
+const portableText = (b: any): Block => {
+  const text = (b?.children ?? []).map((c: any) => c?.text ?? '').join('');
+  const style = String(b?.style ?? 'normal');
+  if (style === 'h2' || style === 'h3') return { t: style, text };
+  if (style === 'blockquote') return { t: 'quote', text };
+  return { t: 'p', text };
+};
+
 /** A Studio block back into the closed union the article renderer accepts.
  *  Anything unrecognised becomes a paragraph rather than reaching the page as
  *  a shape nothing knows how to draw. */
 const postBlock = (b: any): Block => {
+  if (b?._type === 'block') return portableText(b);
   const t = String(b?._type ?? '').replace(/^block_/, '');
   switch (t) {
     case 'ul':
@@ -146,15 +159,18 @@ export const getPosts = () =>
     metaTitle: d.metaTitle,
     metaDescription: d.metaDescription ?? d.excerpt ?? '',
     excerpt: d.excerpt ?? '',
-    published: d.published,
+    // `publishedAt` is the old field name, kept so the posts written before
+    // this schema existed still carry a date.
+    published: d.published ?? (d.publishedAt ? String(d.publishedAt).slice(0, 10) : ''),
     modified: d.modified,
     author: d.author ?? 'TaleCrafters',
     section: d.section ?? '',
     tags: strArr(d.tags),
     keywords: strArr(d.keywords),
     image: d.image?.src ?? '',
-    imageAlt: d.image?.alt ?? '',
-    heroUpload: d.image?.image,
+    imageAlt: d.image?.alt ?? d.featuredImage?.alt ?? '',
+    // Same again: `featuredImage` is what the older posts carry.
+    heroUpload: d.image?.image ?? d.featuredImage,
     standfirst: d.standfirst ?? '',
     body: arr(d.body, postBlock),
     faqs: arr(d.faqs, (q) => ({ q: q.q ?? '', a: q.a ?? '' })),

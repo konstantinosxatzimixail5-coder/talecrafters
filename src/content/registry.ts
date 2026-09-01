@@ -676,7 +676,13 @@ export type PageId = keyof CopyRegistry;
 /** The Studio document name for a page. Must be a valid schema type name. */
 export const docTypeFor = (pageId: string) => `pageCopy_${pageId}`;
 
-/** The fixed document id, which is what makes each of these a singleton. */
-export const docIdFor = (pageId: string) => `pageCopy.${pageId}`;
+/** The fixed document id, which is what makes each of these a singleton.
+ *
+ *  A hyphen, not a dot. Sanity treats a document id containing a dot as a
+ *  private path — that is the mechanism behind `drafts.` — and such a document
+ *  is invisible to an unauthenticated reader. The deployed site is an
+ *  unauthenticated reader, so an id like `pageCopy.home` would have meant every
+ *  edit made in the Studio looked saved, looked published, and never appeared. */
+export const docIdFor = (pageId: string) => `pageCopy-${pageId}`;
 
 export const pageIds = Object.keys(copyRegistry) as PageId[];
