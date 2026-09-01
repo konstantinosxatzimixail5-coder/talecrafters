@@ -1,0 +1,240 @@
+// Moves the repository's content into Sanity, once.
+//
+// Everything on this site is written as typed data in src/data/. That is a good
+// home for it: reviewable in a diff, versioned, impossible to half-delete. It
+// is a bad home for anything somebody wants to change without a deploy, which
+// is why the site now reads the dataset first and this data second. Until the
+// dataset actually holds the content, though, the Studio is a set of empty
+// lists, and "editable" is a promise rather than a fact.
+//
+// This script closes that gap. It reads the same modules the site reads, turns
+// each entry into a document with the same field names, uploads the pictures it
+// references, and writes the lot.
+//
+//   npm run seed:sanity              what it would do, and nothing else
+//   npm run seed:sanity -- --commit  do it
+//   npm run seed:sanity -- --commit --only=post,caseStudy
+//
+// It needs a token with write access, as SANITY_WRITE_TOKEN. Create one in
+// sanity.io/manage under API → Tokens, with the Editor role. The token is read
+// from the environment and never written anywhere.
+//
+// Writes are createOrReplace against a deterministic id, so running it twice
+// changes nothing the second time, and running it after an edit in the Studio
+// OVERWRITES that edit. That is the one dangerous property here, and the
+// reason it prints what it is about to do and refuses to do it without
+// --commit.
+
+import { createClient } from '@sanity/client';
+import { readFile } from 'node:fs/promises';
+import { basename } from 'node:path';
+
+import { posts } from '../../src/data/posts';
+import { work } from '../../src/data/work';
+import { terms } from '../../src/data/glossary';
+import { conceptBrands } from '../../src/data/concept';
+import { captures } from '../../src/data/captures';
+import { faqGroups } from '../../src/data/faq';
+import { resources } from '../../src/data/resources';
+import { writing } from '../../src/data/writing';
+import manifest from '../../src/image-manifest.json';
+
+const args = process.argv.slice(2);
+const COMMIT = args.includes('--commit');
+const WITH_IMAGES = !args.includes('--no-images');
+const only = args.find((a) => a.startsWith('--only='))?.slice(7).split(',').filter(Boolean);
+
+const projectId = 'xxfr3yxy';
+const dataset = 'production';
+const token = process.env.SANITY_WRITE_TOKEN;
+
+if (COMMIT && !token) {
+  console.error('SANITY_WRITE_TOKEN is not set. Create an Editor token at sanity.io/manage.');
+  process.exit(1);
+}
+
+const client = createClient({ projectId, dataset, apiVersion: '2024-01-01', token, useCdn: false });
+
+/** Stable ids, so a second run updates rather than duplicates. */
+const id = (type: string, key: string) => `${type}.${key.replace(/[^A-Za-z0-9_.-]/g, '-')}`;
+const key = (i: number, p = 'k') => `${p}${i}`;
+const keyed = <T extends object>(rows: readonly T[] | undefined, p = 'k') =>
+  (rows ?? []).map((r, i) => ({ _key: key(i, p), ...r }));
+
+/* ------------------------------------------------------------- pictures -- */
+
+const images = manifest as unknown as Record<string, { fallback: string }>;
+const uploaded = new Map<string, string>();
+let uploadCount = 0;
+
+/**
+ * Uploads the widest committed derivative of a manifest key and returns an
+ * asset reference. The built ladder stays in the repository and stays the
+ * default; this is what puts a copy in the dataset so the picture can be
+ * swapped in the Studio without a deploy.
+ */
+async function assetFor(src?: string): Promise<any | undefined> {
+  if (!WITH_IMAGES || !src) return undefined;
+  if (uploaded.has(src)) return { _type: 'image', asset: { _type: 'reference', _ref: uploaded.get(src) } };
+  const entry = images[src];
+  if (!entry?.fallback) return undefined;
+  const path = `public${entry.fallback}`;
+  if (!COMMIT) { uploadCount++; return undefined; }
+  try {
+    const buf = await readFile(path);
+    const asset = await client.assets.upload('image', buf, { filename: basename(path) });
+    uploaded.set(src, asset._id);
+    uploadCount++;
+    return { _type: 'image', asset: { _type: 'reference', _ref: asset._id } };
+  } catch (e) {
+    console.warn(`  ! could not upload ${path}: ${(e as Error).message}`);
+    return undefined;
+  }
+}
+
+const shot = async (s: any, i = 0) =>
+  s && {
+    _key: key(i, 's'),
+    _type: 'shot',
+    src: s.src,
+    alt: s.alt ?? '',
+    label: s.label,
+    focus: s.focus,
+    image: await assetFor(s.src),
+  };
+
+const shots = async (list: readonly any[] | undefined) =>
+  Promise.all((list ?? []).map((s, i) => shot(s, i)));
+
+/* -------------------------------------------------------------- mappers -- */
+
+/** Table rows go in one row per entry, cells separated by a vertical bar. */
+const rowsOut = (rows: string[][]) => rows.map((r) => r.join(' | '));
+
+const bodyOut = (body: readonly any[]) =>
+  body.map((b, i) => {
+    const base = { _key: key(i, 'b'), _type: `block_${b.t}` };
+    if (b.t === 'ul' || b.t === 'ol') return { ...base, items: b.items };
+    if (b.t === 'table') return { ...base, caption: b.caption, head: b.head, rows: rowsOut(b.rows) };
+    if (b.t === 'note') return { ...base, title: b.title, text: b.text };
+    if (b.t === 'cta') return { ...base, href: b.href, label: b.label, text: b.text };
+    return { ...base, text: b.text };
+  });
+
+async function buildDocs() {
+  const out: Record<string, any[]> = {};
+
+  out.post = await Promise.all(posts.map(async (p) => ({
+    _id: id('post', p.slug), _type: 'post',
+    title: p.title, slug: { _type: 'slug', current: p.slug },
+    excerpt: p.excerpt, standfirst: p.standfirst,
+    published: p.published, modified: p.modified,
+    author: p.author, section: p.section,
+    tags: p.tags, keywords: p.keywords,
+    image: await shot({ src: p.image, alt: p.imageAlt }),
+    body: bodyOut(p.body),
+    faqs: keyed(p.faqs, 'q').map((f: any) => ({ ...f, _type: 'qa' })),
+    sources: keyed(p.sources, 'r').map((s: any) => ({ ...s, _type: 'namedLink' })),
+    terms: p.terms, related: p.related, resources: p.resources,
+    legalNotice: p.legalNotice ?? false,
+    metaTitle: p.metaTitle, metaDescription: p.metaDescription,
+  })));
+
+  out.caseStudy = await Promise.all(work.map(async (w, i) => ({
+    _id: id('caseStudy', w.slug), _type: 'caseStudy', order: i + 1,
+    title: w.title, slug: { _type: 'slug', current: w.slug },
+    client: w.client, kind: w.kind, discipline: w.discipline,
+    year: w.year, place: w.place, featured: w.featured, accent: w.accent, genre: w.genre,
+    summary: w.summary, problem: w.problem, idea: w.idea, made: w.made,
+    result: w.result, resultKind: w.resultKind, method: w.method,
+    artefacts: keyed(w.artefacts, 'a').map((a: any) => ({ ...a, _type: 'artefact' })),
+    gates: keyed(w.gates, 'g').map((g: any) => ({ ...g, _type: 'gate' })),
+    stack: keyed(w.stack, 't').map((t: any) => ({ ...t, _type: 'stackStep' })),
+    links: keyed(w.links, 'l').map((l: any) => ({ ...l, _type: 'namedLink' })),
+    hero: await shot(w.hero),
+    gallery: await shots(w.gallery),
+  })));
+
+  out.glossaryTerm = terms.map((t) => ({
+    _id: id('glossaryTerm', t.slug), _type: 'glossaryTerm',
+    term: t.term, slug: { _type: 'slug', current: t.slug },
+    aka: t.aka, short: t.short, tags: t.tags, body: t.body,
+    qa: keyed(t.qa, 'q').map((q: any) => ({ ...q, _type: 'qa' })),
+    related: t.related,
+  }));
+
+  out.conceptBrand = await Promise.all(conceptBrands.map(async (b, i) => ({
+    _id: id('conceptBrand', b.slug), _type: 'conceptBrand', order: i + 1,
+    name: b.name, slug: { _type: 'slug', current: b.slug },
+    num: b.num, product: b.product, proves: b.proves, accent: b.accent, note: b.note,
+    pipelines: keyed(b.pipelines, 'p').map((p: any) => ({ ...p, _type: 'namedLink' })),
+    shots: await shots(b.shots),
+  })));
+
+  out.capture = await Promise.all(captures.map(async (c, i) => ({
+    _id: id('capture', c.key), _type: 'capture', order: i + 1,
+    title: c.title, proves: c.proves, register: c.register,
+    shot: await shot({ src: c.key, alt: c.alt, focus: c.focus }),
+  })));
+
+  out.faqGroup = faqGroups.map((g, i) => ({
+    _id: id('faqGroup', g.title), _type: 'faqGroup', order: i + 1,
+    title: g.title, color: g.color,
+    items: keyed(g.items, 'q').map((q: any) => ({ ...q, _type: 'qa' })),
+  }));
+
+  out.resource = resources.map((r, i) => ({
+    _id: id('resource', r.slug), _type: 'resource', order: i + 1,
+    title: r.title, slug: { _type: 'slug', current: r.slug },
+    kicker: r.kicker, color: r.color, count: r.count, format: r.format,
+    blurb: r.blurb, forWhom: r.forWhom, pdf: r.pdf,
+    metaTitle: r.metaTitle, metaDescription: r.metaDescription, keywords: r.keywords,
+  }));
+
+  out.writingSample = writing.map((w, i) => ({
+    _id: id('writingSample', w.slug), _type: 'writingSample', order: i + 1,
+    title: w.title, slug: { _type: 'slug', current: w.slug },
+    kind: w.kind, color: w.color, summary: w.summary,
+    detail: w.detail, form: w.form, language: w.language,
+  }));
+
+  return out;
+}
+
+/* ----------------------------------------------------------------- run -- */
+
+const docs = await buildDocs();
+const types = Object.keys(docs).filter((t) => !only || only.includes(t));
+
+console.log(COMMIT ? 'Writing to Sanity.' : 'Dry run. Nothing is written. Add --commit to do it.');
+console.log(`project ${projectId} / dataset ${dataset}\n`);
+
+let total = 0;
+for (const t of types) {
+  console.log(`  ${String(docs[t].length).padStart(4)}  ${t}`);
+  total += docs[t].length;
+}
+console.log(`  ${String(uploadCount).padStart(4)}  pictures ${COMMIT ? 'uploaded' : 'to upload'}`);
+console.log(`\n  ${total} documents\n`);
+
+if (!COMMIT) {
+  const sample = docs[types[0]]?.[0];
+  console.log('First document, as it would be written:');
+  console.log(JSON.stringify(sample, null, 2).slice(0, 1200) + '\n…');
+  process.exit(0);
+}
+
+for (const t of types) {
+  let tx = client.transaction();
+  let n = 0;
+  for (const doc of docs[t]) {
+    tx = tx.createOrReplace(doc);
+    n++;
+    // Transactions have a size limit, and a failed batch of 400 tells you
+    // nothing about which document broke it.
+    if (n % 25 === 0) { await tx.commit({ visibility: 'async' }); tx = client.transaction(); }
+  }
+  await tx.commit({ visibility: 'async' });
+  console.log(`  wrote ${docs[t].length} ${t}`);
+}
+console.log('\nDone. Open the Studio and the lists will have content in them.');

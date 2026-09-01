@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { work } from '@/data/work';
+import { work as repoWork } from '@/data/work';
 import { conceptBrands } from '@/data/concept';
 import { Frame } from '@/components/Frame';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
@@ -8,11 +8,12 @@ import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, caseStudySchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
+import { getWork } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: 'Selected Damage — Case Studies',
   description:
-    `${work.length} delivered engagements with the problem, the idea, what we made, the result and the artefacts. A restaurant, a consultancy, a motorcycle dealership, a data school, a supplement brand, a Horizon Europe consortium and a property group.`,
+    `${repoWork.length} delivered engagements with the problem, the idea, what we made, the result and the artefacts. A restaurant, a consultancy, a motorcycle dealership, a data school, a supplement brand, a Horizon Europe consortium and a property group.`,
   path: '/work',
   keywords: [
     'creative agency case studies',
@@ -29,6 +30,7 @@ const crumbs = [
 ];
 
 export default async function WorkIndex() {
+  const work = await getWork();
   const copy = await pageCopy('work');
   return (
     <>

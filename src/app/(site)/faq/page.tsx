@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { faqGroups, allFaqs } from '@/data/faq';
+import { faqGroups as repoFaqGroups, allFaqs } from '@/data/faq';
 import { terms } from '@/data/glossary';
 import { work } from '@/data/work';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
@@ -7,6 +7,7 @@ import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { pageCopy } from '@/content/copy';
+import { getFaqGroups } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: 'FAQ — The Questions Everyone Asks',
@@ -29,6 +30,7 @@ const crumbs = [
 
 export default async function FaqPage() {
   const copy = await pageCopy('faq');
+  const faqGroups = await getFaqGroups();
   return (
     <>
       <JsonLd graph={[breadcrumbSchema(crumbs), faqSchema(allFaqs)]} />

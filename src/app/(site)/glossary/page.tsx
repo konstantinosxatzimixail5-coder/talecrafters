@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { terms, byLetter, alphabet, GLOSSARY_TAGS, termsByTag } from '@/data/glossary';
+import { terms as repoTerms, byLetter, alphabet, GLOSSARY_TAGS, termsByTag } from '@/data/glossary';
+import { getTerms } from '@/content/collections';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { GlossarySearch } from '@/components/GlossarySearch';
@@ -9,9 +10,9 @@ import { abs, SITE_URL } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
-  title: `Generative & Synthetic Media Glossary — ${terms.length} Terms`,
+  title: `Generative & Synthetic Media Glossary — ${repoTerms.length} Terms`,
   description:
-    `${terms.length} terms from generative and synthetic media production, defined the way a producer needs them: agentic workflows, drift, master plates, acceptance rate, temporal coherence, disclosure, Article 50, cost per accepted asset and more.`,
+    `${repoTerms.length} terms from generative and synthetic media production, defined the way a producer needs them: agentic workflows, drift, master plates, acceptance rate, temporal coherence, disclosure, Article 50, cost per accepted asset and more.`,
   path: '/glossary',
   keywords: [
     'generative AI glossary',
@@ -40,6 +41,7 @@ const tagColor: Record<string, string> = {
 
 export default async function GlossaryIndex() {
   const copy = await pageCopy('glossary');
+  const terms = await getTerms();
   const grouped = byLetter();
   const live = alphabet.filter((l) => grouped.has(l));
 

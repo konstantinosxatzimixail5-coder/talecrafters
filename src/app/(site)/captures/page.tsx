@@ -1,4 +1,4 @@
-import { captures } from '@/data/captures';
+import { captures as repoCaptures } from '@/data/captures';
 import { Frame } from '@/components/Frame';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, imageObjectSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
+import { getCaptures } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: 'Photoreal Captures — Eight Generated Human Frames, and What Each Breaks',
@@ -28,6 +29,7 @@ const crumbs = [
 ];
 
 export default async function CapturesPage() {
+  const captures = await getCaptures();
   const copy = await pageCopy('captures');
   return (
     <>

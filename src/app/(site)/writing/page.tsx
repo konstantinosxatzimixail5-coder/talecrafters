@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { writing } from '@/data/writing';
+import { writing as repoWriting } from '@/data/writing';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, serviceSchema } from '@/lib/seo';
 import { pageCopy } from '@/content/copy';
+import { getWriting } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: 'Writing & Narrative — Scripts, VSLs and Original IP',
@@ -27,6 +28,7 @@ const crumbs = [
 ];
 
 export default async function WritingPage() {
+  const writing = await getWriting();
   const copy = await pageCopy('writing');
   return (
     <>

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { resources } from '@/data/resources';
+import { resources as repoResources } from '@/data/resources';
 import { terms } from '@/data/glossary';
 import { FilmsSection } from '@/components/FilmsSection';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
@@ -8,6 +8,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
+import { getResources } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: 'The Armoury — Free Templates, Checklists and Reference',
@@ -46,6 +47,7 @@ const qa = [
 
 export default async function ArmouryIndex() {
   const copy = await pageCopy('armoury');
+  const resources = await getResources();
   return (
     <>
       <JsonLd

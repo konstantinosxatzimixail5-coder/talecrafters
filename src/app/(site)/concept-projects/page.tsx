@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { conceptBrands } from '@/data/concept';
+import { conceptBrands as repoConceptBrands } from '@/data/concept';
 import { Frame } from '@/components/Frame';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
@@ -7,13 +7,18 @@ import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
+import { getConceptBrands } from '@/content/collections';
 
-/** Counted, not typed, and counted before the metadata so the description, the
- *  structured data and the page itself cannot disagree. The brand count said
- *  four against a real six for as long as it was a literal, in three separate
- *  places, which is the whole argument for deriving it. */
-const brandCount = conceptBrands.length;
-const frameCount = conceptBrands.reduce((n, b) => n + b.shots.length, 0);
+/** Counted, never typed. The brand count said four against a real six for as
+ *  long as it was a literal, in three separate places, which is the argument
+ *  for deriving it.
+ *
+ *  These two are the repository's numbers, and they are what the metadata uses,
+ *  because metadata is resolved before the page can read anything. The page
+ *  body counts what it actually rendered instead, so a brand added in the
+ *  Studio is counted on the page the moment it appears. */
+const brandCount = repoConceptBrands.length;
+const frameCount = repoConceptBrands.reduce((n, b) => n + b.shots.length, 0);
 
 /** Small numbers read better as words at the head of a sentence. */
 const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
@@ -55,6 +60,9 @@ const qa = [
 ];
 
 export default async function ConceptProjects() {
+  const conceptBrands = await getConceptBrands();
+  const brands = conceptBrands.length;
+  const frames = conceptBrands.reduce((n, b) => n + b.shots.length, 0);
   const copy = await pageCopy('conceptProjects');
   return (
     <>
