@@ -6,8 +6,13 @@ import { pageCopyDocs } from '@/sanity/pageTypes';
 
 // Page copy is one document per page, at a fixed id. Listing them explicitly
 // keeps them singletons: an editor opens "Home", not a folder that invites a
-// second one. The generated types are hidden from the top level for the same
-// reason, so the only route to them is the list below.
+// second one.
+//
+// Only the global "create new" menu is filtered, never the templates. The
+// template is what carries every field's initial value, which is the live
+// sentence from the repo, so removing it is how you end up opening "Home" and
+// being shown an Untitled document with empty boxes instead of the copy you
+// came to edit.
 const copyTypeNames = new Set(pageCopyDocs.map((d) => d.schemaType));
 
 export default defineConfig({
@@ -36,6 +41,11 @@ export default defineConfig({
                             .documentId(d.id)
                             .schemaType(d.schemaType)
                             .title(d.title)
+                            // Named explicitly rather than left to resolution.
+                            // This is the template that carries the live copy
+                            // into the fields the first time the document is
+                            // opened; the default id is the schema type name.
+                            .initialValueTemplate(d.schemaType)
                         )
                     )
                   )
@@ -48,12 +58,19 @@ export default defineConfig({
   ],
   schema: {
     types: schemaTypes,
-    // Page copy is reached through the singleton list, never created ad hoc.
-    templates: (prev) => prev.filter((t) => !copyTypeNames.has(t.schemaType)),
   },
   document: {
     // Same reason: no "create new Home" in the global new-document menu.
     newDocumentOptions: (prev) => prev.filter((o) => !copyTypeNames.has(o.templateId)),
+  },
+  // Releases is a beta feature that adds a perspective switcher to the toolbar
+  // and, while that switcher is on Published, refuses to create a document
+  // without first being told which release to put it in. On a site edited by
+  // one person that is a banner in the way of every new page, so the plain
+  // draft-then-publish flow is restored. Delete these three lines to have it
+  // back.
+  releases: {
+    enabled: false,
   },
   basePath: '/studio',
 });
