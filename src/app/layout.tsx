@@ -1,14 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono, Anton } from "next/font/google";
 import "@/styles/globals.css";
-import { CookieConsent } from "@/components/CookieConsent";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
-import { SiteHeader } from "@/components/SiteHeader";
-import { Footer } from "@/components/Footer";
-import { JsonLd } from "@/components/JsonLd";
-import { orgSchema, websiteSchema, hreflangFor } from "@/lib/seo";
+import { hreflangFor } from "@/lib/seo";
 import { SITE_URL, site } from "@/lib/site";
-import { pageCopy } from '@/content/copy';
 
 const GOOGLE_TAG_MANAGER_ID = "GTM-PKWLJBJL";
 
@@ -120,10 +114,9 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const footerCopy = (await pageCopy('footer')).main;
   return (
     <html
       lang="en-GB"
@@ -160,15 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <GoogleAnalytics />
-        <JsonLd graph={[orgSchema(), websiteSchema()]} />
-        <a href="#main" className="skip-link">
-          Skip to content
-        </a>
-        <SiteHeader />
-        <main id="main">{children}</main>
-        <Footer copy={footerCopy} />
-        <CookieConsent />
+        {children}
       </body>
     </html>
   );
