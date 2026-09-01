@@ -1,18 +1,19 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { pipelines, getPipeline } from '@/data/pipelines';
+import { pipelines as repoPipelines, getPipeline } from '@/data/pipelines';
+import { getPipelines } from '@/content/collections';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, howToSchema } from '@/lib/seo';
 
 export function generateStaticParams() {
-  return pipelines.map((p) => ({ slug: p.slug }));
+  return repoPipelines.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const p = getPipeline(slug);
+  const p = (await getPipelines()).find((x) => x.slug === slug) ?? getPipeline(slug);
   if (!p) return {};
   return pageMeta({
     title: `${p.name}: ${p.title}`,
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function PipelinePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const p = getPipeline(slug);
+  const p = (await getPipelines()).find((x) => x.slug === slug) ?? getPipeline(slug);
   if (!p) notFound();
 
   const crumbs = [
@@ -33,7 +34,7 @@ export default async function PipelinePage({ params }: { params: Promise<{ slug:
     { name: p.name, path: `/pipelines/${p.slug}` },
   ];
 
-  const others = pipelines.filter((x) => x.slug !== p.slug);
+  const others = (await getPipelines()).filter((x) => x.slug !== p.slug);
 
   return (
     <>

@@ -14,6 +14,8 @@ export interface StackStep {
 
 export interface Shot {
   src: string;
+  /** Set when the picture was replaced in the Studio. Wins over `src`. */
+  upload?: unknown;
   alt: string;
   label: string;
   focus?: string;

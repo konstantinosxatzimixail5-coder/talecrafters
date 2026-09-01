@@ -23,6 +23,8 @@ export interface Capture {
   // The register it is imitating, since that is a deliberate choice per frame.
   register: string;
   focus?: string; // object-position when a crop is applied
+  /** Set when the frame was replaced in the Studio. Wins over `key`. */
+  upload?: unknown;
 }
 
 export const captures: Capture[] = [

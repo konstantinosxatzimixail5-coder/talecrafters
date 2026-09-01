@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { films } from '@/data/films';
+import { getFilms } from '@/content/collections';
 import { Frame } from '@/components/Frame';
 import { Reveal } from '@/components/Reveal';
 import { Eyebrow } from '@/components/kit';
@@ -17,6 +17,7 @@ import { pageCopy } from '@/content/copy';
  * of as a film.
  */
 export async function FilmsSection() {
+  const films = await getFilms();
   if (films.length === 0) return null;
 
   const copy = (await pageCopy('filmsSection')).main;

@@ -173,7 +173,135 @@ export const postBody = [
   'block_quote', 'block_table', 'block_note', 'block_cta',
 ].map((type) => defineArrayMember({ type }));
 
-export const objectTypes = [
+
+/* ------------------------------------------------ films and pipelines -- */
+
+export const keyValue = pair('keyValue', 'Row', 'key', 'value');
+export const namedRole = defineType({
+  name: 'namedRole',
+  title: 'Entry',
+  type: 'object',
+  fields: [
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
+    defineField({ name: 'role', title: 'Role', type: 'string' }),
+    defineField({ name: 'body', title: 'Body', type: 'text', rows: 4 }),
+  ],
+  preview: { select: { title: 'name', subtitle: 'role' } },
+});
+
+/** A generation block from a film's process sheet. */
+export const beat = defineType({
+  name: 'beat',
+  title: 'Block',
+  type: 'object',
+  fields: [
+    defineField({ name: 'letter', title: 'Letter', type: 'string' }),
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
+    defineField({ name: 'time', title: 'Starts at', type: 'string', description: 'Where the block starts, for the beat map.' }),
+    defineField({ name: 'span', title: 'Range', type: 'string', description: 'The full range as the sheet prints it.' }),
+    defineField({ name: 'note', title: 'Note', type: 'text', rows: 2 }),
+    defineField({ name: 'prompt', title: 'Prompt', type: 'text', rows: 8, description: 'The prompt as it was written for the video model.' }),
+    defineField({ name: 'shot', title: 'Frame', type: 'shot' }),
+  ],
+  preview: { select: { title: 'name', subtitle: 'span', media: 'shot.image' } },
+});
+
+/** A character or set reference from a film's design sheet. */
+export const designSheet = defineType({
+  name: 'designSheet',
+  title: 'Design sheet',
+  type: 'object',
+  fields: [
+    defineField({ name: 'tag', title: 'Tag', type: 'string' }),
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
+    defineField({ name: 'note', title: 'Note', type: 'text', rows: 3 }),
+    defineField({ name: 'shot', title: 'Frame', type: 'shot' }),
+  ],
+  preview: { select: { title: 'name', subtitle: 'tag', media: 'shot.image' } },
+});
+
+export const filmStep = defineType({
+  name: 'filmStep',
+  title: 'Pipeline step',
+  type: 'object',
+  fields: [
+    defineField({ name: 'num', title: 'Number', type: 'string' }),
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
+    defineField({ name: 'tool', title: 'Tool', type: 'string' }),
+    defineField({ name: 'body', title: 'Body', type: 'text', rows: 4 }),
+  ],
+  preview: { select: { title: 'name', subtitle: 'tool' } },
+});
+
+export const lookGroup = defineType({
+  name: 'lookGroup',
+  title: 'Look',
+  type: 'object',
+  fields: [
+    defineField({ name: 'key', title: 'Name', type: 'string' }),
+    defineField({
+      name: 'lines', title: 'Lines', type: 'array',
+      of: [defineArrayMember({ type: 'string' })],
+    }),
+  ],
+  preview: { select: { title: 'key', lines: 'lines' }, prepare: (v: any) => ({ title: v.key, subtitle: (v.lines ?? []).join(' · ') }) },
+});
+
+export const lock = defineType({
+  name: 'lock',
+  title: 'Lock',
+  type: 'object',
+  fields: [
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
+    defineField({ name: 'symptom', title: 'Symptom', type: 'text', rows: 2 }),
+    defineField({ name: 'lock', title: 'The lock', type: 'text', rows: 3 }),
+  ],
+  preview: { select: { title: 'name', subtitle: 'symptom' } },
+});
+
+export const waypoint = defineType({
+  name: 'waypoint',
+  title: 'Waypoint',
+  type: 'object',
+  fields: [
+    defineField({ name: 'num', title: 'Number', type: 'string' }),
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
+    defineField({ name: 'cue', title: 'Cue', type: 'text', rows: 2 }),
+  ],
+  preview: { select: { title: 'name', subtitle: 'cue' } },
+});
+
+/** A pipeline stage: what it fixes, what runs it, how long it takes. */
+export const stage = defineType({
+  name: 'stage',
+  title: 'Stage',
+  type: 'object',
+  fields: [
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
+    defineField({ name: 'tool', title: 'Tool', type: 'string' }),
+    defineField({ name: 'fixes', title: 'What it fixes', type: 'text', rows: 4 }),
+    defineField({ name: 'time', title: 'Time', type: 'string' }),
+  ],
+  preview: { select: { title: 'name', subtitle: 'tool' } },
+});
+
+/** A pipeline gate carries the failure path as well as the test. */
+export const pipelineGate = defineType({
+  name: 'pipelineGate',
+  title: 'Control gate',
+  type: 'object',
+  fields: [
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
+    defineField({ name: 'test', title: 'The test', type: 'text', rows: 3 }),
+    defineField({ name: 'fail', title: 'On failure', type: 'text', rows: 3 }),
+  ],
+  preview: { select: { title: 'name', subtitle: 'test' } },
+});
+
+/** Every shared shape, in one list. Registered once in schema.ts. */
+export const objectTypes: any[] = [
   shot, artefact, stackStep, gate, qa, link,
   blockP, blockH2, blockH3, blockUl, blockOl, blockQuote, blockTable, blockNote, blockCta,
+  keyValue, namedRole, beat, designSheet, filmStep,
+  lookGroup, lock, waypoint, stage, pipelineGate,
 ];

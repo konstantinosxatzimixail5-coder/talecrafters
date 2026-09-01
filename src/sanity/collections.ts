@@ -245,6 +245,88 @@ export const writingSample = defineType({
   preview: { select: { title: 'title', subtitle: 'kind' } },
 });
 
+
+/* ----------------------------------------------------------------- film -- */
+
+export const film = defineType({
+  name: 'film',
+  title: 'Film',
+  type: 'document',
+  groups: [
+    { name: 'main', title: 'Film', default: true },
+    { name: 'sheet', title: 'Process sheet' },
+    { name: 'design', title: 'Design & cast' },
+    { name: 'stack', title: 'Stack & look' },
+    { name: 'route', title: 'Route' },
+  ],
+  fields: [
+    defineField({ name: 'title', title: 'Title', type: 'string', group: 'main', validation: (R) => R.required() }),
+    { ...slug('title'), group: 'main' } as any,
+    defineField({ name: 'runtime', title: 'Runtime', type: 'string', group: 'main' }),
+    defineField({ name: 'strapline', title: 'Strapline', type: 'text', rows: 2, group: 'main' }),
+    defineField({ name: 'standfirst', title: 'Standfirst', type: 'text', rows: 3, group: 'main', description: 'The card line on the front page.' }),
+    defineField({ name: 'logline', title: 'Logline', type: 'text', rows: 4, group: 'main' }),
+    defineField({ name: 'poster', title: 'Key art', type: 'shot', group: 'main' }),
+    defineField({ name: 'hero', title: 'Hero frame', type: 'shot', group: 'main' }),
+    defineField({ name: 'strip', title: 'Contact strip', type: 'shot', group: 'main' }),
+    defineField({ name: 'closing', title: 'Closing frame', type: 'shot', group: 'main' }),
+    { ...order, group: 'main' } as any,
+    { ...arrayOf('spec', 'Specification', 'keyValue'), group: 'sheet' } as any,
+    { ...arrayOf('delivery', 'Delivery', 'keyValue'), group: 'sheet' } as any,
+    { ...arrayOf('spine', 'Spine', 'keyValue'), group: 'sheet' } as any,
+    defineField({ name: 'spineNote', title: 'Spine note', type: 'text', rows: 3, group: 'sheet' }),
+    { ...arrayOf('beats', 'Generation blocks', 'beat'), group: 'sheet' } as any,
+    defineField({ name: 'castIntro', title: 'Cast intro', type: 'text', rows: 3, group: 'design' }),
+    defineField({ name: 'castNote', title: 'Cast note', type: 'text', rows: 3, group: 'design' }),
+    { ...arrayOf('cast', 'Cast and sets', 'designSheet'), group: 'design' } as any,
+    { ...arrayOf('pipeline', 'Pipeline', 'filmStep'), group: 'stack' } as any,
+    defineField({ name: 'pipelineNote', title: 'Pipeline note', type: 'text', rows: 3, group: 'stack' }),
+    { ...arrayOf('tools', 'Tools', 'namedRole'), group: 'stack' } as any,
+    { ...arrayOf('skills', 'Skills', 'namedRole'), group: 'stack' } as any,
+    defineField({ name: 'stackNote', title: 'Stack note', type: 'text', rows: 3, group: 'stack' }),
+    { ...arrayOf('look', 'Look', 'lookGroup'), group: 'stack' } as any,
+    defineField({ name: 'lookNote', title: 'Look note', type: 'text', rows: 3, group: 'stack' }),
+    { ...arrayOf('locks', 'Locks', 'lock'), group: 'stack' } as any,
+    defineField({ name: 'routeShot', title: 'Route picture', type: 'shot', group: 'route' }),
+    defineField({ name: 'routeCaption', title: 'Route caption', type: 'text', rows: 2, group: 'route' }),
+    { ...strings('routeWhy', 'Why'), group: 'route' } as any,
+    defineField({ name: 'routePositionReference', title: 'Position reference', type: 'text', rows: 3, group: 'route' }),
+    { ...arrayOf('routeWaypoints', 'Waypoints', 'waypoint'), group: 'route' } as any,
+    { ...strings('routeLocks', 'Route locks'), group: 'route' } as any,
+    defineField({ name: 'routeResult', title: 'Route result', type: 'text', rows: 3, group: 'route' }),
+    defineField({ name: 'docPath', title: 'Document path', type: 'string', group: 'sheet' }),
+    defineField({ name: 'docTitle', title: 'Document title', type: 'string', group: 'sheet' }),
+    defineField({ name: 'docSummary', title: 'Document summary', type: 'text', rows: 3, group: 'sheet' }),
+  ],
+  orderings: [{ title: 'Running order', name: 'order', by: [{ field: 'order', direction: 'asc' }] }],
+  preview: { select: { title: 'title', subtitle: 'runtime', media: 'poster.image' } },
+});
+
+/* ------------------------------------------------------------- pipeline -- */
+
+export const pipeline = defineType({
+  name: 'pipeline',
+  title: 'Pipeline',
+  type: 'document',
+  fields: [
+    defineField({ name: 'name', title: 'Name', type: 'string', validation: (R) => R.required() }),
+    slug('name'),
+    defineField({ name: 'num', title: 'Number', type: 'string' }),
+    defineField({ name: 'title', title: 'Title', type: 'string', description: 'The line under the name, e.g. "Cast once, run forty".' }),
+    defineField({ name: 'mechanism', title: 'Mechanism', type: 'string', description: 'The one thing that makes it work, e.g. "The trained face".' }),
+    defineField({ name: 'accent', title: 'Accent colour', type: 'string' }),
+    defineField({ name: 'summary', title: 'Summary', type: 'text', rows: 4 }),
+    defineField({ name: 'loop', title: 'Loop', type: 'text', rows: 3, description: 'How long a full run takes and what the next one costs.' }),
+    defineField({ name: 'useWhen', title: 'Use when', type: 'text', rows: 3 }),
+    arrayOf('stages', 'Stages', 'stage'),
+    arrayOf('gates', 'Control gates', 'pipelineGate'),
+    order,
+  ],
+  orderings: [{ title: 'Running order', name: 'order', by: [{ field: 'order', direction: 'asc' }] }],
+  preview: { select: { title: 'name', subtitle: 'title' } },
+});
+
 export const collectionTypes = [
-  post, caseStudy, glossaryTerm, conceptBrand, capture, faqGroup, resource, writingSample,
+  post, caseStudy, film, pipeline, glossaryTerm, conceptBrand, capture, faqGroup,
+  resource, writingSample,
 ];

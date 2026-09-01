@@ -68,6 +68,7 @@ export default async function CapturesPage() {
                 <div className="relative">
                   <Frame
                     src={c.key}
+                    upload={c.upload as never}
                     alt={c.alt}
                     sizes="(max-width: 1024px) 100vw, 56vw"
                     className="w-full"

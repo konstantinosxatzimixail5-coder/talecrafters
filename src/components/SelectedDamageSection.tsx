@@ -105,6 +105,7 @@ export function SelectedDamageSection({ copy }: { copy: HomeCopy['selectedDamage
                   <div className="lg:col-span-7 relative overflow-hidden aspect-[16/9] lg:aspect-auto lg:min-h-[440px] lg:[direction:ltr]">
                     <Frame
                       src={w.hero.src}
+                      upload={w.hero.upload as never}
                       alt={w.hero.alt}
                       focus={w.hero.focus}
                       sizes="(max-width: 1024px) 100vw, 58vw"

@@ -22,6 +22,8 @@ import { captures as repoCaptures } from '@/data/captures';
 import { faqGroups as repoFaqGroups } from '@/data/faq';
 import { resources as repoResources } from '@/data/resources';
 import { writing as repoWriting } from '@/data/writing';
+import { films as repoFilms } from '@/data/films';
+import { pipelines as repoPipelines } from '@/data/pipelines';
 
 /** A picture as the Studio stores it: a manifest key, an upload, or both. */
 export interface StoredShot {
@@ -52,7 +54,9 @@ const QUERY = `{
   "capture": *[_type == "capture"] | order(order asc) { ... },
   "faqGroup": *[_type == "faqGroup"] | order(order asc) { ... },
   "resource": *[_type == "resource"] | order(order asc) { ..., "slug": slug.current },
-  "writingSample": *[_type == "writingSample"] | order(order asc) { ..., "slug": slug.current }
+  "writingSample": *[_type == "writingSample"] | order(order asc) { ..., "slug": slug.current },
+  "film": *[_type == "film"] | order(order asc) { ..., "slug": slug.current },
+  "pipeline": *[_type == "pipeline"] | order(order asc) { ..., "slug": slug.current }
 }`;
 
 async function fetchAll(): Promise<Bundle> {
@@ -90,7 +94,7 @@ async function listOf<T>(type: string, fallback: readonly T[], map: (doc: any) =
 /* ------------------------------------------------------------- mappers -- */
 
 const shot = (s: any) =>
-  s && { src: s.src, image: s.image, alt: s.alt ?? '', label: s.label, focus: s.focus };
+  s && { src: s.src, upload: s.image, alt: s.alt ?? '', label: s.label, focus: s.focus };
 
 const arr = <T>(v: unknown, f: (x: any) => T): T[] => (Array.isArray(v) ? v.map(f) : []);
 const strArr = (v: unknown): string[] => (Array.isArray(v) ? v.filter((x) => typeof x === 'string') : []);
@@ -248,3 +252,75 @@ export const getWriting = () =>
     form: d.form ?? '',
     language: d.language,
   })) as Promise<(typeof repoWriting)[number][]>;
+
+/** A film's frames are stored as pictures but read back as a key and an alt,
+ *  because that is the pair every renderer on the film pages already takes. */
+const framePair = (s: any) => ({ image: s?.src ?? '', alt: s?.alt ?? '', upload: s?.image });
+
+export const getFilms = () =>
+  listOf('film', repoFilms, (d) => ({
+    slug: d.slug,
+    title: d.title,
+    runtime: d.runtime ?? '',
+    strapline: d.strapline ?? '',
+    standfirst: d.standfirst ?? '',
+    logline: d.logline ?? '',
+    hero: d.hero?.src ?? '',
+    heroAlt: d.hero?.alt ?? '',
+    heroUpload: d.hero?.image,
+    poster: d.poster?.src ?? '',
+    posterAlt: d.poster?.alt ?? '',
+    posterUpload: d.poster?.image,
+    strip: d.strip?.src ?? '',
+    stripAlt: d.strip?.alt ?? '',
+    closing: d.closing?.src ?? '',
+    closingAlt: d.closing?.alt ?? '',
+    spec: arr(d.spec, (r) => ({ key: r.key ?? '', value: r.value ?? '' })),
+    delivery: arr(d.delivery, (r) => ({ key: r.key ?? '', value: r.value ?? '' })),
+    spine: arr(d.spine, (r) => ({ key: r.key ?? '', value: r.value ?? '' })),
+    spineNote: d.spineNote ?? '',
+    beats: arr(d.beats, (b) => ({
+      letter: b.letter ?? '', time: b.time ?? '', span: b.span ?? '', name: b.name ?? '',
+      note: b.note ?? '', prompt: b.prompt ?? '', ...framePair(b.shot),
+    })),
+    castIntro: d.castIntro ?? '',
+    castNote: d.castNote ?? '',
+    cast: arr(d.cast, (c) => ({
+      tag: c.tag ?? '', name: c.name ?? '', note: c.note, ...framePair(c.shot),
+    })),
+    pipeline: arr(d.pipeline, (p) => ({ num: p.num ?? '', name: p.name ?? '', tool: p.tool ?? '', body: p.body ?? '' })),
+    pipelineNote: d.pipelineNote ?? '',
+    tools: arr(d.tools, (t) => ({ name: t.name ?? '', role: t.role ?? '', body: t.body ?? '' })),
+    skills: arr(d.skills, (t) => ({ name: t.name ?? '', role: t.role ?? '', body: t.body ?? '' })),
+    stackNote: d.stackNote ?? '',
+    look: arr(d.look, (l) => ({ key: l.key ?? '', lines: strArr(l.lines) })),
+    lookNote: d.lookNote ?? '',
+    locks: arr(d.locks, (l) => ({ name: l.name ?? '', symptom: l.symptom ?? '', lock: l.lock ?? '' })),
+    route: d.routeShot
+      ? {
+          ...framePair(d.routeShot),
+          caption: d.routeCaption ?? '',
+          why: strArr(d.routeWhy),
+          positionReference: d.routePositionReference ?? '',
+          waypoints: arr(d.routeWaypoints, (w) => ({ num: w.num ?? '', name: w.name ?? '', cue: w.cue ?? '' })),
+          locks: strArr(d.routeLocks),
+          result: d.routeResult ?? '',
+        }
+      : undefined,
+    doc: { path: d.docPath ?? '', title: d.docTitle ?? '', summary: d.docSummary ?? '' },
+  })) as Promise<(typeof repoFilms)[number][]>;
+
+export const getPipelines = () =>
+  listOf('pipeline', repoPipelines, (d) => ({
+    slug: d.slug,
+    num: d.num ?? '',
+    name: d.name,
+    title: d.title ?? '',
+    mechanism: d.mechanism ?? '',
+    accent: d.accent ?? 'var(--brand-cyan)',
+    summary: d.summary ?? '',
+    loop: d.loop ?? '',
+    useWhen: d.useWhen ?? '',
+    stages: arr(d.stages, (x) => ({ name: x.name ?? '', tool: x.tool ?? '', fixes: x.fixes ?? '', time: x.time ?? '' })),
+    gates: arr(d.gates, (g) => ({ name: g.name ?? '', test: g.test ?? '', fail: g.fail ?? '' })),
+  })) as Promise<(typeof repoPipelines)[number][]>;

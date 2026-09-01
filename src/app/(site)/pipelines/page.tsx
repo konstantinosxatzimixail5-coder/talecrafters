@@ -1,11 +1,12 @@
 import Link from 'next/link';
-import { pipelines } from '@/data/pipelines';
+import { pipelines as repoPipelines } from '@/data/pipelines';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
+import { getPipelines } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: 'GenAI Workflows — How the Work Actually Gets Made',
@@ -44,6 +45,7 @@ const qa = [
 
 export default async function PipelinesIndex() {
   const copy = await pageCopy('pipelines');
+  const pipelines = await getPipelines();
   return (
     <>
       <JsonLd

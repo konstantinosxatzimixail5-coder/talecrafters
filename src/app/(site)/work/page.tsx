@@ -84,6 +84,7 @@ export default async function WorkIndex() {
                   <div className="lg:col-span-5 relative overflow-hidden aspect-[16/10] lg:aspect-auto lg:min-h-[340px]">
                     <Frame
                       src={w.hero.src}
+                      upload={w.hero.upload as never}
                       alt={w.hero.alt}
                       focus={w.hero.focus}
                       sizes="(max-width: 1024px) 100vw, 42vw"

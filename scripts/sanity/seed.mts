@@ -15,9 +15,16 @@
 //   npm run seed:sanity -- --commit  do it
 //   npm run seed:sanity -- --commit --only=post,caseStudy
 //
-// It needs a token with write access, as SANITY_WRITE_TOKEN. Create one in
-// sanity.io/manage under API → Tokens, with the Editor role. The token is read
-// from the environment and never written anywhere.
+// It needs a token with write access, as SANITY_WRITE_TOKEN. Create one at
+// sanity.io/manage → API → Tokens with the Editor role, then put it in
+// .env.local at the root of this repository:
+//
+//   SANITY_WRITE_TOKEN=sk...
+//
+// .env.local is already ignored by git. The token belongs there and nowhere
+// else: the site never reads it, so it does not go into Vercel, and a token
+// with write access in a deployed environment is a way to have the dataset
+// edited by someone who was only ever meant to read it.
 //
 // Writes are createOrReplace against a deterministic id, so running it twice
 // changes nothing the second time, and running it after an edit in the Studio
@@ -27,7 +34,21 @@
 
 import { createClient } from '@sanity/client';
 import { readFile } from 'node:fs/promises';
+import { readFileSync, existsSync } from 'node:fs';
 import { basename } from 'node:path';
+
+/** Reads .env.local, so the token lives in a gitignored file rather than in a
+ *  shell history. Deliberately tiny: it sets only what is not already set, so
+ *  an environment variable passed on the command line still wins. */
+for (const file of ['.env.local', '.env']) {
+  if (!existsSync(file)) continue;
+  for (const line of readFileSync(file, 'utf8').split('\n')) {
+    const m = /^\s*([A-Z0-9_]+)\s*=\s*(.*)$/.exec(line);
+    if (!m) continue;
+    const value = m[2].trim().replace(/^["']|["']$/g, '');
+    if (!(m[1] in process.env)) process.env[m[1]] = value;
+  }
+}
 
 import { posts } from '../../src/data/posts';
 import { work } from '../../src/data/work';
@@ -37,6 +58,8 @@ import { captures } from '../../src/data/captures';
 import { faqGroups } from '../../src/data/faq';
 import { resources } from '../../src/data/resources';
 import { writing } from '../../src/data/writing';
+import { films } from '../../src/data/films';
+import { pipelines } from '../../src/data/pipelines';
 import manifest from '../../src/image-manifest.json';
 
 const args = process.argv.slice(2);
@@ -49,7 +72,16 @@ const dataset = 'production';
 const token = process.env.SANITY_WRITE_TOKEN;
 
 if (COMMIT && !token) {
-  console.error('SANITY_WRITE_TOKEN is not set. Create an Editor token at sanity.io/manage.');
+  console.error(
+    'SANITY_WRITE_TOKEN is not set.\n\n' +
+      '  1. sanity.io/manage → your project → API → Tokens → Add API token\n' +
+      '  2. Name it anything, give it the Editor role, copy it\n' +
+      '  3. Put it in .env.local at the root of this repo:\n\n' +
+      '       SANITY_WRITE_TOKEN=sk...\n\n' +
+      '  .env.local is gitignored. Do not add this token to Vercel: the site\n' +
+      '  never reads it, and a write token in a deployment is a way to have the\n' +
+      '  dataset edited by something that was only meant to read it.'
+  );
   process.exit(1);
 }
 
@@ -196,6 +228,56 @@ async function buildDocs() {
     title: w.title, slug: { _type: 'slug', current: w.slug },
     kind: w.kind, color: w.color, summary: w.summary,
     detail: w.detail, form: w.form, language: w.language,
+  }));
+
+  out.film = await Promise.all(films.map(async (f, i) => ({
+    _id: id('film', f.slug), _type: 'film', order: i + 1,
+    title: f.title, slug: { _type: 'slug', current: f.slug },
+    runtime: f.runtime, strapline: f.strapline, standfirst: f.standfirst, logline: f.logline,
+    poster: await shot({ src: f.poster, alt: f.posterAlt }),
+    hero: await shot({ src: f.hero, alt: f.heroAlt }),
+    strip: await shot({ src: f.strip, alt: f.stripAlt }),
+    closing: await shot({ src: f.closing, alt: f.closingAlt }),
+    spec: keyed(f.spec, 'v').map((r: any) => ({ ...r, _type: 'keyValue' })),
+    delivery: keyed(f.delivery, 'd').map((r: any) => ({ ...r, _type: 'keyValue' })),
+    spine: keyed(f.spine, 'n').map((r: any) => ({ ...r, _type: 'keyValue' })),
+    spineNote: f.spineNote,
+    beats: await Promise.all(f.beats.map(async (b, j) => ({
+      _key: key(j, 'b'), _type: 'beat',
+      letter: b.letter, time: b.time, span: b.span, name: b.name, note: b.note, prompt: b.prompt,
+      shot: await shot({ src: b.image, alt: b.alt }, j),
+    }))),
+    castIntro: f.castIntro, castNote: f.castNote,
+    cast: await Promise.all(f.cast.map(async (c, j) => ({
+      _key: key(j, 'c'), _type: 'designSheet',
+      tag: c.tag, name: c.name, note: c.note,
+      shot: c.image ? await shot({ src: c.image, alt: c.alt ?? '' }, j) : undefined,
+    }))),
+    pipeline: keyed(f.pipeline, 'p').map((r: any) => ({ ...r, _type: 'filmStep' })),
+    pipelineNote: f.pipelineNote,
+    tools: keyed(f.tools, 't').map((r: any) => ({ ...r, _type: 'namedRole' })),
+    skills: keyed(f.skills, 'k').map((r: any) => ({ ...r, _type: 'namedRole' })),
+    stackNote: f.stackNote,
+    look: keyed(f.look, 'o').map((r: any) => ({ ...r, _type: 'lookGroup' })),
+    lookNote: f.lookNote,
+    locks: keyed(f.locks, 'x').map((r: any) => ({ ...r, _type: 'lock' })),
+    routeShot: f.route ? await shot({ src: f.route.image, alt: f.route.alt }) : undefined,
+    routeCaption: f.route?.caption,
+    routeWhy: f.route?.why,
+    routePositionReference: f.route?.positionReference,
+    routeWaypoints: f.route ? keyed(f.route.waypoints, 'w').map((r: any) => ({ ...r, _type: 'waypoint' })) : undefined,
+    routeLocks: f.route?.locks,
+    routeResult: f.route?.result,
+    docPath: f.doc.path, docTitle: f.doc.title, docSummary: f.doc.summary,
+  })));
+
+  out.pipeline = pipelines.map((p, i) => ({
+    _id: id('pipeline', p.slug), _type: 'pipeline', order: i + 1,
+    name: p.name, slug: { _type: 'slug', current: p.slug },
+    num: p.num, title: p.title, mechanism: p.mechanism, accent: p.accent,
+    summary: p.summary, loop: p.loop, useWhen: p.useWhen,
+    stages: keyed(p.stages, 's').map((r: any) => ({ ...r, _type: 'stage' })),
+    gates: keyed(p.gates, 'g').map((r: any) => ({ ...r, _type: 'pipelineGate' })),
   }));
 
   return out;

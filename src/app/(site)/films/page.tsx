@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { films } from '@/data/films';
+import { films as repoFilms } from '@/data/films';
 import { Frame } from '@/components/Frame';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
@@ -7,6 +7,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, imageObjectSchema } from '@/lib/seo';
 import { abs, SITE_URL } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
+import { getFilms } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: 'AI Filmmaking Workflows — Two Original Shorts, Published With Their Process',
@@ -31,6 +32,7 @@ const crumbs = [
 
 export default async function FilmsIndex() {
   const copy = await pageCopy('films');
+  const films = await getFilms();
   return (
     <>
       <JsonLd

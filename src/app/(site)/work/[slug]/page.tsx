@@ -113,6 +113,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
           >
             <Frame
               src={w.hero.src}
+              upload={w.hero.upload as never}
               alt={w.hero.alt}
               focus={w.hero.focus}
               priority
@@ -251,6 +252,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                 >
                   <Frame
                     src={shot.src}
+                    upload={shot.upload as never}
                     alt={shot.alt}
                     focus={shot.focus}
                     sizes="(max-width: 768px) 100vw, 50vw"

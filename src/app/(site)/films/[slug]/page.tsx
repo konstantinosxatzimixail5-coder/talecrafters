@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Download } from 'lucide-react';
-import { films, findFilm } from '@/data/films';
+import { films as repoFilms, findFilm } from '@/data/films';
+import { getFilms } from '@/content/collections';
 import { Frame } from '@/components/Frame';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
@@ -10,7 +11,7 @@ import { pageMeta, breadcrumbSchema, imageObjectSchema } from '@/lib/seo';
 import { abs, SITE_URL } from '@/lib/site';
 
 export function generateStaticParams() {
-  return films.map((f) => ({ slug: f.slug }));
+  return repoFilms.map((f) => ({ slug: f.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -65,7 +66,7 @@ export default async function FilmPage({ params }: { params: Promise<{ slug: str
     { name: 'AI Filmmaking Workflows', path: '/films' },
     { name: f.title, path: `/films/${f.slug}` },
   ];
-  const other = films.find((x) => x.slug !== f.slug);
+  const other = (await getFilms()).find((x) => x.slug !== f.slug);
 
   return (
     <>

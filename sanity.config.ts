@@ -53,6 +53,8 @@ export default defineConfig({
             S.divider(),
             S.documentTypeListItem('post').title('Blog posts'),
             S.documentTypeListItem('caseStudy').title('Case studies'),
+            S.documentTypeListItem('film').title('Films'),
+            S.documentTypeListItem('pipeline').title('Pipelines'),
             S.documentTypeListItem('conceptBrand').title('Concept brands'),
             S.documentTypeListItem('capture').title('Photoreal captures'),
             S.documentTypeListItem('writingSample').title('Writing samples'),

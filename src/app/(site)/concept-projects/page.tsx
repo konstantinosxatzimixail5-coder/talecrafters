@@ -161,6 +161,7 @@ export default async function ConceptProjects() {
                   >
                     <Frame
                       src={s.src}
+                      upload={s.upload as never}
                       alt={s.alt}
                       focus={s.focus}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
