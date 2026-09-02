@@ -62,6 +62,8 @@ export interface Post {
   keywords: string[];
   /** Path under /img/blog, without extension or size suffix. */
   image: string;
+  /** A hero uploaded in the Studio. Wins over `image` when set. */
+  heroUpload?: unknown;
   imageAlt: string;
   /**
    * The lede paragraph, shown above the body in a heavier weight. Answer-engine

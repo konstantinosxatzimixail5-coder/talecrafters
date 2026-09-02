@@ -5,9 +5,12 @@ import { articleSchema, breadcrumbSchema, faqSchema, imageObjectSchema } from '@
 import { getPost, readingMinutes, wordCount, type Post } from '@/data/posts';
 import { getResource } from '@/data/resources';
 import { getTerm } from '@/data/glossary';
-import { heroExists, heroSrc, heroSrcSet } from '@/lib/blog-images';
+import { postHero, postHeroAt } from '@/lib/blog-images';
 
 export function LocalPostArticle({ post }: { post: Post }) {
+  // The Studio upload first, the built ladder second, the plate third.
+  const hero = postHero(post.image, post.heroUpload as never);
+  const heroUrl = postHeroAt(post.image, post.heroUpload as never, 1600);
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'Blog', path: '/blog' },
@@ -37,18 +40,18 @@ export function LocalPostArticle({ post }: { post: Post }) {
             published: post.published,
             modified: post.modified,
             author: post.author,
-            ...(heroExists(post.image)
-              ? { image: heroSrc(post.image, 1600), imageAlt: post.imageAlt }
+            ...(heroUrl
+              ? { image: heroUrl, imageAlt: post.imageAlt }
               : {}),
             tags: post.tags,
             section: post.section,
             wordCount: wordCount(post),
             mentions: post.terms,
           }),
-          ...(heroExists(post.image)
+          ...(heroUrl
             ? [
                 imageObjectSchema({
-                  url: heroSrc(post.image, 1600),
+                  url: heroUrl!,
                   caption: post.imageAlt,
                   width: 1536,
                   height: 864,
@@ -110,11 +113,11 @@ export function LocalPostArticle({ post }: { post: Post }) {
           </div>
         </header>
 
-        {heroExists(post.image) ? (
+        {hero ? (
           <figure className="mb-10 overflow-hidden" style={{ border: '1px solid var(--brand-concrete)' }}>
             <img
-              src={heroSrc(post.image, 960)}
-              srcSet={heroSrcSet(post.image)}
+              src={hero.src}
+              srcSet={hero.srcSet}
               sizes="(max-width: 768px) 100vw, 750px"
               alt={post.imageAlt}
               width={1600}

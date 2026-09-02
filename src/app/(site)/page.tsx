@@ -15,9 +15,9 @@ import { serviceSchema, caseStudySchema } from '@/lib/seo';
 
 import { featuredWork } from '@/data/work';
 import { posts, readingMinutes } from '@/data/posts';
-import { heroExists, heroSrc } from '@/lib/blog-images';
+import { postHeroAt } from '@/lib/blog-images';
 import { pageCopy } from '@/content/copy';
-import { getCategories } from '@/content/collections';
+import { getCategories, getPosts } from '@/content/collections';
 
 // The teaser takes the six newest published posts. It used to carry six
 // invented ones with stock photography, each linking to a slug that did not
@@ -30,7 +30,10 @@ const TEASER_COLORS = [
   'var(--brand-violet-text)',
 ];
 
-const teaserPosts = posts.slice(0, 6).map((p, i) => ({
+/** Built inside the component, because the posts are read at request time:
+ *  at module scope this only ever saw the repository's, so a post written in
+ *  the Studio never reached the front page. */
+const buildTeasers = (list: typeof posts) => list.slice(0, 6).map((p, i) => ({
   title: p.title,
   subtitle: p.excerpt,
   slug: p.slug,
@@ -42,12 +45,15 @@ const teaserPosts = posts.slice(0, 6).map((p, i) => ({
     year: 'numeric',
   }),
   color: TEASER_COLORS[i % TEASER_COLORS.length],
-  ...(heroExists(p.image) ? { image: heroSrc(p.image, 960) } : {}),
+  ...(postHeroAt(p.image, p.heroUpload as never, 960)
+    ? { image: postHeroAt(p.image, p.heroUpload as never, 960)! }
+    : {}),
 }));
 
 export default async function HomePage() {
   const copy = await pageCopy('home');
   const categories = await getCategories();
+  const teaserPosts = buildTeasers(await getPosts());
   return (
     <div
       className="relative"

@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { articleSchema, breadcrumbSchema, pageMeta } from '@/lib/seo';
 import { LocalPostArticle } from '@/components/LocalPostArticle';
 import { posts, getPost as getLocalPost } from '@/data/posts';
-import { heroExists, heroSrc } from '@/lib/blog-images';
+import { postHeroAt } from '@/lib/blog-images';
 
 interface Post {
   _id: string;
@@ -66,7 +66,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: local.metaTitle ?? local.title,
       description: local.metaDescription,
       path: `/blog/${local.slug}`,
-      ...(heroExists(local.image) ? { image: heroSrc(local.image, 1600) } : {}),
+      ...(postHeroAt(local.image, local.heroUpload as never, 1600)
+        ? { image: postHeroAt(local.image, local.heroUpload as never, 1600) }
+        : {}),
       type: 'article',
       publishedTime: local.published,
       modifiedTime: local.modified ?? local.published,
