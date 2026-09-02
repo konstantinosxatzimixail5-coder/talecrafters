@@ -3,6 +3,7 @@ import { structureTool } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from '@/sanity/schema';
 import { pageCopyDocs } from '@/sanity/pageTypes';
+import { navTemplates, navTemplateIds } from '@/sanity/navTemplates';
 
 // Page copy is one document per page, at a fixed id. Listing them explicitly
 // keeps them singletons: an editor opens "Home", not a folder that invites a
@@ -56,6 +57,18 @@ export default defineConfig({
             // for DIVISIONS cannot say one thing up top and another below.
             S.documentTypeListItem('navMenu').title('Menus'),
             S.divider(),
+            // The two menus. The create button offers one template per
+            // heading, pre-filled with what is live, so the nine documents can
+            // be made here rather than seeded.
+            S.listItem()
+              .title('Menus')
+              .child(
+                S.documentTypeList('navMenu')
+                  .title('Menus')
+                  .defaultOrdering([{ field: 'order', direction: 'asc' }])
+                  .initialValueTemplates(navTemplateIds.map((id) => S.initialValueTemplateItem(id)))
+              ),
+            S.divider(),
             S.documentTypeListItem('post').title('Blog posts'),
             S.documentTypeListItem('caseStudy').title('Case studies'),
             S.documentTypeListItem('film').title('Films'),
@@ -79,6 +92,9 @@ export default defineConfig({
   ],
   schema: {
     types: schemaTypes,
+    // Appended, never replacing: the page-copy templates carry the live copy
+    // into their fields and removing them empties every box.
+    templates: (prev) => [...prev, ...navTemplates],
   },
   document: {
     // Same reason: no "create new Home" in the global new-document menu.
