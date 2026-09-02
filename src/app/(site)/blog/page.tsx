@@ -6,6 +6,7 @@ import { blogSchema, breadcrumbSchema, pageMeta } from '@/lib/seo';
 import { posts as localPosts, readingMinutes } from '@/data/posts';
 import { postHeroAt } from '@/lib/blog-images';
 import { pageCopy } from '@/content/copy';
+import { getPosts } from '@/content/collections';
 
 export const metadata: Metadata = pageMeta({
   title: 'Blog — Synthetic Media Production, Costs, Compliance and Craft',
@@ -66,11 +67,15 @@ async function getCmsPosts(): Promise<CmsPost[]> {
 }
 
 async function getCards(): Promise<Card[]> {
-  const cms = await getCmsPosts();
-  const localSlugs = new Set(localPosts.map((p) => p.slug));
+  // One list, from the reader that already puts the dataset first. It used to
+  // map the repository's array here, so a card never carried a hero uploaded
+  // in the Studio and a post written there could only appear through the
+  // second branch below.
+  const all = await getPosts();
+  const slugs = new Set(all.map((p) => p.slug));
 
   const cards: Card[] = [
-    ...localPosts.map((p) => ({
+    ...all.map((p) => ({
       id: p.slug,
       title: p.title,
       slug: p.slug,
@@ -81,9 +86,10 @@ async function getCards(): Promise<Card[]> {
       imageAlt: p.imageAlt,
       minutes: readingMinutes(p),
     })),
-    // A repo slug wins a collision, so the CMS cannot shadow a reviewed file.
-    ...cms
-      .filter((p) => p.slug?.current && !localSlugs.has(p.slug.current))
+    // Anything in the dataset the reader did not return, which is only ever a
+    // post whose shape predates the current schema.
+    ...(await getCmsPosts())
+      .filter((p) => p.slug?.current && !slugs.has(p.slug.current))
       .map((p) => ({
         id: p._id,
         title: p.title,
@@ -98,6 +104,7 @@ async function getCards(): Promise<Card[]> {
 
   return cards.sort((a, b) => b.published.localeCompare(a.published));
 }
+
 
 export default async function BlogPage() {
   const copy = (await pageCopy('blog')).header;

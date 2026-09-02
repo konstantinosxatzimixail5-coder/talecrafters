@@ -6,7 +6,8 @@ import { notFound } from 'next/navigation';
 import { JsonLd } from '@/components/JsonLd';
 import { articleSchema, breadcrumbSchema, pageMeta } from '@/lib/seo';
 import { LocalPostArticle } from '@/components/LocalPostArticle';
-import { posts, getPost as getLocalPost } from '@/data/posts';
+import { posts, getPost as getRepoPost } from '@/data/posts';
+import { getPosts } from '@/content/collections';
 import { postHeroAt } from '@/lib/blog-images';
 
 interface Post {
@@ -57,10 +58,25 @@ export async function generateStaticParams() {
   }
 }
 
+
+/**
+ * The post behind a slug, dataset first.
+ *
+ * `getRepoPost` reads src/data/posts, which is the copy committed to this
+ * repository and has no hero upload on it, because an upload only exists in
+ * the dataset. Resolving from the repo meant a hero added in the Studio was
+ * never on the object the template was handed, whatever the template did with
+ * it. `getPosts` returns the dataset's version when there is one and the
+ * repository's when there is not.
+ */
+async function resolvePost(slug: string) {
+  return (await getPosts()).find((p) => p.slug === slug) ?? getRepoPost(slug);
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
 
-  const local = getLocalPost(slug);
+  const local = await resolvePost(slug);
   if (local) {
     return pageMeta({
       title: local.metaTitle ?? local.title,
@@ -201,7 +217,7 @@ const portableTextComponents = {
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
-  const local = getLocalPost(slug);
+  const local = await resolvePost(slug);
   if (local) return <LocalPostArticle post={local} />;
 
   const post = await getPost(slug);
