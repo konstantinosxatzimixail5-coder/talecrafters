@@ -65,6 +65,7 @@ import { solutions } from '../../src/data/solutions';
 import { cameraMoves } from '../../src/data/camera-moves';
 import { animationStyles } from '../../src/data/animation-styles';
 import { tools } from '../../src/data/downloads';
+import { primaryNav, navGroups } from '../../src/lib/nav';
 import manifest from '../../src/image-manifest.json';
 
 const args = process.argv.slice(2);
@@ -342,6 +343,26 @@ async function buildDocs() {
       }),
     })),
   }));
+
+  // Both menus, in one type. `menu` tells them apart; `label` is the heading
+  // you hover (DIVISIONS, ARMOURY, INTEL) or the overlay column title, and the
+  // note under each item is the line that drops down with it.
+  const leaf = (l: any, i: number) => ({
+    _key: key(i, 'n'), _type: 'navLeaf', label: l.label, href: l.href, note: l.note,
+  });
+
+  out.navMenu = [
+    ...primaryNav.map((e, i) => ({
+      _id: id('navMenu', `primary-${e.label}`), _type: 'navMenu', order: i + 1,
+      menu: 'primary', label: e.label, color: e.color, href: e.href,
+      items: e.items?.map(leaf),
+    })),
+    ...navGroups.map((g, i) => ({
+      _id: id('navMenu', `overlay-${g.title}`), _type: 'navMenu', order: i + 1,
+      menu: 'overlay', label: g.title, color: g.color,
+      items: g.items.map(leaf),
+    })),
+  ];
 
   return out;
 }

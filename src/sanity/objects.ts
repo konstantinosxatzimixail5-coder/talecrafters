@@ -412,3 +412,21 @@ objectTypes.push(
   service, deliverable, toolField, scaleItem,
   toolPara, toolNote, toolCheck, toolFields, toolTable, toolScale, toolSection, band
 );
+
+/** One line in a menu: the label, where it goes, and the note under it. */
+export const navLeaf = defineType({
+  name: 'navLeaf',
+  title: 'Menu item',
+  type: 'object',
+  fields: [
+    defineField({ name: 'label', title: 'Label', type: 'string' }),
+    defineField({ name: 'href', title: 'Link', type: 'string', description: 'A path on this site, e.g. /films.' }),
+    defineField({
+      name: 'note', title: 'Note', type: 'string',
+      description: 'The grey line under the label in the drop-down. This is the text that appears when the menu opens.',
+    }),
+  ],
+  preview: { select: { title: 'label', subtitle: 'note' } },
+});
+
+objectTypes.push(navLeaf);

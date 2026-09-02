@@ -29,6 +29,7 @@ import { solutions as repoSolutions } from '@/data/solutions';
 import { cameraMoves as repoCameraMoves } from '@/data/camera-moves';
 import { animationStyles as repoAnimationStyles } from '@/data/animation-styles';
 import { tools as repoTools } from '@/data/downloads';
+import { primaryNav as repoPrimaryNav, navGroups as repoNavGroups } from '@/lib/nav';
 
 /** A picture as the Studio stores it: a manifest key, an upload, or both. */
 export interface StoredShot {
@@ -66,7 +67,8 @@ const QUERY = `{
   "solution": *[_type == "solution"] | order(order asc) { ..., "slug": slug.current },
   "cameraMove": *[_type == "cameraMove"] | order(order asc) { ..., "slug": slug.current },
   "animationStyle": *[_type == "animationStyle"] | order(order asc) { ..., "slug": slug.current },
-  "tool": *[_type == "tool"] | order(order asc) { ..., "slug": slug.current }
+  "tool": *[_type == "tool"] | order(order asc) { ..., "slug": slug.current },
+  "navMenu": *[_type == "navMenu"] | order(order asc) { ... }
 }`;
 
 async function fetchAll(): Promise<Bundle> {
@@ -440,3 +442,42 @@ export const getTools = () =>
     bands: arr(d.bands, (b) => ({ range: b.range ?? '', verdict: b.verdict ?? '', action: b.action ?? '' })),
     licence: d.licence ?? '',
   })) as Promise<(typeof repoTools)[number][]>;
+
+/* ------------------------------------------------------------------ menu -- */
+
+const leaves = (v: unknown) =>
+  arr(v, (i) => ({ label: i.label ?? '', href: i.href ?? '', note: i.note ?? undefined }));
+
+/**
+ * The two menus.
+ *
+ * One document type covers both, told apart by `menu`. The bar's drop-down
+ * notes and the overlay's are the same shape and were the same hard-coded
+ * file, so they stay one thing to edit rather than two that drift.
+ */
+async function menusOf(which: 'primary' | 'overlay') {
+  const bundle = await all();
+  const docs = (bundle.navMenu ?? []).filter((d: any) => d.menu === which);
+  return docs.length ? docs : null;
+}
+
+export const getPrimaryNav = async (): Promise<typeof repoPrimaryNav> => {
+  const docs = await menusOf('primary');
+  if (!docs) return repoPrimaryNav;
+  return docs.map((d: any) => ({
+    label: d.label ?? '',
+    color: d.color ?? 'var(--brand-cyan)',
+    ...(d.href ? { href: d.href } : {}),
+    ...(Array.isArray(d.items) && d.items.length ? { items: leaves(d.items) } : {}),
+  }));
+};
+
+export const getNavGroups = async (): Promise<typeof repoNavGroups> => {
+  const docs = await menusOf('overlay');
+  if (!docs) return repoNavGroups;
+  return docs.map((d: any) => ({
+    title: d.label ?? '',
+    color: d.color ?? 'var(--brand-cyan)',
+    items: leaves(d.items),
+  }));
+};

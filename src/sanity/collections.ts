@@ -462,8 +462,44 @@ export const tool = defineType({
   preview: { select: { subtitle: 'slug.current' }, prepare: (v: any) => ({ title: v.subtitle ?? 'Tool', subtitle: 'Downloadable tool' }) },
 });
 
+
+/* ----------------------------------------------------------------- menu -- */
+
+export const navMenu = defineType({
+  name: 'navMenu',
+  title: 'Menu',
+  type: 'document',
+  description: 'The bar across the top and the overlay behind the burger.',
+  fields: [
+    defineField({
+      name: 'menu', title: 'Which menu', type: 'string',
+      options: { list: [
+        { title: 'Top bar (the drop-downs)', value: 'primary' },
+        { title: 'Overlay and footer', value: 'overlay' },
+      ] },
+      validation: (R) => R.required(),
+    }),
+    defineField({ name: 'label', title: 'Heading', type: 'string', description: 'DIVISIONS, ARMOURY, INTEL, or the group title in the overlay.' }),
+    defineField({ name: 'color', title: 'Accent colour', type: 'string', description: 'A CSS variable, e.g. var(--brand-gold).' }),
+    defineField({
+      name: 'href', title: 'Direct link', type: 'string',
+      description: 'Set only for a bar item that goes straight somewhere (BASE, WORK, ARSENAL) rather than opening a panel.',
+    }),
+    arrayOf('items', 'Items', 'navLeaf', 'Each one is a label, a link and the note that appears under it when the menu opens.'),
+    order,
+  ],
+  orderings: [{ title: 'Menu order', name: 'order', by: [{ field: 'order', direction: 'asc' }] }],
+  preview: {
+    select: { title: 'label', menu: 'menu', items: 'items' },
+    prepare: (v: any) => ({
+      title: v.title,
+      subtitle: `${v.menu === 'primary' ? 'Top bar' : 'Overlay'} · ${(v.items ?? []).length} items`,
+    }),
+  },
+});
+
 export const collectionTypes = [
   post, caseStudy, film, pipeline, arsenalCategory, solution, glossaryTerm,
   conceptBrand, capture, faqGroup, resource, writingSample, tool,
-  cameraMove, animationStyle,
+  cameraMove, animationStyle, navMenu,
 ];

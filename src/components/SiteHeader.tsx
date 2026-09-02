@@ -6,14 +6,20 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowUpRight, ChevronDown } from 'lucide-react';
 import { Wordmark } from './brand/Wordmark';
-import { navGroups, primaryNav } from '@/lib/nav';
-import type { NavEntry } from '@/lib/nav';
+
+import type { NavEntry, NavGroup } from '@/lib/nav';
 
 /** How long the panel waits after the pointer leaves before it closes. Without
  *  it, crossing the gap between the button and the panel shuts the menu. */
 const CLOSE_DELAY = 140;
 
-export function SiteHeader() {
+export function SiteHeader({
+  primaryNav,
+  navGroups,
+}: {
+  primaryNav: NavEntry[];
+  navGroups: NavGroup[];
+}) {
   const [open, setOpen] = useState(false);
   const [solid, setSolid] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);

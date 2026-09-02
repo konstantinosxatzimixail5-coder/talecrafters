@@ -51,6 +51,11 @@ export default defineConfig({
                   )
               ),
             S.divider(),
+            // The bar's drop-downs and the overlay/footer columns. Both live
+            // in one type, told apart by the `menu` field, so a note written
+            // for DIVISIONS cannot say one thing up top and another below.
+            S.documentTypeListItem('navMenu').title('Menus'),
+            S.divider(),
             S.documentTypeListItem('post').title('Blog posts'),
             S.documentTypeListItem('caseStudy').title('Case studies'),
             S.documentTypeListItem('film').title('Films'),
