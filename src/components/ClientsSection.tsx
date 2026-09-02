@@ -142,6 +142,50 @@ function BbdaIcon() {
   );
 }
 
+/** Amino Alliance: the orbital mark, three rings around a centre sphere. */
+function AminoIcon() {
+  return (
+    <svg width="34" height="32" viewBox="0 0 34 32" fill="none">
+      <g stroke="#2E7A9E" strokeWidth="2.2" fill="none">
+        <ellipse cx="17" cy="16" rx="14" ry="6.5" transform="rotate(-28 17 16)" />
+      </g>
+      <g stroke="#7E79BC" strokeWidth="2.2" fill="none">
+        <ellipse cx="17" cy="16" rx="14" ry="6.5" transform="rotate(28 17 16)" />
+        <ellipse cx="17" cy="16" rx="6.5" ry="14" />
+      </g>
+      <circle cx="17" cy="14.5" r="4.6" fill="url(#amino-grad)" />
+      <circle cx="4" cy="10" r="1.9" fill="#2E7A9E" />
+      <circle cx="30" cy="21" r="1.9" fill="#7E79BC" />
+      <defs>
+        <radialGradient id="amino-grad" cx="0.35" cy="0.3">
+          <stop stopColor="#C9C4E8" />
+          <stop offset="1" stopColor="#7E79BC" />
+        </radialGradient>
+      </defs>
+    </svg>
+  );
+}
+
+/** Bike Barn: the shield badge, with the tank-stripe B inside it. */
+function BikeBarnIcon() {
+  return (
+    <svg width="28" height="32" viewBox="0 0 28 32" fill="none">
+      <path
+        d="M14 1.5 26 5.5v10.5c0 7-5 11.6-12 14.5C7 27.6 2 23 2 16V5.5L14 1.5Z"
+        fill="none"
+        stroke="#D8DCE2"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path d="M4.6 12h18.8M4.6 15h18.8M4.6 18h18.8" stroke="#D8DCE2" strokeWidth="0.9" opacity="0.45" />
+      <path
+        d="M11 10h4.6c2 0 3.2 1.1 3.2 2.7 0 1.1-.6 1.9-1.6 2.3 1.3.3 2.1 1.3 2.1 2.6 0 1.9-1.4 3.1-3.7 3.1H11V10Zm2.6 2.1v2.4h1.7c.9 0 1.4-.4 1.4-1.2s-.5-1.2-1.4-1.2h-1.7Zm0 4.3v2.6h1.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.9Z"
+        fill="#D8DCE2"
+      />
+    </svg>
+  );
+}
+
 const clients = [
   {
     name: 'convene',
@@ -189,6 +233,24 @@ const clients = [
     name: 'Big Blue Data Academy',
     icon: BbdaIcon,
     textStyle: { fontFamily: 'var(--font-display)', fontWeight: 700, color: '#4FC3F7', letterSpacing: '0.02em' },
+  },
+  {
+    name: 'Amino Alliance',
+    icon: AminoIcon,
+    render: () => (
+      <span>
+        <span>Amino Alliance</span>
+        <span style={{ fontSize: '0.42em', letterSpacing: '0.3em', opacity: 0.65, marginLeft: '0.6em' }}>
+          PURE · SIMPLE · EFFECTIVE
+        </span>
+      </span>
+    ),
+    textStyle: { fontFamily: 'var(--font-display)', fontWeight: 600, color: '#9A93C9', letterSpacing: '-0.01em' },
+  },
+  {
+    name: 'BIKE-BARN',
+    icon: BikeBarnIcon,
+    textStyle: { fontFamily: 'var(--font-display)', fontWeight: 800, color: '#D8DCE2', letterSpacing: '0.08em' },
   },
   {
     name: 'MARIPOSA',
