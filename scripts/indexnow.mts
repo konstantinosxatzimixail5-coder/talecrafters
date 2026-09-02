@@ -31,13 +31,18 @@ console.log(`key          ${INDEXNOW_KEY}`);
 console.log(`keyLocation  ${INDEXNOW_KEY_LOCATION}`);
 console.log(`urls         ${urls.length}\n`);
 
-// The key file has to be readable before a submission counts for anything.
-const keyRes = await fetch(INDEXNOW_KEY_LOCATION, { cache: 'no-store' } as RequestInit);
-const keyBody = keyRes.ok ? (await keyRes.text()).trim() : '';
-if (keyBody === INDEXNOW_KEY) {
-  console.log('key file    ok\n');
+// The key file has to be readable at exactly this URL before a submission
+// counts for anything. A redirect is checked for separately because the
+// protocol does not promise the crawler will follow one, and a 30x here is the
+// difference between "submitted" and "silently ignored".
+const direct = await fetch(INDEXNOW_KEY_LOCATION, { redirect: 'manual', cache: 'no-store' } as RequestInit);
+if (direct.status >= 300 && direct.status < 400) {
+  console.log(`key file    REDIRECTS (${direct.status} -> ${direct.headers.get('location')})`);
+  console.log(`            Serve it at ${SITE_URL} without a redirect, or IndexNow may not verify it.\n`);
 } else {
-  console.log(`key file    NOT READABLE (${keyRes.status}). Submissions will be ignored until it is.\n`);
+  const body = direct.ok ? (await direct.text()).trim() : '';
+  if (body === INDEXNOW_KEY) console.log('key file    ok\n');
+  else console.log(`key file    NOT READABLE (${direct.status}). Submissions will be ignored until it is.\n`);
 }
 
 if (!COMMIT) {
