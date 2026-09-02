@@ -1,19 +1,25 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { terms, getTerm } from '@/data/glossary';
+import { terms as repoTerms, getTerm as getRepoTerm } from '@/data/glossary';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, definedTermSchema, faqSchema } from '@/lib/seo';
 import { abs, SITE_URL } from '@/lib/site';
+import { getTerms } from '@/content/collections';
+
+/** Dataset first, so an edited definition reaches its own page. */
+async function resolveTerm(slug: string) {
+  return (await getTerms()).find((t) => t.slug === slug) ?? getRepoTerm(slug);
+}
 
 export function generateStaticParams() {
-  return terms.map((t) => ({ slug: t.slug }));
+  return repoTerms.map((t) => ({ slug: t.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const t = getTerm(slug);
+  const t = await resolveTerm(slug);
   if (!t) return {};
   return pageMeta({
     title: `${t.term}: Definition`,
@@ -35,7 +41,8 @@ const tagColor: Record<string, string> = {
 
 export default async function TermPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const t = getTerm(slug);
+  const all = await getTerms();
+  const t = all.find((x) => x.slug === slug) ?? getRepoTerm(slug);
   if (!t) notFound();
 
   const color = tagColor[t.tags[0]] ?? 'var(--brand-gold)';
@@ -43,7 +50,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
   // A related slug that no longer exists would render a dead link, so the list
   // is resolved against the real data rather than trusted.
   const related = t.related
-    .map((s) => getTerm(s))
+    .map((s) => all.find((x) => x.slug === s) ?? getRepoTerm(s))
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
 
   const crumbs = [
@@ -200,7 +207,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
               className="inline-block px-5 py-3 text-sm tracking-wider"
               style={{ fontFamily: 'var(--font-mono)', border: '1px solid rgba(255,255,255,0.16)', color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
             >
-              ← ALL {terms.length} TERMS
+              ← ALL {all.length} TERMS
             </Link>
           </aside>
         </div>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Arm } from '@/data/arsenal';
-import { categories } from '@/data/arsenal';
+import { getCategories } from '@/content/collections';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 
@@ -9,7 +9,7 @@ import { Reveal } from '@/components/Reveal';
  * covers, the arsenal categories that belong to it, and whatever proof the arm
  * happens to have. Only the proof differs, so it comes in as children.
  */
-export function ArmPage({
+export async function ArmPage({
   arm,
   eyebrow,
   title,
@@ -26,7 +26,7 @@ export function ArmPage({
   children?: React.ReactNode;
   cta: { title: string; body: string };
 }) {
-  const mine = categories.filter((c) => c.arm === arm.slug);
+  const mine = (await getCategories()).filter((c) => c.arm === arm.slug);
   const others = ['create', 'systems', 'originals'].filter((s) => s !== arm.slug);
 
   return (

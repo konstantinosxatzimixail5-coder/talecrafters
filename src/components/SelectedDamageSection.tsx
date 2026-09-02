@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { featuredWork, work } from '@/data/work';
+import type { CaseStudy } from '@/data/work';
 
 /** The button counts the cases rather than naming a number that goes stale. */
 const COUNT_WORDS = ['NO', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE', 'TEN'];
@@ -18,7 +18,14 @@ import type { HomeCopy } from '@/content/copy';
  * one narrative explainer) so that the breadth reads as deliberate rather than
  * as everything we have ever touched.
  */
-export function SelectedDamageSection({ copy }: { copy: HomeCopy['selectedDamage'] }) {
+export function SelectedDamageSection({
+  copy,
+  work,
+}: {
+  copy: HomeCopy['selectedDamage'];
+  work: CaseStudy[];
+}) {
+  const featuredWork = work.filter((w) => w.featured);
   return (
     <section
       id="work"

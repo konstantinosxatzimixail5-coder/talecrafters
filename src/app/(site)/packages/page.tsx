@@ -2,8 +2,9 @@ import { PricingSection } from '@/components/PricingSection';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, faqSchema, serviceSchema } from '@/lib/seo';
-import { faqGroups } from '@/data/faq';
+import { faqGroups as repoFaqGroups } from '@/data/faq';
 import { pageCopy } from '@/content/copy';
+import { getFaqGroups } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: 'Packages — Four Ways to Work With Us',
@@ -24,9 +25,12 @@ const crumbs = [
   { name: 'Packages', path: '/packages' },
 ];
 
-const qa = faqGroups.find((g) => g.title === 'WORKING WITH US')!.items;
+/** The fallback, used when the dataset has no FAQ sections. */
+const repoQa = repoFaqGroups.find((g) => g.title === 'WORKING WITH US')!.items;
 
 export default async function PackagesPage() {
+  const qa =
+    (await getFaqGroups()).find((g) => g.title === 'WORKING WITH US')?.items ?? repoQa;
   const home = await pageCopy('home');
   const copy = await pageCopy('packages');
   return (

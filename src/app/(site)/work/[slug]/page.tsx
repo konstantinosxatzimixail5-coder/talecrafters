@@ -1,19 +1,26 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { work, getCase } from '@/data/work';
+import { work as repoWork, getCase as getRepoCase } from '@/data/work';
 import { Frame } from '@/components/Frame';
 import { PageHeader, Eyebrow, SpecBlock, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, caseStudySchema, videoObjectSchema, imageObjectSchema } from '@/lib/seo';
+import { getWork } from '@/content/collections';
+
+/** The case behind a slug, dataset first, so an edit in the Studio reaches
+ *  the case study's own page and not only the index. */
+async function resolveCase(slug: string) {
+  return (await getWork()).find((w) => w.slug === slug) ?? getRepoCase(slug);
+}
 
 export function generateStaticParams() {
-  return work.map((w) => ({ slug: w.slug }));
+  return repoWork.map((w) => ({ slug: w.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const w = getCase(slug);
+  const w = await resolveCase(slug);
   if (!w) return {};
   return pageMeta({
     title: `${w.client}: ${w.title}`,
@@ -26,11 +33,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function CasePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const w = getCase(slug);
+  const all = await getWork();
+  const w = all.find((c) => c.slug === slug) ?? getRepoCase(slug);
   if (!w) notFound();
 
-  const index = work.findIndex((c) => c.slug === w.slug);
-  const next = work[(index + 1) % work.length];
+  // Next/previous walks what was actually read, so a case added in the Studio
+  // is in the rotation rather than skipped.
+  const index = all.findIndex((c) => c.slug === w.slug);
+  const next = all[(index + 1) % all.length];
 
   const crumbs = [
     { name: 'Home', path: '/' },

@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { GLOSSARY_TAGS, termsByTag, terms } from '@/data/glossary';
+import { GLOSSARY_TAGS, terms as repoTerms } from '@/data/glossary';
 import { PageHeader, CtaBar } from '@/components/kit';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, definedTermSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
+import { getTerms } from '@/content/collections';
 
 export function generateStaticParams() {
   return GLOSSARY_TAGS.map((tag) => ({ tag }));
@@ -52,7 +53,9 @@ export async function generateMetadata({ params }: { params: Promise<{ tag: stri
   const { tag } = await params;
   const m = meta[tag];
   if (!m) return {};
-  const list = termsByTag(tag);
+  const all = await getTerms();
+  const inTag = (t: string) => all.filter((x) => x.tags.includes(t));
+  const list = inTag(tag);
   return pageMeta({
     title: `${m.title}: Glossary Terms`,
     description: `${list.length} terms on ${tag} from the TaleCrafters glossary of generative and synthetic media: ${list
@@ -68,7 +71,9 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
   const { tag } = await params;
   const m = meta[tag];
   if (!m) notFound();
-  const list = termsByTag(tag);
+  const all = await getTerms();
+  const inTag = (t: string) => all.filter((x) => x.tags.includes(t));
+  const list = inTag(tag);
 
   const crumbs = [
     { name: 'Home', path: '/' },
@@ -136,7 +141,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
               className="px-4 py-2 text-[11px] tracking-[0.16em]"
               style={{ fontFamily: 'var(--font-mono)', border: '1px solid rgba(255,255,255,0.14)', color: 'var(--brand-concrete-light)', textDecoration: 'none' }}
             >
-              {x.toUpperCase()} · {termsByTag(x).length}
+              {x.toUpperCase()} · {inTag(x).length}
             </Link>
           ))}
           <Link
@@ -144,7 +149,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
             className="px-4 py-2 text-[11px] tracking-[0.16em]"
             style={{ fontFamily: 'var(--font-mono)', border: `1px solid ${m.color}55`, color: m.color, textDecoration: 'none' }}
           >
-            ALL {terms.length} TERMS →
+            ALL {all.length} TERMS →
           </Link>
         </div>
       </section>

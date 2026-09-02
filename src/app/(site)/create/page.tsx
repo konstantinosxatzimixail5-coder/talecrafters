@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getArm } from '@/data/arsenal';
-import { featuredWork } from '@/data/work';
+
 import { Frame } from '@/components/Frame';
 import { ArmPage } from '@/components/ArmPage';
 import { Eyebrow } from '@/components/kit';
@@ -8,6 +8,7 @@ import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, serviceSchema } from '@/lib/seo';
 import { pageCopy } from '@/content/copy';
+import { getWork } from '@/content/collections';
 
 export const metadata = pageMeta({
   title: 'Create — Films, Campaigns & Visual Worlds',
@@ -26,6 +27,7 @@ export const metadata = pageMeta({
 
 export default async function CreatePage() {
   const copy = await pageCopy('create');
+  const featuredWork = (await getWork()).filter((w) => w.featured);
   const arm = getArm('create')!;
   return (
     <>

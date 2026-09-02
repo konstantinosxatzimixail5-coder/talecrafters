@@ -1,14 +1,18 @@
 import { SITE_URL, site, markets } from '@/lib/site';
-import { work } from '@/data/work';
-import { pipelines } from '@/data/pipelines';
-import { terms } from '@/data/glossary';
-import { categories, arms } from '@/data/arsenal';
-import { resources } from '@/data/resources';
-import { solutions } from '@/data/solutions';
-import { posts } from '@/data/posts';
-import { films } from '@/data/films';
-import { captures } from '@/data/captures';
-import { conceptBrands } from '@/data/concept';
+
+
+
+import { arms } from '@/data/arsenal';
+import {
+  getWork, getCategories, getPipelines, getSolutions, getTerms, getResources,
+  getPosts, getFilms, getConceptBrands, getCaptures,
+} from '@/content/collections';
+
+
+
+
+
+
 
 export const dynamic = 'force-static';
 
@@ -19,7 +23,14 @@ export const dynamic = 'force-static';
  * of crawling forty pages to work out what the company does. It is generated
  * from the same data files as the site, so it cannot drift out of date.
  */
-export function GET() {
+export async function GET() {
+  // Same source as the pages. A file that says what is on the site has to be
+  // generated from what is on the site.
+  const [work, categories, pipelines, solutions, terms, resources, posts, films, conceptBrands, captures] =
+    await Promise.all([
+      getWork(), getCategories(), getPipelines(), getSolutions(), getTerms(),
+      getResources(), getPosts(), getFilms(), getConceptBrands(), getCaptures(),
+    ]);
   const lines: string[] = [];
 
   lines.push(`# ${site.name}`);

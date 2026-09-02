@@ -1,14 +1,17 @@
 import type { MetadataRoute } from 'next';
 import { client } from '@/sanity/client';
 import { SITE_URL } from '@/lib/site';
-import { work } from '@/data/work';
-import { pipelines } from '@/data/pipelines';
-import { terms, GLOSSARY_TAGS } from '@/data/glossary';
-import { resources } from '@/data/resources';
-import { solutions } from '@/data/solutions';
-import { posts as localPosts } from '@/data/posts';
-import { films } from '@/data/films';
+
+
+import { GLOSSARY_TAGS } from '@/data/glossary';
+
+
+
+
 import { people } from '@/lib/site';
+import {
+  getWork, getPipelines, getTerms, getResources, getSolutions, getPosts, getFilms,
+} from '@/content/collections';
 
 type Entry = MetadataRoute.Sitemap[number];
 
@@ -20,6 +23,11 @@ const page = (
 ): Entry => ({ url: `${SITE_URL}${path}`, lastModified, changeFrequency, priority });
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Read from the same place the pages do, so a case study or a post added in
+  // the Studio is in the sitemap rather than absent until the next deploy.
+  const [work, pipelines, terms, resources, solutions, localPosts, films] = await Promise.all([
+    getWork(), getPipelines(), getTerms(), getResources(), getSolutions(), getPosts(), getFilms(),
+  ]);
   const staticPages: MetadataRoute.Sitemap = [
     page('', 1, 'weekly'),
     page('/work', 0.9, 'weekly'),

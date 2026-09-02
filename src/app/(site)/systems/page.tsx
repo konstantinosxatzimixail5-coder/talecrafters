@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import { getArm } from '@/data/arsenal';
-import { getPipeline } from '@/data/pipelines';
+import { getPipeline as getRepoPipeline } from '@/data/pipelines';
 import { ArmPage } from '@/components/ArmPage';
 import { Eyebrow } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMeta, breadcrumbSchema, serviceSchema, faqSchema } from '@/lib/seo';
 import { pageCopy } from '@/content/copy';
+import { getPipelines } from '@/content/collections';
 
 export const metadata = pageMeta({
   // The title carries the two phrases buyers actually search separately:
@@ -75,7 +76,7 @@ const built = [
 export default async function SystemsPage() {
   const copy = await pageCopy('systems');
   const arm = getArm('systems')!;
-  const stack = getPipeline('operator-stack')!;
+  const stack = (await getPipelines()).find((p) => p.slug === 'operator-stack') ?? getRepoPipeline('operator-stack')!;
 
   return (
     <>
