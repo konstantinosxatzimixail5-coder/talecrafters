@@ -11,6 +11,10 @@
 // So the repository stays the fallback for an empty, unreachable or
 // not-yet-seeded dataset, and `npm run seed:sanity` is what moves it from one
 // to the other.
+//
+// `getSolutions` is the single exception, and the comment above it says why:
+// that list is also the navigation, so a page missing from it is a page nothing
+// links to.
 
 import { client } from '@/sanity/client';
 import { posts as repoPosts } from '@/data/posts';
@@ -382,8 +386,31 @@ export const getCategories = () =>
     services: arr(d.services, (x) => ({ name: x.name ?? '', desc: x.desc ?? '', icon: x.icon ?? '' })),
   })) as Promise<(typeof repoCategories)[number][]>;
 
-export const getSolutions = () =>
-  listOf('solution', repoSolutions, (d) => ({
+/**
+ * The solution pages are the one collection where the dataset must not replace
+ * the repository wholesale.
+ *
+ * Everywhere else a document either exists in Sanity or it does not, and losing
+ * the repository copy costs nothing. Here the list is also the navigation: the
+ * footer's "what we are hired for" row and the sitemap both read it. With plain
+ * `listOf`, adding a page to `src/data/solutions.ts` gave it a working URL that
+ * nothing linked to and no sitemap listed, because six seeded documents were
+ * enough to hide the whole repository file. So the two are merged by slug: a
+ * Sanity document wins for the page it describes, and a page that has no
+ * document yet keeps its place in the order the repository declares.
+ */
+const mergeSolutions = (
+  fromDataset: (typeof repoSolutions)[number][]
+): (typeof repoSolutions)[number][] => {
+  const edited = new Map(fromDataset.map((s) => [s.slug, s]));
+  const merged = repoSolutions.map((s) => edited.get(s.slug) ?? s);
+  const known = new Set(repoSolutions.map((s) => s.slug));
+  // A page created in the Studio and not in the repository goes on the end.
+  return [...merged, ...fromDataset.filter((s) => !known.has(s.slug))];
+};
+
+export const getSolutions = async () =>
+  mergeSolutions(await listOf('solution', repoSolutions, (d) => ({
     slug: d.slug,
     title: d.title ?? '',
     accentWord: d.accentWord ?? '',
@@ -402,7 +429,7 @@ export const getSolutions = () =>
     faqs: arr(d.faqs, (q) => ({ q: q.q ?? '', a: q.a ?? '' })),
     cta: { title: d.ctaTitle ?? '', body: d.ctaBody ?? '' },
     market: d.market,
-  })) as Promise<(typeof repoSolutions)[number][]>;
+  })) as (typeof repoSolutions)[number][]);
 
 export const getCameraMoves = () =>
   listOf('cameraMove', repoCameraMoves, (d) => ({

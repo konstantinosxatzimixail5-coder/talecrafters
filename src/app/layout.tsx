@@ -37,17 +37,36 @@ const wordmark = Anton({
   display: "swap",
 });
 
+// The home page's search result and its social cards read from these two, so
+// the three can never drift apart.
+const HOME_TITLE = "TaleCrafters | AI Content, Design & Automation Studio";
+const HOME_DESCRIPTION =
+  "Strategic creative studio for AI video ads, UGC, social content, writing and design. We build marketing & content automations, SEO & AIO-ready websites.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  // `default` is the home page's title and is deliberately not run through the
+  // template below: the brand name is already the first word of it, and a
+  // templated title would render "… | TaleCrafters | TaleCrafters". Child
+  // pages return a plain string and do get the template.
   title: {
-    default: "TaleCrafters — Synthetic Media Studio | Films, Systems & Original IP",
+    default: "TaleCrafters | AI Content, Design & Automation Studio",
     template: "%s | TaleCrafters",
   },
-  description: site.classification,
+  description: HOME_DESCRIPTION,
   applicationName: "TaleCrafters",
+  // Ordered by what we want to be found for, brand terms last.
   keywords: [
-    "TaleCrafters",
+    "video ad production",
+    "UGC ad creative",
+    "brand film production",
+    "AI product photography",
+    "creative automation",
+    "marketing automation agency",
+    "SEO content",
+    "AIO content",
     "synthetic media studio",
+    "TaleCrafters",
     "generative video production",
     "creative agency London",
     "AI video production agency",
@@ -55,7 +74,6 @@ export const metadata: Metadata = {
     "agentic workflows",
     "content automation",
     "creative systems",
-    "brand film production",
     "synthetic UGC",
     "AI creative studio Europe",
     "generative advertising",
@@ -72,17 +90,17 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: SITE_URL,
     siteName: "TaleCrafters",
-    title: "TaleCrafters — We Manufacture Attention",
-    description:
-      "The unholy offspring of a film studio and a technology lab. We make campaigns and films, build the systems that produce and scale them, and develop our own original IP.",
+    // The social card says the same thing as the search result, deliberately.
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     images: [
       { url: "/brand/mark-square.png", width: 1024, height: 1024, alt: "TaleCrafters — Synthetic Media Studio" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TaleCrafters — Synthetic Media Studio",
-    description: "Human taste × machine velocity. Films, systems and original IP.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     images: ["/brand/mark-square.png"],
     creator: "@talecrafters",
   },
