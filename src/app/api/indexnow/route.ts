@@ -37,7 +37,16 @@ const ROUTES: Record<string, (slug: string) => string[]> = {
   tool: () => ['/armoury'],
 };
 
-const sitemapUrls = async () => (await sitemap()).map((e) => String(e.url));
+/**
+ * Every URL the sitemap emits, run through the same normaliser the submission
+ * uses. Without that the two sides disagree over a trailing slash — the
+ * sitemap says `https://talecrafters.studio`, `new URL()` says
+ * `https://talecrafters.studio/` — and the home page gets rejected as "not in
+ * the sitemap" by the check that exists to let it through.
+ */
+const canonical = (u: string) => new URL(u, SITE_URL).toString();
+
+const sitemapUrls = async () => (await sitemap()).map((e) => canonical(String(e.url)));
 
 /**
  * A shared secret is optional. Without one the endpoint still refuses to be a
@@ -83,7 +92,13 @@ export async function POST(req: NextRequest) {
   if (!trusted) {
     const allowed = new Set(await sitemapUrls());
     const before = wanted.length;
-    wanted = wanted.filter((u) => allowed.has(new URL(u, SITE_URL).toString()));
+    wanted = wanted.filter((u) => {
+      try {
+        return allowed.has(canonical(u));
+      } catch {
+        return false;
+      }
+    });
     if (!wanted.length) {
       return NextResponse.json(
         { ok: false, error: 'Not in the sitemap. Send INDEXNOW_SECRET to submit anything else.', rejected: before },
