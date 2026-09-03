@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'Model credits are pennies a second and studio engagements run into five figures. Both numbers are true. Here is what sits between them and which one applies to your brief.',
   published: '2026-08-31',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Production',
   tags: ['Pricing', 'Production', 'Generative video'],
   keywords: [

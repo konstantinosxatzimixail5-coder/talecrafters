@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'The limitation is real and it is not going away this year. The good news is that cinema solved this problem in 1918.',
   published: '2026-06-25',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Craft',
   tags: ['Craft', 'Generative video', 'Technique'],
   keywords: [

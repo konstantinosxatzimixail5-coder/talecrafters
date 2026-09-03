@@ -1,4 +1,61 @@
 {
+  "amino-alliance/presenter-01": {
+    "key": "amino-alliance/presenter-01",
+    "width": 405,
+    "height": 720,
+    "aspect": 0.5625,
+    "avif": [
+      {
+        "w": 405,
+        "src": "/img/amino-alliance/presenter-01-405.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 405,
+        "src": "/img/amino-alliance/presenter-01-405.webp"
+      }
+    ],
+    "fallback": "/img/amino-alliance/presenter-01-405.webp"
+  },
+  "amino-alliance/presenter-02": {
+    "key": "amino-alliance/presenter-02",
+    "width": 405,
+    "height": 720,
+    "aspect": 0.5625,
+    "avif": [
+      {
+        "w": 405,
+        "src": "/img/amino-alliance/presenter-02-405.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 405,
+        "src": "/img/amino-alliance/presenter-02-405.webp"
+      }
+    ],
+    "fallback": "/img/amino-alliance/presenter-02-405.webp"
+  },
+  "amino-alliance/presenter-03": {
+    "key": "amino-alliance/presenter-03",
+    "width": 405,
+    "height": 720,
+    "aspect": 0.5625,
+    "avif": [
+      {
+        "w": 405,
+        "src": "/img/amino-alliance/presenter-03-405.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 405,
+        "src": "/img/amino-alliance/presenter-03-405.webp"
+      }
+    ],
+    "fallback": "/img/amino-alliance/presenter-03-405.webp"
+  },
   "amino-alliance/product-01": {
     "key": "amino-alliance/product-01",
     "width": 460,
@@ -561,6 +618,41 @@
     ],
     "fallback": "/img/bike-barn/pov-960.webp"
   },
+  "bike-barn/showcase-poster": {
+    "key": "bike-barn/showcase-poster",
+    "width": 1280,
+    "height": 720,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/bike-barn/showcase-poster-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/bike-barn/showcase-poster-960.avif"
+      },
+      {
+        "w": 1280,
+        "src": "/img/bike-barn/showcase-poster-1280.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/bike-barn/showcase-poster-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/bike-barn/showcase-poster-960.webp"
+      },
+      {
+        "w": 1280,
+        "src": "/img/bike-barn/showcase-poster-1280.webp"
+      }
+    ],
+    "fallback": "/img/bike-barn/showcase-poster-1280.webp"
+  },
   "captures/capture-bus-stop": {
     "key": "captures/capture-bus-stop",
     "width": 1408,
@@ -840,6 +932,181 @@
       }
     ],
     "fallback": "/img/captures/capture-sunday-league-1408.webp"
+  },
+  "films/mars-drop/md-b-natural": {
+    "key": "films/mars-drop/md-b-natural",
+    "width": 1280,
+    "height": 720,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/mars-drop/md-b-natural-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/mars-drop/md-b-natural-960.avif"
+      },
+      {
+        "w": 1280,
+        "src": "/img/films/mars-drop/md-b-natural-1280.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/mars-drop/md-b-natural-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/mars-drop/md-b-natural-960.webp"
+      },
+      {
+        "w": 1280,
+        "src": "/img/films/mars-drop/md-b-natural-1280.webp"
+      }
+    ],
+    "fallback": "/img/films/mars-drop/md-b-natural-1280.webp"
+  },
+  "films/mars-drop/md-d-address": {
+    "key": "films/mars-drop/md-d-address",
+    "width": 1280,
+    "height": 720,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/mars-drop/md-d-address-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/mars-drop/md-d-address-960.avif"
+      },
+      {
+        "w": 1280,
+        "src": "/img/films/mars-drop/md-d-address-1280.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/mars-drop/md-d-address-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/mars-drop/md-d-address-960.webp"
+      },
+      {
+        "w": 1280,
+        "src": "/img/films/mars-drop/md-d-address-1280.webp"
+      }
+    ],
+    "fallback": "/img/films/mars-drop/md-d-address-1280.webp"
+  },
+  "films/mars-drop/md-hero": {
+    "key": "films/mars-drop/md-hero",
+    "width": 1280,
+    "height": 720,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/mars-drop/md-hero-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/mars-drop/md-hero-960.avif"
+      },
+      {
+        "w": 1280,
+        "src": "/img/films/mars-drop/md-hero-1280.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/mars-drop/md-hero-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/mars-drop/md-hero-960.webp"
+      },
+      {
+        "w": 1280,
+        "src": "/img/films/mars-drop/md-hero-1280.webp"
+      }
+    ],
+    "fallback": "/img/films/mars-drop/md-hero-1280.webp"
+  },
+  "films/mars-drop/md-poster": {
+    "key": "films/mars-drop/md-poster",
+    "width": 1280,
+    "height": 720,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/mars-drop/md-poster-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/mars-drop/md-poster-960.avif"
+      },
+      {
+        "w": 1280,
+        "src": "/img/films/mars-drop/md-poster-1280.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/mars-drop/md-poster-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/mars-drop/md-poster-960.webp"
+      },
+      {
+        "w": 1280,
+        "src": "/img/films/mars-drop/md-poster-1280.webp"
+      }
+    ],
+    "fallback": "/img/films/mars-drop/md-poster-1280.webp"
+  },
+  "films/mars-drop/md-strip": {
+    "key": "films/mars-drop/md-strip",
+    "width": 1600,
+    "height": 223,
+    "aspect": 7.1778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/films/mars-drop/md-strip-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/mars-drop/md-strip-960.avif"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/mars-drop/md-strip-1600.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/films/mars-drop/md-strip-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/films/mars-drop/md-strip-960.webp"
+      },
+      {
+        "w": 1600,
+        "src": "/img/films/mars-drop/md-strip-1600.webp"
+      }
+    ],
+    "fallback": "/img/films/mars-drop/md-strip-1600.webp"
   },
   "films/skyrunner/sr-a-launch": {
     "key": "films/skyrunner/sr-a-launch",
@@ -1902,6 +2169,25 @@
     ],
     "fallback": "/img/jarfis/tour-frame-373.webp"
   },
+  "jarfis/ugc-poster": {
+    "key": "jarfis/ugc-poster",
+    "width": 405,
+    "height": 720,
+    "aspect": 0.5625,
+    "avif": [
+      {
+        "w": 405,
+        "src": "/img/jarfis/ugc-poster-405.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 405,
+        "src": "/img/jarfis/ugc-poster-405.webp"
+      }
+    ],
+    "fallback": "/img/jarfis/ugc-poster-405.webp"
+  },
   "mariposa/beef-stifado": {
     "key": "mariposa/beef-stifado",
     "width": 1600,
@@ -2234,6 +2520,44 @@
     ],
     "fallback": "/img/mariposa/mariposa-mousaka-960.webp"
   },
+  "mariposa/plate-360": {
+    "key": "mariposa/plate-360",
+    "width": 405,
+    "height": 720,
+    "aspect": 0.5625,
+    "avif": [
+      {
+        "w": 405,
+        "src": "/img/mariposa/plate-360-405.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 405,
+        "src": "/img/mariposa/plate-360-405.webp"
+      }
+    ],
+    "fallback": "/img/mariposa/plate-360-405.webp"
+  },
+  "mariposa/showcase": {
+    "key": "mariposa/showcase",
+    "width": 405,
+    "height": 720,
+    "aspect": 0.5625,
+    "avif": [
+      {
+        "w": 405,
+        "src": "/img/mariposa/showcase-405.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 405,
+        "src": "/img/mariposa/showcase-405.webp"
+      }
+    ],
+    "fallback": "/img/mariposa/showcase-405.webp"
+  },
   "mariposa/shrimp-mariposa": {
     "key": "mariposa/shrimp-mariposa",
     "width": 1600,
@@ -2414,6 +2738,76 @@
       }
     ],
     "fallback": "/img/selene-cc/logo-dark-480.webp"
+  },
+  "selene-cc/pilot-poster": {
+    "key": "selene-cc/pilot-poster",
+    "width": 1280,
+    "height": 720,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/selene-cc/pilot-poster-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/selene-cc/pilot-poster-960.avif"
+      },
+      {
+        "w": 1280,
+        "src": "/img/selene-cc/pilot-poster-1280.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/selene-cc/pilot-poster-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/selene-cc/pilot-poster-960.webp"
+      },
+      {
+        "w": 1280,
+        "src": "/img/selene-cc/pilot-poster-1280.webp"
+      }
+    ],
+    "fallback": "/img/selene-cc/pilot-poster-1280.webp"
+  },
+  "spec/feral/billboard": {
+    "key": "spec/feral/billboard",
+    "width": 1280,
+    "height": 720,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/feral/billboard-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/feral/billboard-960.avif"
+      },
+      {
+        "w": 1280,
+        "src": "/img/spec/feral/billboard-1280.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/feral/billboard-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/feral/billboard-960.webp"
+      },
+      {
+        "w": 1280,
+        "src": "/img/spec/feral/billboard-1280.webp"
+      }
+    ],
+    "fallback": "/img/spec/feral/billboard-1280.webp"
   },
   "spec/feral/product-01": {
     "key": "spec/feral/product-01",
@@ -2665,6 +3059,41 @@
       }
     ],
     "fallback": "/img/spec/feral/ugc-04-621.webp"
+  },
+  "spec/grain-01/billboard": {
+    "key": "spec/grain-01/billboard",
+    "width": 1280,
+    "height": 720,
+    "aspect": 1.7778,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/billboard-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/billboard-960.avif"
+      },
+      {
+        "w": 1280,
+        "src": "/img/spec/grain-01/billboard-1280.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/img/spec/grain-01/billboard-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/img/spec/grain-01/billboard-960.webp"
+      },
+      {
+        "w": 1280,
+        "src": "/img/spec/grain-01/billboard-1280.webp"
+      }
+    ],
+    "fallback": "/img/spec/grain-01/billboard-1280.webp"
   },
   "spec/grain-01/cutaway": {
     "key": "spec/grain-01/cutaway",

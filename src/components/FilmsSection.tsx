@@ -6,7 +6,7 @@ import { Eyebrow } from '@/components/kit';
 import { pageCopy } from '@/content/copy';
 
 /**
- * The two original shorts, as a section of the Armoury.
+ * The original shorts, as a section of the Armoury.
  *
  * They sit here rather than on the front page because the Armoury is where the
  * things given away in full already live, and a published process sheet is the

@@ -55,12 +55,18 @@ export default defineConfig({
             // The bar's drop-downs and the overlay/footer columns. Both live
             // in one type, told apart by the `menu` field, so a note written
             // for DIVISIONS cannot say one thing up top and another below.
-            S.documentTypeListItem('navMenu').title('Menus'),
-            S.divider(),
-            // The two menus. The create button offers one template per
-            // heading, pre-filled with what is live, so the nine documents can
-            // be made here rather than seeded.
+            //
+            // One list item, not two. There used to be a second one directly
+            // under this, also called Menus, built with a bare S.listItem()
+            // and no .id(). A list item without an id fails to serialise, and
+            // a structure that fails to serialise takes the whole Content pane
+            // down with it, which is why the menus could not be opened at all.
+            //
+            // The create button offers one template per heading, pre-filled
+            // with what is live on the site right now, so the nine documents
+            // can be made here rather than seeded with a write token.
             S.listItem()
+              .id('navMenu')
               .title('Menus')
               .child(
                 S.documentTypeList('navMenu')

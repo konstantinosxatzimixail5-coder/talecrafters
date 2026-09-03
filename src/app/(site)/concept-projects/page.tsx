@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import { conceptBrands as repoConceptBrands } from '@/data/concept';
 import { Frame } from '@/components/Frame';
+import { VideoPlayer } from '@/components/VideoPlayer';
+import { watchUrl, remoteThumb } from '@/data/video';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
-import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
+import { pageMeta, breadcrumbSchema, faqSchema, videoObjectSchema } from '@/lib/seo';
 import { abs } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
 import { getConceptBrands } from '@/content/collections';
@@ -76,6 +78,19 @@ export default async function ConceptProjects() {
             url: abs('/concept-projects'),
             description: `${brandCount} invented brands and ${frameCount} frames, each set built to prove one specific control in generative production.`,
           },
+          ...conceptBrands.flatMap((b) =>
+            (b.videos ?? []).map((v) =>
+              videoObjectSchema({
+                name: `${b.name} — ${v.title}`,
+                description: v.note,
+                thumbnailUrl: v.poster ? `/img/${v.poster}-960.webp` : remoteThumb(v.youtubeId),
+                uploadDate: v.uploadDate,
+                duration: v.duration,
+                embedUrl: watchUrl(v.youtubeId),
+                path: '/concept-projects',
+              })
+            )
+          ),
         ]}
       />
 
@@ -151,6 +166,16 @@ export default async function ConceptProjects() {
                 ))}
               </div>
             </Reveal>
+
+            {b.videos?.length ? (
+              <Reveal delay={0.08}>
+                <div className="mb-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {b.videos.map((v) => (
+                    <VideoPlayer key={v.youtubeId} video={v} accent={b.accent} />
+                  ))}
+                </div>
+              </Reveal>
+            ) : null}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {b.shots.map((s, i) => (

@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'The single technique that separates a product set that holds from one that quietly falls apart by shot forty. It is not a prompt.',
   published: '2026-08-24',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Method',
   tags: ['Method', 'Product', 'Pipelines'],
   keywords: [

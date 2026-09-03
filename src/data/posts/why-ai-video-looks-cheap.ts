@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'Audiences cannot name what is wrong with most generative video. They can tell. Here are the nine things they are reacting to.',
   published: '2026-07-09',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Craft',
   tags: ['Craft', 'Generative video', 'Quality'],
   keywords: [

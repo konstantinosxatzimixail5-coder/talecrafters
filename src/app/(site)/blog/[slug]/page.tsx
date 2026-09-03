@@ -6,6 +6,8 @@ import { notFound } from 'next/navigation';
 import { JsonLd } from '@/components/JsonLd';
 import { articleSchema, breadcrumbSchema, pageMeta } from '@/lib/seo';
 import { LocalPostArticle } from '@/components/LocalPostArticle';
+import { AuthorCard } from '@/components/AuthorCard';
+import { BYLINE } from '@/lib/site';
 import { posts, getPost as getRepoPost } from '@/data/posts';
 import { getPosts } from '@/content/collections';
 import { postHeroAt } from '@/lib/blog-images';
@@ -110,7 +112,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       siteName: 'TaleCrafters',
       type: 'article',
       publishedTime: post.publishedAt,
-      authors: [post.author || 'TaleCrafters'],
+      authors: [post.author || BYLINE],
       images: imageUrl ? [{ url: imageUrl, width: 1200, height: 630, alt: post.featuredImage?.alt || post.title }] : undefined,
     },
     twitter: {
@@ -246,7 +248,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             description: post.excerpt || post.metaDescription || '',
             slug: post.slug.current,
             published: post.publishedAt,
-            author: post.author,
+            author: post.author || BYLINE,
             tags: post.tags,
             image: post.featuredImage
               ? urlFor(post.featuredImage).width(1200).height(630).url()
@@ -295,7 +297,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             className="flex items-center gap-4 text-sm"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
           >
-            <span>{post.author || 'TaleCrafters'}</span>
+            <span>{post.author || BYLINE}</span>
             <span style={{ color: 'var(--brand-magenta)' }}>&bull;</span>
             <time>
               {new Date(post.publishedAt).toLocaleDateString('en-GB', {
@@ -330,6 +332,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             }
           `}</style>
         </article>
+
+        <AuthorCard name={post.author || BYLINE} />
 
         {/* Bottom nav */}
         <div className="mt-20 pt-8" style={{ borderTop: '1px solid var(--brand-concrete)' }}>

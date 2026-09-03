@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'The hours automation removes are not the ones anybody expects. They are also not the ones any vendor demo shows you.',
   published: '2026-07-23',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Systems',
   tags: ['Systems', 'Content operations', 'Automation'],
   keywords: [

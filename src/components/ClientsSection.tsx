@@ -277,8 +277,39 @@ const clients = [
   },
 ];
 
-// Quadruple for seamless loop
-const repeatedClients = [...clients, ...clients, ...clients, ...clients];
+/**
+ * One row of marks, rendered twice.
+ *
+ * The two copies are what makes the loop seamless: the animation travels
+ * exactly one copy's width and restarts, so the row never appears to jump. The
+ * trailing gap lives on the group as padding rather than between the two
+ * copies as a flex gap, because a shared gap belongs to neither copy and
+ * leaves the seam half a gap short.
+ */
+function LogoRow({ hidden = false }: { hidden?: boolean }) {
+  return (
+    <div
+      className="flex items-center gap-12 md:gap-20 pr-12 md:pr-20"
+      aria-hidden={hidden || undefined}
+    >
+      {clients.map((client) => (
+        <div
+          key={client.name}
+          className="flex-shrink-0 flex items-center gap-3 px-2 transition-[filter] duration-300 hover:grayscale-0"
+          style={{ filter: 'grayscale(0.8)' }}
+        >
+          {client.icon && <client.icon />}
+          <span
+            className="text-lg md:text-xl whitespace-nowrap"
+            style={client.textStyle as React.CSSProperties}
+          >
+            {client.render ? client.render() : client.name}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export function ClientsSection({ copy }: { copy: HomeCopy['clients'] }) {
   return (
@@ -335,37 +366,16 @@ export function ClientsSection({ copy }: { copy: HomeCopy['clients'] }) {
           style={{ background: 'linear-gradient(to left, var(--brand-black), transparent)' }}
         />
 
+        {/* `w-max` is the whole fix. Without it the animated row is an ordinary
+            flex item, so it shrinks to the width of the viewport and
+            translateX(-50%) travels half a screen instead of half the marks.
+            On a phone that is about 190px over 25 seconds, which reads as a row
+            that is not moving at all. Sized to its content, -50% is exactly one
+            copy and the row scrolls at the same speed on every screen. */}
         <div className="flex overflow-hidden">
-          <div
-            className="flex items-center gap-12 md:gap-20 animate-scroll-left"
-            style={{ willChange: 'transform' }}
-          >
-            {repeatedClients.map((client, i) => (
-              <div
-                key={`client-${i}`}
-                className="flex-shrink-0 flex items-center gap-3 px-2 transition-all duration-300 hover:scale-105 cursor-default"
-                style={{
-                  filter: 'grayscale(0.8)',
-                  opacity: 1,
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.filter = 'grayscale(0) brightness(1)';
-                  e.currentTarget.style.opacity = '1';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.filter = 'grayscale(0.8)';
-                  e.currentTarget.style.opacity = '1';
-                }}
-              >
-                {client.icon && <client.icon />}
-                <span
-                  className="text-lg md:text-xl whitespace-nowrap"
-                  style={client.textStyle as React.CSSProperties}
-                >
-                  {client.render ? client.render() : client.name}
-                </span>
-              </div>
-            ))}
+          <div className="flex w-max animate-scroll-left" style={{ willChange: 'transform' }}>
+            <LogoRow />
+            <LogoRow hidden />
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'Not a maturity ladder. Two different tools, and using the wrong one is expensive in two entirely different ways.',
   published: '2026-08-13',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Systems',
   tags: ['Systems', 'Automation', 'Agentic'],
   keywords: [

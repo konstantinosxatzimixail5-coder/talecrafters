@@ -98,14 +98,15 @@ export async function GET() {
   lines.push('## Original short films, with their process sheets');
   lines.push('');
   lines.push(
-    'Two original shorts written, designed, directed and cut inside a generative pipeline. ' +
-      'Each is published with the full process document behind it: every generation block, the ' +
+    'Original shorts written, designed, directed and cut inside a generative pipeline. ' +
+      'Each is published with the working behind it: every generation block, the ' +
       'prompt as written, the design references and the locks that stopped the world drifting.'
   );
   lines.push('');
   for (const f of films) {
     lines.push(
-      `- [${f.title}](${SITE_URL}/films/${f.slug}) (${f.runtime}): ${f.logline} Process document: ${SITE_URL}${f.doc.path}`
+      `- [${f.title}](${SITE_URL}/films/${f.slug}) (${f.runtime}): ${f.logline}` +
+        (f.doc ? ` Process document: ${SITE_URL}${f.doc.path}` : '')
     );
   }
   lines.push('');

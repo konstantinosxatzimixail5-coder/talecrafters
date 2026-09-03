@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'The transparency obligations landed on 2 August 2026. Most advertisers running paid social in Europe are inside them and have not changed anything.',
   published: '2026-08-31',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Compliance',
   tags: ['Compliance', 'Regulation', 'EU'],
   keywords: [

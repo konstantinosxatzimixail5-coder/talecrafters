@@ -10,6 +10,8 @@
 // fake brand earns a page. A spec shelf that does not state its test is a
 // showreel; one that does is a control experiment.
 
+import type { ProjectVideo } from './video';
+
 export interface Shot {
   src: string;
   /** Set when the picture was replaced in the Studio. Wins over `src`. */
@@ -29,6 +31,8 @@ export interface ConceptBrand {
   note: string;
   pipelines: { label: string; href: string }[];
   shots: Shot[];
+  /** Films from the set, played on the page. See src/data/video.ts. */
+  videos?: ProjectVideo[];
 }
 
 export const conceptBrands: ConceptBrand[] = [
@@ -37,10 +41,10 @@ export const conceptBrands: ConceptBrand[] = [
     num: '01',
     name: 'FERAL',
     product: 'Yuzu Static, canned energy drink',
-    proves: 'One label held across five sets, then one creator held across three rooms',
+    proves: 'One label held across five sets, one creator held across three rooms, and the same can leaving a billboard',
     accent: 'var(--brand-magenta)',
     note:
-      'The wordmark on this can is a halftone build with a magenta offset behind green type and a small black box under it reading YUZU STATIC. That is a lot of small structure to keep identical while the light, the surface and the room change underneath it. Five frames, five sets, one plate. The creator frames run the other line: one trained face, a corner shop, a car park and a bathroom mirror, all lit by whatever was in the room.',
+      'The wordmark on this can is a halftone build with a magenta offset behind green type and a small black box under it reading YUZU STATIC. That is a lot of small structure to keep identical while the light, the surface and the room change underneath it. Five frames, five sets, one plate. The creator frames run the other line: one trained face, a corner shop, a car park and a bathroom mirror, all lit by whatever was in the room. The billboard is the last exam. A break-out board asks a viewer to read the can as flat artwork and as a solid object in the same second, and the light on the street has to agree with the light on the can or the whole thing collapses into a sticker.',
     pipelines: [
       { label: 'Phantom Set', href: '/pipelines/phantom-set' },
       { label: 'Identity Lock', href: '/pipelines/identity-lock' },
@@ -55,6 +59,19 @@ export const conceptBrands: ConceptBrand[] = [
       { src: 'spec/feral/ugc-02', alt: 'The same man sitting on a kerb in a strip-lit car park at night, a FERAL can on the ground beside his neon trainers.', label: 'creator, car park' },
       { src: 'spec/feral/ugc-03', alt: 'The same man sprawled across a night tram seat with a FERAL can between his feet, neon strip lighting down the carriage behind him.', label: 'creator, night tram' },
       { src: 'spec/feral/ugc-04', alt: 'The same man holding a FERAL can up in a bathroom mirror selfie, flash on, pink strip light above the cracked mirror.', label: 'creator, mirror' },
+      { src: 'spec/feral/billboard', alt: 'A night-city billboard for FERAL Yuzu Static, the can breaking out of the board in front of the artwork with lime slices and green liquid crossing the frame.', label: 'the same plate, on a billboard' },
+    ],
+    videos: [
+      {
+        youtubeId: '5VgtoylYaFw',
+        title: 'Anamorphic billboard',
+        note: 'The hardest delivery for this can. A break-out board asks the viewer to read the same object as flat artwork and as a solid thing in the same second, so any wobble in the label or the light shows immediately. Same locked plate as the five product sets above.',
+        duration: 'PT0M8S',
+        uploadDate: '2026-02-11',
+        ratio: '16:9',
+        poster: 'spec/feral/billboard',
+        posterAlt: 'The FERAL Yuzu Static can breaking out of a lit billboard over a wet night street.',
+      },
     ],
   },
   {
@@ -70,7 +87,6 @@ export const conceptBrands: ConceptBrand[] = [
     shots: [
       { src: 'spec/knuckle/product-02', alt: 'A KNUCKLE Energy Chews carton standing behind four flavour wrappers, JAB in yellow, CROSS in orange, HOOK in red and KNOCKOUT in purple, each with a matching four-hole moulded sweet beside it.', label: 'range, full label test' },
       { src: 'spec/knuckle/product-01', alt: 'A single amber KNUCKLE chew sliding out of a black leather sleeve on a dark gritty surface, the flavour names stamped into each of its four holes.', label: 'hero, macro' },
-      { src: 'spec/knuckle/fighter', alt: 'A boxer in a black vest and wraps standing in a dark warehouse, lit from behind by a warm practical.', label: 'campaign frame' },
     ],
   },
   {
@@ -104,7 +120,7 @@ export const conceptBrands: ConceptBrand[] = [
     proves: 'One face across three light sources: a bedroom, a club and a rooftop at sunset',
     accent: 'var(--brand-violet-text)',
     note:
-      'This set exists to test drift. The same creator appears in warm string lights, in red club light with a flash, and in low sun on a roof. Nothing about the face is allowed to move between them, and the camera she is holding has to stay the same object in all three. Stack the frames, flick through at speed, and the jaw is where a fail shows first.',
+      'This set exists to test drift. The same creator appears in warm string lights, in red club light with a flash, and in low sun on a roof. Nothing about the face is allowed to move between them, and the camera she is holding has to stay the same object in all three. Stack the frames, flick through at speed, and the jaw is where a fail shows first. The billboard puts the camera itself through the same test in daylight: a translucent body with a visible board, battery and lens barrel, breaking the edge of a flat surface with nothing to hide the seam.',
     pipelines: [{ label: 'Identity Lock', href: '/pipelines/identity-lock' }],
     shots: [
       { src: 'spec/grain-01/product-01', alt: 'The GRAIN 01 compact camera standing on an acid-green and pink set, translucent lilac body, orange lens ring and a hard flash unit beside it.', label: 'hero, colour set' },
@@ -116,6 +132,20 @@ export const conceptBrands: ConceptBrand[] = [
       { src: 'spec/grain-01/ugc-02', alt: 'A woman taking a mirror selfie in a bedroom strung with fairy lights, holding a small compact camera on an orange wrist strap.', label: 'bedroom, warm practicals' },
       { src: 'spec/grain-01/ugc-03', alt: 'The same woman laughing in a dark club stairwell, raising the compact camera to her eye, red light behind her.', label: 'club, flash and red spill' },
       { src: 'spec/grain-01/ugc-04', alt: 'The same woman on a rooftop at sunset, camera to her eye, city and air conditioning units behind her.', label: 'rooftop, low sun' },
+      { src: 'spec/grain-01/billboard', alt: 'A daylight city billboard for GRAIN 01 on an acid-green ground, the translucent camera bursting through the board in a spray of magenta shards under the line SHOOT OUTSIDE THE FRAME.', label: 'the same body, on a billboard' },
+    ],
+    videos: [
+      {
+        youtubeId: 'laoB3HnoxHs',
+        title: 'Anamorphic billboard',
+        note: 'The camera coming through the board in daylight, which is the unforgiving version: no night city to hide the seam, and a translucent body with a visible circuit board and lens barrel that has to stay the same object as it crosses the edge.',
+        duration: 'PT0M8S',
+        uploadDate: '2026-02-11',
+        ratio: '16:9',
+        poster: 'spec/grain-01/billboard',
+        posterAlt:
+          'The GRAIN 01 camera bursting out of an acid-green city billboard in daylight under the line SHOOT OUTSIDE THE FRAME.',
+      },
     ],
   },
   {

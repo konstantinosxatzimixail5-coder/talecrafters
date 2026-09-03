@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'The metric that makes generative production explainable to the person who signs the invoice, and the arithmetic behind it.',
   published: '2026-08-10',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Method',
   tags: ['Method', 'Pricing', 'Operations'],
   keywords: [

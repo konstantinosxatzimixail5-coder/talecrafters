@@ -220,15 +220,15 @@ export const copyRegistry = {
     sections: {
       main: section('Section', {
           eyebrow: str('Eyebrow', 'AI FILMMAKING WORKFLOWS'),
-          heading: str('Heading', 'TWO ORIGINALS,'),
+          heading: str('Heading', 'THE ORIGINALS,'),
           accentWord: str('Heading, accented line', 'PUBLISHED WITH THEIR PROCESS'),
           lede: text(
             'Lede',
-            'Written, designed, directed and cut inside a generative pipeline. The films are here and so is the sheet behind each one: every generation block, the prompt as it was written, and the locks that stopped the world drifting between shots.',
+            'Written, designed, directed and cut inside a generative pipeline. The films are here and so is the working behind each one: every generation block, the prompt as it was written, and the locks that stopped the world drifting between shots.',
             5
           ),
         },
-        'The two originals, as they appear inside the Armoury page.'
+        'The originals, as they appear inside the Armoury page.'
       ),
     },
   },
@@ -354,13 +354,13 @@ export const copyRegistry = {
     sections: {
       header: header({
         eyebrow: 'AI FILMMAKING WORKFLOWS',
-        title: 'TWO ORIGINALS,',
+        title: 'THE ORIGINALS,',
         accentWord: 'PUBLISHED IN FULL',
-        lede: 'Two original shorts, written, designed, directed and cut inside a generative pipeline. The films are here and so is the sheet behind each one: every generation block, the prompt as it was written, the design references, and the locks that stopped the world drifting between shots.',
+        lede: 'Three original shorts, written, designed, directed and cut inside a generative pipeline. Two are built shot by shot out of a video model; the third is built scene by scene out of an episodic engine, to find out what that trade actually costs. The films are here and so is the working behind each one: every generation block, the prompt as it was written, the design references, and the locks that stopped the world drifting between shots.',
         meta: [
           { label: 'Films', value: `${films.length} originals` },
-          { label: 'Published', value: 'Process sheet per film' },
-          { label: 'Video model', value: 'Seedance 2.0' },
+          { label: 'Published', value: 'Beats, prompts and locks per film' },
+          { label: 'Engines', value: 'Seedance 2.0, Showrunner' },
           { label: 'Rights', value: 'Original characters and worlds' },
         ],
         metaNote: `The film count is counted (currently ${films.length}). ${DERIVED}`,

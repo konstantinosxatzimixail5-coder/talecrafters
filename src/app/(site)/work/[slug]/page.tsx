@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { work as repoWork, getCase as getRepoCase } from '@/data/work';
 import { Frame } from '@/components/Frame';
+import { VideoPlayer } from '@/components/VideoPlayer';
+import { watchUrl, remoteThumb } from '@/data/video';
 import { PageHeader, Eyebrow, SpecBlock, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
@@ -73,16 +75,15 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
               width: 960,
             })
           ),
-          // Only emitted for films that are actually reachable. See CaseVideo.
+          // Only emitted for films a reader can actually watch on this page.
           ...(w.videos ?? []).map((v) =>
             videoObjectSchema({
-              name: v.name,
-              description: v.description,
-              thumbnailUrl: v.thumbnail ?? `/img/${w.hero.src}-960.webp`,
+              name: `${w.client} — ${v.title}`,
+              description: v.note,
+              thumbnailUrl: v.poster ? `/img/${v.poster}-960.webp` : remoteThumb(v.youtubeId),
               uploadDate: v.uploadDate,
               duration: v.duration,
-              contentUrl: v.contentUrl,
-              embedUrl: v.embedUrl,
+              embedUrl: watchUrl(v.youtubeId),
               path: `/work/${w.slug}`,
             })
           ),
@@ -140,6 +141,32 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
         </Reveal>
       </section>
 
+      {/* The films, directly under the hero. A case that shipped moving work
+          should show it before it explains it, and the players stay cold until
+          somebody presses one. */}
+      {w.videos?.length ? (
+        <section className="px-5 md:px-10 lg:px-14 pt-16 md:pt-20">
+          <div className="max-w-[1400px] mx-auto">
+            <Eyebrow color={w.accent}>{w.videos.length > 1 ? 'THE FILMS' : 'THE FILM'}</Eyebrow>
+            <div
+              className={`mt-8 grid gap-8 ${
+                w.videos.length === 1
+                  ? 'grid-cols-1 max-w-4xl'
+                  : w.videos[0].ratio === '9:16'
+                    ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+                    : 'grid-cols-1 lg:grid-cols-2'
+              }`}
+            >
+              {w.videos.map((v, i) => (
+                <Reveal key={v.youtubeId} delay={(i % 3) * 0.06}>
+                  <VideoPlayer video={v} accent={w.accent} />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {/* The five blocks. Same order on every case, so a reader learns it once. */}
       <section className="px-5 md:px-10 lg:px-14 py-20 md:py-28">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
@@ -163,7 +190,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
             <SpecBlock label={w.resultKind === 'Delivered' ? 'THE RESULT' : 'THE INTENDED RESULT'} color={w.accent}>
               {w.result}
             </SpecBlock>
-            <SpecBlock label="HOW IT WAS BUILT" color={w.accent}>
+            <SpecBlock label="HOW WE BUILT IT" color={w.accent}>
               {w.method}
             </SpecBlock>
           </div>

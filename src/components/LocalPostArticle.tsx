@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { PostBody } from './PostBody';
+import { AuthorCard } from './AuthorCard';
 import { JsonLd } from './JsonLd';
+import { people } from '@/lib/site';
 import { articleSchema, breadcrumbSchema, faqSchema, imageObjectSchema } from '@/lib/seo';
 import { getPost, readingMinutes, wordCount, type Post } from '@/data/posts';
 import { getResource } from '@/data/resources';
@@ -20,6 +22,7 @@ export function LocalPostArticle({ post }: { post: Post }) {
   const related = (post.related ?? []).map(getPost).filter((p): p is Post => Boolean(p));
   const resources = (post.resources ?? []).map(getResource).filter(Boolean);
   const terms = (post.terms ?? []).map(getTerm).filter(Boolean);
+  const author = people.find((p) => p.name.toLowerCase() === post.author.toLowerCase());
 
   return (
     <div
@@ -99,7 +102,13 @@ export function LocalPostArticle({ post }: { post: Post }) {
             className="flex items-center gap-3 text-sm flex-wrap"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
           >
-            <span>{post.author}</span>
+            {author ? (
+              <Link href={`/authors/${author.slug}`} style={{ color: 'inherit' }}>
+                {post.author}
+              </Link>
+            ) : (
+              <span>{post.author}</span>
+            )}
             <span style={{ color: 'var(--brand-magenta)' }}>&bull;</span>
             <time dateTime={post.published}>
               {new Date(post.published).toLocaleDateString('en-GB', {
@@ -206,6 +215,8 @@ export function LocalPostArticle({ post }: { post: Post }) {
             </div>
           </section>
         )}
+
+        <AuthorCard name={post.author} />
 
         {post.sources?.length ? (
           <section className="mt-14 pt-8" style={{ borderTop: '1px solid var(--brand-concrete)' }}>

@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'Most generative briefs fail on the same missing paragraph. Here is what to put in one, and what a studio should ask you back.',
   published: '2026-08-06',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Production',
   tags: ['Production', 'Briefing', 'Buying'],
   keywords: [

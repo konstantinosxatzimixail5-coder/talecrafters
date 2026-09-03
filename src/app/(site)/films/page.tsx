@@ -10,9 +10,9 @@ import { pageCopy } from '@/content/copy';
 import { getFilms } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'AI Filmmaking Workflows — Two Original Shorts, Published With Their Process',
+  title: 'AI Filmmaking Workflows — Three Original Shorts, Published With Their Process',
   description:
-    'Twin Moons and Skyrunner: two original short films made inside a generative pipeline, published with the full process sheet behind each one. Every generation block, every prompt, every design reference and the locks that held the world together.',
+    'Twin Moons, Skyrunner and Mars Drop: three original short films made inside a generative pipeline and published with the working behind each one. Every generation block, every prompt, every design reference and the locks that held the world together.',
   path: '/films',
   keywords: [
     'AI filmmaking workflow',
@@ -43,7 +43,7 @@ export default async function FilmsIndex() {
             name: 'AI Filmmaking Workflows',
             url: abs('/films'),
             description:
-              'Two original short films made inside a generative pipeline, each published with the process sheet behind it.',
+              'Three original short films made inside a generative pipeline, each published with the process behind it.',
             hasPart: films.map((f) => ({ '@id': abs(`/films/${f.slug}/#film`) })),
           },
           ...films.map((f) => ({

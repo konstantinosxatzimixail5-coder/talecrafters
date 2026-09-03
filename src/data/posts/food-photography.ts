@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'A menu with no pictures, out of season, no shoot window and no budget. This is the brief generative production is genuinely best at.',
   published: '2026-07-16',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Production',
   tags: ['Production', 'Hospitality', 'Greece'],
   keywords: [

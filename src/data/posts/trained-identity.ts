@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'The right method depends almost entirely on how many assets the face has to survive. Below nine, one answer. Above nine, a different one.',
   published: '2026-07-02',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Method',
   tags: ['Method', 'Consistency', 'Presenters'],
   keywords: [

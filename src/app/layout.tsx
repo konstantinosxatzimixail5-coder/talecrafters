@@ -3,8 +3,7 @@ import { Space_Grotesk, Inter, JetBrains_Mono, Anton } from "next/font/google";
 import "@/styles/globals.css";
 import { hreflangFor } from "@/lib/seo";
 import { SITE_URL, site } from "@/lib/site";
-
-const GOOGLE_TAG_MANAGER_ID = "GTM-PKWLJBJL";
+import { TagManager, GTM_ID } from "@/components/TagManager";
 
 // Self-hosted at build time. This removes the render-blocking request to
 // fonts.googleapis.com that the CSS @import used to make, and the swap flash
@@ -141,17 +140,11 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} ${mono.variable} ${wordmark.variable}`}
     >
       <head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GOOGLE_TAG_MANAGER_ID}');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
+        {/* The two hosts every page ends up talking to. Warming the connection
+            here costs nothing and takes the DNS and TLS round trips off the
+            critical path when the tag finally loads. */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="" />
       </head>
       <body
         style={{
@@ -163,7 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GOOGLE_TAG_MANAGER_ID}`}
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
@@ -172,6 +165,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         {/* End Google Tag Manager (noscript) */}
         {children}
+        {/* Tag Manager itself, after the page is usable. See TagManager.tsx. */}
+        <TagManager />
       </body>
     </html>
   );

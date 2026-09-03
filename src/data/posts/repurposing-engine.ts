@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'Repurposing fails when nine assets turn out to be the same asset nine times. The fix is structural, not stylistic.',
   published: '2026-07-30',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Systems',
   tags: ['Systems', 'Content operations', 'Automation'],
   keywords: [

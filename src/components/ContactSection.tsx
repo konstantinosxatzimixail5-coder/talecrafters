@@ -1,8 +1,14 @@
 "use client";
-import { motion, AnimatePresence } from 'motion/react';
-import { useState, useRef } from 'react';
-import { Send, ChevronRight, Compass, BookMarked, Crosshair, Cpu, Swords, Sparkles } from 'lucide-react';
+import { motion } from 'motion/react';
+import { useState } from 'react';
+import { Send } from 'lucide-react';
 import type { HomeCopy } from '@/content/copy';
+
+/** The founder's own lines. One place, so the form, the call and the message
+ *  can never end up pointing at three different people. */
+const CALENDLY = 'https://calendly.com/konstantinos-xatzimixail5/1-1-meeting';
+const WHATSAPP_NUMBER = '306946450024';
+const WHATSAPP = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 function HandshakeAnimIcon() {
   return (
@@ -21,128 +27,132 @@ function HandshakeAnimIcon() {
   );
 }
 
-const projectTypes = [
-  { id: 'visual-warfare', label: 'Visual Warfare', color: 'var(--brand-magenta)', icon: Compass },
-  { id: 'narrative', label: 'Narrative Engineering', color: 'var(--brand-cyan)', icon: BookMarked },
-  { id: 'strategy', label: 'Strategy & Reputation', color: 'var(--brand-violet-text)', icon: Crosshair },
-  { id: 'synthetic', label: 'Synthetic Beings', color: 'var(--brand-gold)', icon: Cpu },
-  { id: 'design', label: 'Design Weaponry', color: 'var(--brand-magenta)', icon: Swords },
-  { id: 'wildcard', label: 'Something Unhinged', color: 'var(--brand-violet-text)', icon: Sparkles },
-];
+/** The clapper arm, drawn rather than photographed. It hinges open when the
+ *  form has enough in it to send, which is the only animation in this section
+ *  that carries information. */
+function ClapperTop({ open }: { open: boolean }) {
+  return (
+    <div className="relative" style={{ height: 46, marginBottom: -1 }}>
+      <motion.div
+        className="absolute left-0 right-0 top-0 flex overflow-hidden"
+        style={{
+          height: 46,
+          transformOrigin: 'left bottom',
+          backgroundColor: 'var(--brand-black)',
+          border: '1px solid rgba(255,255,255,0.14)',
+        }}
+        animate={{ rotate: open ? -14 : 0 }}
+        transition={{ type: 'spring', stiffness: 220, damping: 16 }}
+      >
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div
+            key={i}
+            className="h-full flex-1"
+            style={{
+              backgroundColor: i % 2 === 0 ? 'var(--brand-white)' : 'transparent',
+              transform: 'skewX(-18deg)',
+              opacity: i % 2 === 0 ? 0.9 : 1,
+            }}
+          />
+        ))}
+      </motion.div>
+    </div>
+  );
+}
 
-// Budget is now a free-text input + "No clue" toggle
+/** One row of the slate: a label on the left, a field on the right. */
+function SlateRow({
+  label,
+  children,
+  last = false,
+}: {
+  label: string;
+  children: React.ReactNode;
+  last?: boolean;
+}) {
+  return (
+    <div
+      className="grid grid-cols-1 sm:grid-cols-[120px_minmax(0,1fr)] items-start gap-x-4 gap-y-1 px-5 py-4"
+      style={last ? undefined : { borderBottom: '1px solid rgba(255,255,255,0.09)' }}
+    >
+      <span
+        className="text-[10px] tracking-[0.24em] sm:pt-3"
+        style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}
+      >
+        {label}
+      </span>
+      {children}
+    </div>
+  );
+}
 
-const urgencyLevels = [
-  { id: 'yesterday', label: 'YESTERDAY', color: 'var(--brand-magenta)', desc: 'We needed this last week' },
-  { id: 'soon', label: 'THIS MONTH', color: 'var(--brand-gold)', desc: 'Time is ticking' },
-  { id: 'planned', label: 'THIS QUARTER', color: 'var(--brand-cyan)', desc: 'Strategically planned' },
-  { id: 'exploring', label: 'JUST EXPLORING', color: 'var(--brand-violet-text)', desc: 'Kicking tyres' },
-];
+const fieldStyle: React.CSSProperties = {
+  fontFamily: 'var(--font-body)',
+  color: 'var(--brand-white)',
+  background: 'transparent',
+  border: 0,
+  outline: 'none',
+  width: '100%',
+  fontSize: '1.05rem',
+  padding: '0.5rem 0',
+};
 
 export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['contact']; hideHeading?: boolean }) {
-  const [step, setStep] = useState(0);
-  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-  const [urgency, setUrgency] = useState('');
-  const [budget, setBudget] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [company, setCompany] = useState('');
   const [message, setMessage] = useState('');
+  const [sending, setSending] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
+  const [failed, setFailed] = useState(false);
 
-  const totalSteps = 4;
-  const progress = ((step + 1) / totalSteps) * 100;
+  const ready = name.trim() !== '' && /\S+@\S+\.\S+/.test(email) && message.trim() !== '';
 
-  const toggleType = (id: string) => {
-    setSelectedTypes(prev =>
-      prev.includes(id) ? prev.filter(t => t !== id) : [...prev, id]
-    );
-  };
-
-  const canProceed = () => {
-    switch (step) {
-      case 0: return selectedTypes.length > 0;
-      case 1: return urgency !== '';
-      case 2: return name.trim() !== '' && email.trim() !== '';
-      case 3: return true;
-      default: return false;
-    }
-  };
-
-  const handleSubmit = async () => {
-    const servicesStr = selectedTypes.map(t => projectTypes.find(p => p.id === t)?.label).join(', ');
-    const urgencyStr = urgencyLevels.find(u => u.id === urgency)?.label || '';
-    const budgetStr = budget || 'Not specified';
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!ready || sending) return;
+    setSending(true);
+    setFailed(false);
 
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          services: selectedTypes.map(t => projectTypes.find(p => p.id === t)?.label),
-          urgency: urgencyStr,
-          budget: budgetStr,
-          name,
-          email,
-          company,
-          message,
-        }),
+        body: JSON.stringify({ name, email, message }),
       });
       if (res.ok) {
         setSubmitted(true);
         return;
       }
+      setFailed(true);
     } catch {
-      // API failed: fall through to mailto
+      setFailed(true);
+    } finally {
+      setSending(false);
     }
-
-    // Fallback: open mailto with all form data pre-filled
-    const subject = encodeURIComponent(`New enquiry from ${name || 'Website visitor'}`);
-    const mailBody = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'Not specified'}\n\nServices: ${servicesStr}\nTimeline: ${urgencyStr}\nBudget: ${budgetStr}\n\nMessage:\n${message || 'No additional message.'}`
-    );
-    window.location.href = `mailto:hello@talecrafters.studio?subject=${subject}&body=${mailBody}`;
-    setSubmitted(true);
   };
 
-  const stepTitles = [
-    "WHAT KIND OF CHAOS ARE YOU AFTER?",
-    "HOW FAST DO YOU NEED THIS?",
-    "WHO ARE WE CONSPIRING WITH?",
-    "ANYTHING ELSE WE SHOULD KNOW?",
-  ];
-
-  const stepSubtitles = [
-    "Pick as many as you want. We don't judge.",
-    "Honesty helps us help you. No pressure.",
-    "The basics. We promise not to spam you.",
-    "The weirder the brief, the better the work.",
-  ];
-
-  const servicesValue = selectedTypes.map(t => projectTypes.find(p => p.id === t)?.label).join(', ');
-  const urgencyValue = urgencyLevels.find(u => u.id === urgency)?.label || '';
-  const budgetValue = budget || '';
+  /** The escape hatch when the API is down. Everything typed is already in the
+   *  draft, so nobody has to write it twice. */
+  const mailtoHref = () =>
+    `mailto:konstantinos.xatzimixail5@gmail.com?subject=${encodeURIComponent(
+      `New enquiry from ${name || 'the website'}`
+    )}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
 
   return (
     <section
       id="contact"
-      className="relative py-32 md:py-48 overflow-hidden"
+      // On /contact the page header already carries the title, so the section
+      // does not need to open with half a screen of nothing under it.
+      className={`relative overflow-hidden ${hideHeading ? 'pt-4 pb-24 md:pt-8 md:pb-32' : 'py-32 md:py-48'}`}
       style={{ backgroundColor: '#080808' }}
     >
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          className="absolute top-0 left-[25%] w-px h-full"
-          style={{ backgroundColor: 'var(--brand-cyan)', opacity: 0.04 }}
-        />
-        <motion.div
-          className="absolute top-0 left-[75%] w-px h-full"
-          style={{ backgroundColor: 'var(--brand-magenta)', opacity: 0.04 }}
-        />
-        <motion.div
+        <div className="absolute top-0 left-[25%] w-px h-full" style={{ backgroundColor: 'var(--brand-cyan)', opacity: 0.04 }} />
+        <div className="absolute top-0 left-[75%] w-px h-full" style={{ backgroundColor: 'var(--brand-magenta)', opacity: 0.04 }} />
+        <div
           className="absolute w-[200%] h-px origin-left"
-          style={{ top: '40%', left: '-20%', backgroundColor: 'var(--brand-violet)', opacity: 0.05, rotate: -4 }}
+          style={{ top: '40%', left: '-20%', backgroundColor: 'var(--brand-violet)', opacity: 0.05, rotate: '-4deg' }}
         />
       </div>
 
@@ -157,20 +167,16 @@ export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['
           viewport={{ once: true }}
         >
           <div className="h-px w-8" style={{ backgroundColor: 'var(--brand-cyan)' }} />
-          <span
-            className="text-xs tracking-[0.3em]"
-            style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
-          >
+          <span className="text-xs tracking-[0.3em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}>
             {copy.flag}
           </span>
         </motion.div>
       )}
 
       <div className="px-6 md:px-16 lg:px-24 max-w-5xl mx-auto">
-        {/* Headline */}
         {!hideHeading && (
           <motion.div
-            className="mb-16 md:mb-24"
+            className="mb-14 md:mb-20"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -183,21 +189,12 @@ export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['
               {copy.heading}<br />
               <span style={{ color: 'var(--brand-cyan)' }}>{copy.accentWord}</span>
             </h2>
-            <motion.div
-              className="mt-6 flex items-center gap-4"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
+            <div className="mt-6 flex items-center gap-4">
               <div className="h-px w-16" style={{ background: 'linear-gradient(to right, var(--brand-cyan), var(--brand-magenta))' }} />
-              <span
-                className="text-sm tracking-widest"
-                style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
-              >
+              <span className="text-sm tracking-widest" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
                 Consider this your audition. Ours too.
               </span>
-            </motion.div>
+            </div>
           </motion.div>
         )}
 
@@ -208,446 +205,191 @@ export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div
-              className="text-8xl mb-8 flex justify-center"
-              animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.1, 1] }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
+            <div className="mb-8 flex justify-center">
               <HandshakeAnimIcon />
-            </motion.div>
-            <h3
-              className="text-4xl md:text-6xl tracking-tighter mb-6"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              CONSPIRACY <span style={{ color: 'var(--brand-cyan)' }}>INITIATED.</span>
+            </div>
+            <h3 className="text-4xl md:text-6xl tracking-tighter mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+              SCENE ONE, <span style={{ color: 'var(--brand-cyan)' }}>TAKE ONE.</span>
             </h3>
-            <p
-              className="text-lg max-w-lg mx-auto"
-              style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
-            >
-              We&apos;ve received your transmission. Expect a response faster than your last agency sent a revision. Check your inbox.
+            <p className="text-lg max-w-lg mx-auto" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
+              Your message is with Konstantinos. He answers these himself, usually the same day.
+              If you would rather not wait, the call and the WhatsApp thread below are both open.
             </p>
-            <motion.div
-              className="mt-8 text-sm tracking-widest"
-              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              PROCESSING YOUR CHAOS...
-            </motion.div>
+            <div className="mt-8 flex flex-wrap gap-3 justify-center">
+              <a
+                href={CALENDLY}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 text-sm tracking-widest"
+                style={{ fontFamily: 'var(--font-mono)', border: '1px solid var(--brand-cyan)', color: 'var(--brand-cyan)', textDecoration: 'none' }}
+              >
+                BOOK THE CALL ↗
+              </a>
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 text-sm tracking-widest"
+                style={{ fontFamily: 'var(--font-mono)', border: '1px solid var(--brand-gold)', color: 'var(--brand-gold)', textDecoration: 'none' }}
+              >
+                WHATSAPP ↗
+              </a>
+            </div>
           </motion.div>
         ) : (
-          <form
-            ref={formRef}
-            onSubmit={(e) => e.preventDefault()}
-          >
-
-            {/* Progress bar */}
-            <div className="mb-12">
-              <div className="flex items-center justify-between mb-3">
-                <span
-                  className="text-xs tracking-widest"
-                  style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
-                >
-                  STEP {step + 1} OF {totalSteps}
-                </span>
-                <span
-                  className="text-xs tracking-widest"
-                  style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
-                >
-                  {Math.round(progress)}%
-                </span>
-              </div>
-              <div className="h-[2px] w-full" style={{ backgroundColor: 'var(--brand-concrete)', opacity: 0.3 }}>
-                <motion.div
-                  className="h-full"
-                  style={{ background: 'linear-gradient(to right, var(--brand-cyan), var(--brand-magenta), var(--brand-violet))' }}
-                  animate={{ width: `${progress}%` }}
-                  transition={{ duration: 0.5, ease: 'easeOut' }}
-                />
-              </div>
-            </div>
-
-            {/* Step title */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={step}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-              >
-                <h3
-                  className="text-2xl md:text-4xl tracking-tighter mb-2"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  {stepTitles[step]}
-                </h3>
-                <p
-                  className="text-sm mb-10"
-                  style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
-                >
-                  {stepSubtitles[step]}
-                </p>
-
-                {/* Step 0: Project type selection */}
-                {step === 0 && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {projectTypes.map((type) => {
-                      const isSelected = selectedTypes.includes(type.id);
-                      const Icon = type.icon;
-                      return (
-                        <motion.button
-                          key={type.id}
-                          type="button"
-                          className="relative p-5 text-left overflow-hidden"
-                          style={{
-                            backgroundColor: isSelected ? `${type.color}15` : 'rgba(255,255,255,0.02)',
-                            border: `1px solid ${isSelected ? type.color : 'rgba(255,255,255,0.08)'}`,
-                          }}
-                          onClick={() => toggleType(type.id)}
-                          whileHover={{ scale: 1.02, borderColor: type.color }}
-                          whileTap={{ scale: 0.98 }}
-                        >
-                          <div className="text-2xl mb-2">
-                            <Icon size={28} style={{ color: type.color }} />
-                          </div>
-                          <div
-                            className="text-sm tracking-widest"
-                            style={{
-                              fontFamily: 'var(--font-display)',
-                              color: isSelected ? type.color : 'var(--brand-white)',
-                            }}
-                          >
-                            {type.label}
-                          </div>
-                          {isSelected && (
-                            <motion.div
-                              className="absolute top-0 left-0 right-0 h-[3px]"
-                              style={{ backgroundColor: type.color }}
-                              layoutId={`selected-${type.id}`}
-                              initial={{ scaleX: 0 }}
-                              animate={{ scaleX: 1 }}
-                            />
-                          )}
-                        </motion.button>
-                      );
-                    })}
-                  </div>
-                )}
-
-                {/* Step 1: Urgency + Budget */}
-                {step === 1 && (
-                  <div className="space-y-10">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {urgencyLevels.map((level) => {
-                        const isSelected = urgency === level.id;
-                        return (
-                          <motion.button
-                            key={level.id}
-                            type="button"
-                            className="relative p-6 text-left overflow-hidden"
-                            style={{
-                              backgroundColor: isSelected ? `${level.color}12` : 'rgba(255,255,255,0.02)',
-                              border: `1px solid ${isSelected ? level.color : 'rgba(255,255,255,0.06)'}`,
-                            }}
-                            onClick={() => setUrgency(level.id)}
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                          >
-                            <div
-                              className="text-xl tracking-tighter mb-1"
-                              style={{
-                                fontFamily: 'var(--font-display)',
-                                color: isSelected ? level.color : 'var(--brand-white)',
-                              }}
-                            >
-                              {level.label}
-                            </div>
-                            <div
-                              className="text-xs tracking-widest"
-                              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
-                            >
-                              {level.desc}
-                            </div>
-                            {isSelected && (
-                              <motion.div
-                                className="absolute bottom-0 left-0 right-0 h-[3px]"
-                                style={{ backgroundColor: level.color }}
-                                initial={{ scaleX: 0 }}
-                                animate={{ scaleX: 1 }}
-                              />
-                            )}
-                          </motion.button>
-                        );
-                      })}
-                    </div>
-
-                    {/* Budget input */}
-                    <div>
-                      <label
-                        className="block text-xs tracking-widest mb-4"
-                        style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}
-                      >
-                        BUDGET RANGE (OPTIONAL)
-                      </label>
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <input
-                          type="text"
-                          placeholder="e.g. £5K: £15K"
-                          value={budget === 'No clue' ? '' : budget}
-                          onChange={(e) => setBudget(e.target.value)}
-                          disabled={budget === 'No clue'}
-                          className="flex-1 px-4 py-3 text-sm"
-                          style={{
-                            fontFamily: 'var(--font-mono)',
-                            backgroundColor: budget === 'No clue' ? 'rgba(255,255,255,0.02)' : 'transparent',
-                            color: budget === 'No clue' ? 'var(--brand-concrete)' : 'var(--brand-white)',
-                            border: '1px solid var(--brand-concrete)',
-                            outline: 'none',
-                            opacity: budget === 'No clue' ? 0.4 : 1,
-                          }}
-                        />
-                        <motion.button
-                          type="button"
-                          className="px-4 py-3 text-xs tracking-wider whitespace-nowrap"
-                          style={{
-                            fontFamily: 'var(--font-mono)',
-                            backgroundColor: budget === 'No clue' ? 'var(--brand-gold)' : 'transparent',
-                            color: budget === 'No clue' ? 'var(--brand-black)' : 'var(--brand-concrete-light)',
-                            border: `1px solid ${budget === 'No clue' ? 'var(--brand-gold)' : 'var(--brand-concrete)'}`,
-                          }}
-                          onClick={() => setBudget(budget === 'No clue' ? '' : 'No clue')}
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          No clue: let&apos;s figure it out
-                        </motion.button>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Step 2: Name, Email, Company */}
-                {step === 2 && (
-                  <div className="space-y-6 max-w-xl">
-                    <div>
-                      <label
-                        className="block text-xs tracking-widest mb-3"
-                        style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}
-                      >
-                        YOUR NAME (OR ALIAS)
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="The mastermind behind this operation..."
-                        className="w-full bg-transparent p-4 text-lg outline-none"
-                        style={{
-                          fontFamily: 'var(--font-body)',
-                          color: 'var(--brand-white)',
-                          borderBottom: '2px solid var(--brand-concrete)',
-                          transition: 'border-color 0.3s',
-                        }}
-                        onFocus={(e) => e.target.style.borderColor = 'var(--brand-cyan)'}
-                        onBlur={(e) => e.target.style.borderColor = 'var(--brand-concrete)'}
-                      />
-                    </div>
-                    <div>
-                      <label
-                        className="block text-xs tracking-widest mb-3"
-                        style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}
-                      >
-                        YOUR EMAIL (FOR THE CLASSIFIED BRIEFING)
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="your@email.com"
-                        className="w-full bg-transparent p-4 text-lg outline-none"
-                        style={{
-                          fontFamily: 'var(--font-body)',
-                          color: 'var(--brand-white)',
-                          borderBottom: '2px solid var(--brand-concrete)',
-                          transition: 'border-color 0.3s',
-                        }}
-                        onFocus={(e) => e.target.style.borderColor = 'var(--brand-cyan)'}
-                        onBlur={(e) => e.target.style.borderColor = 'var(--brand-concrete)'}
-                      />
-                    </div>
-                    <div>
-                      <label
-                        className="block text-xs tracking-widest mb-3"
-                        style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}
-                      >
-                        COMPANY (OPTIONAL)
-                      </label>
-                      <input
-                        type="text"
-                        name="company"
-                        value={company}
-                        onChange={(e) => setCompany(e.target.value)}
-                        placeholder="Your organisation..."
-                        className="w-full bg-transparent p-4 text-lg outline-none"
-                        style={{
-                          fontFamily: 'var(--font-body)',
-                          color: 'var(--brand-white)',
-                          borderBottom: '2px solid var(--brand-concrete)',
-                          transition: 'border-color 0.3s',
-                        }}
-                        onFocus={(e) => e.target.style.borderColor = 'var(--brand-cyan)'}
-                        onBlur={(e) => e.target.style.borderColor = 'var(--brand-concrete)'}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {/* Step 3: Message */}
-                {step === 3 && (
-                  <div className="max-w-xl">
-                    <label
-                      className="block text-xs tracking-widest mb-3"
-                      style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}
-                    >
-                      THE BRIEF (OR RANT, WE ACCEPT BOTH)
-                    </label>
-                    <textarea
-                      name="message"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Tell us everything. The vision, the deadline, the impossible thing you want us to build. The more unhinged, the better..."
-                      rows={6}
-                      className="w-full bg-transparent p-4 text-lg outline-none resize-none"
-                      style={{
-                        fontFamily: 'var(--font-body)',
-                        color: 'var(--brand-white)',
-                        border: '1px solid var(--brand-concrete)',
-                        transition: 'border-color 0.3s',
-                      }}
-                      onFocus={(e) => e.target.style.borderColor = 'var(--brand-cyan)'}
-                      onBlur={(e) => e.target.style.borderColor = 'var(--brand-concrete)'}
-                    />
-
-                    {/* Summary preview */}
-                    <div
-                      className="mt-8 p-5"
-                      style={{
-                        backgroundColor: 'rgba(0,229,204,0.04)',
-                        border: '1px solid rgba(0,229,204,0.15)',
-                      }}
-                    >
-                      <div
-                        className="text-[10px] tracking-widest mb-3"
-                        style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}
-                      >
-                        MISSION BRIEFING SUMMARY
-                      </div>
-                      <div className="space-y-2 text-sm" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
-                        <div>
-                          <span style={{ color: 'var(--brand-magenta)' }}>type:</span>{' '}
-                          {servicesValue || '—'}
-                        </div>
-                        <div>
-                          <span style={{ color: 'var(--brand-gold)' }}>urgency:</span>{' '}
-                          {urgencyValue || '—'}
-                        </div>
-                        <div>
-                          <span style={{ color: 'var(--brand-cyan)' }}>budget:</span>{' '}
-                          {budgetValue || '—'}
-                        </div>
-                        <div>
-                          <span style={{ color: 'var(--brand-violet-text)' }}>agent:</span>{' '}
-                          {name || '—'}{company ? ` @ ${company}` : ''}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Navigation buttons */}
-            <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-              <div>
-                {step > 0 && (
-                  <motion.button
-                    type="button"
-                    className="px-6 py-3 text-sm tracking-widest"
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      color: 'var(--brand-concrete-light)',
-                      border: '1px solid var(--brand-concrete)',
-                    }}
-                    onClick={() => setStep(step - 1)}
-                    whileHover={{ borderColor: 'var(--brand-white)', color: 'var(--brand-white)' }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    ← BACK
-                  </motion.button>
-                )}
-              </div>
-
-              <div>
-                {step < totalSteps - 1 ? (
-                  <motion.button
-                    type="button"
-                    className="px-8 py-4 text-lg tracking-tight flex items-center gap-3"
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      backgroundColor: canProceed() ? 'var(--brand-cyan)' : 'var(--brand-concrete)',
-                      color: canProceed() ? 'var(--brand-black)' : '#B9B9B9',
-                      cursor: canProceed() ? 'pointer' : 'not-allowed',
-                    }}
-                    aria-disabled={!canProceed()}
-                    onClick={() => canProceed() && setStep(step + 1)}
-                    whileHover={canProceed() ? { scale: 1.05 } : {}}
-                    whileTap={canProceed() ? { scale: 0.95 } : {}}
-                  >
-                    NEXT <ChevronRight size={20} />
-                  </motion.button>
-                ) : (
-                  <motion.button
-                    type="button"
-                    className="px-8 py-4 text-lg tracking-tight flex items-center gap-3"
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      background: 'linear-gradient(135deg, var(--brand-magenta), var(--brand-violet))',
-                      color: 'var(--brand-white)',
-                    }}
-                    onClick={handleSubmit}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <motion.svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                      animate={{ rotate: [0, 180, 360] }} transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}>
-                      <path d="M10 1 L12 7 L18 7 L13 11 L15 17 L10 13 L5 17 L7 11 L2 7 L8 7 Z" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                    </motion.svg>
-                    LAUNCH THE CONSPIRACY
-                    <Send size={18} />
-                  </motion.button>
-                )}
-              </div>
-            </div>
-
-            {/* Privacy consent note */}
-            <p
-              className="text-xs mt-6 leading-relaxed"
-              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] gap-10 lg:gap-14 items-start">
+            {/* --- the slate ------------------------------------------- */}
+            <motion.form
+              onSubmit={handleSubmit}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
-              By submitting this form you agree to our{' '}
-              <a href="/privacy" className="underline underline-offset-2 transition-opacity hover:opacity-70" style={{ color: 'var(--brand-cyan)' }}>
-                Privacy Policy
-              </a>{' '}
-              and{' '}
-              <a href="/terms" className="underline underline-offset-2 transition-opacity hover:opacity-70" style={{ color: 'var(--brand-cyan)' }}>
-                Terms of Service
-              </a>.
-            </p>
-          </form>
+              <ClapperTop open={ready} />
+
+              <div style={{ border: '1px solid rgba(255,255,255,0.14)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
+                <div
+                  className="flex items-center justify-between px-5 py-3"
+                  style={{ borderBottom: '1px solid rgba(255,255,255,0.09)' }}
+                >
+                  <span className="text-[10px] tracking-[0.3em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
+                    PROD. TALECRAFTERS
+                  </span>
+                  <span className="text-[10px] tracking-[0.3em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}>
+                    SEND US A MESSAGE
+                  </span>
+                </div>
+
+                <SlateRow label="NAME">
+                  <input
+                    type="text"
+                    name="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Who is calling it"
+                    required
+                    style={fieldStyle}
+                  />
+                </SlateRow>
+
+                <SlateRow label="EMAIL">
+                  <input
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@company.com"
+                    required
+                    style={fieldStyle}
+                  />
+                </SlateRow>
+
+                <SlateRow label="THE BRIEF" last>
+                  <textarea
+                    name="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="What you want made, when you need it, and the constraint you think kills it."
+                    rows={5}
+                    required
+                    className="resize-none"
+                    style={{ ...fieldStyle, lineHeight: 1.6 }}
+                  />
+                </SlateRow>
+              </div>
+
+              <div className="mt-6 flex flex-wrap items-center gap-4">
+                <button
+                  type="submit"
+                  disabled={!ready || sending}
+                  className="px-8 py-4 text-lg tracking-tight flex items-center gap-3 transition-transform"
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    background: ready ? 'linear-gradient(135deg, var(--brand-magenta), var(--brand-violet))' : 'var(--brand-concrete)',
+                    color: ready ? 'var(--brand-white)' : '#B9B9B9',
+                    border: 0,
+                    cursor: ready && !sending ? 'pointer' : 'not-allowed',
+                  }}
+                >
+                  {sending ? 'SENDING…' : 'SEND IT'}
+                  <Send size={18} />
+                </button>
+
+                {failed && (
+                  <p className="text-sm" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}>
+                    That did not go through.{' '}
+                    <a href={mailtoHref()} style={{ color: 'var(--brand-cyan)' }}>
+                      Send it from your own mail client
+                    </a>{' '}
+                    with everything you typed already in it.
+                  </p>
+                )}
+              </div>
+
+              <p className="text-xs mt-6 leading-relaxed" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
+                By sending this you agree to our{' '}
+                <a href="/privacy" className="underline underline-offset-2" style={{ color: 'var(--brand-cyan)' }}>
+                  Privacy Policy
+                </a>{' '}
+                and{' '}
+                <a href="/terms" className="underline underline-offset-2" style={{ color: 'var(--brand-cyan)' }}>
+                  Terms of Service
+                </a>.
+              </p>
+            </motion.form>
+
+            {/* --- the two other ways in -------------------------------- */}
+            <motion.div
+              className="flex flex-col gap-4"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-[10px] tracking-[0.3em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
+                OR SKIP THE FORM
+              </span>
+
+              <a
+                href={CALENDLY}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block p-6"
+                style={{ border: '1px solid rgba(0,229,204,0.3)', textDecoration: 'none' }}
+              >
+                <span className="block text-2xl tracking-tight mb-2" style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-cyan)' }}>
+                  Book a call with our founder
+                </span>
+                <span className="block text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
+                  Thirty minutes with Konstantinos. Bring the brief and you will leave with a shape,
+                  a stack and a number.
+                </span>
+                <span className="block mt-4 text-[11px] tracking-[0.2em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)' }}>
+                  OPEN CALENDLY ↗
+                </span>
+              </a>
+
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block p-6"
+                style={{ border: '1px solid rgba(201,168,76,0.3)', textDecoration: 'none' }}
+              >
+                <span className="block text-2xl tracking-tight mb-2" style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-gold)' }}>
+                  Send us a WhatsApp
+                </span>
+                <span className="block text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
+                  For the ones that are easier said than typed. Straight to the phone in
+                  Konstantinos&apos; pocket.
+                </span>
+                <span className="block mt-4 text-[11px] tracking-[0.2em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}>
+                  +30 694 645 0024 ↗
+                </span>
+              </a>
+            </motion.div>
+          </div>
         )}
       </div>
     </section>

@@ -7,7 +7,9 @@ import { Frame } from '@/components/Frame';
 import { PageHeader, Eyebrow, CtaBar } from '@/components/kit';
 import { Reveal } from '@/components/Reveal';
 import { JsonLd } from '@/components/JsonLd';
-import { pageMeta, breadcrumbSchema, imageObjectSchema } from '@/lib/seo';
+import { pageMeta, breadcrumbSchema, imageObjectSchema, videoObjectSchema } from '@/lib/seo';
+import { VideoPlayer } from '@/components/VideoPlayer';
+import { watchUrl } from '@/data/video';
 import { abs, SITE_URL } from '@/lib/site';
 
 export function generateStaticParams() {
@@ -92,15 +94,33 @@ export default async function FilmPage({ params }: { params: Promise<{ slug: str
             timeRequired: `PT${f.runtime.split(':')[0]}M${f.runtime.split(':')[1]}S`,
             image: imageObjectSchema({ url: `/img/${f.poster}-960.webp`, caption: f.posterAlt }),
             // The process sheet is the citable artefact, so it is described as
-            // a work in its own right rather than left as a link.
-            subjectOf: {
-              '@type': 'CreativeWork',
-              name: f.doc.title,
-              description: f.doc.summary,
-              url: abs(f.doc.path),
-              encodingFormat: 'application/pdf',
-            },
+            // a work in its own right rather than left as a link. Not every
+            // film has one: the third publishes its beats on the page instead.
+            ...(f.doc
+              ? {
+                  subjectOf: {
+                    '@type': 'CreativeWork',
+                    name: f.doc.title,
+                    description: f.doc.summary,
+                    url: abs(f.doc.path),
+                    encodingFormat: 'application/pdf',
+                  },
+                }
+              : {}),
           },
+          ...(f.video
+            ? [
+                videoObjectSchema({
+                  name: f.title,
+                  description: f.logline,
+                  thumbnailUrl: `/img/${f.poster}-960.webp`,
+                  uploadDate: f.video.uploadDate,
+                  duration: f.video.duration,
+                  embedUrl: watchUrl(f.video.youtubeId),
+                  path: `/films/${f.slug}`,
+                }),
+              ]
+            : []),
           ...[
             { key: f.poster, alt: f.posterAlt },
             { key: f.hero, alt: f.heroAlt },
@@ -132,6 +152,13 @@ export default async function FilmPage({ params }: { params: Promise<{ slug: str
               priority
             />
           </Reveal>
+          {f.video ? (
+            <Reveal>
+              <div className="mt-8 max-w-4xl">
+                <VideoPlayer video={f.video} accent={color} />
+              </div>
+            </Reveal>
+          ) : null}
           <p
             className="mt-5 max-w-3xl text-xl md:text-2xl leading-relaxed"
             style={{ fontFamily: 'var(--font-body)' }}
@@ -369,6 +396,7 @@ export default async function FilmPage({ params }: { params: Promise<{ slug: str
               <Rows rows={f.delivery} color="var(--brand-cyan)" />
             </div>
           </div>
+          {f.doc ? (
           <div>
             <Eyebrow color="var(--brand-gold)">THE PROCESS DOCUMENT</Eyebrow>
             <p className="mt-6 text-base leading-relaxed" style={{ color: 'rgba(245,245,240,0.78)' }}>
@@ -388,6 +416,7 @@ export default async function FilmPage({ params }: { params: Promise<{ slug: str
               <Download size={15} /> {f.doc.title.toUpperCase()}
             </a>
           </div>
+          ) : null}
         </div>
       </section>
 

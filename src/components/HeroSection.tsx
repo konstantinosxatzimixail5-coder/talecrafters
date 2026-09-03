@@ -31,16 +31,18 @@ function TypewriterText({ text, delay = 0 }: { text: string; delay?: number }) {
   return (
     <span>
       {displayed}
-      <motion.span
-        animate={{ opacity: [1, 0] }}
-        transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse' }}
-        style={{ color: 'var(--brand-cyan)' }}
-      >
+      <span className="tc-fade" style={{ color: 'var(--brand-cyan)', animationDuration: '0.5s', animationIterationCount: 'infinite', animationDirection: 'alternate' }}>
         _
-      </motion.span>
+      </span>
     </span>
   );
 }
+
+/** The five headline lines, and the CSS stagger between them. Kept tight: the
+ *  first line is the LCP element on most viewports, so every millisecond of
+ *  delay in front of it is a millisecond on the metric. */
+const HEADLINE_CLASS =
+  'block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter tc-rise';
 
 export function HeroSection({ copy }: { copy: HomeCopy['hero'] }) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -52,6 +54,14 @@ export function HeroSection({ copy }: { copy: HomeCopy['hero'] }) {
   const bgY = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const opacityOut = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+
+  const lines = [
+    { text: copy.line1, accent: copy.line1Accent, color: 'var(--brand-cyan)' },
+    { text: copy.line2, accent: copy.line2Accent, color: 'var(--brand-magenta)' },
+    { text: copy.line3, accent: copy.line3Accent, color: 'var(--brand-gold)' },
+    { text: copy.line4, accent: copy.line4Accent, color: 'var(--brand-cyan)' },
+    { text: copy.line5, accent: copy.line5Accent, color: 'var(--brand-violet-text)' },
+  ];
 
   return (
     <section ref={sectionRef} className="relative min-h-[110vh] overflow-hidden flex flex-col justify-center" style={{ backgroundColor: 'var(--brand-black)', position: 'relative' }}>
@@ -71,48 +81,42 @@ export function HeroSection({ copy }: { copy: HomeCopy['hero'] }) {
         />
         {/* Horizontal scan lines */}
         {[...Array(8)].map((_, i) => (
-          <motion.div
+          <div
             key={i}
-            className="absolute left-0 right-0 h-px"
+            className="absolute left-0 right-0 h-px tc-grow-x"
             style={{
               top: `${12 + i * 12}%`,
               backgroundColor: i % 3 === 0 ? 'var(--brand-cyan)' : i % 3 === 1 ? 'var(--brand-magenta)' : 'var(--brand-violet)',
               opacity: 0.06,
+              animationDelay: `${0.5 + i * 0.15}s`,
             }}
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1.5, delay: 0.5 + i * 0.15, ease: 'easeOut' }}
           />
         ))}
       </div>
 
       {/* Floating geometric shapes */}
-      <motion.div
-        className="absolute pointer-events-none"
+      <div
+        className="absolute pointer-events-none tc-spin"
         style={{ top: '15%', right: '10%', width: 120, height: 120, border: '2px solid var(--brand-cyan)', opacity: 0.2 }}
-        animate={{ rotate: 360 }}
-        transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
       />
-      <motion.div
-        className="absolute pointer-events-none"
+      <div
+        className="absolute pointer-events-none tc-spin-back"
         style={{ bottom: '20%', left: '8%', width: 80, height: 80, backgroundColor: 'var(--brand-magenta)', opacity: 0.08 }}
-        animate={{ rotate: -360, scale: [1, 1.2, 1] }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
       />
-      <motion.div
-        className="absolute pointer-events-none rounded-full"
+      <div
+        className="absolute pointer-events-none rounded-full tc-breathe"
         style={{ top: '40%', right: '25%', width: 200, height: 200, border: '1px solid var(--brand-violet)', opacity: 0.1 }}
-        animate={{ scale: [1, 1.3, 1] }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
 
       {/* Left edge marker */}
-      <motion.div
-        className="absolute left-0 top-0 bottom-0 w-1"
-        style={{ background: 'linear-gradient(to bottom, transparent, var(--brand-cyan), var(--brand-magenta), transparent)' }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        transition={{ duration: 2, delay: 1 }}
+      <div
+        className="absolute left-0 top-0 bottom-0 w-1 tc-fade"
+        style={{
+          background: 'linear-gradient(to bottom, transparent, var(--brand-cyan), var(--brand-magenta), transparent)',
+          opacity: 0.4,
+          animationDelay: '1s',
+          animationDuration: '2s',
+        }}
       />
 
       {/* Main content */}
@@ -121,12 +125,7 @@ export function HeroSection({ copy }: { copy: HomeCopy['hero'] }) {
         style={{ y: textY, opacity: opacityOut }}
       >
         {/* Top tag line */}
-        <motion.div
-          className="mb-4 md:mb-6 flex items-center gap-4"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
+        <div className="mb-4 md:mb-6 flex items-center gap-4 tc-fade-x" style={{ animationDelay: '0.05s' }}>
           <div className="h-px w-16" style={{ backgroundColor: 'var(--brand-cyan)' }} />
           <span
             className="text-xs tracking-[0.3em] uppercase"
@@ -134,71 +133,31 @@ export function HeroSection({ copy }: { copy: HomeCopy['hero'] }) {
           >
             {copy.eyebrow}
           </span>
-        </motion.div>
+        </div>
 
         {/* Main headline. One h1 for the page: the five lines are spans inside
             it, so the stagger survives without handing a crawler five competing
             top-level headings. */}
         <div className="relative">
           <h1 style={{ margin: 0 }}>
-            <motion.span
-              className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.4 }}
-            >
-              <Accented text={copy.line1} accent={copy.line1Accent} color="var(--brand-cyan)" />
-            </motion.span>
-            <motion.span
-              className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.55 }}
-            >
-              <Accented text={copy.line2} accent={copy.line2Accent} color="var(--brand-magenta)" />
-            </motion.span>
-            <motion.span
-              className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.7 }}
-            >
-              <Accented text={copy.line3} accent={copy.line3Accent} color="var(--brand-gold)" />
-            </motion.span>
-            <motion.span
-              className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.85 }}
-            >
-              <Accented text={copy.line4} accent={copy.line4Accent} color="var(--brand-cyan)" />
-            </motion.span>
-            <motion.span
-              className="block text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[5.8vw] xl:text-[6vw] 2xl:text-[6.5vw] leading-[0.9] tracking-tighter"
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 1.0 }}
-            >
-              <Accented text={copy.line5} accent={copy.line5Accent} color="var(--brand-violet-text)" />
-              </motion.span>
+            {lines.map((l, i) => (
+              <span key={i} className={HEADLINE_CLASS} style={{ animationDelay: `${i * 0.08}s` }}>
+                <Accented text={l.text} accent={l.accent} color={l.color} />
+              </span>
+            ))}
           </h1>
 
           {/* Decorative bracket */}
-          <motion.div
-            className="absolute -left-4 md:-left-8 top-0 bottom-0 w-1"
-            style={{ backgroundColor: 'var(--brand-magenta)' }}
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: 1 }}
-            transition={{ duration: 0.8, delay: 1.2, ease: 'easeOut' }}
+          <div
+            className="absolute -left-4 md:-left-8 top-0 bottom-0 w-1 tc-grow-y"
+            style={{ backgroundColor: 'var(--brand-magenta)', animationDelay: '0.5s' }}
           />
         </div>
 
         {/* Subtitle line */}
-        <motion.div
-          className="mt-10 md:mt-16 flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.3 }}
+        <div
+          className="mt-10 md:mt-16 flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-12 tc-fade"
+          style={{ animationDelay: '0.55s' }}
         >
           <div
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter"
@@ -211,39 +170,33 @@ export function HeroSection({ copy }: { copy: HomeCopy['hero'] }) {
           >
             {copy.strapline}
           </div>
-        </motion.div>
+        </div>
 
         {/* Terminal readout */}
-        <motion.div
-          className="mt-12 max-w-lg p-4"
+        <div
+          className="mt-12 max-w-lg p-4 tc-fade"
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: '12px',
             color: 'var(--brand-cyan)',
             backgroundColor: 'rgba(0, 229, 204, 0.04)',
             border: '1px solid rgba(0, 229, 204, 0.15)',
+            animationDelay: '0.8s',
           }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.8 }}
         >
-          <TypewriterText
-            text={copy.terminal}
-            delay={2200}
-          />
-        </motion.div>
+          <TypewriterText text={copy.terminal} delay={1600} />
+        </div>
       </motion.div>
 
       {/* Bottom marquee */}
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 overflow-hidden py-5"
+      <div
+        className="absolute bottom-0 left-0 right-0 overflow-hidden py-5 tc-fade"
         style={{
           borderTop: '1px solid var(--brand-concrete)',
           borderBottom: '1px solid var(--brand-concrete)',
+          animationDelay: '0.9s',
+          animationDuration: '1s',
         }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2 }}
       >
         <div
           className="flex items-center justify-center gap-4 text-center"
@@ -260,27 +213,18 @@ export function HeroSection({ copy }: { copy: HomeCopy['hero'] }) {
           <span style={{ color: 'var(--brand-cyan)' }}>&times;</span>
           <span>CREATIVE CHAOS</span>
         </div>
-      </motion.div>
+      </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-16 right-8 flex flex-col items-center gap-2"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-      >
-        <div
-          className="w-px h-12"
-          style={{ backgroundColor: 'var(--brand-concrete-light)' }}
-        />
+      <div className="absolute bottom-16 right-8 flex flex-col items-center gap-2 tc-bob">
+        <div className="w-px h-12" style={{ backgroundColor: 'var(--brand-concrete-light)' }} />
         <span
           className="text-xs tracking-widest"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)', writingMode: 'vertical-rl' }}
         >
           SCROLL
         </span>
-      </motion.div>
+      </div>
     </section>
   );
 }

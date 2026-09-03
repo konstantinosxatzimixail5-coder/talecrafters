@@ -14,6 +14,7 @@
 
 import { defineType, defineField, defineArrayMember } from 'sanity';
 import { postBody } from './objects';
+import { BYLINE } from '@/lib/site';
 
 const slug = (source = 'title') =>
   defineField({
@@ -66,7 +67,7 @@ export const post = defineType({
     defineField({ name: 'standfirst', title: 'Standfirst', type: 'text', rows: 4, group: 'main', description: 'The heavier opening paragraph. States the answer in the first fifty words.' }),
     defineField({ name: 'published', title: 'Published', type: 'date', group: 'main', options: { dateFormat: 'YYYY-MM-DD' } }),
     defineField({ name: 'modified', title: 'Last modified', type: 'date', group: 'main', options: { dateFormat: 'YYYY-MM-DD' } }),
-    defineField({ name: 'author', title: 'Author', type: 'string', group: 'main', initialValue: 'TaleCrafters' }),
+    defineField({ name: 'author', title: 'Author', type: 'string', group: 'main', initialValue: BYLINE, description: 'The byline. Matching a name on /authors turns it into a linked entity; anything else renders as plain text.' }),
     defineField({ name: 'section', title: 'Section', type: 'string', group: 'main' }),
     { ...strings('tags', 'Tags'), group: 'main' } as any,
     defineField({ name: 'image', title: 'Hero picture', type: 'shot', group: 'main' }),
@@ -122,6 +123,7 @@ export const caseStudy = defineType({
     { ...arrayOf('stack', 'Stack, stage by stage', 'stackStep'), group: 'method' } as any,
     defineField({ name: 'hero', title: 'Hero picture', type: 'shot', group: 'pictures' }),
     { ...arrayOf('gallery', 'Gallery', 'shot'), group: 'pictures' } as any,
+    { ...arrayOf('videos', 'Films', 'projectVideo', 'Played on the case page, and emitted as structured data.'), group: 'pictures' } as any,
   ],
   orderings: [{ title: 'Running order', name: 'order', by: [{ field: 'order', direction: 'asc' }] }],
   preview: { select: { title: 'title', subtitle: 'client', media: 'hero.image' } },
@@ -169,6 +171,7 @@ export const conceptBrand = defineType({
     defineField({ name: 'accent', title: 'Accent colour', type: 'string' }),
     arrayOf('pipelines', 'Runs on', 'namedLink'),
     arrayOf('shots', 'Frames', 'shot'),
+    arrayOf('videos', 'Films', 'projectVideo', 'Played on the concept projects page, and emitted as structured data.'),
     order,
   ],
   preview: { select: { title: 'name', subtitle: 'product', media: 'shots.0.image' } },
@@ -270,6 +273,7 @@ export const film = defineType({
     defineField({ name: 'hero', title: 'Hero frame', type: 'shot', group: 'main' }),
     defineField({ name: 'strip', title: 'Contact strip', type: 'shot', group: 'main' }),
     defineField({ name: 'closing', title: 'Closing frame', type: 'shot', group: 'main' }),
+    defineField({ name: 'video', title: 'The film', type: 'projectVideo', group: 'main', description: 'Played under the hero when the short is watchable.' }),
     { ...order, group: 'main' } as any,
     { ...arrayOf('spec', 'Specification', 'keyValue'), group: 'sheet' } as any,
     { ...arrayOf('delivery', 'Delivery', 'keyValue'), group: 'sheet' } as any,

@@ -42,7 +42,7 @@ export const primaryNav: NavEntry[] = [
     color: GOLD,
     items: [
       { label: 'Free Resources', href: '/armoury', note: '38 camera moves and 12 animation styles' },
-      { label: 'AI Filmmaking Workflows', href: '/films', note: 'Two originals, published with their process' },
+      { label: 'AI Filmmaking Workflows', href: '/films', note: 'Three originals, published with their process' },
       { label: 'GenAI Workflows', href: '/pipelines', note: 'The production pipelines, published in full' },
     ],
   },
@@ -89,7 +89,7 @@ export const navGroups: NavGroup[] = [
     color: GOLD,
     items: [
       { label: 'Free Resources', href: '/armoury', note: 'Take them. No email gate.' },
-      { label: 'AI Filmmaking Workflows', href: '/films', note: 'Two originals, with the sheet behind each' },
+      { label: 'AI Filmmaking Workflows', href: '/films', note: 'Three originals, with the working behind each' },
       { label: 'GenAI Workflows', href: '/pipelines', note: 'How the work actually gets made' },
       { label: 'Blog', href: '/blog', note: 'Dispatches from the frontline' },
       { label: 'Glossary', href: '/glossary', note: `${terms.length} terms, no fog` },

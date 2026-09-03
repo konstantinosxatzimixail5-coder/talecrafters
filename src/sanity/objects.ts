@@ -429,4 +429,41 @@ export const navLeaf = defineType({
   preview: { select: { title: 'label', subtitle: 'note' } },
 });
 
+/**
+ * A film that plays on the page.
+ *
+ * The id, not a URL: a paste of a full YouTube link with a playlist and a
+ * timestamp on the end is how an embed ends up pointing at somebody else's
+ * video. The poster is optional; without one the page falls back to YouTube's
+ * own still rather than showing a grey box.
+ */
+export const projectVideo = defineType({
+  name: 'projectVideo',
+  title: 'Film',
+  type: 'object',
+  fields: [
+    defineField({
+      name: 'youtubeId', title: 'YouTube id', type: 'string',
+      description: 'The eleven characters after v= or youtu.be/, and nothing else.',
+      validation: (R) => R.required().regex(/^[A-Za-z0-9_-]{11}$/, { name: 'YouTube id' }),
+    }),
+    defineField({ name: 'title', title: 'Title', type: 'string', description: 'What the film is, in our words. Not the YouTube title.' }),
+    defineField({ name: 'note', title: 'Note', type: 'text', rows: 3, description: 'The paragraph under the player.' }),
+    defineField({
+      name: 'duration', title: 'Duration', type: 'string',
+      description: 'ISO 8601, e.g. PT1M48S for one minute forty-eight.',
+    }),
+    defineField({ name: 'uploadDate', title: 'Published', type: 'date', options: { dateFormat: 'YYYY-MM-DD' } }),
+    defineField({
+      name: 'ratio', title: 'Shape', type: 'string',
+      options: { list: [{ title: 'Wide (16:9)', value: '16:9' }, { title: 'Vertical (9:16)', value: '9:16' }] },
+      initialValue: '16:9',
+    }),
+    defineField({ name: 'poster', title: 'Poster frame', type: 'shot', description: 'Optional. Falls back to YouTube’s own still.' }),
+  ],
+  preview: { select: { title: 'title', subtitle: 'youtubeId', media: 'poster.image' } },
+});
+
+objectTypes.push(projectVideo);
+
 objectTypes.push(navLeaf);

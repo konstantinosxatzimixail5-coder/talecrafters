@@ -7,6 +7,8 @@ import type { CaseStudy } from '@/data/work';
 /** The button counts the cases rather than naming a number that goes stale. */
 const COUNT_WORDS = ['NO', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE', 'TEN'];
 const countWord = (n: number) => COUNT_WORDS[n] ?? String(n);
+/** The same number at the head of a sentence rather than on a button. */
+const Counted = (n: number) => countWord(n).replace(/^(.)(.*)$/, (_, a, b) => a + b.toLowerCase());
 import { Frame } from './Frame';
 import type { HomeCopy } from '@/content/copy';
 
@@ -14,9 +16,9 @@ import type { HomeCopy } from '@/content/copy';
  * The section the site was missing. It sits directly after Our Arsenal, because
  * a list of capabilities is a claim and this is the receipt.
  *
- * Four projects, not sixteen (one film, one site-and-film, one content system,
- * one narrative explainer) so that the breadth reads as deliberate rather than
- * as everything we have ever touched.
+ * A handful of projects, not sixteen, so the breadth reads as deliberate
+ * rather than as everything we have ever touched. Which ones appear is set by
+ * `featured` in src/data/work.ts and nowhere else.
  */
 export function SelectedDamageSection({
   copy,
@@ -82,11 +84,12 @@ export function SelectedDamageSection({
           transition={{ duration: 0.8, delay: 0.15 }}
           viewport={{ once: true }}
         >
-          Four engagements: a restaurant that had never been photographed, a consultancy that needed
-          to say “global” without saying it, a data school that needed seven adverts that share no
-          visual language, and a Horizon Europe consortium whose subject could not be filmed. Each
-          one carries the problem, the idea, what we made, what happened and the files the client
-          kept.
+          {Counted(featuredWork.length)} projects: a restaurant that had never been photographed, a
+          supplement brand whose three creators never have to be rebooked, a data school that needed
+          seven adverts sharing no visual language, a Horizon Europe consortium with a pilot to film
+          and an attack that could not be, an invented energy drink walking off a billboard, and two
+          men on Mars working out that they are a demo. Each one carries the problem, the idea, what
+          we made, what happened and the files the client kept.
         </motion.p>
 
         <div className="space-y-4">
@@ -214,7 +217,7 @@ export function SelectedDamageSection({
             className="px-7 py-4 text-base tracking-tight"
             style={{ fontFamily: 'var(--font-display)', border: '1px solid var(--brand-concrete)', color: 'var(--brand-white)', textDecoration: 'none' }}
           >
-            HOW IT WAS MADE →
+            HOW WE MAKE IT →
           </Link>
         </motion.div>
       </div>

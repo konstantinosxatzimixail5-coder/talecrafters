@@ -50,14 +50,12 @@ export const markets = [
 ] as const;
 
 /**
- * The founder, once there is a name to publish. Left empty on purpose: an
- * invented `founder` node is worse than an absent one, because an entity graph
- * that asserts a person who does not resolve anywhere is a claim a search
- * engine has to discount rather than a fact it can corroborate.
+ * The people whose names go on the work.
  *
- * Filling this in lights up three things at once: `Organization.founder`, the
- * `/authors/<slug>` page and `author` plus `author.url` on every article that
- * names them.
+ * One entry here lights up four things at once: `Organization.founder`, the
+ * `/authors/<slug>` page, the byline card at the foot of every article, and
+ * `author` plus `author.url` on the Article node, so a byline resolves to an
+ * entity a crawler can follow instead of dangling as a string.
  */
 export interface PersonEntity {
   slug: string;
@@ -74,7 +72,32 @@ export interface PersonEntity {
   knowsAbout?: string[];
 }
 
-export const people: PersonEntity[] = [];
+export const people: PersonEntity[] = [
+  {
+    slug: 'konstantinos-chatzimichail',
+    name: 'Konstantinos Chatzimichail',
+    jobTitle: 'Founder and Creative Director, TaleCrafters',
+    founder: true,
+    bio: 'Founder of TaleCrafters. Writes the pipelines the studio works to, directs the films that come out of them, and publishes both.',
+    body: [
+      'Konstantinos founded TaleCrafters to make one argument: generative production is a craft discipline with gates, not a prompt box with a lucky day. Everything on this site is written against that. A case study says what the problem was, what got made, what shipped, and which test each frame had to pass before it went in.',
+      'He directs the studio’s client work across brand film, synthetic photography, creator-style video and the content systems that keep the run going after the first cut lands. Recent engagements include a restaurant on Rhodes photographed from angles the camera never reached, four films for a Horizon Europe cyber-security consortium built entirely from a grant document, and a paid-social programme where every piece had to look like it came from a different production company.',
+      'He also writes the studio’s reference material: the pipeline sheets, the glossary, and the posts on this blog. The posts carry his byline because someone should be accountable for the claims in them.',
+    ],
+    knowsAbout: [
+      'Generative video production',
+      'Synthetic media',
+      'AI product photography',
+      'Creative automation',
+      'Brand film direction',
+      'Narrative engineering',
+    ],
+  },
+];
+
+/** The byline the studio publishes under. Named once so a post, the Studio
+ *  default and the schema cannot drift into three spellings of one person. */
+export const BYLINE = people[0].name;
 
 export const getPerson = (slug: string) => people.find((p) => p.slug === slug);
 export const founders = () => people.filter((p) => p.founder);

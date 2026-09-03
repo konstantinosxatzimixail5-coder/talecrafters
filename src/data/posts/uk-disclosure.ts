@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'What the CAP Code actually requires, where the platforms go further, and the practical rule we apply on every asset we ship.',
   published: '2026-08-27',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Compliance',
   tags: ['Compliance', 'Disclosure', 'UK'],
   keywords: [

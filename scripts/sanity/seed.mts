@@ -149,6 +149,24 @@ const shot = async (s: any, i = 0) =>
 const shots = async (list: readonly any[] | undefined) =>
   Promise.all((list ?? []).map((s, i) => shot(s, i)));
 
+/** The films that play on a case or a spec shelf. The poster is uploaded like
+ *  any other picture, so a video keeps its own frame after the Studio takes
+ *  over rather than falling back to YouTube's. */
+const videos = async (list: readonly any[] | undefined) =>
+  Promise.all((list ?? []).map(async (v, i) => ({
+    _key: key(i, 'v'),
+    _type: 'projectVideo',
+    youtubeId: v.youtubeId,
+    title: v.title,
+    note: v.note,
+    duration: v.duration,
+    uploadDate: v.uploadDate,
+    ratio: v.ratio ?? '16:9',
+    poster: v.poster
+      ? { _type: 'shot', src: v.poster, alt: v.posterAlt ?? v.title, image: await assetFor(v.poster) }
+      : undefined,
+  })));
+
 /* -------------------------------------------------------------- mappers -- */
 
 /** Table rows go in one row per entry, cells separated by a vertical bar. */
@@ -196,6 +214,7 @@ async function buildDocs() {
     links: keyed(w.links, 'l').map((l: any) => ({ ...l, _type: 'namedLink' })),
     hero: await shot(w.hero),
     gallery: await shots(w.gallery),
+    videos: await videos(w.videos),
   })));
 
   out.glossaryTerm = terms.map((t) => ({
@@ -212,6 +231,7 @@ async function buildDocs() {
     num: b.num, product: b.product, proves: b.proves, accent: b.accent, note: b.note,
     pipelines: keyed(b.pipelines, 'p').map((p: any) => ({ ...p, _type: 'namedLink' })),
     shots: await shots(b.shots),
+    videos: await videos(b.videos),
   })));
 
   out.capture = await Promise.all(captures.map(async (c, i) => ({
@@ -279,7 +299,8 @@ async function buildDocs() {
     routeWaypoints: f.route ? keyed(f.route.waypoints, 'w').map((r: any) => ({ ...r, _type: 'waypoint' })) : undefined,
     routeLocks: f.route?.locks,
     routeResult: f.route?.result,
-    docPath: f.doc.path, docTitle: f.doc.title, docSummary: f.doc.summary,
+    docPath: f.doc?.path, docTitle: f.doc?.title, docSummary: f.doc?.summary,
+    video: (await videos(f.video ? [f.video] : []))[0],
   })));
 
   out.pipeline = pipelines.map((p, i) => ({

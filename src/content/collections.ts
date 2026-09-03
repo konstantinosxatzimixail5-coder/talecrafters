@@ -34,6 +34,8 @@ import { cameraMoves as repoCameraMoves } from '@/data/camera-moves';
 import { animationStyles as repoAnimationStyles } from '@/data/animation-styles';
 import { tools as repoTools } from '@/data/downloads';
 import { primaryNav as repoPrimaryNav, navGroups as repoNavGroups } from '@/lib/nav';
+import { BYLINE } from '@/lib/site';
+import type { ProjectVideo } from '@/data/video';
 
 /** A picture as the Studio stores it: a manifest key, an upload, or both. */
 export interface StoredShot {
@@ -113,6 +115,21 @@ const shot = (s: any) =>
   s && { src: s.src, upload: s.image, alt: s.alt ?? '', label: s.label, focus: s.focus };
 
 const arr = <T>(v: unknown, f: (x: any) => T): T[] => (Array.isArray(v) ? v.map(f) : []);
+
+/** The films on a case, a spec shelf or an original. A document with no
+ *  YouTube id is skipped rather than rendered as a player with nothing behind
+ *  it. */
+const videos = (v: unknown): ProjectVideo[] =>
+  arr(v, (x) => ({
+    youtubeId: String(x?.youtubeId ?? '').trim(),
+    title: x?.title ?? '',
+    note: x?.note ?? '',
+    duration: x?.duration ?? '',
+    uploadDate: x?.uploadDate ?? '',
+    ratio: x?.ratio === '9:16' ? ('9:16' as const) : ('16:9' as const),
+    poster: x?.poster?.src ?? undefined,
+    posterAlt: x?.poster?.alt ?? undefined,
+  })).filter((x) => x.youtubeId !== '');
 const strArr = (v: unknown): string[] => (Array.isArray(v) ? v.filter((x) => typeof x === 'string') : []);
 
 /** Table rows are typed a row at a time, cells separated by a vertical bar. */
@@ -169,7 +186,7 @@ export const getPosts = () =>
     // this schema existed still carry a date.
     published: d.published ?? (d.publishedAt ? String(d.publishedAt).slice(0, 10) : ''),
     modified: d.modified,
-    author: d.author ?? 'TaleCrafters',
+    author: d.author ?? BYLINE,
     section: d.section ?? '',
     tags: strArr(d.tags),
     keywords: strArr(d.keywords),
@@ -212,6 +229,7 @@ export const getWork = () =>
     stack: arr(d.stack, (s) => ({ stage: s.stage ?? '', tool: s.tool ?? '' })),
     links: arr(d.links, (l) => ({ label: l.label ?? '', href: l.href ?? '' })),
     genre: d.genre,
+    videos: videos(d.videos),
   })) as Promise<(typeof repoWork)[number][]>;
 
 export const getTerms = () =>
@@ -237,6 +255,7 @@ export const getConceptBrands = () =>
     note: d.note ?? '',
     pipelines: arr(d.pipelines, (p) => ({ label: p.label ?? '', href: p.href ?? '' })),
     shots: arr(d.shots, shot),
+    videos: videos(d.videos),
   })) as Promise<(typeof repoBrands)[number][]>;
 
 export const getCaptures = () =>
@@ -307,6 +326,7 @@ export const getFilms = () =>
     stripAlt: d.strip?.alt ?? '',
     closing: d.closing?.src ?? '',
     closingAlt: d.closing?.alt ?? '',
+    video: videos(d.video ? [d.video] : [])[0],
     spec: arr(d.spec, (r) => ({ key: r.key ?? '', value: r.value ?? '' })),
     delivery: arr(d.delivery, (r) => ({ key: r.key ?? '', value: r.value ?? '' })),
     spine: arr(d.spine, (r) => ({ key: r.key ?? '', value: r.value ?? '' })),
@@ -339,7 +359,7 @@ export const getFilms = () =>
           result: d.routeResult ?? '',
         }
       : undefined,
-    doc: { path: d.docPath ?? '', title: d.docTitle ?? '', summary: d.docSummary ?? '' },
+    doc: d.docPath ? { path: d.docPath, title: d.docTitle ?? '', summary: d.docSummary ?? '' } : undefined,
   })) as Promise<(typeof repoFilms)[number][]>;
 
 export const getPipelines = () =>
@@ -484,7 +504,17 @@ const leaves = (v: unknown) =>
  */
 async function menusOf(which: 'primary' | 'overlay') {
   const bundle = await all();
-  const docs = (bundle.navMenu ?? []).filter((d: any) => d.menu === which);
+  const docs = (bundle.navMenu ?? []).filter(
+    (d: any) =>
+      d.menu === which &&
+      // A heading with nothing under it and nowhere to go is a document
+      // somebody started and published by accident. Rendering it puts a dead
+      // word in the bar; counting it means one such document replaces the
+      // whole menu with itself. Skipped on both counts.
+      typeof d.label === 'string' &&
+      d.label.trim() !== '' &&
+      (typeof d.href === 'string' ? d.href.trim() !== '' : Array.isArray(d.items) && d.items.length > 0)
+  );
   return docs.length ? docs : null;
 }
 

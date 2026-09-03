@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'A creator-style ad with a face that does not exist is a different legal object from one with a face that does. Both need paperwork, and they need different paperwork.',
   published: '2026-08-20',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Compliance',
   tags: ['Compliance', 'Synthetic UGC', 'Consent'],
   keywords: [

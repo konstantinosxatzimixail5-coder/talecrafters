@@ -9,7 +9,7 @@ export const post: Post = {
   excerpt:
     'Shot one is easy. Shot one hundred is the job. This is the method, including the numbers we plan against.',
   published: '2026-08-17',
-  author: 'TaleCrafters',
+  author: 'Konstantinos Chatzimichail',
   section: 'Method',
   tags: ['Method', 'Product', 'Consistency'],
   keywords: [

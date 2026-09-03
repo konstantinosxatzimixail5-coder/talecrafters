@@ -21,29 +21,8 @@ export interface Shot {
   focus?: string;
 }
 
-/**
- * A film that actually exists somewhere a crawler can reach.
- *
- * Populate this only when there is a real file or player page. A VideoObject
- * describing a video nobody can fetch is a claim that gets discounted, and it
- * drags the credibility of the rest of the graph down with it. Several of the
- * cases below shipped films that currently live on a client's own domain
- * rather than ours; those get an entry the day we host or embed them.
- */
-export interface CaseVideo {
-  name: string;
-  description: string;
-  /** ISO 8601, e.g. PT1M30S for ninety seconds. */
-  duration?: string;
-  /** Direct file on our domain, or absolute. */
-  contentUrl?: string;
-  /** Player page: YouTube, Vimeo. */
-  embedUrl?: string;
-  /** Poster frame. Defaults to the case hero. */
-  thumbnail?: string;
-  /** YYYY-MM-DD. */
-  uploadDate: string;
-}
+export type { ProjectVideo } from './video';
+import type { ProjectVideo } from './video';
 
 export interface CaseStudy {
   slug: string;
@@ -71,8 +50,15 @@ export interface CaseStudy {
   links: { label: string; href: string }[];
   /** Genre for the CreativeWork node, e.g. "Brand film". */
   genre?: string;
-  /** Films delivered on this engagement that are publicly reachable. */
-  videos?: CaseVideo[];
+  /**
+   * Films from this engagement that a reader can watch here.
+   *
+   * Only films we can actually play. A VideoObject describing a video nobody
+   * can fetch is a claim that gets discounted, and it drags the rest of the
+   * graph down with it. Several of these engagements shipped work that lives
+   * on a client's own domain; those get an entry the day it is watchable.
+   */
+  videos?: ProjectVideo[];
 }
 
 // The running order is the portfolio's. These are one body of client work
@@ -143,6 +129,30 @@ export const work: CaseStudy[] = [
     ],
     links: [{ label: 'mariposa.restaurant', href: 'https://mariposa.restaurant/' }],
     genre: 'Brand film and synthetic photography',
+    videos: [
+      {
+        youtubeId: 'wr1CA07EN_o',
+        title: '360 plate, built from one photograph',
+        note: 'Grilled octopus over fava, shot once on the terrace at night. The camera in this clip never existed: the orbit is generated from that single still, which is the test the master plate has to pass before any of the menu work starts.',
+        duration: 'PT0M5S',
+        uploadDate: '2026-01-14',
+        ratio: '9:16',
+        poster: 'mariposa/plate-360',
+        posterAlt:
+          'A frame from the 360 plate move: grilled octopus curled over yellow fava in a stone bowl on the terrace at night, a glass of white wine and lit planting behind it.',
+      },
+      {
+        youtubeId: 'Ql-5EMhXTZQ',
+        title: 'Restaurant showcase, from the room as it stands',
+        note: 'The terrace at dusk, built out of the restaurant’s own photography and its Google Maps imagery rather than a set. Tables, decking and the olive tree in the middle are where they actually are, so a diner who has eaten there recognises the room.',
+        duration: 'PT0M15S',
+        uploadDate: '2026-01-20',
+        ratio: '9:16',
+        poster: 'mariposa/showcase',
+        posterAlt:
+          'A frame from the showcase: the Mariposa terrace from above at dusk, laid tables on dark decking around a mature olive tree.',
+      },
+    ],
   },
   {
     slug: 'ib-nl',
@@ -152,7 +162,7 @@ export const work: CaseStudy[] = [
     discipline: 'Brand film · Generative production',
     year: '2026',
     place: 'The Netherlands',
-    featured: true,
+    featured: false,
     accent: 'var(--brand-cyan)',
     summary:
       'A consultancy needed to say “Dutch expertise, global business” without a word of voiceover. One unbroken camera move said it instead.',
@@ -255,6 +265,19 @@ export const work: CaseStudy[] = [
     ],
     links: [],
     genre: 'Hero film and product cinematics',
+    videos: [
+      {
+        youtubeId: 'ijdaD3ktY8E',
+        title: 'Indian Elite showcase, studio cut',
+        note: 'One of several films made for the dealership: a slow orbit of the Elite on a black studio floor. No studio was hired and no bike was moved. The badge, the gold pinstripe, the pannier lettering and the spoke count are the plate, held frame to frame while the light travels around it.',
+        duration: 'PT0M10S',
+        uploadDate: '2026-02-04',
+        ratio: '16:9',
+        poster: 'bike-barn/showcase-poster',
+        posterAlt:
+          'The green and black Indian Elite on a dark reflective studio floor, three-quarter rear view, gold pinstriping and the ELITE lettering on the pannier catching a single overhead light.',
+      },
+    ],
   },
   {
     slug: 'big-blue-data-academy',
@@ -322,50 +345,51 @@ export const work: CaseStudy[] = [
   },
   {
     slug: 'amino-alliance',
-    title: 'A presenter who can film the pitch as often as it is rewritten',
+    title: 'Three creators who never have to be rebooked',
     client: 'Amino Alliance',
     kind: 'Client work',
     discipline: 'Synthetic UGC · Paid social · Product stills',
     year: '2025',
-    featured: false,
+    featured: true,
     accent: 'var(--brand-gold)',
     summary:
-      'Two trained presenters and one product plate, reused across a paid-social test that changes its offer every month.',
+      'Three creator-style video ads for paid social, each a different person in a different place, all cut from trained identities that come back next month when the offer changes.',
     problem:
-      'Amino Alliance sells a supplement in a printed pouch and needed realistic AI creator-style pieces for paid social. The requirement underneath that is volume: a paid test needs the same person delivering several openings and several asks, then needs them again next month when the offer changes.',
+      'Amino Alliance sells a supplement in a printed pouch and needed creator-style video ads for paid social. The requirement underneath that is volume and range at once. A paid test burns through creative: it wants the consultant and the runner and the man on a canal in Amsterdam saying different things to different audiences, then wants all three again next month when the offer moves. Booking three creators for that is a shoot, a schedule and a reshoot fee.',
     idea:
-      'Cast once, then treat the cast as an asset. Two presenters trained from a stills sheet, reused across the whole set, so a later variant costs what an early one did. The pouch runs the other line: a real printed object with a real mark, a product name and a block of small type down the front, none of which can be approximated at arm’s length in daylight.',
+      'Cast once, then treat the cast as an asset. Three presenters trained from stills sheets and reused across the run, so the fifth ad costs what the first one did and the tenth is a rewrite rather than a booking. Each one is cast for a different audience and kept in a place that suits them: a consultant in her own office, a man in his fifties on a canal in the middle of Amsterdam, a runner on a park path in bare winter light. The pouch runs the other line entirely. It is a real printed object with a real mark, a product name and a block of small type down the front, and none of that can be approximated in a presenter’s hand at arm’s length in daylight.',
     made: [
-      'Creator pieces for paid social, presenter to camera, product in hand.',
+      'Three creator video ads for paid social, presenter to camera, product in hand.',
       'Product frames for the still placements.',
-      'Two trained presenter identities and one product plate, handed over.',
+      'Three trained presenter identities and one product plate, handed over.',
     ],
     result:
-      'Delivered as creator pieces for paid social, with the trained presenters and the product plate handed over as reusable files.',
+      'Delivered as creator video ads for paid social, with the trained presenters and the product plate handed over as reusable files. A new offer is a new script against the same three faces.',
     resultKind: 'Delivered',
     artefacts: [
-      { label: 'Films', detail: 'Creator pieces, multiple openings and asks' },
+      { label: 'Video ads', detail: 'Three creator pieces, 9:16, presenter to camera' },
       { label: 'Stills', detail: 'Product frames for still placements' },
-      { label: 'Identities', detail: 'Two trained presenters, reusable across sessions' },
+      { label: 'Identities', detail: 'Three trained presenters, reusable across sessions' },
       { label: 'Product plate', detail: 'Master plate of the pouch, label-locked' },
     ],
     method:
-      'Identity Lock for the presenters, Phantom Set for the pouch, and the two lines meet at the frame where a hand touches packaging. Casting brief first, then twenty-plus stills of one face at varied angles under even light, then a trained identity that carries across sessions without re-uploading a reference.',
+      'Identity Lock for the presenters, Phantom Set for the pouch, and the two lines meet at the frame where a hand touches packaging. Casting brief first, then twenty-plus stills of one face at varied angles under even light, then a trained identity that carries across sessions without re-uploading a reference. Voice is cloned per presenter and timed to the performance, because three people who share one read are three people nobody believes.',
     gates: [
       { name: 'Label gate', test: 'Zoom to full resolution and read every word on the front of the pouch. A fail returns to the plate, never to a retouching pass.' },
       { name: 'Hand gate', test: 'Every frame where fingers touch the pouch gets frozen and checked. A bad one gets rerolled or cropped above the wrist.' },
       { name: 'Consent gate', test: 'Signed release for the voice and the likeness reference. Nothing renders until both sit in the folder.' },
+      { name: 'Disclosure gate', test: 'These presenters are synthetic and the ads carry that. A creator ad that hides what it is fails here before it fails anywhere else.' },
     ],
     hero: {
-      src: 'amino-alliance/product-02',
-      alt: 'An Amino Alliance pouch on a laboratory bench with a glowing atom symbol beside it, lit from behind.',
-      label: 'product plate',
+      src: 'amino-alliance/presenter-01',
+      alt: 'A woman in a tan blazer over a white top holding an Amino Alliance pouch up to camera in a bright office, a laptop at the edge of frame and framed artwork behind her.',
+      label: 'presenter one, from the video ad',
+      focus: '50% 25%',
     },
     gallery: [
-      { src: 'amino-alliance/product-01', alt: 'A man in a black jumper holding an Amino Alliance pouch to camera with a thumbs up, green foliage behind him.', label: 'presenter one', focus: '50% 20%' },
-      { src: 'amino-alliance/ugc-01', alt: 'A woman in a pale blazer holding an Amino Alliance pouch to camera outside an office building, with a caption reading I am a management consultant.', label: 'presenter two, opening variant', focus: '50% 20%' },
-      { src: 'amino-alliance/ugc-02', alt: 'A man in a navy gilet and open-collared shirt holding an Amino Alliance carton to camera outside a glass office block, mid-sentence.', label: 'presenter one, video ad frame', focus: '50% 25%' },
-      { src: 'amino-alliance/ugc-03', alt: 'A man in a black training top holding an Amino Alliance shaker outside on a bare winter path, the brand mark locked to the top of frame.', label: 'athlete, video ad frame', focus: '50% 20%' },
+      { src: 'amino-alliance/presenter-02', alt: 'A man in his fifties with grey hair and a grey beard, in a navy overcoat and a pale scarf, holding an Amino Alliance pouch to camera on an Amsterdam canal with a bridge and canal houses behind him.', label: 'presenter two, from the video ad', focus: '50% 30%' },
+      { src: 'amino-alliance/presenter-03', alt: 'A man in a charcoal quarter-zip running top holding an Amino Alliance shaker, on a park path beside water under bare winter trees.', label: 'presenter three, from the video ad', focus: '50% 25%' },
+      { src: 'amino-alliance/product-02', alt: 'An Amino Alliance pouch on a laboratory bench with a glowing atom symbol beside it, lit from behind.', label: 'product plate, label-locked' },
     ],
     stack: [
       { stage: 'Presenter identity', tool: 'Higgsfield Soul ID' },
@@ -374,63 +398,116 @@ export const work: CaseStudy[] = [
       { stage: 'Scene plates', tool: 'Popcorn' },
       { stage: 'Motion', tool: 'Veo 3.1, Kling' },
       { stage: 'Voice', tool: 'ElevenLabs' },
+      { stage: 'Cut', tool: 'CapCut' },
     ],
     links: [],
     genre: 'Synthetic UGC and paid social',
+    videos: [
+      {
+        youtubeId: 'WJ3o7--M7f8',
+        title: 'Consultant, testimonial cut',
+        note: 'The office opening: a working professional, her own room, the pouch held where the label reads. Cut for the audience that wants the product explained by somebody who sounds like their colleague.',
+        duration: 'PT0M15S',
+        uploadDate: '2025-11-18',
+        ratio: '9:16',
+        poster: 'amino-alliance/presenter-01',
+        posterAlt:
+          'A woman in a tan blazer holding an Amino Alliance pouch to camera in a bright office.',
+      },
+      {
+        youtubeId: '7DNBe1uYHkY',
+        title: 'Amsterdam, street cut',
+        note: 'The same product, a different decade and a different city. Shot to camera on a canal, handheld, so the ad reads as a person who happens to be outside rather than a set that happens to be a canal.',
+        duration: 'PT0M14S',
+        uploadDate: '2025-11-18',
+        ratio: '9:16',
+        poster: 'amino-alliance/presenter-02',
+        posterAlt:
+          'A man in a navy overcoat and grey scarf holding an Amino Alliance pouch to camera on an Amsterdam canal.',
+      },
+      {
+        youtubeId: 'IDGUGwGrUCo',
+        title: 'Athlete, park cut',
+        note: 'The performance angle, mid-session, shaker in hand on a winter path. Same trained identity discipline, a different audience and a different ask at the end.',
+        duration: 'PT0M13S',
+        uploadDate: '2025-11-18',
+        ratio: '9:16',
+        poster: 'amino-alliance/presenter-03',
+        posterAlt:
+          'A man in a charcoal running top holding an Amino Alliance shaker on a park path in winter.',
+      },
+    ],
   },
   {
     slug: 'cocoon',
-    title: 'A grid cyberattack, explained to people who do not work on grids',
+    title: 'A live grid pilot and the cyberattack against it, both made watchable',
     client: 'SEleNe CC',
     kind: 'Client work',
-    discipline: 'Explainer · Narrative engineering · Public-sector comms',
+    discipline: 'Pilot film · Explainer · Narrative engineering · Public-sector comms',
     year: '2025',
     place: 'Horizon Europe, grant 101120221',
     featured: true,
     accent: 'var(--brand-violet)',
     summary:
-      'Four films for a Horizon Europe consortium, built entirely from a grant document, because nothing in them could be filmed.',
+      'Four films for a Horizon Europe consortium: a pilot film shot on a Greek solar park, and an attack explainer for the part of the story no camera can reach.',
     problem:
-      'COCOON is a Horizon Europe project on cooperative cyber protection for modern power grids, run across a consortium. The audience is mixed: engineers on one side, policy people, reviewers and the public on the other, who need the same story without the vocabulary.',
+      'COCOON is a Horizon Europe project on cooperative cyber protection for modern power grids, run across a consortium. It has two halves that pull in opposite directions. One half is real and physical: a photovoltaic park in Halkidiki, a control cabin, an operator on a laptop, and the first time the Greek distribution operator supervised and controlled PV parks in real time. The other half has never happened and cannot be filmed, because it is an attack on equipment that is still running. The audience is mixed in the same way: engineers on one side, reviewers, policy people and the public on the other, all needing the same story without the vocabulary.',
     idea:
-      'Treat it as a writing job, not a generation job. Nothing could be shot: live substations and pilot sites are not places a camera crew walks into, and the attack being described has never happened to the equipment on screen. So the grant text and technical diagrams were read down into a single chain of events (entry point, lateral move, control layer, physical effect) and one diagram vocabulary was agreed early and held across all four pieces. Colour carries state and nothing else, so a consortium partner can point at a frame and say which stage is wrong.',
+      'Film what exists and write what does not, then hold both to one visual system. The pilot film goes to the site and stays there. Objectives and milestones are set as typed cards over the array, then the film hands over to a phone, vertical, framed inside a solar cell so the shift in format reads as deliberate: the van, the drive, the gate, the contractor’s sign, the control cabin, the inverter and the logging kit, captioned a line at a time, ending on the HEDNO researcher standing in front of the rows he has just been describing. The explainer does the opposite job. Nothing in it could be shot, so the grant text and the consortium’s technical diagrams were read down into a single chain of events (entry point, lateral move, control layer, physical effect) and one diagram vocabulary was agreed before anything was drawn. Colour carries state and nothing else, so a partner can point at a frame and say which stage is wrong.',
     made: [
-      'A project promo.',
-      'Two pilot films.',
+      'A pilot film for the Secure Energy Communities demonstrator, shot at the photovoltaic park in Halkidiki with the pilot leader.',
+      'A second pilot film and a project promo.',
       'A vector attack explainer that walks an intrusion through a grid, one hop at a time. It holds one visual system from the first frame to the last, so a viewer who does not know what a substation is can still follow which box just went dark and why.',
     ],
     result:
-      'Delivered to SEleNe CC for the COCOON consortium. The project is publicly documented under Horizon Europe grant agreement 101120221.',
+      'Delivered to SEleNe CC for the COCOON consortium. The pilot film carries the two milestones the project needed on record: real-time supervision and control of PV parks by HEDNO for the first time, and the first execution of Ancillary Services in a real-world environment in Greece. The project is publicly documented under Horizon Europe grant agreement 101120221.',
     resultKind: 'Delivered',
     artefacts: [
       { label: 'Films', detail: 'Promo, two pilot films, one explainer' },
+      { label: 'Site cut', detail: 'Vertical park tour, captioned, framed in a solar cell' },
       { label: 'Storyboard', detail: 'One event chain, written then boarded by hand' },
       { label: 'Diagram system', detail: 'One vocabulary across four pieces, colour as state' },
     ],
     method:
-      'This one ran on the writing. Generation covered environments, establishing shots and the abstracted grid. Every technical claim went back to the consortium before it went into a render.',
+      'This one ran on the writing. On the pilot film the constraint is the opposite of the usual one: the footage is real and the words have to survive review by the people who ran the trial, so every objective and milestone card is the consortium’s own language, set on screen a clause at a time rather than paraphrased. On the explainer, generation covered environments, establishing shots and the abstracted grid, and every technical claim went back to the consortium before it went into a render.',
     gates: [
-      { name: 'Claim gate', test: 'Nothing appears on screen that the grant text does not support.' },
+      { name: 'Claim gate', test: 'Nothing appears on screen that the grant text does not support. On the pilot film that extends to the milestones: a first is only called a first if the consortium will sign the sentence.' },
       { name: 'Vocabulary gate', test: 'One diagram system across all four pieces. A new shape means a new meaning, or it does not get drawn.' },
+      { name: 'Site gate', test: 'Nothing at the park is re-staged for the camera. What the phone sees is what the engineers were doing.' },
     ],
     hero: {
-      src: 'selene-cc/explainer-title',
-      alt: 'The title card of the vector attack explainer, reading Attack Vector Deployment in cyan display type over a dark network mesh, with the COCOON mark above it.',
-      label: 'explainer, title card',
+      src: 'selene-cc/pilot-poster',
+      alt: 'A frame from the pilot film: a technician in a hard hat and hi-vis vest working along a row of photovoltaic panels at the Halkidiki site, with the Pilot Objectives card typed over the lower half of the picture.',
+      label: 'pilot film, objectives card',
+      // The card is set left, so a centred crop cuts the words off it.
+      focus: '25% 50%',
     },
     gallery: [
       { src: 'selene-cc/explainer-spoof', alt: 'An explainer frame headed DNS Spoofing, with two paragraphs setting out how an attacker redirects an operator to a fraudulent site.', label: 'the scenario, stated before it is drawn' },
       { src: 'selene-cc/explainer-chain', alt: 'The full attack diagram: a hacker icon above a DNS server, a dashed line from an operator into the server, a red path branching to a fake website and a green path to the real one.', label: 'one vocabulary, colour carries state' },
-      { src: 'selene-cc/logo-dark', alt: 'The COCOON project mark, a stylised power pylon and solar panel inside a green cocoon, with the line Cooperative Cyber Protection for Modern Power Grids around it.', label: 'consortium mark, supplied' },
+      { src: 'selene-cc/explainer-title', alt: 'The title card of the vector attack explainer, reading Attack Vector Deployment in cyan display type over a dark network mesh, with the COCOON mark above it.', label: 'explainer, title card' },
     ],
     stack: [
-      { stage: 'Source', tool: 'Grant text and consortium diagrams' },
+      { stage: 'Source', tool: 'Grant text, consortium diagrams, site footage' },
       { stage: 'Storyboard', tool: 'Written, then boarded by hand' },
       { stage: 'Frames', tool: 'Nano Banana Pro' },
       { stage: 'Motion and assembly', tool: 'Higgsfield, CapCut' },
     ],
     links: [{ label: 'cyber-cocoon.eu', href: 'https://cyber-cocoon.eu/' }],
-    genre: 'Explainer film',
+    genre: 'Pilot film and explainer',
+    videos: [
+      {
+        youtubeId: 'xPn8yF-_3KY',
+        title: 'Secure Energy Communities — pilot film',
+        note: 'The objectives and the two milestones, set as cards over the array, then a vertical site tour framed inside a solar cell: the van, the drive to Halkidiki, the gate, the control cabin, the inverter and the logging kit, closing on the HEDNO researcher in front of the rows. The one film on this engagement built from footage rather than from the grant document.',
+        duration: 'PT1M48S',
+        uploadDate: '2025-09-03',
+        ratio: '16:9',
+        poster: 'selene-cc/pilot-poster',
+        posterAlt:
+          'A technician in hi-vis working along a row of photovoltaic panels, with the Pilot Objectives card typed over the picture.',
+      },
+    ],
   },
 
   {
@@ -483,6 +560,165 @@ export const work: CaseStudy[] = [
     ],
     links: [],
     genre: 'Synthetic UGC and property film',
+    videos: [
+      {
+        youtubeId: 'xDGt2MejwJA',
+        title: 'Spokesperson ad, vertical cut',
+        note: 'The presenter to camera at a listed villa, phone on a tripod in shot, cloned voice on the read. The villa behind him is reconstructed from the stills already on the client’s own site, which is why the grade matches the listing photography rather than sitting a stop off it.',
+        duration: 'PT0M10S',
+        uploadDate: '2026-01-09',
+        ratio: '9:16',
+        poster: 'jarfis/ugc-poster',
+        posterAlt:
+          'The presenter in a cream linen shirt speaking to camera beside a villa pool, a phone on a tripod set up facing him and planting up the wall behind.',
+      },
+    ],
+  },
+
+  {
+    slug: 'feral',
+    title: 'A can that walks off the billboard',
+    client: 'FERAL',
+    kind: 'Concept project',
+    discipline: 'Anamorphic billboard · Product shoot · Synthetic UGC',
+    year: '2026',
+    featured: true,
+    accent: 'var(--brand-magenta)',
+    summary:
+      'An invented energy drink, given the product shoot and the out-of-home spot a real launch would buy. Nobody commissioned it, which is the point: the label had nowhere to hide.',
+    problem:
+      'Product photography is where generative work gets caught. Not on the lighting, which models are good at, but on the four square centimetres of printed label a buyer holds up to their face. The FERAL can is the hard version of that: a halftone build with a magenta offset behind green type, the wordmark repeated down the body, and a small black box under it reading YUZU STATIC. Getting that right once is luck. Getting it right across five sets, a night city, a creator’s hand and an animated billboard is a pipeline.',
+    idea:
+      'Build the can once and never rebuild it. One master plate carries the label, the finish and the proportions, and every later frame is generated from that file rather than from a fresh prompt, so the type cannot drift when the light and the surface change underneath it. Then take the hardest possible delivery for it: an anamorphic billboard where the can breaks the frame of the board it is printed on, over a wet night city, with liquid and cut fruit crossing the edge. A 3D break-out ad is a format that punishes any wobble in the object, because the viewer is being asked to read the same can as flat artwork and as a solid thing in the same second.',
+    made: [
+      'A master plate of the can, label-locked, handed over as a reusable file.',
+      'Five product sets from that plate: water, smoke, school lockers, an ice tray and a square crop.',
+      'An anamorphic billboard spot for out-of-home and social.',
+      'Creator frames with one trained face across a corner shop, a car park, a night tram and a bathroom mirror.',
+    ],
+    result:
+      'Built as spec. Nobody paid for it and the brand does not exist. It sits here because it states its own test: read every printed word on the can at full resolution, in each of five sets and in a billboard that is pretending to be a physical object.',
+    resultKind: 'Intended',
+    artefacts: [
+      { label: 'Film', detail: 'Anamorphic billboard spot' },
+      { label: 'Master plate', detail: 'The can alone, label-locked' },
+      { label: 'Product set', detail: 'Five sets from one plate' },
+      { label: 'Creator set', detail: 'One trained face across four rooms' },
+    ],
+    method:
+      'Phantom Set for the can and Identity Lock for the creator, run as two separate lines that meet only where a hand touches the product. The plate is made first and nothing is generated from a text description of the can after that. The billboard is built the other way round: the board is set as a flat surface in a night street, the can is composited as the object breaking out of it, and the lighting on the street has to agree with the lighting on the can or the illusion dies in the first second.',
+    gates: [
+      { name: 'Label gate', test: 'Zoom to full resolution and read every printed word: the wordmark, the halftone offset behind it and the YUZU STATIC box. A fail returns to the plate, never to a retouching tool.' },
+      { name: 'Break-out gate', test: 'The part of the can that leaves the board has to cast and receive light from the street, not from the artwork. If it reads as a sticker, the frame is dead.' },
+      { name: 'Drift gate', test: 'Stack the five sets and flick through them. Proportions, finish and type position have to sit still while everything around them changes.' },
+    ],
+    hero: {
+      src: 'spec/feral/billboard',
+      alt: 'A night-city billboard for FERAL Yuzu Static: the can breaking out of the board in front of the artwork, lime slices and green liquid crossing the frame, graffiti reading STAY WILD on the hoarding below and lit towers behind.',
+      label: 'the billboard spot, key frame',
+    },
+    gallery: [
+      { src: 'spec/feral/product-05', alt: 'A FERAL Yuzu Static can standing in shallow water, beaded with condensation, magenta and green vapour behind it and a splash around the base.', label: 'hero, water set' },
+      { src: 'spec/feral/product-01', alt: 'The same FERAL can on a dark reflective surface with green smoke behind it and a ripple around the base.', label: 'same plate, smoke set' },
+      { src: 'spec/feral/product-02', alt: 'The same FERAL can on cracked black floor tiles in a corridor of school lockers, lit hard from one side, a cigarette and a bottle cap on the floor beside it.', label: 'same plate, lockers' },
+      { src: 'spec/feral/product-03', alt: 'The same FERAL can angled in a metal tray of crushed ice with dried lemon slices around it.', label: 'same plate, ice tray' },
+      { src: 'spec/feral/ugc-01', alt: 'A man with bleached green hair in a black tracksuit reading the side of a FERAL can in front of a lit shop fridge, carrier bags in his other hand.', label: 'creator, corner shop' },
+      { src: 'spec/feral/ugc-04', alt: 'The same man holding a FERAL can up in a bathroom mirror selfie, flash on, pink strip light above the cracked mirror.', label: 'creator, mirror' },
+    ],
+    stack: [
+      { stage: 'Master plate', tool: 'Nano Banana Pro' },
+      { stage: 'Sets', tool: 'Nano Banana 2, image to image from the plate' },
+      { stage: 'Creator identity', tool: 'Higgsfield Soul ID' },
+      { stage: 'Motion', tool: 'Higgsfield Cinema Studio' },
+      { stage: 'Cut', tool: 'CapCut' },
+    ],
+    links: [{ label: 'The full FERAL shelf', href: '/concept-projects#feral' }],
+    genre: 'Product film and out-of-home',
+    videos: [
+      {
+        youtubeId: '5VgtoylYaFw',
+        title: 'FERAL — anamorphic billboard',
+        note: 'The can leaving the board over a wet night street, liquid and cut fruit crossing the frame. Built from the same locked plate as the five product sets, which is the only reason the wordmark survives being read as artwork and as a solid object in the same shot.',
+        duration: 'PT0M8S',
+        uploadDate: '2026-02-11',
+        ratio: '16:9',
+        poster: 'spec/feral/billboard',
+        posterAlt:
+          'The FERAL Yuzu Static can breaking out of a lit billboard over a wet night street.',
+      },
+    ],
+  },
+
+  {
+    slug: 'mars-drop',
+    title: 'Two men on Mars, working out that they are a demo',
+    client: 'TaleCrafters',
+    kind: 'Concept project',
+    discipline: 'Animated short · Showrunner pipeline · Voice and performance',
+    year: '2026',
+    featured: true,
+    accent: 'var(--brand-gold)',
+    summary:
+      'A spec animated two-hander built to test whether an episodic AI pipeline can carry a scene on dialogue alone, with no action to hide behind.',
+    problem:
+      'Generative video is judged on spectacle because spectacle is what it does easily. A dragon, a chase, a city from orbit: all of that hides the thing that actually breaks, which is two people standing still and talking. Timing, listening, the beat before a line lands. So the brief was written to remove every escape route. Two characters, one location, no action, one hundred and seven seconds, and a joke that only works if the performances are alive.',
+    idea:
+      'Write a scene about the pipeline, then make the pipeline perform it. Two stranded figures on a Mars colony, both convinced somebody teleported them there by mistake, slowly working out that they are inside a demonstration and that the person running it is watching. The comedy comes from them addressing the operator directly and asking for a better set, snappier dialogue and an actual plot, which is the honest note to end a spec piece on. Because the joke is at the pipeline’s expense, every weakness in the pipeline reads as the bit rather than as a fault, and that freed the work to be judged on the only thing left: whether the two of them are actually listening to each other.',
+    made: [
+      'A one hundred and seven second animated two-hander, written, cast and cut.',
+      'A four-beat structure sheet, published with the film.',
+      'Two held character designs across a wide, two singles and a return to the wide.',
+    ],
+    result:
+      'Built as spec. Nobody commissioned it and no brand is attached. It is published as the third of our filmmaking workflows, with the beats and the stack written up beside it.',
+    resultKind: 'Intended',
+    artefacts: [
+      { label: 'Film', detail: 'Animated short, 1:47, 16:9' },
+      { label: 'Structure sheet', detail: 'Four beats, published' },
+      { label: 'Character designs', detail: 'Two, held across every shot size' },
+      { label: 'Voice', detail: 'Two performances, timed to the cut' },
+    ],
+    method:
+      'Showrunner carries the episodic scene and the character continuity; the set frames and the establishing wides come out of Nano Banana 2 and ChatGPT Image 2; Higgsfield handles the motion passes; ElevenLabs carries both voices. The scene was written first, in full, before a frame existed, and the beat sheet was fixed before anything rendered, because a dialogue two-hander assembled from whatever the model produced is a montage with subtitles rather than a scene.',
+    gates: [
+      { name: 'Listening gate', test: 'Watch the character who is not speaking. If they are idling rather than reacting, the beat goes back regardless of how the line reads.' },
+      { name: 'Design gate', test: 'Both figures have to survive the cut from a wide two-shot to a single without their proportions changing. The jaw is where a fail shows first.' },
+      { name: 'Parody gate', test: 'The two figures are caricatures of public figures and the piece is spec comedy about our own tooling. No brand, product or endorsement is implied, and nothing either of them says is presented as something a real person said.' },
+    ],
+    hero: {
+      src: 'films/mars-drop/md-poster',
+      alt: 'A wide animated frame of a Mars colony: two figures in front of a landed rocket and a domed habitat, orange rock formations behind them and a blue sky above.',
+      label: 'the wide the film opens and closes on',
+    },
+    gallery: [
+      { src: 'films/mars-drop/md-hero', alt: 'An animated frame of the astronaut in a blue flight suit beside the booster, arms out, mid-line.', label: 'single, the realisation' },
+      { src: 'films/mars-drop/md-b-natural', alt: 'An animated frame of the chef in a black suit and tie in front of a water tower on the colony, one hand raised.', label: 'single, act natural' },
+      { src: 'films/mars-drop/md-d-address', alt: 'An animated frame of the chef, hands on hips, delivering the line to camera with the subtitle reading Creativity on pause, clearly.', label: 'the note to the operator' },
+      { src: 'films/mars-drop/md-strip', alt: 'A four frame contact strip from the film: the wide two-shot, the chef mid-line, the astronaut at the booster and the chef addressing camera.', label: 'contact strip' },
+    ],
+    stack: [
+      { stage: 'Scene', tool: 'Written first, in full' },
+      { stage: 'Episodic engine', tool: 'Showrunner' },
+      { stage: 'Set frames', tool: 'Nano Banana 2, ChatGPT Image 2' },
+      { stage: 'Motion', tool: 'Higgsfield' },
+      { stage: 'Voice', tool: 'ElevenLabs' },
+      { stage: 'Cut', tool: 'CapCut' },
+    ],
+    links: [{ label: 'The full process sheet', href: '/films/mars-drop' }],
+    genre: 'Animated short',
+    videos: [
+      {
+        youtubeId: 'SjxaPMoyBSo',
+        title: 'Mars Drop — the film',
+        note: 'One hundred and seven seconds, two characters, one location, no action. Watch the one who is not talking.',
+        duration: 'PT1M47S',
+        uploadDate: '2026-02-26',
+        ratio: '16:9',
+        poster: 'films/mars-drop/md-poster',
+        posterAlt:
+          'The wide Mars colony frame: two figures in front of a landed rocket and a domed habitat.',
+      },
+    ],
   },
 ];
 
