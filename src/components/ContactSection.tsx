@@ -1,6 +1,6 @@
 "use client";
-import { motion } from 'motion/react';
-import { useState } from 'react';
+import { motion, useAnimationControls, useReducedMotion } from 'motion/react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Send } from 'lucide-react';
 import type { HomeCopy } from '@/content/copy';
 
@@ -27,35 +27,94 @@ function HandshakeAnimIcon() {
   );
 }
 
-/** The clapper arm, drawn rather than photographed. It hinges open when the
- *  form has enough in it to send, which is the only animation in this section
- *  that carries information. */
-function ClapperTop({ open }: { open: boolean }) {
+/* --- the slate ------------------------------------------------------------
+   The sticks are one repeating gradient rather than a row of skewed divs. A
+   gradient cannot leave the wedge-shaped gaps a skewed flex row leaves at
+   either end, and the same declaration draws both sticks: the board's fixed
+   one is the arm's, shifted by a single band so the two rows interlock into a
+   chevron when the arm comes down. */
+const ARM_HEIGHT = 40;
+const LOWER_STICK_HEIGHT = 15;
+const BAND = 26;
+
+function stickFace(offset = 0): React.CSSProperties {
+  return {
+    backgroundImage: `repeating-linear-gradient(112deg, #F2F2F2 0 ${BAND}px, #0B0B0B ${BAND}px ${BAND * 2}px)`,
+    backgroundPosition: `${offset}px 0`,
+  };
+}
+
+/** The hinged arm. It rests closed, lifts once there is something in the
+ *  slate, and claps shut on the take: the only animation in this section that
+ *  carries information. `controls` is driven by the form so the arm and the
+ *  board can shake on the same frame. */
+function ClapperArm({ controls }: { controls: ReturnType<typeof useAnimationControls> }) {
   return (
-    <div className="relative" style={{ height: 46, marginBottom: -1 }}>
+    <div className="relative" style={{ height: ARM_HEIGHT }} aria-hidden>
       <motion.div
-        className="absolute left-0 right-0 top-0 flex overflow-hidden"
+        className="absolute left-0 right-0 bottom-0"
         style={{
-          height: 46,
+          height: ARM_HEIGHT,
           transformOrigin: 'left bottom',
-          backgroundColor: 'var(--brand-black)',
-          border: '1px solid rgba(255,255,255,0.14)',
+          borderRadius: '3px 3px 0 0',
+          border: '1px solid rgba(255,255,255,0.2)',
+          boxShadow: '0 8px 20px rgba(0,0,0,0.6)',
+          ...stickFace(0),
         }}
-        animate={{ rotate: open ? -14 : 0 }}
-        transition={{ type: 'spring', stiffness: 220, damping: 16 }}
+        initial={{ rotate: 0 }}
+        animate={controls}
       >
-        {Array.from({ length: 12 }).map((_, i) => (
-          <div
-            key={i}
-            className="h-full flex-1"
-            style={{
-              backgroundColor: i % 2 === 0 ? 'var(--brand-white)' : 'transparent',
-              transform: 'skewX(-18deg)',
-              opacity: i % 2 === 0 ? 0.9 : 1,
-            }}
-          />
-        ))}
+        {/* the hinge pin, and the shadow the arm casts on itself */}
+        <span
+          className="absolute"
+          style={{ left: 7, bottom: 7, width: 7, height: 7, borderRadius: 999, background: 'rgba(0,0,0,0.55)', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.35)' }}
+        />
+        <span
+          className="absolute inset-x-0 bottom-0"
+          style={{ height: 6, background: 'linear-gradient(to top, rgba(0,0,0,0.35), transparent)' }}
+        />
       </motion.div>
+    </div>
+  );
+}
+
+/** The three cells along the foot of the slate. They fill in as the fields do,
+ *  so the board is visibly being marked up while you type. */
+function SlateFoot({ name, email, brief }: { name: boolean; email: boolean; brief: boolean }) {
+  const cells: [string, string, boolean][] = [
+    ['ROLL', name ? 'A' : '—', name],
+    ['SCENE', email ? '01' : '—', email],
+    ['TAKE', brief ? '01' : '—', brief],
+  ];
+  return (
+    <div
+      className="grid grid-cols-3"
+      style={{ borderTop: '1px solid rgba(255,255,255,0.09)' }}
+    >
+      {cells.map(([label, value, on], i) => (
+        <div
+          key={label}
+          className="flex items-baseline gap-2 px-5 py-3"
+          style={i < 2 ? { borderRight: '1px solid rgba(255,255,255,0.09)' } : undefined}
+        >
+          <span
+            className="text-[9px] tracking-[0.24em]"
+            style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}
+          >
+            {label}
+          </span>
+          <motion.span
+            key={`${label}-${value}`}
+            className="text-sm"
+            style={{ fontFamily: 'var(--font-mono)', color: on ? 'var(--brand-cyan)' : 'rgba(255,255,255,0.25)' }}
+            initial={on ? { opacity: 0, y: 4 } : false}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            {value}
+          </motion.span>
+        </div>
+      ))}
     </div>
   );
 }
@@ -72,11 +131,11 @@ function SlateRow({
 }) {
   return (
     <div
-      className="grid grid-cols-1 sm:grid-cols-[120px_minmax(0,1fr)] items-start gap-x-4 gap-y-1 px-5 py-4"
+      className="slate-row grid grid-cols-1 sm:grid-cols-[120px_minmax(0,1fr)] items-start gap-x-4 gap-y-1 px-5 py-4"
       style={last ? undefined : { borderBottom: '1px solid rgba(255,255,255,0.09)' }}
     >
       <span
-        className="text-[10px] tracking-[0.24em] sm:pt-3"
+        className="slate-label text-[10px] tracking-[0.24em] sm:pt-3"
         style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)' }}
       >
         {label}
@@ -105,11 +164,66 @@ export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['
   const [submitted, setSubmitted] = useState(false);
   const [failed, setFailed] = useState(false);
 
-  const ready = name.trim() !== '' && /\S+@\S+\.\S+/.test(email) && message.trim() !== '';
+  const hasName = name.trim() !== '';
+  const hasEmail = /\S+@\S+\.\S+/.test(email);
+  const hasMessage = message.trim() !== '';
+  const ready = hasName && hasEmail && hasMessage;
+  const started = hasName || email.trim() !== '' || hasMessage;
+
+  /* --- the clap ---------------------------------------------------------
+     The arm lifts as soon as there is anything on the board, and claps the
+     moment the slate is complete: up, down hard, one settle, and a shake that
+     the board takes with it. That is the whole shot-marking gesture, and it
+     fires again on send, because that is when the take actually starts. */
+  const armControls = useAnimationControls();
+  const slateControls = useAnimationControls();
+  const reduceMotion = useReducedMotion();
+  const [clapCount, setClapCount] = useState(0);
+  const clapping = useRef(false);
+  const hasClapped = useRef(false);
+
+  const clap = useCallback(async () => {
+    if (clapping.current) return;
+    clapping.current = true;
+    try {
+      if (reduceMotion) {
+        await armControls.start({ rotate: 0, transition: { duration: 0 } });
+        return;
+      }
+      setClapCount((n) => n + 1);
+      // The arm is as wide as the board, so a few degrees travel a long way at
+      // the far end. -26° is as far as it can swing before it sweeps over the
+      // headline above the form.
+      await armControls.start({ rotate: -26, transition: { type: 'spring', stiffness: 320, damping: 17 } });
+      await armControls.start({ rotate: 0, transition: { duration: 0.09, ease: [0.5, 0, 0.9, 0.6] } });
+      slateControls.start({ x: [0, -4, 4, -2, 0], transition: { duration: 0.26, ease: 'easeOut' } });
+      await armControls.start({ rotate: [0, -7, 0, -2.5, 0], transition: { duration: 0.36, ease: 'easeOut' } });
+    } finally {
+      clapping.current = false;
+    }
+  }, [armControls, slateControls, reduceMotion]);
+
+  useEffect(() => {
+    if (ready) {
+      if (!hasClapped.current) {
+        hasClapped.current = true;
+        void clap();
+      }
+      return;
+    }
+    // Back to an incomplete slate: hold the arm open while there is something
+    // on it, and let a later completion earn a fresh clap.
+    hasClapped.current = false;
+    armControls.start({
+      rotate: started ? -12 : 0,
+      transition: reduceMotion ? { duration: 0 } : { type: 'spring', stiffness: 200, damping: 18 },
+    });
+  }, [ready, started, clap, armControls, reduceMotion]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!ready || sending) return;
+    void clap();
     setSending(true);
     setFailed(false);
 
@@ -246,58 +360,94 @@ export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <ClapperTop open={ready} />
+              <motion.div animate={slateControls} style={{ willChange: 'transform' }}>
+                <ClapperArm controls={armControls} />
 
-              <div style={{ border: '1px solid rgba(255,255,255,0.14)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
                 <div
-                  className="flex items-center justify-between px-5 py-3"
-                  style={{ borderBottom: '1px solid rgba(255,255,255,0.09)' }}
+                  className="relative"
+                  style={{
+                    border: '1px solid rgba(255,255,255,0.16)',
+                    borderRadius: '0 0 4px 4px',
+                    backgroundColor: 'rgba(255,255,255,0.02)',
+                    boxShadow: '0 24px 60px rgba(0,0,0,0.45)',
+                  }}
                 >
-                  <span className="text-[10px] tracking-[0.3em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
-                    PROD. TALECRAFTERS
-                  </span>
-                  <span className="text-[10px] tracking-[0.3em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}>
-                    SEND US A MESSAGE
-                  </span>
+                  {/* The board's own stick, half a band out of phase with the
+                      arm so the two rows lock together when it shuts. */}
+                  <div
+                    aria-hidden
+                    style={{
+                      height: LOWER_STICK_HEIGHT,
+                      borderBottom: '1px solid rgba(255,255,255,0.16)',
+                      ...stickFace(BAND),
+                    }}
+                  />
+
+                  {/* The strike: a flash along the seam on each clap. */}
+                  {clapCount > 0 && (
+                    <motion.div
+                      key={clapCount}
+                      aria-hidden
+                      className="absolute left-0 right-0 pointer-events-none"
+                      style={{ top: LOWER_STICK_HEIGHT, height: 2, backgroundColor: 'var(--brand-white)' }}
+                      initial={{ opacity: 0.85, scaleY: 2 }}
+                      animate={{ opacity: 0, scaleY: 1 }}
+                      transition={{ duration: 0.4, ease: 'easeOut' }}
+                    />
+                  )}
+
+                  <div
+                    className="flex items-center justify-between px-5 py-3"
+                    style={{ borderBottom: '1px solid rgba(255,255,255,0.09)' }}
+                  >
+                    <span className="text-[10px] tracking-[0.3em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
+                      PROD. TALECRAFTERS
+                    </span>
+                    <span className="text-[10px] tracking-[0.3em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-magenta)' }}>
+                      SEND US A MESSAGE
+                    </span>
+                  </div>
+
+                  <SlateRow label="NAME">
+                    <input
+                      type="text"
+                      name="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Who is calling it"
+                      required
+                      style={fieldStyle}
+                    />
+                  </SlateRow>
+
+                  <SlateRow label="EMAIL">
+                    <input
+                      type="email"
+                      name="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="you@company.com"
+                      required
+                      style={fieldStyle}
+                    />
+                  </SlateRow>
+
+                  <SlateRow label="THE BRIEF" last>
+                    <textarea
+                      name="message"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="What you want made, when you need it, and the constraint you think kills it."
+                      rows={5}
+                      required
+                      className="resize-none"
+                      style={{ ...fieldStyle, lineHeight: 1.6 }}
+                    />
+                  </SlateRow>
+
+                  <SlateFoot name={hasName} email={hasEmail} brief={hasMessage} />
                 </div>
-
-                <SlateRow label="NAME">
-                  <input
-                    type="text"
-                    name="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Who is calling it"
-                    required
-                    style={fieldStyle}
-                  />
-                </SlateRow>
-
-                <SlateRow label="EMAIL">
-                  <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@company.com"
-                    required
-                    style={fieldStyle}
-                  />
-                </SlateRow>
-
-                <SlateRow label="THE BRIEF" last>
-                  <textarea
-                    name="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="What you want made, when you need it, and the constraint you think kills it."
-                    rows={5}
-                    required
-                    className="resize-none"
-                    style={{ ...fieldStyle, lineHeight: 1.6 }}
-                  />
-                </SlateRow>
-              </div>
+              </motion.div>
 
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <button

@@ -124,9 +124,77 @@
   animation: scroll-right 30s linear infinite;
 }
 
+/* Stopping the row.
+
+   The old rule hung the pause off the moving track itself. That is the one
+   element you cannot reliably aim at: it is 200% wide, it is sliding, and the
+   pointer has to land on a child before anything happens, so the marks kept
+   walking out from under the cursor. The pause now hangs off the viewport,
+   which never moves, so the row stops the moment the pointer crosses the
+   strip and stays stopped while you read it. `:focus-within` does the same
+   for a keyboard, and the JS `data-paused` flag covers a pointer that enters
+   during a scroll, when no hover event fires. */
+.marquee-viewport:hover .animate-scroll-left,
+.marquee-viewport:hover .animate-scroll-right,
+.marquee-viewport:focus-within .animate-scroll-left,
+.marquee-viewport:focus-within .animate-scroll-right,
+.marquee-viewport[data-paused='true'] .animate-scroll-left,
+.marquee-viewport[data-paused='true'] .animate-scroll-right,
 .animate-scroll-left:hover,
 .animate-scroll-right:hover {
   animation-play-state: paused;
+}
+
+/* A mark only reads as hoverable if it answers. Grey and half-lit at rest,
+   full colour and lifted under the cursor. This lives in CSS rather than as
+   an inline `filter`, because an inline style outranks every class and so
+   silently beat the `hover:grayscale-0` this used to carry. */
+.client-mark {
+  filter: grayscale(0.8);
+  opacity: 0.78;
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.client-mark:hover,
+.client-mark:focus-visible {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: translateY(-2px) scale(1.04);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-left,
+  .animate-scroll-right {
+    animation: none;
+  }
+  /* With the travel gone the far marks would be unreachable, so the strip
+     becomes an ordinary scroller instead. */
+  .marquee-scroller {
+    overflow-x: auto;
+  }
+  .client-mark {
+    transition: none;
+  }
+}
+
+/* The contact slate. A row lights up while it is being written on, so the
+   board reads as something being filled in rather than a stack of inputs. */
+.slate-row {
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.slate-row:focus-within {
+  background-color: rgba(255, 255, 255, 0.035);
+  box-shadow: inset 3px 0 0 var(--brand-cyan);
+}
+
+.slate-row .slate-label {
+  transition: color 0.25s ease;
+}
+
+.slate-row:focus-within .slate-label {
+  color: var(--brand-cyan);
 }
 
 /* Smooth scrolling */

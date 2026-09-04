@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'motion/react';
+import { useState } from 'react';
 import { Accented } from '@/components/kit';
 import type { HomeCopy } from '@/content/copy';
 
@@ -295,8 +296,10 @@ function LogoRow({ hidden = false }: { hidden?: boolean }) {
       {clients.map((client) => (
         <div
           key={client.name}
-          className="flex-shrink-0 flex items-center gap-3 px-2 transition-[filter] duration-300 hover:grayscale-0"
-          style={{ filter: 'grayscale(0.8)' }}
+          // `client-mark` carries the resting grey and the hover payoff. The
+          // duplicate row is inert, so only the real one takes the tab stop.
+          className="client-mark flex-shrink-0 flex items-center gap-3 px-2"
+          tabIndex={hidden ? -1 : 0}
         >
           {client.icon && <client.icon />}
           <span
@@ -312,6 +315,10 @@ function LogoRow({ hidden = false }: { hidden?: boolean }) {
 }
 
 export function ClientsSection({ copy }: { copy: HomeCopy['clients'] }) {
+  // CSS `:hover` alone misses the case where the pointer is already over the
+  // strip when the page scrolls it into place, so the flag backs it up.
+  const [paused, setPaused] = useState(false);
+
   return (
     <section
       className="relative py-10 md:py-14 overflow-hidden"
@@ -354,8 +361,16 @@ export function ClientsSection({ copy }: { copy: HomeCopy['clients'] }) {
         </h3>
       </motion.div>
 
-      {/* Single-row logo marquee */}
-      <div className="relative">
+      {/* Single-row logo marquee. The viewport is the stationary element the
+          pause hangs off, so the row stops as soon as the pointer is over the
+          strip rather than only when it manages to catch a moving mark. */}
+      <div
+        className="marquee-viewport relative"
+        data-paused={paused ? 'true' : 'false'}
+        onPointerEnter={() => setPaused(true)}
+        onPointerLeave={() => setPaused(false)}
+        onPointerDown={() => setPaused(true)}
+      >
         {/* Fade edges */}
         <div
           className="absolute top-0 bottom-0 left-0 w-20 md:w-32 z-10 pointer-events-none"
@@ -372,7 +387,7 @@ export function ClientsSection({ copy }: { copy: HomeCopy['clients'] }) {
             On a phone that is about 190px over 25 seconds, which reads as a row
             that is not moving at all. Sized to its content, -50% is exactly one
             copy and the row scrolls at the same speed on every screen. */}
-        <div className="flex overflow-hidden">
+        <div className="marquee-scroller flex overflow-hidden">
           <div className="flex w-max animate-scroll-left" style={{ willChange: 'transform' }}>
             <LogoRow />
             <LogoRow hidden />
