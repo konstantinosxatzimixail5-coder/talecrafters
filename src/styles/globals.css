@@ -134,15 +134,23 @@
    strip and stays stopped while you read it. `:focus-within` does the same
    for a keyboard, and the JS `data-paused` flag covers a pointer that enters
    during a scroll, when no hover event fires. */
-.marquee-viewport:hover .animate-scroll-left,
-.marquee-viewport:hover .animate-scroll-right,
-.marquee-viewport:focus-within .animate-scroll-left,
-.marquee-viewport:focus-within .animate-scroll-right,
 .marquee-viewport[data-paused='true'] .animate-scroll-left,
 .marquee-viewport[data-paused='true'] .animate-scroll-right,
-.animate-scroll-left:hover,
-.animate-scroll-right:hover {
+.marquee-viewport:focus-within .animate-scroll-left,
+.marquee-viewport:focus-within .animate-scroll-right {
   animation-play-state: paused;
+}
+
+/* The hover half is behind `hover: hover` so a phone cannot inherit it. A
+   touchscreen fakes `:hover` on the last thing tapped and never takes it
+   back, which would leave the row frozen until the next tap somewhere else. */
+@media (hover: hover) {
+  .marquee-viewport:hover .animate-scroll-left,
+  .marquee-viewport:hover .animate-scroll-right,
+  .animate-scroll-left:hover,
+  .animate-scroll-right:hover {
+    animation-play-state: paused;
+  }
 }
 
 /* A mark only reads as hoverable if it answers. Grey and half-lit at rest,
@@ -155,12 +163,19 @@
   transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
-.client-mark:hover,
 .client-mark:focus-visible {
   filter: grayscale(0);
   opacity: 1;
   transform: translateY(-2px) scale(1.04);
   outline: none;
+}
+
+@media (hover: hover) {
+  .client-mark:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: translateY(-2px) scale(1.04);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -313,10 +328,25 @@ body {
    hundred and seventy-five, and on that page it arrived a beat after the rest
    of it, because none of that can start until React has hydrated.
 
-   A committed 48px file and one rule does the same job before the first paint.
-   image-set gives the 96px plate to retina pointers, so it stays crisp without
-   the 1x cursor being drawn at 96px, which is what pointing straight at the
-   larger file would have done. The hotspot is the middle of the 48px box.
+   A committed file and one rule does the same job before the first paint.
+   image-set gives the 2x plate to retina pointers, so it stays crisp without
+   the 1x cursor being drawn at 64px, which is what pointing straight at the
+   larger file would have done.
+
+   Two things about the size and the hotspot, both learned the hard way:
+
+   The plate is 32 CSS px, not 48. Firefox on Windows and Linux refuses any
+   cursor bigger than 32x32 and silently falls back to the system arrow, so
+   the 48px version simply did not exist for those visitors. The imp is also
+   bigger now than it was at 48px, because the old plate was mostly empty:
+   28px of ink floating in a 48px box. Cropping the padding and declaring 32
+   means more imp inside a size every browser will draw.
+
+   The hotspot is 7 1, the tip of the left horn, not the middle of the box.
+   Centred, the imp sat squarely on top of whatever you were pointing at: you
+   could not see the link you were about to click, and the click landed half a
+   head away from where the artwork seemed to point. From the horn it behaves
+   like an arrow, with the head hanging below and to the right.
 
    Scoped to pointer:fine. A touch device has no cursor to style, and a coarse
    pointer would only be downloading a picture it can never show. */
@@ -336,10 +366,10 @@ body {
   select {
     cursor:
       image-set(
-        url('/brand/cursor-48.png') 1x,
-        url('/brand/cursor-96.png') 2x
+        url('/brand/cursor-32.png') 1x,
+        url('/brand/cursor-64.png') 2x
       )
-      24 24,
+      7 1,
       auto;
   }
 

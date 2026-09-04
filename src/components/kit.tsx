@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Reveal } from './Reveal';
 
 /** The mono label with a rule that sits above every section on the site. */
 export function Eyebrow({
@@ -87,7 +86,15 @@ export function PageHeader({
 
         <Eyebrow color={color}>{eyebrow}</Eyebrow>
 
-        <Reveal delay={0.05}>
+        {/* CSS, not Framer Motion, and for the same reason the hero stopped
+            using it: `Reveal` ships the headline at opacity 0 and only lifts it
+            once the bundle has downloaded, React has hydrated and an
+            IntersectionObserver has fired. On every interior page that headline
+            is the LCP element, so the metric was measuring the JavaScript, not
+            the page: 1.1s to first paint and 3.3s to a visible headline on a
+            throttled phone. `tc-rise` runs the same rise on the compositor from
+            first paint. */}
+        <div className="tc-rise" style={{ animationDelay: '0.05s' }}>
           <h1
             className="mt-5 text-[13vw] sm:text-[10vw] md:text-[7vw] lg:text-[6vw] leading-[0.86] tracking-tighter max-w-[16ch]"
             style={{ fontFamily: 'var(--font-display)' }}
@@ -100,21 +107,21 @@ export function PageHeader({
               </>
             )}
           </h1>
-        </Reveal>
+        </div>
 
         {lede && (
-          <Reveal delay={0.12}>
+          <div className="tc-rise" style={{ animationDelay: '0.12s' }}>
             <p
               className="mt-8 text-lg md:text-xl leading-relaxed max-w-3xl"
               style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.72)' }}
             >
               {lede}
             </p>
-          </Reveal>
+          </div>
         )}
 
         {meta && meta.length > 0 && (
-          <Reveal delay={0.18}>
+          <div className="tc-rise" style={{ animationDelay: '0.18s' }}>
             <dl className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px" style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}>
               {meta.map((m) => (
                 <div key={m.label} className="p-4" style={{ backgroundColor: 'var(--brand-black)' }}>
@@ -133,7 +140,7 @@ export function PageHeader({
                 </div>
               ))}
             </dl>
-          </Reveal>
+          </div>
         )}
 
         {children}

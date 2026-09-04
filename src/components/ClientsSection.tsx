@@ -296,10 +296,12 @@ function LogoRow({ hidden = false }: { hidden?: boolean }) {
       {clients.map((client) => (
         <div
           key={client.name}
-          // `client-mark` carries the resting grey and the hover payoff. The
-          // duplicate row is inert, so only the real one takes the tab stop.
+          // `client-mark` carries the resting grey and the hover payoff. No
+          // tab stop: a mark is a picture, not a control, and making the row
+          // focusable put thirteen dead stops in the tab order and left the
+          // strip frozen under `:focus-within` after any tap. Keyboard and
+          // reduced-motion visitors get the stopped, scrollable row instead.
           className="client-mark flex-shrink-0 flex items-center gap-3 px-2"
-          tabIndex={hidden ? -1 : 0}
         >
           {client.icon && <client.icon />}
           <span
@@ -367,9 +369,15 @@ export function ClientsSection({ copy }: { copy: HomeCopy['clients'] }) {
       <div
         className="marquee-viewport relative"
         data-paused={paused ? 'true' : 'false'}
-        onPointerEnter={() => setPaused(true)}
-        onPointerLeave={() => setPaused(false)}
+        // A finger never sends `pointerleave`, so pausing on a touch *enter*
+        // would stop the row for good the first time somebody scrolled past it
+        // with their thumb down. Touch pauses only while the finger is held,
+        // and `up`/`cancel` are what let go.
+        onPointerEnter={(e) => { if (e.pointerType !== 'touch') setPaused(true); }}
         onPointerDown={() => setPaused(true)}
+        onPointerUp={() => setPaused(false)}
+        onPointerCancel={() => setPaused(false)}
+        onPointerLeave={() => setPaused(false)}
       >
         {/* Fade edges */}
         <div

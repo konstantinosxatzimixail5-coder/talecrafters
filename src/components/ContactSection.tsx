@@ -153,10 +153,31 @@ const fieldStyle: React.CSSProperties = {
   outline: 'none',
   width: '100%',
   fontSize: '1.05rem',
-  padding: '0.5rem 0',
+  // 0.65rem, not 0.5rem: at the smaller padding the two single-line inputs
+  // came out 41px tall, just under the 44px a thumb wants.
+  padding: '0.65rem 0',
 };
 
 export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['contact']; hideHeading?: boolean }) {
+  /* Where this section sits decides how it should arrive.
+     On the home page it is the last thing on a long scroll, so a
+     `whileInView` reveal is exactly right. On /contact, where the page header
+     is suppressed, the slate is the first thing on the page — and on a wide
+     screen the largest thing above the fold, which made it the LCP element.
+     A `whileInView` reveal there means the metric waits for the bundle, React
+     and an IntersectionObserver: 970ms for a card that was in the HTML from
+     the start. Above the fold it rises in CSS instead, from first paint. */
+  const aboveTheFold = hideHeading;
+  const entrance = (delay: number) =>
+    aboveTheFold
+      ? {}
+      : {
+          initial: { opacity: 0, y: 24 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { duration: 0.6, delay },
+          viewport: { once: true },
+        };
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -355,10 +376,8 @@ export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['
             {/* --- the slate ------------------------------------------- */}
             <motion.form
               onSubmit={handleSubmit}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+              className={aboveTheFold ? 'tc-rise' : undefined}
+              {...entrance(0)}
             >
               <motion.div animate={slateControls} style={{ willChange: 'transform' }}>
                 <ClapperArm controls={armControls} />
@@ -396,8 +415,11 @@ export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['
                     />
                   )}
 
+                  {/* Wrapping, because at 320px the two mono labels each take
+                      two lines and would otherwise sit shoulder to shoulder
+                      with nothing between them. */}
                   <div
-                    className="flex items-center justify-between px-5 py-3"
+                    className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-5 py-3"
                     style={{ borderBottom: '1px solid rgba(255,255,255,0.09)' }}
                   >
                     <span className="text-[10px] tracking-[0.3em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
@@ -491,11 +513,9 @@ export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['
 
             {/* --- the two other ways in -------------------------------- */}
             <motion.div
-              className="flex flex-col gap-4"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
+              className={`flex flex-col gap-4${aboveTheFold ? ' tc-rise' : ''}`}
+              style={aboveTheFold ? { animationDelay: '0.1s' } : undefined}
+              {...entrance(0.1)}
             >
               <span className="text-[10px] tracking-[0.3em]" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
                 OR SKIP THE FORM
