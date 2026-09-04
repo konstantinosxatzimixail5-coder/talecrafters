@@ -110,6 +110,43 @@ const images = manifest as unknown as Record<string, { fallback: string }>;
 const uploaded = new Map<string, string>();
 let uploadCount = 0;
 
+/** Caps how many asset uploads are in flight at once. The manifest is walked
+ *  with Promise.all at every level (documents, shots, videos), so without a
+ *  cap here every picture in the run fires at the same time and Sanity's API
+ *  answers a chunk of them with 429s. */
+function createLimiter(concurrency: number) {
+  let active = 0;
+  const queue: (() => void)[] = [];
+  const next = () => {
+    if (active >= concurrency || queue.length === 0) return;
+    active++;
+    queue.shift()!();
+  };
+  return <T,>(fn: () => Promise<T>): Promise<T> =>
+    new Promise((resolve, reject) => {
+      queue.push(() => {
+        fn().then(resolve, reject).finally(() => { active--; next(); });
+      });
+      next();
+    });
+}
+
+const limitUpload = createLimiter(4);
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+/** Retries a rate-limited upload with backoff; anything else fails fast. */
+async function uploadWithRetry(buf: Buffer, filename: string, attempts = 5) {
+  for (let i = 0; ; i++) {
+    try {
+      return await limitUpload(() => client.assets.upload('image', buf, { filename }));
+    } catch (e) {
+      const rateLimited = /Too Many Requests|rate limit/i.test((e as Error).message);
+      if (!rateLimited || i === attempts - 1) throw e;
+      await sleep(500 * 2 ** i);
+    }
+  }
+}
+
 /**
  * Uploads the widest committed derivative of a manifest key and returns an
  * asset reference. The built ladder stays in the repository and stays the
@@ -125,7 +162,7 @@ async function assetFor(src?: string): Promise<any | undefined> {
   if (!COMMIT) { uploadCount++; return undefined; }
   try {
     const buf = await readFile(path);
-    const asset = await client.assets.upload('image', buf, { filename: basename(path) });
+    const asset = await uploadWithRetry(buf, basename(path));
     uploaded.set(src, asset._id);
     uploadCount++;
     return { _type: 'image', asset: { _type: 'reference', _ref: asset._id } };
