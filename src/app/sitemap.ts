@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { client } from '@/sanity/client';
+import { sanityRead } from '@/sanity/read';
 import { SITE_URL } from '@/lib/site';
 
 
@@ -74,17 +74,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // The blog lives in Sanity. A dataset that is unreachable at build time
   // should cost us the post URLs, not the entire sitemap.
   let blogPages: MetadataRoute.Sitemap = [];
-  try {
-    const posts = await client.fetch<{ slug: string; publishedAt: string }[]>(
-      `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) { "slug": slug.current, publishedAt }`
+  {
+    const posts = await sanityRead<{ slug: string; publishedAt: string }[]>(
+      'sitemap posts',
+      `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) { "slug": slug.current, publishedAt }`,
+      {},
+      []
     );
     // A repo slug wins a collision, so the CMS never emits a duplicate URL.
     const localSlugs = new Set(localPosts.map((p) => p.slug));
     blogPages = posts
       .filter((p) => !localSlugs.has(p.slug))
       .map((p) => page(`/blog/${p.slug}`, 0.6, 'weekly', new Date(p.publishedAt)));
-  } catch {
-    blogPages = [];
   }
 
   return [...staticPages, ...generated, ...blogPages];

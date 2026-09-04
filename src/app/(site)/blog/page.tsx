@@ -1,4 +1,5 @@
-import { client, urlFor } from '@/sanity/client';
+import { urlFor } from '@/sanity/client';
+import { sanityRead } from '@/sanity/read';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/JsonLd';
@@ -55,15 +56,14 @@ interface Card {
 
 // An unreachable dataset costs us the CMS cards, not the page.
 async function getCmsPosts(): Promise<CmsPost[]> {
-  try {
-    return await client.fetch(
-      `*[_type == "post"] | order(publishedAt desc) {
-        _id, title, slug, excerpt, publishedAt, featuredImage, tags, author
-      }`
-    );
-  } catch {
-    return [];
-  }
+  return sanityRead<CmsPost[]>(
+    'blog index',
+    `*[_type == "post"] | order(publishedAt desc) {
+      _id, title, slug, excerpt, publishedAt, featuredImage, tags, author
+    }`,
+    {},
+    []
+  );
 }
 
 async function getCards(): Promise<Card[]> {

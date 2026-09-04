@@ -16,7 +16,7 @@
 // that list is also the navigation, so a page missing from it is a page nothing
 // links to.
 
-import { client } from '@/sanity/client';
+import { sanityRead } from '@/sanity/read';
 import { posts as repoPosts } from '@/data/posts';
 import type { Block } from '@/data/posts/types';
 import { work as repoWork } from '@/data/work';
@@ -46,12 +46,7 @@ export interface StoredShot {
   focus?: string;
 }
 
-const OK_TTL_MS = 30_000;
-const FAIL_TTL_MS = 300_000;
-const TIMEOUT_MS = 8000;
-
 type Bundle = Record<string, any[]>;
-let cached: { until: number; value: Promise<Bundle> } | null = null;
 
 /**
  * One query for every collection. A page that needs case studies and a page
@@ -77,29 +72,20 @@ const QUERY = `{
   "navMenu": *[_type == "navMenu"] | order(order asc) { ... }
 }`;
 
-async function fetchAll(): Promise<Bundle> {
-  if (process.env.SANITY_FIXTURE === '1') return {};
-  try {
-    const out = await Promise.race([
-      client.fetch<Bundle>(QUERY),
-      new Promise<Bundle>((_, reject) =>
-        setTimeout(() => reject(new Error('collections fetch timed out')), TIMEOUT_MS)
-      ),
-    ]);
-    if (cached) cached.until = Date.now() + OK_TTL_MS;
-    return out ?? {};
-  } catch {
-    console.warn('[collections] dataset unreachable, rendering repo content');
-    if (cached) cached.until = Date.now() + FAIL_TTL_MS;
-    return {};
-  }
-}
-
-function all(): Promise<Bundle> {
-  const now = Date.now();
-  if (!cached || now >= cached.until) cached = { until: now + OK_TTL_MS, value: fetchAll() };
-  return cached.value;
-}
+/**
+ * One query for every collection, read once and cached under the `sanity` tag.
+ *
+ * A page that needs case studies and a page that needs glossary terms are
+ * rendered in the same pass during a build, and asking twice for two halves of
+ * the same dataset is a round trip nobody needs.
+ *
+ * This used to keep its own thirty-second map in module scope. That map could
+ * not be invalidated from outside the process, so a publish had to wait it out
+ * and, on a serverless deploy, wait out however many warm instances were
+ * holding their own copy. Next's data cache is shared and can be dropped on
+ * demand, which is what makes the webhook work.
+ */
+const all = (): Promise<Bundle> => sanityRead('collections', QUERY, {}, {} as Bundle);
 
 /** Dataset if it has any of this type, repository otherwise. */
 async function listOf<T>(type: string, fallback: readonly T[], map: (doc: any) => T): Promise<T[]> {

@@ -1,4 +1,5 @@
-import { client, urlFor } from '@/sanity/client';
+import { urlFor } from '@/sanity/client';
+import { sanityRead } from '@/sanity/read';
 import { PortableText } from 'next-sanity';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -27,16 +28,14 @@ interface Post {
 }
 
 async function getPost(slug: string): Promise<Post | null> {
-  try {
-    return await client.fetch(
-      `*[_type == "post" && slug.current == $slug][0] {
-        _id, title, slug, body, excerpt, publishedAt, featuredImage, tags, author, metaTitle, metaDescription
-      }`,
-      { slug }
-    );
-  } catch {
-    return null;
-  }
+  return sanityRead<Post | null>(
+    'blog post',
+    `*[_type == "post" && slug.current == $slug][0] {
+      _id, title, slug, body, excerpt, publishedAt, featuredImage, tags, author, metaTitle, metaDescription
+    }`,
+    { slug },
+    null
+  );
 }
 
 /**
@@ -49,15 +48,14 @@ async function getPost(slug: string): Promise<Post | null> {
  */
 export async function generateStaticParams() {
   const local = posts.map((p) => ({ slug: p.slug }));
-  try {
-    const cms = await client.fetch<{ slug: string }[]>(
-      `*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`
-    );
-    const seen = new Set(local.map((p) => p.slug));
-    return [...local, ...cms.filter((p) => !seen.has(p.slug)).map((p) => ({ slug: p.slug }))];
-  } catch {
-    return local;
-  }
+  const cms = await sanityRead<{ slug: string }[]>(
+    'blog slugs',
+    `*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`,
+    {},
+    []
+  );
+  const seen = new Set(local.map((p) => p.slug));
+  return [...local, ...cms.filter((p) => !seen.has(p.slug)).map((p) => ({ slug: p.slug }))];
 }
 
 

@@ -16,7 +16,7 @@
 
 import { copyRegistry, docIdFor, type PageId } from './registry';
 import type { FieldDef, SectionDef, Pair, PageCopy } from './types';
-import { client } from '@/sanity/client';
+import { sanityRead } from '@/sanity/read';
 
 /** A Studio field name. Namespaced by section so two sections can both have a
  *  `heading` without colliding inside the one document. */
@@ -25,67 +25,17 @@ export const fieldNameFor = (section: string, field: string) => `${section}__${f
 type RawDoc = Record<string, unknown> & { _id: string };
 
 /**
- * How long a build will wait for the dataset before rendering the repo copy.
- * A CMS that is slow should make a deploy slightly slower; it should never be
- * able to hang one.
- */
-const TIMEOUT_MS = 8000;
-
-/**
- * How long a resolved read is reused before the dataset is asked again.
+ * The page-copy documents, read once and cached under the `sanity` tag.
  *
- * This is the second half of the freshness story; `export const revalidate` on
- * the site layout is the first. A page re-renders on its own schedule, and
- * when it does it must not be handed a result cached for the life of the
- * server process, or an edit in the Studio would never appear on a running
- * deploy. Thirty seconds is short enough to be invisible to an editor and long
- * enough that a build renders ~190 routes off a handful of reads.
+ * This kept its own thirty-second map in module scope, for the same reason the
+ * collections reader did and with the same flaw: nothing outside the process
+ * could tell it to let go, so a publish had to wait it out. Now a publish drops
+ * the tag and the next render reads again. See src/sanity/read.ts.
  */
-const OK_TTL_MS = 30_000;
-
-/**
- * And how long a failure is remembered. Longer, deliberately: a dataset that
- * is down or blocked should cost a build a few timeouts, not one per route.
- */
-const FAIL_TTL_MS = 300_000;
-
-let cached: { until: number; value: Promise<Map<string, RawDoc>> } | null = null;
-
-async function fetchAllCopy(): Promise<Map<string, RawDoc>> {
-  const byId = new Map<string, RawDoc>();
-
-  // An explicit opt-out for builds that have no business talking to the
-  // dataset: CI, a checkout with no credentials, and local work on layout.
-  if (process.env.SANITY_FIXTURE === '1') return byId;
-
+async function allCopy(): Promise<Map<string, RawDoc>> {
   const ids = Object.keys(copyRegistry).map(docIdFor);
-
-  try {
-    const docs = await Promise.race([
-      client.fetch<RawDoc[]>('*[_id in $ids]', { ids }),
-      new Promise<RawDoc[]>((_, reject) =>
-        setTimeout(() => reject(new Error('page copy fetch timed out')), TIMEOUT_MS)
-      ),
-    ]);
-    for (const d of docs ?? []) byId.set(d._id, d);
-    if (cached) cached.until = Date.now() + OK_TTL_MS;
-  } catch {
-    // Deliberately silent in the returned value and loud in the log: a deploy
-    // that quietly loses every edit is worse than one that says so.
-    console.warn('[copy] dataset unreachable, rendering repo defaults');
-    if (cached) cached.until = Date.now() + FAIL_TTL_MS;
-  }
-
-  return byId;
-}
-
-/** Shared by every route that renders inside the same window. */
-function allCopy(): Promise<Map<string, RawDoc>> {
-  const now = Date.now();
-  if (!cached || now >= cached.until) {
-    cached = { until: now + OK_TTL_MS, value: fetchAllCopy() };
-  }
-  return cached.value;
+  const docs = await sanityRead<RawDoc[]>('page copy', '*[_id in $ids]', { ids }, []);
+  return new Map(docs.map((d) => [d._id, d]));
 }
 
 /** Blank, whitespace and empty arrays all mean "the editor has not set this". */
