@@ -148,6 +148,32 @@ async function uploadWithRetry(buf: Buffer, filename: string, attempts = 5) {
 }
 
 /**
+ * Assets already on the documents we are about to replace, keyed by the `src`
+ * of the shot they sit on.
+ *
+ * This exists because of a real accident. A shot whose `src` is not a manifest
+ * key has no file on disk to upload, so `assetFor` returns nothing, and
+ * createOrReplace then writes an empty image over whatever was there. On 3
+ * September 2026 that cleared fifteen blog heroes that had only ever been
+ * uploaded in the Studio. The pictures survived as orphaned assets; the
+ * references did not.
+ *
+ * So: anything the repository cannot supply, the dataset keeps.
+ */
+const existingAssets = new Map<string, string>();
+let carriedOver = 0;
+
+/** Walk a document and record every `src` that has an asset next to it. */
+function collectAssets(node: unknown) {
+  if (Array.isArray(node)) return node.forEach(collectAssets);
+  if (!node || typeof node !== 'object') return;
+  const o = node as Record<string, any>;
+  const ref = o.image?.asset?._ref;
+  if (typeof o.src === 'string' && o.src && typeof ref === 'string') existingAssets.set(o.src, ref);
+  for (const [k, v] of Object.entries(o)) if (!k.startsWith('_')) collectAssets(v);
+}
+
+/**
  * Uploads the widest committed derivative of a manifest key and returns an
  * asset reference. The built ladder stays in the repository and stays the
  * default; this is what puts a copy in the dataset so the picture can be
@@ -157,7 +183,16 @@ async function assetFor(src?: string): Promise<any | undefined> {
   if (!WITH_IMAGES || !src) return undefined;
   if (uploaded.has(src)) return { _type: 'image', asset: { _type: 'reference', _ref: uploaded.get(src) } };
   const entry = images[src];
-  if (!entry?.fallback) return undefined;
+  if (!entry?.fallback) {
+    // Nothing on disk under this key. If the dataset already has a picture
+    // here, carry it across rather than blanking it.
+    const kept = existingAssets.get(src);
+    if (kept) {
+      carriedOver++;
+      return { _type: 'image', asset: { _type: 'reference', _ref: kept } };
+    }
+    return undefined;
+  }
   const path = `public${entry.fallback}`;
   if (!COMMIT) { uploadCount++; return undefined; }
   try {
@@ -427,10 +462,24 @@ async function buildDocs() {
 
 /* ----------------------------------------------------------------- run -- */
 
+// Read what is already there before building anything, so a picture the
+// repository cannot supply is carried across rather than cleared. Reading is
+// free and does not need the write token.
+try {
+  const current = await client.fetch(
+    `*[_type in ["post","caseStudy","conceptBrand","film","capture","writingSample","resource"]]`
+  );
+  collectAssets(current);
+  console.log(`${existingAssets.size} picture(s) already in the dataset will be kept where the repo has no file.\n`);
+} catch {
+  console.warn('Could not read the dataset. Studio uploads cannot be preserved on this run.\n');
+}
+
 const docs = await buildDocs();
 const types = Object.keys(docs).filter((t) => !only || only.includes(t));
 
 console.log(COMMIT ? 'Writing to Sanity.' : 'Dry run. Nothing is written. Add --commit to do it.');
+if (carriedOver) console.log(`${carriedOver} Studio upload(s) carried over rather than cleared.`);
 console.log(`project ${projectId} / dataset ${dataset}\n`);
 
 let total = 0;
