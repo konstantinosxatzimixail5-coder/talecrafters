@@ -39,10 +39,11 @@ export default async function PackagesPage() {
         graph={[
           breadcrumbSchema(crumbs),
           // A packages page is a commercial page, so it gets a Service node
-          // with the four shapes as an offer catalogue. No `price` on any of
-          // them: nothing here is a rate card, and a Offer carrying a number we
-          // do not actually publish would be a false claim in the markup even
-          // though the visible page is honest about it.
+          // with the four shapes as an offer catalogue. Three now carry a
+          // floor, emitted as `minPrice` rather than `price`, because that is
+          // what "from" means and because the same number is visible on the
+          // card. The Shadow Protocol carries none, for the same reason it
+          // shows none: scope varies too much for a floor to mean anything.
           serviceSchema({
             name: 'Content-as-Service engagements',
             description:
@@ -50,9 +51,9 @@ export default async function PackagesPage() {
             path: '/packages',
             serviceType: 'Creative production engagement',
             offers: [
-              { name: 'The Alliance', detail: 'Ongoing creative partnership with dedicated monthly capacity' },
-              { name: 'The Forge', detail: 'Predictable fixed monthly output, delivered to a schedule' },
-              { name: 'The Mission', detail: 'A single project with one deliverable and maximum focus' },
+              { name: 'The Alliance', detail: 'Ongoing creative partnership with dedicated monthly capacity', priceFrom: 500, unit: 'month' },
+              { name: 'The Forge', detail: 'Predictable fixed monthly output, delivered to a schedule', priceFrom: 400, unit: 'month' },
+              { name: 'The Mission', detail: 'A single project with one deliverable and maximum focus', priceFrom: 350, unit: 'project' },
               { name: 'The Shadow Protocol', detail: 'White-label production for agencies, studios and consultancies' },
             ],
           }),

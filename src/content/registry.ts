@@ -537,7 +537,7 @@ export const copyRegistry = {
         eyebrow: '007 / PACKAGES',
         title: 'PICK YOUR',
         accentWord: 'PLOT',
-        lede: 'Four escalation levels for Content-as-Service. Nothing here is a rate card, because a run of forty variants from one trained identity and a single hero film are not the same job with a different number on it. Pick the shape, and we will quote the work.',
+        lede: 'Four escalation levels for Content-as-Service, each with the number it starts at. Those are floors rather than a rate card: a run of forty variants from one trained identity and a single hero film are not the same job with a different number on it. Pick the shape, tell us the work, and we will quote it.',
         meta: [
           { label: 'Ongoing', value: 'The Alliance' },
           { label: 'Fixed monthly output', value: 'The Forge' },

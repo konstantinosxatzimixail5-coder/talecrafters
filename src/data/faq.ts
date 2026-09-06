@@ -23,7 +23,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'What does a project cost?',
-        a: 'We quote per engagement rather than publishing a rate card, because a run of forty variants from one trained identity and a single hero film are not the same job with a different number on it. Packages exist for ongoing work, project work and white-label production.',
+        a: 'The packages carry the number they start at: The Alliance from €500 a month, The Forge from €400 a month, The Mission from €350 a project. The Shadow Protocol varies with scope and volume. Those are floors rather than a rate card, because a run of forty variants from one trained identity and a single hero film are not the same job with a different number on it. Tell us the work and we quote it.',
       },
       {
         q: 'Do you work with agencies?',

@@ -4,12 +4,19 @@ import { useState } from 'react';
 import { CircleCheck, ArrowUpRight } from 'lucide-react';
 import type { HomeCopy } from '@/content/copy';
 
+// Starting numbers, not a rate card.
+//
+// A cold buyer will not email to ask what something costs; they will assume it
+// is out of reach and leave. "From" plus a floor answers the only question
+// standing between reading and enquiring, and it costs nothing later because a
+// floor is not a quote. The Shadow Protocol has none on purpose: scope there
+// varies too much for a floor to mean anything, so it says so.
 const packages = [
   {
     name: "THE ALLIANCE",
     subtitle: "Ongoing Creative Partnership",
-    price: "",
-    period: "",
+    price: "From €500",
+    period: "per month",
     description: "For brands that need consistent firepower, not one-off miracles. You get dedicated creative capacity every month. We become an extension of your team, without the overhead, the HR headaches, or the sad office birthday parties.",
     features: [
       "Dedicated monthly outputs (customized to your needs)",
@@ -24,9 +31,9 @@ const packages = [
   {
     name: "THE FORGE",
     subtitle: "Predictable Content. Relentless Output.",
-    price: "",
-    period: "",
-    description: "A fixed monthly subscription for brands that know exactly what they need and want it delivered like clockwork. No strategy calls. No scope creep. Just output.",
+    price: "From €400",
+    period: "per month",
+    description: "A fixed monthly subscription for brands that know exactly what they need and want it delivered like clockwork. We agree the shape of it on one call, then it runs to a schedule. No scope creep, no surprises, just output.",
     features: [
       "Social Content Engine: 12 posts/month (static + motion)",
       "Video Velocity: 4 short-form videos/month",
@@ -40,8 +47,8 @@ const packages = [
   {
     name: "THE MISSION",
     subtitle: "Single Project. Maximum Impact.",
-    price: "",
-    period: "",
+    price: "From €350",
+    period: "per project",
     description: "Not ready for an ongoing partnership? Fair enough. Trust is earned, not demanded. One project. One deliverable. Maximum focus. We treat your campaign like it's the only thing that matters.",
     features: [
       "Campaign concepting and execution",
@@ -56,8 +63,8 @@ const packages = [
   {
     name: "THE SHADOW PROTOCOL",
     subtitle: "Stealth-Mode Firepower.",
-    price: "",
-    period: "",
+    price: "Varies",
+    period: "by scope and volume",
     description: "Some brands need results, not credit. White-label creative production for agencies, studios, and consultancies who want to deliver excellence without scaling headcount. We stay invisible. You take the glory.",
     features: [
       "White-label content production",
@@ -189,6 +196,32 @@ export function PricingSection({ copy, hideHeading = false }: { copy: HomeCopy['
                     </h3>
                   </div>
 
+                  {/* The number, top right, aligned across all four cards so a
+                      reader can compare them without moving their eye. */}
+                  {pkg.price && (
+                    <div className="text-right flex-shrink-0 pl-4">
+                      <div
+                        className="text-2xl md:text-3xl tracking-tighter whitespace-nowrap"
+                        style={{
+                          fontFamily: 'var(--font-display)',
+                          color: pkg.accent ? 'var(--brand-white)' : pkg.color,
+                        }}
+                      >
+                        {pkg.price}
+                      </div>
+                      {pkg.period && (
+                        <div
+                          className="text-[10px] tracking-widest mt-1 whitespace-nowrap"
+                          style={{
+                            fontFamily: 'var(--font-mono)',
+                            color: pkg.accent ? 'rgba(255,255,255,0.7)' : 'var(--brand-concrete-light)',
+                          }}
+                        >
+                          {pkg.period}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 {/* Description */}

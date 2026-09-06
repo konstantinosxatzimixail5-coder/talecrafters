@@ -188,8 +188,15 @@ export const serviceSchema = (s: {
   description: string;
   path: string;
   serviceType?: string;
-  /** Named deliverables, rendered as an offer catalogue. */
-  offers?: { name: string; detail?: string }[];
+  /**
+   * Named deliverables, rendered as an offer catalogue.
+   *
+   * `priceFrom` is a floor, not a price, so it is emitted as `minPrice` on a
+   * UnitPriceSpecification rather than as `price`. Only set it where the same
+   * number is visible on the page: markup that quotes a figure the reader
+   * cannot see is a claim nobody agreed to.
+   */
+  offers?: { name: string; detail?: string; priceFrom?: number; unit?: string }[];
   image?: string;
   /**
    * ISO country code for a page that targets one market. Narrows `areaServed`
@@ -232,6 +239,16 @@ export const serviceSchema = (s: {
               name: o.name,
               ...(o.detail ? { description: o.detail } : {}),
             },
+            ...(o.priceFrom
+              ? {
+                  priceSpecification: {
+                    '@type': 'UnitPriceSpecification',
+                    minPrice: o.priceFrom,
+                    priceCurrency: 'EUR',
+                    ...(o.unit ? { unitText: o.unit } : {}),
+                  },
+                }
+              : {}),
           })),
         },
       }
