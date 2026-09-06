@@ -6,9 +6,9 @@ import { Eyebrow } from '@/components/kit';
 import { pageCopy } from '@/content/copy';
 
 /**
- * The original shorts, as a section of the Armoury.
+ * The original shorts, as a section of the Supply Drop.
  *
- * They sit here rather than on the front page because the Armoury is where the
+ * They sit here rather than on the front page because the Supply Drop is where the
  * things given away in full already live, and a published process sheet is the
  * largest of them.
  *

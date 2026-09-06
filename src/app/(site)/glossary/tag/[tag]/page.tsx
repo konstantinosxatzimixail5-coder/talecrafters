@@ -47,6 +47,16 @@ const meta: Record<string, { title: string; lede: string; color: string }> = {
     lede: 'The commercial terms: what synthetic media is, what slop costs you, how registers keep volume from turning into wallpaper, and how to budget any of it.',
     color: 'var(--brand-violet-text)',
   },
+  story: {
+    title: 'STORY & STRUCTURE',
+    lede: 'The craft terms a script is actually built from: the beats, the structures, the turns, the reversals and the value shifts. Generative tools changed how a shot gets made and changed nothing about why anybody watches it.',
+    color: 'var(--brand-gold)',
+  },
+  audience: {
+    title: 'HOOKS & ATTENTION',
+    lede: 'What happens in the first three seconds, and whether anyone is still there at the end: hooks, open loops, retention curves, pattern interrupts, payoffs and the reasons a good piece gets scrolled past anyway.',
+    color: 'var(--brand-cyan)',
+  },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ tag: string }> }) {

@@ -11,10 +11,10 @@ import { pageCopy } from '@/content/copy';
 import { getResources } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'The Armoury — Free Templates, Checklists and Reference',
+  title: 'The Supply Drop — Free Templates, Checklists and Reference',
   description:
-    'Nine free resources from the studio: a production brief template, a shot consistency checklist, an AI advertising disclosure checklist, a synthetic UGC consent template, a workflow canvas, a cost calculator, a readiness scorecard, 38 camera movements and a prompting guide. No email gate.',
-  path: '/armoury',
+    'The templates, checklists and reference sheets the studio actually works from, published in full: production briefs, consistency and disclosure checklists, consent templates, a workflow canvas, a cost calculator, a readiness scorecard and the prompting library. No email gate, no download wall.',
+  path: '/supply-drop',
   keywords: [
     'AI video production brief template',
     'AI advertising disclosure checklist',
@@ -22,6 +22,7 @@ export const metadata = pageMeta({
     'creative automation canvas',
     'AI video cost calculator',
     'free AI video prompts',
+    'prompting library',
     'camera movement prompts',
     'AI animation prompting guide',
     'generative video reference',
@@ -31,7 +32,7 @@ export const metadata = pageMeta({
 
 const crumbs = [
   { name: 'Home', path: '/' },
-  { name: 'The Armoury', path: '/armoury' },
+  { name: 'The Supply Drop', path: '/supply-drop' },
 ];
 
 const qa = [
@@ -45,7 +46,7 @@ const qa = [
   },
 ];
 
-export default async function ArmouryIndex() {
+export default async function SupplyDropIndex() {
   const copy = await pageCopy('armoury');
   const resources = await getResources();
   return (
@@ -56,8 +57,8 @@ export default async function ArmouryIndex() {
           faqSchema(qa),
           {
             '@type': 'CollectionPage',
-            name: 'The Armoury: free resources',
-            url: abs('/armoury'),
+            name: 'The Supply Drop: free resources',
+            url: abs('/supply-drop'),
             description: 'Free reference material for generative video and animation production.',
           },
         ]}
@@ -78,7 +79,7 @@ export default async function ArmouryIndex() {
           {resources.map((r, i) => (
             <Reveal key={r.slug} delay={i * 0.06}>
               <Link
-                href={`/armoury/${r.slug}`}
+                href={`/supply-drop/${r.slug}`}
                 className="group flex flex-col h-full p-8 md:p-10 relative overflow-hidden"
                 style={{ border: `1px solid ${r.color}30`, backgroundColor: 'rgba(255,255,255,0.02)', textDecoration: 'none' }}
               >
@@ -127,7 +128,7 @@ export default async function ArmouryIndex() {
           <Eyebrow color="var(--brand-cyan)">{copy.alsoFree.eyebrow}</Eyebrow>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-3">
             {[
-              { href: '/glossary', t: 'The Glossary', n: `${terms.length} terms from generative and synthetic media, defined the way a producer needs them.` },
+              { href: '/glossary', t: 'The Glossary', n: `${terms.length} terms from synthetic media and storytelling, defined the way a maker needs them.` },
               { href: '/pipelines', t: 'The Pipelines', n: 'Three of our seven production pipelines, published with their stages and their gates.' },
               { href: '/blog', t: 'The Blog', n: 'What generative production costs, what has to be disclosed, and where automation saves a week.' },
             ].map((c) => (

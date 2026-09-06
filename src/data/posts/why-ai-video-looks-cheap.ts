@@ -128,7 +128,7 @@ export const post: Post = {
     },
     {
       t: 'cta',
-      href: '/armoury/generative-film-shot-consistency-checklist',
+      href: '/supply-drop/generative-film-shot-consistency-checklist',
       label: 'Download the consistency checklist',
       text: 'These nine as pass-or-fail checks, arranged by production stage so they get applied before the render rather than after. Free, no email gate.',
     },

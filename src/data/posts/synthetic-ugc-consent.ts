@@ -136,7 +136,7 @@ export const post: Post = {
     },
     {
       t: 'cta',
-      href: '/armoury/synthetic-ugc-consent-template',
+      href: '/supply-drop/synthetic-ugc-consent-template',
       label: 'Download the consent template',
       text: 'A synthetic likeness and voice release covering derivative training, scope, territory, withdrawal and end-of-term disposal. Free, no email gate.',
     },

@@ -110,7 +110,7 @@ export const post: Post = {
     },
     {
       t: 'cta',
-      href: '/armoury/synthetic-media-production-brief-template',
+      href: '/supply-drop/synthetic-media-production-brief-template',
       label: 'Download the brief template',
       text: 'The six paragraphs above as a fillable template, with the questions a studio should ask you printed on the back. Free, no email gate.',
     },

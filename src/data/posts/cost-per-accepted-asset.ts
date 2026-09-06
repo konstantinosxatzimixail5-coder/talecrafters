@@ -113,7 +113,7 @@ export const post: Post = {
     },
     {
       t: 'cta',
-      href: '/armoury/ai-video-cost-calculator',
+      href: '/supply-drop/ai-video-cost-calculator',
       label: 'Open the cost calculator',
       text: 'The same arithmetic, laid out so you can run it against your own numbers before the next quote lands.',
     },

@@ -10,6 +10,7 @@ import { BlogSection } from '@/components/BlogSection';
 import { CTASection } from '@/components/CTASection';
 import { ContactSection } from '@/components/ContactSection';
 import { ClientsSection } from '@/components/ClientsSection';
+import { SectionJump } from '@/components/SectionJump';
 import { JsonLd } from '@/components/JsonLd';
 import { serviceSchema, caseStudySchema } from '@/lib/seo';
 
@@ -90,20 +91,45 @@ export default async function HomePage() {
       />
 
       <HeroSection copy={copy.hero} />
-      <StudioSection copy={copy.studio} />
+      {/* Each section is wrapped with the id the jump arrow scrolls to. The ids
+          come from HOME_SECTIONS, so the list in the arrow and the anchors on
+          the page cannot drift apart. */}
+      <div id="studio">
+        <StudioSection copy={copy.studio} />
+      </div>
       {/* The three arms, right after the studio intro: what the company is,
           before what it sells. */}
-      <UniverseSection copy={copy.universe} />
-      <PhilosophySection copy={copy.philosophy} />
-      <ServicesSection copy={copy.services} categories={categories} />
+      <div id="divisions">
+        <UniverseSection copy={copy.universe} />
+      </div>
+      <div id="philosophy">
+        <PhilosophySection copy={copy.philosophy} />
+      </div>
+      <div id="services">
+        <ServicesSection copy={copy.services} categories={categories} />
+      </div>
       {/* The receipts, immediately after the claims. */}
-      <SelectedDamageSection copy={copy.selectedDamage} work={work} />
-      <ProcessSection copy={copy.process} />
-      <PricingSection copy={copy.pricing} />
-      <BlogSection copy={copy.blog} posts={teaserPosts} />
+      <div id="work">
+        <SelectedDamageSection copy={copy.selectedDamage} work={work} />
+      </div>
+      <div id="process">
+        <ProcessSection copy={copy.process} />
+      </div>
+      <div id="pricing">
+        <PricingSection copy={copy.pricing} />
+      </div>
+      <div id="blog">
+        <BlogSection copy={copy.blog} posts={teaserPosts} />
+      </div>
       <CTASection copy={copy.cta} />
-      <ClientsSection copy={copy.clients} />
-      <ContactSection copy={copy.contact} />
+      <div id="clients">
+        <ClientsSection copy={copy.clients} />
+      </div>
+      <div id="contact">
+        <ContactSection copy={copy.contact} />
+      </div>
+
+      <SectionJump />
     </div>
   );
 }

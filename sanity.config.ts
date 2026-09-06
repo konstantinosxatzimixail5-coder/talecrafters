@@ -87,7 +87,7 @@ export default defineConfig({
             S.documentTypeListItem('writingSample').title('Writing samples'),
             S.divider(),
             S.documentTypeListItem('glossaryTerm').title('Glossary terms'),
-            S.documentTypeListItem('resource').title('Armoury resources'),
+            S.documentTypeListItem('resource').title('Supply Drop resources'),
             S.documentTypeListItem('faqGroup').title('FAQ sections'),
             S.documentTypeListItem('tool').title('Downloadable tools'),
             S.documentTypeListItem('cameraMove').title('Camera movements'),

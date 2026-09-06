@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useEffect, useState } from 'react';
 import { Accented } from '@/components/kit';
+import { HeroScrollCue } from '@/components/SectionJump';
 import type { HomeCopy } from '@/content/copy';
 
 function TypewriterText({ text, delay = 0 }: { text: string; delay?: number }) {
@@ -215,16 +216,9 @@ export function HeroSection({ copy }: { copy: HomeCopy['hero'] }) {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-16 right-8 flex flex-col items-center gap-2 tc-bob">
-        <div className="w-px h-12" style={{ backgroundColor: 'var(--brand-concrete-light)' }} />
-        <span
-          className="text-xs tracking-widest"
-          style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)', writingMode: 'vertical-rl' }}
-        >
-          SCROLL
-        </span>
-      </div>
+      {/* Scroll indicator. A button rather than a decoration: it used to bob at
+          a reader who had no way to act on it. */}
+      <HeroScrollCue targetId="studio" />
     </section>
   );
 }

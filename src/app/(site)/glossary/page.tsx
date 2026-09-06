@@ -10,16 +10,20 @@ import { abs, SITE_URL } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
-  title: `Generative & Synthetic Media Glossary — ${repoTerms.length} Terms`,
+  title: `Synthetic Media & Storytelling Glossary — ${repoTerms.length} Terms`,
   description:
-    `${repoTerms.length} terms from generative and synthetic media production, defined the way a producer needs them: agentic workflows, drift, master plates, acceptance rate, temporal coherence, disclosure, Article 50, cost per accepted asset and more.`,
+    `${repoTerms.length} terms from synthetic media production and story craft, defined the way a maker needs them: agentic workflows, drift, master plates, temporal coherence and disclosure, alongside three-act structure, the inciting incident, hooks, open loops, value shifts and the beat sheet.`,
   path: '/glossary',
   keywords: [
     'generative AI glossary',
     'synthetic media glossary',
+    'storytelling glossary',
+    'narrative structure terms',
+    'story structure glossary',
+    'video hook definition',
     'AI video terms',
     'AI marketing glossary',
-    'diffusion model glossary',
+    'screenwriting terms explained',
     'AI production terminology',
   ],
 });
@@ -37,6 +41,8 @@ const tagColor: Record<string, string> = {
   systems: 'var(--brand-cyan)',
   post: 'var(--brand-magenta)',
   strategy: 'var(--brand-violet)',
+  story: 'var(--brand-gold)',
+  audience: 'var(--brand-cyan)',
 };
 
 export default async function GlossaryIndex() {
@@ -53,10 +59,10 @@ export default async function GlossaryIndex() {
           {
             '@type': 'DefinedTermSet',
             '@id': `${SITE_URL}/glossary/#set`,
-            name: 'The TaleCrafters Glossary of Generative & Synthetic Media',
+            name: 'The TaleCrafters Glossary of Synthetic Media & Storytelling',
             url: abs('/glossary'),
             description:
-              `${terms.length} terms from generative and synthetic media production, defined for people who have to ship the work.`,
+              `${terms.length} terms from synthetic media production and story craft, defined for people who have to ship the work.`,
             publisher: { '@id': `${SITE_URL}/#organization` },
             hasDefinedTerm: terms.map((t) =>
               definedTermSchema({ term: t.term, slug: t.slug, short: t.short, tags: t.tags })

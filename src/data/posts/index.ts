@@ -45,7 +45,7 @@ export const posts: Post[] = [
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
 
-/** Posts that link to a given Armoury resource. Used to cross-link the two. */
+/** Posts that link to a given Supply Drop resource. Used to cross-link the two. */
 export const postsForResource = (slug: string) =>
   posts.filter((p) => p.resources?.includes(slug));
 

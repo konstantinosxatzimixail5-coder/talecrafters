@@ -14,7 +14,7 @@ export const metadata = pageMeta({
   title: 'Prompting Guide by Animation Style: 12 Styles, Free',
   description:
     'How to prompt cel animation, anime, claymation, stylised 3D, storybook, motion graphics, comic, papercraft, rotoscope, pixel art, watercolour and retro 3D. Scaffold, working keywords, the failure each style invites, and a prompt you can paste.',
-  path: '/armoury/animation-prompting',
+  path: '/supply-drop/animation-prompting',
   keywords: [
     'animation style prompts',
     'AI animation prompting guide',
@@ -28,8 +28,8 @@ export const metadata = pageMeta({
 
 const crumbs = [
   { name: 'Home', path: '/' },
-  { name: 'The Armoury', path: '/armoury' },
-  { name: 'Animation Prompting', path: '/armoury/animation-prompting' },
+  { name: 'The Supply Drop', path: '/supply-drop' },
+  { name: 'Animation Prompting', path: '/supply-drop/animation-prompting' },
 ];
 
 const qa = [
@@ -67,7 +67,7 @@ export default async function AnimationPromptingPage() {
             name: 'How to prompt a specific animation style',
             description:
               'Name the technique, then the surface behaviour, then what must be absent, then the subject.',
-            url: abs('/armoury/animation-prompting'),
+            url: abs('/supply-drop/animation-prompting'),
             step: [
               { '@type': 'HowToStep', position: 1, name: 'Name the technique', text: 'Open with the production method (hand-drawn 2D cel animation, stop-motion claymation, layered cut paper) rather than a mood.' },
               { '@type': 'HowToStep', position: 2, name: 'Name the surface', text: 'State how the material behaves: paper tooth, thumbprints, line boil, halftone dots, pixel grid.' },
@@ -78,7 +78,7 @@ export default async function AnimationPromptingPage() {
           {
             '@type': 'ItemList',
             name: 'Animation styles and how to prompt them',
-            url: abs('/armoury/animation-prompting'),
+            url: abs('/supply-drop/animation-prompting'),
             numberOfItems: animationStyles.length,
             itemListElement: animationStyles.map((s, i) => ({
               '@type': 'ListItem',
@@ -237,7 +237,7 @@ export default async function AnimationPromptingPage() {
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/armoury/camera-movements"
+              href="/supply-drop/camera-movements"
               className="inline-block px-6 py-3 text-sm tracking-wider"
               style={{ fontFamily: 'var(--font-mono)', border: '1px solid var(--brand-cyan)', color: 'var(--brand-cyan)', textDecoration: 'none' }}
             >

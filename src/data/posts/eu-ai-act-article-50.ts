@@ -111,7 +111,7 @@ export const post: Post = {
     },
     {
       t: 'cta',
-      href: '/armoury/ai-advertising-disclosure-checklist',
+      href: '/supply-drop/ai-advertising-disclosure-checklist',
       label: 'Download the disclosure checklist',
       text: 'UK, EU and platform requirements on one page, arranged by asset type so the decision happens at brief stage. Free, no email gate.',
     },

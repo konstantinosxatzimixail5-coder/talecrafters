@@ -1,5 +1,7 @@
-// The Armoury. Free reference material, published without an email gate,
+// The Supply Drop. Free reference material, published without an email gate,
 // because a prompt list behind a form is a lead magnet rather than a resource.
+
+import { promptGuides, promptFamilies } from './prompt-guides';
 
 export interface Resource {
   slug: string;
@@ -45,6 +47,30 @@ export const resources: Resource[] = [
     blurb:
       'Cel, anime, claymation, stylised 3D, storybook, motion graphics, comic, papercraft, rotoscope, pixel, watercolour and retro 3D. Each entry gives the order to write the prompt in, the words that reliably move the model, the specific way that style fails, and a prompt you can paste.',
     forWhom: 'Anyone who has asked for claymation and been handed smooth plastic.',
+  },
+  {
+    slug: 'prompting-library',
+    title: 'The Prompting Library',
+    kicker: 'The scaffold behind the prompt, for every job a prompt has',
+    color: 'var(--brand-gold)',
+    count: `${promptGuides.length} guides`,
+    format: 'Scaffold, working prompt, failure mode, fix',
+    blurb:
+      `${promptGuides.length} prompting guides across ${promptFamilies.length} families: video and shot prompts, photoreal stills, character consistency, story and script prompting, inpainting and extension, and the system prompts that have to behave identically on run four hundred. Each one gives the slots in the order that survives, a prompt you can paste, the specific way that shape of prompt fails, and what to change when it does.`,
+    forWhom: 'Anyone whose prompts work sometimes and who wants to know which part was doing the work.',
+    metaTitle: 'The Prompting Library — Prompt Guides for AI Video, Image and Story',
+    metaDescription:
+      `${promptGuides.length} prompting guides for generative production: shot prompts, photoreal stills, character consistency, story and script prompting, post fixes and system prompts. Scaffold, working prompt, failure mode and fix for each.`,
+    keywords: [
+      'AI prompting guide',
+      'prompt library',
+      'AI video prompt guide',
+      'how to write AI video prompts',
+      'character consistency prompt',
+      'system prompt template',
+      'AI storytelling prompts',
+      'free prompt templates',
+    ],
   },
   {
     slug: 'synthetic-media-production-brief-template',
@@ -204,5 +230,5 @@ export const resources: Resource[] = [
 
 export const getResource = (slug: string) => resources.find((r) => r.slug === slug);
 
-/** Resources that ship as a PDF, i.e. those with a page under /armoury/[slug]. */
+/** Resources that ship as a PDF, i.e. those with a page under /supply-drop/[slug]. */
 export const downloadableResources = resources.filter((r) => r.pdf);

@@ -78,7 +78,7 @@ export interface Post {
   terms?: string[];
   /** Other post slugs worth reading next. */
   related?: string[];
-  /** Armoury resource slugs this post links to. */
+  /** Supply Drop resource slugs this post links to. */
   resources?: string[];
   sources?: PostSource[];
   /**

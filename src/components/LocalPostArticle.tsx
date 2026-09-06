@@ -286,7 +286,7 @@ export function LocalPostArticle({ post }: { post: Post }) {
               {resources.map((r) => (
                 <li key={r!.slug}>
                   <Link
-                    href={`/armoury/${r!.slug}`}
+                    href={`/supply-drop/${r!.slug}`}
                     className="block p-4"
                     style={{ border: '1px solid rgba(201,168,76,0.28)', textDecoration: 'none' }}
                   >

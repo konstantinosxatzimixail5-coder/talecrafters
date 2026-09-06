@@ -39,6 +39,8 @@ export const GLOSSARY_TAGS = [
   'systems',
   'post',
   'strategy',
+  'story',
+  'audience',
 ] as const;
 
 const coreTerms: Term[] = [

@@ -323,7 +323,7 @@ export const service = defineType({
 export const deliverable = pair('deliverable', 'Deliverable', 'name', 'detail');
 
 /** The blocks a downloadable tool is built from, mirroring the closed union
- *  that both the Armoury page and the PDF renderer accept. */
+ *  that both the Supply Drop page and the PDF renderer accept. */
 export const toolField = defineType({
   name: 'toolField',
   title: 'Field',

@@ -119,7 +119,7 @@ export const post: Post = {
     },
     {
       t: 'cta',
-      href: '/armoury/generative-film-shot-consistency-checklist',
+      href: '/supply-drop/generative-film-shot-consistency-checklist',
       label: 'Download the shot consistency checklist',
       text: 'The gates above as a printable checklist, with the pass criteria written out per shot type. Free, no email gate.',
     },

@@ -1,6 +1,6 @@
-// The seven downloadable tools in the Armoury.
+// The seven downloadable tools in the Supply Drop.
 //
-// One definition per tool, used twice: the /armoury/<slug> page renders it as
+// One definition per tool, used twice: the /supply-drop/<slug> page renders it as
 // a fully usable web document, and scripts/pdf/build.mjs renders the same data
 // into a branded PDF. Neither can drift from the other, and the page is the
 // canonical thing: the PDF is a copy of a document that already ranks, rather

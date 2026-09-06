@@ -152,7 +152,7 @@ export async function GET() {
   lines.push('## Free resources');
   lines.push('');
   for (const r of resources) {
-    lines.push(`- [${r.title}](${SITE_URL}/armoury/${r.slug}): ${r.count}. ${r.blurb}`);
+    lines.push(`- [${r.title}](${SITE_URL}/supply-drop/${r.slug}): ${r.count}. ${r.blurb}`);
   }
   lines.push('');
 

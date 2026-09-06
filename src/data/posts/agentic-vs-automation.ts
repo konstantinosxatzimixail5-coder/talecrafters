@@ -132,7 +132,7 @@ export const post: Post = {
     },
     {
       t: 'cta',
-      href: '/armoury/creative-automation-workflow-canvas',
+      href: '/supply-drop/creative-automation-workflow-canvas',
       label: 'Download the workflow canvas',
       text: 'A one-page canvas for mapping a creative process step by step, marking what a person decides, what a model drafts and what a script handles alone. Free, no email gate.',
     },

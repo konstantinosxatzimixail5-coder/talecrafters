@@ -12,7 +12,7 @@ import { pageMeta, breadcrumbSchema, howToSchema } from '@/lib/seo';
 import { abs, SITE_URL, site } from '@/lib/site';
 
 /**
- * The downloadable Armoury tools.
+ * The downloadable Supply Drop tools.
  *
  * Only resources carrying a `pdf` render here. The two original guides
  * (camera-movements, animation-prompting) have bespoke static routes, which
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return pageMeta({
     title: r.metaTitle ?? r.title,
     description: r.metaDescription ?? r.blurb,
-    path: `/armoury/${r.slug}`,
+    path: `/supply-drop/${r.slug}`,
     keywords: r.keywords,
   });
 }
@@ -207,7 +207,7 @@ function Blocks({ blocks, color }: { blocks: ToolBlock[]; color: string }) {
   );
 }
 
-export default async function ArmouryToolPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function SupplyDropToolPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const r = getResource(slug);
   const tool = (await getTools()).find((t) => t.slug === slug) ?? getTool(slug);
@@ -215,8 +215,8 @@ export default async function ArmouryToolPage({ params }: { params: Promise<{ sl
 
   const crumbs = [
     { name: 'Home', path: '/' },
-    { name: 'The Armoury', path: '/armoury' },
-    { name: r.title, path: `/armoury/${r.slug}` },
+    { name: 'The Supply Drop', path: '/supply-drop' },
+    { name: r.title, path: `/supply-drop/${r.slug}` },
   ];
 
   const relatedPosts = postsForResource(r.slug);
@@ -229,18 +229,18 @@ export default async function ArmouryToolPage({ params }: { params: Promise<{ sl
           howToSchema({
             name: r.title,
             description: r.metaDescription ?? r.blurb,
-            path: `/armoury/${r.slug}`,
+            path: `/supply-drop/${r.slug}`,
             steps: tool.howToUse.map((s, i) => ({ name: `Step ${i + 1}`, text: s })),
           }),
           // The download itself, described so it can be found and cited on its
           // own rather than only as an attachment to this page.
           {
             '@type': 'CreativeWork',
-            '@id': `${abs(`/armoury/${r.slug}`)}#resource`,
+            '@id': `${abs(`/supply-drop/${r.slug}`)}#resource`,
             name: r.title,
             headline: r.title,
             description: r.metaDescription ?? r.blurb,
-            url: abs(`/armoury/${r.slug}`),
+            url: abs(`/supply-drop/${r.slug}`),
             about: r.kicker,
             audience: { '@type': 'Audience', audienceType: r.forWhom },
             learningResourceType: r.format,
@@ -264,7 +264,7 @@ export default async function ArmouryToolPage({ params }: { params: Promise<{ sl
       />
 
       <PageHeader
-        eyebrow="THE ARMOURY"
+        eyebrow="THE SUPPLY DROP"
         title={r.title.toUpperCase()}
         color={r.color}
         crumbs={crumbs}
@@ -449,11 +449,11 @@ export default async function ArmouryToolPage({ params }: { params: Promise<{ sl
           )}
 
           <Link
-            href="/armoury"
+            href="/supply-drop"
             className="text-sm inline-flex items-center min-h-[24px]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-cyan)', textDecoration: 'none' }}
           >
-            &larr; Everything in the Armoury
+            &larr; Everything in the Supply Drop
           </Link>
         </div>
       </section>

@@ -14,7 +14,7 @@ export const metadata = pageMeta({
   title: '38 Cinematic Camera Movements for AI Video (Free Prompt Reference)',
   description:
     'Every camera movement we use in generative production: dolly, truck, crane, orbit, rack focus, whip pan, FPV dive and thirty-one more. Each with the direction in camera language and a prompt that produces it. Free, no email gate.',
-  path: '/armoury/camera-movements',
+  path: '/supply-drop/camera-movements',
   keywords: [
     'AI video camera movements',
     'camera movement prompts',
@@ -29,8 +29,8 @@ export const metadata = pageMeta({
 
 const crumbs = [
   { name: 'Home', path: '/' },
-  { name: 'The Armoury', path: '/armoury' },
-  { name: 'Camera Movements', path: '/armoury/camera-movements' },
+  { name: 'The Supply Drop', path: '/supply-drop' },
+  { name: 'Camera Movements', path: '/supply-drop/camera-movements' },
 ];
 
 const qa = [
@@ -70,7 +70,7 @@ export default async function CameraMovementsPage() {
             name: 'How to direct a camera move in a generative video model',
             description:
               'Name the move in camera-department language, put it first and alone, then describe the subject and the light.',
-            url: abs('/armoury/camera-movements'),
+            url: abs('/supply-drop/camera-movements'),
             step: [
               { '@type': 'HowToStep', position: 1, name: 'Name the move', text: 'Open with the movement in camera vocabulary (SLOW DOLLY IN, TRUCK LEFT, CRANE DOWN) as its own sentence.' },
               { '@type': 'HowToStep', position: 2, name: 'Keep it single', text: 'One move per shot. Compound moves fail because the model has to satisfy several constraints at once.' },
@@ -81,7 +81,7 @@ export default async function CameraMovementsPage() {
           {
             '@type': 'ItemList',
             name: '38 cinematic camera movements',
-            url: abs('/armoury/camera-movements'),
+            url: abs('/supply-drop/camera-movements'),
             numberOfItems: cameraMoves.length,
             itemListElement: cameraMoves.map((m, i) => ({
               '@type': 'ListItem',
@@ -231,7 +231,7 @@ export default async function CameraMovementsPage() {
           </div>
           <div className="mt-8">
             <Link
-              href="/armoury/animation-prompting"
+              href="/supply-drop/animation-prompting"
               className="inline-block px-6 py-3 text-sm tracking-wider"
               style={{ fontFamily: 'var(--font-mono)', border: '1px solid var(--brand-magenta)', color: 'var(--brand-magenta)', textDecoration: 'none' }}
             >

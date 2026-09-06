@@ -76,7 +76,7 @@ export const post = defineType({
     { ...arrayOf('sources', 'Sources', 'namedLink', 'Shown at the foot of the post and emitted as citations.'), group: 'extras' } as any,
     { ...strings('terms', 'Glossary terms', 'Slugs of the terms this post is about.'), group: 'extras' } as any,
     { ...strings('related', 'Related posts', 'Slugs of other posts worth reading next.'), group: 'extras' } as any,
-    { ...strings('resources', 'Armoury resources', 'Slugs of the free resources this post links to.'), group: 'extras' } as any,
+    { ...strings('resources', 'Supply Drop resources', 'Slugs of the free resources this post links to.'), group: 'extras' } as any,
     defineField({ name: 'legalNotice', title: 'Show the legal notice', type: 'boolean', group: 'extras', description: 'Set on anything touching law or regulation.' }),
     defineField({ name: 'metaTitle', title: 'Meta title', type: 'string', group: 'seo', description: 'Overrides the title in the browser tab and in search results.' }),
     defineField({ name: 'metaDescription', title: 'Meta description', type: 'text', rows: 2, group: 'seo' }),
@@ -210,7 +210,7 @@ export const faqGroup = defineType({
 
 export const resource = defineType({
   name: 'resource',
-  title: 'Armoury resource',
+  title: 'Supply Drop resource',
   type: 'document',
   fields: [
     defineField({ name: 'title', title: 'Title', type: 'string', validation: (R) => R.required() }),
@@ -447,7 +447,7 @@ export const tool = defineType({
     defineField({
       name: 'slug', title: 'Resource', type: 'slug',
       validation: (R) => R.required(),
-      description: 'Must match the Armoury resource this document belongs to. The same definition renders the page and the branded PDF.',
+      description: 'Must match the Supply Drop resource this document belongs to. The same definition renders the page and the branded PDF.',
     }),
     defineField({
       name: 'intro', title: 'Intro', type: 'array',
@@ -483,7 +483,7 @@ export const navMenu = defineType({
       ] },
       validation: (R) => R.required(),
     }),
-    defineField({ name: 'label', title: 'Heading', type: 'string', description: 'DIVISIONS, ARMOURY, INTEL, or the group title in the overlay.' }),
+    defineField({ name: 'label', title: 'Heading', type: 'string', description: 'DIVISIONS, SUPPLY DROP, INTEL, or the group title in the overlay.' }),
     defineField({ name: 'color', title: 'Accent colour', type: 'string', description: 'A CSS variable, e.g. var(--brand-gold).' }),
     defineField({
       name: 'href', title: 'Direct link', type: 'string',

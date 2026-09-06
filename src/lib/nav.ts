@@ -2,8 +2,6 @@
 // overlay and the footer. Both read this file, so a new page cannot appear in
 // one and go missing from the other.
 
-import { terms } from '@/data/glossary';
-
 export interface NavLeaf {
   label: string;
   href: string;
@@ -38,10 +36,11 @@ export const primaryNav: NavEntry[] = [
     ],
   },
   {
-    label: 'ARMOURY',
+    label: 'SUPPLY DROP',
     color: GOLD,
     items: [
-      { label: 'Free Resources', href: '/armoury', note: '38 camera moves and 12 animation styles' },
+      { label: 'Free Resources', href: '/supply-drop', note: 'Templates, checklists and reference. No email gate.' },
+      { label: 'Prompting Library', href: '/supply-drop/prompting-library', note: 'Prompting guides for video, image and story' },
       { label: 'AI Filmmaking Workflows', href: '/films', note: 'Three originals, published with their process' },
       { label: 'GenAI Workflows', href: '/pipelines', note: 'The production pipelines, published in full' },
     ],
@@ -51,7 +50,7 @@ export const primaryNav: NavEntry[] = [
     color: MAGENTA,
     items: [
       { label: 'Blog', href: '/blog', note: 'Dispatches from the frontline' },
-      { label: 'Glossary', href: '/glossary', note: `${terms.length} terms, no fog` },
+      { label: 'Glossary', href: '/glossary', note: 'Synthetic media and storytelling terms' },
     ],
   },
 ];
@@ -85,14 +84,15 @@ export const navGroups: NavGroup[] = [
     ],
   },
   {
-    title: 'THE ARMOURY',
+    title: 'THE SUPPLY DROP',
     color: GOLD,
     items: [
-      { label: 'Free Resources', href: '/armoury', note: 'Take them. No email gate.' },
+      { label: 'Free Resources', href: '/supply-drop', note: 'Templates, checklists and reference. No email gate.' },
+      { label: 'Prompting Library', href: '/supply-drop/prompting-library', note: 'Prompting guides for video, image and story' },
       { label: 'AI Filmmaking Workflows', href: '/films', note: 'Three originals, with the working behind each' },
       { label: 'GenAI Workflows', href: '/pipelines', note: 'How the work actually gets made' },
       { label: 'Blog', href: '/blog', note: 'Dispatches from the frontline' },
-      { label: 'Glossary', href: '/glossary', note: `${terms.length} terms, no fog` },
+      { label: 'Glossary', href: '/glossary', note: 'Synthetic media and storytelling terms' },
       { label: 'FAQ', href: '/faq', note: 'The questions everyone asks' },
     ],
   },

@@ -143,7 +143,7 @@ export const post: Post = {
     },
     {
       t: 'cta',
-      href: '/armoury/ai-video-cost-calculator',
+      href: '/supply-drop/ai-video-cost-calculator',
       label: 'Open the cost calculator',
       text: 'We publish the arithmetic we use to quote, including the acceptance-rate assumptions per shot type. Free, no email gate.',
     },

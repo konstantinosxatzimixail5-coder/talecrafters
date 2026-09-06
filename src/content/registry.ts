@@ -17,7 +17,8 @@
 // remember to update. That is a fair trade to offer, as long as it is stated.
 
 import { resources, getResource } from '@/data/resources';
-import { terms } from '@/data/glossary';
+import { promptGuides, promptFamilies } from '@/data/prompt-guides';
+import { terms, GLOSSARY_TAGS } from '@/data/glossary';
 import { captures } from '@/data/captures';
 import { films } from '@/data/films';
 import { conceptBrands } from '@/data/concept';
@@ -215,7 +216,7 @@ export const copyRegistry = {
   // ------------------------------------------------------ shared sections ---
   filmsSection: {
     title: 'AI Filmmaking Workflows (section)',
-    path: '/armoury',
+    path: '/supply-drop',
     order: 20,
     sections: {
       main: section('Section', {
@@ -228,7 +229,7 @@ export const copyRegistry = {
             5
           ),
         },
-        'The originals, as they appear inside the Armoury page.'
+        'The originals, as they appear inside the Supply Drop page.'
       ),
     },
   },
@@ -368,13 +369,17 @@ export const copyRegistry = {
     },
   },
 
+  // The page id stays `armoury` on purpose. It is the Sanity document id, so
+  // renaming it would orphan whatever an editor has already typed into this
+  // page and silently drop it back to the fallbacks. The name a reader sees is
+  // in `title` and in the eyebrow; this key is plumbing.
   armoury: {
-    title: 'The Armoury',
-    path: '/armoury',
+    title: 'The Supply Drop',
+    path: '/supply-drop',
     order: 70,
     sections: {
       header: header({
-        eyebrow: 'THE ARMOURY',
+        eyebrow: 'THE SUPPLY DROP',
         title: 'TAKE IT.',
         accentWord: 'NO EMAIL GATE.',
         lede: 'The templates, checklists and reference sheets we actually use, published in full and downloadable as PDFs. No form, no download wall, no drip sequence waiting on the other side. Use them commercially, change them, put your own name on the version you end up with.',
@@ -392,16 +397,16 @@ export const copyRegistry = {
   },
 
   cameraMovements: {
-    title: 'Armoury · 38 Camera Movements',
-    path: '/armoury/camera-movements',
+    title: 'Supply Drop · 38 Camera Movements',
+    path: '/supply-drop/camera-movements',
     order: 71,
     sections: {
       header: header({
-        eyebrow: 'FREE RESOURCE 01 · THE ARMOURY',
+        eyebrow: 'FREE RESOURCE 01 · THE SUPPLY DROP',
         title: '38 CAMERA',
         accentWord: 'MOVEMENTS',
         lede: getResource('camera-movements')?.blurb ?? '',
-        ledeNote: 'Defaults to the blurb written on the resource itself, so the Armoury card and this page say the same thing.',
+        ledeNote: 'Defaults to the blurb written on the resource itself, so the Supply Drop card and this page say the same thing.',
         meta: [
           { label: 'Moves', value: '38' },
           { label: 'Families', value: '7' },
@@ -424,16 +429,16 @@ export const copyRegistry = {
   },
 
   animationPrompting: {
-    title: 'Armoury · Prompting by Animation Style',
-    path: '/armoury/animation-prompting',
+    title: 'Supply Drop · Prompting by Animation Style',
+    path: '/supply-drop/animation-prompting',
     order: 72,
     sections: {
       header: header({
-        eyebrow: 'FREE RESOURCE 02 · THE ARMOURY',
+        eyebrow: 'FREE RESOURCE 02 · THE SUPPLY DROP',
         title: 'PROMPTING BY',
         accentWord: 'ANIMATION STYLE',
         lede: getResource('animation-prompting')?.blurb ?? '',
-        ledeNote: 'Defaults to the blurb written on the resource itself, so the Armoury card and this page say the same thing.',
+        ledeNote: 'Defaults to the blurb written on the resource itself, so the Supply Drop card and this page say the same thing.',
         meta: [
           { label: 'Styles', value: '12' },
           { label: 'Each entry', value: 'Scaffold, keywords, failure, example' },
@@ -450,6 +455,39 @@ export const copyRegistry = {
             'A style name is a request. A list of artefacts is an instruction. Every entry below is built the same way (technique, surface, absence, subject) because the thing that produces a style reliably is naming what must not be in the frame.',
             6,
             'Plain text. The emphasis on "not" is applied by the page.'
+          ),
+        },
+      },
+    },
+  },
+
+  promptingLibrary: {
+    title: 'Supply Drop · The Prompting Library',
+    path: '/supply-drop/prompting-library',
+    order: 73,
+    sections: {
+      header: header({
+        eyebrow: 'FREE RESOURCE · THE SUPPLY DROP',
+        title: 'THE PROMPTING',
+        accentWord: 'LIBRARY',
+        lede: getResource('prompting-library')?.blurb ?? '',
+        ledeNote: 'Defaults to the blurb written on the resource itself, so the Supply Drop card and this page say the same thing.',
+        meta: [
+          { label: 'Guides', value: `${promptGuides.length}` },
+          { label: 'Families', value: `${promptFamilies.length}` },
+          { label: 'Each entry', value: 'Scaffold, prompt, failure, fix' },
+          { label: 'Gate', value: 'None. Take it.' },
+        ],
+        metaNote: `The guide and family counts are counted (currently ${promptGuides.length} and ${promptFamilies.length}). ${DERIVED}`,
+      }),
+      theRule: {
+        title: 'The one rule',
+        fields: {
+          label: str('Label', 'THE ONE RULE'),
+          body: text(
+            'Body',
+            'Constraint first, description last. A prompt is read in order and the model spends its attention as it goes, so whatever you put at the front is what you get: open with the instruction that must survive, name the single action, state what is not allowed to change, and leave the adjectives until the end or leave them out. Every guide below is the same six lines in a different order for a different job.',
+            6
           ),
         },
       },
@@ -537,9 +575,16 @@ export const copyRegistry = {
     sections: {
       header: header({
         eyebrow: 'THE GLOSSARY',
-        title: `${terms.length} TERMS,`,
-        accentWord: 'NO FOG',
-        lede: 'Every term here is defined the way a producer needs it rather than the way a paper defines it: what it is, what it costs you when it goes wrong, and what to do about that. Each one has its own page with the questions people actually type.',
+        title: 'SYNTHETIC MEDIA',
+        accentWord: 'AND STORYTELLING TERMS',
+        lede: 'Two vocabularies in one place, because the work needs both. The production half covers what the machinery does and what it costs you when it goes wrong. The story half covers the part that decides whether anybody watches: structure, beats, turns, hooks and the reasons attention leaves. Each term has its own page with the questions people actually type.',
+        meta: [
+          { label: 'Terms', value: `${terms.length}` },
+          { label: 'Topics', value: `${GLOSSARY_TAGS.length}` },
+          { label: 'Each entry', value: 'Definition, working notes, questions' },
+          { label: 'Gate', value: 'None' },
+        ],
+        metaNote: `The term and topic counts are counted (currently ${terms.length} and ${GLOSSARY_TAGS.length}). ${DERIVED}`,
       }),
     },
   },

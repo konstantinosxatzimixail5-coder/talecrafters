@@ -24,7 +24,7 @@ const ROUTES: Record<string, (slug: string) => string[]> = {
   caseStudy: (s) => [`/work/${s}`, '/work'],
   film: (s) => [`/films/${s}`, '/films'],
   pipeline: (s) => [`/pipelines/${s}`, '/pipelines'],
-  resource: (s) => [`/armoury/${s}`, '/armoury'],
+  resource: (s) => [`/supply-drop/${s}`, '/supply-drop'],
   glossaryTerm: (s) => [`/glossary/${s}`, '/glossary'],
   solution: (s) => [`/${s}`],
   writingSample: () => ['/writing'],
@@ -32,9 +32,9 @@ const ROUTES: Record<string, (slug: string) => string[]> = {
   capture: () => ['/captures'],
   faqGroup: () => ['/faq'],
   arsenalCategory: () => ['/arsenal'],
-  cameraMove: () => ['/armoury/camera-movements'],
-  animationStyle: () => ['/armoury/animation-prompting'],
-  tool: () => ['/armoury'],
+  cameraMove: () => ['/supply-drop/camera-movements'],
+  animationStyle: () => ['/supply-drop/animation-prompting'],
+  tool: () => ['/supply-drop'],
 };
 
 /**

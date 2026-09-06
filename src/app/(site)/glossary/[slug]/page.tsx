@@ -37,6 +37,8 @@ const tagColor: Record<string, string> = {
   systems: 'var(--brand-cyan)',
   post: 'var(--brand-magenta)',
   strategy: 'var(--brand-violet)',
+  story: 'var(--brand-gold)',
+  audience: 'var(--brand-cyan)',
 };
 
 export default async function TermPage({ params }: { params: Promise<{ slug: string }> }) {

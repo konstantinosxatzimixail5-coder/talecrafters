@@ -120,7 +120,7 @@ export const post: Post = {
     },
     {
       t: 'cta',
-      href: '/armoury/ai-advertising-disclosure-checklist',
+      href: '/supply-drop/ai-advertising-disclosure-checklist',
       label: 'Download the disclosure checklist',
       text: 'The decision tree above as a one-page checklist covering UK, EU and platform requirements per asset type. Free, no email gate.',
     },

@@ -43,7 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...films.map((f) => page(`/films/${f.slug}`, 0.8, 'monthly')),
     page('/pipelines', 0.8, 'monthly'),
     page('/writing', 0.7, 'monthly'),
-    page('/armoury', 0.8, 'monthly'),
+    page('/supply-drop', 0.8, 'monthly'),
     page('/glossary', 0.8, 'weekly'),
     page('/packages', 0.7, 'monthly'),
     page('/faq', 0.7, 'monthly'),
@@ -56,7 +56,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const generated: MetadataRoute.Sitemap = [
     ...work.map((w) => page(`/work/${w.slug}`, 0.8, 'monthly')),
     ...pipelines.map((p) => page(`/pipelines/${p.slug}`, 0.7, 'monthly')),
-    ...resources.map((r) => page(`/armoury/${r.slug}`, 0.75, 'monthly')),
+    ...resources.map((r) => page(`/supply-drop/${r.slug}`, 0.75, 'monthly')),
     ...resources.filter((r) => r.pdf).map((r) => page(r.pdf!, 0.5, 'yearly')),
     ...terms.map((t) => page(`/glossary/${t.slug}`, 0.6, 'monthly')),
     ...GLOSSARY_TAGS.map((t) => page(`/glossary/tag/${t}`, 0.5, 'monthly')),
