@@ -30,6 +30,7 @@ export interface Term {
 
 // Type-only in the other direction, so there is no runtime cycle.
 import { additionalTerms } from './glossary-additions';
+import { storyTerms } from './glossary-story';
 
 export const GLOSSARY_TAGS = [
   'production',
@@ -992,7 +993,7 @@ const coreTerms: Term[] = [
   },
 ];
 
-export const terms: Term[] = [...coreTerms, ...additionalTerms];
+export const terms: Term[] = [...coreTerms, ...additionalTerms, ...storyTerms];
 
 export const getTerm = (slug: string) => terms.find((t) => t.slug === slug);
 
