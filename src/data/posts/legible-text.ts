@@ -23,11 +23,11 @@ export const post: Post = {
   image: 'legible-text',
   imageAlt: 'A product label rendered four times, each with a different plausible misspelling.',
   standfirst:
-    'Type fails in generative images because letterforms are learned as texture and never as symbols, so the model produces something shaped like the word. The production answer is not a better prompt: generate the plate without the type and set it in post, which is also how the shot should have been built.',
+    'Type fails in generative images because letterforms are learned as texture and never as symbols, so the model produces something shaped like the word. The production answer is to generate the plate without the type and set it in post, which is also how the shot should have been built.',
   body: [
     {
       t: 'p',
-      text: 'Every other generative failure has degrees. A slightly wrong shadow is usable, a slightly wrong material is usable, a slightly wrong face at a small size is often usable. Type has no degrees. The word is right or the frame is dead, and "nearly right" is the most dangerous outcome because it survives a quick review and reaches a client.',
+      text: 'Every other generative failure has degrees. A slightly wrong shadow is usable. A slightly wrong face at a small size is often usable. Type has no degrees. The word is right or the frame is dead, and "nearly right" is the most dangerous outcome because it survives a quick review and reaches a client.',
     },
     { t: 'h2', text: 'Why it happens' },
     {
@@ -36,7 +36,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'That is why the failures look the way they do. Not gibberish. Plausible near-words, correct letter frequencies, believable kerning. It is producing something shaped like the word, and shape is what it was optimising.',
+      text: 'That is why the failures look the way they do. Plausible near-words with believable kerning, every letter frequency where a reader expects it. It is producing something shaped like the word, and shape is what it was optimising.',
     },
     { t: 'h2', text: 'What improves it, and by how much' },
     {
@@ -71,7 +71,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'This is not a workaround',
-      text: 'Compositing type is how packaging photography has been finished for thirty years. Generating the plate and setting the type is not a concession to the model’s limitation, it is the correct build order, and it happens to also be cheaper.',
+      text: 'Compositing type is how packaging photography has been finished for thirty years. Generating the plate and setting the type is the correct build order, and it happens to also be cheaper.',
     },
     { t: 'h2', text: 'The video case, which is worse' },
     {
@@ -106,7 +106,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'Why can AI image models not spell?',
-      a: 'Because letterforms are learned as texture and never as symbols. The model has learned the density, rhythm and shape statistics of type. What it never learned is that substituting one glyph changes the meaning, so it produces something shaped like the word.',
+      a: 'Because letterforms are learned as texture and never as symbols. The model has learned the density and shape statistics of type. What it never learned is that substituting one glyph changes the meaning, so it produces something shaped like the word.',
     },
     {
       q: 'Does regenerating help get text right?',
@@ -122,7 +122,7 @@ export const post: Post = {
     },
     {
       q: 'When is generated text acceptable?',
-      a: 'Deliberately illegible background signage, texture nobody is expected to read, and single very short words front-on and large in a non-photoreal register. Never on a product label, a legal line, a price or a claim.',
+      a: 'Deliberately illegible background signage, and single very short words front-on and large in a non-photoreal register. Never on a product label, a legal line, a price or a claim.',
     },
   ],
   terms: ['acceptance-rate', 'master-plate', 'inpainting', 'gate', 'substantiation'],

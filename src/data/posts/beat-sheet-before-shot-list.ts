@@ -23,16 +23,16 @@ export const post: Post = {
   image: 'beat-sheet-before-shot-list',
   imageAlt: 'A beat sheet with each line annotated by the number of shots it will require.',
   standfirst:
-    'The shot list determines the render count and therefore the budget, and the shot list is derived from the beats. Changing a beat costs a sentence; changing it after the shot list has been generated costs the shots. Write the beats first, test them, then derive.',
+    'The shot list determines the render count and therefore the budget, and the shot list is derived from the beats. Changing a beat costs a sentence; changing it after the shot list has been generated costs the shots. Write the beats first and test them before deriving anything.',
   body: [
     {
       t: 'p',
-      text: 'In conventional production the schedule is the budget: days, crew, locations. In generative production the shot list is the budget, because each distinct shot is a set of attempts and the attempts are the cost. That makes the document upstream of the shot list (the beat sheet) the most financially consequential page in the project, and it is usually the one nobody writes.',
+      text: 'In conventional production the schedule is the budget, counted in crew days. In generative production the shot list is the budget, because each distinct shot is a set of attempts and the attempts are the cost. That makes the document upstream of the shot list (the beat sheet) the most financially consequential page in the project, and it is usually the one nobody writes.',
     },
     { t: 'h2', text: 'What a beat sheet is' },
     {
       t: 'p',
-      text: 'One line per beat, and each line states the turn. What the character wants going in, what stops them, and what is different coming out. A list of events that does not name what changed is a running order, and a running order cannot be wrong, which means it cannot be improved.',
+      text: 'One line per beat, and each line states the turn. What the character wants going in, what stops them, how it ends, and what is different coming out. A list of events that does not name what changed is a running order, and a running order cannot be wrong, which means it cannot be improved.',
     },
     {
       t: 'p',
@@ -71,7 +71,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Run that table over a beat sheet and the expensive beats identify themselves before anybody has generated anything. Frequently one beat accounts for a third of the projected cost, and frequently it is not the beat anyone would have guessed.',
+      text: 'Run that table over a beat sheet and the expensive beats identify themselves before anybody has generated anything. One beat frequently accounts for a third of the projected cost, and it is rarely the beat anyone would have guessed.',
     },
     {
       t: 'note',
@@ -92,11 +92,11 @@ export const post: Post = {
     { t: 'h2', text: 'Why this discipline slipped' },
     {
       t: 'p',
-      text: 'Because generation is available before writing is finished, and it is enormously more fun. The historical constraint that forced a script to exist first was cost, and cost has moved to a different part of the process without moving the requirement.',
+      text: 'Because generation is available before writing is finished, and it is more fun. The historical constraint that forced a script to exist first was cost, and cost has moved to a different part of the process without moving the requirement.',
     },
     {
       t: 'p',
-      text: 'The consequence is a specific and now common failure: a project with forty beautiful shots, no structural spine, and no budget left to fix it. Every one of those we have been asked to rescue would have cost a fraction of the rescue fee to prevent with an afternoon and a page.',
+      text: 'The consequence is a specific and now common failure: a project with forty beautiful shots and no budget left to give them a spine. Every one of those we have been asked to rescue would have cost a fraction of the rescue fee to prevent with an afternoon and a page.',
     },
     {
       t: 'cta',
