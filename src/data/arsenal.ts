@@ -181,7 +181,7 @@ export const arms: Arm[] = [
     slug: 'originals',
     num: '03',
     name: 'TALECRAFTERS / ORIGINALS',
-    line: 'We create our own films, games and stories.',
+    line: 'We create our own films and games, and the stories under both.',
     color: 'var(--brand-gold)',
     href: '/originals',
     blurb:

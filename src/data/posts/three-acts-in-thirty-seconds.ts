@@ -35,9 +35,9 @@ export const post: Post = {
       caption: 'Three acts at three lengths',
       head: ['Act', '30 seconds', '90 seconds', 'What it must contain'],
       rows: [
-        ['One: situation', '5–8 seconds', '15–25 seconds', 'Someone, wanting something, in a world with a rule in it'],
-        ['Two: complication', '12–18 seconds', '40–55 seconds', 'The want obstructed, and one attempt that fails'],
-        ['Three: resolution', '5–10 seconds', '15–25 seconds', 'The answer, and the changed state'],
+        ['One: situation', '5-8 seconds', '15-25 seconds', 'Someone, wanting something, in a world with a rule in it'],
+        ['Two: complication', '12-18 seconds', '40-55 seconds', 'The want obstructed, and one attempt that fails'],
+        ['Three: resolution', '5-10 seconds', '15-25 seconds', 'The answer, and the changed state'],
       ],
     },
     {

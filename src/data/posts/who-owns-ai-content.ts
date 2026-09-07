@@ -87,7 +87,7 @@ export const post: Post = {
         'The project files: edit timelines, composites, layered masters.',
         'The lock file and the reference set, which is what allows the work to be continued by somebody else.',
         'The consent files for every real person whose likeness or voice appears, held by the client as well as the studio.',
-        'The input schedule: what went in, where it came from, and what clearance it carries.',
+        'The input schedule: what went in, where each item came from, and the clearance attached to it.',
         'The run log, if provenance or substantiation is likely to be questioned later.',
       ],
     },

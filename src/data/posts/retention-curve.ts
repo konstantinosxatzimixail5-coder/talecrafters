@@ -36,7 +36,7 @@ export const post: Post = {
       head: ['Feature', 'What it measures', 'The edit note'],
       rows: [
         [
-          'Opening cliff (0–3s)',
+          'Opening cliff (0-3s)',
           'The hook, and nothing else',
           'Rewrite the first line, or the first frame. Nothing later in the piece can affect this number.',
         ],

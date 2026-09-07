@@ -355,7 +355,7 @@ export const profilePageSchema = (p: { slug: string; name: string }) => ({
   '@type': 'ProfilePage',
   '@id': abs(`/authors/${p.slug}/#page`),
   url: abs(`/authors/${p.slug}`),
-  name: `${p.name} — TaleCrafters`,
+  name: `${p.name}: TaleCrafters`,
   mainEntity: { '@id': abs(`/authors/${p.slug}/#person`) },
   inLanguage: 'en-GB',
 });
@@ -374,7 +374,7 @@ export const caseStudySchema = (w: {
 }) => ({
   '@type': 'CreativeWork',
   '@id': abs(`/work/${w.slug}/#work`),
-  name: `${w.client} — ${w.title}`,
+  name: `${w.client}: ${w.title}`,
   headline: w.title,
   abstract: w.summary,
   description: w.summary,

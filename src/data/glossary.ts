@@ -171,7 +171,7 @@ const coreTerms: Term[] = [
     slug: 'character-consistency',
     term: 'Character Consistency',
     short:
-      'Keeping the same face, body and wardrobe recognisably identical across shots, scenes and sessions.',
+      'Keeping the same face and body recognisably identical, wardrobe included, across every shot and every session.',
     tags: ['production', 'control'],
     body: [
       'This is the single hardest problem in synthetic production and the one that decides whether a piece of work is a demo or a campaign. Audiences tolerate a great deal of oddity in a generated frame; they do not tolerate a presenter whose jaw changes between two adverts in the same set.',
@@ -229,7 +229,7 @@ const coreTerms: Term[] = [
       },
       {
         q: 'Is generative production cheaper?',
-        a: 'For the right brief, by a wide margin: no crew, no location, no reshoot. For a brief that needs a real face, a real place and a real product on the same day, often not. We say which one you have before quoting.',
+        a: 'For the right brief, by a wide margin: no crew and no location, and nobody paying for a reshoot in November. For a brief that needs a real face, a real place and a real product on the same day, often not. We say which one you have before quoting.',
       },
     ],
     related: ['agentic-workflow', 'operator-stack', 'gate'],
@@ -311,7 +311,7 @@ const coreTerms: Term[] = [
     qa: [
       {
         q: 'Do I have to label AI-generated ads?',
-        a: 'On most major platforms, yes, for realistic synthetic depictions of people, places or events. Advertising codes on misleading representation apply independently, and the EU AI Act adds transparency duties for certain content.',
+        a: 'On most major platforms, yes, for realistic synthetic depictions of a person, a place or an event that a viewer would take as real. Advertising codes on misleading representation apply independently, and the EU AI Act adds transparency duties for certain content.',
       },
       {
         q: 'Where should the AI label go?',
@@ -362,7 +362,7 @@ const coreTerms: Term[] = [
   },
   {
     slug: 'first-last-frame',
-    term: 'First–Last Frame',
+    term: 'First-Last Frame',
     aka: ['keyframe interpolation', 'FLF'],
     short:
       'Handing a video model a start image and an end image and asking it to generate the motion between them.',
@@ -622,7 +622,7 @@ const coreTerms: Term[] = [
     qa: [
       {
         q: 'What should I put in a negative prompt?',
-        a: 'The specific artefacts you are getting, named as objects. Nothing aspirational, nothing abstract, and nothing you have not personally seen the model produce.',
+        a: 'The specific artefacts you are getting, named as objects. Nothing aspirational or abstract, and nothing you have not watched the model produce.',
       },
     ],
     related: ['prompt-engineering', 'cfg-scale', 'diffusion-model'],
@@ -939,7 +939,7 @@ const coreTerms: Term[] = [
       'Increasing the resolution of a generated frame or clip, adding plausible detail. Nothing real is recovered.',
     tags: ['post'],
     body: [
-      'Upscaling invents. That is fine on skin, fabric and foliage, and it is a problem on type, logos and any fine structure a viewer knows the shape of, where invented detail reads as a defect.',
+      'Upscaling invents. That is fine on skin and fabric, and on foliage nobody counts. It is a problem on type, on logos, and on any fine structure a viewer knows the shape of, where invented detail reads as a defect.',
       'The working order is: approve at working resolution, run the gates, then upscale the survivors and check the label again. Upscaling before selection is how a budget disappears into frames nobody ships.',
     ],
     qa: [
@@ -963,7 +963,7 @@ const coreTerms: Term[] = [
     qa: [
       {
         q: 'How much audio do you need to clone a voice?',
-        a: 'One to three minutes for an instant clone, thirty minutes to three hours for a trained one. The longer version is noticeably better at emotion, pacing and emphasis.',
+        a: 'One to three minutes for an instant clone, thirty minutes to three hours for a trained one. The longer version is better at emotion and pacing, and it puts emphasis where you asked for it.',
       },
       {
         q: 'Is voice cloning legal for advertising?',

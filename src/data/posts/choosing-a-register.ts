@@ -21,7 +21,7 @@ export const post: Post = {
     'brand visual register',
   ],
   image: 'choosing-a-register',
-  imageAlt: 'The same scene rendered as photoreal, illustrated, and graphic, with costs beneath each.',
+  imageAlt: 'The same scene rendered three ways, photoreal and illustrated and flat graphic, with the cost under each.',
   standfirst:
     'Photoreal carries the narrowest error tolerance of any register, because the audience has a lifetime of reference for what it should look like. Stylised registers widen that tolerance enormously, cost well under photoreal to produce, and tend to be more distinctive. Choose deliberately.',
   body: [

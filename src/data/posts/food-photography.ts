@@ -110,7 +110,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Documentation, though, is free and can happen during service. A chef photographing plates as they leave the pass in August produces the reference set for work that gets made in November and published in March. That sequencing is the actual unlock, and it costs nothing but a decision made in August.',
+      text: 'Documentation, though, is free and can happen during service. A chef photographing plates as they leave the pass in August produces the reference set for work that gets made in November and published in March. That sequencing is what makes the arithmetic work, and it costs nothing but a decision made in August.',
     },
     {
       t: 'p',

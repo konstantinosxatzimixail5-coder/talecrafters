@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'cutting-ai-video',
   imageAlt: 'An edit timeline with cut points marked on motion peaks.',
   standfirst:
-    'Two generated clips share no camera, no lens and no light. Editing is what makes them read as one piece: cut on motion, vary shot size across every join, and let sound carry the continuity the pictures cannot.',
+    'Two generated clips share no camera and no lens, and nothing about how either was lit. Editing is what makes them read as one piece: cut on motion, vary shot size across every join, and let sound carry the continuity the pictures cannot.',
   body: [
     {
       t: 'p',

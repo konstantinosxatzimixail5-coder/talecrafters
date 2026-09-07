@@ -62,11 +62,11 @@ export const post: Post = {
       head: ['If the beat needs…', 'Shots', 'Attempts multiplier', 'Why'],
       rows: [
         ['A wide with no people', '1', 'Low', 'Environment plates have the highest acceptance rate of anything.'],
-        ['A recurring face', '2–3', 'Medium', 'Identity has to be conditioned and checked against the reference.'],
-        ['Legible product type', '1–2', 'High', 'Type is the least reliably reconstructed thing there is, with no partial credit.'],
+        ['A recurring face', '2-3', 'Medium', 'Identity has to be conditioned and checked against the reference.'],
+        ['Legible product type', '1-2', 'High', 'Type is the least reliably reconstructed thing there is, with no partial credit.'],
         ['Hands doing something', '2', 'High', 'The failure everybody sees, and the first one an untrained viewer catches.'],
-        ['Two people interacting', '3–4', 'High', 'Geometry, facing and identity all have to hold at once.'],
-        ['A dialogue exchange', '4–6', 'Medium', 'Coverage, and lip-sync adds a separate failure mode.'],
+        ['Two people interacting', '3-4', 'High', 'Geometry, facing and identity all have to hold at once.'],
+        ['A dialogue exchange', '4-6', 'Medium', 'Coverage, and lip-sync adds a separate failure mode.'],
       ],
     },
     {

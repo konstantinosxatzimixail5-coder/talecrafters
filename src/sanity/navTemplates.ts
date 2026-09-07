@@ -36,7 +36,7 @@ const templateId = (menu: string, label: string) =>
 export const navTemplates: Template[] = [
   ...primaryNav.map((entry, i) => ({
     id: templateId('primary', entry.label),
-    title: `${entry.label} — top bar`,
+    title: `${entry.label}: top bar`,
     schemaType: 'navMenu',
     value: {
       menu: 'primary',
@@ -49,7 +49,7 @@ export const navTemplates: Template[] = [
   })),
   ...navGroups.map((group, i) => ({
     id: templateId('overlay', group.title),
-    title: `${group.title} — overlay and footer`,
+    title: `${group.title}: overlay and footer`,
     schemaType: 'navMenu',
     value: {
       menu: 'overlay',

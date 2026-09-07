@@ -162,7 +162,7 @@ export function ContactSection({ copy, hideHeading = false }: { copy: HomeCopy['
   /* Where this section sits decides how it should arrive.
      On the home page it is the last thing on a long scroll, so a
      `whileInView` reveal is exactly right. On /contact, where the page header
-     is suppressed, the slate is the first thing on the page — and on a wide
+     is suppressed, the slate is the first thing on the page, and on a wide
      screen the largest thing above the fold, which made it the LCP element.
      A `whileInView` reveal there means the metric waits for the bundle, React
      and an IntersectionObserver: 970ms for a card that was in the HTML from

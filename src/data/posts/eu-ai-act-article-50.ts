@@ -166,7 +166,7 @@ export const post: Post = {
       publisher: 'artificialintelligenceact.eu',
     },
     {
-      label: 'The AI Act’s transparency obligations: rules, scope and timeline',
+      label: 'The AI Act’s transparency obligations: the rules, and who they land on and when',
       href: 'https://www.stibbe.com/publications-and-insights/the-ai-acts-transparency-obligations-rules-scope-and-timeline',
       publisher: 'Stibbe',
     },

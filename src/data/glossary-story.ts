@@ -150,7 +150,7 @@ export const storyTerms: Term[] = [
       'A one-line-per-beat outline of a story, listing what changes at each step, used to test structure before anything is written.',
     tags: ['story', 'production'],
     body: [
-      'A beat sheet is not a summary. Each line states the turn: what a character wants going into the beat, what stops them, and what is different coming out. A list of events that does not name what changed is a running order, and a running order cannot be diagnosed because nothing in it can be wrong.',
+      'A beat sheet is not a summary. Each line states the turn: what a character wants going into the beat, what stops them, and the state they are in coming out of it. A list of events that does not name what changed is a running order, and a running order cannot be diagnosed because nothing in it can be wrong.',
       'The reason to build one before writing is economic. A beat is a sentence and costs nothing to throw away; a draft costs a day and you will find yourself defending it. Every writer who has argued for keeping a scene they knew was dead was arguing for the hours he had already spent on it.',
       'In generative production the beat sheet does a second job: it is the document the shot list is derived from, so it decides how many shots exist and therefore what the piece costs. Changing a beat is free. Changing it after four hundred renders is not.',
     ],
@@ -319,7 +319,7 @@ export const storyTerms: Term[] = [
     term: 'Narrative Arc',
     aka: ['story arc', 'plot arc'],
     short:
-      'The overall shape a story takes across its length: where tension rises, where it releases, and where the audience is asked to feel something.',
+      'The overall shape a story takes across its length: where tension rises and where it releases, plotted against the points the audience is asked to feel something.',
     tags: ['story'],
     body: [
       'The arc is the sum of the beats. Plot the tension of each beat on a line and the arc is what you see: a good one rises unevenly, with releases that are genuine and brief, and a final rise that is steeper than any before it. A flat line with a spike at the end is the most common shape in corporate video and the reason so much of it is watched at double speed.',
@@ -756,7 +756,7 @@ export const storyTerms: Term[] = [
     body: [
       'It works because a question is a stronger opening than an explanation. Dropping an audience into a scene already in motion creates an immediate gap (who, why, what just happened), and the mild disorientation is not a cost, it is the mechanism. People will tolerate not understanding for far longer than they will tolerate not caring.',
       'The technique has a debt attached. You have to pay the context back, and payments that arrive too late feel withheld while payments that arrive too early waste the opening. The usual rhythm is to resolve who and where quickly, and to hold why until it can do structural work.',
-      'It is now close to mandatory in short-form video, where the first second decides everything. A piece that opens on a person introducing themselves has spent its most valuable moment on the least interesting information it contains.',
+      'It is now close to mandatory in short-form video, where the first second decides everything. A piece that opens on a person introducing themselves has spent its best second on the least interesting information it contains.',
     ],
     qa: [
       {
@@ -874,7 +874,7 @@ export const storyTerms: Term[] = [
       'What a character is actively trying to get from the other people in a scene, stated as something they could succeed or fail at within it.',
     tags: ['story'],
     body: [
-      'Objectives have to be specific and interpersonal. "She wants respect" is a condition and cannot be won in a scene. "She wants him to admit he read the email" is an objective: it can be achieved, refused, or deflected, and each of those produces a different next line. Vague objectives are the leading cause of scenes where actors have nothing to play.',
+      'Objectives have to be specific and interpersonal. "She wants respect" is a condition and cannot be won in a scene. "She wants him to admit he read the email" is an objective: it can be achieved or refused, and it can be deflected, and each of those produces a different next line. Vague objectives are the leading cause of scenes where actors have nothing to play.',
       'The related pieces are the obstacle, which is what stands in the way, and the tactic, which is what the character switches to when the first approach fails. A scene in which the character never changes tactic is a scene with one beat, however long it runs.',
       'The diagnostic is quick and works on any draft: for each character in the scene, write what they want from the other, in a sentence beginning with a verb. If you cannot for one of them, that character is furniture and the scene will feel one-sided even if you cannot say why.',
     ],
@@ -1093,7 +1093,7 @@ export const storyTerms: Term[] = [
     term: 'Pattern Interrupt',
     aka: ['disrupt', 'break state'],
     short:
-      'A deliberate break in rhythm, framing or expectation, placed where attention is predicted to drop.',
+      'A deliberate break in rhythm or framing, placed where attention is predicted to drop.',
     tags: ['audience', 'post'],
     body: [
       'Attention decays on a predictable curve, and it decays fastest where a piece becomes rhythmically regular. An interrupt resets it: a cut to a different shot size, a change of location, a sudden silence, an on-screen graphic, a change of speaker. The specific device matters far less than the fact that something is now different.',
@@ -1141,7 +1141,7 @@ export const storyTerms: Term[] = [
     term: 'Cold Open',
     aka: ['teaser', 'pre-titles sequence'],
     short:
-      'A scene placed before any titles, branding or setup, whose job is to establish a reason to stay before the piece formally begins.',
+      'A scene placed before any titles or branding, ahead of the setup, whose job is to establish a reason to stay before the piece formally begins.',
     tags: ['audience', 'story'],
     body: [
       'Television invented it for the obvious commercial reason: the audience decides during the titles, so the titles cannot come first. The same logic now applies to almost every format, because every format has an equivalent of titles (the logo sting, the intro music, the "hi, I’m", the agenda slide), and all of them are decision points where people leave.',

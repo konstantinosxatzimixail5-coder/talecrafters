@@ -36,7 +36,7 @@ export const post: Post = {
     { t: 'h2', text: 'What MCP is' },
     {
       t: 'p',
-      text: 'The Model Context Protocol is an open standard describing how a model and an external system talk to each other: what the system can do, what it needs to be told, and what comes back. Before a standard, every model-to-tool integration was bespoke, which meant integrations were built for the largest tools only and everybody else was left pasting.',
+      text: 'The Model Context Protocol is an open standard describing how a model and an external system talk to each other. It covers what the system can do, alongside the inputs it needs and the shape of what comes back. Before a standard, every model-to-tool integration was hand-built, which meant integrations were built for the largest tools only and everybody else was left pasting.',
     },
     {
       t: 'p',

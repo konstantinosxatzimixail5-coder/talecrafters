@@ -56,7 +56,7 @@ export const post: Post = {
     { t: 'h2', text: 'Where the hours are' },
     {
       t: 'p',
-      text: 'When we audit a content team’s week, the time does not sit where anyone expects. Writing is rarely the largest block. The largest block is almost always coordination: finding the current version, renaming exports, chasing an approval, rebuilding the same status deck, reformatting one asset into six sizes, and looking for a file somebody named untitled-final-v3.',
+      text: 'When we audit a content team’s week, the time does not sit where anyone expects. Writing is rarely the largest block. The largest block is almost always coordination. Finding the current version. Renaming exports, chasing an approval, rebuilding the same status deck that nobody reads, reformatting one asset into six sizes, and hunting for a file somebody named untitled-final-v3.',
     },
     {
       t: 'p',

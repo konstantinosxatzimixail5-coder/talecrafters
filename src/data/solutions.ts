@@ -99,7 +99,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'Is generative video cheaper than a shoot?',
-        a: 'For the right brief, by a wide margin: no crew, no location, no reshoot. For a brief that needs a real face, a real place and a real product on the same day, often not. We say which one you have before quoting.',
+        a: 'For the right brief, by a wide margin: no crew and no location, and nobody paying for a reshoot in November. For a brief that needs a real face, a real place and a real product on the same day, often not. We say which one you have before quoting.',
       },
       {
         q: 'How do you stop the product changing between shots?',
@@ -152,7 +152,7 @@ export const solutions: Solution[] = [
       { name: 'Synthetic UGC', detail: 'Trained presenters for paid social, under a consent gate' },
       { name: 'Creative systems', detail: 'The machinery that produces and distributes the above' },
       { name: 'Digital experiences', detail: 'Sites, interactive pieces and prototypes' },
-      { name: 'Original IP', detail: 'Our own films, games and stories' },
+      { name: 'Original IP', detail: 'Our own films and games, and the stories under both' },
     ],
     pipelines: ['phantom-set', 'identity-lock', 'operator-stack'],
     cases: ['mariposa', 'big-blue-data-academy', 'cocoon'],
@@ -426,7 +426,7 @@ export const solutions: Solution[] = [
     ],
     color: 'var(--brand-gold)',
     lede:
-      'Most brands producing content do not have a volume problem. They have a decision problem: nobody wrote down what the company claims, who it is arguing with, or which of the nine things it says is the one that matters. Strategy is that document, and then the plan that spends against it.',
+      'Most brands producing content do not have a volume problem. They have a decision problem: nobody wrote down what the company claims, or who it is arguing with, or which of the nine things it says is the one that matters. Strategy is that document, and then the plan that spends against it.',
     meta: [
       { label: 'Engagement', value: 'Two to four weeks' },
       { label: 'You get', value: 'Positioning, message architecture, channel plan' },
@@ -585,7 +585,7 @@ export const solutions: Solution[] = [
     ],
     body: [
       'UGC ad creative works because it does not look bought. That is also why it breaks so easily: the moment a face repeats across nine executions with subtly different bone structure, or a kitchen changes shape behind the same speaker, the format loses the one quality it had. Volume is the point of this channel, and remaining consistent at scale is exactly what most production methods cannot manage.',
-      'Booking genuine creators fixes believability and introduces a scheduling problem instead. A script changes on Tuesday, the talent is unavailable until the following month, and a test that should have taken four days consumes five weeks. Brands react by filming everything at once, which commits them to messaging before any of it has been measured. The economics quietly push you towards guessing.',
+      'Booking genuine creators fixes believability and introduces a scheduling problem instead. A script changes on Tuesday, the talent is unavailable until the following month, and a test that should have taken four days consumes five weeks. Brands react by filming everything at once, which commits them to messaging before any of it has been measured. The economics leave you guessing.',
       'We build the presenter once and reuse them. A sheet of stills becomes a trained identity with fixed proportions, held steady through every later session without re-uploading a reference each time. The environment is written down before anything is generated: one window, a single practical lamp, a stated colour temperature, surfaces named. A rewrite then costs a render, and that difference is what makes honest testing affordable. Nothing about the room needs negotiating twice.',
       'Performance is directed at every take. Delivery gets timed against the cut so a claim lands where the edit expects it. Eye contact breaks on a thought, the way it does in life. Hands do something, because a speaker whose arms hang motionless reads as a hostage video however good the skin looks. Where a voice is cloned we hold signed permission for it, and nothing runs without that file.',
       'Disclosure is designed in from the first session. Synthetic presenters are labelled, provenance travels with the asset wherever a platform reads it, and no execution implies a customer said something nobody ever said. That constraint costs nothing in performance and removes the single version of this work capable of generating a genuine crisis.',
@@ -672,7 +672,7 @@ export const solutions: Solution[] = [
     deliverables: [
       { name: 'The hero film', detail: '60 to 180 seconds, one spine, graded and scored as a single piece' },
       { name: 'Channel cutdowns', detail: 'Shorter edits and vertical versions, planned into the treatment' },
-      { name: 'Stills set', detail: 'Frames lifted from the finished timeline for press, decks and social' },
+      { name: 'Stills set', detail: 'Frames lifted from the finished timeline, for press and for whatever the deck needs' },
       { name: 'World documents', detail: 'Written locations, so a sequel matches without archaeology' },
       { name: 'Master plates and identities', detail: 'The reusable core of every recurring object and face' },
       { name: 'Project files', detail: 'Timeline, grade and audio sessions, handed over at the end' },
@@ -810,7 +810,7 @@ export const solutions: Solution[] = [
     ],
     body: [
       'SEO and AIO content have quietly separated. A search engine ranks your page and dispatches a visitor to read it. An assistant consumes the article itself, synthesises a reply, and may never forward anybody at all. Writing for the first behaviour while ignoring the second means winning a position on a results screen fewer people scroll each quarter.',
-      'What models cite is not what keyword density used to reach. Assistants favour material stating a claim plainly, attributing it, and offering passages that survive being lifted out of context. Long preambles, buried conclusions and vague hedging are invisible to that process. So is anything whose central assertion only becomes clear in paragraph nine.',
+      'What models cite is not what keyword density used to reach. Assistants favour material that states a claim plainly and attributes it, in passages that survive being lifted out of context. Long preambles, buried conclusions and vague hedging are invisible to that process. So is anything whose central assertion only becomes clear in paragraph nine.',
       'We begin with entities. What is this business, what does it make, which concepts does it legitimately own, and how do those connect to questions people type or speak aloud? That map becomes a publishing plan: definitional pages establishing vocabulary, comparison articles capturing evaluation intent, and long essays earning the right to be quoted on a subject where being wrong would embarrass you.',
       'Structure follows. Every article opens with its answer, then argues for it. Headings are phrased as questions wherever one is being asked. Claims carry a source or a figure. Schema describes what the page is. None of this constitutes a trick, and that matters, because the tactical version of this work stopped functioning around the point models grew competent at recognising filler.',
       'Production is a system, and you can switch it off at the end of any month. Briefs generate from the entity map. Composition runs through an agentic workflow assembling research and structure, then a person edits, because an unedited draft always reads like one. Distribution, internal linking and index submission happen automatically, so a piece is discoverable within minutes of approval instead of whenever a crawler wanders past.',

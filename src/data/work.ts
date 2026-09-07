@@ -665,7 +665,7 @@ export const work: CaseStudy[] = [
     idea:
       'Write a scene about the pipeline, then make the pipeline perform it. Two stranded figures on a Mars colony, both convinced somebody teleported them there by mistake, slowly working out that they are inside a demonstration and that the person running it is watching. The comedy comes from them addressing the operator directly and asking for a better set, snappier dialogue and an actual plot, which is the honest note to end a spec piece on. Because the joke is at the pipeline’s expense, every weakness in the pipeline reads as the bit, and that freed the work to be judged on the only thing left: whether the two of them are listening to each other.',
     made: [
-      'A one hundred and seven second animated two-hander, written, cast and cut.',
+      'A one hundred and seven second animated two-hander, written and cast here, and cut here too.',
       'A four-beat structure sheet, published with the film.',
       'Two held character designs across a wide, two singles and a return to the wide.',
     ],
@@ -709,7 +709,7 @@ export const work: CaseStudy[] = [
     videos: [
       {
         youtubeId: 'SjxaPMoyBSo',
-        title: 'Mars Drop — the film',
+        title: 'Mars Drop: the film',
         note: 'One hundred and seven seconds, two characters, one location, no action. Watch the one who is not talking.',
         duration: 'PT1M47S',
         uploadDate: '2026-02-26',

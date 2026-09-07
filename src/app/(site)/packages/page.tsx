@@ -54,7 +54,7 @@ export default async function PackagesPage() {
               { name: 'The Alliance', detail: 'Ongoing creative partnership with dedicated monthly capacity', priceFrom: 500, unit: 'month' },
               { name: 'The Forge', detail: 'Predictable fixed monthly output, delivered to a schedule', priceFrom: 400, unit: 'month' },
               { name: 'The Mission', detail: 'A single project with one deliverable and maximum focus', priceFrom: 350, unit: 'project' },
-              { name: 'The Shadow Protocol', detail: 'White-label production for agencies, studios and consultancies' },
+              { name: 'The Shadow Protocol', detail: 'White-label production for agencies and studios, and for consultancies who never say whose work it is' },
             ],
           }),
           faqSchema(qa),

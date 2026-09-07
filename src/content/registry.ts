@@ -153,7 +153,7 @@ export const copyRegistry = {
         heading: 'THREE ARMS. ONE',
         accentWord: 'STUDIO.',
         lede: 'Most studios describe the technology they used to make a film. We sell the film and the machinery, and we keep a third arm for the work nobody commissions.',
-        ledeNote: 'Plain text. The emphasis on "and" is applied by the page, not typed here.',
+        ledeNote: 'Plain text. The page applies the emphasis on "and" by itself.',
       }),
       philosophy: homeSection({
         title: 'Philosophy',
@@ -296,7 +296,7 @@ export const copyRegistry = {
           { label: 'Engagements', value: `${work.length} delivered` },
           { label: 'Sectors', value: 'Hospitality, consulting, motorcycles, education, supplements, energy, property' },
           { label: 'Disciplines', value: 'Film, websites, content systems, synthetic UGC' },
-          { label: 'Years', value: '2025 – 2026' },
+          { label: 'Years', value: '2025-2026' },
         ],
         metaNote: `The engagement count is counted from the case studies (currently ${work.length}). ${DERIVED}`,
       }),

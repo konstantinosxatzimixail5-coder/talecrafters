@@ -32,7 +32,7 @@ export const primaryNav: NavEntry[] = [
     items: [
       { label: 'TaleCrafters / Create', href: '/create', note: 'Films, campaigns and visual worlds' },
       { label: 'TaleCrafters / Systems', href: '/systems', note: 'Agents, automation and content engines' },
-      { label: 'TaleCrafters / Originals', href: '/originals', note: 'Our own films, games and stories' },
+      { label: 'TaleCrafters / Originals', href: '/originals', note: 'Films and games we fund ourselves' },
     ],
   },
   {
@@ -40,7 +40,7 @@ export const primaryNav: NavEntry[] = [
     color: GOLD,
     items: [
       { label: 'Free Resources', href: '/supply-drop', note: 'Templates, checklists and reference. No email gate.' },
-      { label: 'Prompting Library', href: '/supply-drop/prompting-library', note: 'Prompting guides for video, image and story' },
+      { label: 'Prompting Library', href: '/supply-drop/prompting-library', note: 'Prompting guides for video and image, and for the story under them' },
       { label: 'AI Filmmaking Workflows', href: '/films', note: 'Three originals, published with their process' },
       { label: 'GenAI Workflows', href: '/pipelines', note: 'The production pipelines, published in full' },
     ],
@@ -78,7 +78,7 @@ export const navGroups: NavGroup[] = [
     items: [
       { label: 'TaleCrafters / Create', href: '/create', note: 'Films, campaigns and visual worlds' },
       { label: 'TaleCrafters / Systems', href: '/systems', note: 'Agents, automation and content engines' },
-      { label: 'TaleCrafters / Originals', href: '/originals', note: 'Our own films, games and stories' },
+      { label: 'TaleCrafters / Originals', href: '/originals', note: 'Films and games we fund ourselves' },
       { label: 'The Arsenal', href: '/arsenal', note: 'Every capability, listed plainly' },
       { label: 'Packages', href: '/packages', note: 'Four ways to buy any of it' },
     ],
@@ -88,7 +88,7 @@ export const navGroups: NavGroup[] = [
     color: GOLD,
     items: [
       { label: 'Free Resources', href: '/supply-drop', note: 'Templates, checklists and reference. No email gate.' },
-      { label: 'Prompting Library', href: '/supply-drop/prompting-library', note: 'Prompting guides for video, image and story' },
+      { label: 'Prompting Library', href: '/supply-drop/prompting-library', note: 'Prompting guides for video and image, and for the story under them' },
       { label: 'AI Filmmaking Workflows', href: '/films', note: 'Three originals, with the working behind each' },
       { label: 'GenAI Workflows', href: '/pipelines', note: 'How the work gets made' },
       { label: 'Blog', href: '/blog', note: 'Dispatches from the frontline' },

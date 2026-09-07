@@ -44,7 +44,7 @@ export const post: Post = {
     { t: 'h3', text: 'LoRA or equivalent lightweight fine-tune' },
     {
       t: 'p',
-      text: 'Train a small adapter on a set of images so the identity is baked into the generation and never supplied alongside it. Setup is hours plus a curated image set. Drift falls substantially.',
+      text: 'Train a small adapter on a set of images so the identity is baked into the generation and never supplied alongside it. Setup is hours plus an image set somebody has picked over. Drift falls hard.',
     },
     {
       t: 'p',
@@ -53,7 +53,7 @@ export const post: Post = {
     { t: 'h3', text: 'Trained identity as a production artefact' },
     {
       t: 'p',
-      text: 'What we mean by this is the adapter plus everything around it: a curated and documented image sheet, a written description of the identity in the terms the model responds to, a set of validated prompts, a record of which base model and version it was built against, the licence and consent file, and a per-shot check sheet.',
+      text: 'What we mean by this is the adapter plus everything around it: a documented image sheet somebody picked over, a written description of the identity in the terms the model responds to, a set of validated prompts, a record of which base model and version it was built against, the licence and consent file, and a per-shot check sheet.',
     },
     {
       t: 'p',

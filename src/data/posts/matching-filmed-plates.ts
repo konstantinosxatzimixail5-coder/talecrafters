@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'Matching Generative Footage to Filmed Plates',
   metaTitle: 'How to Match AI Footage to Real Filmed Plates',
   metaDescription:
-    'A hybrid shoot puts generated and filmed material in the same cut. The eight properties that have to match, which ones to fix on set, which in the render, and which only in the grade.',
+    'A hybrid shoot puts generated and filmed material in the same cut. The eight properties that have to match, which of them you fix on set, and which are left to the render and the grade.',
   excerpt:
     'The mismatch is never resolution. It is lens character, black level and how the light falls off, and two of those have to be decided before anybody shoots.',
   published: '2026-06-12',
@@ -125,7 +125,7 @@ export const post: Post = {
     },
     {
       q: 'Which mismatch between AI and filmed footage cannot be fixed?',
-      a: 'Light direction. No grade, cut or transition moves a key light, which is why a chrome ball on set is the single most valuable twenty seconds of a hybrid shoot. It records precisely where every source was.',
+      a: 'Light direction. No grade, cut or transition moves a key light, which is why a chrome ball on set is the best-spent twenty seconds of a hybrid shoot. It records precisely where every source was.',
     },
     {
       q: 'Should you grade AI clips to each other or to a reference?',

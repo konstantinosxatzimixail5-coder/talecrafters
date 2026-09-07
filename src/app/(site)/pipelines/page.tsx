@@ -39,7 +39,7 @@ const qa = [
   },
   {
     q: 'Can we use these pipelines in-house?',
-    a: 'Yes, and some clients do. When a team wants the machinery instead of the output, that becomes a Creative Systems engagement: we map how your work runs today, build the skills, scripts and connectors, and hand it over running inside your own accounts.',
+    a: 'Yes, and some clients do. When a team wants the machinery instead of the output, that becomes a Creative Systems engagement: we map how your work runs today, build the skills and scripts and the connectors between them, and hand it over running inside your own accounts.',
   },
 ];
 

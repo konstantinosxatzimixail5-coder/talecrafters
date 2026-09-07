@@ -15,7 +15,7 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: 'What does TaleCrafters do?',
-        a: 'Three things. We make campaigns, films and visual worlds. We build the systems that produce, distribute and scale creative work: agentic workflows, content engines, internal tools, sites and prototypes. And we develop our own original IP: films, games and stories. Most clients arrive for the first and stay for the second.',
+        a: 'Three things. We make campaigns and films, and the visual worlds they sit inside. We build the systems that produce and distribute that work at volume: agentic workflows, content engines, internal tools, sites and prototypes. And we develop our own original IP: films, games and stories. Most clients arrive for the first and stay for the second.',
       },
       {
         q: 'How fast can you deliver?',

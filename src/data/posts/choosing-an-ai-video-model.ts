@@ -25,7 +25,7 @@ export const post: Post = {
   imageAlt:
     'A comparison board of generative video model outputs, each annotated with the production constraint it failed.',
   standfirst:
-    'Choose a video model on reference conditioning, licensing and throughput. Quality rankings change every few weeks; the cost of rebuilding a pipeline around a different conditioning method does not, and it is the larger number.',
+    'Choose a video model on reference conditioning and licensing, and on how much it will throughput in a day. Quality rankings change every few weeks; the cost of rebuilding a pipeline around a different conditioning method does not, and it is the larger number.',
   body: [
     {
       t: 'p',

@@ -33,7 +33,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'This is the failure that kills most generative product work. The fix is to let the model invent the product exactly once, then hold it to that file for every frame afterwards.',
+      text: 'That failure kills most generative product work. The fix is to let the model invent the product exactly once, then hold it to that file for every frame afterwards.',
     },
     { t: 'h2', text: 'What a master plate is' },
     {
@@ -49,7 +49,7 @@ export const post: Post = {
       t: 'ol',
       items: [
         'Get the source of truth. Packaging dieline, label artwork at print resolution, or a photograph of the actual object. Not a render from the client’s website, which is itself already a copy of something.',
-        'Shoot or generate the plate flat. Even light, no rim, no atmosphere, no shallow depth of field. Every one of those hides detail you will later need to check against.',
+        'Shoot or generate the plate flat. Even light, no rim and no atmosphere, and nothing shallow in the depth of field. Every one of those hides detail you will later need to check against.',
         'Verify the type at full resolution. Every printed word, every certification mark, every unit of measure. This is where a plate either becomes useful or becomes an expensive lie that propagates into forty shots.',
         'Record the geometry. Cap-to-shoulder ratio, label height as a fraction of body height, the silhouette. Written down.',
         'Freeze it, name it, version it. The file has a version tag and a date. When the packaging changes in nine months, you cut a new plate and leave this one alone.',

@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'The proposal is simple enough to describe in a sentence. Put a file at /llms.txt containing a short description of what the site is, followed by a curated list of its most useful pages with one line each explaining what is in them. Markdown, human-readable, no schema.',
+      text: 'The proposal is simple enough to describe in a sentence. Put a file at /llms.txt containing a short description of what the site is, followed by its most useful pages, picked over by hand, with one line each explaining what is in them. Markdown, human-readable, no schema.',
     },
     {
       t: 'p',

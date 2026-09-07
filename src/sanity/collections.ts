@@ -426,7 +426,7 @@ export const animationStyle = defineType({
     defineField({ name: 'num', title: 'Number', type: 'string' }),
     defineField({ name: 'aka', title: 'Also known as', type: 'string' }),
     defineField({ name: 'color', title: 'Accent colour', type: 'string' }),
-    defineField({ name: 'what', title: 'What it is', type: 'text', rows: 4, description: 'In production terms, not mood words.' }),
+    defineField({ name: 'what', title: 'What it is', type: 'text', rows: 4, description: 'In production terms. Mood words do nothing here.' }),
     strings('scaffold', 'Scaffold', 'The order the prompt should be written in.'),
     strings('works', 'Words that work', 'Words that reliably move the model toward the style.'),
     defineField({ name: 'breaks', title: 'What breaks', type: 'text', rows: 4, description: 'The failure this style invites, and the fix.' }),

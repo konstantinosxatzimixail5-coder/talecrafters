@@ -35,10 +35,10 @@ export const post: Post = {
       caption: 'From published rate to production cost',
       head: ['Multiplier', 'Typical range', 'What it is'],
       rows: [
-        ['Attempts per usable shot', '3× – 15×', 'The inverse of your acceptance rate. Lower for environment plates, brutal for legible packaging type.'],
-        ['Overgeneration for length', '2× – 3×', 'You generate eight seconds to use three, because the stable window is at the front of the clip.'],
-        ['Coverage', '1.3× – 2×', 'Alternative takes and sizes, generated because an editor needs choice and re-running later costs more.'],
-        ['Edit attrition', '1.2× – 1.6×', 'Shots that were fine and got cut. This happens in every production ever made and is not a generative problem.'],
+        ['Attempts per usable shot', '3× to 15×', 'The inverse of your acceptance rate. Lower for environment plates, brutal for legible packaging type.'],
+        ['Overgeneration for length', '2× to 3×', 'You generate eight seconds to use three, because the stable window is at the front of the clip.'],
+        ['Coverage', '1.3× to 2×', 'Alternative takes and sizes, generated because an editor needs choice and re-running later costs more.'],
+        ['Edit attrition', '1.2× to 1.6×', 'Shots that were fine and got cut. This happens in every production ever made and is not a generative problem.'],
       ],
     },
     {
@@ -111,7 +111,7 @@ export const post: Post = {
     },
     {
       q: 'Why do credits make platforms hard to compare?',
-      a: 'Because credit costs vary by resolution, duration and feature, and no two platforms define them the same way. Converting each to currency per accepted second is a spreadsheet exercise, and it is the one that turns marketing into procurement.',
+      a: 'Because credit costs vary by resolution and duration, and again by feature, and no two platforms define them the same way. Converting each to currency per accepted second is a spreadsheet exercise, and it is the one that turns marketing into procurement.',
     },
     {
       q: 'What should a generative video quote contain?',

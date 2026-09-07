@@ -166,7 +166,7 @@ export const additionalTerms: Term[] = [
     tags: ['production', 'strategy'],
     body: [
       'Most campaigns need the same idea in four or five shapes: 16:9, 1:1, 4:5, 9:16, and occasionally something a specific placement demands. Writing that down as a grid before production is the difference between composing once for all of them and re-composing five times.',
-      'The matrix also exposes duplication. Nine placements often turn out to need three actual pieces in three ratios, which is a substantially smaller job than nine pieces, and nobody notices until the grid is on a page.',
+      'The matrix also exposes duplication. Nine placements often turn out to need three actual pieces in three ratios, which is a far smaller job than nine pieces, and nobody notices until the grid is on a page.',
       'It is deterministic work once the decisions are made, which makes the export side of it a script.',
     ],
     qa: [
@@ -258,7 +258,7 @@ export const additionalTerms: Term[] = [
     term: 'Hero Frame',
     aka: ['key art frame', 'hero still'],
     short:
-      'The single image a campaign is built around and every other asset is judged against for tone, light and colour.',
+      'The single image a campaign is built around and every other asset is judged against for tone and light, and for the colour it has to sit beside.',
     tags: ['production', 'strategy'],
     body: [
       'Somewhere in every campaign there is one frame that decides what the rest look like. Naming it early and treating it as a reference makes that decision explicit instead of emergent.',
@@ -1087,14 +1087,14 @@ export const additionalTerms: Term[] = [
       'Putting only the data a task needs into a model, and never keys, client data or unreleased assets.',
     tags: ['ethics', 'systems'],
     body: [
-      'Every prompt is a disclosure to a third party. That is true even where a provider promises not to train on it, because a promise about training is not a promise about logs, incidents or subpoenas.',
+      'Every prompt is a disclosure to a third party. That is true even where a provider promises not to train on it, because a promise about training says nothing about logs, or about what a subpoena reaches.',
       'The operating rules are short. No credentials in a prompt, ever. No client personal data unless the engagement specifically requires it and the client has agreed the processor. No unreleased assets in a system without a contractual position on retention.',
       'The commercial version of the argument is easier to sell internally than the compliance one: an unreleased campaign pasted into a general-purpose tool is a leak risk with a date on it.',
     ],
     qa: [
       {
         q: 'Is it safe to paste client material into a model if the provider says it does not train on inputs?',
-        a: 'A commitment about training is not a commitment about logging, retention or incidents. Treat every prompt as a disclosure to a third party and decide accordingly.',
+        a: 'A commitment about training says nothing about logging, about retention, or about what happens when there is an incident. Treat every prompt as a disclosure to a third party and decide accordingly.',
       },
       {
         q: 'What should never go in a prompt?',
@@ -1182,7 +1182,7 @@ export const additionalTerms: Term[] = [
     term: 'Orchestration',
     aka: ['workflow orchestration', 'pipeline control'],
     short:
-      'The layer that decides what runs when, what happens on failure, and where a person is asked to decide.',
+      'The layer that decides what runs when and what happens on failure, plus the points where a person is asked to decide.',
     tags: ['systems'],
     body: [
       'Every real pipeline has an orchestration layer whether or not anybody built one deliberately. If nobody did, it is a person with a mental checklist, and it stops working the week they are away.',
@@ -1192,7 +1192,7 @@ export const additionalTerms: Term[] = [
     qa: [
       {
         q: 'Should the orchestration layer itself be agentic?',
-        a: 'No. Keep judgement inside steps and keep the control flow deterministic, or you get a system whose behaviour cannot be predicted, reproduced or audited.',
+        a: 'No. Keep judgement inside steps and keep the control flow deterministic, or you get a system whose behaviour cannot be predicted, and which nobody can reproduce or audit afterwards.',
       },
       {
         q: 'What is the most common orchestration failure?',

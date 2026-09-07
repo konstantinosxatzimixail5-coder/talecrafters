@@ -1303,7 +1303,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
       {
         letter: 'A',
         time: '0:00',
-        span: '0:00 – 0:26',
+        span: '0:00-0:26',
         name: 'Arrival',
         image: 'films/mars-drop/md-poster',
         alt: 'The wide establishing frame: two figures on the colony floor, a landed rocket to the right, a domed habitat and antenna masts to the left, red rock formations behind.',
@@ -1314,7 +1314,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
       {
         letter: 'B',
         time: '0:26',
-        span: '0:26 – 0:52',
+        span: '0:26-0:52',
         name: 'Act natural',
         image: 'films/mars-drop/md-b-natural',
         alt: 'A single of the chef in a black suit and tie under a water tower, one hand raised, his expression somewhere between suspicion and irritation.',
@@ -1325,7 +1325,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
       {
         letter: 'C',
         time: '0:52',
-        span: '0:52 – 1:20',
+        span: '0:52-1:20',
         name: 'The demonstration',
         image: 'films/mars-drop/md-hero',
         alt: 'A single of the executive at the foot of the booster, arms open in a shrug, two moons and a rock face behind him.',
@@ -1336,7 +1336,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
       {
         letter: 'D',
         time: '1:20',
-        span: '1:20 – 1:47',
+        span: '1:20-1:47',
         name: 'Notes to the operator',
         image: 'films/mars-drop/md-d-address',
         alt: 'A single of the chef, hands on hips, leaning slightly toward camera as he delivers the closing note.',
@@ -1389,7 +1389,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
         num: '04',
         name: 'Build the scene',
         tool: 'Showrunner',
-        body: 'The episodic engine carries the scene and the character continuity across shots. This is the stage that makes a two-hander possible at all: the same two figures, in the same place, across four beats.',
+        body: 'The episodic engine carries the scene and the character continuity across shots. A two-hander only holds because of it: the same two figures, in the same place, across four beats.',
       },
       {
         num: '05',
