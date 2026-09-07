@@ -2,7 +2,7 @@ import type { Post } from './types';
 
 export const post: Post = {
   slug: 'what-creative-automation-actually-removes-from-a-marketing-week',
-  title: 'What Creative Automation Actually Removes From a Marketing Week',
+  title: 'What Creative Automation Removes From a Marketing Week',
   metaTitle: 'What Creative Automation Removes From a Marketing Week',
   metaDescription:
     'An audit of where a four-person content team’s week goes, which hours creative workflow automation removes, which it does not, and why the savings are almost never in the drafting.',
@@ -33,7 +33,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'That is not because the tool failed. It is because drafting was never where the week went.',
+      text: 'The tool worked. Drafting was never where the week went.',
     },
     { t: 'h2', text: 'Where a content week goes' },
     {
@@ -102,7 +102,7 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'For one week, everybody logs what they did in thirty-minute blocks. Categories, not descriptions. Nobody is being assessed; say so, loudly, or the data is fiction.',
+        'For one week, everybody logs what they did in thirty-minute blocks. Categories only. Nobody is being assessed; say so, loudly, or the data is fiction.',
         'Sort every block into: decides, drafts, formats, moves, finds, reports, meets.',
         'Total the last five. That is your addressable surface.',
         'For each, write down who owns it today and what would have to be true for a script to own it instead. Usually the answer is a naming convention and a connector.',
@@ -112,7 +112,7 @@ export const post: Post = {
     { t: 'h2', text: 'What to expect afterwards' },
     {
       t: 'p',
-      text: 'The realistic outcome is not a headcount reduction. It is that the same team ships more of the work it is good at, and the calendar stops being the constraint. In practice: fewer status meetings because status is visible, fewer versions because versioning is automatic, and a genuinely different answer to "can we also do a version for the Greek market by Thursday".',
+      text: 'The realistic outcome is that the same team ships more of the work it is good at, and the calendar stops being the constraint. In practice: fewer status meetings because status is visible, fewer versions because versioning is automatic, and a different answer to "can we also do a version for the Greek market by Thursday".',
     },
     {
       t: 'p',

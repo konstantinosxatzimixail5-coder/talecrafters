@@ -23,11 +23,11 @@ export const post: Post = {
   image: 'brand-lock-file',
   imageAlt: 'A short paragraph of production language, shown pasted at the head of twelve different prompts.',
   standfirst:
-    'The lock file is one paragraph, identical in every prompt on a job, stating what does not change: palette, light behaviour, materials, lens family and the absences. It is pasted, never retyped, because anything retyped drifts and drift across forty shots is what makes a set look like several sets.',
+    'The lock file is one paragraph, identical in every prompt on a job, stating what does not change: palette, light behaviour, materials, lens family and the absences. It is pasted in, and retyped, because anything retyped drifts and drift across forty shots is what makes a set look like several sets.',
   body: [
     {
       t: 'p',
-      text: 'The most common cause of an inconsistent generative campaign is not the model. It is that the person writing shot thirty-one wrote the world description slightly differently from the person who wrote shot four. Nothing dramatic. A colour named differently, a light described from memory, one adjective added. Forty small differences produce a set that nobody can quite defend.',
+      text: 'The most common cause of an inconsistent generative campaign is that the person writing shot thirty-one wrote the world description slightly differently from the person who wrote shot four. Nothing dramatic. A colour named differently, a light described from memory, one adjective added. Forty small differences produce a set that nobody can quite defend.',
     },
     {
       t: 'p',
@@ -64,7 +64,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'Paste, never retype',
-      text: 'Keep the lock in one file and paste it. Every time somebody retypes it they improve it slightly, and slightly improved is not identical. If it genuinely needs to change, it changes for every shot including the ones already rendered, which is a decision with a cost, and should be taken as one.',
+      text: 'Keep the lock in one file and paste it. Every time somebody retypes it they improve it slightly, and slightly improved is not identical. If it has to change, it changes for every shot including the ones already rendered, which is a decision with a cost, and should be taken as one.',
     },
     { t: 'h2', text: 'How it differs from brand guidelines' },
     {
@@ -109,7 +109,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'What is a lock file in generative production?',
-      a: 'One paragraph, identical in every prompt on a job, stating what does not change: palette, light behaviour, time and weather, materials, optics, and the things that must never appear. It is pasted in, never retyped, because retyped text drifts.',
+      a: 'One paragraph, identical in every prompt on a job, stating what does not change: palette, light behaviour, time and weather, materials, optics, and the things that must never appear. It is pasted in every time, because retyped text drifts.',
     },
     {
       q: 'What is the difference between a lock file and brand guidelines?',

@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'what-to-automate-first',
   imageAlt: 'A process map with each step marked script, branch, agent or person.',
   standfirst:
-    'Automate by variance, not by visibility. A step that produces the same shape of output every time is a script. A step with a few known paths is a branch. A step where the path depends on the content is an agent. A step where being wrong is expensive stays a person.',
+    'Automate by variance. A step that produces the same shape of output every time is a script. A step with a few known paths is a branch. A step where the path depends on the content is an agent. A step where being wrong is expensive stays a person.',
   body: [
     {
       t: 'p',
@@ -89,7 +89,7 @@ export const post: Post = {
         'Fix naming and filing. Everything downstream depends on being able to find things reliably.',
         'Automate export and reformatting. Zero variance, immediate return, and it removes the most-resented task in the building.',
         'Add routing. Branches that send work to the right template, the right person, the right queue.',
-        'Then, and only then, add agents to the steps where the path genuinely depends on the content.',
+        'Then, and only then, add agents to the steps where the path depends on the content.',
         'Instrument all of it. If you cannot say what a run cost and what it produced, you have a demo.',
       ],
     },

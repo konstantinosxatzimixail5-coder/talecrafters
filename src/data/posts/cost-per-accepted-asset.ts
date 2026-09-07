@@ -29,13 +29,13 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'Every generative production pitch contains a per-unit number, and almost every one of them is measured at the wrong point. Cost per generation, cost per second, cost per credit: all of these count outputs. None of them count assets, and an output that failed review is not an asset. It is a cost.',
+      text: 'Every generative production pitch contains a per-unit number, and almost every one of them is measured at the wrong point. Cost per generation, cost per second, cost per credit: all of these count outputs. None of them count assets, and an output that failed review is a cost.',
     },
     { t: 'h2', text: 'The formula' },
     {
       t: 'note',
       title: 'Cost per accepted asset',
-      text: '(model spend + operator hours + review hours + licensing) ÷ assets that shipped. Rejected renders sit in the numerator, not outside the calculation.',
+      text: '(model spend + operator hours + review hours + licensing) ÷ assets that shipped. Rejected renders sit in the numerator.',
     },
     {
       t: 'p',
@@ -64,7 +64,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The interesting line is not the total. It is that the presenter variants cost roughly three times per asset what the stills did, despite fewer renders, because the human hours are where the money went. Measured per generation you would have concluded the opposite: the two look almost identical, and the difference that matters disappears.',
+      text: 'The interesting line is that the presenter variants cost roughly three times per asset what the stills did, despite fewer renders, because the human hours are where the money went. Measured per generation you would have concluded the opposite: the two look almost identical, and the difference that matters disappears.',
     },
     { t: 'h2', text: 'What the number tells you that nothing else does' },
     {
@@ -96,7 +96,7 @@ export const post: Post = {
     },
     {
       t: 'quote',
-      text: 'A pipeline that cannot tell you what its last batch cost per accepted asset is not a pipeline. It is a habit.',
+      text: 'A pipeline that cannot tell you what its last batch cost per accepted asset is a habit with a budget attached.',
     },
     { t: 'h2', text: 'What to ask a studio' },
     {
@@ -125,7 +125,7 @@ export const post: Post = {
     },
     {
       q: 'Why is cost per generation the wrong metric?',
-      a: 'Because it measures outputs, not assets. A run producing sixty frames to ship four looks cheap per generation and is fifteen times more expensive per asset, which is the number that appears on the invoice.',
+      a: 'Because it measures outputs. A run producing sixty frames to ship four looks cheap per generation and is fifteen times more expensive per asset, which is the number that appears on the invoice.',
     },
     {
       q: 'What is a normal acceptance rate in generative production?',
@@ -137,7 +137,7 @@ export const post: Post = {
     },
     {
       q: 'What is a credit ceiling per asset?',
-      a: 'An agreed maximum spend for a single asset, encoded in the pipeline, never in a meeting. When a shot consumes its allowance the run halts and asks a person to decide, instead of spending past a number nobody approved.',
+      a: 'An agreed maximum spend for a single asset, encoded in the pipeline itself. When a shot consumes its allowance the run halts and asks a person to decide, instead of spending past a number nobody approved.',
     },
   ],
   terms: ['cost-per-accepted-asset', 'master-plate', 'agentic-workflow', 'human-in-the-loop'],

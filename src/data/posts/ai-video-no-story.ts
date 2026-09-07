@@ -36,7 +36,7 @@ export const post: Post = {
     { t: 'h2', text: 'Test one: is there a dramatic question?' },
     {
       t: 'p',
-      text: 'State the piece as a question beginning with "will". Will she get the job. Will the shop survive. Will he say it. If you cannot, there is no question, and attention through the middle of anything is a function of an unanswered question, never of how interesting the middle is.',
+      text: 'State the piece as a question beginning with "will". Will she get the job. Will the shop survive. Will he say it. If you cannot, there is no question, and attention through the middle of anything is a function of an unanswered question. How interesting the middle is counts for little.',
     },
     {
       t: 'p',
@@ -74,7 +74,7 @@ export const post: Post = {
         ['Dramatic question', 'Pleasant, well made, easy to stop watching', 'Ask it in the first ten seconds. Usually costs one line.'],
         ['A want', 'Beautiful people doing nothing in particular', 'Give one character one specific thing to get.'],
         ['An obstacle', 'No tension despite high stakes language', 'Make the opposition’s position reasonable.'],
-        ['A reversal', 'The middle drags and the end is predictable', 'Invert one thing at the centre. Usually a re-order, not new material.'],
+        ['A reversal', 'The middle drags and the end is predictable', 'Invert one thing at the centre. Usually a re-order of what you already have.'],
         ['A value shift', 'Individual scenes feel fine and add to nothing', 'Cut the scenes where nothing moves. There are more than you think.'],
       ],
     },
@@ -90,7 +90,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The first is that a beautiful shot is now available before a script exists, which inverts the order of production. Traditionally the expense of shooting forced a script to be finished first; now the images arrive early and the structure gets written around what already looks good. That is exactly backwards, and it is very hard to resist because the images are genuinely lovely.',
+      text: 'The first is that a beautiful shot is now available before a script exists, which inverts the order of production. Traditionally the expense of shooting forced a script to be finished first; now the images arrive early and the structure gets written around what already looks good. That is exactly backwards, and it is very hard to resist because the images are lovely.',
     },
     {
       t: 'p',

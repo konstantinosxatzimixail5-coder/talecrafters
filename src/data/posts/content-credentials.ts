@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'content-credentials',
   imageAlt: 'An asset inspector showing a signed manifest of edits attached to an image.',
   standfirst:
-    'C2PA writes a signed, tamper-evident record of how a file was made and edited, travelling with the file. It proves what a chain of tools asserted, not that an image is true. Decide whether to carry credentials at brief stage, because they cannot be added to a finished asset after the fact.',
+    'C2PA writes a signed, tamper-evident record of how a file was made and edited, travelling with the file. It proves what a chain of tools asserted. Decide whether to carry credentials at brief stage, because they cannot be added to a finished asset after the fact.',
   body: [
     {
       t: 'p',
@@ -111,7 +111,7 @@ export const post: Post = {
     },
     {
       q: 'Does C2PA prove an image is real?',
-      a: 'No. It shows which tools touched a file and that it has not changed since signing. It cannot show that the content is accurate, that the signer is honest, or what was in front of the camera. It is a chain of custody, not a guarantee of truth.',
+      a: 'No. It shows which tools touched a file and that it has not changed since signing. It cannot show that the content is accurate, that the signer is honest, or what was in front of the camera. It is a chain of custody.',
     },
     {
       q: 'Do content credentials survive social media?',

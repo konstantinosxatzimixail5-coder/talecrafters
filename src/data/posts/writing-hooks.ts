@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'How to Write a Hook: Six Mechanisms, Twenty Variants, One Rule',
   metaTitle: 'How to Write a Hook for Short-Form Video (6 Mechanisms)',
   metaDescription:
-    'A hook is a mechanism, not a tone. The six that reliably work, how to generate twenty real variants instead of twenty rewrites of one sentence, and why hook quality should be measured on the next video, never this one.',
+    'A hook is a mechanism. The six that reliably work, how to generate twenty real variants instead of twenty rewrites of one sentence, and why hook quality should be measured on the next video.',
   excerpt:
     'Asking for twenty punchy openings gets you one sentence twenty ways. Asking for six mechanisms gets you six openings that differ in kind.',
   published: '2026-07-28',
@@ -28,11 +28,11 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'If most of an audience leaves in the first two seconds, no improvement to the rest of the piece can recover them. That makes the opening the highest-leverage sentence you will write, which is unpleasant and true, and it is why hooks deserve the same craft attention as an ending.',
+      text: 'If most of an audience leaves in the first two seconds, no improvement to the rest of the piece can recover them. That makes the opening the sentence that decides the most, which is unpleasant and true, and it is why hooks deserve the same craft attention as an ending.',
     },
     {
       t: 'p',
-      text: 'The reason most hook writing is bad is that people ask for a quality when they want a mechanism. Ask for twenty punchy openings and you get one sentence in twenty costumes. Ask for four openings that contradict a belief, four that name a cost and four that withhold the subject, and you get twelve genuinely different things.',
+      text: 'The reason most hook writing is bad is that people ask for a quality when they want a mechanism. Ask for twenty punchy openings and you get one sentence in twenty costumes. Ask for four openings that contradict a belief, four that name a cost and four that withhold the subject, and you get twelve things that differ in kind.',
     },
     { t: 'h2', text: 'The six mechanisms' },
     {
@@ -67,8 +67,8 @@ export const post: Post = {
         ],
         [
           'Mid-action start',
-          'Orients by consequence, never by setup',
-          'Opening on the argument, not on who is arguing.',
+          'Orients by consequence',
+          'Opening on the argument itself.',
         ],
       ],
     },
@@ -105,7 +105,7 @@ export const post: Post = {
     { t: 'h2', text: 'The hook and the scroll stopper are different jobs' },
     {
       t: 'p',
-      text: 'The scroll stopper is visual and works before comprehension: contrast, a face at unusual scale, unexpected motion, an incongruous object, genuinely large legible text. It buys you the fraction of a second in which the hook can be heard.',
+      text: 'The scroll stopper is visual and works before comprehension: contrast, a face at unusual scale, unexpected motion, an incongruous object, large legible text. It buys you the fraction of a second in which the hook can be heard.',
     },
     {
       t: 'p',
@@ -132,7 +132,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'What makes a good video hook?',
-      a: 'A mechanism, never a tone. Six work reliably: contradict what the audience believes, name a cost, state a specific number, withhold the subject, admit a failure, or start mid-action. "Make it punchy" is not a mechanism and produces one sentence in twenty costumes.',
+      a: 'A mechanism. Six work reliably: contradict what the audience believes, name a cost, state a specific number, withhold the subject, admit a failure, or start mid-action. "Make it punchy" is not a mechanism and produces one sentence in twenty costumes.',
     },
     {
       q: 'How long is a hook?',
@@ -140,7 +140,7 @@ export const post: Post = {
     },
     {
       q: 'How do you write twenty different hooks?',
-      a: 'Write the claim and the audience’s current belief first, then take each of the six mechanisms in turn and write three or four openings using only that mechanism. Variety comes from the constraint list, never from asking for variety.',
+      a: 'Write the claim and the audience’s current belief first, then take each of the six mechanisms in turn and write three or four openings using only that mechanism. Variety comes from the constraint list. Asking for variety produces none.',
     },
     {
       q: 'What is the difference between a hook and a scroll stopper?',
@@ -148,7 +148,7 @@ export const post: Post = {
     },
     {
       q: 'Why do hooks stop working over time?',
-      a: 'Because a hook disconnected from the piece is a promise not kept, and audiences learn a channel’s reliability quickly. This is why hook quality should be measured on the next video’s first two seconds, not on this video’s retention curve.',
+      a: 'Because a hook disconnected from the piece is a broken promise, and audiences learn a channel’s reliability quickly. This is why hook quality should be measured on the next video’s first two seconds.',
     },
     {
       q: 'What words should you avoid in a hook?',

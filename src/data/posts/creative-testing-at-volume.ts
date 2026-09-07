@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'creative-testing-at-volume',
   imageAlt: 'A variant matrix with one axis varied and the others held constant.',
   standfirst:
-    'Vary one axis at a time and you learn something reusable. Vary four and you get a winner you cannot explain and cannot repeat. The right volume is however many variants it takes to isolate one axis, which is usually between five and eight, not ninety.',
+    'Vary one axis at a time and you learn something reusable. Vary four and you get a winner you cannot explain and cannot repeat. The right volume is however many variants it takes to isolate one axis, which is usually between five and eight.',
   body: [
     {
       t: 'p',
@@ -64,20 +64,20 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'Statistical: past a point, additional variants divide the same budget and nothing reaches significance. More variants means slower learning, not faster.',
+        'Statistical: past a point, additional variants divide the same budget and nothing reaches significance. More variants means slower learning.',
         'Practical: someone has to watch all of them. Ninety assets is over an hour of review before anything is watched twice.',
         'Creative: variants generated to fill a matrix and never to test an idea are noise, and they dilute the average performance of the batch.',
-        'Platform: several delivery systems concentrate spend on early leaders, so a large matrix gets pruned by the algorithm before your test finishes. You measured the platform, not the creative.',
+        'Platform: several delivery systems concentrate spend on early leaders, so a large matrix gets pruned by the algorithm before your test finishes. You measured the platform.',
       ],
     },
     {
       t: 'p',
-      text: 'The last one catches sophisticated teams. If the platform allocates on early signal, a fifty-variant test is a five-variant test with forty-five assets that never got a chance, and the five were chosen by delivery, never by design.',
+      text: 'The last one catches sophisticated teams. If the platform allocates on early signal, a fifty-variant test is a five-variant test with forty-five assets that never got a chance, and the five were chosen by delivery.',
     },
     { t: 'h2', text: 'What to hold constant, and how' },
     {
       t: 'p',
-      text: 'A test is only valid if everything except the tested axis is genuinely identical, which is harder in generative production than it sounds, because two generations from the same prompt are not the same asset.',
+      text: 'A test is only valid if everything except the tested axis is identical to the byte, which is harder in generative production than it sounds, because two generations from the same prompt are not the same asset.',
     },
     {
       t: 'ol',
@@ -92,7 +92,7 @@ export const post: Post = {
     { t: 'h2', text: 'The metric to test on' },
     {
       t: 'p',
-      text: 'For hook rounds, the first-three-seconds retention, not the conversion. A hook that wins on conversion may have won for reasons downstream of the hook, and you will have attributed it wrongly.',
+      text: 'For hook rounds, the first-three-seconds retention. A hook that wins on conversion may have won for reasons downstream of the hook, and you will have attributed it wrongly.',
     },
     {
       t: 'p',
@@ -124,7 +124,7 @@ export const post: Post = {
     },
     {
       q: 'How do you hold variables constant in generative testing?',
-      a: 'Generate the invariant portion once and reuse the file, never regenerating it per variant. Two generations from the same prompt are not the same asset. For hook tests, change only the audio and the first two seconds of picture over one master.',
+      a: 'Generate the invariant portion once and reuse the file for every variant. Two generations from the same prompt are not the same asset. For hook tests, change only the audio and the first two seconds of picture over one master.',
     },
   ],
   terms: ['eval', 'retention-curve', 'hook', 'cost-per-accepted-asset', 'naming-convention', 'run-log'],

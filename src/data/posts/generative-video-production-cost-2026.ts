@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'What Does Generative Video Production Cost in 2026?',
   metaTitle: 'What Does Generative Video Production Cost in 2026? A Real Breakdown',
   metaDescription:
-    'Generative video pricing in 2026, from per-second model credits to studio engagements. What each tier buys, why the sticker price misleads, and the one number that tells you what a video really cost.',
+    'Generative video pricing in 2026, from per-second model credits to studio engagements. What each tier buys, why the sticker price misleads, and the one number that tells you what a video cost you.',
   excerpt:
     'Model credits are pennies a second and studio engagements run into five figures. Both numbers are true. Here is what sits between them and which one applies to your brief.',
   published: '2026-08-31',
@@ -25,7 +25,7 @@ export const post: Post = {
   imageAlt:
     'A cost ledger rendered as stacked luminous bars against a dark studio wall, each bar labelled with a production stage.',
   standfirst:
-    'In 2026 a generative video costs anywhere from about five cents a second in raw model credits to £30,000 or more for a produced campaign, and the gap between those numbers is not margin. It is everything that happens before and after the model runs. Here is what each tier buys.',
+    'In 2026 a generative video costs anywhere from about five cents a second in raw model credits to £30,000 or more for a produced campaign, and the gap between those numbers is everything that happens around the model. It is everything that happens before and after the model runs. Here is what each tier buys.',
   body: [
     {
       t: 'p',
@@ -98,9 +98,9 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'Locking the things that must not change. A product becomes a master plate: one clean frame, correct shape, correct label, that every later angle is generated from. A presenter becomes a trained identity built from a sheet of stills, never a reference image re-uploaded and re-interpreted each session.',
+        'Locking the things that must not change. A product becomes a master plate: one clean frame, correct shape, correct label, that every later angle is generated from. A presenter becomes a trained identity built from a sheet of stills, held steady across every later session.',
         'Writing the set once. One key light direction, one stated colour temperature, one lens language, written down before anything renders, so shot nine and shot one belong to the same world.',
-        'Generation. The cheap part. Genuinely the cheap part.',
+        'Generation. The cheap part. Cheaper than you think.',
         'The control gates. Read every printed word at full resolution. Overlay each render on its plate at forty per cent opacity and check the outline has not drifted. Hold one light direction across the whole set. Kill any invented certification, award or ingredient claim.',
         'The rejected work. The renders that failed a gate and went back to the source file instead of into a retouching pass, because patching produces one shot that passes and a set that still drifts.',
         'Delivery. Aspect ratios cut as part of the shoot and never cropped afterwards, colour handled once, disclosure applied on the asset as well as in the metadata, and licensing cleared for commercial use before rendering.',
@@ -137,8 +137,8 @@ export const post: Post = {
         'Ask for the expected acceptance rate on the hardest shot in the brief. A studio that has done this before will give you a fraction. One that has not will say it depends.',
         'Ask what happens to a frame that fails. "Back to the plate" is the right answer. "Our retoucher fixes it" means the set will drift.',
         'Ask who owns the plates and trained identities afterwards. If the answer is the studio, your second campaign costs the same as your first.',
-        'Ask for the credit ceiling per asset and what happens when a batch reaches it. It should halt and ask, not quietly spend past it.',
-        'Ask for a date, not a range. A studio with a pipeline can give you one.',
+        'Ask for the credit ceiling per asset and what happens when a batch reaches it. It should halt and ask you first.',
+        'Ask for a date. A studio with a pipeline can give you one.',
       ],
     },
     {

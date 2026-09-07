@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'Hands remain the most reliable generative failure because they are high-articulation, self-occluding and something every viewer is expert in. Why the problem is structural, and the eight compositional moves that avoid it.',
   excerpt:
-    'It is not that models cannot draw hands. It is that hands are the hardest object in the frame and the one everybody checks.',
+    'Hands are the hardest object in the frame and the one everybody checks.',
   published: '2026-06-16',
   author: 'Konstantinos Chatzimichail',
   section: 'Craft',
@@ -52,22 +52,22 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'Crop at the wrist. A frame that ends above the hands cannot have wrong hands, and it is a legitimate composition, not an evasion.',
+        'Crop at the wrist. A frame that ends above the hands cannot have wrong hands, and it is a legitimate composition.',
         'Put hands behind an object. A hand on the far side of a cup, a counter or a laptop is half a hand.',
         'Hands at rest and together. Interlocked or resting hands present a simpler silhouette than a hand in mid-gesture.',
         'Motion blur. A hand moving fast enough to blur is a hand that does not have to resolve.',
         'Out of focus. A hand in the near foreground at f/2 is a shape, and shapes do not have finger counts.',
         'Small in frame. Fewer pixels per hand is fewer pixels in which to be wrong.',
-        'Gloves. Genuinely effective, and appropriate in more categories than people assume: food, industry, medical, laboratory, cold weather.',
+        'Gloves. Effective, and appropriate in more categories than people assume: food, industry, medical, laboratory, cold weather.',
         'Cut before the gesture completes. The end of a gesture is where the configuration is most specific and most likely to fail.',
       ],
     },
     {
       t: 'note',
       title: 'The one to reach for first',
-      text: 'Crop at the wrist. It costs nothing, requires no post, and removes the failure entirely. A generative shot list should be reviewed once with the single question: which of these shots genuinely needs the hands?',
+      text: 'Crop at the wrist. It costs nothing, requires no post, and removes the failure entirely. A generative shot list should be reviewed once with the single question: which of these shots needs the hands at all?',
     },
-    { t: 'h2', text: 'When you genuinely need the hand' },
+    { t: 'h2', text: 'When you need the hand' },
     {
       t: 'p',
       text: 'Product interaction is the case where none of the above helps, because the hand holding the product is the shot. Three approaches, in order of cost:',

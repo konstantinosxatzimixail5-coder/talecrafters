@@ -78,7 +78,7 @@ export const post: Post = {
     { t: 'h2', text: 'Diagnosing a sharp drop' },
     {
       t: 'p',
-      text: 'Go to the timestamp and watch the fifteen seconds before it, not the moment itself. People leave a few seconds after the thing that made them leave, because deciding takes time. The cause is upstream of the cliff.',
+      text: 'Go to the timestamp and watch the fifteen seconds before it. People leave a few seconds after the thing that made them leave, because deciding takes time. The cause is upstream of the cliff.',
     },
     {
       t: 'p',
@@ -88,7 +88,7 @@ export const post: Post = {
       t: 'ul',
       items: [
         'A beat where nothing changed. The value at the top and the bottom of that section is identical, and the audience registered the absence.',
-        'An unbelieved claim. Something was asserted without evidence, and the drop is scepticism, not boredom.',
+        'An unbelieved claim. Something was asserted without evidence, and the drop is scepticism.',
         'A loop closed too early. The only unanswered question got answered, so there was no reason to continue.',
         'A tonal break. The piece changed register (a joke in something sincere, an ad break in something intimate), and the audience took the exit.',
       ],
@@ -96,7 +96,7 @@ export const post: Post = {
     { t: 'h2', text: 'What the curve cannot tell you' },
     {
       t: 'p',
-      text: 'It measures attention, not persuasion, and the two come apart more often than anyone comfortable would like. A piece can hold a hostile audience beautifully. A piece can lose half its viewers and convert the rest at a rate nothing else touches.',
+      text: 'It measures attention, and attention and persuasion come apart more often than anyone comfortable would like. A piece can hold a hostile audience beautifully. A piece can lose half its viewers and convert the rest at a rate nothing else touches.',
     },
     {
       t: 'p',
@@ -106,10 +106,10 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'Look at the curve for every piece, not just the underperformers. The successful ones contain the reusable information.',
+        'Look at the curve for every piece, winners included. The successful ones contain the reusable information.',
         'Record the four features as numbers in a shared log: cliff depth, middle slope, timestamp of the largest local drop, timestamps of any rises.',
         'Write the edit note next to each, and then write what you did about it. Most teams collect the data and never close the loop.',
-        'Look for the same timestamp appearing across pieces. A drop at seven seconds in eleven of your last twenty videos is a format problem, not an edit problem.',
+        'Look for the same timestamp appearing across pieces. A drop at seven seconds in eleven of your last twenty videos is a format problem.',
         'Use rises to decide what to make more of. They are the only positive signal in the graph.',
       ],
     },
@@ -135,7 +135,7 @@ export const post: Post = {
     },
     {
       q: 'How do you find the cause of a sharp drop in retention?',
-      a: 'Watch the fifteen seconds before the drop, never the moment itself. People leave a few seconds after the thing that made them leave. The usual causes are a beat where nothing changed, an unbelieved claim, a loop closed too early, or a tonal break.',
+      a: 'Watch the fifteen seconds before the drop. People leave a few seconds after the thing that made them leave. The usual causes are a beat where nothing changed, an unbelieved claim, a loop closed too early, or a tonal break.',
     },
     {
       q: 'What can a retention curve not tell you?',

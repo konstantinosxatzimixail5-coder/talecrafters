@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'cutting-ai-video',
   imageAlt: 'An edit timeline with cut points marked on motion peaks.',
   standfirst:
-    'Two generated clips share no camera, no lens and no light. Editing is what makes them read as one piece: cut on motion, never dissolve, vary shot size across every join, and let sound carry the continuity the pictures cannot.',
+    'Two generated clips share no camera, no lens and no light. Editing is what makes them read as one piece: cut on motion, vary shot size across every join, and let sound carry the continuity the pictures cannot.',
   body: [
     {
       t: 'p',
@@ -39,7 +39,7 @@ export const post: Post = {
         'Take the front of every clip. Coherence degrades as a generation runs on, so the usable portion is at the start. Generate long, cut early.',
         'Never cut two clips from the same generation batch together if they show the same subject at the same size. That is the pairing most likely to reveal identity drift.',
         'Let sound run across the cut. Continuous audio over a picture change is the oldest continuity trick there is and it does more work here than in conventional footage.',
-        'Grade to a single target, not to each other. Matching clip two to clip one and clip three to clip two accumulates drift. Set a reference and pull everything to it.',
+        'Grade everything to a single target. Matching clip two to clip one and clip three to clip two accumulates drift. Set a reference and pull everything to it.',
         'Add one unifying layer over everything: a consistent grain, a slight and consistent lens artefact, a shared halation. It gives the sequence a common surface it did not have.',
         'Cut faster than you want to at first, then find where it can breathe. Long holds are where drift becomes visible, and a held shot has to be earned.',
       ],
@@ -50,7 +50,7 @@ export const post: Post = {
       caption: 'What an audience notices, and the edit answer',
       head: ['The mismatch', 'When it shows', 'The answer'],
       rows: [
-        ['Light direction', 'Immediately, and it is the most damaging one', 'Fix in the prompt, not the edit. No cut hides a key light on the wrong side.'],
+        ['Light direction', 'Immediately, and it is the most damaging one', 'Fix it in the prompt. No cut hides a key light on the wrong side.'],
         ['Identity drift', 'On a cut between two shots of the same face', 'Insert a different shot between them, or re-render.'],
         ['Grade and contrast', 'Across the whole sequence, as unease', 'One reference frame, everything pulled to it.'],
         ['Grain and sharpness', 'On a dissolve or a slow cut', 'A single grain layer over the finished piece.'],
@@ -69,7 +69,7 @@ export const post: Post = {
     { t: 'h2', text: 'The two transitions to avoid' },
     {
       t: 'p',
-      text: 'The cross-dissolve, for the reason above. It is not a stylistic preference: it is the one transition that guarantees the comparison you are trying to prevent.',
+      text: 'The cross-dissolve, for the reason above. It is the one transition that guarantees the comparison you are trying to prevent.',
     },
     {
       t: 'p',
@@ -99,7 +99,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'How do you edit AI-generated video so it looks like one piece?',
-      a: 'Cut on motion, never cross-dissolve, vary shot size across every join, take the front of every clip, grade everything to one single reference, run sound across the cuts, and add one unifying grain layer over the whole piece.',
+      a: 'Cut on motion, vary shot size across every join, take the front of every clip, grade everything to one single reference, run sound across the cuts, and add one unifying grain layer over the whole piece.',
     },
     {
       q: 'Why should you never cross-dissolve two AI clips?',

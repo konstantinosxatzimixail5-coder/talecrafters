@@ -103,13 +103,13 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The consent file exists before the first render, not before the first delivery. This is the discipline that trained identity as a production artefact enforces by construction, and it is the main reason we treat it as a documented artefact and never as a file on somebody’s machine.',
+      text: 'The consent file exists before the first render. This is the discipline that trained identity as a production artefact enforces by construction, and it is the main reason we treat it as a documented artefact and never as a file on somebody’s machine.',
     },
     { t: 'h2', text: 'What to do this week' },
     {
       t: 'ol',
       items: [
-        'Count the assets the face has to appear in over the next quarter, not the next campaign. Most teams undercount by looking at one brief.',
+        'Count the assets the face has to appear in over the next quarter. Most teams undercount by looking at one brief.',
         'If it is under nine and inside one session, use reference conditioning and spend the saved time on gating instead.',
         'If it is over nine, or spread across weeks, build the identity properly and document which base model it was built against.',
         'Either way, get the release signed before anything renders, covering derivative training explicitly.',

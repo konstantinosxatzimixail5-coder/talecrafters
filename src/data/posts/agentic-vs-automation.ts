@@ -2,8 +2,8 @@ import type { Post } from './types';
 
 export const post: Post = {
   slug: 'agentic-workflow-vs-automation-where-each-actually-works',
-  title: 'Agentic Workflow vs Automation: Where Each Actually Works',
-  metaTitle: 'Agentic Workflow vs Automation: Where Each Actually Works',
+  title: 'Agentic Workflow vs Automation: Where Each One Works',
+  metaTitle: 'Agentic Workflow vs Automation: Where Each One Works',
   metaDescription:
     'Classic automation follows a path somebody drew. An agentic workflow picks its own within stated boundaries. A decision rule for which to use on which process, and the four places agents should never go.',
   excerpt:
@@ -82,7 +82,7 @@ export const post: Post = {
       items: [
         'Repurposing. One article into a cutdown, a carousel, three infographic frames and a podcast read. The source varies structurally every time, so a template breaks and an agent adapts.',
         'Research and qualification. Go and find the thing, check it against criteria, present it in a format a person can act on. The web does not arrive in a fixed shape.',
-        'Draft generation against a brief. Not final copy. Drafts, which a person then edits, which is four hours genuinely saved.',
+        'Draft generation against a brief. Not final copy. Drafts, which a person then edits, which is four hours off the week.',
         'Format matrices. Nine placements, four aspect ratios, three lengths, and the rules for what survives a crop differ per asset.',
         'Triage. Reading an inbound brief and routing it, with the interesting ones flagged for a human and none of them answered.',
       ],
@@ -128,7 +128,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'That split is not a compromise. It is the design. Put the judgement where judgement is needed and the determinism everywhere else, and you get a system that is both adaptable and auditable, which is the only combination that survives an operations review.',
+      text: 'That split is the design. Put the judgement where judgement is needed and the determinism everywhere else, and you get a system that is both adaptable and auditable, which is the only combination that survives an operations review.',
     },
     {
       t: 'cta',

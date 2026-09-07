@@ -79,7 +79,7 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'The specific permission to train a model on the supplied material, stated in those exact words, never implied by a broad grant.',
+        'The specific permission to train a model on the supplied material, stated in those exact words.',
         'Scope of output: what the generated likeness may be used to say and sell, and what it may not. A blanket grant is a liability for both sides.',
         'Territory and duration, with a stated end date and never "in perpetuity", which is increasingly unenforceable and always a negotiation risk.',
         'What happens to the trained model at the end of the term. Deleted, escrowed, or retained. Say which.',

@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'A migration procedure for moving a campaign or a brand look from one generative video model to another: what to port, what to rebuild, what to re-shoot, and the calibration set that tells you when you have arrived.',
   excerpt:
-    'A model change is a re-grade, not a re-render. Treat it as the second and you will pay for the campaign twice.',
+    'A model change is a re-grade. Treat it as a re-render and you will pay for the campaign twice.',
   published: '2026-09-02',
   author: 'Konstantinos Chatzimichail',
   section: 'Production',
@@ -24,7 +24,7 @@ export const post: Post = {
   imageAlt:
     'Two sets of frames of the same subject, produced by different models, aligned side by side for comparison.',
   standfirst:
-    'Moving a look between generative video models is a calibration problem, not a prompting problem. Build a fixed calibration set of six shots, match them on the new model first, and only then touch the campaign. Everything else is guessing at scale.',
+    'Moving a look between generative video models is a calibration problem. Build a fixed calibration set of six shots, match them on the new model first, and only then touch the campaign. Everything else is guessing at scale.',
   body: [
     {
       t: 'p',
@@ -32,7 +32,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The reason is that a look is not stored in the prompts. It is stored in the interaction between the prompts and one specific model’s response to them, and the second half of that pair has just been replaced.',
+      text: 'The reason is that a look lives in the interaction between the prompts and one specific model’s response to them, and the second half of that pair has just been replaced.',
     },
     { t: 'h2', text: 'The calibration set' },
     {
@@ -113,7 +113,7 @@ export const post: Post = {
       items: [
         'Keep the calibration set as a permanent artefact. It costs six generations to maintain and it is the fastest evaluation you will ever run on a new model.',
         'Write the lock file in production language and never in model dialect. "Hard key from camera left, no fill, shadow side near black" survives; a phrasing trick tuned to one sampler does not.',
-        'Store references as image assets in the project, not as prompt text describing them.',
+        'Store references as image assets in the project.',
         'Version the negative list per model, in the repository, so the two weeks of learning is not in somebody’s notes app.',
         'Never accept a deliverable spec that requires the model to still exist. Frames, plates and project files. Not seeds and settings.',
       ],

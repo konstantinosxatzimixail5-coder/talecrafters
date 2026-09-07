@@ -2,12 +2,12 @@ import type { Post } from './types';
 
 export const post: Post = {
   slug: 'who-owns-ai-generated-content',
-  title: 'Who Owns AI-Generated Content? The Contract Questions That Actually Decide It',
+  title: 'Who Owns AI-Generated Content? The Contract Questions That Decide It',
   metaTitle: 'Who Owns AI-Generated Content? Rights, Contracts and Practice',
   metaDescription:
     'Copyright in purely machine-generated output is uncertain in most jurisdictions. What that means commercially, which contract terms decide ownership in practice, and the four clauses to check before signing anything.',
   excerpt:
-    'The interesting question is not whether copyright subsists. It is what your contract says when it does not.',
+    'The interesting question is what your contract says when copyright does not subsist.',
   published: '2026-05-19',
   author: 'Konstantinos Chatzimichail',
   section: 'Compliance',
@@ -40,7 +40,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The commercial consequence is not that generative work cannot be owned. It is that ownership is less automatic than everybody is used to, so it has to be constructed. Nobody gets to assume it.',
+      text: 'The commercial consequence is that ownership is less automatic than everybody is used to, so it has to be constructed. Nobody gets to assume it.',
     },
     { t: 'h2', text: 'The four clauses that decide it' },
     {
@@ -72,12 +72,12 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The fourth is the one most often missing and the most likely to matter. Almost every real dispute we have seen in this area concerned an input, never an output: a reference image somebody did not have rights to, a likeness without a release, a piece of music cleared for one use and running in another.',
+      text: 'The fourth is the one most often missing and the most likely to matter. Almost every real dispute we have seen in this area concerned an input: a reference image somebody did not have rights to, a likeness without a release, a piece of music cleared for one use and running in another.',
     },
     {
       t: 'note',
       title: 'Ownership and exclusivity are different questions',
-      text: 'You can own everything assignable in an asset and still not be able to stop a similar one existing, because a model can produce something similar for somebody else. If exclusivity matters (a character, a presenter, a signature look), it has to be constructed from trained assets and contract terms, not assumed from ownership.',
+      text: 'You can own everything assignable in an asset and still not be able to stop a similar one existing, because a model can produce something similar for somebody else. If exclusivity matters (a character, a presenter, a signature look), it has to be constructed from trained assets and contract terms.',
     },
     { t: 'h2', text: 'What to secure in a deliverable' },
     {
@@ -93,12 +93,12 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'A deliverable that requires a specific model, seed or account to still exist is access, not ownership, and it is worth naming that distinction during the negotiation. Discovering it during a re-version is expensive.',
+      text: 'A deliverable that requires a specific model, seed or account to still exist is access, and it is worth naming that distinction during the negotiation. Discovering it during a re-version is expensive.',
     },
     { t: 'h2', text: 'The trained identity case' },
     {
       t: 'p',
-      text: 'A trained character or presenter raises its own questions because the artefact is a model, not an asset. Who holds the weights, who may use them, for what, for how long, and what happens at the end of the term all need stating.',
+      text: 'A trained character or presenter raises its own questions because the artefact is a model. Who holds the weights, who may use them, for what, for how long, and what happens at the end of the term all need stating.',
     },
     {
       t: 'p',
@@ -127,7 +127,7 @@ export const post: Post = {
     },
     {
       q: 'Can you use AI-generated images commercially?',
-      a: 'Generally yes, subject to the model provider’s terms, which differ by plan and sometimes differ on free tiers. The riskier question is usually the inputs, never the output: references, likenesses and music each need their own clearance.',
+      a: 'Generally yes, subject to the model provider’s terms, which differ by plan and sometimes differ on free tiers. The riskier question is usually the inputs: references, likenesses and music each need their own clearance.',
     },
     {
       q: 'What contract clauses decide ownership of generative work?',
@@ -139,11 +139,11 @@ export const post: Post = {
     },
     {
       q: 'What should you receive as deliverables from a generative production?',
-      a: 'Finished assets with no account dependency, project files, the lock file and reference set, consent files for every real person, an input schedule with clearances, and the run log where provenance may be questioned. Anything requiring a specific model or account to still exist is access, not ownership.',
+      a: 'Finished assets with no account dependency, project files, the lock file and reference set, consent files for every real person, an input schedule with clearances, and the run log where provenance may be questioned. Anything requiring a specific model or account to still exist is access.',
     },
     {
       q: 'Who owns a trained character model?',
-      a: 'It has to be stated, because the artefact is a model, not an asset: who holds the weights, who may use them, for what, for how long, and what happens at end of term. If the training material came from a real person, their release must grant the derivative-training right explicitly and specify disposal.',
+      a: 'It has to be stated, because the artefact is a model: who holds the weights, who may use them, for what, for how long, and what happens at end of term. If the training material came from a real person, their release must grant the derivative-training right explicitly and specify disposal.',
     },
   ],
   terms: ['model-licence', 'derivative-training', 'likeness-rights', 'trained-identity', 'consent-file', 'deliverable-specification'],

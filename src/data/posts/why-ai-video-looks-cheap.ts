@@ -29,7 +29,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'The most useful feedback we ever get on a generative piece is somebody saying they do not like it and being unable to say why. That gap is where the craft lives. An audience registers a violation of physical consistency long before it can name one, and the reaction arrives as a judgement about production value, never about technology.',
+      text: 'The most useful feedback we ever get on a generative piece is somebody saying they do not like it and being unable to say why. That gap is where the craft lives. An audience registers a violation of physical consistency long before it can name one, and the reaction arrives as a judgement about production value.',
     },
     {
       t: 'p',
@@ -42,7 +42,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Fix: write one key direction, as a clock position, before any generation. Hold it across the set. A shot that violates it is regenerated, not graded.',
+      text: 'Fix: write one key direction, as a clock position, before any generation. Hold it across the set. A shot that violates it is regenerated.',
     },
     { t: 'h2', text: '2. Everything is at the same distance' },
     {
@@ -136,7 +136,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'Why does AI-generated video look fake?',
-      a: 'Usually not for the reason people assume. The most common causes are a key light direction that changes between shots, a face that drifts across the sequence, and clips held past the point where the model stops obeying physics. All three are production failures, not model limitations.',
+      a: 'Usually not for the reason people assume. The most common causes are a key light direction that changes between shots, a face that drifts across the sequence, and clips held past the point where the model stops obeying physics. All three are production failures.',
     },
     {
       q: 'How long should a generative video clip be?',

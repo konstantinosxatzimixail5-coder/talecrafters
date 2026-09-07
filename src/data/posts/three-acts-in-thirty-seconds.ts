@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'Three-Act Structure in Thirty Seconds',
   metaTitle: 'Three-Act Structure in a 30-Second Ad: How It Compresses',
   metaDescription:
-    'How classical structure survives at advertising length: what each act gets, which beat is always the one missing, and the four shapes that work when three acts genuinely will not fit.',
+    'How classical structure survives at advertising length: what each act gets, which beat is always the one missing, and the four shapes that work when three acts will not fit.',
   excerpt:
     'The shape does not change at thirty seconds. The tolerance does: one beat per act, and the complication is the one everybody deletes.',
   published: '2026-07-24',
@@ -42,7 +42,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The failed attempt in act two is the piece most often missing. Without it there is no complication, only a delay, and an audience reads a delay as padding, never as tension, however well shot it is.',
+      text: 'The failed attempt in act two is the piece most often missing. Without it there is no complication, only a delay, and an audience reads a delay as padding, however well shot it is.',
     },
     { t: 'h2', text: 'The beat that always gets cut' },
     {
@@ -51,7 +51,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Cutting it is what produces the advert where a person has a mild inconvenience and then does not have it. That is a description of a purchase, not a story about one, and it converts accordingly.',
+      text: 'Cutting it is what produces the advert where a person has a mild inconvenience and then does not have it. That is a description of a purchase, and it converts accordingly.',
     },
     {
       t: 'note',
@@ -69,7 +69,7 @@ export const post: Post = {
         'Give the resolution one image and no explanation. The changed state, shown once, beats any line stating it.',
       ],
     },
-    { t: 'h2', text: 'When three acts genuinely will not fit' },
+    { t: 'h2', text: 'When three acts will not fit' },
     {
       t: 'p',
       text: 'At six or ten seconds it will not, and forcing it produces a piece that gestures at three things and lands none. Four alternatives, each of which is a complete shape.',
@@ -123,7 +123,7 @@ export const post: Post = {
     },
     {
       q: 'How do you compress a story into a shorter runtime?',
-      a: 'Start after the setup, let one specific object carry act one, overlap the end of the situation with the start of the complication, cut the establishing shot, and give the resolution one image, never a line explaining it.',
+      a: 'Start after the setup, let one specific object carry act one, overlap the end of the situation with the start of the complication, cut the establishing shot, and give the resolution one image.',
     },
     {
       q: 'How do you protect a structural beat through client approvals?',

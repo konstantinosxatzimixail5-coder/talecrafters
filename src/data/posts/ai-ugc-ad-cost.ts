@@ -2,7 +2,7 @@ import type { Post } from './types';
 
 export const post: Post = {
   slug: 'what-an-ai-ugc-ad-actually-costs',
-  title: 'What an AI UGC Ad Actually Costs (And Where the Money Goes)',
+  title: 'What an AI UGC Ad Costs, and Where the Money Goes',
   metaTitle: 'AI UGC Ad Cost in 2026: The Real Numbers Behind Synthetic Creator Ads',
   metaDescription:
     'What it costs to produce a synthetic UGC ad in 2026, broken down by script, avatar, voice, variants and review. Plus the consent and disclosure line items nobody quotes and everybody eventually pays.',
@@ -61,7 +61,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'The number to quote from',
-      text: 'Cost per accepted asset, not cost per generation. A batch that produces ninety and ships twelve has a real unit cost of the ninety, and the twelve is what your competitor is quoting you.',
+      text: 'Cost per accepted asset. A batch that produces ninety and ships twelve has a real unit cost of the ninety, and the twelve is what your competitor is quoting you.',
     },
     { t: 'h2', text: 'The rights line, which is not optional' },
     {
@@ -74,7 +74,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The second is disclosure, which is about the audience, not the performer. Since 2 August 2026, EU transparency obligations under Article 50 apply to synthetic image, audio and video content that qualifies as a deepfake, which captures a great deal of AI-generated advertising. Platform policies are frequently stricter than the law, and advertising codes apply on top of both. The practical rule is to work to the strictest of the three and to decide it at brief stage.',
+      text: 'The second is disclosure, which is about the audience. Since 2 August 2026, EU transparency obligations under Article 50 apply to synthetic image, audio and video content that qualifies as a deepfake, which captures a great deal of AI-generated advertising. Platform policies are frequently stricter than the law, and advertising codes apply on top of both. The practical rule is to work to the strictest of the three and to decide it at brief stage.',
     },
     {
       t: 'cta',
@@ -89,7 +89,7 @@ export const post: Post = {
         'Cheaper: high variant counts, many markets, frequent creative refresh, products that cannot easily be shipped to creators, and anything where the same script has to be tested twenty ways.',
         'Cheaper: iterating a winner. Once a hook works, producing thirty variations of it is close to free compared with re-booking anybody.',
         'Not cheaper: a single hero asset. One film with one creator is still a shoot, and a synthetic version of it costs about the same once you have written it properly.',
-        'Not cheaper: categories where the claim depends on demonstrated use. If the audience has to believe a real person really did the thing, you are paying for belief and synthetic material starts at a deficit.',
+        'Not cheaper: categories where the claim depends on demonstrated use. If the audience has to believe a real person did the thing, you are paying for belief and synthetic material starts at a deficit.',
         'Not cheaper: regulated categories, where the disclosure and substantiation overhead can exceed the production saving.',
       ],
     },
@@ -116,7 +116,7 @@ export const post: Post = {
     },
     {
       q: 'Is synthetic UGC cheaper than hiring creators?',
-      a: 'For high variant counts, many markets and frequent creative refresh, substantially. For a single hero asset, barely. One well-written film costs about the same either way. For categories where the audience has to believe a real person really used the product, synthetic material starts at a credibility deficit that no cost saving covers.',
+      a: 'For high variant counts, many markets and frequent creative refresh, substantially. For a single hero asset, barely. One well-written film costs about the same either way. For categories where the audience has to believe a real person used the product, synthetic material starts at a credibility deficit that no cost saving covers.',
     },
     {
       q: 'What is the most under-budgeted line in synthetic UGC?',

@@ -46,7 +46,7 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'What do you lock, and where is it written? The answer should be a file, not a description of good intentions. Palette, light behaviour, materials, wardrobe rules, lens family.',
+        'What do you lock, and where is it written? The answer should be a file. Palette, light behaviour, materials, wardrobe rules, lens family.',
         'How do you keep a face or a product identical across forty shots? Reference conditioning, a master plate, a trained identity. Any of them is a real answer. "Careful prompting" is not.',
         'What happens when the model you use is deprecated? A studio that has thought about it will describe assets that survive the change. One that has not will look surprised.',
       ],
@@ -80,7 +80,7 @@ export const post: Post = {
       caption: 'Disqualifying answers, and what each one means',
       head: ['What they say', 'What it means'],
       rows: [
-        ['"We don’t really track acceptance rate."', 'The quote is a guess and the overrun is yours.'],
+        ['"We don’t track acceptance rate."', 'The quote is a guess and the overrun is yours.'],
         ['"Consistency is just about good prompting."', 'They have not run a sequence longer than a few shots.'],
         ['"We can do unlimited revisions."', 'There is no ceiling, so there is no budget control, so there is a number later.'],
         ['"Disclosure is the client’s side."', 'True in part, and a studio that will not advise on it has not read the rules.'],

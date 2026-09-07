@@ -62,7 +62,7 @@ export const post: Post = {
         [
           'Deliberate reference',
           'Definitions, checklists, specifications',
-          'Written to be quoted. The mention is the goal, not the consolation prize.',
+          'Written to be quoted. The mention is the goal.',
         ],
       ],
     },
@@ -132,7 +132,7 @@ export const post: Post = {
     },
     {
       q: 'Should you write content that answers the question without a click?',
-      a: 'Yes, because the alternative is not a click. It is the answer being composed from somebody else’s page. You are trading sessions for mentions, and the trade is worth stating openly.',
+      a: 'Yes, because the alternative is the answer being composed from somebody else’s page. You are trading sessions for mentions, and the trade is worth stating openly.',
     },
     {
       q: 'What should a content team do with the time freed up by not writing explainers?',

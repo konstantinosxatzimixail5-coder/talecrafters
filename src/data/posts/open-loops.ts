@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'There is a class of video that gets everything right and still loses two thirds of its audience by the midpoint: clear, well-paced, correct, nicely shot, and structured as a sequence of complete answers. It is not failing on quality. It is failing because at every moment the viewer is complete, and a complete viewer has nothing pulling them forward.',
+      text: 'There is a class of video that gets everything right and still loses two thirds of its audience by the midpoint: clear, well-paced, correct, nicely shot, and structured as a sequence of complete answers. It is failing because at every moment the viewer is complete, and a complete viewer has nothing pulling them forward.',
     },
     { t: 'h2', text: 'The mechanism' },
     {
@@ -36,7 +36,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Note what this is not. It is not withholding information to be annoying, and it is not the "stay to the end" promise, which audiences have correctly learned to discount. It is ordering the material so that the reason to continue exists at every point.',
+      text: 'Note what this is. It is ordering the material so that the reason to continue exists at every point.',
     },
     { t: 'h2', text: 'Stacking' },
     {
@@ -128,7 +128,7 @@ export const post: Post = {
     },
     {
       q: 'Do open loops work in instructional content?',
-      a: 'Poorly. Somebody following a procedure wants the next instruction, not a question. These are different formats: a procedure should be short and scannable, a piece designed to hold attention for minutes needs loops, and trying to do both produces something tedious and hard to follow.',
+      a: 'Poorly. Somebody following a procedure wants the next instruction. These are different formats: a procedure should be short and scannable, a piece designed to hold attention for minutes needs loops, and trying to do both produces something tedious and hard to follow.',
     },
   ],
   terms: ['open-loop', 'curiosity-gap', 'retention-curve', 'hook', 'payoff', 'dramatic-question'],

@@ -116,7 +116,7 @@ export const post: Post = {
     },
     {
       q: 'How many beats should a short film have?',
-      a: 'Six to nine for a ninety-second piece. Above that the beats are events, not turns, which is what makes a short film feel busy and empty at the same time.',
+      a: 'Six to nine for a ninety-second piece. Above that the beats have become events, which is what makes a short film feel busy and empty at the same time.',
     },
     {
       q: 'Which beats cost the most to produce generatively?',

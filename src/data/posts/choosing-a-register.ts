@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'choosing-a-register',
   imageAlt: 'The same scene rendered as photoreal, illustrated, and graphic, with costs beneath each.',
   standfirst:
-    'Photoreal carries the narrowest error tolerance of any register, because the audience has a lifetime of reference for what it should look like. Stylised registers widen that tolerance enormously, cost less to produce, and are usually more distinctive. Choose deliberately.',
+    'Photoreal carries the narrowest error tolerance of any register, because the audience has a lifetime of reference for what it should look like. Stylised registers widen that tolerance enormously, cost well under photoreal to produce, and tend to be more distinctive. Choose deliberately.',
   body: [
     {
       t: 'p',
@@ -57,7 +57,7 @@ export const post: Post = {
         [
           'Will this run beside real photography of the same thing?',
           'Photoreal, or the mismatch becomes the message',
-          'A distinct register is an asset, not a compromise',
+          'A distinct register is an asset in itself',
         ],
         [
           'Is the category visually crowded with the same look?',

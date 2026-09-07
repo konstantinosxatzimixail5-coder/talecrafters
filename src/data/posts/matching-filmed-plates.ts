@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'matching-filmed-plates',
   imageAlt: 'A split frame, filmed on one side and generated on the other, matched at the join.',
   standfirst:
-    'Eight properties decide whether generated and filmed material read as one piece: light direction, colour temperature, black level, lens character, depth of field, grain, motion blur and camera height. Three must be decided on set, three in the render, and only two are genuinely a grade problem.',
+    'Eight properties decide whether generated and filmed material read as one piece: light direction, colour temperature, black level, lens character, depth of field, grain, motion blur and camera height. Three must be decided on set, three in the render, and only two survive as a grade problem.',
   body: [
     {
       t: 'p',
@@ -40,9 +40,9 @@ export const post: Post = {
         ['Depth of field', 'On set and in the render', 'Different focus falloff reads instantly as two cameras.'],
         ['Lens character', 'In the render', 'Distortion, vignette and edge softness. Nameable in a prompt.'],
         ['Motion blur', 'In the render', 'Shutter behaviour has to match or the movement feels different.'],
-        ['Colour temperature', 'In the grade', 'Genuinely a grade problem, and the easiest of the eight.'],
+        ['Colour temperature', 'In the grade', 'A grade problem, and the easiest of the eight.'],
         ['Black level and contrast', 'In the grade', 'Generated blacks are frequently lifted. Match the toe of the curve.'],
-        ['Grain', 'In the grade', 'One grain layer over everything at the end, never per clip.'],
+        ['Grain', 'In the grade', 'One grain layer over everything at the end.'],
       ],
     },
     {
@@ -73,7 +73,7 @@ export const post: Post = {
     { t: 'h2', text: 'Prompting to match filmed material' },
     {
       t: 'p',
-      text: 'The lock block for a hybrid job carries more than a normal one, and it is written from the on-set notes, never from taste.',
+      text: 'The lock block for a hybrid job carries more than a normal one, and it is written from the on-set notes.',
     },
     {
       t: 'quote',
@@ -86,7 +86,7 @@ export const post: Post = {
     { t: 'h2', text: 'The grade approach' },
     {
       t: 'p',
-      text: 'Grade to a single reference, never to each other. Pick one filmed frame as the target and pull every generated clip to it. Matching clip two to clip one and clip three to clip two accumulates error, and by clip nine the sequence has drifted somewhere nobody chose.',
+      text: 'Grade everything to a single reference. Pick one filmed frame as the target and pull every generated clip to it. Matching clip two to clip one and clip three to clip two accumulates error, and by clip nine the sequence has drifted somewhere nobody chose.',
     },
     {
       t: 'p',
@@ -117,7 +117,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'How do you match AI-generated footage to real filmed footage?',
-      a: 'Eight properties have to agree: light direction, camera height and lens angle, depth of field, lens character, motion blur, colour temperature, black level and grain. Light direction and camera height must be settled before anyone films; lens character and motion blur belong in the render; only temperature, black level and grain are genuinely grade problems.',
+      a: 'Eight properties have to agree: light direction, camera height and lens angle, depth of field, lens character, motion blur, colour temperature, black level and grain. Light direction and camera height must be settled before anyone films; lens character and motion blur belong in the render; only temperature, black level and grain are grade problems.',
     },
     {
       q: 'What should you capture on set for a hybrid AI shoot?',

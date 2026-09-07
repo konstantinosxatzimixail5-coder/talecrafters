@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'Most creative teams measure output volume, which tells you nothing about whether the operation is improving. Six numbers that do, how to instrument them without a new tool, and the two that predict everything else.',
   excerpt:
-    'Volume is not a measure of a creative operation. It is a measure of how much you spent.',
+    'Volume measures how much you spent.',
   published: '2026-05-29',
   author: 'Konstantinos Chatzimichail',
   section: 'Systems',
@@ -96,7 +96,7 @@ export const post: Post = {
       t: 'ol',
       items: [
         'Make the log automatic. Anything a person has to remember to write down will be written down for three weeks.',
-        'Use four statuses, not eleven: briefed, in production, in review, live. Add one for returned-after-done and you have rework for free.',
+        'Use four statuses: briefed, in production, in review, live. Add one for returned-after-done and you have rework for free.',
         'Encode the asset type in the filename. Segmentation becomes a text filter.',
         'Timestamp two events only: brief received and asset live. Everything else about cycle time can be derived later.',
         'Review the six monthly, in one page, with a note against anything that moved. Data nobody looks at is a cost with no benefit.',
@@ -107,7 +107,7 @@ export const post: Post = {
       t: 'ul',
       items: [
         'Assets produced. An input dressed as an outcome.',
-        'Utilisation. A team at a hundred per cent utilisation has no capacity to react, which is a fragility, not an achievement.',
+        'Utilisation. A team at a hundred per cent utilisation has no capacity to react, which is a fragility.',
         'Average anything, unsegmented. Averages across asset types are the single commonest way an operational dashboard misleads.',
         'Cost per generation. Excludes the rejected work, which is where the cost is.',
         'Anything nobody has agreed an action for. If a number moving would not change what anybody does, it is decoration.',
@@ -116,7 +116,7 @@ export const post: Post = {
     { t: 'h2', text: 'What to do when a number moves' },
     {
       t: 'p',
-      text: 'Agree the response in advance, once, and write it down. Acceptance rate falls: audit the last ten briefs against the ten before. Rework rises: move the review earlier, before production starts. Cycle time rises with steady volume: find the queue, which is usually approval and rarely production. Reuse falls: the library has a findability problem, not a content problem.',
+      text: 'Agree the response in advance, once, and write it down. Acceptance rate falls: audit the last ten briefs against the ten before. Rework rises: move the review earlier, before production starts. Cycle time rises with steady volume: find the queue, which is usually approval and rarely production. Reuse falls: the library has a findability problem.',
     },
     {
       t: 'p',
@@ -136,7 +136,7 @@ export const post: Post = {
     },
     {
       q: 'Why is volume a bad creative metric?',
-      a: 'Because it is an input. It says how much was spent, not whether the operation is getting better at spending it, which is the only question an operational metric should answer.',
+      a: 'Because it is an input. It says how much was spent, and stops there, which is the only question an operational metric should answer.',
     },
     {
       q: 'Why must acceptance rate be segmented?',

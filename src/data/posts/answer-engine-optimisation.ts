@@ -2,7 +2,7 @@ import type { Post } from './types';
 
 export const post: Post = {
   slug: 'answer-engine-optimisation-for-brands',
-  title: 'Answer Engine Optimisation: What Actually Gets a Brand Quoted',
+  title: 'Answer Engine Optimisation: What Gets a Brand Quoted',
   metaTitle: 'Answer Engine Optimisation (AEO): What Gets a Brand Quoted in 2026',
   metaDescription:
     'How answer engines choose what to quote, the three structural properties that separate cited pages from invisible ones, and why most AEO advice is ordinary SEO with a new name on it.',
@@ -24,11 +24,11 @@ export const post: Post = {
   image: 'answer-engine-optimisation',
   imageAlt: 'A page of text with three paragraphs highlighted as the only parts a model would quote.',
   standfirst:
-    'Answer engines quote passages, not pages. The three properties that decide whether yours is one of them are a direct answer stated in the first fifty words of a section, a claim specific enough to be checked, and an entity a model can attach the claim to. Everything else is ordinary search hygiene wearing a new acronym.',
+    'Answer engines quote passages. The three properties that decide whether yours is one of them are a direct answer stated in the first fifty words of a section, a claim specific enough to be checked, and an entity a model can attach the claim to. Everything else is ordinary search hygiene wearing a new acronym.',
   body: [
     {
       t: 'p',
-      text: 'Roughly two thirds of searches now end without a click. That statistic gets quoted as an apocalypse and it is not one; it is a change in what a page is for. A page used to be a destination. Increasingly it is a source, and sources are selected on different criteria from destinations.',
+      text: 'Roughly two thirds of searches now end without a click. That statistic gets quoted as an apocalypse. It is a change in what a page is for. A page used to be a destination. Increasingly it is a source, and sources are selected on different criteria from destinations.',
     },
     { t: 'h2', text: 'What a model is doing under there' },
     {
@@ -68,7 +68,7 @@ export const post: Post = {
       items: [
         'Write headings as questions people type, then answer them immediately underneath. The heading is the retrieval key and the first sentence is the payload.',
         'Put the answer before the argument. Journalism has known this for a century and calls it the inverted pyramid; the difference now is that something automated is reading only the top.',
-        'Mark up what the page is. FAQPage for question blocks, DefinedTerm for definitions, Article with a real author and dates. Schema does not make a claim true, but it removes ambiguity about what the claim is.',
+        'Mark up what the page is. FAQPage for question blocks, DefinedTerm for definitions, Article with a real author and dates. Schema removes ambiguity about what the claim is.',
         'Define your terms on their own pages and link to them consistently. A glossary is not a content-marketing tactic, it is an entity graph you control.',
         'Date everything and keep it current. Freshness is a stronger signal in retrieval-based systems than it ever was in classical ranking, because a model quoting a stale number gets caught.',
         'Cite your own sources with links. Pages that show their working are safer to quote and are treated as such.',

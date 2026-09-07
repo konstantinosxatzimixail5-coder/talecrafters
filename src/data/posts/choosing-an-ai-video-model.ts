@@ -25,11 +25,11 @@ export const post: Post = {
   imageAlt:
     'A comparison board of generative video model outputs, each annotated with the production constraint it failed.',
   standfirst:
-    'Choose a video model on reference conditioning, licensing and throughput, not on a leaderboard position. Quality rankings change every few weeks; the cost of rebuilding a pipeline around a different conditioning method does not, and it is the larger number.',
+    'Choose a video model on reference conditioning, licensing and throughput. Quality rankings change every few weeks; the cost of rebuilding a pipeline around a different conditioning method does not, and it is the larger number.',
   body: [
     {
       t: 'p',
-      text: 'Every fortnight a new model takes the top of a benchmark and every fortnight somebody asks whether we are switching. The honest answer is that we mostly are not, and the reason is not loyalty. It is that the benchmark measures the thing that matters least to a production schedule.',
+      text: 'Every fortnight a new model takes the top of a benchmark and every fortnight somebody asks whether we are switching. The honest answer is that we mostly stay put, because the benchmark measures the thing that matters least to a production schedule.',
     },
     {
       t: 'p',
@@ -75,7 +75,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Notice that quality is not on the list. That is not because it does not matter; it is because above a threshold every serious model clears it, and below that threshold none of the other criteria save you. Quality is a gate, not a ranking.',
+      text: 'Notice that quality is missing from the list. Above a threshold every serious model clears it, and below that threshold none of the other criteria save you. Quality is a gate.',
     },
     { t: 'h2', text: 'The failure shape argument' },
     {
@@ -104,13 +104,13 @@ export const post: Post = {
         'Aspect and duration assumptions. Shot lists are written against a usable clip length. Change the length and the shot count changes and the edit changes.',
         'Your negatives. Negative prompts are written from artefacts you have personally seen, so they are model-specific by construction. A new model means a new empty list and a fortnight of rebuilding it.',
         'Acceptance-rate history. The moment you switch, every budget you have quoted from is describing a different machine.',
-        'The lock file. Palette and light behaviour tuned to one model’s response are a starting point, not a spec, on the next one.',
+        'The lock file. Palette and light behaviour tuned to one model’s response are a starting point on the next one, and no more than that.',
       ],
     },
     {
       t: 'note',
       title: 'The switching rule we use',
-      text: 'A new model has to be better on a criterion we are currently losing on, not better in general. "Better in general" is how a studio ends up with six half-built pipelines and no acceptance-rate history on any of them.',
+      text: 'A new model has to beat the current one on a criterion we are losing on today. "Better in general" is how a studio ends up with six half-built pipelines and no acceptance-rate history on any of them.',
     },
     { t: 'h2', text: 'What to do about deprecation' },
     {
@@ -119,16 +119,16 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The defence is not to predict which model survives. It is to keep the things that would have to be rebuilt outside the model:',
+      text: 'The defence is to keep everything that would have to be rebuilt outside the model:',
     },
     {
       t: 'ol',
       items: [
-        'Keep the lock file model-agnostic. Write palette, light direction and material behaviour in plain production language, not in phrasing tuned to one model’s quirks.',
-        'Keep identity in an asset, not in a checkpoint. A set of reference frames survives a model change. A fine-tune does not.',
-        'Keep the shot list in beats, not in generations. A beat can be produced by anything; a generation ID cannot be reproduced anywhere else.',
-        'Log acceptance rate per model, not per campaign, so that when you do move you can quote from the new machine.',
-        'Never let a client deliverable depend on a model still existing. Deliver the frames, not the recipe.',
+        'Keep the lock file model-agnostic. Write palette, light direction and material behaviour in plain production language.',
+        'Keep identity in an asset. A set of reference frames survives a model change. A fine-tune does not.',
+        'Keep the shot list in beats. A beat can be produced by anything; a generation ID cannot be reproduced anywhere else.',
+        'Log acceptance rate per model, so that when you do move you can quote from the new machine.',
+        'Never let a client deliverable depend on a model still existing. Deliver the frames themselves.',
       ],
     },
     { t: 'h2', text: 'The one benchmark worth running yourself' },

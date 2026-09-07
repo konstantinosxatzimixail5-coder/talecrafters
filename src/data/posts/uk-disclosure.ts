@@ -3,7 +3,7 @@ import type { Post } from './types';
 export const post: Post = {
   slug: 'ai-video-disclosure-rules-for-uk-advertising',
   title: 'AI Video Disclosure Rules for UK Advertising',
-  metaTitle: 'AI Video Disclosure Rules for UK Advertising: What Actually Applies',
+  metaTitle: 'AI Video Disclosure Rules for UK Advertising: What Applies',
   metaDescription:
     'There is no blanket UK rule requiring every AI-assisted ad to be labelled. There is a misleadingness test, a set of platform policies that are stricter than the law, and an EU regulation that now applies to a lot of UK advertisers anyway.',
   excerpt:
@@ -52,7 +52,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'The working test',
-      text: 'Not "did we use AI" but "does the audience believe something about this ad that is not true, and is the generative production the reason". If yes, disclose or change the ad.',
+      text: 'The question is "does the audience believe something about this ad that is untrue, and is the generative production the reason". If yes, disclose or change the ad.',
     },
     { t: 'h2', text: 'Where silence stops being defensible' },
     {
@@ -71,11 +71,11 @@ export const post: Post = {
     { t: 'h2', text: 'The platforms are stricter than the regulator' },
     {
       t: 'p',
-      text: 'This is the part that catches teams out. The ASA sets a misleadingness standard. The platforms set labelling policies, and those policies are contractual, not legal, which means they are enforced by demonetisation and reach suppression, months before any ruling arrives.',
+      text: 'This is the part that catches teams out. The ASA sets a misleadingness standard. The platforms set labelling policies, and those policies are contractual, which means they are enforced by demonetisation and reach suppression, months before any ruling arrives.',
     },
     {
       t: 'p',
-      text: 'Meta and TikTok both operate AI-content labelling regimes with a self-declaration requirement plus automated detection, and both reserve the right to apply a label you did not choose. Getting labelled by the platform after the fact is worse than labelling yourself: it looks like a correction, never a disclosure, and it happens after the ad has already been served.',
+      text: 'Meta and TikTok both operate AI-content labelling regimes with a self-declaration requirement plus automated detection, and both reserve the right to apply a label you did not choose. Getting labelled by the platform after the fact is worse than labelling yourself: it looks like a correction, and it happens after the ad has already been served.',
     },
     {
       t: 'p',
@@ -103,10 +103,10 @@ export const post: Post = {
       t: 'ol',
       items: [
         'Disclose to the stricter of platform policy and client legal, decided at brief stage and written into the brief, so nobody discovers it at delivery.',
-        'Put the disclosure on the asset, not only in the metadata. A metadata flag protects you with the platform. An on-asset label protects you with the audience, and the audience is the one who can decide you were dishonest.',
+        'Put the disclosure on the asset itself, as well as in the metadata. A metadata flag protects you with the platform. An on-asset label protects you with the audience, and the audience is the one who can decide you were dishonest.',
         'Attach provenance metadata as well, because it costs nothing and it is what a platform’s detection reads.',
         'Never let an invented certification, award, ingredient or percentage survive a gate. This one is not a disclosure question. A frame containing a fabricated claim is killed, and no disclosure rescues it.',
-        'Keep the consent file before rendering, not after, for any likeness of a real person. Signed release in the folder or the render does not start.',
+        'Keep the consent file before rendering, for any likeness of a real person. Signed release in the folder or the render does not start.',
       ],
     },
     {

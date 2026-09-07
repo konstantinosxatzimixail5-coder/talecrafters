@@ -3,7 +3,7 @@ import type { Post } from './types';
 export const post: Post = {
   slug: 'mcp-and-connectors-for-marketing-teams',
   title: 'MCP and Connectors, Explained for Marketing Teams',
-  metaTitle: 'MCP for Marketing Teams: What Connectors Actually Change',
+  metaTitle: 'MCP for Marketing Teams: What Connectors Change',
   metaDescription:
     'What the Model Context Protocol is in plain terms, why connecting a model to the tools a team already runs changes what it can do, and the four questions to settle before connecting anything to anything.',
   excerpt:
@@ -48,11 +48,11 @@ export const post: Post = {
       caption: 'What connecting each system enables',
       head: ['System', 'Reading gives you', 'Writing gives you'],
       rows: [
-        ['Brief and project management', 'Drafts that start from the actual brief, not a paraphrase', 'Status updates nobody has to type'],
+        ['Brief and project management', 'Drafts that start from the brief itself', 'Status updates nobody has to type'],
         ['Asset library', 'Answers to "do we already have this"', 'Filed, named and tagged output'],
         ['Analytics', 'Retention and performance context inside the drafting step', 'Logged findings against the asset that produced them'],
         ['Calendar and comms', 'Awareness of what ships when', 'Scheduling and hand-offs'],
-        ['The repository or CMS', 'The current copy, never last month’s', 'Drafts as reviewable changes, never as attachments'],
+        ['The repository or CMS', 'The current copy, at this minute', 'Drafts as reviewable changes'],
       ],
     },
     {

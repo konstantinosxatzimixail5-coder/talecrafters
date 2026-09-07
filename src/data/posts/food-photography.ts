@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'Most independent restaurants have no usable photography and no realistic window to shoot. What generative food photography can and cannot do, the plate-lock method behind it, and what it looked like on a menu in Rhodes.',
   excerpt:
-    'A menu with no pictures, out of season, no shoot window and no budget. This is the brief generative production is genuinely best at.',
+    'A menu with no pictures, out of season, no shoot window and no budget. This is the brief generative production handles best.',
   published: '2026-07-16',
   author: 'Konstantinos Chatzimichail',
   section: 'Production',
@@ -34,7 +34,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'This is not an unusual situation. It is the normal situation for independent hospitality across Greece, Spain, Italy and most of the UK outside the groups. And it is the brief where generative production stops being an interesting option and becomes the only one.',
+      text: 'This is the normal situation for independent hospitality across Greece, Spain, Italy and most of the UK outside the groups. And it is the brief where generative production stops being an interesting option and becomes the only one.',
     },
     { t: 'h2', text: 'What the honest comparison is' },
     {
@@ -59,11 +59,11 @@ export const post: Post = {
     { t: 'h2', text: 'The rule: it has to be your dish' },
     {
       t: 'p',
-      text: 'Generating a beautiful generic moussaka and putting it on a menu is not food photography. It is stock imagery with extra steps, and it carries the same problem: a customer orders the picture and receives something else.',
+      text: 'Generating a beautiful generic moussaka and putting it on a menu is stock imagery with extra steps, and it carries the same problem: a customer orders the picture and receives something else.',
     },
     {
       t: 'p',
-      text: 'So the method starts with documentation, not generation. Someone in the kitchen photographs each dish on a phone, plated as it leaves the pass, in daylight, from three angles. Badly is fine. What matters is that it is accurate: the real plate, the real portion, the real garnish, the real colour of the sauce.',
+      text: 'So the method starts with documentation. Someone in the kitchen photographs each dish on a phone, plated as it leaves the pass, in daylight, from three angles. Badly is fine. What matters is that it is accurate: the real plate, the real portion, the real garnish, the real colour of the sauce.',
     },
     {
       t: 'p',
@@ -77,7 +77,7 @@ export const post: Post = {
     { t: 'h2', text: 'Building the set specification' },
     {
       t: 'p',
-      text: 'A menu is a set, not a series of pictures. Thirty dishes shot in thirty different lighting worlds looks like thirty stock images, which is the failure this whole method exists to avoid.',
+      text: 'A menu is a set. Thirty dishes shot in thirty different lighting worlds looks like thirty stock images, which is the failure this whole method exists to avoid.',
     },
     {
       t: 'ul',
@@ -134,7 +134,7 @@ export const post: Post = {
     },
     {
       q: 'Is it dishonest to use AI-generated images of your food?',
-      a: 'It is dishonest if the image shows a dish you do not serve, a portion you do not plate, or a garnish that is not there. It is not dishonest to light your own documented dish well. The test is whether a customer who orders the picture receives it.',
+      a: 'It is dishonest if the image shows a dish you do not serve, a portion you do not plate, or a garnish that was never on it. Lighting your own documented dish well is fair game. The test is whether a customer who orders the picture receives it.',
     },
     {
       q: 'What does a restaurant need to provide?',

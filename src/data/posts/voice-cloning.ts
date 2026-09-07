@@ -52,11 +52,11 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'Breath placement. Insert breaths where a person would take them, which is before a clause they are about to emphasise, not at the ends of sentences. This single change does more than any other.',
+        'Breath placement. Insert breaths where a person would take them, which is before a clause they are about to emphasise. This single change does more than any other.',
         'Pace variation. A human read speeds up through the familiar and slows through the important. A uniform pace is the loudest tell there is.',
-        'Emphasis by rewriting, not by markup. Move the word you want stressed to the end of the clause. Prosody follows structure more reliably than it follows tags.',
+        'Emphasis by rewriting. Move the word you want stressed to the end of the clause. Prosody follows structure more reliably than it follows tags.',
         'Sentence length variation in the script. Synthetic reads expose monotonous sentence rhythm far more than human ones, because a human unconsciously varies against it.',
-        'One imperfection. A slightly early breath, a very small stumble, one word taken at a different pace. One, not three.',
+        'One imperfection. A slightly early breath, a very small stumble, one word taken at a different pace. One only.',
         'Room. A completely clean voice in a completely silent mix is not a recording of anything. Put it in a space.',
       ],
     },
@@ -79,13 +79,13 @@ export const post: Post = {
         'Territory, which matters because personality and likeness rights differ substantially between jurisdictions.',
         'Exclusions: categories the performer will not be used for. Political, gambling, alcohol, health claims. Whatever they choose.',
         'Withdrawal: a mechanism, a notice period, and what happens to assets already in market.',
-        'Rate structure for use, not only for the session. A session fee for something that runs forever is the arrangement performers are right to resist.',
+        'Rate structure for use, as well as for the session. A session fee for something that runs forever is the arrangement performers are right to resist.',
       ],
     },
     { t: 'h2', text: 'Disclosure' },
     {
       t: 'p',
-      text: 'A wholly synthetic voice that is not presented as a specific person is, in most markets, not a disclosure issue in itself, though platform policies vary and are frequently stricter than law.',
+      text: 'A wholly synthetic voice presented as nobody in particular is, in most markets, outside the disclosure duty, though platform policies vary and are frequently stricter than law.',
     },
     {
       t: 'p',
@@ -118,7 +118,7 @@ export const post: Post = {
     },
     {
       q: 'Does a cloned voice have to be disclosed?',
-      a: 'A cloned voice of an identifiable person generally yes: since August 2026 EU transparency obligations under Article 50 apply to synthetic audio qualifying as a deepfake. A wholly synthetic voice not presented as a specific person is usually a platform-policy question, not a legal one, and platform policy is often stricter.',
+      a: 'A cloned voice of an identifiable person generally yes: since August 2026 EU transparency obligations under Article 50 apply to synthetic audio qualifying as a deepfake. A wholly synthetic voice not presented as a specific person is usually a platform-policy question, and platform policy is often stricter than the law.',
     },
     {
       q: 'Why do synthetic reads sound flat even when the voice is good?',

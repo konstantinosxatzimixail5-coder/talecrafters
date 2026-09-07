@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'The architecture behind a repurposing engine that produces nine usable assets from one source without flattening them all into the same voice. What to automate, what to keep agentic, and where it breaks.',
   excerpt:
-    'Repurposing fails when nine assets turn out to be the same asset nine times. The fix is structural, not stylistic.',
+    'Repurposing fails when nine assets turn out to be the same asset nine times. The fix is structural.',
   published: '2026-07-30',
   author: 'Konstantinos Chatzimichail',
   section: 'Systems',
@@ -104,7 +104,7 @@ export const post: Post = {
       t: 'ul',
       items: [
         'No claim inventory. Everything flattens, as above. This is the failure in maybe eighty per cent of the repurposing systems we have been asked to look at.',
-        'No human gate. Nine assets a day, unreviewed, is nine times the surface area for a claim nobody substantiated. A person approves the claim inventory once per source. That is one review, not nine.',
+        'No human gate. Nine assets a day, unreviewed, is nine times the surface area for a claim nobody substantiated. A person approves the claim inventory once per source. That is one review for the batch, and it is nine.',
         'No naming convention. The system works beautifully for six weeks and then nobody can find the September assets.',
         'No cost ledger. "It saves time" is not auditable. Cost per accepted asset is.',
         'Repurposing something that should not have been published once. An engine amplifies whatever it is fed, including a weak argument.',
@@ -113,7 +113,7 @@ export const post: Post = {
     { t: 'h2', text: 'The realistic gain' },
     {
       t: 'p',
-      text: 'The honest number is not "ten times the content". It is that the coordination work collapses. The drafting was never the expensive part; the expensive part was the four hours a week spent renaming files, reformatting the same argument, chasing an approval and rebuilding a deck that already existed.',
+      text: 'The honest number is the coordination work collapsing. The drafting was never the expensive part; the expensive part was the four hours a week spent renaming files, reformatting the same argument, chasing an approval and rebuilding a deck that already existed.',
     },
     {
       t: 'p',
@@ -133,7 +133,7 @@ export const post: Post = {
     },
     {
       q: 'Why does AI content repurposing produce assets that all feel the same?',
-      a: 'Because they were generated from a single summary. Summarisation is lossy, so every downstream asset inherits the same compression and leads with the same claim. Extracting a claim inventory instead of summarising is what makes the outputs genuinely different.',
+      a: 'Because they were generated from a single summary. Summarisation is lossy, so every downstream asset inherits the same compression and leads with the same claim. Extracting a claim inventory first is what makes the outputs differ in kind.',
     },
     {
       q: 'Which part of repurposing should be automated, and which agentic?',

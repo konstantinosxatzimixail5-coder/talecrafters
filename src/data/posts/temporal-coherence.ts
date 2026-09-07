@@ -25,11 +25,11 @@ export const post: Post = {
   imageAlt:
     'A filmstrip in which the early frames are crisp and the later ones progressively dissolve into inconsistency.',
   standfirst:
-    'Generative video models hold a scene together for a few seconds and then begin to negotiate with physics. This is structural, not a bug, and the production answer is not a better prompt. It is cutting.',
+    'Generative video models hold a scene together for a few seconds and then begin to negotiate with physics. This is structural, and the production answer is a shorter clip. It is cutting.',
   body: [
     {
       t: 'p',
-      text: 'Watch enough generative video and you learn to feel the moment it starts to go. Nothing obvious happens. The shot simply stops being convincing somewhere around the two-thirds mark, and if you scrub back you find a hand that gained a finger during a gesture, or hair that settled into a shape it could not have reached, or a background object that quietly changed material.',
+      text: 'Watch enough generative video and you learn to feel the moment it starts to go. Nothing obvious happens. The shot stops being convincing somewhere around the two-thirds mark, and if you scrub back you find a hand that gained a finger during a gesture, or hair that settled into a shape it could not have reached, or a background object that quietly changed material.',
     },
     {
       t: 'p',
@@ -38,11 +38,11 @@ export const post: Post = {
     { t: 'h2', text: 'Why it happens' },
     {
       t: 'p',
-      text: 'A video model is not simulating a world and photographing it. It is producing a sequence of frames that are each plausible and mutually consistent, under a constraint that gets harder to satisfy the further it travels from its conditioning.',
+      text: 'A video model is producing a sequence of frames that are each plausible and mutually consistent, under a constraint that gets harder to satisfy the further it travels from its conditioning.',
     },
     {
       t: 'p',
-      text: 'Early frames are anchored: to the reference, to the first frame, to the prompt. Later frames are anchored mostly to earlier generated frames, so small errors compound. Nothing catastrophic occurs at any single step, which is precisely why the failure is hard to spot. It is a slow drift, not a break.',
+      text: 'Early frames are anchored: to the reference, to the first frame, to the prompt. Later frames are anchored mostly to earlier generated frames, so small errors compound. Nothing catastrophic occurs at any single step, which is precisely why the failure is hard to spot. It arrives as a slow drift.',
     },
     { t: 'h2', text: 'The failure order' },
     {
@@ -64,7 +64,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The practically important line is three. Extremity failure is the first one an untrained viewer reliably catches, which means your usable clip length is the point just before it, not the point where the model stops producing frames.',
+      text: 'The practically important line is three. Extremity failure is the first one an untrained viewer reliably catches, which means your usable clip length ends just before it, well short of the point where the model stops producing frames.',
     },
     { t: 'h2', text: 'The technique: cut before the drift' },
     {
@@ -89,7 +89,7 @@ export const post: Post = {
     { t: 'h2', text: 'What extends usable length, and what does not' },
     {
       t: 'p',
-      text: 'Things that genuinely help:',
+      text: 'Things that help:',
     },
     {
       t: 'ul',
@@ -149,7 +149,7 @@ export const post: Post = {
     },
     {
       q: 'Does adding words like "consistent" to a prompt improve coherence?',
-      a: 'No. Neither does raising resolution or regenerating the same clip repeatedly. What genuinely helps is less motion in frame, fewer articulated objects such as hands, a simpler background, a locked-off camera, and first-and-last-frame conditioning where the model supports it.',
+      a: 'No. Neither does raising resolution or regenerating the same clip repeatedly. What helps is less motion in frame, fewer articulated objects such as hands, a simpler background, a locked-off camera, and first-and-last-frame conditioning where the model supports it.',
     },
     {
       q: 'How do you test a clip for temporal drift?',

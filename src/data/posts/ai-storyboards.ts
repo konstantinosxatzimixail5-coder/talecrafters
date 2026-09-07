@@ -2,7 +2,7 @@ import type { Post } from './types';
 
 export const post: Post = {
   slug: 'ai-storyboards-and-animatics-what-they-are-good-for',
-  title: 'AI Storyboards and Animatics: What They Are Genuinely Good For',
+  title: 'AI Storyboards and Animatics: What They Are Good For',
   metaTitle: 'AI Storyboards and Animatics: Where They Help and Where They Mislead',
   metaDescription:
     'Generated boards are fast enough to change how previsualisation works, and seductive enough to sell a shot nobody can produce. Where they earn their place, and the four ways they mislead a client.',
@@ -27,9 +27,9 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'A storyboard has always been a communication device with a deliberate amount of abstraction in it. The abstraction was the point: everyone looking at a sketch understood they were agreeing to a composition, not to a photograph. Generated boards removed the abstraction without removing the uncertainty, and that combination is where the trouble is.',
+      text: 'A storyboard has always been a communication device with a deliberate amount of abstraction in it. The abstraction was the point: everyone looking at a sketch understood they were agreeing to a composition. Generated boards removed the abstraction without removing the uncertainty, and that combination is where the trouble is.',
     },
-    { t: 'h2', text: 'What they are genuinely good at' },
+    { t: 'h2', text: 'What they are good at' },
     {
       t: 'ul',
       items: [

@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'Somebody sends a link to a model’s pricing page and asks why the quote is not that number times the runtime. It is a fair question and the answer is not margin. It is that the pricing page prices a generation and a film is made of decisions.',
+      text: 'Somebody sends a link to a model’s pricing page and asks why the quote comes to more than that number times the runtime. It is a fair question, and the answer is that the pricing page prices a generation, while a film is made of decisions.',
     },
     { t: 'h2', text: 'The four multipliers' },
     {
@@ -72,7 +72,7 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'A shot count, not a runtime. Runtime is an output; shots are what you buy.',
+        'A shot count. Runtime is an output; shots are what you buy.',
         'A shot-type breakdown, because acceptance rates differ by a factor of three or four between categories.',
         'An attempts assumption stated openly, drawn from the studio’s own logs on comparable work.',
         'A ceiling per shot, with a stated rule for what happens when it is reached.',
@@ -107,7 +107,7 @@ export const post: Post = {
     },
     {
       q: 'What is the right unit for pricing generative video?',
-      a: 'Currency per accepted second of finished footage, per second that made the cut, not per second generated. It is the only unit that survives comparison between platforms and between studios.',
+      a: 'Currency per accepted second of finished footage, per second that made the cut. It is the only unit that survives comparison between platforms and between studios.',
     },
     {
       q: 'Why do credits make platforms hard to compare?',

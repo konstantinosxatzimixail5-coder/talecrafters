@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'A paragraph-level technique for AI citation: the shape of a quotable answer block, the six sentence patterns that make a passage unliftable, and how to test a page by pretending to be the model.',
   excerpt:
-    'Most pages fail citation at the sentence level, not the strategy level. Here is what the sentences have to do.',
+    'Most pages fail citation at the sentence level. Here is what the sentences have to do.',
   published: '2026-08-14',
   author: 'Konstantinos Chatzimichail',
   section: 'Systems',
@@ -67,7 +67,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'This has an obvious obligation attached. If you publish falsifiable claims you have to be right, and where you cannot be certain you have to say so in the sentence, and never by hedging the whole paragraph into mush. "In our logs, on our shot types" is a condition, not a hedge.',
+      text: 'This has an obvious obligation attached. If you publish falsifiable claims you have to be right, and where you cannot be certain you have to say so inside the sentence itself, where a reader can see the limit. Hedging the whole paragraph turns it to mush. "In our logs, on our shot types" is a condition somebody can check.',
     },
     {
       t: 'note',
@@ -77,7 +77,7 @@ export const post: Post = {
     { t: 'h2', text: 'Headings are retrieval keys' },
     {
       t: 'p',
-      text: 'Write them as the question, not as the topic. "Cost" is a topic. "What does generative video production cost?" is a query somebody typed. The heading is what gets matched; the paragraph under it is what gets used. Mismatching them (a question heading with a paragraph that answers a different question) is the most common structural fault on otherwise good pages.',
+      text: 'Write them as the question. "Cost" is a topic. "What does generative video production cost?" is a query somebody typed. The heading is what gets matched; the paragraph under it is what gets used. Mismatching them (a question heading with a paragraph that answers a different question) is the most common structural fault on otherwise good pages.',
     },
     {
       t: 'p',

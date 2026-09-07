@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'Why generative models still reconstruct type unreliably, why a nearly-correct word is worse than an obviously wrong one, and the plate-and-composite method that removes the problem entirely.',
   excerpt:
-    'A wrong word on a label is not an aesthetic problem. It is a legal one, and there is no partial credit.',
+    'A wrong word on a label is a legal problem, and there is no partial credit.',
   published: '2026-06-30',
   author: 'Konstantinos Chatzimichail',
   section: 'Craft',
@@ -106,7 +106,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'Why can AI image models not spell?',
-      a: 'Because letterforms are learned as texture and never as symbols. The model has learned the density, rhythm and shape statistics of type, not that substituting one glyph changes the meaning, so it produces something shaped like the word.',
+      a: 'Because letterforms are learned as texture and never as symbols. The model has learned the density, rhythm and shape statistics of type. What it never learned is that substituting one glyph changes the meaning, so it produces something shaped like the word.',
     },
     {
       q: 'Does regenerating help get text right?',

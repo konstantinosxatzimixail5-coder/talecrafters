@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'synthetic-presenter',
   imageAlt: 'A contact sheet of one synthetic presenter across twelve shots, with two flagged as drifted.',
   standfirst:
-    'Presenter identity is held by three things in order: a character brief that specifies structure and never personality, a fixed reference set used for identity only, and a drift check run against the first approved frame, never against the previous one. Description alone stops working at around the third asset.',
+    'Presenter identity is held by three things in order: a character brief that specifies structure alone, a fixed reference set used for identity only, and a drift check run against the first approved frame every time. Description alone stops working at around the third asset.',
   body: [
     {
       t: 'p',
@@ -69,7 +69,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The first is the overlay: take the new frame and the original approved reference, align them on the eyes, and flick between the two at full size. Structural differences that are invisible side by side are obvious in a flick, because the eye is comparing positions, not impressions.',
+      text: 'The first is the overlay: take the new frame and the original approved reference, align them on the eyes, and flick between the two at full size. Structural differences that are invisible side by side are obvious in a flick, because the eye is comparing positions.',
     },
     {
       t: 'p',
@@ -112,7 +112,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'How do you keep an AI presenter consistent across a campaign?',
-      a: 'A character brief specifying structure and never personality, a small fixed reference set used for identity only, and every shot conditioned on the original approved reference, never on the previous output. Description alone stops working at around the third asset.',
+      a: 'A character brief specifying structure alone, a small fixed reference set used for identity only, and every shot conditioned on the original approved reference. Nothing conditions on the previous output. Description alone stops working at around the third asset.',
     },
     {
       q: 'Why should you never condition a shot on the previous shot?',

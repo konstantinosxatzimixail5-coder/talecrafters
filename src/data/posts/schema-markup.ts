@@ -3,7 +3,7 @@ import type { Post } from './types';
 export const post: Post = {
   slug: 'schema-markup-that-changes-what-ai-quotes',
   title: 'The Six Schema Types That Change What Gets Quoted',
-  metaTitle: 'Schema Markup for AI Search: The Six Types That Actually Matter',
+  metaTitle: 'Schema Markup for AI Search: The Six Types That Matter',
   metaDescription:
     'Which structured data types affect how AI systems understand and cite a page, what each one removes ambiguity about, and the three mistakes that make markup actively harmful.',
   excerpt:
@@ -63,7 +63,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'A real name, a page for that person on your own site, and consistent use across everything they wrote. If work is genuinely collective, say so with an organisation as the author and never invent a byline, which is worse than either.',
+      text: 'A real name, a page for that person on your own site, and consistent use across everything they wrote. If the work is collective, say so with an organisation as the author and never invent a byline, which is worse than either.',
     },
     { t: 'h2', text: 'The three mistakes that make markup harmful' },
     {
@@ -79,14 +79,14 @@ export const post: Post = {
       title: 'The rule',
       text: 'Structured data describes the page. If the description and the page disagree, the page is right and the markup is a bug. Generate the markup from the same data that renders the page and this class of error cannot occur.',
     },
-    { t: 'h2', text: 'Generate it, never write it' },
+    { t: 'h2', text: 'Generate it from the data' },
     {
       t: 'p',
       text: 'Hand-written JSON-LD in a template is a promise that somebody will remember to update it. They will not. The correct architecture is to render the schema from the same objects that render the content: the FAQ block on the page and the FAQPage node come from one array, the visible published date and the datePublished come from one field.',
     },
     {
       t: 'p',
-      text: 'This is not a purity argument. It is the only way the markup stays true through two years of edits, and markup that is not true is worse than absent.',
+      text: 'This is the only way the markup stays true through two years of edits, and markup that is not true is worse than absent.',
     },
     { t: 'h2', text: 'What schema will not do' },
     {
@@ -94,7 +94,7 @@ export const post: Post = {
       items: [
         'It will not make a thin page rank or get quoted. It removes ambiguity about content that exists; it does not create content.',
         'It will not force a rich result. Eligibility is not entitlement, and it has not been for years.',
-        'It will not substitute for a clear first paragraph. A model quoting your page quotes the prose, not the JSON.',
+        'It will not substitute for a clear first paragraph. A model quoting your page quotes the prose.',
         'It will not fix inconsistent naming elsewhere. If your organisation is described three different ways across the site, the graph inherits the confusion.',
       ],
     },
@@ -112,7 +112,7 @@ export const post: Post = {
     },
     {
       q: 'Does schema markup improve AI citations?',
-      a: 'Indirectly. It does not make a claim true or important, but it removes the question of what the claim is and who is responsible for it, which makes a passage safer to quote. Thin content with perfect markup remains thin content.',
+      a: 'Indirectly. It removes the question of what the claim is and who is responsible for it, which makes a passage safer to quote. Thin content with perfect markup remains thin content.',
     },
     {
       q: 'What is the @id discipline in structured data?',

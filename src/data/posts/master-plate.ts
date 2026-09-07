@@ -38,7 +38,7 @@ export const post: Post = {
     { t: 'h2', text: 'What a master plate is' },
     {
       t: 'p',
-      text: 'A master plate is one frame. It shows the product, correct in shape, correct in label, correct in proportion, lit plainly and shot flat. It is not a hero image. It is deliberately boring, because its job is to be a reference. An advert is what comes later. Every subsequent render in the campaign is generated from it, and tested against it.',
+      text: 'A master plate is one frame. It shows the product, correct in shape, correct in label, correct in proportion, lit plainly and shot flat. It is deliberately plain, because its job is to be a reference. An advert is what comes later. Every subsequent render in the campaign is generated from it, and tested against it.',
     },
     {
       t: 'p',
@@ -51,7 +51,7 @@ export const post: Post = {
         'Get the source of truth. Packaging dieline, label artwork at print resolution, or a photograph of the actual object. Not a render from the client’s website, which is itself already a copy of something.',
         'Shoot or generate the plate flat. Even light, no rim, no atmosphere, no shallow depth of field. Every one of those hides detail you will later need to check against.',
         'Verify the type at full resolution. Every printed word, every certification mark, every unit of measure. This is where a plate either becomes useful or becomes an expensive lie that propagates into forty shots.',
-        'Record the geometry. Cap-to-shoulder ratio, label height as a fraction of body height, the silhouette. Written down, not remembered.',
+        'Record the geometry. Cap-to-shoulder ratio, label height as a fraction of body height, the silhouette. Written down.',
         'Freeze it, name it, version it. The file has a version tag and a date. When the packaging changes in nine months, you cut a new plate and leave this one alone.',
       ],
     },
@@ -81,7 +81,7 @@ export const post: Post = {
       rows: [
         ['Type', 'Read every printed word at 100% zoom against the artwork', 'Regenerate. Never retouch a label.'],
         ['Silhouette', 'Overlay on the plate at 40% opacity, check the outline', 'Regenerate from the plate with tighter conditioning'],
-        ['Light', 'One key direction and one colour temperature across the whole set', 'Regenerate the outlier, not the set'],
+        ['Light', 'One key direction and one colour temperature across the whole set', 'Regenerate the outlier on its own'],
         ['Claims', 'No invented certification, award, ingredient or percentage', 'Kill the frame. This one has no appeal.'],
       ],
     },
@@ -129,7 +129,7 @@ export const post: Post = {
     },
     {
       q: 'Why not just retouch a frame that is nearly right?',
-      a: 'Because the drift is in the generation, not the frame. Retouching fixes the symptom and leaves the cause, so the next batch drifts identically and the retouching bill grows until it is the biggest line item in the production.',
+      a: 'Because the drift is in the generation. Retouching fixes the symptom and leaves the cause, so the next batch drifts identically and the retouching bill grows until it is the biggest line item in the production.',
     },
     {
       q: 'Who should own the master plate after a campaign?',

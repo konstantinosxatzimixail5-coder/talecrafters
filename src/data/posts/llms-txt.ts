@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'A plain account of the llms.txt convention: what the file contains, how it differs from robots.txt and a sitemap, what evidence there is that anything reads it, and how to write one that is useful regardless.',
   excerpt:
-    'A proposed convention with modest adoption and a real second use. Worth an hour, not a project.',
+    'A proposed convention with modest adoption and a real second use. Worth an hour of your time.',
   published: '2026-08-07',
   author: 'Konstantinos Chatzimichail',
   section: 'Systems',
@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'llms-txt',
   imageAlt: 'A plain text file listing a site’s pages with one-line summaries.',
   standfirst:
-    'llms.txt is a proposed convention: a markdown file at your root that summarises what a site contains and links to its most useful pages, written for a model and not for a crawler. It is not a permissions file, it is not a sitemap, and no major system has committed to reading it. Write one anyway, for a reason that has nothing to do with whether it is read.',
+    'llms.txt is a proposed convention: a markdown file at your root that summarises what a site contains and links to its most useful pages, written for a model to read. It carries no permissions, replaces no sitemap, and no major system has committed to reading it. Write one anyway, for a reason that has nothing to do with whether it is read.',
   body: [
     {
       t: 'p',
@@ -77,7 +77,7 @@ export const post: Post = {
       items: [
         'One H1 with the organisation’s name and a blockquote of one sentence saying what it does. Use the same sentence everywhere else on the site.',
         'A short paragraph of context: where you are, what you make, who for. Facts a model can attach to an entity.',
-        'Sections by page type, not by navigation label. Services, case studies, reference, definitions, writing.',
+        'Sections by page type. Services, case studies, reference, definitions, writing.',
         'One line per page: the title as a link, then what is in it. Not marketing copy. A description.',
         'Numbers where you have them. Counts, dates, published figures. This is the material that gets quoted.',
         'A contact route and the canonical URLs for the organisation’s profiles.',

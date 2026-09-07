@@ -25,7 +25,7 @@ export const post: Post = {
   imageAlt:
     'A contact sheet of one hundred product frames, each aligned to the same silhouette, a handful marked with a red rejection cross.',
   standfirst:
-    'Consistency across a large generative set is not a prompting problem. It is a lock, a written specification, and four tests applied mechanically to every frame. Plan a hundred-shot set as a three-hundred-render job and budget against that ratio. Hoping for a better one is not a plan. The figures below are planning assumptions to start from, not published benchmarks: log your own and replace them after two batches.',
+    'Consistency across a large generative set comes from a lock, a written specification, and four tests applied mechanically to every frame. Plan a hundred-shot set as a three-hundred-render job and budget against that ratio. Hoping for a better one is not a plan. The figures below are planning assumptions to start from: log your own and replace them after two batches.',
   body: [
     {
       t: 'p',
@@ -38,7 +38,7 @@ export const post: Post = {
     { t: 'h2', text: '1. Lock the product before the set exists' },
     {
       t: 'p',
-      text: 'The first artefact is a master plate: one clean, flatly lit frame of the product, verified against the packaging artwork at full resolution and then frozen. Nothing gets generated until that file has a version tag on it. Every campaign frame afterwards is generated from the plate, never from a prompt describing the product.',
+      text: 'The first artefact is a master plate: one clean, flatly lit frame of the product, verified against the packaging artwork at full resolution and then frozen. Nothing gets generated until that file has a version tag on it. Every campaign frame afterwards is generated from the plate itself.',
     },
     {
       t: 'p',
@@ -64,7 +64,7 @@ export const post: Post = {
       title: 'Why written and not remembered',
       text: 'A specification in somebody’s head survives until that person is on holiday during the second batch. A specification in a file survives the project.',
     },
-    { t: 'h2', text: '3. Batch by difficulty, not by deliverable' },
+    { t: 'h2', text: '3. Batch by difficulty' },
     {
       t: 'p',
       text: 'The instinct is to render in the order the shot list is written. Do the opposite. Run the hardest shots first: the ones with legible printed type, the ones where the product is held, the ones at an angle the plate does not cover well.',
@@ -81,7 +81,7 @@ export const post: Post = {
     {
       t: 'table',
       caption:
-        'The four gates, with starting planning assumptions for acceptance. These are a place to begin budgeting, not measured benchmarks: log your own and replace them.',
+        'The four gates, with starting planning assumptions for acceptance. These are a place to begin budgeting: log your own and replace them.',
       head: ['Gate', 'Test', 'Typical pass rate, hard shots', 'Typical pass rate, easy shots'],
       rows: [
         ['Type', 'Every printed word read at 100% against the artwork', '15 to 30%', '70 to 90%'],
@@ -103,7 +103,7 @@ export const post: Post = {
       t: 'p',
       text: 'A patched frame passes review in isolation and still does not sit correctly beside its neighbours, because the drift that produced it is still in the pipeline and will produce the next twelve frames the same way. The retouching bill then grows silently until it exceeds the generation budget, which is how a cheap production becomes an expensive one without anyone deciding to make it so.',
     },
-    { t: 'h2', text: '6. Review the set, not the shot' },
+    { t: 'h2', text: '6. Review the whole set' },
     {
       t: 'p',
       text: 'The final gate is a contact sheet. All hundred frames, small, on one screen. Drift that is invisible at full size is obvious at thumbnail scale, because the eye stops reading each image and starts comparing them.',
@@ -127,7 +127,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'How do you keep a product looking the same across many AI-generated images?',
-      a: 'Lock the product as a master plate before generating anything, generate every frame from that plate and never from a text description, write the set specification once, and test every frame with a silhouette overlay against the plate. Frames that drift are regenerated, never retouched.',
+      a: 'Lock the product as a master plate before generating anything, generate every frame from that plate, write the set specification once, and test every frame with a silhouette overlay against the plate. Frames that drift are regenerated from the plate.',
     },
     {
       q: 'How many renders does a hundred-shot generative set take?',
@@ -135,7 +135,7 @@ export const post: Post = {
     },
     {
       q: 'Why not just retouch the frames that are nearly right?',
-      a: 'Because the drift lives in the generation, not the frame. Retouching fixes one image and leaves the cause in place, so the next batch fails the same way and the retouching bill grows until it exceeds what you saved by going generative.',
+      a: 'Because the drift lives in the generation. Retouching fixes one image and leaves the cause in place, so the next batch fails the same way and the retouching bill grows until it exceeds what you saved by going generative.',
     },
     {
       q: 'What is the contact sheet review for?',

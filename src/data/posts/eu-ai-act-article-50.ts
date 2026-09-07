@@ -34,7 +34,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'It is not a high-risk provision. That is the point people miss. Article 50 applies regardless of whether the underlying system is classified as high-risk, which means a marketing team using an off-the-shelf video model is inside it on the same terms as anybody else.',
+      text: 'That is the point people miss: Article 50 applies regardless of whether the underlying system is classified as high-risk, which means a marketing team using an off-the-shelf video model is inside it on the same terms as anybody else.',
     },
     { t: 'h2', text: 'What the obligation says' },
     {
@@ -48,7 +48,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'Provider or deployer?',
-      text: 'The provider is whoever puts the model on the market. The deployer is whoever uses it under their own authority, which for a campaign means the brand or the studio running the render, not the model vendor. Deployer duties are the ones that land on you.',
+      text: 'The provider is whoever puts the model on the market. The deployer is whoever uses it under their own authority, which for a campaign means the brand or the studio running the render. The model vendor. Deployer duties are the ones that land on you.',
     },
     {
       t: 'p',
@@ -78,7 +78,7 @@ export const post: Post = {
     { t: 'h2', text: 'Territorial reach: why UK and US brands are inside it' },
     {
       t: 'p',
-      text: 'The Act follows the output, not the establishment. Where a system’s output is used in the Union, the obligations attach. For advertising that means a campaign served to audiences in EU member states is in scope irrespective of where the brand, the agency or the studio sits.',
+      text: 'The Act follows the output. Where a system’s output is used in the Union, the obligations attach. For advertising that means a campaign served to audiences in EU member states is in scope irrespective of where the brand, the agency or the studio sits.',
     },
     {
       t: 'p',
@@ -98,7 +98,7 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'Decide disclosure at brief stage, not delivery. Write the labelling decision into the brief alongside the deliverable list, so it is a production constraint, never a compliance afterthought.',
+        'Decide disclosure at brief stage. Write the labelling decision into the brief alongside the deliverable list, so it lands as a production constraint.',
         'Put the label on the asset and the provenance in the metadata. The metadata satisfies machine detection. The on-asset label satisfies a human at first exposure, which is what the text asks for.',
         'Ask your model providers, in writing, what marking they apply to outputs and from what date. Their Article 50(2) position determines whether your exports carry machine-readable provenance at all.',
         'Classify your formats. Wholly synthetic presenters and any manipulated likeness of a real person are deepfake-category and get disclosed without argument. A stylised, obviously-constructed brand film is a judgement call worth documenting.',

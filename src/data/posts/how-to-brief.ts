@@ -49,7 +49,7 @@ export const post: Post = {
     { t: 'h3', text: '3. Who has to recur' },
     {
       t: 'p',
-      text: 'One face appearing in one asset is a render. One face appearing across nine assets is a trained identity, a set of gates and a consent file. State how many assets a given person or product appears in, because the answer changes the shape of the production, not its size.',
+      text: 'One face appearing in one asset is a render. One face appearing across nine assets is a trained identity, a set of gates and a consent file. State how many assets a given person or product appears in, because the answer changes the shape of the production.',
     },
     { t: 'h3', text: '4. What is regulated' },
     {
@@ -64,7 +64,7 @@ export const post: Post = {
     { t: 'h3', text: '6. Who signs off, and at which points' },
     {
       t: 'p',
-      text: 'Name a person, not a department, and name the two moments they see the work: the brief, and the final output. A generative pipeline can produce a hundred assets faster than a committee can look at three, and an approval structure designed for one film a quarter will become the bottleneck it was not designed to be.',
+      text: 'Name one person, and name the two moments they see the work: the brief, and the final output. A generative pipeline can produce a hundred assets faster than a committee can look at three, and an approval structure designed for one film a quarter will become the bottleneck it was not designed to be.',
     },
     { t: 'h2', text: 'The rest of the brief, which is normal' },
     {
@@ -92,10 +92,10 @@ export const post: Post = {
       t: 'ol',
       items: [
         '"Is there readable printed type in any shot?" If they do not ask, they have not priced the hardest part.',
-        '"Should this be generative at all?" A studio that has never talked a client out of a brief is selling capacity, not judgement.',
+        '"Should this be generative at all?" A studio that has never talked a client out of a brief is selling capacity.',
         '"Who owns the plates and trained identities afterwards?" The answer should be you.',
         '"What is the credit ceiling per asset?" There should be one, and it should halt the run. A logged warning is not a ceiling.',
-        '"What is the expected acceptance rate on the hardest shot?" You want a fraction, not a reassurance.',
+        '"What is the expected acceptance rate on the hardest shot?" You want a fraction with two real numbers in it.',
         '"What happens to a frame that fails review?" Correct answer: back to the source file. Wrong answer: our retoucher fixes it.',
       ],
     },
