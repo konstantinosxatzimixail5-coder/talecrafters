@@ -50,7 +50,7 @@ export const post: Post = {
     { t: 'h2', text: 'The @id discipline' },
     {
       t: 'p',
-      text: 'The single highest-value practice in structured data is giving your organisation one stable @id and referencing it from every other node rather than repeating the details. It converts a set of independent pages into a connected graph, which is what allows a system to conclude that the studio in the Article node and the publisher in the DefinedTermSet are the same organisation.',
+      text: 'The single highest-value practice in structured data is giving your organisation one stable @id and referencing it from every other node instead of repeating the details. It converts a set of independent pages into a connected graph, which is what allows a system to conclude that the studio in the Article node and the publisher in the DefinedTermSet are the same organisation.',
     },
     {
       t: 'p',
@@ -59,11 +59,11 @@ export const post: Post = {
     { t: 'h2', text: 'Author is not optional any more' },
     {
       t: 'p',
-      text: 'An Article node with no author is a page nobody is responsible for. Systems that weight source credibility have no way to attach anything to it, and the trend in every published guideline is towards weighting responsibility more heavily rather than less.',
+      text: 'An Article node with no author is a page nobody is responsible for. Systems that weight source credibility have no way to attach anything to it, and the trend in every published guideline is towards weighting responsibility more heavily every year.',
     },
     {
       t: 'p',
-      text: 'A real name, a page for that person on your own site, and consistent use across everything they wrote. If work is genuinely collective, say so with an organisation as the author rather than inventing a byline, which is worse than either.',
+      text: 'A real name, a page for that person on your own site, and consistent use across everything they wrote. If work is genuinely collective, say so with an organisation as the author and never invent a byline, which is worse than either.',
     },
     { t: 'h2', text: 'The three mistakes that make markup harmful' },
     {
@@ -71,7 +71,7 @@ export const post: Post = {
       items: [
         'Marking up content that is not on the page. An FAQPage node describing questions no visitor can see is the fastest way to lose the credibility the markup was meant to establish, and it is detectable.',
         'Dates that lie. A modified date that updates on every deploy tells a system the page changed when it did not, and once that signal is noise it is worthless in both directions.',
-        'HowTo on anything that is not a procedure. Steps that are actually a list of considerations misrepresent the page, and the misrepresentation is the thing being indexed.',
+        'HowTo on anything that is not a procedure. Steps that are a list of considerations misrepresent the page, and the misrepresentation is the thing being indexed.',
       ],
     },
     {
@@ -116,11 +116,11 @@ export const post: Post = {
     },
     {
       q: 'What is the @id discipline in structured data?',
-      a: 'Giving your organisation one stable identifier and referencing it from every other node rather than repeating the details inline. It turns independent pages into a connected graph; repeating an organisation’s details on forty pages produces forty similar-looking organisations instead.',
+      a: 'Giving your organisation one stable identifier and referencing it from every other node, with no details repeated inline. It turns independent pages into a connected graph; repeating an organisation’s details on forty pages produces forty similar-looking organisations instead.',
     },
     {
       q: 'Does an Article need an author in schema?',
-      a: 'Yes. An Article node with no author is a page nobody is responsible for, and every published guideline trend weights responsibility more heavily over time. Use a real person with their own page, or the organisation — never an invented byline.',
+      a: 'Yes. An Article node with no author is a page nobody is responsible for, and every published guideline trend weights responsibility more heavily over time. Use a real person with their own page, or the organisation. Never an invented byline.',
     },
     {
       q: 'When does schema markup do harm?',

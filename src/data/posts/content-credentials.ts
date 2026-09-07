@@ -5,9 +5,9 @@ export const post: Post = {
   title: 'Content Credentials for Brands: What C2PA Does and What It Cannot',
   metaTitle: 'C2PA Content Credentials for Brands: What They Do and Do Not Prove',
   metaDescription:
-    'How C2PA content credentials work, what a manifest can and cannot prove, why they survive some workflows and not others, and how to decide whether to attach them before production rather than after.',
+    'How C2PA content credentials work, what a manifest can and cannot prove, why they survive some workflows and not others, and how to decide whether to attach them before production starts.',
   excerpt:
-    'Provenance is becoming a procurement question rather than an ethics one. It cannot be retrofitted onto a finished cut.',
+    'Provenance is becoming a procurement question. It cannot be retrofitted onto a finished cut.',
   published: '2026-05-22',
   author: 'Konstantinos Chatzimichail',
   section: 'Compliance',
@@ -32,11 +32,11 @@ export const post: Post = {
     { t: 'h2', text: 'What a manifest contains' },
     {
       t: 'p',
-      text: 'A C2PA manifest is a cryptographically signed record embedded in the asset. It states which tool created it, what actions were performed, by which software, and — where the signer chooses — by whom. Each step is signed, so altering the file without re-signing makes the mismatch detectable.',
+      text: 'A C2PA manifest is a cryptographically signed record embedded in the asset. It states which tool created it, what actions were performed, by which software, and (where the signer chooses) by whom. Each step is signed, so altering the file without re-signing makes the mismatch detectable.',
     },
     {
       t: 'p',
-      text: 'The important property is tamper-evidence rather than tamper-proofing. Anybody can strip a manifest. What they cannot do is change the asset and keep a valid one, which means the absence of credentials is itself a signal in a world where their presence is common.',
+      text: 'The important property is tamper-evidence, and never tamper-proofing. Anybody can strip a manifest. What they cannot do is change the asset and keep a valid one, which means the absence of credentials is itself a signal in a world where their presence is common.',
     },
     { t: 'h2', text: 'What it proves and what it does not' },
     {
@@ -80,7 +80,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Credentials sign the file’s history and are readable by software. Watermarking marks the pixels or the audio and survives some transformations that destroy metadata, at the cost of being either visible or statistically detectable rather than certain. Disclosure is a statement to the audience, in language, and is the one with legal weight attached.',
+      text: 'Credentials sign the file’s history and are readable by software. Watermarking marks the pixels or the audio and survives some transformations that destroy metadata, at the cost of being either visible or merely statistically detectable. Disclosure is a statement to the audience, in language, and is the one with legal weight attached.',
     },
     {
       t: 'p',
@@ -115,7 +115,7 @@ export const post: Post = {
     },
     {
       q: 'Do content credentials survive social media?',
-      a: 'Inconsistently. They survive editing in tools that implement the standard and delivery through platforms that preserve metadata. They do not survive a screenshot, a re-encode by a non-implementing tool, or most platform re-compressions — so they work for asset delivery and B2B trust, poorly as a consumer-facing signal.',
+      a: 'Inconsistently. They survive editing in tools that implement the standard and delivery through platforms that preserve metadata. They do not survive a screenshot, a re-encode by a non-implementing tool, or most platform re-compressions, so they work for asset delivery and B2B trust, poorly as a consumer-facing signal.',
     },
     {
       q: 'Can you add content credentials to a finished asset?',
@@ -123,7 +123,7 @@ export const post: Post = {
     },
     {
       q: 'What is the difference between C2PA, watermarking and disclosure?',
-      a: 'Credentials sign the file’s history and are read by software. Watermarking marks the pixels or audio and survives transformations that destroy metadata, at the cost of certainty. Disclosure is a statement to the audience in language, and it is the one with legal weight — since August 2026 EU transparency obligations under Article 50 apply to synthetic content qualifying as a deepfake.',
+      a: 'Credentials sign the file’s history and are read by software. Watermarking marks the pixels or audio and survives transformations that destroy metadata, at the cost of certainty. Disclosure is a statement to the audience in language, and it is the one with legal weight. Since August 2026 EU transparency obligations under Article 50 apply to synthetic content qualifying as a deepfake.',
     },
   ],
   terms: ['c2pa', 'provenance', 'watermarking', 'disclosure', 'deliverable-specification', 'ai-act-article-50'],

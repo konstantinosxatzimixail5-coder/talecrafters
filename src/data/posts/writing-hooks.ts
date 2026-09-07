@@ -5,9 +5,9 @@ export const post: Post = {
   title: 'How to Write a Hook: Six Mechanisms, Twenty Variants, One Rule',
   metaTitle: 'How to Write a Hook for Short-Form Video (6 Mechanisms)',
   metaDescription:
-    'A hook is a mechanism, not a tone. The six that reliably work, how to generate twenty real variants instead of twenty rewrites of one sentence, and why hook quality should be measured on the next video rather than this one.',
+    'A hook is a mechanism, not a tone. The six that reliably work, how to generate twenty real variants instead of twenty rewrites of one sentence, and why hook quality should be measured on the next video, never this one.',
   excerpt:
-    'Asking for twenty punchy openings gets you one sentence twenty ways. Asking for six mechanisms gets you six openings that are actually different.',
+    'Asking for twenty punchy openings gets you one sentence twenty ways. Asking for six mechanisms gets you six openings that differ in kind.',
   published: '2026-07-28',
   author: 'Konstantinos Chatzimichail',
   section: 'Story',
@@ -32,7 +32,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The reason most hook writing is bad is that people ask for a quality rather than a mechanism. Ask for twenty punchy openings and you get one sentence in twenty costumes. Ask for four openings that contradict a belief, four that name a cost and four that withhold the subject, and you get twelve genuinely different things.',
+      text: 'The reason most hook writing is bad is that people ask for a quality when they want a mechanism. Ask for twenty punchy openings and you get one sentence in twenty costumes. Ask for four openings that contradict a belief, four that name a cost and four that withhold the subject, and you get twelve genuinely different things.',
     },
     { t: 'h2', text: 'The six mechanisms' },
     {
@@ -67,7 +67,7 @@ export const post: Post = {
         ],
         [
           'Mid-action start',
-          'Orients by consequence rather than by setup',
+          'Orients by consequence, never by setup',
           'Opening on the argument, not on who is arguing.',
         ],
       ],
@@ -83,14 +83,14 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'This is why hook quality should be measured on the next video rather than on this one. A hook that wins today’s retention curve and loses tomorrow’s first two seconds has cost you money and shown you a graph that says otherwise.',
+      text: 'This is why hook quality should be measured on the next video. A hook that wins today’s retention curve and loses tomorrow’s first two seconds has cost you money and shown you a graph that says otherwise.',
     },
     {
       t: 'note',
       title: 'The honest test',
-      text: 'Could the hook be true and the piece still be worthless? If yes, you have built a curiosity gap on an absence rather than on a finding, which is the technical definition of clickbait.',
+      text: 'Could the hook be true and the piece still be worthless? If yes, you have built a curiosity gap on an absence, which is the technical definition of clickbait.',
     },
-    { t: 'h2', text: 'How to generate twenty that are actually different' },
+    { t: 'h2', text: 'How to generate twenty that differ in kind' },
     {
       t: 'ol',
       items: [
@@ -116,7 +116,7 @@ export const post: Post = {
       t: 'ul',
       items: [
         'The subject line, which is a hook with no visual support at all and therefore the hardest one.',
-        'The first line of a case study, where the usual failure is opening on the client’s name rather than on the problem.',
+        'The first line of a case study, where the usual failure is opening on the client’s name.',
         'The cold open of a longer film, which is a hook with a whole scene to do it in.',
         'The opening sentence of an article, where the same six mechanisms apply and the specific number is the strongest of them.',
         'The first slide of a pitch, where admitted failure outperforms everything else and almost nobody uses it.',
@@ -126,17 +126,17 @@ export const post: Post = {
       t: 'cta',
       href: '/supply-drop/prompting-library',
       label: 'The hook prompt',
-      text: 'The prompt we use to generate twenty variants by mechanism rather than twenty rewrites of one, in the Prompting Library.',
+      text: 'The prompt we use to generate twenty variants by mechanism, and never twenty rewrites of one, in the Prompting Library.',
     },
   ],
   faqs: [
     {
       q: 'What makes a good video hook?',
-      a: 'A mechanism rather than a tone. Six work reliably: contradict what the audience believes, name a cost, state a specific number, withhold the subject, admit a failure, or start mid-action. "Make it punchy" is not a mechanism and produces one sentence in twenty costumes.',
+      a: 'A mechanism, never a tone. Six work reliably: contradict what the audience believes, name a cost, state a specific number, withhold the subject, admit a failure, or start mid-action. "Make it punchy" is not a mechanism and produces one sentence in twenty costumes.',
     },
     {
       q: 'How long is a hook?',
-      a: 'In short-form video, the first one to three seconds. Cap the line at about nine words for video and twelve for a headline — the cap improves quality more reliably than rewriting does.',
+      a: 'In short-form video, the first one to three seconds. Cap the line at about nine words for video and twelve for a headline. The cap improves quality more reliably than rewriting does.',
     },
     {
       q: 'How do you write twenty different hooks?',
@@ -144,7 +144,7 @@ export const post: Post = {
     },
     {
       q: 'What is the difference between a hook and a scroll stopper?',
-      a: 'The scroll stopper is visual and works before comprehension — contrast, an unusual scale, unexpected motion. It buys the fraction of a second in which the hook can be heard. A retention cliff at half a second means the visual failed; a cliff at two to three seconds means the sentence did.',
+      a: 'The scroll stopper is visual and works before comprehension. Contrast, an unusual scale, unexpected motion. It buys the fraction of a second in which the hook can be heard. A retention cliff at half a second means the visual failed; a cliff at two to three seconds means the sentence did.',
     },
     {
       q: 'Why do hooks stop working over time?',

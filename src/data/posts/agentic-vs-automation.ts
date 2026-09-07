@@ -25,7 +25,7 @@ export const post: Post = {
   imageAlt:
     'Two routes across the same terrain: one a rigid printed circuit path, the other a branching route that redraws itself.',
   standfirst:
-    'Classic automation follows a fixed path somebody drew in advance. An agentic workflow decides its own path within stated boundaries. The first is right for work that must never vary. The second is right for work that always does. Most teams reach for the wrong one because they are choosing by novelty rather than by variance.',
+    'Classic automation follows a fixed path somebody drew in advance. An agentic workflow decides its own path within stated boundaries. The first is right for work that must never vary. The second is right for work that always does. Most teams reach for the wrong one because they are choosing by novelty.',
   body: [
     {
       t: 'p',
@@ -56,7 +56,7 @@ export const post: Post = {
     { t: 'h2', text: 'The decision rule' },
     {
       t: 'p',
-      text: 'One question, asked about the process rather than the technology: how many distinct shapes does the input arrive in?',
+      text: 'One question, asked about the process and never about the technology: how many distinct shapes does the input arrive in?',
     },
     {
       t: 'ul',
@@ -72,19 +72,19 @@ export const post: Post = {
       title: 'The test in one line',
       text: 'If you can draw the flowchart, build the flowchart. An agent is what you use when the flowchart would need a new branch every week.',
     },
-    { t: 'h2', text: 'Where agents actually pay, in creative work' },
+    { t: 'h2', text: 'Where agents earn their keep in creative work' },
     {
       t: 'p',
-      text: 'In content operations the variance is real, which is why this is one of the honest use cases rather than a demo.',
+      text: 'In content operations the variance is real, which is why this is one of the honest use cases.',
     },
     {
       t: 'ul',
       items: [
         'Repurposing. One article into a cutdown, a carousel, three infographic frames and a podcast read. The source varies structurally every time, so a template breaks and an agent adapts.',
         'Research and qualification. Go and find the thing, check it against criteria, present it in a format a person can act on. The web does not arrive in a fixed shape.',
-        'Draft generation against a brief. Not final copy. Drafts, which a person then edits, which is a real four hours saved rather than a claimed one.',
+        'Draft generation against a brief. Not final copy. Drafts, which a person then edits, which is four hours genuinely saved.',
         'Format matrices. Nine placements, four aspect ratios, three lengths, and the rules for what survives a crop differ per asset.',
-        'Triage. Reading an inbound brief and routing it, with the interesting ones flagged for a human rather than answered.',
+        'Triage. Reading an inbound brief and routing it, with the interesting ones flagged for a human and none of them answered.',
       ],
     },
     { t: 'h2', text: 'Where agents should not go' },
@@ -109,11 +109,11 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'A directory of skills the model loads on demand, rather than one enormous instruction nobody can edit safely.',
+        'A directory of skills the model loads on demand, in place of one enormous instruction nobody can edit safely.',
         'Connectors into the software the team already runs. A workflow that requires a new tool requires a change-management project.',
         'A naming convention, so the output of a run in August is findable in November.',
         'A run log with cost attached, which is what turns "it saves time" into a number a finance team can audit.',
-        'A stated stopping condition and a credit ceiling, so a confused agent halts rather than spending.',
+        'A stated stopping condition and a credit ceiling, so a confused agent halts before it spends.',
         'A named human gate at the points where a wrong decision is expensive.',
       ],
     },

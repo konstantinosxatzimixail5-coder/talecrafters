@@ -43,13 +43,13 @@ export const post: Post = {
     },
     {
       t: 'table',
-      caption: 'What an independent restaurant is actually choosing between',
+      caption: 'What an independent restaurant is choosing between',
       head: ['Option', 'Realistic cost', 'What you get', 'Why it usually does not happen'],
       rows: [
         ['Professional food shoot', '£1,200 to £4,000 per day', 'The real dishes, correctly', 'Kitchen closure, stylist, season, budget'],
         ['Phone photography by staff', 'Free', 'Inconsistent light, no set, unusable at size', 'It is what most sites already run on'],
         ['Stock imagery', '£20 to £200', 'Food from a different restaurant', 'Dishonest, and customers notice'],
-        ['Generative, plate-locked', '£400 to £2,500 per menu', 'Your dishes, one light, one world', 'Requires the dishes to actually be documented'],
+        ['Generative, plate-locked', '£400 to £2,500 per menu', 'Your dishes, one light, one world', 'Requires the dishes to be documented first'],
       ],
     },
     {
@@ -63,7 +63,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'So the method starts with documentation, not generation. Someone in the kitchen photographs each dish on a phone, plated as it actually leaves the pass, in daylight, from three angles. Badly is fine. What matters is that it is accurate: the real plate, the real portion, the real garnish, the real colour of the sauce.',
+      text: 'So the method starts with documentation, not generation. Someone in the kitchen photographs each dish on a phone, plated as it leaves the pass, in daylight, from three angles. Badly is fine. What matters is that it is accurate: the real plate, the real portion, the real garnish, the real colour of the sauce.',
     },
     {
       t: 'p',
@@ -126,7 +126,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'Can AI generate food photography for a restaurant?',
-      a: 'Yes, provided it is generated from photographs of your actual dishes rather than from a text description. Phone references from the kitchen become a plate lock, and every finished frame is generated from and tested against them. Without that step it is stock imagery with extra steps.',
+      a: 'Yes, provided it is generated from photographs of your actual dishes and never from a text description. Phone references from the kitchen become a plate lock, and every finished frame is generated from and tested against them. Without that step it is stock imagery with extra steps.',
     },
     {
       q: 'How much does AI food photography cost?',
@@ -138,11 +138,11 @@ export const post: Post = {
     },
     {
       q: 'What does a restaurant need to provide?',
-      a: 'Phone photographs of each dish, plated as it actually leaves the pass, in daylight, from three angles. Quality does not matter; accuracy does. Those references become the lock every finished frame is generated from.',
+      a: 'Phone photographs of each dish, plated as it leaves the pass, in daylight, from three angles. Quality does not matter; accuracy does. Those references become the lock every finished frame is generated from.',
     },
     {
       q: 'What should never be in a generative food frame?',
-      a: 'Legible printed text such as wine labels, menu cards or certifications, because acceptance rates on readable type are low. Also real people, who are a shoot rather than a render and bring a disclosure problem with them.',
+      a: 'Legible printed text such as wine labels, menu cards or certifications, because acceptance rates on readable type are low. Also real people, who are a shoot and not a render, and who bring a disclosure problem with them.',
     },
     {
       q: 'When is the best time for a Greek restaurant to start?',

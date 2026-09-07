@@ -29,7 +29,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'The most useful feedback we ever get on a generative piece is somebody saying they do not like it and being unable to say why. That gap is where the craft lives. An audience registers a violation of physical consistency long before it can name one, and the reaction arrives as a judgement about production value rather than about technology.',
+      text: 'The most useful feedback we ever get on a generative piece is somebody saying they do not like it and being unable to say why. That gap is where the craft lives. An audience registers a violation of physical consistency long before it can name one, and the reaction arrives as a judgement about production value, never about technology.',
     },
     {
       t: 'p',
@@ -60,7 +60,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Fix: cut before the model gets bored. Generate long, use the first stable segment, and build the piece out of short clips joined by real edits rather than one long generation.',
+      text: 'Fix: cut before the model gets bored. Generate long, use the first stable segment, and build the piece out of short clips joined by real edits. One long generation is the trap.',
     },
     { t: 'h2', text: '4. Camera moves with no reason' },
     {
@@ -78,7 +78,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Fix: a trained identity rather than a re-uploaded reference, plus a per-shot check against the identity sheet. A drifted face is a dead shot.',
+      text: 'Fix: a trained identity in place of a re-uploaded reference, plus a per-shot check against the identity sheet. A drifted face is a dead shot.',
     },
     { t: 'h2', text: '6. Text in frame' },
     {
@@ -105,7 +105,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Fix: room tone under everything, foley on the two or three actions the eye lands on, and music chosen after picture lock rather than before.',
+      text: 'Fix: room tone under everything, foley on the two or three actions the eye lands on, and music chosen after picture lock.',
     },
     { t: 'h2', text: '9. Too much happening' },
     {
@@ -130,13 +130,13 @@ export const post: Post = {
       t: 'cta',
       href: '/supply-drop/generative-film-shot-consistency-checklist',
       label: 'Download the consistency checklist',
-      text: 'These nine as pass-or-fail checks, arranged by production stage so they get applied before the render rather than after. Free, no email gate.',
+      text: 'These nine as pass-or-fail checks, arranged by production stage so they get applied before the render. Free, no email gate.',
     },
   ],
   faqs: [
     {
       q: 'Why does AI-generated video look fake?',
-      a: 'Usually not for the reason people assume. The most common causes are a key light direction that changes between shots, a face that drifts across the sequence, and clips held past the point where the model stops obeying physics. All three are production failures rather than model limitations.',
+      a: 'Usually not for the reason people assume. The most common causes are a key light direction that changes between shots, a face that drifts across the sequence, and clips held past the point where the model stops obeying physics. All three are production failures, not model limitations.',
     },
     {
       q: 'How long should a generative video clip be?',
@@ -144,7 +144,7 @@ export const post: Post = {
     },
     {
       q: 'How do you stop a face changing between AI video shots?',
-      a: 'Build a trained identity from a sheet of stills rather than re-uploading a reference image each session, and check every shot against the identity sheet. A shot where the face has drifted is regenerated rather than graded or retouched.',
+      a: 'Build a trained identity from a sheet of stills and stop re-uploading a reference image each session, and check every shot against the identity sheet. A shot where the face has drifted is regenerated. Nobody grades or retouches it.',
     },
     {
       q: 'Should you put text in an AI-generated video frame?',

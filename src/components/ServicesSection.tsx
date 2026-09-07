@@ -258,8 +258,8 @@ export function ServicesSection({ copy, categories }: { copy: HomeCopy['services
                 Custom <span style={{ color: 'var(--brand-cyan)' }}>Everything</span>
               </h3>
               <p className="text-lg max-w-2xl" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
-                Come with the thing nobody has quoted you for. You leave with a shape, a stack and a
-                delivery date, or a straight answer about why we are the wrong studio for it. Both
+                Come with the thing nobody has quoted you for. You leave with a scope, a stack and a date
+                in the calendar, or a straight answer about why we are the wrong studio for it. Both
                 take one call.
               </p>
             </div>

@@ -49,11 +49,11 @@ const qa = [
   },
   {
     q: 'How do you keep the same character across several shots?',
-    a: 'With a written character brief that specifies structure and never personality — bone, proportion, two or three fixed marks, exact wardrobe — pasted unchanged into every prompt, plus a reference image used for identity only. Description alone stops working somewhere around the third shot.',
+    a: 'With a written character brief that specifies structure and never personality (bone, proportion, two or three fixed marks, exact wardrobe), pasted unchanged into every prompt, plus a reference image used for identity only. Description alone stops working somewhere around the third shot.',
   },
   {
     q: 'Should I name an artist in a prompt to get a style?',
-    a: 'No, and not only for rights reasons. A name returns an average of everything attributed to that person, which is rarely the specific thing you liked. Decomposing the look into medium, surface, mark, palette and — most importantly — what the style does not contain gets you closer and is defensible in a production record.',
+    a: 'No, and not only for rights reasons. A name returns an average of everything attributed to that person, which is rarely the specific thing you liked. Decomposing the look into medium, surface, mark, palette and, most importantly, what the style does not contain gets you closer and is defensible in a production record.',
   },
   {
     q: 'What is different about a prompt that runs unattended?',
@@ -109,7 +109,7 @@ export default async function PromptingLibraryPage() {
                 '@type': 'HowToStep',
                 position: 5,
                 name: 'Keep the invariant in a file',
-                text: 'Anything repeated across shots — the lock block, the continuity line, the character brief — gets pasted, never retyped. Retyped text drifts.',
+                text: 'Anything repeated across shots (the lock block, the continuity line, the character brief) gets pasted, never retyped. Retyped text drifts.',
               },
             ],
           },

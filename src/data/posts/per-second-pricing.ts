@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'Generative video is sold by the second and produced by the batch. The arithmetic that turns a published per-second rate into a real production cost, and the four multipliers that sit between them.',
   excerpt:
-    'The rate card is real. It is also about a tenth of the number you will actually spend, and the gap is arithmetic rather than dishonesty.',
+    'The rate card is real. It is also about a tenth of the number you will spend, and the gap is arithmetic. Nobody is lying to you.',
   published: '2026-08-21',
   author: 'Konstantinos Chatzimichail',
   section: 'Production',
@@ -62,7 +62,7 @@ export const post: Post = {
     { t: 'h2', text: 'The credits problem' },
     {
       t: 'p',
-      text: 'Most platforms price in credits rather than currency, and credits are deliberately not comparable across platforms — different resolutions, different durations, different features consuming different amounts. Converting to a common unit is a spreadsheet exercise everybody skips.',
+      text: 'Most platforms price in credits and never in currency, and credits are deliberately not comparable across platforms. Different resolutions, different durations, different features consuming different amounts. Converting to a common unit is a spreadsheet exercise everybody skips.',
     },
     {
       t: 'p',
@@ -107,7 +107,7 @@ export const post: Post = {
     },
     {
       q: 'What is the right unit for pricing generative video?',
-      a: 'Currency per accepted second of finished footage — per second that made the cut, not per second generated. It is the only unit that survives comparison between platforms and between studios.',
+      a: 'Currency per accepted second of finished footage, per second that made the cut, not per second generated. It is the only unit that survives comparison between platforms and between studios.',
     },
     {
       q: 'Why do credits make platforms hard to compare?',
@@ -115,7 +115,7 @@ export const post: Post = {
     },
     {
       q: 'What should a generative video quote contain?',
-      a: 'A shot count rather than a runtime, a shot-type breakdown, a stated attempts assumption drawn from the studio’s own logs, a per-shot spend ceiling with a rule for what happens at it, a separate capped exploration line, and an explicit list of exclusions.',
+      a: 'A shot count in place of a runtime, a shot-type breakdown, a stated attempts assumption drawn from the studio’s own logs, a per-shot spend ceiling with a rule for what happens at it, a separate capped exploration line, and an explicit list of exclusions.',
     },
     {
       q: 'How do you reduce the cost of generative production?',

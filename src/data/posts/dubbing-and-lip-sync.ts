@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'AI Dubbing and Lip Sync for Multi-Market Campaigns',
   metaTitle: 'AI Dubbing and Lip Sync: What Works Across Markets in 2026',
   metaDescription:
-    'What automated dubbing and visual lip sync can and cannot do across languages, where the failures cluster, what has to be re-recorded rather than converted, and the disclosure position in each market.',
+    'What automated dubbing and visual lip sync can and cannot do across languages, where the failures cluster, what has to be re-recorded instead of converted, and the disclosure position in each market.',
   excerpt:
     'Translating the words is the easy tenth. The performance, the timing and the mouth are the rest.',
   published: '2026-06-26',
@@ -32,7 +32,7 @@ export const post: Post = {
     { t: 'h2', text: 'The four separable problems' },
     {
       t: 'table',
-      caption: 'What localisation actually consists of, and how well each part automates',
+      caption: 'What localisation consists of, and how well each part automates',
       head: ['Problem', 'How well it automates', 'Where it breaks'],
       rows: [
         ['Translation of meaning', 'Well', 'Idiom, humour, claims that are regulated differently by market'],
@@ -52,12 +52,12 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The practical consequence is that lip sync is a shot design decision. If a campaign is going to be localised, the speaking shots should be composed for it — closer, flatter, steadier — and that decision has to be taken before anything is produced.',
+      text: 'The practical consequence is that lip sync is a shot design decision. If a campaign is going to be localised, the speaking shots should be composed for it (closer, flatter, steadier), and that decision has to be taken before anything is produced.',
     },
     {
       t: 'note',
       title: 'The timing constraint nobody plans for',
-      text: 'The same sentence can be a third longer in one language than another. If a cut lands on the end of a line, that cut will be wrong in at least one market. Either leave handles on every speaking shot or accept a different edit per market — and decide which at the edit stage, not at delivery.',
+      text: 'The same sentence can be a third longer in one language than another. If a cut lands on the end of a line, that cut will be wrong in at least one market. Either leave handles on every speaking shot or accept a different edit per market, and decide which at the edit stage, not at delivery.',
     },
     { t: 'h2', text: 'What has to be re-recorded' },
     {
@@ -73,7 +73,7 @@ export const post: Post = {
     { t: 'h2', text: 'A workable review process' },
     {
       t: 'p',
-      text: 'Automated output needs a review pass by somebody who speaks the language, and the useful version of that pass is structured rather than "does this sound alright".',
+      text: 'Automated output needs a review pass by somebody who speaks the language, and the useful version of that pass is structured, and never "does this sound alright".',
     },
     {
       t: 'ol',
@@ -98,25 +98,25 @@ export const post: Post = {
       t: 'cta',
       href: '/supply-drop/ai-advertising-disclosure-checklist',
       label: 'The disclosure checklist',
-      text: 'The UK, EU and platform positions on one page, decided once per campaign rather than argued about at delivery.',
+      text: 'The UK, EU and platform positions on one page, decided once per campaign, so nobody argues about it at delivery.',
     },
   ],
   faqs: [
     {
       q: 'How good is AI dubbing in 2026?',
-      a: 'Reliable for translating meaning, moderate for timing, and poor for performance. Emphasis lands by rule rather than by intention, which is wrong often enough to matter in anything where the stress carries the meaning.',
+      a: 'Reliable for translating meaning, moderate for timing, and poor for performance. Emphasis lands by rule and never by intention, which is wrong often enough to matter in anything where the stress carries the meaning.',
     },
     {
       q: 'When does AI lip sync work well?',
-      a: 'On faces that are close to camera, roughly front-on, evenly lit, not moving much and unobstructed. It degrades with profile angles, distance, head movement, facial hair, hard side light and anything crossing the mouth — so it is a shot design decision, made before production.',
+      a: 'On faces that are close to camera, roughly front-on, evenly lit, not moving much and unobstructed. It degrades with profile angles, distance, head movement, facial hair, hard side light and anything crossing the mouth, so it is a shot design decision, made before production.',
     },
     {
-      q: 'What has to be re-recorded rather than converted?',
+      q: 'What has to be re-recorded instead of converted?',
       a: 'Anything where emphasis carries meaning, humour, regulated claims where the wording is legally load-bearing, anything using a named person’s voice, and the single market carrying most of the spend.',
     },
     {
       q: 'Why does language length break a localised edit?',
-      a: 'Because the same sentence can be up to a third longer in another language while the cut stays where it is. Leave handles on every speaking shot or plan for a different edit per market, and decide which at the edit stage rather than at delivery.',
+      a: 'Because the same sentence can be up to a third longer in another language while the cut stays where it is. Leave handles on every speaking shot or plan for a different edit per market, and decide which at the edit stage.',
     },
     {
       q: 'Does AI dubbing have to be disclosed?',

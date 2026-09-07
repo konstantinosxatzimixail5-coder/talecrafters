@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'Almost every serious generative job is now a hybrid. Something real gets filmed — a product, a face, a hand, a location — and the rest is generated around it. The join is where the work is, and the join fails for a small number of reasons that are entirely predictable.',
+      text: 'Almost every serious generative job is now a hybrid. Something real gets filmed (a product, a face, a hand, a location), and the rest is generated around it. The join is where the work is, and the join fails for a small number of reasons that are entirely predictable.',
     },
     { t: 'h2', text: 'The eight properties, and where each is solved' },
     {
@@ -73,7 +73,7 @@ export const post: Post = {
     { t: 'h2', text: 'Prompting to match filmed material' },
     {
       t: 'p',
-      text: 'The lock block for a hybrid job carries more than a normal one, and it is written from the on-set notes rather than from taste.',
+      text: 'The lock block for a hybrid job carries more than a normal one, and it is written from the on-set notes, never from taste.',
     },
     {
       t: 'quote',
@@ -92,7 +92,7 @@ export const post: Post = {
       t: 'p',
       text: 'Then put one grain layer, one halation and one very slight lens artefact over the entire finished piece. A shared surface does more for perceived coherence than any amount of per-clip work, because it gives the audience a single physical explanation for everything they are looking at.',
     },
-    { t: 'h2', text: 'What to film rather than generate' },
+    { t: 'h2', text: 'What to put in front of a lens' },
     {
       t: 'ul',
       items: [
@@ -100,7 +100,7 @@ export const post: Post = {
         'Hands doing something specific, which is two hours and a phone camera against a neutral background.',
         'Anything with legible type on it.',
         'A long unbroken take, where the value of the shot is that it did not cut.',
-        'A face that has to carry a performance rather than a look.',
+        'A face that has to carry a performance and not merely a look.',
       ],
     },
     {
@@ -125,14 +125,14 @@ export const post: Post = {
     },
     {
       q: 'Which mismatch between AI and filmed footage cannot be fixed?',
-      a: 'Light direction. No grade, cut or transition moves a key light, which is why a chrome ball on set is the single most valuable twenty seconds of a hybrid shoot — it records precisely where every source was.',
+      a: 'Light direction. No grade, cut or transition moves a key light, which is why a chrome ball on set is the single most valuable twenty seconds of a hybrid shoot. It records precisely where every source was.',
     },
     {
       q: 'Should you grade AI clips to each other or to a reference?',
       a: 'To a single reference, always. Matching clip two to clip one and clip three to clip two accumulates error, and by the ninth clip the sequence has drifted somewhere nobody chose. Pick one filmed frame as the target and pull everything to it.',
     },
     {
-      q: 'What should be filmed rather than generated?',
+      q: 'What should be filmed instead of generated?',
       a: 'The product if its appearance is the claim, hands doing something specific, anything carrying legible type, a long unbroken take where not cutting is the point, and a face that has to carry a performance. Generate environments, weather, scale, distant crowds and anything that would have been a location scout and a permit.',
     },
   ],

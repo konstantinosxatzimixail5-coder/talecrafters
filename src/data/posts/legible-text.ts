@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'legible-text',
   imageAlt: 'A product label rendered four times, each with a different plausible misspelling.',
   standfirst:
-    'Type fails in generative images because letterforms are learned as texture rather than as symbols, so the model produces something shaped like the word. The production answer is not a better prompt: generate the plate without the type and set it in post, which is also how the shot should have been built.',
+    'Type fails in generative images because letterforms are learned as texture and never as symbols, so the model produces something shaped like the word. The production answer is not a better prompt: generate the plate without the type and set it in post, which is also how the shot should have been built.',
   body: [
     {
       t: 'p',
@@ -36,12 +36,12 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'That is why the failures look the way they do. Not gibberish — plausible near-words, correct letter frequencies, believable kerning. It is producing something shaped like the word, and shape is what it was optimising.',
+      text: 'That is why the failures look the way they do. Not gibberish. Plausible near-words, correct letter frequencies, believable kerning. It is producing something shaped like the word, and shape is what it was optimising.',
     },
     { t: 'h2', text: 'What improves it, and by how much' },
     {
       t: 'table',
-      caption: 'Interventions ranked by how much they actually help',
+      caption: 'Interventions ranked by how much each one helps',
       head: ['Intervention', 'Effect', 'Notes'],
       rows: [
         ['Fewer characters', 'Large', 'One short word is usually achievable. A sentence is not.'],
@@ -57,7 +57,7 @@ export const post: Post = {
       t: 'p',
       text: 'The last row is the expensive one. Teams burn very large amounts of budget re-rolling a packshot in the belief that the next attempt is more likely. It is not; each attempt is independent, and a shot with a low base rate stays at that rate however frustrated you become.',
     },
-    { t: 'h2', text: 'The method that actually works' },
+    { t: 'h2', text: 'The method that works' },
     {
       t: 'ol',
       items: [
@@ -90,7 +90,7 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'Background signage that is deliberately out of focus and not readable. State that it must be illegible rather than hoping.',
+        'Background signage that is deliberately out of focus and not readable. State that it must be illegible. Hoping is not an instruction.',
         'Foreign-language texture where no viewer is expected to read it, provided you are certain it does not accidentally say something.',
         'A single very short word, front-on, large, in a register that is not photoreal.',
         'Never on a product label, a legal line, a price, a claim, or anything a regulator could read.',
@@ -106,7 +106,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'Why can AI image models not spell?',
-      a: 'Because letterforms are learned as texture rather than as symbols. The model has learned the density, rhythm and shape statistics of type, not that substituting one glyph changes the meaning — so it produces something shaped like the word rather than the word.',
+      a: 'Because letterforms are learned as texture and never as symbols. The model has learned the density, rhythm and shape statistics of type, not that substituting one glyph changes the meaning, so it produces something shaped like the word.',
     },
     {
       q: 'Does regenerating help get text right?',
@@ -114,7 +114,7 @@ export const post: Post = {
     },
     {
       q: 'What is the right way to get legible text in a generated image?',
-      a: 'Generate the plate with the type deliberately absent — a blank label has a very high acceptance rate — then set the real typeface in post, warped to the surface geometry, with matched lighting falloff, grain, defocus and edge wear.',
+      a: 'Generate the plate with the type deliberately absent (a blank label has a very high acceptance rate) then set the real typeface in post, warped to the surface geometry, with matched lighting falloff, grain, defocus and edge wear.',
     },
     {
       q: 'Why is text harder in AI video than in images?',

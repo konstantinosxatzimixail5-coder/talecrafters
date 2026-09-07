@@ -67,7 +67,7 @@ export const post: Post = {
       title: 'The one that catches people',
       text: 'A release signed for a photoshoot in 2023 does not cover training a model on those images in 2026. Derivative training is a distinct permission and old paperwork almost never mentions it.',
     },
-    { t: 'h2', text: 'Consent: what a usable release actually covers' },
+    { t: 'h2', text: 'Consent: what a usable release has to cover' },
     {
       t: 'p',
       text: 'Most likeness releases in circulation were drafted for photography and film. They grant use of captured material. They do not grant the right to build a model that can generate new material the person never performed, which is the entire point of a trained identity.',
@@ -79,9 +79,9 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'The specific permission to train a model on the supplied material, stated in those words rather than implied by a broad grant.',
+        'The specific permission to train a model on the supplied material, stated in those exact words, never implied by a broad grant.',
         'Scope of output: what the generated likeness may be used to say and sell, and what it may not. A blanket grant is a liability for both sides.',
-        'Territory and duration, with a stated end date rather than "in perpetuity", which is increasingly unenforceable and always a negotiation risk.',
+        'Territory and duration, with a stated end date and never "in perpetuity", which is increasingly unenforceable and always a negotiation risk.',
         'What happens to the trained model at the end of the term. Deleted, escrowed, or retained. Say which.',
         'A withdrawal mechanism, and an honest statement of what withdrawal can and cannot undo for material already published.',
         'Categories the likeness will never be used for. Political content, adult content, and claims about health, finance or legal matters are the usual carve-outs and performers ask for them.',
@@ -148,7 +148,7 @@ export const post: Post = {
     },
     {
       q: 'Does an old photoshoot release cover training an AI model?',
-      a: 'Almost never. Releases drafted for photography grant use of captured material. Training a model that generates new material the person never performed is a distinct permission, and it has to be named explicitly rather than inferred from a broad grant.',
+      a: 'Almost never. Releases drafted for photography grant use of captured material. Training a model that generates new material the person never performed is a distinct permission, and it has to be named explicitly. Nobody infers it from a broad grant.',
     },
     {
       q: 'Does synthetic UGC have to be labelled?',

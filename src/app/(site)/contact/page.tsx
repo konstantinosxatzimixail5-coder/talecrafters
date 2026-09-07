@@ -8,7 +8,7 @@ import { pageCopy } from '@/content/copy';
 export const metadata = pageMeta({
   title: 'Contact — Start a Conspiracy',
   description:
-    'Tell us what is coming, when it has to be live and what you think makes it impossible. You will get a shape, a stack and a number, not a discovery workshop.',
+    'Tell us what is coming, when it has to be live and what you think makes it impossible. You will get a shape, a stack and a number back, usually the same day. Nobody here has ever run a discovery workshop.',
   path: '/contact',
   keywords: ['contact creative agency', 'brief a studio', 'synthetic media studio contact'],
 });

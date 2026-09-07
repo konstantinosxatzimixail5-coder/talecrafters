@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'Hands have been the standing joke about generative imagery for years, and the joke has outlived its accuracy: a still of a hand at rest is now usually fine. What has not changed is hands in motion, hands interacting with objects, and hands doing anything specific — which is, unfortunately, most of what hands do in advertising.',
+      text: 'Hands have been the standing joke about generative imagery for years, and the joke has outlived its accuracy: a still of a hand at rest is now usually fine. What has not changed is hands in motion, hands interacting with objects, and hands doing anything specific, which is, unfortunately, most of what hands do in advertising.',
     },
     { t: 'h2', text: 'Why it is structurally hard' },
     {
@@ -52,7 +52,7 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'Crop at the wrist. A frame that ends above the hands cannot have wrong hands, and it is a legitimate composition rather than an evasion.',
+        'Crop at the wrist. A frame that ends above the hands cannot have wrong hands, and it is a legitimate composition, not an evasion.',
         'Put hands behind an object. A hand on the far side of a cup, a counter or a laptop is half a hand.',
         'Hands at rest and together. Interlocked or resting hands present a simpler silhouette than a hand in mid-gesture.',
         'Motion blur. A hand moving fast enough to blur is a hand that does not have to resolve.',
@@ -65,7 +65,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'The one to reach for first',
-      text: 'Crop at the wrist. It costs nothing, requires no post, and removes the failure entirely. A generative shot list should be reviewed once with the single question: which of these shots needs the hands, actually?',
+      text: 'Crop at the wrist. It costs nothing, requires no post, and removes the failure entirely. A generative shot list should be reviewed once with the single question: which of these shots genuinely needs the hands?',
     },
     { t: 'h2', text: 'When you genuinely need the hand' },
     {
@@ -117,11 +117,11 @@ export const post: Post = {
     },
     {
       q: 'Are hands worse in AI video than in images?',
-      a: 'Considerably. The hand has to be correct in every frame and consistent between them, and extremity drift is typically the third thing to degrade as a clip runs on — and the first one an untrained viewer reliably catches.',
+      a: 'Considerably. The hand has to be correct in every frame and consistent between them, and extremity drift is typically the third thing to degrade as a clip runs on, and the first one an untrained viewer reliably catches.',
     },
     {
       q: 'How should you check a frame for hand errors?',
-      a: 'At full size, every time: count the fingers, check joint directions, check the thumb is on the correct side, and check the hand connects to a plausible wrist. In video, check the first frame, the last frame and one in the middle — a hand correct at the start and wrong at the end is the standard failure and is invisible at playback speed.',
+      a: 'At full size, every time: count the fingers, check joint directions, check the thumb is on the correct side, and check the hand connects to a plausible wrist. In video, check the first frame, the last frame and one in the middle. A hand correct at the start and wrong at the end is the standard failure and is invisible at playback speed.',
     },
   ],
   terms: ['drift', 'temporal-coherence', 'gate', 'inpainting', 'acceptance-rate'],

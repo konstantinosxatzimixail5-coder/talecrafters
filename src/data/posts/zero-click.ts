@@ -23,13 +23,13 @@ export const post: Post = {
   image: 'zero-click',
   imageAlt: 'A traffic graph declining beside a mentions graph rising.',
   standfirst:
-    'When answers are composed rather than clicked, informational pages stop producing sessions and start producing mentions. The pages worth writing are the ones that either cannot be summarised away — original data, tools, positions — or that exist to be quoted on purpose.',
+    'When answers get composed and never clicked, informational pages stop producing sessions and start producing mentions. The pages worth writing are the ones that either cannot be summarised away (original data, tools, positions), or that exist to be quoted on purpose.',
   body: [
     {
       t: 'p',
       text: 'Around two thirds of searches now end without anyone visiting a website. For a content programme built on informational traffic that is not a dip, it is a change in what the programme is for, and pretending otherwise produces a year of writing the same pages while the chart goes down.',
     },
-    { t: 'h2', text: 'What actually changed' },
+    { t: 'h2', text: 'What changed' },
     {
       t: 'p',
       text: 'The commodity answer stopped being worth a visit. Anything that could be reduced to a paragraph is now reduced to a paragraph, upstream of your site, composed from several sources including possibly yours. What survives a summary is what cannot be compressed without loss.',
@@ -68,7 +68,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'What is missing from that table is the general explainer, and its absence is the whole strategic point. "What is generative video" is a page that will never be visited again and should be written anyway — as reference, as an entity anchor, and with no expectation that anyone lands on it.',
+      text: 'What is missing from that table is the general explainer, and its absence is the whole strategic point. "What is generative video" is a page that will never be visited again and should be written anyway, as reference, as an entity anchor, and with no expectation that anyone lands on it.',
     },
     { t: 'h2', text: 'Metrics that still mean something' },
     {
@@ -78,7 +78,7 @@ export const post: Post = {
         'Definitional capture: whether your phrasing of a term is the one being reproduced. This is the cleanest evidence that a glossary is working.',
         'Query depth of arriving traffic: fewer visitors, further down the funnel, is the expected shape and a good one.',
         'Branded search volume: the lagging indicator that tells you whether mentions upstream are producing intent downstream.',
-        'Assisted conversions from direct and branded entries, which is where the credit for zero-click work actually lands.',
+        'Assisted conversions from direct and branded entries, which is where the credit for zero-click work lands.',
       ],
     },
     {
@@ -89,7 +89,7 @@ export const post: Post = {
     { t: 'h2', text: 'The uncomfortable trade' },
     {
       t: 'p',
-      text: 'Writing to be quoted means answering the question without requiring a visit. You are deliberately choosing mentions over sessions. That is a real cost and worth stating plainly rather than pretending there is no tension.',
+      text: 'Writing to be quoted means answering the question without requiring a visit. You are deliberately choosing mentions over sessions. That is a real cost and worth stating plainly. Pretending there is no tension fools nobody.',
     },
     {
       t: 'p',
@@ -132,7 +132,7 @@ export const post: Post = {
     },
     {
       q: 'Should you write content that answers the question without a click?',
-      a: 'Yes, because the alternative is not a click — it is the answer being composed from somebody else’s page. You are trading sessions for mentions, and the trade is worth stating openly rather than pretending it does not exist.',
+      a: 'Yes, because the alternative is not a click. It is the answer being composed from somebody else’s page. You are trading sessions for mentions, and the trade is worth stating openly.',
     },
     {
       q: 'What should a content team do with the time freed up by not writing explainers?',

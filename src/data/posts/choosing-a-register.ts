@@ -23,11 +23,11 @@ export const post: Post = {
   image: 'choosing-a-register',
   imageAlt: 'The same scene rendered as photoreal, illustrated, and graphic, with costs beneath each.',
   standfirst:
-    'Photoreal carries the narrowest error tolerance of any register, because the audience has a lifetime of reference for what it should look like. Stylised registers widen that tolerance enormously, cost less to produce, and are usually more distinctive. Choose deliberately rather than by default.',
+    'Photoreal carries the narrowest error tolerance of any register, because the audience has a lifetime of reference for what it should look like. Stylised registers widen that tolerance enormously, cost less to produce, and are usually more distinctive. Choose deliberately.',
   body: [
     {
       t: 'p',
-      text: 'Almost every generative brief arrives asking for photoreal, and almost none of them arrive having considered anything else. It is a default rather than a decision, and it is the most expensive default available: photoreal has the highest render count, the tightest gates, the largest post burden and the smallest margin for a wrong hand.',
+      text: 'Almost every generative brief arrives asking for photoreal, and almost none of them arrive having considered anything else. It is a default nobody decided, and it is the most expensive one available: photoreal has the highest render count, the tightest gates, the largest post burden and the smallest margin for a wrong hand.',
     },
     { t: 'h2', text: 'Why photoreal is expensive' },
     {
@@ -36,7 +36,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'A stylised register removes most of those tests. Nobody has a lifetime of reference for how a hand should look in a screen-printed illustration, so the frame is judged against the style’s internal consistency rather than against reality. That is a far more forgiving standard, and it is why the acceptance rate on stylised work runs several times higher.',
+      text: 'A stylised register removes most of those tests. Nobody has a lifetime of reference for how a hand should look in a screen-printed illustration, so the frame is judged against the style’s own internal consistency. That is a far more forgiving standard, and it is why the acceptance rate on stylised work runs several times higher.',
     },
     { t: 'h2', text: 'The four questions that settle it' },
     {
@@ -69,7 +69,7 @@ export const post: Post = {
     { t: 'h2', text: 'The distinctiveness argument' },
     {
       t: 'p',
-      text: 'There is a commercial argument for stylisation that has nothing to do with cost. Generative photoreal has a house style — a certain smoothness, a certain symmetry, a certain quality of light — and a growing share of the audience can now identify it. Being recognisably in that register attaches your brand to everything else in it, including the worst of it.',
+      text: 'There is a commercial argument for stylisation that has nothing to do with cost. Generative photoreal has a house style (a certain smoothness, a certain symmetry, a certain quality of light), and a growing share of the audience can now identify it. Being recognisably in that register attaches your brand to everything else in it, including the worst of it.',
     },
     {
       t: 'p',
@@ -124,7 +124,7 @@ export const post: Post = {
     },
     {
       q: 'Why is photoreal more expensive to generate?',
-      a: 'Because the audience has a lifetime of reference for it. Skin in light, fabric folds, how a hand holds a cup — every one is a way to fail, and each failure is legible to somebody with no training. Stylised registers are judged against their own internal consistency instead, which is a far more forgiving standard.',
+      a: 'Because the audience has a lifetime of reference for it. Skin in light, fabric folds, how a hand holds a cup. Every one is a way to fail, and each failure is legible to somebody with no training. Stylised registers are judged against their own internal consistency instead, which is a far more forgiving standard.',
     },
     {
       q: 'What is the best hybrid approach?',
@@ -132,7 +132,7 @@ export const post: Post = {
     },
     {
       q: 'How do you specify a visual style so it stays consistent?',
-      a: 'Five properties rather than a style name: medium, surface, mark, a palette of three or four named colours, and — most importantly — an explicit list of what the register does not contain. The absence line does more for consistency than the other four combined.',
+      a: 'Five properties, and never a style name: medium, surface, mark, a palette of three or four named colours, and (most importantly) an explicit list of what the register does not contain. The absence line does more for consistency than the other four combined.',
     },
     {
       q: 'Does stylisation remove the need for disclosure?',

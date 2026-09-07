@@ -59,7 +59,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The rise is the most under-used of the four. A bump in a retention graph is an audience telling you, precisely, that they wanted more time with something — and it is the only note in the entire discipline that comes with a timestamp and an unambiguous instruction.',
+      text: 'The rise is the most under-used of the four. A bump in a retention graph is an audience telling you, precisely, that they wanted more time with something, and it is the only note in the entire discipline that comes with a timestamp and an unambiguous instruction.',
     },
     { t: 'h2', text: 'Why average view duration is the wrong number' },
     {
@@ -73,7 +73,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'Normalise before comparing',
-      text: 'Retention curves are not comparable across lengths. A sixty per cent completion on a thirty-second piece and on a ten-minute piece are different achievements. Compare like with like, or compare the shape rather than the number.',
+      text: 'Retention curves are not comparable across lengths. A sixty per cent completion on a thirty-second piece and on a ten-minute piece are different achievements. Compare like with like, or compare the shape and leave the number alone.',
     },
     { t: 'h2', text: 'Diagnosing a sharp drop' },
     {
@@ -88,9 +88,9 @@ export const post: Post = {
       t: 'ul',
       items: [
         'A beat where nothing changed. The value at the top and the bottom of that section is identical, and the audience registered the absence.',
-        'An unbelieved claim. Something was asserted without evidence, and the drop is scepticism rather than boredom.',
+        'An unbelieved claim. Something was asserted without evidence, and the drop is scepticism, not boredom.',
         'A loop closed too early. The only unanswered question got answered, so there was no reason to continue.',
-        'A tonal break. The piece changed register — a joke in something sincere, an ad break in something intimate — and the audience took the exit.',
+        'A tonal break. The piece changed register (a joke in something sincere, an ad break in something intimate), and the audience took the exit.',
       ],
     },
     { t: 'h2', text: 'What the curve cannot tell you' },
@@ -100,7 +100,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'It also cannot tell you why anybody stayed, which means it is a debugging tool rather than a design tool. Curves tell you what to fix and never what to make.',
+      text: 'It also cannot tell you why anybody stayed, which means it is a debugging tool. Curves tell you what to fix and never what to make.',
     },
     { t: 'h2', text: 'Turning it into a working practice' },
     {
@@ -109,7 +109,7 @@ export const post: Post = {
         'Look at the curve for every piece, not just the underperformers. The successful ones contain the reusable information.',
         'Record the four features as numbers in a shared log: cliff depth, middle slope, timestamp of the largest local drop, timestamps of any rises.',
         'Write the edit note next to each, and then write what you did about it. Most teams collect the data and never close the loop.',
-        'Look for the same timestamp appearing across pieces. A drop at seven seconds in eleven of your last twenty videos is a format problem rather than an edit problem.',
+        'Look for the same timestamp appearing across pieces. A drop at seven seconds in eleven of your last twenty videos is a format problem, not an edit problem.',
         'Use rises to decide what to make more of. They are the only positive signal in the graph.',
       ],
     },
@@ -127,7 +127,7 @@ export const post: Post = {
     },
     {
       q: 'Why is average view duration a bad metric?',
-      a: 'Because it is an average of a shape. Two pieces with identical averages can have opposite problems — one with a hook failure and a working body, one with a strong opening and a specific mid-piece collapse — and the correct action differs completely.',
+      a: 'Because it is an average of a shape. Two pieces with identical averages can have opposite problems (one with a hook failure and a working body, one with a strong opening and a specific mid-piece collapse), and the correct action differs completely.',
     },
     {
       q: 'What does a rise in a retention graph mean?',
@@ -135,11 +135,11 @@ export const post: Post = {
     },
     {
       q: 'How do you find the cause of a sharp drop in retention?',
-      a: 'Watch the fifteen seconds before the drop rather than the moment itself — people leave a few seconds after the thing that made them leave. The usual causes are a beat where nothing changed, an unbelieved claim, a loop closed too early, or a tonal break.',
+      a: 'Watch the fifteen seconds before the drop, never the moment itself. People leave a few seconds after the thing that made them leave. The usual causes are a beat where nothing changed, an unbelieved claim, a loop closed too early, or a tonal break.',
     },
     {
       q: 'What can a retention curve not tell you?',
-      a: 'Why anybody stayed, and whether anybody was persuaded. It measures attention rather than conviction, which means it is a debugging tool. It tells you what to fix and never what to make.',
+      a: 'Why anybody stayed, and whether anybody was persuaded. It measures attention and never conviction, which means it is a debugging tool. It tells you what to fix and never what to make.',
     },
   ],
   terms: ['retention-curve', 'hook', 'open-loop', 'pattern-interrupt', 'pacing', 'value-shift'],

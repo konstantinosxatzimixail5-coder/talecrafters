@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'A few years ago the awkward question was whether you used generative tools at all. It stopped being awkward because almost everybody does, somewhere — previsualisation, versioning, asset preparation, clean-up, localisation. The question that replaced it is sharper and better: who is capturing the efficiency, and what am I actually buying.',
+      text: 'A few years ago the awkward question was whether you used generative tools at all. It stopped being awkward because almost everybody does, somewhere. Previsualisation, versioning, asset preparation, clean-up, localisation. The question that replaced it is sharper and better: who is capturing the efficiency, and what am I buying.',
     },
     { t: 'h2', text: 'The four questions procurement asks now' },
     {
@@ -38,7 +38,7 @@ export const post: Post = {
         [
           '"Where in this process is AI used?"',
           'Am I paying craft rates for automated steps?',
-          'A stage-by-stage list. Not a policy statement — a list.',
+          'A stage-by-stage list. Not a policy statement. A list.',
         ],
         [
           '"What do we own at the end?"',
@@ -53,7 +53,7 @@ export const post: Post = {
         [
           '"Are we getting the saving?"',
           'Has the price moved with the cost?',
-          'An honest account of where the cost went, because it moved rather than vanished.',
+          'An honest account of where the cost went, because it moved.',
         ],
       ],
     },
@@ -68,21 +68,21 @@ export const post: Post = {
         'A stage map with the method against each stage: filmed, generated, hybrid, automated, or human-only. One page.',
         'What is human at every volume: the brief, the structure, the creative decisions, the final sign-off.',
         'The deliverable specification, including what makes the work continuable without you.',
-        'The disclosure position for the finished work, decided now rather than at delivery, to the strictest of platform policy, advertising code and applicable law.',
+        'The disclosure position for the finished work, decided now, at brief stage, to the strictest of platform policy, advertising code and applicable law.',
         'The consent position for anybody appearing in it.',
-        'Where the budget actually goes, as a proportion. This single slide changes more pitch conversations than any showreel.',
+        'Where the budget goes, as a proportion. This single slide changes more pitch conversations than any showreel.',
       ],
     },
     {
       t: 'note',
       title: 'The reframe that works',
-      text: 'Generative tools compressed the expensive invisible parts — previz, versioning, asset preparation, clean-up. They did not compress writing, structure, judgement or accountability, which is what a client is actually paying for and always was. Saying so plainly is both true and the strongest available pitch.',
+      text: 'Generative tools compressed the expensive invisible parts. Previz, versioning, asset preparation, clean-up. They did not compress writing, structure, judgement or accountability, which is what a client is paying for and always was. Saying so plainly is both true and the strongest available pitch.',
     },
     { t: 'h2', text: 'What not to do' },
     {
       t: 'ul',
       items: [
-        'Do not present a generated frame as filmed. It will be found out, and the cost is the relationship rather than the frame.',
+        'Do not present a generated frame as filmed. It will be found out, and the cost is the relationship.',
         'Do not board at a fidelity you cannot deliver. A photoreal board for an uncertain shot is a promise somebody will hold you to.',
         'Do not quote a traditional rate for an automated stage and hope nobody asks. They now ask.',
         'Do not treat disclosure as the client’s problem. Legal responsibility usually sits with the advertiser, and a studio that will not advise on it has not read the rules.',
@@ -92,7 +92,7 @@ export const post: Post = {
     { t: 'h2', text: 'When the client does not want AI used' },
     {
       t: 'p',
-      text: 'Some do not, for reasons ranging from brand positioning to talent agreements to their own client’s policy. That is a legitimate constraint and it should be taken at face value rather than argued with.',
+      text: 'Some do not, for reasons ranging from brand positioning to talent agreements to their own client’s policy. That is a legitimate constraint and it should be taken at face value and never argued with.',
     },
     {
       t: 'p',
@@ -112,15 +112,15 @@ export const post: Post = {
   faqs: [
     {
       q: 'Should you tell clients you used AI?',
-      a: 'Yes, unprompted, as a stage-by-stage list rather than a policy statement. Almost every production uses generative tools somewhere now, so the question is not whether but where — and a studio that answers before being asked is easier to buy from.',
+      a: 'Yes, unprompted, as a stage-by-stage list. Almost every production uses generative tools somewhere now, so the question is not whether but where, and a studio that answers before being asked is easier to buy from.',
     },
     {
-      q: 'What do clients actually want to know about AI use?',
+      q: 'What do clients want to know about AI use?',
       a: 'Four things: which stages used it, what they own at the end, who is accountable if something is wrong, and whether the price moved with the cost. The fourth is the one studios avoid and the one worth meeting directly.',
     },
     {
       q: 'Did generative tools make production cheaper?',
-      a: 'They compressed the expensive invisible parts — previsualisation, versioning, asset preparation, clean-up. They did not compress writing, structure, rights, review or accountability, which is what a client is actually paying for. The cost moved rather than vanished.',
+      a: 'They compressed the expensive invisible parts. Previsualisation, versioning, asset preparation, clean-up. They did not compress writing, structure, rights, review or accountability, which is what a client is paying for. The cost moved.',
     },
     {
       q: 'What should you never do when pitching generative work?',
@@ -128,7 +128,7 @@ export const post: Post = {
     },
     {
       q: 'What if a client says they do not want AI used at all?',
-      a: 'Take it at face value and then make it precise, because "no AI" means different things to different people — generative imagery in the final asset, previz nobody sees, automated versioning, machine transcription and upscaling are very different things. Write the boundary into the brief in specific terms and price against it.',
+      a: 'Take it at face value and then make it precise, because "no AI" means different things to different people. Generative imagery in the final asset, previz nobody sees, automated versioning, machine transcription and upscaling are very different things. Write the boundary into the brief in specific terms and price against it.',
     },
   ],
   terms: ['disclosure', 'human-in-the-loop', 'deliverable-specification', 'provenance', 'synthetic-media'],

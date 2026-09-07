@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'Trained Identity vs LoRA vs Reference Image: Choosing a Consistency Method',
   metaTitle: 'Trained Identity vs LoRA vs Reference Image: Which to Use',
   metaDescription:
-    'Three ways to keep a face consistent across generative output, compared on setup cost, drift rate, licensing exposure and what each one actually commits you to. With the threshold at which each becomes correct.',
+    'Three ways to keep a face consistent across generative output, compared on setup cost, drift rate, licensing exposure and what each one commits you to. With the threshold at which each becomes correct.',
   excerpt:
     'The right method depends almost entirely on how many assets the face has to survive. Below nine, one answer. Above nine, a different one.',
   published: '2026-07-02',
@@ -44,11 +44,11 @@ export const post: Post = {
     { t: 'h3', text: 'LoRA or equivalent lightweight fine-tune' },
     {
       t: 'p',
-      text: 'Train a small adapter on a set of images so the identity is baked into the generation rather than supplied alongside it. Setup is hours plus a curated image set. Drift falls substantially.',
+      text: 'Train a small adapter on a set of images so the identity is baked into the generation and never supplied alongside it. Setup is hours plus a curated image set. Drift falls substantially.',
     },
     {
       t: 'p',
-      text: 'The weaknesses are practical rather than technical. The adapter is tied to a base model, so a base model upgrade means retraining. And a badly curated training set bakes in whatever was over-represented in it, usually one lighting condition and one expression, which then appears in every output regardless of the prompt.',
+      text: 'The weaknesses here are practical. The adapter is tied to a base model, so a base model upgrade means retraining. And a badly curated training set bakes in whatever was over-represented in it, usually one lighting condition and one expression, which then appears in every output regardless of the prompt.',
     },
     { t: 'h3', text: 'Trained identity as a production artefact' },
     {
@@ -81,12 +81,12 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Nine is not a universal constant. It moves down when the face has to appear at close range, when the assets are produced across weeks rather than a day, or when several operators are involved. It moves up when the face is small in frame or the pieces are short.',
+      text: 'Nine is not a universal constant. It moves down when the face has to appear at close range, when the assets are produced across weeks and not in a day, or when several operators are involved. It moves up when the face is small in frame or the pieces are short.',
     },
     {
       t: 'note',
       title: 'The number to watch',
-      text: 'Acceptance rate on presenter shots, logged per batch. Reference conditioning drifts across a multi-week campaign and a trained identity does not, so the gap widens the longer the campaign runs. Watch your own two numbers rather than anybody else’s: the point at which they diverge is the point the setup paid for itself.'
+      text: 'Acceptance rate on presenter shots, logged per batch. Reference conditioning drifts across a multi-week campaign and a trained identity does not, so the gap widens the longer the campaign runs. Watch your own two numbers and ignore everybody else’s: the point at which they diverge is the point the setup paid for itself.'
     },
     { t: 'h2', text: 'The licensing question, which is not optional' },
     {
@@ -103,7 +103,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The consent file exists before the first render, not before the first delivery. This is the discipline that trained identity as a production artefact enforces by construction, and it is the main reason we treat it as a documented artefact rather than a file on somebody’s machine.',
+      text: 'The consent file exists before the first render, not before the first delivery. This is the discipline that trained identity as a production artefact enforces by construction, and it is the main reason we treat it as a documented artefact and never as a file on somebody’s machine.',
     },
     { t: 'h2', text: 'What to do this week' },
     {
@@ -113,7 +113,7 @@ export const post: Post = {
         'If it is under nine and inside one session, use reference conditioning and spend the saved time on gating instead.',
         'If it is over nine, or spread across weeks, build the identity properly and document which base model it was built against.',
         'Either way, get the release signed before anything renders, covering derivative training explicitly.',
-        'Log the presenter acceptance rate per batch. It is the number that tells you when you crossed the threshold, usually about a batch after you actually did.',
+        'Log the presenter acceptance rate per batch. It is the number that tells you when you crossed the threshold, usually about one batch after you crossed it.',
       ],
     },
     {
@@ -130,11 +130,11 @@ export const post: Post = {
     },
     {
       q: 'When is a LoRA worth training for character consistency?',
-      a: 'Roughly above nine assets, or whenever the assets are produced across weeks rather than in one session. Below that threshold, reference conditioning plus tight per-shot gating is cheaper overall even accounting for regeneration.',
+      a: 'Roughly above nine assets, or whenever the assets are produced across weeks and not in one session. Below that threshold, reference conditioning plus tight per-shot gating is cheaper overall even accounting for regeneration.',
     },
     {
       q: 'Does a trained identity survive a model upgrade?',
-      a: 'The adapter itself usually does not, because it is tied to a base model. What survives is the documentation: the curated image sheet, the identity description, the validated prompts and the recorded base version, which together make rebuilding a known job rather than a rediscovery.',
+      a: 'The adapter itself usually does not, because it is tied to a base model. What survives is the documentation: the curated image sheet, the identity description, the validated prompts and the recorded base version, which together make rebuilding a known job.',
     },
     {
       q: 'What consent is needed to train a model on a real person?',

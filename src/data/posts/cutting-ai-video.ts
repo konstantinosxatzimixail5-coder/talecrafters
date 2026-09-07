@@ -27,13 +27,13 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'Footage from a single shoot has a great deal in common before an editor touches it — one sensor, one lens set, one grade, one afternoon of light. Independently generated clips share none of that. The picture-to-picture consistency an editor normally inherits has to be manufactured, and the tools for manufacturing it are the oldest ones in the discipline.',
+      text: 'Footage from a single shoot has a great deal in common before an editor touches it. One sensor, one lens set, one grade, one afternoon of light. Independently generated clips share none of that. The picture-to-picture consistency an editor normally inherits has to be manufactured, and the tools for manufacturing it are the oldest ones in the discipline.',
     },
     { t: 'h2', text: 'The nine rules' },
     {
       t: 'ol',
       items: [
-        'Cut on motion. A cut during a movement hides the discontinuity between two clips, because the eye is tracking the movement rather than comparing the frames. This is the single highest-value rule and it is a century old.',
+        'Cut on motion. A cut during a movement hides the discontinuity between two clips, because the eye is tracking the movement and has stopped comparing frames. This is the single highest-value rule and it is a century old.',
         'Never cross-dissolve two generated clips. A dissolve holds both images on screen simultaneously, which is precisely the condition under which an audience compares them and notices they do not match.',
         'Vary shot size across every join. Two similarly sized shots joined together invite comparison. Wide to close does not, because there is nothing to compare.',
         'Take the front of every clip. Coherence degrades as a generation runs on, so the usable portion is at the start. Generate long, cut early.',
@@ -44,7 +44,7 @@ export const post: Post = {
         'Cut faster than you want to at first, then find where it can breathe. Long holds are where drift becomes visible, and a held shot has to be earned.',
       ],
     },
-    { t: 'h2', text: 'Where the seams actually show' },
+    { t: 'h2', text: 'Where the seams show' },
     {
       t: 'table',
       caption: 'What an audience notices, and the edit answer',
@@ -93,13 +93,13 @@ export const post: Post = {
       t: 'cta',
       href: '/supply-drop/generative-film-shot-consistency-checklist',
       label: 'The consistency checklist',
-      text: 'The nine tells, arranged by the stage at which each has to be caught — including the ones only visible on the assembled set.',
+      text: 'The nine tells, arranged by the stage at which each has to be caught, including the ones only visible on the assembled set.',
     },
   ],
   faqs: [
     {
       q: 'How do you edit AI-generated video so it looks like one piece?',
-      a: 'Cut on motion, never cross-dissolve, vary shot size across every join, take the front of every clip, grade everything to a single reference rather than to each other, run sound across the cuts, and add one unifying grain layer over the whole piece.',
+      a: 'Cut on motion, never cross-dissolve, vary shot size across every join, take the front of every clip, grade everything to one single reference, run sound across the cuts, and add one unifying grain layer over the whole piece.',
     },
     {
       q: 'Why should you never cross-dissolve two AI clips?',
@@ -115,7 +115,7 @@ export const post: Post = {
     },
     {
       q: 'What is generative footage best suited to in an edit?',
-      a: 'Montage, inserts and cutaways, establishing shots with no people, and anything stylised — all of which are short, do not have to match a wide, or have a wide tolerance for inconsistency. It is worst at the long unbroken take, where the value of the shot is that it did not cut.',
+      a: 'Montage, inserts and cutaways, establishing shots with no people, and anything stylised. All of which are short, do not have to match a wide, or have a wide tolerance for inconsistency. It is worst at the long unbroken take, where the value of the shot is that it did not cut.',
     },
   ],
   terms: ['temporal-coherence', 'cutdown', 'colour-management', 'drift', 'montage', 'master-plate'],

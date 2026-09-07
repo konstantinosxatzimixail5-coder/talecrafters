@@ -30,7 +30,7 @@ export const post: Post = {
       t: 'p',
       text: 'Roughly two thirds of searches now end without a click. That statistic gets quoted as an apocalypse and it is not one; it is a change in what a page is for. A page used to be a destination. Increasingly it is a source, and sources are selected on different criteria from destinations.',
     },
-    { t: 'h2', text: 'What a model is actually doing' },
+    { t: 'h2', text: 'What a model is doing under there' },
     {
       t: 'p',
       text: 'When an answer engine composes a response it is looking for passages it can lift with minimal risk: statements that answer the question directly, that do not depend on the surrounding paragraphs to make sense, and that come from somewhere it can attribute. A passage that satisfies all three is cheap to use. A passage that satisfies two is a liability.',
@@ -57,7 +57,7 @@ export const post: Post = {
         ],
         [
           'Attachable entity',
-          'The claim is attached to a named thing — a defined term, an organisation, a method — that exists elsewhere in a knowledge graph.',
+          'The claim is attached to a named thing (a defined term, an organisation, a method) that exists elsewhere in a knowledge graph.',
           'A floating claim has nowhere to be filed, so it is not retrieved for the next related question.',
         ],
       ],
@@ -66,7 +66,7 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'Write headings as questions people actually type, then answer them immediately underneath. The heading is the retrieval key and the first sentence is the payload.',
+        'Write headings as questions people type, then answer them immediately underneath. The heading is the retrieval key and the first sentence is the payload.',
         'Put the answer before the argument. Journalism has known this for a century and calls it the inverted pyramid; the difference now is that something automated is reading only the top.',
         'Mark up what the page is. FAQPage for question blocks, DefinedTerm for definitions, Article with a real author and dates. Schema does not make a claim true, but it removes ambiguity about what the claim is.',
         'Define your terms on their own pages and link to them consistently. A glossary is not a content-marketing tactic, it is an entity graph you control.',
@@ -82,7 +82,7 @@ export const post: Post = {
     { t: 'h2', text: 'Engines differ more than people assume' },
     {
       t: 'p',
-      text: 'Citation overlap between the major answer engines is low, which means measuring one of them measures very little. Broadly, and with the caveat that all of this moves: engines built on a conventional index inherit that index’s rankings, so classical SEO covers most of the ground. Engines that retrieve live tend to reward freshness, specificity and clean citation. Engines that lean on brand familiarity reward being mentioned in many places rather than ranking in one.',
+      text: 'Citation overlap between the major answer engines is low, which means measuring one of them measures very little. Broadly, and with the caveat that all of this moves: engines built on a conventional index inherit that index’s rankings, so classical SEO covers most of the ground. Engines that retrieve live tend to reward freshness, specificity and clean citation. Engines that lean on brand familiarity reward being mentioned in many places, and ranking in one counts for little.',
     },
     {
       t: 'p',
@@ -121,7 +121,7 @@ export const post: Post = {
     },
     {
       q: 'How do you get cited by ChatGPT or Perplexity?',
-      a: 'Open every section with a forty-to-sixty word answer to the heading that makes sense without the paragraph before it. Make claims specific enough to be checked — numbers, dates, named mechanisms. Attach them to defined terms and named entities. Date everything and cite your own sources.',
+      a: 'Open every section with a forty-to-sixty word answer to the heading that makes sense without the paragraph before it. Make claims specific enough to be checked. Numbers, dates, named mechanisms. Attach them to defined terms and named entities. Date everything and cite your own sources.',
     },
     {
       q: 'Is AEO different from SEO?',
@@ -129,7 +129,7 @@ export const post: Post = {
     },
     {
       q: 'Does schema markup help with AI search?',
-      a: 'It removes ambiguity about what a claim is and who made it, which makes a passage safer to use. It does not make a claim true or important. Marking up content that is not actually on the page destroys the trust the markup was meant to build.',
+      a: 'It removes ambiguity about what a claim is and who made it, which makes a passage safer to use. It does not make a claim true or important. Marking up content that is not on the page destroys the trust the markup was meant to build.',
     },
     {
       q: 'How do you measure answer engine optimisation?',

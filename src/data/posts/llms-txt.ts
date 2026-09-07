@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'llms-txt',
   imageAlt: 'A plain text file listing a site’s pages with one-line summaries.',
   standfirst:
-    'llms.txt is a proposed convention: a markdown file at your root that summarises what a site contains and links to its most useful pages, written for a model rather than a crawler. It is not a permissions file, it is not a sitemap, and no major system has committed to reading it. Write one anyway, for a reason that has nothing to do with whether it is read.',
+    'llms.txt is a proposed convention: a markdown file at your root that summarises what a site contains and links to its most useful pages, written for a model and not for a crawler. It is not a permissions file, it is not a sitemap, and no major system has committed to reading it. Write one anyway, for a reason that has nothing to do with whether it is read.',
   body: [
     {
       t: 'p',
@@ -60,7 +60,7 @@ export const post: Post = {
     { t: 'h2', text: 'The second use, which is the real one' },
     {
       t: 'p',
-      text: 'Writing an llms.txt forces you to answer, in one page, what your site is for and which twenty pages actually matter. Almost every site fails that exercise the first time. You discover that four of the twenty do not exist, that two of them say the same thing, and that the sentence describing the company is different from the one in the footer, which is different again from the one in the meta description.',
+      text: 'Writing an llms.txt forces you to answer, in one page, what your site is for and which twenty pages matter. Almost every site fails that exercise the first time. You discover that four of the twenty do not exist, that two of them say the same thing, and that the sentence describing the company is different from the one in the footer, which is different again from the one in the meta description.',
     },
     {
       t: 'p',
@@ -78,7 +78,7 @@ export const post: Post = {
         'One H1 with the organisation’s name and a blockquote of one sentence saying what it does. Use the same sentence everywhere else on the site.',
         'A short paragraph of context: where you are, what you make, who for. Facts a model can attach to an entity.',
         'Sections by page type, not by navigation label. Services, case studies, reference, definitions, writing.',
-        'One line per page: the title as a link, then what is in it. Not marketing copy — a description.',
+        'One line per page: the title as a link, then what is in it. Not marketing copy. A description.',
         'Numbers where you have them. Counts, dates, published figures. This is the material that gets quoted.',
         'A contact route and the canonical URLs for the organisation’s profiles.',
       ],
@@ -106,19 +106,19 @@ export const post: Post = {
   faqs: [
     {
       q: 'What is llms.txt?',
-      a: 'A proposed convention: a markdown file at a site’s root containing a short description of what the site is and a curated list of its most useful pages with one line each. It is written to be read by a language model rather than by a crawler.',
+      a: 'A proposed convention: a markdown file at a site’s root containing a short description of what the site is and a curated list of its most useful pages with one line each. It is written to be read by a language model.',
     },
     {
       q: 'What is the difference between llms.txt and robots.txt?',
       a: 'robots.txt states what may and may not be fetched and is widely honoured by convention. llms.txt states what a site contains and which pages matter, grants and forbids nothing, and has no commitment from any major operator to be read.',
     },
     {
-      q: 'Do AI systems actually read llms.txt?',
+      q: 'Do AI systems read llms.txt?',
       a: 'Not demonstrably, at least not the systems that matter most. Publisher adoption has grown; consumer commitments have not followed. Anyone describing it as a ranking factor is inventing that.',
     },
     {
       q: 'Is llms.txt worth writing anyway?',
-      a: 'Yes, for about an hour of work. The exercise forces you to state in one page what the site is for and which twenty pages matter, and almost every site discovers inconsistencies doing it — different descriptions of the company in three places, pages that duplicate each other, pages that do not exist.',
+      a: 'Yes, for about an hour of work. The exercise forces you to state in one page what the site is for and which twenty pages matter, and almost every site discovers inconsistencies doing it: different descriptions of the company in three places, pages that duplicate each other, pages that do not exist.',
     },
     {
       q: 'Should llms.txt be written by hand?',

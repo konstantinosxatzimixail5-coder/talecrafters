@@ -39,7 +39,7 @@ export const post: Post = {
       items: [
         'What is your acceptance rate on the hardest shot type in this brief? A studio that has run this before will have a number and will volunteer that it is lower for legible packaging type than for environment plates. "It depends" without a follow-up means they have not logged it.',
         'What is your cost per accepted asset, and does it include the rejected renders? If the number excludes rejects it is a cost per generation, which flatters everybody and predicts nothing.',
-        'Show me a run log from a real campaign. Not a case study — the log. Timestamps, attempt counts, what failed and why.',
+        'Show me a run log from a real campaign. Not a case study. The log. Timestamps, attempt counts, what failed and why.',
       ],
     },
     { t: 'h2', text: 'On consistency' },
@@ -47,7 +47,7 @@ export const post: Post = {
       t: 'ol',
       items: [
         'What do you lock, and where is it written? The answer should be a file, not a description of good intentions. Palette, light behaviour, materials, wardrobe rules, lens family.',
-        'How do you keep a face or a product identical across forty shots? Reference conditioning, a master plate, a trained identity — any of them is a real answer. "Careful prompting" is not.',
+        'How do you keep a face or a product identical across forty shots? Reference conditioning, a master plate, a trained identity. Any of them is a real answer. "Careful prompting" is not.',
         'What happens when the model you use is deprecated? A studio that has thought about it will describe assets that survive the change. One that has not will look surprised.',
       ],
     },
@@ -77,7 +77,7 @@ export const post: Post = {
     { t: 'h2', text: 'The answers that should end the conversation' },
     {
       t: 'table',
-      caption: 'Disqualifying answers, and what they actually mean',
+      caption: 'Disqualifying answers, and what each one means',
       head: ['What they say', 'What it means'],
       rows: [
         ['"We don’t really track acceptance rate."', 'The quote is a guess and the overrun is yours.'],
@@ -91,7 +91,7 @@ export const post: Post = {
     { t: 'h2', text: 'What a good answer sounds like' },
     {
       t: 'p',
-      text: 'Specific, quantified, and slightly unflattering. A studio that tells you the packaging shots will need three times the renders of the environment plates, that the acceptance rate on faces at that shot size is lower than they would like, and that they will halt at a ceiling and come back to you, is describing a process they have actually run.',
+      text: 'Specific, quantified, and slightly unflattering. A studio that tells you the packaging shots will need three times the renders of the environment plates, that the acceptance rate on faces at that shot size is lower than they would like, and that they will halt at a ceiling and come back to you, is describing a process they have run.',
     },
     {
       t: 'p',
@@ -111,7 +111,7 @@ export const post: Post = {
     },
     {
       q: 'How do you tell a real generative studio from someone with a subscription?',
-      a: 'At volume, under a deadline, with legal reading. Anyone can produce one good frame. Ask to see the near misses from a job that went well and what the gate caught — a studio confident in its process will show you, and one without a process will change the subject.',
+      a: 'At volume, under a deadline, with legal reading. Anyone can produce one good frame. Ask to see the near misses from a job that went well and what the gate caught. A studio confident in its process will show you, and one without a process will change the subject.',
     },
     {
       q: 'What does "unlimited revisions" mean in generative production?',
@@ -123,7 +123,7 @@ export const post: Post = {
     },
     {
       q: 'What should you own at the end of a generative production?',
-      a: 'Frames, plates, project files and the lock file. If the deliverable depends on a specific model, account or seed still existing, you have bought access rather than assets.',
+      a: 'Frames, plates, project files and the lock file. If the deliverable depends on a specific model, account or seed still existing, you have bought access. Not assets.',
     },
   ],
   terms: ['acceptance-rate', 'gate', 'credit-ceiling', 'cost-per-accepted-asset', 'run-log', 'disclosure'],

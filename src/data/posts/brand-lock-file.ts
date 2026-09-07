@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'The Brand Lock File: One Paragraph That Holds Forty Shots Together',
   metaTitle: 'The Brand Lock File: How to Keep Generative Work On-Brand at Volume',
   metaDescription:
-    'A lock file is the invariant paragraph pasted into every prompt on a job. What belongs in it, what must not, why it is pasted rather than retyped, and how it differs from brand guidelines.',
+    'A lock file is the invariant paragraph pasted into every prompt on a job. What belongs in it, what must not, why it is pasted and never retyped, and how it differs from brand guidelines.',
   excerpt:
     'Brand guidelines describe a look to a person. A lock file states it to a machine, identically, four hundred times.',
   published: '2026-06-05',
@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'The most common cause of an inconsistent generative campaign is not the model. It is that the person writing shot thirty-one wrote the world description slightly differently from the person who wrote shot four. Nothing dramatic — a colour named differently, a light described from memory, one adjective added. Forty small differences produce a set that nobody can quite defend.',
+      text: 'The most common cause of an inconsistent generative campaign is not the model. It is that the person writing shot thirty-one wrote the world description slightly differently from the person who wrote shot four. Nothing dramatic. A colour named differently, a light described from memory, one adjective added. Forty small differences produce a set that nobody can quite defend.',
     },
     {
       t: 'p',
@@ -64,7 +64,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'Paste, never retype',
-      text: 'Keep the lock in one file and paste it. Every time somebody retypes it they improve it slightly, and slightly improved is not identical. If it genuinely needs to change, it changes for every shot including the ones already rendered — which is a decision with a cost, and should be taken as one.',
+      text: 'Keep the lock in one file and paste it. Every time somebody retypes it they improve it slightly, and slightly improved is not identical. If it genuinely needs to change, it changes for every shot including the ones already rendered, which is a decision with a cost, and should be taken as one.',
     },
     { t: 'h2', text: 'How it differs from brand guidelines' },
     {
@@ -73,11 +73,11 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'A lock file assumes no judgement. It is written in production language — the words a gaffer, a DP and an art director use — because those are the words a model trained on film responds to. "Warm and human" is guideline language. "Hard key from camera left, no fill, warm key against cool ambient" is lock language, and only the second one produces the same frame twice.',
+      text: 'A lock file assumes no judgement. It is written in production language (the words a gaffer, a DP and an art director use), because those are the words a model trained on film responds to. "Warm and human" is guideline language. "Hard key from camera left, no fill, warm key against cool ambient" is lock language, and only the second one produces the same frame twice.',
     },
     {
       t: 'p',
-      text: 'Deriving one from the other is a real piece of work and it is worth doing once per brand rather than once per campaign.',
+      text: 'Deriving one from the other is a real piece of work and it is worth doing once per brand and never once per campaign.',
     },
     { t: 'h2', text: 'Testing a lock file' },
     {
@@ -109,15 +109,15 @@ export const post: Post = {
   faqs: [
     {
       q: 'What is a lock file in generative production?',
-      a: 'One paragraph, identical in every prompt on a job, stating what does not change: palette, light behaviour, time and weather, materials, optics, and the things that must never appear. It is pasted rather than retyped, because retyped text drifts.',
+      a: 'One paragraph, identical in every prompt on a job, stating what does not change: palette, light behaviour, time and weather, materials, optics, and the things that must never appear. It is pasted in, never retyped, because retyped text drifts.',
     },
     {
       q: 'What is the difference between a lock file and brand guidelines?',
-      a: 'Guidelines are written for a person who will interpret them and assume judgement. A lock file assumes none, and is written in production language — the words a gaffer and a DP use — because that is what a model trained on film responds to. "Warm and human" is guideline language; "hard key from camera left, no fill" is lock language.',
+      a: 'Guidelines are written for a person who will interpret them and assume judgement. A lock file assumes none, and is written in production language (the words a gaffer and a DP use), because that is what a model trained on film responds to. "Warm and human" is guideline language; "hard key from camera left, no fill" is lock language.',
     },
     {
       q: 'What is the most important line in a lock file?',
-      a: 'The absence line — what must never appear. A model will add a lens flare to shot twenty-two because lens flares are common in what it learned from, and the only defence is having said not to.',
+      a: 'The absence line. What must never appear. A model will add a lens flare to shot twenty-two because lens flares are common in what it learned from, and the only defence is having said not to.',
     },
     {
       q: 'How do you test a lock file?',

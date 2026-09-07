@@ -187,7 +187,7 @@ export default async function WorkIndex() {
 
       <CtaBar
         title="You have a launch. We have a delivery date."
-        body="Tell us what is coming and when it has to be live. You will get a shape, a stack and a number, not a discovery workshop."
+        body="Tell us what is coming and when it has to be live. You will get a shape, a stack and a number back, usually the same day."
       />
     </>
   );

@@ -40,9 +40,9 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The commercial consequence is not that generative work cannot be owned. It is that ownership is less automatic than everybody is used to, so it has to be constructed rather than assumed.',
+      text: 'The commercial consequence is not that generative work cannot be owned. It is that ownership is less automatic than everybody is used to, so it has to be constructed. Nobody gets to assume it.',
     },
-    { t: 'h2', text: 'The four clauses that actually decide it' },
+    { t: 'h2', text: 'The four clauses that decide it' },
     {
       t: 'table',
       caption: 'What to check before signing',
@@ -51,7 +51,7 @@ export const post: Post = {
         [
           'Platform terms',
           'What does the model provider grant you in the output?',
-          'An unambiguous commercial grant, on the plan you are actually on. Free tiers frequently differ.',
+          'An unambiguous commercial grant, on the plan you are on. Free tiers frequently differ.',
         ],
         [
           'Assignment',
@@ -72,14 +72,14 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The fourth is the one most often missing and the most likely to matter. Almost every real dispute we have seen in this area concerned an input rather than an output: a reference image somebody did not have rights to, a likeness without a release, a piece of music cleared for one use and running in another.',
+      text: 'The fourth is the one most often missing and the most likely to matter. Almost every real dispute we have seen in this area concerned an input, never an output: a reference image somebody did not have rights to, a likeness without a release, a piece of music cleared for one use and running in another.',
     },
     {
       t: 'note',
       title: 'Ownership and exclusivity are different questions',
-      text: 'You can own everything assignable in an asset and still not be able to stop a similar one existing, because a model can produce something similar for somebody else. If exclusivity matters — a character, a presenter, a signature look — it has to be constructed from trained assets and contract terms, not assumed from ownership.',
+      text: 'You can own everything assignable in an asset and still not be able to stop a similar one existing, because a model can produce something similar for somebody else. If exclusivity matters (a character, a presenter, a signature look), it has to be constructed from trained assets and contract terms, not assumed from ownership.',
     },
-    { t: 'h2', text: 'What to actually secure in a deliverable' },
+    { t: 'h2', text: 'What to secure in a deliverable' },
     {
       t: 'ol',
       items: [
@@ -93,12 +93,12 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'A deliverable that requires a specific model, seed or account to still exist is access rather than ownership, and it is worth naming that distinction during negotiation rather than discovering it during a re-version.',
+      text: 'A deliverable that requires a specific model, seed or account to still exist is access, not ownership, and it is worth naming that distinction during the negotiation. Discovering it during a re-version is expensive.',
     },
     { t: 'h2', text: 'The trained identity case' },
     {
       t: 'p',
-      text: 'A trained character or presenter raises its own questions because the artefact is a model rather than an asset. Who holds the weights, who may use them, for what, for how long, and what happens at the end of the term all need stating.',
+      text: 'A trained character or presenter raises its own questions because the artefact is a model, not an asset. Who holds the weights, who may use them, for what, for how long, and what happens at the end of the term all need stating.',
     },
     {
       t: 'p',
@@ -107,7 +107,7 @@ export const post: Post = {
     { t: 'h2', text: 'A workable position for both sides' },
     {
       t: 'p',
-      text: 'The arrangement that has held up in practice: the studio warrants that it holds or has cleared every input, assigns all assignable rights in the deliverables on payment, and hands over the files that make the work continuable. The client accepts that copyright in machine-generated components may be thin and that exclusivity comes from trained assets and contract terms rather than from the fact of generation.',
+      text: 'The arrangement that has held up in practice: the studio warrants that it holds or has cleared every input, assigns all assignable rights in the deliverables on payment, and hands over the files that make the work continuable. The client accepts that copyright in machine-generated components may be thin and that exclusivity comes from trained assets and contract terms.',
     },
     {
       t: 'p',
@@ -123,11 +123,11 @@ export const post: Post = {
   faqs: [
     {
       q: 'Who owns AI-generated content?',
-      a: 'In most major jurisdictions copyright requires human authorship, so purely machine-generated output may attract thin protection or none. What tends to attract protection is the human contribution around it — selection, arrangement, editing, compositing and sequencing — which is why a finished film assembled by people is treated differently from a single raw output.',
+      a: 'In most major jurisdictions copyright requires human authorship, so purely machine-generated output may attract thin protection or none. What tends to attract protection is the human contribution around it (selection, arrangement, editing, compositing and sequencing), which is why a finished film assembled by people is treated differently from a single raw output.',
     },
     {
       q: 'Can you use AI-generated images commercially?',
-      a: 'Generally yes, subject to the model provider’s terms, which differ by plan and sometimes differ on free tiers. The riskier question is usually the inputs rather than the output: references, likenesses and music each need their own clearance.',
+      a: 'Generally yes, subject to the model provider’s terms, which differ by plan and sometimes differ on free tiers. The riskier question is usually the inputs, never the output: references, likenesses and music each need their own clearance.',
     },
     {
       q: 'What contract clauses decide ownership of generative work?',
@@ -143,7 +143,7 @@ export const post: Post = {
     },
     {
       q: 'Who owns a trained character model?',
-      a: 'It has to be stated, because the artefact is a model rather than an asset: who holds the weights, who may use them, for what, for how long, and what happens at end of term. If the training material came from a real person, their release must grant the derivative-training right explicitly and specify disposal.',
+      a: 'It has to be stated, because the artefact is a model, not an asset: who holds the weights, who may use them, for what, for how long, and what happens at end of term. If the training material came from a real person, their release must grant the derivative-training right explicitly and specify disposal.',
     },
   ],
   terms: ['model-licence', 'derivative-training', 'likeness-rights', 'trained-identity', 'consent-file', 'deliverable-specification'],

@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'What Creative Automation Actually Removes From a Marketing Week',
   metaTitle: 'What Creative Automation Removes From a Marketing Week',
   metaDescription:
-    'An audit of where a four-person content team’s week actually goes, which hours creative workflow automation removes, which it does not, and why the savings are almost never in the drafting.',
+    'An audit of where a four-person content team’s week goes, which hours creative workflow automation removes, which it does not, and why the savings are almost never in the drafting.',
   excerpt:
     'The hours automation removes are not the ones anybody expects. They are also not the ones any vendor demo shows you.',
   published: '2026-07-23',
@@ -35,7 +35,7 @@ export const post: Post = {
       t: 'p',
       text: 'That is not because the tool failed. It is because drafting was never where the week went.',
     },
-    { t: 'h2', text: 'Where a content week actually goes' },
+    { t: 'h2', text: 'Where a content week goes' },
     {
       t: 'p',
       text: 'This is the shape we find on almost every mapping engagement, across teams of three to eight people. The proportions shift; the ordering rarely does.',
@@ -127,7 +127,7 @@ export const post: Post = {
   ],
   faqs: [
     {
-      q: 'What does creative automation actually save time on?',
+      q: 'What does creative automation save time on?',
       a: 'Coordination, reformatting, file administration, reporting and research, which together account for roughly half a content team’s week. Drafting is a smaller share than most people expect, and editorial judgement should not be automated at all.',
     },
     {
@@ -140,7 +140,7 @@ export const post: Post = {
     },
     {
       q: 'How do I audit where my content team’s week goes?',
-      a: 'Log one week in thirty-minute blocks by category, then sort every block into decides, drafts, formats, moves, finds, reports or meets. Everything except decides is addressable. Build the top two candidates rather than a roadmap of eight.',
+      a: 'Log one week in thirty-minute blocks by category, then sort every block into decides, drafts, formats, moves, finds, reports or meets. Everything except decides is addressable. Build the top two candidates. A roadmap of eight is a way of building none.',
     },
     {
       q: 'What is the highest-return thing to automate first?',

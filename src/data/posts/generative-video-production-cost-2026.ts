@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'What Does Generative Video Production Cost in 2026?',
   metaTitle: 'What Does Generative Video Production Cost in 2026? A Real Breakdown',
   metaDescription:
-    'Generative video pricing in 2026, from per-second model credits to studio engagements. What the tiers actually buy, why the sticker price misleads, and the one number that tells you what a video really cost.',
+    'Generative video pricing in 2026, from per-second model credits to studio engagements. What each tier buys, why the sticker price misleads, and the one number that tells you what a video really cost.',
   excerpt:
     'Model credits are pennies a second and studio engagements run into five figures. Both numbers are true. Here is what sits between them and which one applies to your brief.',
   published: '2026-08-31',
@@ -25,7 +25,7 @@ export const post: Post = {
   imageAlt:
     'A cost ledger rendered as stacked luminous bars against a dark studio wall, each bar labelled with a production stage.',
   standfirst:
-    'In 2026 a generative video costs anywhere from about five cents a second in raw model credits to £30,000 or more for a produced campaign, and the gap between those numbers is not margin. It is everything that happens before and after the model runs. Here is what each tier actually buys.',
+    'In 2026 a generative video costs anywhere from about five cents a second in raw model credits to £30,000 or more for a produced campaign, and the gap between those numbers is not margin. It is everything that happens before and after the model runs. Here is what each tier buys.',
   body: [
     {
       t: 'p',
@@ -33,7 +33,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Nobody is. They are prices for different things. One is the cost of a render. The other is the cost of a video you are allowed to publish, that matches the rest of the campaign, that a legal team has seen, and that will still be usable when you need the fortieth variant of it in March. Confusing those two is the single most expensive mistake in this market, and it is usually made by the buyer rather than the seller.',
+      text: 'Nobody is. They are prices for different things. One is the cost of a render. The other is the cost of a video you are allowed to publish, that matches the rest of the campaign, that a legal team has seen, and that will still be usable when you need the fortieth variant of it in March. Confusing those two is the single most expensive mistake in this market, and it is usually the buyer who makes it.',
     },
     { t: 'h2', text: 'The four tiers, and what separates them' },
     {
@@ -88,9 +88,9 @@ export const post: Post = {
     {
       t: 'note',
       title: 'The only number worth quoting',
-      text: 'Cost per accepted asset: total spend on a batch, divided by the number of assets that actually shipped. It includes the rejected renders, the operator time, and the retouching. Any studio quoting you cost per generation is quoting the wrong number, and probably does not know its own.',
+      text: 'Cost per accepted asset: total spend on a batch, divided by the number of assets that shipped. It includes the rejected renders, the operator time, and the retouching. Any studio quoting you cost per generation is quoting the wrong number, and probably does not know its own.',
     },
-    { t: 'h2', text: 'What the studio line item actually covers' },
+    { t: 'h2', text: 'What the studio line item covers' },
     {
       t: 'p',
       text: 'If you have only ever bought the tool, the studio number looks like a markup on compute. It is not. Roughly, here is where the hours go on a produced piece, and none of these are generation.',
@@ -98,12 +98,12 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'Locking the things that must not change. A product becomes a master plate: one clean frame, correct shape, correct label, that every later angle is generated from. A presenter becomes a trained identity built from a sheet of stills rather than a reference image re-uploaded and re-interpreted each session.',
+        'Locking the things that must not change. A product becomes a master plate: one clean frame, correct shape, correct label, that every later angle is generated from. A presenter becomes a trained identity built from a sheet of stills, never a reference image re-uploaded and re-interpreted each session.',
         'Writing the set once. One key light direction, one stated colour temperature, one lens language, written down before anything renders, so shot nine and shot one belong to the same world.',
         'Generation. The cheap part. Genuinely the cheap part.',
         'The control gates. Read every printed word at full resolution. Overlay each render on its plate at forty per cent opacity and check the outline has not drifted. Hold one light direction across the whole set. Kill any invented certification, award or ingredient claim.',
-        'The rejected work. The renders that failed a gate and went back to the source file rather than into a retouching pass, because patching produces one shot that passes and a set that still drifts.',
-        'Delivery. Aspect ratios cut as part of the shoot rather than cropped afterwards, colour handled once, disclosure applied on the asset rather than only in metadata, and licensing cleared for commercial use before rendering rather than after.',
+        'The rejected work. The renders that failed a gate and went back to the source file instead of into a retouching pass, because patching produces one shot that passes and a set that still drifts.',
+        'Delivery. Aspect ratios cut as part of the shoot and never cropped afterwards, colour handled once, disclosure applied on the asset as well as in the metadata, and licensing cleared for commercial use before rendering.',
       ],
     },
     { t: 'h2', text: 'What moves the number on a real quote' },
@@ -114,11 +114,11 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'Legible type in frame. Packaging, labels, signage and anything with a certification mark on it. Type is where generative models fail most reliably and where a wrong render is a legal problem rather than an aesthetic one. Budget for a low acceptance rate.',
+        'Legible type in frame. Packaging, labels, signage and anything with a certification mark on it. Type is where generative models fail most reliably and where a wrong render is a legal problem. Budget for a low acceptance rate.',
         'A human face that has to recur. One face across nine assets is a trained identity and a set of gates. One face in one asset is a render.',
         'How many worlds. A campaign in one set with one light direction is cheaper than four locations, by roughly the amount you would expect.',
         'Regulated claims. Supplements, finance, health and anything with a substantiation requirement move legal review from a formality to a stage.',
-        'Whether you want the reusable files. Plates, trained identities and set specifications handed over means the next campaign starts from a lock rather than from scratch. It costs more once and less every time after.',
+        'Whether you want the reusable files. Plates, trained identities and set specifications handed over means the next campaign starts from a lock. It costs more once and less every time after.',
       ],
     },
     { t: 'h2', text: 'When generative is not cheaper' },
@@ -163,11 +163,11 @@ export const post: Post = {
     },
     {
       q: 'What is cost per accepted asset?',
-      a: 'Total spend on a batch divided by the number of assets that actually shipped. It counts the rejected renders. A pipeline that produces sixty frames to ship four has a real unit cost fifteen times its sticker price, and that ratio is the honest measure of a generative production.',
+      a: 'Total spend on a batch divided by the number of assets that shipped. It counts the rejected renders. A pipeline that produces sixty frames to ship four has a real unit cost fifteen times its sticker price, and that ratio is the honest measure of a generative production.',
     },
     {
       q: 'Is it cheaper to hire a freelancer than a studio for AI video?',
-      a: 'For a single asset, usually yes. For a campaign, usually not, because the consistency lives in the freelancer’s head rather than in a written pipeline, and the cost of the fifth inconsistent variant exceeds the saving on the first.',
+      a: 'For a single asset, usually yes. For a campaign, usually not, because the consistency lives in the freelancer’s head and never in a written pipeline, and the cost of the fifth inconsistent variant exceeds the saving on the first.',
     },
     {
       q: 'What makes a generative video brief expensive?',

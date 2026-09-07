@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'How to Choose an AI Video Model in 2026 (Without Rewriting Your Pipeline Next Quarter)',
   metaTitle: 'How to Choose an AI Video Model in 2026: A Production Buyer’s Guide',
   metaDescription:
-    'The leaderboard is not the buying criterion. What actually decides which generative video model you should be producing on: reference conditioning, clip length, audio, licensing, throughput and how much of your pipeline moves when the model does.',
+    'The leaderboard is not the buying criterion. What decides which generative video model you should be producing on: reference conditioning, clip length, audio, licensing, throughput and how much of your pipeline moves when the model does.',
   excerpt:
     'Everyone asks which model is best. The useful question is which one your pipeline can survive being wrong about.',
   published: '2026-09-05',
@@ -35,7 +35,7 @@ export const post: Post = {
       t: 'p',
       text: 'Rankings measure output quality on prompts written to show output quality. What decides whether a model can carry a campaign is a different list, and almost none of it appears in a comparison table.',
     },
-    { t: 'h2', text: 'The six things that actually decide it' },
+    { t: 'h2', text: 'The six things that decide it' },
     {
       t: 'table',
       caption: 'The buying criteria, in the order they should be weighted',
@@ -127,18 +127,18 @@ export const post: Post = {
         'Keep the lock file model-agnostic. Write palette, light direction and material behaviour in plain production language, not in phrasing tuned to one model’s quirks.',
         'Keep identity in an asset, not in a checkpoint. A set of reference frames survives a model change. A fine-tune does not.',
         'Keep the shot list in beats, not in generations. A beat can be produced by anything; a generation ID cannot be reproduced anywhere else.',
-        'Log acceptance rate per model, not per campaign, so that when you do move you can quote from the new machine rather than the old one.',
+        'Log acceptance rate per model, not per campaign, so that when you do move you can quote from the new machine.',
         'Never let a client deliverable depend on a model still existing. Deliver the frames, not the recipe.',
       ],
     },
     { t: 'h2', text: 'The one benchmark worth running yourself' },
     {
       t: 'p',
-      text: 'Take the three hardest shots from a brief you actually ran. Not showreel shots: the ones with legible packaging type, a recurring face, and a hand doing something. Run twenty attempts of each on any model you are considering, and count how many you would have sent.',
+      text: 'Take the three hardest shots from a brief you ran. Not showreel shots: the ones with legible packaging type, a recurring face, and a hand doing something. Run twenty attempts of each on any model you are considering, and count how many you would have sent.',
     },
     {
       t: 'p',
-      text: 'That number is your acceptance rate on that model for that class of work, and it is worth more than every comparison article published this year, including this one. It takes an afternoon and it is the only figure that describes your work rather than somebody else’s prompt.',
+      text: 'That number is your acceptance rate on that model for that class of work, and it is worth more than every comparison article published this year, including this one. It takes an afternoon and it is the only figure that describes your work and not somebody else’s prompt.',
     },
     {
       t: 'cta',
@@ -154,7 +154,7 @@ export const post: Post = {
     },
     {
       q: 'How often should you switch AI video models?',
-      a: 'Only when a new model is better on a criterion you are currently losing on. Switching for general improvement costs you your negative-prompt list, your acceptance-rate history, and a rebuilt identity strategy — usually more than the improvement is worth.',
+      a: 'Only when a new model is better on a criterion you are currently losing on. Switching for general improvement costs you your negative-prompt list, your acceptance-rate history, and a rebuilt identity strategy, usually more than the improvement is worth.',
     },
     {
       q: 'Why does a lower-quality model sometimes cost less to produce on?',
@@ -162,7 +162,7 @@ export const post: Post = {
     },
     {
       q: 'What happens when an AI video model is deprecated?',
-      a: 'Workflows built around its specific behaviour stop working. The defence is to keep everything that would need rebuilding outside the model: a model-agnostic lock file, identity held as reference assets rather than a fine-tune, a shot list written in beats, and deliverables that are frames rather than recipes.',
+      a: 'Workflows built around its specific behaviour stop working. The defence is to keep everything that would need rebuilding outside the model: a model-agnostic lock file, identity held as reference assets and never as a fine-tune, a shot list written in beats, and deliverables that are frames.',
     },
     {
       q: 'Do prompts transfer between AI video models?',
@@ -170,7 +170,7 @@ export const post: Post = {
     },
     {
       q: 'How do you benchmark an AI video model for your own work?',
-      a: 'Take the three hardest shots from a brief you have actually run — legible type, a recurring face, a hand doing something — run twenty attempts of each, and count how many you would have sent. That acceptance rate describes your work rather than somebody else’s demo prompt.',
+      a: 'Take the three hardest shots from a brief you have run (legible type, a recurring face, a hand doing something) run twenty attempts of each, and count how many you would have sent. That acceptance rate describes your work and nobody else’s demo prompt.',
     },
   ],
   terms: ['acceptance-rate', 'reference-image', 'temporal-coherence', 'first-last-frame', 'model-licence'],

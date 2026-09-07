@@ -56,7 +56,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'This is the step that makes everything downstream different, because now nine assets can lead with nine different claims rather than nine renderings of the strongest one.',
+      text: 'This is the step that makes everything downstream different, because now nine assets can lead with nine different claims, and none of them is a rendering of the strongest one.',
     },
     { t: 'h3', text: 'Stage 2: Match claims to formats' },
     {
@@ -65,7 +65,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Encode that as a specification per format rather than as a prompt, so the matching is inspectable. When an asset underperforms you can see which claim it was carrying and whether the format was wrong or the claim was.',
+      text: 'Encode that as a specification per format and never as a prompt, so the matching is inspectable. When an asset underperforms you can see which claim it was carrying and whether the format was wrong or the claim was.',
     },
     { t: 'h3', text: 'Stage 3: Draft against the format specification' },
     {
@@ -82,7 +82,7 @@ export const post: Post = {
       title: 'The split, stated once',
       text: 'Judgement where the input varies. Determinism everywhere else. An agent choosing your file naming convention is a system nobody can find anything in by November.',
     },
-    { t: 'h2', text: 'What nine assets should actually be' },
+    { t: 'h2', text: 'What the nine assets should be' },
     {
       t: 'table',
       caption: 'One 1,500-word article, decomposed',
@@ -129,23 +129,23 @@ export const post: Post = {
   faqs: [
     {
       q: 'What is a content repurposing engine?',
-      a: 'A system that turns one source piece into multiple platform-native assets. The useful version decomposes the source into a claim inventory first, then matches different claims to different formats, rather than summarising once and reformatting the summary nine times.',
+      a: 'A system that turns one source piece into multiple platform-native assets. The useful version decomposes the source into a claim inventory first, then matches different claims to different formats. Summarising once and reformatting the summary nine times is the version that fails.',
     },
     {
       q: 'Why does AI content repurposing produce assets that all feel the same?',
       a: 'Because they were generated from a single summary. Summarisation is lossy, so every downstream asset inherits the same compression and leads with the same claim. Extracting a claim inventory instead of summarising is what makes the outputs genuinely different.',
     },
     {
-      q: 'What part of repurposing should be automated rather than agentic?',
+      q: 'Which part of repurposing should be automated, and which agentic?',
       a: 'Naming, versioning, aspect-ratio export, alt text, scheduling and the run log. None of it needs judgement and all of it must be identical every time. Keep the agentic part for reading a source that never arrives in the same structure twice.',
     },
     {
       q: 'How much human review does a repurposing engine need?',
-      a: 'One review per source, on the claim inventory, rather than one review per asset. Approving the claims once means nine assets inherit an approved set of statements instead of each requiring separate substantiation.',
+      a: 'One review per source, on the claim inventory, and never one review per asset. Approving the claims once means nine assets inherit an approved set of statements instead of each requiring separate substantiation.',
     },
     {
       q: 'How do you measure whether a repurposing engine is working?',
-      a: 'Cost per accepted asset, logged automatically by the pipeline. "It saves time" is not auditable; total spend divided by assets that actually shipped is.',
+      a: 'Cost per accepted asset, logged automatically by the pipeline. "It saves time" is not auditable; total spend divided by assets that shipped is.',
     },
   ],
   terms: ['agentic-workflow', 'human-in-the-loop', 'cost-per-accepted-asset', 'rag'],

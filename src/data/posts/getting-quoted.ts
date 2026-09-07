@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'The strategy layer of answer engine optimisation is well covered and mostly correct. The part nobody writes about is the sentence, which is where the failures actually happen. A page can have perfect structure, current dates, valid schema and no quotable paragraph in it.',
+      text: 'The strategy layer of answer engine optimisation is well covered and mostly correct. The part nobody writes about is the sentence, which is where the failures happen. A page can have perfect structure, current dates, valid schema and no quotable paragraph in it.',
     },
     { t: 'h2', text: 'The shape of an answer block' },
     {
@@ -36,7 +36,7 @@ export const post: Post = {
     },
     {
       t: 'quote',
-      text: 'Temporal coherence degrades as a clip runs on because later frames are anchored mostly to earlier generated frames rather than to the reference, so small errors compound. Usable clip length ends at the onset of extremity drift, which is typically well before the model stops producing frames.',
+      text: 'Temporal coherence degrades as a clip runs on because later frames are anchored mostly to earlier generated frames and barely to the reference, so small errors compound. Usable clip length ends at the onset of extremity drift, which is typically well before the model stops producing frames.',
     },
     {
       t: 'p',
@@ -67,7 +67,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'This has an obvious obligation attached. If you publish falsifiable claims you have to be right, and where you cannot be certain you have to say so in the sentence rather than by hedging the whole paragraph into mush. "In our logs, on our shot types" is a condition, not a hedge.',
+      text: 'This has an obvious obligation attached. If you publish falsifiable claims you have to be right, and where you cannot be certain you have to say so in the sentence, and never by hedging the whole paragraph into mush. "In our logs, on our shot types" is a condition, not a hedge.',
     },
     {
       t: 'note',
@@ -77,7 +77,7 @@ export const post: Post = {
     { t: 'h2', text: 'Headings are retrieval keys' },
     {
       t: 'p',
-      text: 'Write them as the question, not as the topic. "Cost" is a topic. "What does generative video production cost?" is a query somebody typed. The heading is what gets matched; the paragraph under it is what gets used. Mismatching them — a question heading with a paragraph that answers a different question — is the most common structural fault on otherwise good pages.',
+      text: 'Write them as the question, not as the topic. "Cost" is a topic. "What does generative video production cost?" is a query somebody typed. The heading is what gets matched; the paragraph under it is what gets used. Mismatching them (a question heading with a paragraph that answers a different question) is the most common structural fault on otherwise good pages.',
     },
     {
       t: 'p',
@@ -118,7 +118,7 @@ export const post: Post = {
     },
     {
       q: 'How long should an answer block be?',
-      a: 'Forty to sixty words under a question heading: state the answer, name the mechanism, give the condition or the number, stop. For FAQ answers, two to four complete sentences — one sentence says too little and six gets truncated mid-answer.',
+      a: 'Forty to sixty words under a question heading: state the answer, name the mechanism, give the condition or the number, stop. For FAQ answers, two to four complete sentences. One sentence says too little and six gets truncated mid-answer.',
     },
     {
       q: 'Why do hedged sentences fail in AI search?',
@@ -126,11 +126,11 @@ export const post: Post = {
     },
     {
       q: 'Should headings be questions?',
-      a: 'Where the section answers one, yes — the heading is the retrieval key and should match what somebody typed. Keep the heading and its answering paragraph adjacent, with no image or pull quote between them.',
+      a: 'Where the section answers one, yes. The heading is the retrieval key and should match what somebody typed. Keep the heading and its answering paragraph adjacent, with no image or pull quote between them.',
     },
     {
       q: 'How do you test a page for citability?',
-      a: 'Read only the headings and check they read as typed questions. Read only the first sentence of each section and check they answer the page. Then paste three random paragraphs into a blank document — anything you cannot identify out of context will never be the passage that gets used.',
+      a: 'Read only the headings and check they read as typed questions. Read only the first sentence of each section and check they answer the page. Then paste three random paragraphs into a blank document. Anything you cannot identify out of context will never be the passage that gets used.',
     },
   ],
   terms: ['answer-engine-optimisation', 'entity-graph', 'topical-authority', 'rag', 'context-engineering'],

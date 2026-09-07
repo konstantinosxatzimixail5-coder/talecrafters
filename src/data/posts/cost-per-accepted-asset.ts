@@ -25,7 +25,7 @@ export const post: Post = {
   imageAlt:
     'A ledger of production runs drawn as a bar chart, with accepted assets highlighted and rejected renders faded behind them.',
   standfirst:
-    'Cost per accepted asset is total spend on a batch divided by the number of assets that actually shipped. It counts the failures. It is the only generative production number that means anything to a finance team, and most studios cannot tell you theirs.',
+    'Cost per accepted asset is total spend on a batch divided by the number of assets that shipped. It counts the failures. It is the only generative production number that means anything to a finance team, and most studios cannot tell you theirs.',
   body: [
     {
       t: 'p',
@@ -44,7 +44,7 @@ export const post: Post = {
     { t: 'h2', text: 'Worked example' },
     {
       t: 'p',
-      text: 'Take a supplements brand wanting nine paid-social variants with one presenter, plus thirty product stills. Two batches, two very different profiles. The rates below are illustrative rather than a rate card, and the arithmetic is what matters.',
+      text: 'Take a supplements brand wanting nine paid-social variants with one presenter, plus thirty product stills. Two batches, two very different profiles. The rates below are illustrative, and the arithmetic is what matters.',
     },
     {
       t: 'table',
@@ -70,9 +70,9 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'Which shot types to stop accepting briefs for. If legible packaging type costs you £180 an asset and everything else costs £40, that is a pricing decision rather than a craft complaint.',
-        'When a pipeline change paid for itself. Build a trained identity instead of re-uploading references, watch the presenter acceptance rate move from 24 to 60 per cent, and the investment justifies itself in one campaign rather than in a slide.',
-        'Where the human time actually goes. Almost always review, almost never generation, which is the opposite of what the tooling narrative suggests.',
+        'Which shot types to stop accepting briefs for. If legible packaging type costs you £180 an asset and everything else costs £40, that is a pricing decision, and not a craft complaint.',
+        'When a pipeline change paid for itself. Build a trained identity instead of re-uploading references, watch the presenter acceptance rate move from 24 to 60 per cent, and the investment justifies itself in one campaign.',
+        'Where the human time goes. Almost always review, almost never generation, which is the opposite of what the tooling narrative suggests.',
         'Whether a job should be generative at all. When cost per accepted asset approaches what a photographer would have charged, the honest answer is to book the photographer.',
       ],
     },
@@ -82,7 +82,7 @@ export const post: Post = {
       items: [
         'Excluding operator hours because they are salaried. Salaried time is still capacity, and capacity spent on regenerating a bottle is capacity not spent on the next brief.',
         'Counting an asset as accepted when it shipped after two hours of retouching. It was not accepted, it was rescued. Log it as a failure plus a rescue cost, or the number quietly stops meaning anything.',
-        'Measuring per campaign rather than per shot type. An average across easy and hard work hides exactly the variance the metric exists to expose.',
+        'Measuring per campaign instead of per shot type. An average across easy and hard work hides exactly the variance the metric exists to expose.',
       ],
     },
     { t: 'h2', text: 'Running the ledger' },
@@ -92,7 +92,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Once that exists, a credit ceiling per asset becomes enforceable rather than aspirational. The run halts when a shot has consumed its allowance and asks a person to decide, instead of quietly spending past a number that was agreed in a meeting and never encoded anywhere.',
+      text: 'Once that exists, a credit ceiling per asset becomes enforceable. The run halts when a shot has consumed its allowance and asks a person to decide, instead of quietly spending past a number that was agreed in a meeting and never encoded anywhere.',
     },
     {
       t: 'quote',
@@ -121,11 +121,11 @@ export const post: Post = {
   faqs: [
     {
       q: 'What is cost per accepted asset?',
-      a: 'Total spend on a batch, including model credits, operator hours, review hours and licensing, divided by the number of assets that actually shipped. Rejected renders count towards the cost rather than being excluded from it.',
+      a: 'Total spend on a batch, including model credits, operator hours, review hours and licensing, divided by the number of assets that shipped. Rejected renders count towards the cost and are never excluded from it.',
     },
     {
       q: 'Why is cost per generation the wrong metric?',
-      a: 'Because it measures outputs rather than assets. A run producing sixty frames to ship four looks cheap per generation and is fifteen times more expensive per asset, which is the number that appears on the invoice.',
+      a: 'Because it measures outputs, not assets. A run producing sixty frames to ship four looks cheap per generation and is fifteen times more expensive per asset, which is the number that appears on the invoice.',
     },
     {
       q: 'What is a normal acceptance rate in generative production?',
@@ -137,7 +137,7 @@ export const post: Post = {
     },
     {
       q: 'What is a credit ceiling per asset?',
-      a: 'An agreed maximum spend for a single asset, encoded in the pipeline rather than in a meeting. When a shot consumes its allowance the run halts and asks a person to decide, instead of spending past a number nobody approved.',
+      a: 'An agreed maximum spend for a single asset, encoded in the pipeline, never in a meeting. When a shot consumes its allowance the run halts and asks a person to decide, instead of spending past a number nobody approved.',
     },
   ],
   terms: ['cost-per-accepted-asset', 'master-plate', 'agentic-workflow', 'human-in-the-loop'],

@@ -33,10 +33,10 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'Blocking. Where people stand and who faces where, resolved in minutes rather than in a day of sketching.',
+        'Blocking. Where people stand and who faces where, resolved in minutes, where it used to take a day of sketching.',
         'Coverage decisions. Generating the same beat as a wide, a medium and a close and looking at all three before committing.',
         'Pacing. Assembling boards into an animatic with the real intended durations exposes a slow middle earlier than any read-through.',
-        'Alternatives. Six versions of a difficult beat is now an affordable question rather than an expensive one.',
+        'Alternatives. Six versions of a difficult beat is now an affordable question.',
         'Internal alignment. A director and a producer arguing about a shot can now argue about an image instead of about a description, which shortens it considerably.',
       ],
     },
@@ -63,7 +63,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'The rule we work to',
-      text: 'A board is only shown to a client at a fidelity the production can definitely deliver. If the final shots will be stylised, the boards are stylised. If we are unsure whether a shot is achievable, the board for it is deliberately rough — because the roughness is the honest signal, and a beautiful board for an unachievable shot is a promise somebody will hold us to.',
+      text: 'A board is only shown to a client at a fidelity the production can definitely deliver. If the final shots will be stylised, the boards are stylised. If we are unsure whether a shot is achievable, the board for it is deliberately rough, because the roughness is the honest signal, and a beautiful board for an unachievable shot is a promise somebody will hold us to.',
     },
     { t: 'h2', text: 'The animatic is the more valuable artefact' },
     {
@@ -83,7 +83,7 @@ export const post: Post = {
         'Cut the animatic to real durations immediately, before refining any frame. The timing question is the one that matters.',
         'Fix structure at animatic stage. This is the whole point of the exercise and the step most often skipped in the excitement.',
         'Only then raise fidelity, and only on the frames a client needs to approve.',
-        'Carry the approved boards forward as reference frames into production, so the board and the shot share conditioning rather than merely resembling each other.',
+        'Carry the approved boards forward as reference frames into production, so the board and the shot share conditioning and do more than resemble each other.',
       ],
     },
     { t: 'h2', text: 'The thing boards cannot previsualise' },
@@ -105,15 +105,15 @@ export const post: Post = {
   faqs: [
     {
       q: 'Are AI storyboards worth using?',
-      a: 'For blocking, coverage decisions, pacing and generating alternatives, yes — those are structural questions where being roughly right quickly beats being exactly right slowly. For client approval they carry a risk, because a photoreal board sells a frame the production may not be able to deliver.',
+      a: 'For blocking, coverage decisions, pacing and generating alternatives, yes. Those are structural questions where being roughly right quickly beats being exactly right slowly. For client approval they carry a risk, because a photoreal board sells a frame the production may not be able to deliver.',
     },
     {
       q: 'Why can a photoreal storyboard be misleading?',
-      a: 'Because a still does not have to survive time, and everything expensive in generative video is a function of time. A board can show a perfect face, legible packaging, a complex camera move and a crowd — none of which it had to hold for ninety-six frames.',
+      a: 'Because a still does not have to survive time, and everything expensive in generative video is a function of time. A board can show a perfect face, legible packaging, a complex camera move and a crowd. None of which it had to hold for ninety-six frames.',
     },
     {
       q: 'What fidelity should a storyboard be?',
-      a: 'The fidelity the production can definitely deliver. If the final shots will be stylised, board in that style. If a shot is uncertain, board it deliberately rough — the roughness is the honest signal, and a beautiful board for an unachievable shot is a promise somebody will hold you to.',
+      a: 'The fidelity the production can definitely deliver. If the final shots will be stylised, board in that style. If a shot is uncertain, board it deliberately rough. The roughness is the honest signal, and a beautiful board for an unachievable shot is a promise somebody will hold you to.',
     },
     {
       q: 'Is an animatic more useful than a storyboard?',

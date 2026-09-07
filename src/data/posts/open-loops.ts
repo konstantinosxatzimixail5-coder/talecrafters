@@ -58,7 +58,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'At no point between the start and 5:20 is the viewer holding nothing. That is the whole design. Note that A closes before the piece is halfway through — the technique does not require withholding the main answer, and pieces that do withhold it tend to be resented.',
+      text: 'At no point between the start and 5:20 is the viewer holding nothing. That is the whole design. Note that A closes before the piece is halfway through. The technique does not require withholding the main answer, and pieces that do withhold it tend to be resented.',
     },
     { t: 'h2', text: 'The rule' },
     {
@@ -67,7 +67,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'This is the difference between the technique and the trick. A trick opens loops it has no intention of closing because the metric it optimises is watch time rather than trust, and it works until the audience has seen two of them.',
+      text: 'This is the difference between the technique and the trick. A trick opens loops it has no intention of closing because the metric it optimises is watch time and never trust, and it works until the audience has seen two of them.',
     },
     {
       t: 'note',
@@ -81,7 +81,7 @@ export const post: Post = {
         'List every question your piece answers, in the order it currently answers them.',
         'Find the most interesting answer. Move the question that produces it to the front, and the answer to the middle.',
         'Introduce a consequence before its cause. "This is why the whole approach breaks" before explaining what the approach is.',
-        'Name something you are going to come back to, specifically, once. Not "more on that later" — name it.',
+        'Name something you are going to come back to, specifically, once. Not "more on that later". Name it.',
         'Check that every named thing is returned to. Then check again, because this is the step that gets dropped in an edit.',
       ],
     },
@@ -116,15 +116,15 @@ export const post: Post = {
     },
     {
       q: 'How many open loops should a video have?',
-      a: 'Enough that the viewer is never holding nothing — typically two or three across a long piece, opened and closed out of order. Every one of them must close; a loop left open makes the audience reclassify the whole piece as a waste of their time.',
+      a: 'Enough that the viewer is never holding nothing, typically two or three across a long piece, opened and closed out of order. Every one of them must close; a loop left open makes the audience reclassify the whole piece as a waste of their time.',
     },
     {
       q: 'What is the difference between an open loop and clickbait?',
-      a: 'Whether the loop closes with something worth the wait. The technique is identical. Clickbait opens loops it has no intention of closing, optimises for watch time rather than trust, and stops working after an audience has seen two of them.',
+      a: 'Whether the loop closes with something worth the wait. The technique is identical. Clickbait opens loops it has no intention of closing, optimises for watch time over nothing else, and stops working after an audience has seen two of them.',
     },
     {
       q: 'Should a case study open with the result?',
-      a: 'No. Opening with the result closes the only loop the piece has. The same number at the end, with the moment the project nearly failed in the middle, is a story rather than an announcement.',
+      a: 'No. Opening with the result closes the only loop the piece has. The same number at the end, with the moment the project nearly failed in the middle, is a story.',
     },
     {
       q: 'Do open loops work in instructional content?',

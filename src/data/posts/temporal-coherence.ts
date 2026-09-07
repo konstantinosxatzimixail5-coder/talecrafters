@@ -98,7 +98,7 @@ export const post: Post = {
         'Fewer articulated objects. Hands are the enemy of length. A composition where hands are out of frame or still buys seconds.',
         'A simpler background. Every additional object is another thing that has to persist.',
         'Locked-off camera. Camera movement compounds with subject movement and halves the budget.',
-        'First-and-last-frame conditioning where the model supports it, which re-anchors the end of the clip rather than letting it float.',
+        'First-and-last-frame conditioning where the model supports it, which re-anchors the end of the clip and stops it floating.',
       ],
     },
     {
@@ -131,7 +131,7 @@ export const post: Post = {
       t: 'cta',
       href: '/glossary/temporal-coherence',
       label: 'Read the glossary definition',
-      text: 'The short version, with the related terms and the questions people actually ask about it.',
+      text: 'The short version, with the related terms and the questions people ask about it.',
     },
   ],
   faqs: [
@@ -141,7 +141,7 @@ export const post: Post = {
     },
     {
       q: 'Why does AI video get worse towards the end of a clip?',
-      a: 'Early frames are anchored to the reference, the first frame and the prompt. Later frames are anchored mainly to what was already generated, so small inconsistencies accumulate. Nothing breaks at any single step, which is why it reads as a slow loss of conviction rather than an obvious error.',
+      a: 'Early frames are anchored to the reference, the first frame and the prompt. Later frames are anchored mainly to what was already generated, so small inconsistencies accumulate. Nothing breaks at any single step, which is why it reads as a slow loss of conviction and never as an obvious error.',
     },
     {
       q: 'How long should an AI video clip be?',

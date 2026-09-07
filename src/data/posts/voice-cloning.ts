@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'voice-cloning',
   imageAlt: 'A waveform of a synthetic read, marked where the breaths were inserted.',
   standfirst:
-    'Synthetic narration is now indistinguishable from a human read on neutral, informational copy. It still fails on emphasis that carries meaning, on humour, and on anything requiring a decision mid-sentence. Where it succeeds, the constraint is no longer quality — it is consent, disclosure and direction.',
+    'Synthetic narration is now indistinguishable from a human read on neutral, informational copy. It still fails on emphasis that carries meaning, on humour, and on anything requiring a decision mid-sentence. Where it succeeds, the constraint is no longer quality. It is consent, disclosure and direction.',
   body: [
     {
       t: 'p',
@@ -47,7 +47,7 @@ export const post: Post = {
     { t: 'h2', text: 'The six controls that make it sound human' },
     {
       t: 'p',
-      text: 'Most bad synthetic reads are undirected rather than incapable. The controls that matter, in order of effect:',
+      text: 'Most bad synthetic reads are undirected. The model was capable. The controls that matter, in order of effect:',
     },
     {
       t: 'ol',
@@ -75,9 +75,9 @@ export const post: Post = {
       items: [
         'Explicit grant to create a model from the supplied recordings, named as such.',
         'Scope: which brands, which product categories, which media. A voice licensed for internal training that appears in an advert is a breach nobody documented.',
-        'Term, with an end date rather than "in perpetuity", and a defined disposal obligation for the model at the end of it.',
+        'Term, with an end date and never "in perpetuity", and a defined disposal obligation for the model at the end of it.',
         'Territory, which matters because personality and likeness rights differ substantially between jurisdictions.',
-        'Exclusions: categories the performer will not be used for. Political, gambling, alcohol, health claims — whatever they choose.',
+        'Exclusions: categories the performer will not be used for. Political, gambling, alcohol, health claims. Whatever they choose.',
         'Withdrawal: a mechanism, a notice period, and what happens to assets already in market.',
         'Rate structure for use, not only for the session. A session fee for something that runs forever is the arrangement performers are right to resist.',
       ],
@@ -94,7 +94,7 @@ export const post: Post = {
     { t: 'h2', text: 'What we will not do' },
     {
       t: 'p',
-      text: 'Clone a voice without a signed release from the person, including for a test, including internally, including when the recordings are publicly available. The availability of material has never been the same thing as permission, and the fact that it is now technically trivial is an argument for the rule rather than against it.',
+      text: 'Clone a voice without a signed release from the person, including for a test, including internally, including when the recordings are publicly available. The availability of material has never been the same thing as permission, and the fact that it is now technically trivial is an argument for the rule.',
     },
     {
       t: 'cta',
@@ -106,19 +106,19 @@ export const post: Post = {
   faqs: [
     {
       q: 'Is AI voiceover good enough for brand work?',
-      a: 'For neutral informational narration, corporate voice and e-learning, yes — the quality argument is effectively over. It still fails on emotional reads, comedy and character performance, because all three depend on decisions made mid-sentence.',
+      a: 'For neutral informational narration, corporate voice and e-learning, yes. The quality argument is effectively over. It still fails on emotional reads, comedy and character performance, because all three depend on decisions made mid-sentence.',
     },
     {
       q: 'How do you make a synthetic voice sound human?',
-      a: 'Place breaths before clauses about to be emphasised rather than at sentence ends, vary the pace, create emphasis by moving the stressed word to the end of a clause rather than by markup, vary sentence length in the script, add exactly one imperfection, and put the voice in a room rather than in silence.',
+      a: 'Place breaths before clauses about to be emphasised and never at sentence ends, vary the pace, create emphasis by moving the stressed word to the end of a clause instead of by markup, vary sentence length in the script, add exactly one imperfection, and put the voice in a room. Silence gives it away.',
     },
     {
       q: 'What consent does voice cloning require?',
-      a: 'An explicit grant to build a model from the recordings — not just to use them — plus scope by brand and media, a term with an end date and disposal obligation, territory, category exclusions, a withdrawal mechanism, and a rate structure for use rather than only for the session.',
+      a: 'An explicit grant to build a model from the recordings (not just to use them) plus scope by brand and media, a term with an end date and disposal obligation, territory, category exclusions, a withdrawal mechanism, and a rate structure for use as well as for the session.',
     },
     {
       q: 'Does a cloned voice have to be disclosed?',
-      a: 'A cloned voice of an identifiable person generally yes: since August 2026 EU transparency obligations under Article 50 apply to synthetic audio qualifying as a deepfake. A wholly synthetic voice not presented as a specific person is usually a platform-policy question rather than a legal one, and platform policy is often stricter.',
+      a: 'A cloned voice of an identifiable person generally yes: since August 2026 EU transparency obligations under Article 50 apply to synthetic audio qualifying as a deepfake. A wholly synthetic voice not presented as a specific person is usually a platform-policy question, not a legal one, and platform policy is often stricter.',
     },
     {
       q: 'Why do synthetic reads sound flat even when the voice is good?',

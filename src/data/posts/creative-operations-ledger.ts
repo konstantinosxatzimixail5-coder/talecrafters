@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'creative-operations-ledger',
   imageAlt: 'A six-row ledger of operational numbers, with two of them circled.',
   standfirst:
-    'Six numbers describe a creative operation: cost per accepted asset, acceptance rate, cycle time, rework rate, reuse rate, and time-to-first-draft. Two of them — acceptance rate and rework rate — predict the other four, and almost nobody tracks either.',
+    'Six numbers describe a creative operation: cost per accepted asset, acceptance rate, cycle time, rework rate, reuse rate, and time-to-first-draft. Two of them (acceptance rate and rework rate) predict the other four, and almost nobody tracks either.',
   body: [
     {
       t: 'p',
@@ -57,7 +57,7 @@ export const post: Post = {
           'Rework rate',
           'Proportion of assets returned after being marked done',
           'Whether the brief or the gate is failing. The other leading indicator.',
-          'Medium: needs a status people actually set',
+          'Medium: needs a status people remember to set',
         ],
         [
           'Reuse rate',
@@ -85,7 +85,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'Segment or the numbers lie',
-      text: 'An acceptance rate averaged across easy and hard asset types describes neither. Track it per type — a packshot with legible type and an environment plate differ by a factor of three or four — or you get a number that is true overall and useless everywhere.',
+      text: 'An acceptance rate averaged across easy and hard asset types describes neither. Track it per type (a packshot with legible type and an environment plate differ by a factor of three or four), or you get a number that is true overall and useless everywhere.',
     },
     { t: 'h2', text: 'Instrumenting without buying anything' },
     {
@@ -97,7 +97,7 @@ export const post: Post = {
       items: [
         'Make the log automatic. Anything a person has to remember to write down will be written down for three weeks.',
         'Use four statuses, not eleven: briefed, in production, in review, live. Add one for returned-after-done and you have rework for free.',
-        'Encode the asset type in the filename. Segmentation becomes a text filter rather than a project.',
+        'Encode the asset type in the filename. Segmentation becomes a text filter.',
         'Timestamp two events only: brief received and asset live. Everything else about cycle time can be derived later.',
         'Review the six monthly, in one page, with a note against anything that moved. Data nobody looks at is a cost with no benefit.',
       ],
@@ -107,7 +107,7 @@ export const post: Post = {
       t: 'ul',
       items: [
         'Assets produced. An input dressed as an outcome.',
-        'Utilisation. A team at a hundred per cent utilisation has no capacity to react, which is a fragility rather than an achievement.',
+        'Utilisation. A team at a hundred per cent utilisation has no capacity to react, which is a fragility, not an achievement.',
         'Average anything, unsegmented. Averages across asset types are the single commonest way an operational dashboard misleads.',
         'Cost per generation. Excludes the rejected work, which is where the cost is.',
         'Anything nobody has agreed an action for. If a number moving would not change what anybody does, it is decoration.',
@@ -116,7 +116,7 @@ export const post: Post = {
     { t: 'h2', text: 'What to do when a number moves' },
     {
       t: 'p',
-      text: 'Agree the response in advance, once, and write it down. Acceptance rate falls: audit the last ten briefs against the ten before. Rework rises: move the review earlier, before production rather than after. Cycle time rises with steady volume: find the queue, which is usually approval rather than production. Reuse falls: the library has a findability problem, not a content problem.',
+      text: 'Agree the response in advance, once, and write it down. Acceptance rate falls: audit the last ten briefs against the ten before. Rework rises: move the review earlier, before production starts. Cycle time rises with steady volume: find the queue, which is usually approval and rarely production. Reuse falls: the library has a findability problem, not a content problem.',
     },
     {
       t: 'p',
@@ -132,7 +132,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'What metrics should a creative operations team track?',
-      a: 'Six: cost per accepted asset, acceptance rate, cycle time, rework rate, reuse rate and time to first draft. Acceptance rate and rework rate are the leading indicators — improving either moves most of the others.',
+      a: 'Six: cost per accepted asset, acceptance rate, cycle time, rework rate, reuse rate and time to first draft. Acceptance rate and rework rate are the leading indicators. Improving either moves most of the others.',
     },
     {
       q: 'Why is volume a bad creative metric?',
@@ -140,7 +140,7 @@ export const post: Post = {
     },
     {
       q: 'Why must acceptance rate be segmented?',
-      a: 'Because it varies by a factor of three or four between asset types — a packshot with legible type against an environment plate, for instance. An average across both describes neither and misleads on both.',
+      a: 'Because it varies by a factor of three or four between asset types. A packshot with legible type against an environment plate, for instance. An average across both describes neither and misleads on both.',
     },
     {
       q: 'How do you instrument these without buying a new tool?',
@@ -148,7 +148,7 @@ export const post: Post = {
     },
     {
       q: 'What should you do when rework rate rises?',
-      a: 'Move the review earlier — before production rather than after. Rising rework means "done" is not well defined, which is a brief or gate problem rather than a production one, and it is the most expensive kind of work because it is paid for twice.',
+      a: 'Move the review earlier, before production starts. Rising rework means "done" is not well defined, which is a brief or gate problem and never a production one, and it is the most expensive kind of work because it is paid for twice.',
     },
   ],
   terms: ['cost-per-accepted-asset', 'acceptance-rate', 'run-log', 'gate', 'naming-convention', 'eval'],

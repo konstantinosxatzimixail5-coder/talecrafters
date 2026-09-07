@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'The Beat Sheet Comes Before the Shot List (And the Shot List Is the Budget)',
   metaTitle: 'Beat Sheet Before Shot List: How Structure Sets a Generative Budget',
   metaDescription:
-    'In generative production the shot list is the budget, and the shot list is derived from the beats. How to write a beat sheet that costs a sentence to fix rather than four hundred renders.',
+    'In generative production the shot list is the budget, and the shot list is derived from the beats. How to write a beat sheet that costs a sentence to fix, and not four hundred renders.',
   excerpt:
     'A beat is free to change. A shot is not. Almost every overrun we have seen started as a structural decision made after the rendering began.',
   published: '2026-07-21',
@@ -27,12 +27,12 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'In conventional production the schedule is the budget: days, crew, locations. In generative production the shot list is the budget, because each distinct shot is a set of attempts and the attempts are the cost. That makes the document upstream of the shot list — the beat sheet — the most financially consequential page in the project, and it is usually the one nobody writes.',
+      text: 'In conventional production the schedule is the budget: days, crew, locations. In generative production the shot list is the budget, because each distinct shot is a set of attempts and the attempts are the cost. That makes the document upstream of the shot list (the beat sheet) the most financially consequential page in the project, and it is usually the one nobody writes.',
     },
     { t: 'h2', text: 'What a beat sheet is' },
     {
       t: 'p',
-      text: 'One line per beat, and each line states the turn rather than the event. What the character wants going in, what stops them, and what is different coming out. A list of events that does not name what changed is a running order, and a running order cannot be wrong, which means it cannot be improved.',
+      text: 'One line per beat, and each line states the turn. What the character wants going in, what stops them, and what is different coming out. A list of events that does not name what changed is a running order, and a running order cannot be wrong, which means it cannot be improved.',
     },
     {
       t: 'p',
@@ -54,7 +54,7 @@ export const post: Post = {
     { t: 'h2', text: 'Deriving the shot list, and where the money appears' },
     {
       t: 'p',
-      text: 'Once the beats are settled, each becomes a small number of shots. This is the step where a structural decision becomes a number, and it is worth doing explicitly rather than by instinct.',
+      text: 'Once the beats are settled, each becomes a small number of shots. This is the step where a structural decision becomes a number, and it is worth doing explicitly. Instinct prices it wrong.',
     },
     {
       t: 'table',
@@ -82,7 +82,7 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'Replace every "because of that" with "and then". If nothing is lost, you have a chronology rather than a story.',
+        'Replace every "because of that" with "and then". If nothing is lost, you have a chronology.',
         'Check every beat has a value marked at both ends. Identical marks mean the beat is delivering information.',
         'Find the reversal. If nothing inverts anywhere, the middle will drag regardless of the shot count.',
         'Read the first beat and the last beat only. They should describe a change. If they describe the same state, the piece does not arrive anywhere.',
@@ -102,13 +102,13 @@ export const post: Post = {
       t: 'cta',
       href: '/supply-drop/synthetic-media-production-brief-template',
       label: 'The brief template',
-      text: 'Where the beats, the locks and the shot list sit in a brief that can actually be quoted from.',
+      text: 'Where the beats, the locks and the shot list sit in a brief somebody can quote from.',
     },
   ],
   faqs: [
     {
       q: 'What is a beat sheet?',
-      a: 'A one-line-per-beat outline stating what changes at each step rather than what happens: the objective, the obstacle, the outcome and the value shift. A list of events that does not name what changed is a running order, and a running order cannot be diagnosed.',
+      a: 'A one-line-per-beat outline stating what changes at each step: the objective, the obstacle, the outcome and the value shift. A list of events that does not name what changed is a running order, and a running order cannot be diagnosed.',
     },
     {
       q: 'Why does the beat sheet matter for budget?',
@@ -116,7 +116,7 @@ export const post: Post = {
     },
     {
       q: 'How many beats should a short film have?',
-      a: 'Six to nine for a ninety-second piece. Above that the beats are events rather than turns, which is what makes a short film feel busy and empty at the same time.',
+      a: 'Six to nine for a ninety-second piece. Above that the beats are events, not turns, which is what makes a short film feel busy and empty at the same time.',
     },
     {
       q: 'Which beats cost the most to produce generatively?',
@@ -124,7 +124,7 @@ export const post: Post = {
     },
     {
       q: 'How do you test a beat sheet?',
-      a: 'Replace every "because of that" with "and then" — if nothing is lost it is a chronology. Check each beat has a value marked at both ends. Find the reversal. Read the first and last beats alone and confirm they describe a change.',
+      a: 'Replace every "because of that" with "and then". If nothing is lost it is a chronology. Check each beat has a value marked at both ends. Find the reversal. Read the first and last beats alone and confirm they describe a change.',
     },
   ],
   terms: ['beat-sheet', 'story-beat', 'value-shift', 'shot-list', 'acceptance-rate', 'story-spine'],

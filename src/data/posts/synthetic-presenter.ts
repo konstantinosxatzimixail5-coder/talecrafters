@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'synthetic-presenter',
   imageAlt: 'A contact sheet of one synthetic presenter across twelve shots, with two flagged as drifted.',
   standfirst:
-    'Presenter identity is held by three things in order: a character brief that specifies structure rather than personality, a fixed reference set used for identity only, and a drift check run against the first approved frame rather than against the previous one. Description alone stops working at around the third asset.',
+    'Presenter identity is held by three things in order: a character brief that specifies structure and never personality, a fixed reference set used for identity only, and a drift check run against the first approved frame, never against the previous one. Description alone stops working at around the third asset.',
   body: [
     {
       t: 'p',
@@ -51,7 +51,7 @@ export const post: Post = {
     { t: 'h2', text: 'The reference set' },
     {
       t: 'p',
-      text: 'One frame is not enough, and twenty is worse than five. What you want is a small fixed set covering the angles the campaign actually needs — front, three-quarter, profile, and one at the shot size you will use most — approved once and never quietly extended.',
+      text: 'One frame is not enough, and twenty is worse than five. What you want is a small fixed set covering the angles the campaign needs (front, three-quarter, profile, and one at the shot size you will use most) approved once and never quietly extended.',
     },
     {
       t: 'p',
@@ -69,7 +69,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The first is the overlay: take the new frame and the original approved reference, align them on the eyes, and flick between the two at full size. Structural differences that are invisible side by side are obvious in a flick, because the eye is comparing positions rather than impressions.',
+      text: 'The first is the overlay: take the new frame and the original approved reference, align them on the eyes, and flick between the two at full size. Structural differences that are invisible side by side are obvious in a flick, because the eye is comparing positions, not impressions.',
     },
     {
       t: 'p',
@@ -112,7 +112,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'How do you keep an AI presenter consistent across a campaign?',
-      a: 'A character brief specifying structure rather than personality, a small fixed reference set used for identity only, and every shot conditioned on the original approved reference rather than on the previous output. Description alone stops working at around the third asset.',
+      a: 'A character brief specifying structure and never personality, a small fixed reference set used for identity only, and every shot conditioned on the original approved reference, never on the previous output. Description alone stops working at around the third asset.',
     },
     {
       q: 'Why should you never condition a shot on the previous shot?',
@@ -120,7 +120,7 @@ export const post: Post = {
     },
     {
       q: 'How do you check for identity drift?',
-      a: 'Two checks. Overlay the new frame and the original reference aligned on the eyes and flick between them at full size — structural differences invisible side by side are obvious in a flick. Then lay every approved frame in a strip at thumbnail size, because drift is a gradient and only visible over distance.',
+      a: 'Two checks. Overlay the new frame and the original reference aligned on the eyes and flick between them at full size. Structural differences invisible side by side are obvious in a flick. Then lay every approved frame in a strip at thumbnail size, because drift is a gradient and only visible over distance.',
     },
     {
       q: 'When is it worth training a character model instead of using references?',
@@ -132,7 +132,7 @@ export const post: Post = {
     },
     {
       q: 'Do you need consent for a synthetic presenter?',
-      a: 'If it derives from a real person, yes, and the release must explicitly grant the right to train on the supplied material — photography-era releases almost never do. If the presenter is wholly synthetic there is no consent question, but the disclosure question remains.',
+      a: 'If it derives from a real person, yes, and the release must explicitly grant the right to train on the supplied material. Photography-era releases almost never do. If the presenter is wholly synthetic there is no consent question, but the disclosure question remains.',
     },
   ],
   terms: ['character-consistency', 'identity-lock', 'reference-image', 'trained-identity', 'drift', 'consent-file'],

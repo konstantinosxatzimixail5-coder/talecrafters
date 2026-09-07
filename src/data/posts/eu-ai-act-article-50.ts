@@ -36,7 +36,7 @@ export const post: Post = {
       t: 'p',
       text: 'It is not a high-risk provision. That is the point people miss. Article 50 applies regardless of whether the underlying system is classified as high-risk, which means a marketing team using an off-the-shelf video model is inside it on the same terms as anybody else.',
     },
-    { t: 'h2', text: 'What the obligation actually is' },
+    { t: 'h2', text: 'What the obligation says' },
     {
       t: 'p',
       text: 'Article 50 imposes transparency duties on providers and deployers across four categories: systems that interact directly with people, systems that generate synthetic content, emotion recognition and biometric categorisation systems, and systems producing deepfakes.',
@@ -78,11 +78,11 @@ export const post: Post = {
     { t: 'h2', text: 'Territorial reach: why UK and US brands are inside it' },
     {
       t: 'p',
-      text: 'The Act follows the output rather than the establishment. Where a system’s output is used in the Union, the obligations attach. For advertising that means a campaign served to audiences in EU member states is in scope irrespective of where the brand, the agency or the studio sits.',
+      text: 'The Act follows the output, not the establishment. Where a system’s output is used in the Union, the obligations attach. For advertising that means a campaign served to audiences in EU member states is in scope irrespective of where the brand, the agency or the studio sits.',
     },
     {
       t: 'p',
-      text: 'For most paid social, EU delivery is the default rather than a decision, and geo-excluding the EU to avoid the obligation is usually a worse commercial trade than complying. So the practical planning assumption for a UK or US advertiser running European paid media is that Article 50 applies.',
+      text: 'For most paid social, EU delivery is the default and nobody decided it, and geo-excluding the EU to avoid the obligation is usually a worse commercial trade than complying. So the practical planning assumption for a UK or US advertiser running European paid media is that Article 50 applies.',
     },
     { t: 'h2', text: 'Penalties' },
     {
@@ -92,14 +92,14 @@ export const post: Post = {
     {
       t: 'note',
       title: 'The SME inversion',
-      text: 'For SMEs and start-ups the calculation flips: the fine is the lower of the fixed amount and the turnover percentage rather than the higher. For most agencies and studios reading this, that turns a headline number into a proportionate one. It is a real relief and it is not a reason to skip the process change, which costs nothing per asset once it is made.',
+      text: 'For SMEs and start-ups the calculation flips: the fine is the lower of the fixed amount and the turnover percentage. For most agencies and studios reading this, that turns a headline number into a proportionate one. It is a real relief and it is not a reason to skip the process change, which costs nothing per asset once it is made.',
     },
     { t: 'h2', text: 'What to change this quarter' },
     {
       t: 'ol',
       items: [
-        'Decide disclosure at brief stage, not delivery. Write the labelling decision into the brief alongside the deliverable list, so it is a production constraint rather than a compliance afterthought.',
-        'Put the label on the asset and the provenance in the metadata. The metadata satisfies machine detection. The on-asset label satisfies a human at first exposure, which is what the text actually asks for.',
+        'Decide disclosure at brief stage, not delivery. Write the labelling decision into the brief alongside the deliverable list, so it is a production constraint, never a compliance afterthought.',
+        'Put the label on the asset and the provenance in the metadata. The metadata satisfies machine detection. The on-asset label satisfies a human at first exposure, which is what the text asks for.',
         'Ask your model providers, in writing, what marking they apply to outputs and from what date. Their Article 50(2) position determines whether your exports carry machine-readable provenance at all.',
         'Classify your formats. Wholly synthetic presenters and any manipulated likeness of a real person are deepfake-category and get disclosed without argument. A stylised, obviously-constructed brand film is a judgement call worth documenting.',
         'Keep the file. Which model, which version, which licence, who signed off, what was disclosed, on which placement. The obligation is provable or it is not satisfied.',

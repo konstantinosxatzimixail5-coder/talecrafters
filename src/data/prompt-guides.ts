@@ -114,7 +114,7 @@ export const promptGuides: PromptGuide[] = [
       'WHAT MOVES. Name it. One thing, or two if they move together.',
       'WHAT DOES NOT MOVE. Name that too, explicitly.',
       'THE CAMERA. Usually nothing, or one slow push.',
-      'DURATION FEEL. Slow, steady, drifting — not a number, a quality.',
+      'DURATION FEEL. Slow, steady, drifting. Not a number, a quality.',
     ],
     prompt:
       'Only the steam from the cup moves, rising slowly and dissipating. The hands, the cup, the table and the background stay completely still. Camera locked off, no movement. Slow, calm, continuous.',
@@ -131,13 +131,13 @@ export const promptGuides: PromptGuide[] = [
     scaffold: [
       'START FRAME. The image, plus one sentence naming what state it is in.',
       'END FRAME. The image, plus one sentence naming what changed.',
-      'THE TRANSIT. How it gets from one to the other — the path, not the destination.',
+      'THE TRANSIT. How it gets from one to the other. The path, not the destination.',
       'WHAT IS CONSTANT. Anything that must be identical in both.',
     ],
     prompt:
       'Start: the bottle stands upright, label facing camera, cap on. End: the same bottle, same position, same label, cap off and resting beside it. Between them, a single hand enters from frame right, turns the cap once and withdraws. Lighting, background and label position identical throughout.',
     failure:
-      'The two frames disagree about something you did not notice — a shadow direction, a label crop, a hand that is present in one and not the other — and the model resolves the disagreement by inventing a transition through it.',
+      'The two frames disagree about something you did not notice (a shadow direction, a label crop, a hand that is present in one and not the other), and the model resolves the disagreement by inventing a transition through it.',
     fix: 'Put the two frames side by side at full size before you generate. Anything that differs and should not is a shot you have already lost.',
   },
   {
@@ -184,7 +184,7 @@ export const promptGuides: PromptGuide[] = [
     name: 'Crowds and background life',
     family: 'video',
     purpose: 'Populating a frame without ten people melting into each other.',
-    when: 'Streets, offices, venues — anywhere the emptiness would read as a set.',
+    when: 'Streets, offices, venues. Anywhere the emptiness would read as a set.',
     scaffold: [
       'FOREGROUND. Your actual subject, fully specified.',
       'MIDGROUND. One or two figures, described only by silhouette and direction of travel.',
@@ -231,7 +231,7 @@ export const promptGuides: PromptGuide[] = [
     prompt:
       'LOCK (paste into every shot): Late afternoon, low sun from the west, warm key and cool fill, muted teal and sand palette, anamorphic 40mm look throughout, light haze in every exterior.\n\nSHOT 4: Wide, static. The car sits alone at the end of the road. No people. Hold.',
     failure:
-      'The lock paragraph is edited slightly between shots — a word here, a colour there — and the sequence quietly stops matching itself.',
+      'The lock paragraph is edited slightly between shots (a word here, a colour there), and the sequence quietly stops matching itself.',
     fix:
       'Keep the lock in one file and paste it. Never retype it. If it needs to change, it changes for every shot including the ones already rendered.',
   },
@@ -383,7 +383,7 @@ export const promptGuides: PromptGuide[] = [
     purpose: 'Writing the paragraph you will paste into every shot for the next six weeks.',
     when: 'Before the first generation of any character who appears more than twice.',
     scaffold: [
-      'STRUCTURE. Face shape, bone, proportion — things that do not change with mood.',
+      'STRUCTURE. Face shape, bone, proportion. Things that do not change with mood.',
       'FIXED MARKS. Scars, moles, gaps, asymmetries. Two or three, specific.',
       'HAIR. Length, texture, parting, and how it sits when disturbed.',
       'WARDROBE. Exact, including fastenings and wear.',
@@ -462,7 +462,7 @@ export const promptGuides: PromptGuide[] = [
     when: 'Any narrative sequence.',
     scaffold: [
       'THE CONTINUITY LINE. One sentence, identical in every prompt.',
-      'STATE. What has already happened to them — wet, dusty, tired — carried forward.',
+      'STATE. What has already happened to them (wet, dusty, tired) carried forward.',
       'TIME. Where the sun is, in every shot.',
       'THE PROP. Whatever they are carrying, and in which hand.',
     ],
@@ -489,7 +489,7 @@ export const promptGuides: PromptGuide[] = [
       'ASK FOR THREE OPTIONS. Not one.',
     ],
     prompt:
-      'Premise: a shop owner has to sell the last thing in the shop, and the only buyer is the person she has been avoiding. Format: a 90-second short. Give me the beat structure only — no prose, no dialogue, no description. For each beat, state what the character wants, what stops them, and what has changed by the end of it. Give me three structurally different versions, not three flavours of one.',
+      'Premise: a shop owner has to sell the last thing in the shop, and the only buyer is the person she has been avoiding. Format: a 90-second short. Give me the beat structure only. No prose, no dialogue, no description. For each beat, state what the character wants, what stops them, and what has changed by the end of it. Give me three structurally different versions, not three flavours of one.',
     failure:
       'You ask for a script and get 800 words of competent, unsurprising prose that is impossible to fix because there is no structure underneath it to move.',
     fix:
@@ -505,7 +505,7 @@ export const promptGuides: PromptGuide[] = [
       'THE CLAIM. The single true, specific thing the piece proves.',
       'THE AUDIENCE STATE. What they believe right now.',
       'THE GAP. The distance between those two.',
-      'ASK FOR MECHANISMS. Contradiction, cost, specificity, omission — not "make it punchy".',
+      'ASK FOR MECHANISMS. Contradiction, cost, specificity, omission. Not "make it punchy".',
       'BAN. Rhetorical questions, "in this video", and the word "secret".',
     ],
     prompt:
@@ -563,7 +563,7 @@ export const promptGuides: PromptGuide[] = [
     when: 'Direct response, launches, anything with a call to action at the end.',
     scaffold: [
       'THE ONE PROBLEM. Stated in the audience’s words, not yours.',
-      'THE MECHANISM. Why the usual fix fails — this is the whole piece.',
+      'THE MECHANISM. Why the usual fix fails. This is the whole piece.',
       'PROOF. Specific, dated, checkable.',
       'THE OFFER. What it is, plainly.',
       'THE OBJECTIONS. Three, answered in order of how much they cost.',
@@ -683,7 +683,7 @@ export const promptGuides: PromptGuide[] = [
     when: 'Final delivery, broadcast, print.',
     scaffold: [
       'STATE FIDELITY OVER CREATIVITY.',
-      'PROTECT. Faces, type, logos — named.',
+      'PROTECT. Faces, type, logos. Named.',
       'ALLOW. Where invented detail is acceptable.',
       'GRAIN. Whether to keep it. Usually yes.',
     ],
@@ -750,7 +750,7 @@ export const promptGuides: PromptGuide[] = [
       'THE CEILING. Maximum attempts per asset.',
     ],
     prompt:
-      'Invariant across all outputs: same product, same lighting setup, same 50mm lens, same grade, same empty upper third. Variable: background surface only — concrete, oak, brushed steel, linen, marble. Name each output as product_surface_v01. Reject automatically any frame where the label is not fully legible or the upper third is not clear. Maximum six attempts per surface, then stop and flag.',
+      'Invariant across all outputs: same product, same lighting setup, same 50mm lens, same grade, same empty upper third. Variable: background surface only. Concrete, oak, brushed steel, linen, marble. Name each output as product_surface_v01. Reject automatically any frame where the label is not fully legible or the upper third is not clear. Maximum six attempts per surface, then stop and flag.',
     failure:
       'Forty assets that vary on three axes because the invariant was written as a suggestion.',
     fix:
@@ -809,7 +809,7 @@ export const promptGuides: PromptGuide[] = [
       'BAN. Summarising from memory.',
     ],
     prompt:
-      'Question: what disclosure does this regulation require for synthetic media in advertising, as of today. Use primary sources only: the legislation itself, the regulator’s own guidance, or an official platform policy page. For each claim give the exact source URL and the date it was published or last amended. Where you cannot find a primary source, write NOT FOUND and never answer from memory. Do not paraphrase legal text — quote it.',
+      'Question: what disclosure does this regulation require for synthetic media in advertising, as of today. Use primary sources only: the legislation itself, the regulator’s own guidance, or an official platform policy page. For each claim give the exact source URL and the date it was published or last amended. Where you cannot find a primary source, write NOT FOUND and never answer from memory. Do not paraphrase legal text. Quote it.',
     failure:
       'A confident, well-organised summary of the regulation as it stood eighteen months ago, with no dates on anything.',
     fix:

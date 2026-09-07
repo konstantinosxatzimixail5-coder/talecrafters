@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'What an AI UGC Ad Actually Costs (And Where the Money Goes)',
   metaTitle: 'AI UGC Ad Cost in 2026: The Real Numbers Behind Synthetic Creator Ads',
   metaDescription:
-    'What it costs to produce a synthetic UGC ad in 2026, broken down by script, avatar, voice, variants and review — plus the consent and disclosure line items nobody quotes and everybody eventually pays.',
+    'What it costs to produce a synthetic UGC ad in 2026, broken down by script, avatar, voice, variants and review. Plus the consent and disclosure line items nobody quotes and everybody eventually pays.',
   excerpt:
     'The generation is the cheap part. The script, the consent and the review are the invoice.',
   published: '2026-08-28',
@@ -22,13 +22,13 @@ export const post: Post = {
   ],
   image: 'ai-ugc-ad-cost',
   imageAlt:
-    'A grid of vertical ad variants of the same script, each labelled with its cost line rather than its performance.',
+    'A grid of vertical ad variants of the same script, each labelled with its cost line.',
   standfirst:
-    'Generating a synthetic UGC ad costs almost nothing. Producing one costs what the script, the consent file, the voice, the variant matrix and the review cost — typically eighty to ninety per cent of the total. Any quote where generation is the biggest line is describing a demo.',
+    'Generating a synthetic UGC ad costs almost nothing. Producing one costs what the script, the consent file, the voice, the variant matrix and the review cost, typically eighty to ninety per cent of the total. Any quote where generation is the biggest line is describing a demo.',
   body: [
     {
       t: 'p',
-      text: 'The number people arrive with is the per-clip generation price, because it is the number that is published. It is also, in a working pipeline, close to a rounding error. Here is where the money in a synthetic UGC campaign actually goes.',
+      text: 'The number people arrive with is the per-clip generation price, because it is the number that is published. It is also, in a working pipeline, close to a rounding error. Here is where the money in a synthetic UGC campaign goes.',
     },
     { t: 'h2', text: 'The line items' },
     {
@@ -47,7 +47,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The shape is the point. In traditional UGC the shoot dominates; in synthetic UGC there is no shoot, so what remains is writing, rights and judgement — three things that do not get cheaper with volume, which is why the per-asset cost stops falling much past a certain batch size.',
+      text: 'The shape is the point. In traditional UGC the shoot dominates; in synthetic UGC there is no shoot, so what remains is writing, rights and judgement. Three things that do not get cheaper with volume, which is why the per-asset cost stops falling much past a certain batch size.',
     },
     { t: 'h2', text: 'The variant maths that catches people out' },
     {
@@ -74,7 +74,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The second is disclosure, which is about the audience rather than the performer. Since 2 August 2026, EU transparency obligations under Article 50 apply to synthetic image, audio and video content that qualifies as a deepfake, which captures a great deal of AI-generated advertising. Platform policies are frequently stricter than the law, and advertising codes apply on top of both. The practical rule is to work to the strictest of the three and to decide it at brief stage rather than at delivery.',
+      text: 'The second is disclosure, which is about the audience, not the performer. Since 2 August 2026, EU transparency obligations under Article 50 apply to synthetic image, audio and video content that qualifies as a deepfake, which captures a great deal of AI-generated advertising. Platform policies are frequently stricter than the law, and advertising codes apply on top of both. The practical rule is to work to the strictest of the three and to decide it at brief stage.',
     },
     {
       t: 'cta',
@@ -112,11 +112,11 @@ export const post: Post = {
   faqs: [
     {
       q: 'How much does an AI UGC ad cost?',
-      a: 'The generation is typically five to ten per cent of the total. The rest is script and hook development, voice, consent and disclosure, variant production, review and measurement. Any quote where generation is the largest line is describing a demo rather than a campaign.',
+      a: 'The generation is typically five to ten per cent of the total. The rest is script and hook development, voice, consent and disclosure, variant production, review and measurement. Any quote where generation is the largest line is describing a demo.',
     },
     {
       q: 'Is synthetic UGC cheaper than hiring creators?',
-      a: 'For high variant counts, many markets and frequent creative refresh, substantially. For a single hero asset, barely — one well-written film costs about the same either way. For categories where the audience has to believe a real person really used the product, synthetic material starts at a credibility deficit that no cost saving covers.',
+      a: 'For high variant counts, many markets and frequent creative refresh, substantially. For a single hero asset, barely. One well-written film costs about the same either way. For categories where the audience has to believe a real person really used the product, synthetic material starts at a credibility deficit that no cost saving covers.',
     },
     {
       q: 'What is the most under-budgeted line in synthetic UGC?',

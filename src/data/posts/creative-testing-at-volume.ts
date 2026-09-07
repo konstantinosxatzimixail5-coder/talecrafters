@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'Creative Testing at Volume: How Many Variants Is Enough?',
   metaTitle: 'How Many Ad Variants Should You Test? The Volume Question Answered',
   metaDescription:
-    'Generative production removed the cost of a variant and did not remove the cost of a bad test. How to design a variant matrix that produces a finding rather than a leaderboard, and where the returns stop.',
+    'Generative production removed the cost of a variant and did not remove the cost of a bad test. How to design a variant matrix that produces a finding and not a leaderboard, and where the returns stop.',
   excerpt:
     'Ninety variants that differ on four axes at once produce a winner and no knowledge. The winner is not the point.',
   published: '2026-06-09',
@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'The pitch for generative creative is volume: test a hundred concepts a week instead of four. The pitch is broadly true and it hides a problem, which is that a hundred variants differing on everything at once produce a ranked list and no explanation. Next month you start again from nothing, because you learned which asset won rather than why.',
+      text: 'The pitch for generative creative is volume: test a hundred concepts a week instead of four. The pitch is broadly true and it hides a problem, which is that a hundred variants differing on everything at once produce a ranked list and no explanation. Next month you start again from nothing, because you learned which asset won and never why.',
     },
     { t: 'h2', text: 'The difference between a test and a tournament' },
     {
@@ -53,11 +53,11 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Twenty assets across five rounds, and at the end you hold four reusable claims about your audience rather than one winning file. The next campaign starts from those claims, which is the only mechanism by which testing gets cheaper over time.',
+      text: 'Twenty assets across five rounds, and at the end you hold four reusable claims about your audience. The next campaign starts from those claims, which is the only mechanism by which testing gets cheaper over time.',
     },
     {
       t: 'note',
-      title: 'The volume that is actually useful',
+      title: 'The volume that earns its keep',
       text: 'Enough variants of one axis to distinguish them, which for most paid social is five to eight. Beyond that you are splitting budget more ways and slowing every result down, in exchange for distinctions the data cannot support.',
     },
     { t: 'h2', text: 'Where the returns stop' },
@@ -66,13 +66,13 @@ export const post: Post = {
       items: [
         'Statistical: past a point, additional variants divide the same budget and nothing reaches significance. More variants means slower learning, not faster.',
         'Practical: someone has to watch all of them. Ninety assets is over an hour of review before anything is watched twice.',
-        'Creative: variants generated to fill a matrix rather than to test an idea are noise, and they dilute the average performance of the batch.',
+        'Creative: variants generated to fill a matrix and never to test an idea are noise, and they dilute the average performance of the batch.',
         'Platform: several delivery systems concentrate spend on early leaders, so a large matrix gets pruned by the algorithm before your test finishes. You measured the platform, not the creative.',
       ],
     },
     {
       t: 'p',
-      text: 'The last one catches sophisticated teams. If the platform allocates on early signal, a fifty-variant test is a five-variant test with forty-five assets that never got a chance, and the five were chosen by delivery rather than by design.',
+      text: 'The last one catches sophisticated teams. If the platform allocates on early signal, a fifty-variant test is a five-variant test with forty-five assets that never got a chance, and the five were chosen by delivery, never by design.',
     },
     { t: 'h2', text: 'What to hold constant, and how' },
     {
@@ -108,7 +108,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'How many ad variants should you test at once?',
-      a: 'Enough variants of a single axis to distinguish them, which for most paid social is five to eight. Beyond that, additional variants divide the same budget, nothing reaches significance, and learning gets slower rather than faster.',
+      a: 'Enough variants of a single axis to distinguish them, which for most paid social is five to eight. Beyond that, additional variants divide the same budget, nothing reaches significance, and learning slows down.',
     },
     {
       q: 'Why is testing ninety variants a bad idea?',
@@ -116,7 +116,7 @@ export const post: Post = {
     },
     {
       q: 'How do you design a creative test that produces reusable knowledge?',
-      a: 'Vary one axis per round and hold everything else identical: hooks first, then opening visual, then body structure, then call to action, then presenter or register. Twenty assets across five rounds yields four reusable claims about your audience rather than one winning file.',
+      a: 'Vary one axis per round and hold everything else identical: hooks first, then opening visual, then body structure, then call to action, then presenter or register. Twenty assets across five rounds yields four reusable claims about your audience.',
     },
     {
       q: 'What metric should each test round use?',
@@ -124,7 +124,7 @@ export const post: Post = {
     },
     {
       q: 'How do you hold variables constant in generative testing?',
-      a: 'Generate the invariant portion once and reuse the file rather than regenerating it per variant — two generations from the same prompt are not the same asset. For hook tests, change only the audio and the first two seconds of picture over one master.',
+      a: 'Generate the invariant portion once and reuse the file, never regenerating it per variant. Two generations from the same prompt are not the same asset. For hook tests, change only the audio and the first two seconds of picture over one master.',
     },
   ],
   terms: ['eval', 'retention-curve', 'hook', 'cost-per-accepted-asset', 'naming-convention', 'run-log'],

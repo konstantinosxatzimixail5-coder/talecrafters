@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'Every automation conversation starts in the same place: the most visible, most creative, most discussed part of the process. It is also the part with the most judgement in it, the least repetition, and the highest cost of being wrong — which makes it close to the worst possible first project.',
+      text: 'Every automation conversation starts in the same place: the most visible, most creative, most discussed part of the process. It is also the part with the most judgement in it, the least repetition, and the highest cost of being wrong, which makes it close to the worst possible first project.',
     },
     {
       t: 'p',
@@ -53,7 +53,7 @@ export const post: Post = {
       t: 'p',
       text: 'The common error is reaching for the third row when the first would do. An agent doing a job a script could do is more expensive, slower, and capable of surprising you, which is three disadvantages and no benefit.',
     },
-    { t: 'h2', text: 'Where the hours actually are' },
+    { t: 'h2', text: 'Where the hours are' },
     {
       t: 'p',
       text: 'When we audit a content team’s week, the time does not sit where anyone expects. Writing is rarely the largest block. The largest block is almost always coordination: finding the current version, renaming exports, chasing an approval, rebuilding the same status deck, reformatting one asset into six sizes, and looking for a file somebody named untitled-final-v3.',

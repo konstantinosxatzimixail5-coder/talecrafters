@@ -36,7 +36,7 @@ export const post: Post = {
     { t: 'h2', text: 'Test one: is there a dramatic question?' },
     {
       t: 'p',
-      text: 'State the piece as a question beginning with "will". Will she get the job. Will the shop survive. Will he say it. If you cannot, there is no question, and attention through the middle of anything is a function of an unanswered question rather than of how interesting the middle is.',
+      text: 'State the piece as a question beginning with "will". Will she get the job. Will the shop survive. Will he say it. If you cannot, there is no question, and attention through the middle of anything is a function of an unanswered question, never of how interesting the middle is.',
     },
     {
       t: 'p',
@@ -45,7 +45,7 @@ export const post: Post = {
     { t: 'h2', text: 'Test two: does somebody want something?' },
     {
       t: 'p',
-      text: 'Name the character and write, in a sentence starting with a verb, what they are trying to get. Not "she represents innovation" — what is she trying to get, from whom, in this piece. A character with no want is a model in a location, however well performed.',
+      text: 'Name the character and write, in a sentence starting with a verb, what they are trying to get. Not "she represents innovation". What is she trying to get, from whom, in this piece. A character with no want is a model in a location, however well performed.',
     },
     { t: 'h2', text: 'Test three: what stops them?' },
     {
@@ -59,12 +59,12 @@ export const post: Post = {
     { t: 'h2', text: 'Test four: does anything reverse?' },
     {
       t: 'p',
-      text: 'A reversal is the situation inverting using elements already in play — the advantage becoming the liability, the victory costing more than it was worth. A sequence of escalating obstacles is monotonous however large the obstacles get. Two well-placed reversals do more than five additional complications.',
+      text: 'A reversal is the situation inverting using elements already in play. The advantage becoming the liability, the victory costing more than it was worth. A sequence of escalating obstacles is monotonous however large the obstacles get. Two well-placed reversals do more than five additional complications.',
     },
     { t: 'h2', text: 'Test five: does each scene shift a value?' },
     {
       t: 'p',
-      text: 'For every scene, name the value in play — trust, safety, hope, status — and mark it positive or negative at the top and again at the bottom. If the two marks are identical, that scene is delivering information in a scene’s clothing.',
+      text: 'For every scene, name the value in play (trust, safety, hope, status), and mark it positive or negative at the top and again at the bottom. If the two marks are identical, that scene is delivering information in a scene’s clothing.',
     },
     {
       t: 'table',
@@ -86,7 +86,7 @@ export const post: Post = {
     { t: 'h2', text: 'Why generative production makes this worse' },
     {
       t: 'p',
-      text: 'Two mechanisms, both structural rather than cultural.',
+      text: 'Two mechanisms, and both of them are structural.',
     },
     {
       t: 'p',
@@ -94,14 +94,14 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The second is that the tools are best at exactly the material that requires no structure. Montage is native to the constraint — short clips joined by cuts — so the path of least resistance produces a piece with no scenes in it. A film assembled entirely from montage cannot fail the value-shift test, because there are no scenes to test.',
+      text: 'The second is that the tools are best at exactly the material that requires no structure. Montage is native to the constraint (short clips joined by cuts), so the path of least resistance produces a piece with no scenes in it. A film assembled entirely from montage cannot fail the value-shift test, because there are no scenes to test.',
     },
     { t: 'h2', text: 'The order to work in' },
     {
       t: 'ol',
       items: [
         'Write the question. One sentence, beginning with "will".',
-        'Write the beats. One line each, stating what changes rather than what happens. Six to nine for a short film.',
+        'Write the beats. One line each, stating what changes. Six to nine for a short film.',
         'Test the beats against the five questions above. Fix at the beat level, where it costs a sentence.',
         'Only then write the shot list, which is derived from the beats and therefore decides the budget.',
         'Only then generate anything.',
@@ -137,7 +137,7 @@ export const post: Post = {
     },
     {
       q: 'What does it mean for a scene to have no value shift?',
-      a: 'That the thing at stake — trust, safety, hope, status — is worth the same at the end of the scene as at the start. Such a scene is delivering information rather than dramatising anything, and it will feel fine in isolation while adding nothing to the piece.',
+      a: 'That the thing at stake (trust, safety, hope, status) is worth the same at the end of the scene as at the start. Such a scene is delivering information and dramatising nothing, and it will feel fine in isolation while adding nothing to the piece.',
     },
   ],
   terms: ['dramatic-question', 'value-shift', 'reversal', 'scene-objective', 'want-vs-need', 'beat-sheet'],

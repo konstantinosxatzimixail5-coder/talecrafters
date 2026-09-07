@@ -38,7 +38,7 @@ export const post: Post = {
     { t: 'h2', text: 'What a master plate is' },
     {
       t: 'p',
-      text: 'A master plate is one frame. It shows the product, correct in shape, correct in label, correct in proportion, lit plainly and shot flat. It is not a hero image. It is deliberately boring, because its job is to be a reference rather than an advert. Every subsequent render in the campaign is generated from it, and tested against it.',
+      text: 'A master plate is one frame. It shows the product, correct in shape, correct in label, correct in proportion, lit plainly and shot flat. It is not a hero image. It is deliberately boring, because its job is to be a reference. An advert is what comes later. Every subsequent render in the campaign is generated from it, and tested against it.',
     },
     {
       t: 'p',
@@ -52,7 +52,7 @@ export const post: Post = {
         'Shoot or generate the plate flat. Even light, no rim, no atmosphere, no shallow depth of field. Every one of those hides detail you will later need to check against.',
         'Verify the type at full resolution. Every printed word, every certification mark, every unit of measure. This is where a plate either becomes useful or becomes an expensive lie that propagates into forty shots.',
         'Record the geometry. Cap-to-shoulder ratio, label height as a fraction of body height, the silhouette. Written down, not remembered.',
-        'Freeze it, name it, version it. The file has a version tag and a date. When the packaging changes in nine months, you cut a new plate rather than editing this one.',
+        'Freeze it, name it, version it. The file has a version tag and a date. When the packaging changes in nine months, you cut a new plate and leave this one alone.',
       ],
     },
     {
@@ -63,7 +63,7 @@ export const post: Post = {
     { t: 'h2', text: 'What the plate unlocks: the silhouette overlay' },
     {
       t: 'p',
-      text: 'The plate’s real value shows up at the gate. Once a plate exists, every campaign render can be tested rather than judged.',
+      text: 'The plate’s real value shows up at the gate. Once a plate exists, every campaign render can be tested.',
     },
     {
       t: 'p',
@@ -71,7 +71,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Forty per cent is not magic, it is just the opacity at which a human eye reliably catches a two per cent shift in a shoulder curve. The discipline is the point: a mechanical test with a pass and a fail, applied to every frame, rather than an art director squinting at shot thirty-one at six in the evening.',
+      text: 'Forty per cent is not magic, it is just the opacity at which a human eye reliably catches a two per cent shift in a shoulder curve. The discipline is the point: a mechanical test with a pass and a fail, applied to every frame, in place of an art director squinting at shot thirty-one at six in the evening.',
     },
     { t: 'h2', text: 'The four gates a plate makes possible' },
     {
@@ -125,7 +125,7 @@ export const post: Post = {
     },
     {
       q: 'What is the silhouette overlay test?',
-      a: 'Overlay the finished render on the master plate at forty per cent opacity, scaled to match, and inspect the outline. Any visible drift in the product’s silhouette fails the frame, which then returns to the plate to be regenerated rather than going to a retoucher.',
+      a: 'Overlay the finished render on the master plate at forty per cent opacity, scaled to match, and inspect the outline. Any visible drift in the product’s silhouette fails the frame, which then returns to the plate to be regenerated. No retoucher touches it.',
     },
     {
       q: 'Why not just retouch a frame that is nearly right?',

@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'How We Keep a Product Consistent Across 100 AI-Generated Shots',
   metaTitle: 'How to Keep a Product Consistent Across 100 AI-Generated Shots',
   metaDescription:
-    'The working method behind a hundred-shot generative product set: one master plate, a written set specification, four mechanical gates and a rule about never patching. With the acceptance rates we actually see.',
+    'The working method behind a hundred-shot generative product set: one master plate, a written set specification, four mechanical gates and a rule about never patching. With the acceptance rates we see in the logs.',
   excerpt:
     'Shot one is easy. Shot one hundred is the job. This is the method, including the numbers we plan against.',
   published: '2026-08-17',
@@ -25,7 +25,7 @@ export const post: Post = {
   imageAlt:
     'A contact sheet of one hundred product frames, each aligned to the same silhouette, a handful marked with a red rejection cross.',
   standfirst:
-    'Consistency across a large generative set is not a prompting problem. It is a lock, a written specification, and four tests applied mechanically to every frame. Plan a hundred-shot set as a three-hundred-render job and budget against that ratio rather than hoping for a better one. The figures below are planning assumptions to start from, not published benchmarks: log your own and replace them after two batches.',
+    'Consistency across a large generative set is not a prompting problem. It is a lock, a written specification, and four tests applied mechanically to every frame. Plan a hundred-shot set as a three-hundred-render job and budget against that ratio. Hoping for a better one is not a plan. The figures below are planning assumptions to start from, not published benchmarks: log your own and replace them after two batches.',
   body: [
     {
       t: 'p',
@@ -38,7 +38,7 @@ export const post: Post = {
     { t: 'h2', text: '1. Lock the product before the set exists' },
     {
       t: 'p',
-      text: 'The first artefact is a master plate: one clean, flatly lit frame of the product, verified against the packaging artwork at full resolution and then frozen. Nothing gets generated until that file has a version tag on it. Every campaign frame afterwards is generated from the plate rather than from a prompt describing the product.',
+      text: 'The first artefact is a master plate: one clean, flatly lit frame of the product, verified against the packaging artwork at full resolution and then frozen. Nothing gets generated until that file has a version tag on it. Every campaign frame afterwards is generated from the plate, never from a prompt describing the product.',
     },
     {
       t: 'p',
@@ -76,7 +76,7 @@ export const post: Post = {
     { t: 'h2', text: '4. Gate every frame, mechanically' },
     {
       t: 'p',
-      text: 'Four tests, applied to every frame, with a pass and a fail rather than a discussion.',
+      text: 'Four tests, applied to every frame, with a pass and a fail, and no discussion.',
     },
     {
       t: 'table',
@@ -92,7 +92,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Those numbers are the reason a hundred-shot set is a three-hundred-render job. They are also why we agree a credit ceiling per asset before a batch starts: when a shot has consumed its ceiling, the run halts and asks for a decision rather than quietly spending its way to a number nobody approved.',
+      text: 'Those numbers are the reason a hundred-shot set is a three-hundred-render job. They are also why we agree a credit ceiling per asset before a batch starts: when a shot has consumed its ceiling, the run halts and asks for a decision before it spends its way to a number nobody approved.',
     },
     { t: 'h2', text: '5. Never patch. Return to the plate.' },
     {
@@ -115,7 +115,7 @@ export const post: Post = {
     { t: 'h2', text: 'What this costs, honestly' },
     {
       t: 'p',
-      text: 'Three hundred renders to ship a hundred assets means your true cost per accepted asset is three times the per-render price, before any human time. Add the operator hours, the plate build and the gating, and a set like this lands where it lands. The number is not the point. The point is that it is knowable in advance, and a studio that has run this method before can tell you the ratio at quote time rather than discovering it at invoice time.',
+      text: 'Three hundred renders to ship a hundred assets means your true cost per accepted asset is three times the per-render price, before any human time. Add the operator hours, the plate build and the gating, and a set like this lands where it lands. The number is not the point. The point is that it is knowable in advance, and a studio that has run this method before can tell you the ratio at quote time, long before the invoice.',
     },
     {
       t: 'cta',
@@ -127,10 +127,10 @@ export const post: Post = {
   faqs: [
     {
       q: 'How do you keep a product looking the same across many AI-generated images?',
-      a: 'Lock the product as a master plate before generating anything, generate every frame from that plate rather than from a text description, write the set specification once, and test every frame with a silhouette overlay against the plate. Frames that drift are regenerated, never retouched.',
+      a: 'Lock the product as a master plate before generating anything, generate every frame from that plate and never from a text description, write the set specification once, and test every frame with a silhouette overlay against the plate. Frames that drift are regenerated, never retouched.',
     },
     {
-      q: 'How many renders does a hundred-shot generative set actually take?',
+      q: 'How many renders does a hundred-shot generative set take?',
       a: 'Plan for around three hundred, though it depends almost entirely on how much legible printed type the shots contain. Type is where acceptance rates collapse, so a set full of readable packaging behaves very differently from one without. Treat any published range as a starting assumption and replace it with your own logged figures after two batches.',
     },
     {
@@ -139,7 +139,7 @@ export const post: Post = {
     },
     {
       q: 'What is the contact sheet review for?',
-      a: 'It catches drift that per-frame testing cannot. At thumbnail scale the eye compares images rather than reading them, so a frame that passed every individual gate but does not belong to the set becomes obvious immediately.',
+      a: 'It catches drift that per-frame testing cannot. At thumbnail scale the eye compares images instead of reading them, so a frame that passed every individual gate but does not belong to the set becomes obvious immediately.',
     },
     {
       q: 'Should hard shots or easy shots be rendered first?',

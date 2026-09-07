@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'There is no blanket UK rule requiring every AI-assisted ad to be labelled. There is a misleadingness test, a set of platform policies that are stricter than the law, and an EU regulation that now applies to a lot of UK advertisers anyway.',
   excerpt:
-    'What the CAP Code actually requires, where the platforms go further, and the practical rule we apply on every asset we ship.',
+    'What the CAP Code requires, where the platforms go further, and the practical rule we apply on every asset we ship.',
   published: '2026-08-27',
   author: 'Konstantinos Chatzimichail',
   section: 'Compliance',
@@ -32,7 +32,7 @@ export const post: Post = {
       t: 'p',
       text: 'The question we get asked most often, usually two days before a campaign goes live, is whether an AI-produced ad has to say so. The answer is not the one either camp wants. There is no blanket requirement in the UK Advertising Codes to disclose every AI-assisted asset. There is also no safe harbour for staying silent.',
     },
-    { t: 'h2', text: 'What the CAP Code actually says' },
+    { t: 'h2', text: 'What the CAP Code says' },
     {
       t: 'p',
       text: 'The UK Advertising Codes contain no AI-specific rule, and as of late 2026 there is no sign of one coming. The Committee of Advertising Practice has been consistent that the Code is media-neutral and applies regardless of how content was made, which means the operative provision is the general prohibition on misleading by inaccuracy, ambiguity, exaggeration or omission.',
@@ -43,7 +43,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The ASA set this out again in June 2026, in guidance aimed squarely at deepfakes and automated campaigns. Four points, none of them surprising and all of them worth having in writing: the Code is media-neutral and there is no exception for generated content; deepfakes get no free pass on misleading claims or on endorsements; AI bias is a compliance problem rather than only a technical one, because a biased output can carry a harmful stereotype into an advert; and using an automated tool does not move responsibility away from the advertiser.',
+      text: 'The ASA set this out again in June 2026, in guidance aimed squarely at deepfakes and automated campaigns. Four points, none of them surprising and all of them worth having in writing: the Code is media-neutral and there is no exception for generated content; deepfakes get no free pass on misleading claims or on endorsements; AI bias is a compliance problem as well as a technical one, because a biased output can carry a harmful stereotype into an advert; and using an automated tool does not move responsibility away from the advertiser.',
     },
     {
       t: 'p',
@@ -71,15 +71,15 @@ export const post: Post = {
     { t: 'h2', text: 'The platforms are stricter than the regulator' },
     {
       t: 'p',
-      text: 'This is the part that catches teams out. The ASA sets a misleadingness standard. The platforms set labelling policies, and those policies are contractual rather than legal, which means they are enforced by demonetisation and reach suppression rather than by a ruling six months later.',
+      text: 'This is the part that catches teams out. The ASA sets a misleadingness standard. The platforms set labelling policies, and those policies are contractual, not legal, which means they are enforced by demonetisation and reach suppression, months before any ruling arrives.',
     },
     {
       t: 'p',
-      text: 'Meta and TikTok both operate AI-content labelling regimes with a self-declaration requirement plus automated detection, and both reserve the right to apply a label you did not choose. Getting labelled by the platform after the fact is worse than labelling yourself: it looks like a correction rather than a disclosure, and it happens after the ad has already been served.',
+      text: 'Meta and TikTok both operate AI-content labelling regimes with a self-declaration requirement plus automated detection, and both reserve the right to apply a label you did not choose. Getting labelled by the platform after the fact is worse than labelling yourself: it looks like a correction, never a disclosure, and it happens after the ad has already been served.',
     },
     {
       t: 'p',
-      text: 'So the operative compliance surface is the stricter of the two, per placement, checked at brief stage rather than at delivery.',
+      text: 'So the operative compliance surface is the stricter of the two, per placement, checked at brief stage.',
     },
     { t: 'h2', text: 'The EU AI Act now applies to a lot of UK advertisers' },
     {
@@ -88,13 +88,13 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'A UK advertiser is inside this the moment the campaign is served to people in the EU, which for most paid social is the default rather than the exception. There is a narrow carve-out for evidently artistic, creative, satirical or fictional work disclosed appropriately, and one for AI-generated text that has been through human editorial review with a named person holding editorial responsibility. Neither carve-out helps a product ad. Penalties run to fifteen million euro or three per cent of worldwide annual turnover.',
+      text: 'A UK advertiser is inside this the moment the campaign is served to people in the EU, which for most paid social is the default. There is a narrow carve-out for evidently artistic, creative, satirical or fictional work disclosed appropriately, and one for AI-generated text that has been through human editorial review with a named person holding editorial responsibility. Neither carve-out helps a product ad. Penalties run to fifteen million euro or three per cent of worldwide annual turnover.',
     },
     {
       t: 'p',
       text: 'Read that alongside the UK position and the practical conclusion is straightforward: for anything running across both markets, the EU standard is the one that determines your process, because it is the specific one.',
     },
-    { t: 'h2', text: 'What we actually do' },
+    { t: 'h2', text: 'What we do about it' },
     {
       t: 'p',
       text: 'Our rule predates the regulation and has not needed changing.',
@@ -102,7 +102,7 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'Disclose to the stricter of platform policy and client legal, decided at brief stage and written into the brief rather than discovered at delivery.',
+        'Disclose to the stricter of platform policy and client legal, decided at brief stage and written into the brief, so nobody discovers it at delivery.',
         'Put the disclosure on the asset, not only in the metadata. A metadata flag protects you with the platform. An on-asset label protects you with the audience, and the audience is the one who can decide you were dishonest.',
         'Attach provenance metadata as well, because it costs nothing and it is what a platform’s detection reads.',
         'Never let an invented certification, award, ingredient or percentage survive a gate. This one is not a disclosure question. A frame containing a fabricated claim is killed, and no disclosure rescues it.',
@@ -140,7 +140,7 @@ export const post: Post = {
     },
     {
       q: 'Are platform AI labelling rules stricter than the law?',
-      a: 'Generally yes. Meta and TikTok operate self-declaration plus automated detection and will apply a label you did not choose. That is enforced through reach suppression and demonetisation rather than a ruling months later, which makes it the more immediate constraint.',
+      a: 'Generally yes. Meta and TikTok operate self-declaration plus automated detection and will apply a label you did not choose. That is enforced through reach suppression and demonetisation, months before any ruling, which makes it the more immediate constraint.',
     },
     {
       q: 'Where should an AI disclosure appear on a video ad?',

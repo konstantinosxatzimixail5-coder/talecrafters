@@ -47,7 +47,7 @@ export const post: Post = {
         'A wide with the palette in it. Tests colour and the way the model handles distance.',
         'A hand doing something. Tests the failure everybody sees.',
         'A moving camera on a static subject. Tests motion coherence without confounding it with performance.',
-        'A texture close-up. Tests the material vocabulary the brand look actually rests on.',
+        'A texture close-up. Tests the material vocabulary the brand look rests on.',
       ],
     },
     {
@@ -99,7 +99,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'What does not collapse: geometry, material behaviour, and the way faces are constructed. If the new model builds cheekbones differently, no grade will fix it, and the calibration set will tell you that on day one rather than on shot forty.',
+      text: 'What does not collapse: geometry, material behaviour, and the way faces are constructed. If the new model builds cheekbones differently, no grade will fix it, and the calibration set will tell you that on day one.',
     },
     {
       t: 'cta',
@@ -112,10 +112,10 @@ export const post: Post = {
       t: 'ul',
       items: [
         'Keep the calibration set as a permanent artefact. It costs six generations to maintain and it is the fastest evaluation you will ever run on a new model.',
-        'Write the lock file in production language rather than in model dialect. "Hard key from camera left, no fill, shadow side near black" survives; a phrasing trick tuned to one sampler does not.',
+        'Write the lock file in production language and never in model dialect. "Hard key from camera left, no fill, shadow side near black" survives; a phrasing trick tuned to one sampler does not.',
         'Store references as image assets in the project, not as prompt text describing them.',
         'Version the negative list per model, in the repository, so the two weeks of learning is not in somebody’s notes app.',
-        'Never accept a deliverable spec that requires the model to still exist. Frames, plates and project files — not seeds and settings.',
+        'Never accept a deliverable spec that requires the model to still exist. Frames, plates and project files. Not seeds and settings.',
       ],
     },
   ],
@@ -130,7 +130,7 @@ export const post: Post = {
     },
     {
       q: 'What should you do if a model is deprecated mid-campaign?',
-      a: 'Usually re-run everything on the new model. A sequence that is nearly consistent reads worse than one that is consistently different. The middle option — re-running only the shots adjacent to new material and grading the rest towards them — works only if you have a calibration set to grade against.',
+      a: 'Usually re-run everything on the new model. A sequence that is nearly consistent reads worse than one that is consistently different. The middle option (re-running only the shots adjacent to new material and grading the rest towards them) works only if you have a calibration set to grade against.',
     },
     {
       q: 'Can colour grading fix the difference between two AI video models?',

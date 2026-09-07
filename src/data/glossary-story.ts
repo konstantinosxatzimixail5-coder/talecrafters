@@ -28,7 +28,7 @@ export const storyTerms: Term[] = [
     body: [
       'Act one establishes who wants what and why they cannot simply have it, and ends when they commit to going after it. Act two is the pursuit, and its defining property is that it is not a straight line: the tactics that should work do not, and the cost rises. Act three is the confrontation and the answer. Roughly a quarter, a half, a quarter, though the proportions matter far less than the transitions between them.',
       'The reason it survives is not tradition, it is that it maps onto how attention works. An audience will tolerate a great deal of middle if they know what question the middle is delaying the answer to. Remove the question and act two becomes a sequence of events, which is the most common structural failure in short-form and in corporate video alike.',
-      'It scales down. A thirty-second advert has three acts: the situation, the complication, the resolution. What changes at short length is not the shape but the tolerance — you have one beat per act, so each has to do its whole job in a single move.',
+      'It scales down. A thirty-second advert has three acts: the situation, the complication, the resolution. What changes at short length is not the shape but the tolerance. You have one beat per act, so each has to do its whole job in a single move.',
     ],
     qa: [
       {
@@ -37,7 +37,7 @@ export const storyTerms: Term[] = [
       },
       {
         q: 'Does three-act structure work for a 30-second ad?',
-        a: 'Yes, and the proportions compress while the shape holds. Situation, complication, resolution — one beat each. The failure at that length is usually a missing complication, which leaves a description of a product where a story about one should be.',
+        a: 'Yes, and the proportions compress while the shape holds. Situation, complication, resolution. One beat each. The failure at that length is usually a missing complication, which leaves a description of a product where a story about one should be.',
       },
       {
         q: 'Is three-act structure the only structure?',
@@ -51,10 +51,10 @@ export const storyTerms: Term[] = [
     term: 'Freytag’s Pyramid',
     aka: ['dramatic arc', 'five-act structure'],
     short:
-      'A five-part model of dramatic shape — exposition, rising action, climax, falling action, catastrophe or resolution — drawn as a triangle with the climax at the apex.',
+      'A five-part model of dramatic shape (exposition, rising action, climax, falling action, catastrophe or resolution), drawn as a triangle with the climax at the apex.',
     tags: ['story'],
     body: [
-      'Gustav Freytag derived it from Greek and Shakespearean tragedy in the 1860s, and the shape is a triangle for a reason: it assumes a story that builds to a single peak and then descends. That descent — the falling action — is the part modern structure mostly deleted, which is why the pyramid reads as lopsided against a contemporary film.',
+      'Gustav Freytag derived it from Greek and Shakespearean tragedy in the 1860s, and the shape is a triangle for a reason: it assumes a story that builds to a single peak and then descends. That descent (the falling action) is the part modern structure mostly deleted, which is why the pyramid reads as lopsided against a contemporary film.',
       'It remains the most useful diagram for one specific job: showing a client where the tension in a piece currently sits. Plot a corporate video against it and the usual finding is a long exposition, a climax in the last eight seconds, and no rising action at all. That is a diagnosis you can act on, which is more than "it feels flat" gives you.',
       'Do not use it as a template. As a description of tragedy it is accurate; as a set of instructions it produces stories that peak once and then explain themselves for a third of their runtime.',
     ],
@@ -102,7 +102,7 @@ export const storyTerms: Term[] = [
       'A cyclical story pattern in which a protagonist leaves the ordinary world, is tested in an unfamiliar one, and returns changed and carrying something.',
     tags: ['story'],
     body: [
-      'Joseph Campbell described it as a comparative pattern across myth; the screenwriting versions that followed turned it into a stage list — the call, the refusal, the mentor, the threshold, the ordeal, the reward, the return. Used as description it is illuminating. Used as a checklist it is the single most reliable way to produce a story that feels vaguely familiar and specifically dead.',
+      'Joseph Campbell described it as a comparative pattern across myth; the screenwriting versions that followed turned it into a stage list. The call, the refusal, the mentor, the threshold, the ordeal, the reward, the return. Used as description it is illuminating. Used as a checklist it is the single most reliable way to produce a story that feels vaguely familiar and specifically dead.',
       'The part worth keeping is the return. The journey structure is the only common model that insists the protagonist comes back to where they started and finds it changed because they are. That is what makes it useful for founder stories and for brand origin films, where the audience already knows how it ends and the interest has to come from the cost.',
       'The part worth dropping is the stage count. A twelve-stage structure inside a ninety-second film gives each stage seven seconds, which is not a stage, it is a caption.',
     ],
@@ -113,7 +113,7 @@ export const storyTerms: Term[] = [
       },
       {
         q: 'Is the hero’s journey overused?',
-        a: 'As a template, yes, and audiences recognise its beats faster than they used to. As a diagnostic — asking what the ordeal is and what is brought back — it still finds the hole in a story quickly.',
+        a: 'As a template, yes, and audiences recognise its beats faster than they used to. As a diagnostic (asking what the ordeal is and what is brought back), it still finds the hole in a story quickly.',
       },
     ],
     related: ['story-circle', 'character-arc', 'narrative-arc', 'three-act-structure'],
@@ -126,7 +126,7 @@ export const storyTerms: Term[] = [
       'An eight-step compression of the journey structure drawn as a circle: a character in comfort wants something, enters an unfamiliar situation, adapts, gets what they wanted, pays for it, and returns changed.',
     tags: ['story'],
     body: [
-      'The eight steps run: you, need, go, search, find, take, return, change. Its advantage over longer models is that it fits on one line and can be checked against a short piece in about a minute. Its second advantage is that it forces the sixth step — the price — which is exactly the step corporate storytelling deletes.',
+      'The eight steps run: you, need, go, search, find, take, return, change. Its advantage over longer models is that it fits on one line and can be checked against a short piece in about a minute. Its second advantage is that it forces the sixth step (the price), which is exactly the step corporate storytelling deletes.',
       'The circle is also the fastest way to test a two-minute film. Write the eight words down the side of a page, put the timecode of each next to it, and the gap in the list is the structural problem. Two steps in the first twenty seconds and six crammed into the last ten is a diagnosis, not an opinion.',
       'It is a compression of the monomyth, so use whichever gets you to the missing beat faster. Neither is a source of story; both are ways of finding out what is absent.',
     ],
@@ -157,7 +157,7 @@ export const storyTerms: Term[] = [
     qa: [
       {
         q: 'What is the difference between a beat sheet and a synopsis?',
-        a: 'A synopsis says what happens. A beat sheet says what changes at each step — the want, the obstacle, and the state at the end of the beat. Only the second can be tested for structural problems.',
+        a: 'A synopsis says what happens. A beat sheet says what changes at each step. The want, the obstacle, and the state at the end of the beat. Only the second can be tested for structural problems.',
       },
       {
         q: 'How many beats should a short film have?',
@@ -176,7 +176,7 @@ export const storyTerms: Term[] = [
     body: [
       'A beat is defined by its turn, not its length. Two lines of dialogue in which somebody concedes something is a beat. Two minutes of beautifully shot walking in which nothing shifts is not a beat, it is footage. The test is whether you could state what changed in a short sentence.',
       'Beats are the resolution at which structure can be fixed. Notes at the level of the whole piece ("it drags") are unactionable; notes at the level of a beat ("nothing changes between the sixth and the eighth") point at the two things to cut. Every useful editorial conversation eventually descends to this level.',
-      'In performance, the same word means a pause — a held moment before a line. The two senses are related: the pause exists to let the change land.',
+      'In performance, the same word means a pause. A held moment before a line. The two senses are related: the pause exists to let the change land.',
     ],
     qa: [
       {
@@ -198,7 +198,7 @@ export const storyTerms: Term[] = [
       'The event that upsets the balance of a character’s ordinary life and makes the rest of the story necessary.',
     tags: ['story'],
     body: [
-      'It has one job: to make going back impossible. A phone call, an offer, a death, a letter — the content matters less than the fact that after it, doing nothing is itself a decision with consequences. If the protagonist could reasonably shrug and continue as before, it is an event and not an inciting incident.',
+      'It has one job: to make going back impossible. A phone call, an offer, a death, a letter. The content matters less than the fact that after it, doing nothing is itself a decision with consequences. If the protagonist could reasonably shrug and continue as before, it is an event and not an inciting incident.',
       'Its position is the most common structural error in commercial work. Placed late, the piece opens with a long establishing section that the audience has no reason to care about, because nothing has told them what they are watching for. In short-form, it usually needs to be in the first few seconds, and often in the first frame.',
       'The related failure is having two. If something disturbs the balance and then a second, larger thing disturbs it again, the first was a preamble and the piece would be better starting at the second.',
     ],
@@ -250,7 +250,7 @@ export const storyTerms: Term[] = [
       'The turn at the centre of a story where the protagonist stops reacting and starts acting, usually triggered by information that reframes everything before it.',
     tags: ['story'],
     body: [
-      'The midpoint exists to solve a specific problem: the middle of a story is the part most likely to become a sequence of obstacles with no shape. Putting a genuine reversal at the centre splits act two into two halves that behave differently — reactive before, active after — which gives the middle a direction.',
+      'The midpoint exists to solve a specific problem: the middle of a story is the part most likely to become a sequence of obstacles with no shape. Putting a genuine reversal at the centre splits act two into two halves that behave differently (reactive before, active after), which gives the middle a direction.',
       'It usually takes one of two forms. A false victory, where the protagonist appears to get what they wanted and it turns out to cost more than it is worth. Or a false defeat, where they lose and the loss reveals what the real problem was. Both convert a want into a need, which is why the midpoint is where character work usually happens.',
       'In a short piece the midpoint is often the only turn there is room for, which makes it the most valuable thirty seconds to get right.',
     ],
@@ -275,13 +275,13 @@ export const storyTerms: Term[] = [
     tags: ['story'],
     body: [
       'The climax is not the biggest scene, it is the decisive one. Spectacle is frequently placed there and frequently is not it: if the outcome would be the same without the protagonist’s choice, the explosion is a set piece and the actual climax is somewhere else, probably a conversation.',
-      'It has to be the obligatory scene — the one the audience has been promised by everything preceding it. Denying it is possible but expensive; the audience will accept a different answer to the question, and will not accept the question being dropped.',
+      'It has to be the obligatory scene. The one the audience has been promised by everything preceding it. Denying it is possible but expensive; the audience will accept a different answer to the question, and will not accept the question being dropped.',
       'The most common commercial failure is a climax that resolves an external problem while the internal one is left untouched, which produces the ending that is technically complete and emotionally weightless.',
     ],
     qa: [
       {
         q: 'What is the climax of a story?',
-        a: 'The scene where the dramatic question is answered by a decision the protagonist makes. Not necessarily the largest scene — the decisive one.',
+        a: 'The scene where the dramatic question is answered by a decision the protagonist makes. Not necessarily the largest scene. The decisive one.',
       },
       {
         q: 'How do you know if your climax is in the right place?',
@@ -343,7 +343,7 @@ export const storyTerms: Term[] = [
     term: 'Character Arc',
     aka: ['internal arc', 'transformation arc'],
     short:
-      'The change a character undergoes across a story — what they believed at the start, what the plot costs them, and what they believe at the end.',
+      'The change a character undergoes across a story. What they believed at the start, what the plot costs them, and what they believe at the end.',
     tags: ['story'],
     body: [
       'A character arc is not a mood chart. It is a belief that is tested, defended, and eventually either abandoned or paid for. The plot exists to apply pressure to that belief; when people say a story feels episodic, they usually mean the events are not touching anything the character holds.',
@@ -391,7 +391,7 @@ export const storyTerms: Term[] = [
     term: 'Protagonist',
     aka: ['main character', 'lead'],
     short:
-      'The character whose decisions drive the story and whose question the ending answers — not necessarily the most sympathetic one, or the one with the most screen time.',
+      'The character whose decisions drive the story and whose question the ending answers. Not necessarily the most sympathetic one, or the one with the most screen time.',
     tags: ['story'],
     body: [
       'The identifying test is agency, not attention. Ask whose choices change the outcome; if the answer is somebody other than the person you have been filming, you have a protagonist problem, and it is a common one in brand work where the customer is on screen and the company is making all the decisions.',
@@ -415,7 +415,7 @@ export const storyTerms: Term[] = [
     term: 'Antagonist',
     aka: ['antagonistic force', 'opposition'],
     short:
-      'Whatever stands between the protagonist and what they want — a person, an institution, a condition, or the protagonist themselves.',
+      'Whatever stands between the protagonist and what they want: a person, an institution, a condition, or the protagonist themselves.',
     tags: ['story'],
     body: [
       'The antagonist does not need to be a villain and frequently should not be. What it needs is to be as strong as the protagonist, because the strength of a story is set by the strength of its opposition. A weak antagonist produces a protagonist who looks capable and a story nobody worries about.',
@@ -442,7 +442,7 @@ export const storyTerms: Term[] = [
       'What the protagonist stands to lose, stated specifically enough that the audience can picture the loss.',
     tags: ['story'],
     body: [
-      'Stakes fail in one of two ways. They are absent, in which case the piece is pleasant and weightless. Or they are enormous and abstract — the fate of the world, the future of the industry — which is functionally the same as absent, because nobody can picture it. Specific and small beats vast and general in almost every case.',
+      'Stakes fail in one of two ways. They are absent, in which case the piece is pleasant and weightless. Or they are enormous and abstract (the fate of the world, the future of the industry), which is functionally the same as absent, because nobody can picture it. Specific and small beats vast and general in almost every case.',
       'The strongest stakes are things the audience has already been shown the value of. This is why setup matters so much: five seconds establishing that the workshop is the only thing he has left does more for the later scene than any amount of dialogue about how much it means to him.',
       'In commercial work the honest stakes are usually modest and that is fine. Someone will have to explain a missed deadline. Someone will lose the thing they were good at. Those land because they are recognisable, which is a property "transforming the industry" does not have.',
     ],
@@ -467,7 +467,7 @@ export const storyTerms: Term[] = [
     tags: ['story'],
     body: [
       'Conflict is not argument. Two people shouting can be entirely without conflict if neither wants anything from the other; two people politely agreeing can be full of it if each is trying to get something the other will not give. The presence of raised voices is one of the least reliable indicators there is.',
-      'It comes in the familiar three registers — against another person, against a circumstance, against oneself — and the useful observation is that a strong scene usually has at least two of them running at once. The character arguing with their sister is also arguing with their own decision.',
+      'It comes in the familiar three registers (against another person, against a circumstance, against oneself), and the useful observation is that a strong scene usually has at least two of them running at once. The character arguing with their sister is also arguing with their own decision.',
       'The reason conflict is non-negotiable is that it is what makes a scene readable as drama. Take a scene where somebody explains something to somebody who wants to hear it, add the smallest reluctance on either side, and the same information becomes watchable.',
     ],
     qa: [
@@ -511,11 +511,11 @@ export const storyTerms: Term[] = [
     term: 'Logline',
     aka: ['one-line pitch', 'story premise line'],
     short:
-      'One sentence naming the protagonist, their goal, the opposition and what is at risk — the test of whether a story exists yet.',
+      'One sentence naming the protagonist, their goal, the opposition and what is at risk. The test of whether a story exists yet.',
     tags: ['story', 'strategy'],
     body: [
       'The standard shape: when [inciting incident], a [flawed protagonist] must [goal] or [stakes]. The value is not in pitching, it is in diagnosis. A logline that cannot be written is almost always a story with no antagonist or no stakes, and finding that out in a sentence is cheaper than finding it out in a draft.',
-      'Two failures are common. Writing a premise instead of a logline — "a film about loneliness in cities" is a subject, not a story. And hiding the ending — a logline is not a trailer and coyness in it usually conceals not knowing.',
+      'Two failures are common. Writing a premise instead of a logline: "a film about loneliness in cities" is a subject, not a story. And hiding the ending. A logline is not a trailer and coyness in it usually conceals not knowing.',
       'For commercial work the logline is also the alignment document. If the client and the studio can both sign the same sentence, most of the arguments later in the process do not happen.',
     ],
     qa: [
@@ -525,7 +525,7 @@ export const storyTerms: Term[] = [
       },
       {
         q: 'How long should a logline be?',
-        a: 'One sentence, usually under forty words. Length is not the point — the point is that all four elements are present and specific.',
+        a: 'One sentence, usually under forty words. Length is not the point. The point is that all four elements are present and specific.',
       },
     ],
     related: ['premise', 'dramatic-question', 'stakes', 'controlling-idea'],
@@ -587,7 +587,7 @@ export const storyTerms: Term[] = [
     tags: ['story'],
     body: [
       'Subtext is not a technique applied to dialogue. It is a structural consequence: if a character wants something they cannot ask for directly, everything they say is about it and none of it says it. Get the want and the prohibition right and subtext appears on its own. Write the want with no prohibition and no amount of oblique phrasing will produce it.',
-      'The most reliable generator in a scene is a rule about what cannot be said — professional, social, or personal. Two colleagues who cannot mention the redundancy list, two friends who cannot mention the money, a couple who cannot mention the appointment. The scene can then be about anything at all and will still be about that.',
+      'The most reliable generator in a scene is a rule about what cannot be said. Professional, social, or personal. Two colleagues who cannot mention the redundancy list, two friends who cannot mention the money, a couple who cannot mention the appointment. The scene can then be about anything at all and will still be about that.',
       'The audience does not need to decode subtext consciously to feel it. What they register is that the scene is denser than its surface, which is the difference between dialogue that reads as written and dialogue that reads as overheard.',
     ],
     qa: [
@@ -634,8 +634,8 @@ export const storyTerms: Term[] = [
       'The instruction to give an audience evidence they can interpret instead of a conclusion they must accept.',
     tags: ['story'],
     body: [
-      'The principle is about who does the work. Telling hands over a verdict — he was exhausted — and asks for agreement. Showing supplies the evidence and lets the audience arrive at the verdict themselves, which they trust far more because they reached it. The engagement comes from the small act of inference, not from the detail.',
-      'It is over-applied. Some information is genuinely admin — a date, a location, who somebody is — and dramatising it wastes a scene on a caption’s job. The rule is worth following exactly where an audience’s belief matters and worth ignoring where only their comprehension does.',
+      'The principle is about who does the work. Telling hands over a verdict (he was exhausted), and asks for agreement. Showing supplies the evidence and lets the audience arrive at the verdict themselves, which they trust far more because they reached it. The engagement comes from the small act of inference, not from the detail.',
+      'It is over-applied. Some information is genuinely admin (a date, a location, who somebody is), and dramatising it wastes a scene on a caption’s job. The rule is worth following exactly where an audience’s belief matters and worth ignoring where only their comprehension does.',
       'In visual work the failure has a distinctive shape: a voiceover stating what the picture is already showing. Two channels carrying identical information is one of them wasted, and the one you can hear is usually the one to cut.',
     ],
     qa: [
@@ -645,7 +645,7 @@ export const storyTerms: Term[] = [
       },
       {
         q: 'When should you tell instead of showing?',
-        a: 'When the information is administrative — a date, a place, a name — and only comprehension is at stake. Dramatising a caption wastes a scene.',
+        a: 'When the information is administrative (a date, a place, a name), and only comprehension is at stake. Dramatising a caption wastes a scene.',
       },
     ],
     related: ['exposition', 'subtext', 'foreshadowing', 'ai-slop'],
@@ -659,7 +659,7 @@ export const storyTerms: Term[] = [
     tags: ['story'],
     body: [
       'Foreshadowing solves a specific problem: an ending that arrives with a new element in it reads as a cheat, however satisfying the element is. Planting the element early costs a few seconds and converts a contrivance into an inevitability. It is the cheapest structural repair available.',
-      'The craft is in the weight. Planted too heavily, the audience sees the ending coming and spends the middle waiting instead of watching. Planted too lightly, nobody registers it and the payoff lands as a coincidence anyway. The usual solution is to plant it while the audience’s attention is on something else — a fact mentioned during an argument about something more urgent.',
+      'The craft is in the weight. Planted too heavily, the audience sees the ending coming and spends the middle waiting instead of watching. Planted too lightly, nobody registers it and the payoff lands as a coincidence anyway. The usual solution is to plant it while the audience’s attention is on something else. A fact mentioned during an argument about something more urgent.',
       'The distinction from a red herring is intent. A red herring is a plant that deliberately points at the wrong conclusion, and it only works if the real plant is also there.',
     ],
     qa: [
@@ -682,7 +682,7 @@ export const storyTerms: Term[] = [
       'The principle that a conspicuous element introduced in a story must be used, and that anything which is not used should be removed.',
     tags: ['story'],
     body: [
-      'The original note was about economy: if a rifle hangs on the wall in act one it must be fired by act three, and if it is never fired it should not be hanging there. The instruction is to cut, not to plant. That reading is the more useful one, because unused conspicuous elements do real damage — an audience allocates attention to them and the attention is never repaid.',
+      'The original note was about economy: if a rifle hangs on the wall in act one it must be fired by act three, and if it is never fired it should not be hanging there. The instruction is to cut, not to plant. That reading is the more useful one, because unused conspicuous elements do real damage. An audience allocates attention to them and the attention is never repaid.',
       'It applies more strictly than people expect in short forms. In a ninety-second film every object the camera dwells on is a promise. A held shot of a photograph that turns out to mean nothing costs you the audience’s next held shot too, because they have learned your emphasis is unreliable.',
       'The exception is texture. A world can contain things that are simply there, provided the piece has not pointed at them. The rule is about emphasis, not about inventory.',
     ],
@@ -693,7 +693,7 @@ export const storyTerms: Term[] = [
       },
       {
         q: 'Does every detail have to pay off?',
-        a: 'No. A world can contain incidental texture. The rule concerns things the piece has emphasised — a held shot, a named object — because emphasis is a promise and an unpaid promise costs you the audience’s attention next time.',
+        a: 'No. A world can contain incidental texture. The rule concerns things the piece has emphasised (a held shot, a named object), because emphasis is a promise and an unpaid promise costs you the audience’s attention next time.',
       },
     ],
     related: ['foreshadowing', 'setup-and-payoff', 'macguffin', 'pacing'],
@@ -754,7 +754,7 @@ export const storyTerms: Term[] = [
       'Beginning a story part-way through the action and supplying the context afterwards, so the audience is oriented by consequence.',
     tags: ['story', 'audience'],
     body: [
-      'It works because a question is a stronger opening than an explanation. Dropping an audience into a scene already in motion creates an immediate gap — who, why, what just happened — and the mild disorientation is not a cost, it is the mechanism. People will tolerate not understanding for far longer than they will tolerate not caring.',
+      'It works because a question is a stronger opening than an explanation. Dropping an audience into a scene already in motion creates an immediate gap (who, why, what just happened), and the mild disorientation is not a cost, it is the mechanism. People will tolerate not understanding for far longer than they will tolerate not caring.',
       'The technique has a debt attached. You have to pay the context back, and payments that arrive too late feel withheld while payments that arrive too early waste the opening. The usual rhythm is to resolve who and where quickly, and to hold why until it can do structural work.',
       'It is now close to mandatory in short-form video, where the first second decides everything. A piece that opens on a person introducing themselves has spent its most valuable moment on the least interesting information it contains.',
     ],
@@ -765,7 +765,7 @@ export const storyTerms: Term[] = [
       },
       {
         q: 'Is starting in the middle always better?',
-        a: 'Not always, but it is nearly always better than opening on introductions. The technique creates a debt — the context has to be paid back — so it fails when the answer arrives too late to matter or too early to have earned anything.',
+        a: 'Not always, but it is nearly always better than opening on introductions. The technique creates a debt (the context has to be paid back), so it fails when the answer arrives too late to matter or too early to have earned anything.',
       },
     ],
     related: ['cold-open', 'hook', 'exposition', 'open-loop'],
@@ -775,7 +775,7 @@ export const storyTerms: Term[] = [
     term: 'Reversal',
     aka: ['peripeteia', 'the turn'],
     short:
-      'A moment at which the situation inverts — an advantage becomes a liability, a win becomes a loss, an ally becomes an obstacle.',
+      'A moment at which the situation inverts: an advantage becomes a liability, a win becomes a loss, an ally becomes an obstacle.',
     tags: ['story'],
     body: [
       'A reversal is not a surprise. A surprise is new information; a reversal is a change of position using information already in play, which is why good reversals feel inevitable in retrospect and cheap ones feel like the writer changed their mind. The difference is whether the elements were on the table beforehand.',
@@ -785,7 +785,7 @@ export const storyTerms: Term[] = [
     qa: [
       {
         q: 'What is a reversal in a story?',
-        a: 'A moment where the situation inverts — the advantage becomes the liability, the victory becomes the cost. It works with elements already established, and never with new information.',
+        a: 'A moment where the situation inverts. The advantage becomes the liability, the victory becomes the cost. It works with elements already established, and never with new information.',
       },
       {
         q: 'What is the difference between a reversal and a twist?',
@@ -802,14 +802,14 @@ export const storyTerms: Term[] = [
       'The change in what something is worth between the start and the end of a scene, and the most reliable single test of whether a scene is doing anything.',
     tags: ['story'],
     body: [
-      'Every scene has a value in play — safety, trust, hope, status, freedom — and a functioning scene moves it, usually from positive to negative or the reverse. Write the value at the top of the scene with a plus or a minus, write it again at the bottom, and if the two are identical the scene is information delivery wearing a scene’s clothes.',
+      'Every scene has a value in play (safety, trust, hope, status, freedom), and a functioning scene moves it, usually from positive to negative or the reverse. Write the value at the top of the scene with a plus or a minus, write it again at the bottom, and if the two are identical the scene is information delivery wearing a scene’s clothes.',
       'It is a better test than "is it interesting" because it is answerable by somebody who did not write the piece. Notes given in these terms are actionable in a way that "it drags" never is: you can point at scene four, show that trust starts negative and ends negative, and the conversation moves to what should have changed.',
       'The shift does not have to be large. A scene where trust moves from slightly negative to badly negative is working. A scene where it starts and ends in exactly the same place, however well shot, is not.',
     ],
     qa: [
       {
         q: 'What is a value shift in a scene?',
-        a: 'The change in what a value — trust, safety, hope, status — is worth between the start and the end of the scene. A scene where the value does not move is delivering information and dramatising nothing.',
+        a: 'The change in what a value (trust, safety, hope, status) is worth between the start and the end of the scene. A scene where the value does not move is delivering information and dramatising nothing.',
       },
       {
         q: 'How do you test a scene for a value shift?',
@@ -850,7 +850,7 @@ export const storyTerms: Term[] = [
       'Any moment that redirects a story’s trajectory, of which act breaks and the midpoint are the largest examples.',
     tags: ['story'],
     body: [
-      'Turning points exist at every scale. A scene has them, a sequence has them, an act has them. What identifies one is that the pursuit after it is different from the pursuit before it — not harder, different. Escalation is not a turn; if the protagonist is doing the same thing against greater resistance, the story is getting louder and going nowhere.',
+      'Turning points exist at every scale. A scene has them, a sequence has them, an act has them. What identifies one is that the pursuit after it is different from the pursuit before it. Not harder, different. Escalation is not a turn; if the protagonist is doing the same thing against greater resistance, the story is getting louder and going nowhere.',
       'The practical use is in mapping. Marking the turns on a timeline shows the distribution immediately, and the two common pathologies are visible at a glance: everything bunched in the last quarter, or a long flat stretch in the second act with no turn in it at all.',
       'A turn needs a decision behind it to read as character. Something happening to the protagonist redirects the story; the protagonist choosing in response is what makes the redirection feel like theirs.',
     ],
@@ -899,7 +899,7 @@ export const storyTerms: Term[] = [
     tags: ['story'],
     body: [
       'A subplot that is merely a second plot is a structural liability: it takes time from the first and pays back nothing. A subplot that works is one where the theme is examined from an angle the protagonist cannot see, usually through a character who is making the opposite mistake or the same one further along.',
-      'The clearest test is intersection. If the subplot could be lifted out without changing the main story, it is a parallel piece. The two lines have to touch — ideally at the midpoint and again near the climax — or the audience is tracking two things for the price of one.',
+      'The clearest test is intersection. If the subplot could be lifted out without changing the main story, it is a parallel piece. The two lines have to touch (ideally at the midpoint and again near the climax), or the audience is tracking two things for the price of one.',
       'In short forms there is usually no room for one, and inserting a subplot into a two-minute film is the most common way to make it feel rushed. What short work uses instead is a single character who embodies the counter-position.',
     ],
     qa: [
@@ -957,7 +957,7 @@ export const storyTerms: Term[] = [
       },
       {
         q: 'Can you change point of view mid-story?',
-        a: 'Yes, if the change is structured and consistent. What damages a piece is the accidental switch — a single moment of information the point-of-view character could not have — because it quietly tells the audience the rules are not real.',
+        a: 'Yes, if the change is structured and consistent. What damages a piece is the accidental switch (a single moment of information the point-of-view character could not have), because it quietly tells the audience the rules are not real.',
       },
     ],
     related: ['dramatic-irony', 'protagonist', 'unreliable-narrator', 'exposition'],
@@ -994,7 +994,7 @@ export const storyTerms: Term[] = [
       'A sequence of shots that compresses time or accumulates meaning through juxtaposition, with no continuous action.',
     tags: ['story', 'post'],
     body: [
-      'Two distinct things share the word. The compression montage covers a passage of time — training, building, travelling — and is a convenience. The juxtaposition montage puts two unrelated images together so the audience produces a third meaning neither contains, which is the older and more interesting sense of the term.',
+      'Two distinct things share the word. The compression montage covers a passage of time (training, building, travelling), and is a convenience. The juxtaposition montage puts two unrelated images together so the audience produces a third meaning neither contains, which is the older and more interesting sense of the term.',
       'The compression version fails when it substitutes for a beat. If the work of a story is done inside a montage, the audience has been shown a summary of the most important part. It is worth asking, of every montage, whether it is covering time or avoiding a scene.',
       'It is disproportionately useful in generative production because it is native to the constraint: a montage is short clips joined by cuts, which is exactly what the tools produce well. That makes it a genuine strength and a trap, because a piece assembled entirely from montage has no scenes in it.',
     ],
@@ -1022,7 +1022,7 @@ export const storyTerms: Term[] = [
     body: [
       'A hook is not an introduction and not a summary. It is a mechanism that creates a reason to stay, and there are only a handful that reliably work: contradict something the audience believes, state a specific number, name a cost, withhold the subject of a sentence, or admit a failure. Everything else is a variation on one of those.',
       'The reason it dominates short-form is arithmetic. If eighty per cent of an audience leaves in the first two seconds, no improvement to the remainder of the piece can recover them, so the opening has a higher marginal value than the rest of the piece combined. That is unpleasant and it is true.',
-      'The failure mode worth naming is the hook that has nothing to do with the piece. It works once, costs the audience’s trust, and trains them to skip the next one — which is why hook quality should be measured by what happens on the following video, not on this one.',
+      'The failure mode worth naming is the hook that has nothing to do with the piece. It works once, costs the audience’s trust, and trains them to skip the next one, which is why hook quality should be measured by what happens on the following video, not on this one.',
     ],
     qa: [
       {
@@ -1049,7 +1049,7 @@ export const storyTerms: Term[] = [
     tags: ['audience'],
     body: [
       'The mechanism is the Zeigarnik effect: unfinished tasks occupy attention more than finished ones. Ask a question and do not answer it, and the audience is holding something. Answer everything as you go and each moment is complete, which is comfortable and is the reason well-made explanatory content is so easy to stop watching.',
-      'Loops stack. Open one in the first seconds, open a second before closing the first, and close them in a different order — this is the entire structural technique behind most long-form video that holds attention past the point where the subject alone would. The discipline is that every loop must close. Loops left open read as a piece that wasted your time.',
+      'Loops stack. Open one in the first seconds, open a second before closing the first, and close them in a different order. This is the entire structural technique behind most long-form video that holds attention past the point where the subject alone would. The discipline is that every loop must close. Loops left open read as a piece that wasted your time.',
       'The commercial version is the reason a testimonial should not begin with the result. Stating the outcome first closes the only loop the piece had.',
     ],
     qa: [
@@ -1103,7 +1103,7 @@ export const storyTerms: Term[] = [
     qa: [
       {
         q: 'What is a pattern interrupt in video?',
-        a: 'A deliberate break in the established rhythm — a shot size change, a location change, a silence, a graphic — placed where attention is predicted to drop.',
+        a: 'A deliberate break in the established rhythm (a shot size change, a location change, a silence, a graphic), placed where attention is predicted to drop.',
       },
       {
         q: 'How often should you use a pattern interrupt?',
@@ -1144,7 +1144,7 @@ export const storyTerms: Term[] = [
       'A scene placed before any titles, branding or setup, whose job is to establish a reason to stay before the piece formally begins.',
     tags: ['audience', 'story'],
     body: [
-      'Television invented it for the obvious commercial reason: the audience decides during the titles, so the titles cannot come first. The same logic now applies to almost every format, because every format has an equivalent of titles — the logo sting, the intro music, the "hi, I’m", the agenda slide — and all of them are decision points where people leave.',
+      'Television invented it for the obvious commercial reason: the audience decides during the titles, so the titles cannot come first. The same logic now applies to almost every format, because every format has an equivalent of titles (the logo sting, the intro music, the "hi, I’m", the agenda slide), and all of them are decision points where people leave.',
       'The strongest cold opens are not summaries or highlights. They are complete small units that raise a question the main piece answers, which is why the trailer-style montage opening is weaker than a single strange moment: a montage promises everything and specifies nothing.',
       'The corporate version is the branded intro animation, and it is worth stating plainly that it costs viewers. If it must exist, it belongs after the cold open, where the audience has a reason to sit through it.',
     ],
@@ -1199,7 +1199,7 @@ export const storyTerms: Term[] = [
     qa: [
       {
         q: 'What is a payoff?',
-        a: 'The moment an earlier promise — a setup, a loop, a hook, a question — is kept. Audiences judge a piece largely on the ratio of promises made to promises kept.',
+        a: 'The moment an earlier promise (a setup, a loop, a hook, a question) is kept. Audiences judge a piece largely on the ratio of promises made to promises kept.',
       },
       {
         q: 'Why do endings feel unsatisfying even when nothing is wrong?',
@@ -1216,7 +1216,7 @@ export const storyTerms: Term[] = [
       'The visual property of a piece that arrests a feed scroll before any of its content has been understood.',
     tags: ['audience', 'strategy'],
     body: [
-      'Stopping happens before comprehension. In the fraction of a second a thumb takes to pass, nobody has read a caption or parsed a scene — they have registered contrast, motion, a face, or an incongruity. So a scroll stopper is a compositional property, and treating it as a message is why so many well-written pieces are never seen.',
+      'Stopping happens before comprehension. In the fraction of a second a thumb takes to pass, nobody has read a caption or parsed a scene. They have registered contrast, motion, a face, or an incongruity. So a scroll stopper is a compositional property, and treating it as a message is why so many well-written pieces are never seen.',
       'What reliably works is narrower than it looks: a face at unusual scale, an object where it should not be, high contrast against the feed’s prevailing tone, motion in an unexpected direction, or legible text that is genuinely large. Most of these are decisions made at the frame level, not in the edit.',
       'It has a relationship to the hook and is not the same thing. The scroll stopper buys the first fraction of a second visually; the hook buys the next three verbally. A piece can win one and lose the other, and the retention graph will tell you which.',
     ],
@@ -1241,7 +1241,7 @@ export const storyTerms: Term[] = [
     tags: ['audience', 'strategy'],
     body: [
       'Transported audiences counter-argue less. That is the whole commercial case for narrative in marketing, and it is also the reason the technique carries an ethical weight that a bar chart does not: reduced scrutiny is a real effect and using it to carry a claim that would not survive scrutiny is a decision, not an accident.',
-      'The conditions are unglamorous. Concrete detail, a coherent world, a character whose situation is legible, and no interruption to the surface — a factual error, a visible seam, an obvious falsity all break it instantly and the audience returns to evaluating. This is a specific reason generative artefacts cost more than they appear to: a wrong hand is not an aesthetic problem, it is a transportation problem.',
+      'The conditions are unglamorous. Concrete detail, a coherent world, a character whose situation is legible, and no interruption to the surface. A factual error, a visible seam, an obvious falsity all break it instantly and the audience returns to evaluating. This is a specific reason generative artefacts cost more than they appear to: a wrong hand is not an aesthetic problem, it is a transportation problem.',
       'It also explains why testimonial advertising outperforms feature advertising while being less informative. The information is not what is doing the work.',
     ],
     qa: [
@@ -1299,7 +1299,7 @@ export const storyTerms: Term[] = [
       },
       {
         q: 'How do you fix slow pacing?',
-        a: 'List what changes every ten seconds. The stretches with nothing in them are the slow parts, and cutting them faster will not help — they need a change or they need to go.',
+        a: 'List what changes every ten seconds. The stretches with nothing in them are the slow parts, and cutting them faster will not help. They need a change or they need to go.',
       },
     ],
     related: ['narrative-arc', 'retention-curve', 'story-beat', 'montage'],
@@ -1333,17 +1333,17 @@ export const storyTerms: Term[] = [
     term: 'Story Spine',
     aka: ['the once-upon-a-time spine', 'eight-sentence spine'],
     short:
-      'A fill-in-the-blank sentence sequence — once upon a time, every day, until one day, because of that, until finally — that produces a causally connected story.',
+      'A fill-in-the-blank sentence sequence (once upon a time, every day, until one day, because of that, until finally) that produces a causally connected story.',
     tags: ['story', 'audience'],
     body: [
       'The spine’s value is the phrase "because of that", repeated. It forces causality: each event has to be caused by the previous one, and not merely follow it. Most weak stories, and nearly all weak corporate ones, are chronologies where "and then" would work as well as "because of that", and the spine exposes that in about two minutes.',
       'It is a diagnostic instrument, and the fastest one there is. Eight sentences, filled in honestly, will tell you whether a story exists before anybody has written a treatment or booked anything.',
-      'Where it breaks down is on structures that do not run on causality — kishōtenketsu in particular, whose turn is deliberately not caused by what precedes it. That is a limit of the tool, not a fault in the story.',
+      'Where it breaks down is on structures that do not run on causality. Kishōtenketsu in particular, whose turn is deliberately not caused by what precedes it. That is a limit of the tool, not a fault in the story.',
     ],
     qa: [
       {
         q: 'What is the story spine?',
-        a: 'A sequence of sentence stems — once upon a time, every day, until one day, because of that, because of that, until finally, and ever since then — that forces each event to be caused by the previous one.',
+        a: 'A sequence of sentence stems (once upon a time, every day, until one day, because of that, because of that, until finally, and ever since then) that forces each event to be caused by the previous one.',
       },
       {
         q: 'How do you know if your story is just a chronology?',

@@ -42,7 +42,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The failed attempt in act two is the piece most often missing. Without it there is no complication, only a delay — and an audience reads a delay as padding rather than as tension, however well shot it is.',
+      text: 'The failed attempt in act two is the piece most often missing. Without it there is no complication, only a delay, and an audience reads a delay as padding, never as tension, however well shot it is.',
     },
     { t: 'h2', text: 'The beat that always gets cut' },
     {
@@ -58,7 +58,7 @@ export const post: Post = {
       title: 'The protection',
       text: 'Put the failure in the timing plan at brief stage with seconds attached. A beat with a duration written next to it survives an approval round; a beat described in prose does not.',
     },
-    { t: 'h2', text: 'Compression techniques that actually work' },
+    { t: 'h2', text: 'Compression techniques that work' },
     {
       t: 'ol',
       items: [
@@ -72,7 +72,7 @@ export const post: Post = {
     { t: 'h2', text: 'When three acts genuinely will not fit' },
     {
       t: 'p',
-      text: 'At six or ten seconds it will not, and forcing it produces a piece that gestures at three things and lands none. Four alternatives, each of which is a complete shape rather than a truncation.',
+      text: 'At six or ten seconds it will not, and forcing it produces a piece that gestures at three things and lands none. Four alternatives, each of which is a complete shape.',
     },
     {
       t: 'p',
@@ -97,7 +97,7 @@ export const post: Post = {
         'Write it as a question beginning with "will". If you cannot, you have a description.',
         'Write the three beats with seconds against each. If they total more than the runtime, you have found the problem before it cost anything.',
         'Point at the failure. If there is no shot in which the want is obstructed and an attempt does not work, add one or accept that this is a demonstration film.',
-        'Check the resolution is shown rather than stated. A line that announces the outcome is a beat that was not earned.',
+        'Check the resolution is shown. A stated one is not earned. A line that announces the outcome is a beat that was not earned.',
         'Read the whole thing aloud with a timer. Almost every draft is fifteen per cent longer than its slot and the fifteen per cent is always in act one.',
       ],
     },
@@ -105,7 +105,7 @@ export const post: Post = {
       t: 'cta',
       href: '/glossary/kishotenketsu',
       label: 'Kishōtenketsu, defined',
-      text: 'The four-part structure that turns on juxtaposition rather than conflict, and why it suits brand work with no available antagonist.',
+      text: 'The four-part structure that turns on juxtaposition, with no conflict in it, and why it suits brand work with no available antagonist.',
     },
   ],
   faqs: [
@@ -115,15 +115,15 @@ export const post: Post = {
     },
     {
       q: 'What beat is usually missing from a commercial?',
-      a: 'The failed attempt in act two. It feels expendable in an edit because it is the part where things are going badly, and cutting it produces an advert where somebody has a mild inconvenience and then does not — a description of a purchase rather than a story about one.',
+      a: 'The failed attempt in act two. It feels expendable in an edit because it is the part where things are going badly, and cutting it produces an advert where somebody has a mild inconvenience and then does not. A description of a purchase where a story about one should be.',
     },
     {
       q: 'What structure works for a 10-second video?',
-      a: 'Not three acts. Use kishōtenketsu (setup, development, turn, landing), a setup-and-payoff pair, a single reversal, or a list of three with a fourth that breaks the pattern. Each is a complete shape rather than a truncated one.',
+      a: 'Not three acts. Use kishōtenketsu (setup, development, turn, landing), a setup-and-payoff pair, a single reversal, or a list of three with a fourth that breaks the pattern. Each is a complete shape, and none of them is a truncation.',
     },
     {
       q: 'How do you compress a story into a shorter runtime?',
-      a: 'Start after the setup, let one specific object carry act one, overlap the end of the situation with the start of the complication, cut the establishing shot, and give the resolution one image rather than a line explaining it.',
+      a: 'Start after the setup, let one specific object carry act one, overlap the end of the situation with the start of the complication, cut the establishing shot, and give the resolution one image, never a line explaining it.',
     },
     {
       q: 'How do you protect a structural beat through client approvals?',

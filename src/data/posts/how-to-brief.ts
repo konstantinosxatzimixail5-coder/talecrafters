@@ -39,7 +39,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'If nothing is named, the studio has to guess, and it will guess conservatively, which usually means a more expensive pipeline than the brief actually needed.',
+      text: 'If nothing is named, the studio has to guess, and it will guess conservatively, which usually means a more expensive pipeline than the brief needed.',
     },
     { t: 'h3', text: '2. Where the legible type is' },
     {
@@ -49,12 +49,12 @@ export const post: Post = {
     { t: 'h3', text: '3. Who has to recur' },
     {
       t: 'p',
-      text: 'One face appearing in one asset is a render. One face appearing across nine assets is a trained identity, a set of gates and a consent file. State how many assets a given person or product appears in, because the answer changes the shape of the production rather than its size.',
+      text: 'One face appearing in one asset is a render. One face appearing across nine assets is a trained identity, a set of gates and a consent file. State how many assets a given person or product appears in, because the answer changes the shape of the production, not its size.',
     },
     { t: 'h3', text: '4. What is regulated' },
     {
       t: 'p',
-      text: 'Any claim about health, finance, environmental impact, ingredients, performance or comparison brings a substantiation requirement that exists regardless of how the asset was made. Say which claims the asset must carry so the studio can route them through legal before rendering rather than after.',
+      text: 'Any claim about health, finance, environmental impact, ingredients, performance or comparison brings a substantiation requirement that exists regardless of how the asset was made. Say which claims the asset must carry so the studio can route them through legal before rendering.',
     },
     { t: 'h3', text: '5. What disclosure applies' },
     {
@@ -94,7 +94,7 @@ export const post: Post = {
         '"Is there readable printed type in any shot?" If they do not ask, they have not priced the hardest part.',
         '"Should this be generative at all?" A studio that has never talked a client out of a brief is selling capacity, not judgement.',
         '"Who owns the plates and trained identities afterwards?" The answer should be you.',
-        '"What is the credit ceiling per asset?" There should be one, and it should halt the run rather than log a warning.',
+        '"What is the credit ceiling per asset?" There should be one, and it should halt the run. A logged warning is not a ceiling.',
         '"What is the expected acceptance rate on the hardest shot?" You want a fraction, not a reassurance.',
         '"What happens to a frame that fails review?" Correct answer: back to the source file. Wrong answer: our retoucher fixes it.',
       ],
@@ -106,7 +106,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'That last item is the one worth arguing about. Plates, trained identities and set specifications are the assets with the longest life in the engagement. A studio that retains them is selling you a dependency rather than a production.',
+      text: 'That last item is the one worth arguing about. Plates, trained identities and set specifications are the assets with the longest life in the engagement. A studio that retains them is selling you a dependency.',
     },
     {
       t: 'cta',
