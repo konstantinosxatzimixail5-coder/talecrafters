@@ -68,7 +68,7 @@ const coreTerms: Term[] = [
       },
       {
         q: 'What does an agentic workflow cost to run?',
-        a: 'The honest unit is cost per accepted asset, not cost per generation. A pipeline that produces forty frames and passes three has a real cost of the forty. Any studio quoting you the three is quoting the wrong number.',
+        a: 'The honest unit is cost per accepted asset. A pipeline that produces forty frames and passes three has a real cost of the forty. Any studio quoting you the three is quoting the wrong number.',
       },
     ],
     related: ['mcp', 'operator-stack', 'cost-per-accepted-asset', 'human-in-the-loop'],
@@ -82,7 +82,7 @@ const coreTerms: Term[] = [
     body: [
       'Slop is not a technical failure. Most of it is technically clean: correct anatomy, pleasant lighting, no artefacts. What it lacks is a decision. Nobody chose the lens, nobody chose what to leave out, and nobody was willing to make the frame worse in one way to make it better in another. The audience reads that absence instantly, even when they cannot name it.',
       'The commercial cost is specific. Slop trains an audience to skip a format. Once a feed has taught someone that a certain gloss means nothing worth reading, every subsequent piece in that register pays the tax, including the good one.',
-      'The fix is not less generation. It is a person with taste holding a veto, and a brief that states what the piece is allowed to be bad at.',
+      'The fix is a person with taste holding a veto, plus a brief that states what the piece is allowed to be bad at.',
     ],
     qa: [
       {
@@ -106,7 +106,7 @@ const coreTerms: Term[] = [
     body: [
       'C2PA writes a manifest into the asset: which tool made it, what was changed, and by whom, each step cryptographically signed. Strip it and the absence is itself information. It is the closest thing the industry has to a chain of custody for a picture.',
       'For a brand this is becoming a procurement question. Platforms, broadcasters and an increasing number of client legal teams now ask what provenance an asset carries before it runs. Answering "none" is a slower answer than it used to be.',
-      'We treat credentials as a deliverable, not an afterthought. If a client needs them attached, that goes in the brief, because retrofitting provenance onto a finished cut is not possible.',
+      'We treat credentials as a deliverable. If a client needs them attached, that goes in the brief, because retrofitting provenance onto a finished cut is not possible.',
     ],
     qa: [
       {
@@ -153,7 +153,7 @@ const coreTerms: Term[] = [
     tags: ['models', 'control'],
     body: [
       'Low guidance lets the model wander: prettier, looser, less like what you asked for. High guidance forces compliance: closer to the prompt, and past a threshold, burnt contrast, over-saturated colour and a plasticky surface. The useful range is narrower than the slider suggests.',
-      'Practically it is a diagnostic. If a frame keeps ignoring one element of the brief, raising guidance is the wrong first move: rewriting the prompt so that element leads the sentence is usually the right one. Guidance is for fine adjustment, not for arguing with the model.',
+      'Practically it is a diagnostic. If a frame keeps ignoring one element of the brief, raising guidance is the wrong first move: rewriting the prompt so that element leads the sentence is usually the right one. Guidance is for fine adjustment.',
     ],
     qa: [
       {
@@ -242,7 +242,7 @@ const coreTerms: Term[] = [
     tags: ['ethics'],
     body: [
       'The word covers a technique and an accusation, which is why it is worth using precisely. A trained synthetic presenter who is nobody is not a deepfake. A generated clip of a named public figure is one, even when it is clearly a joke and clearly labelled.',
-      'Our position here is procedural. No identifiable real person appears in our output without a signed release for the likeness and, where a voice is used, for the voice. That is a gate, not a preference, and it applies to satire as firmly as it applies to advertising.',
+      'Our position here is procedural. No identifiable real person appears in our output without a signed release for the likeness and, where a voice is used, for the voice. That is a gate, and it applies to satire as firmly as it applies to advertising.',
     ],
     qa: [
       {
@@ -251,7 +251,7 @@ const coreTerms: Term[] = [
       },
       {
         q: 'Is it legal to use someone’s likeness in AI content?',
-        a: 'Not without permission, in most jurisdictions that matter to advertising. Personality and image rights, plus platform policy, plus advertising codes, all apply. Get the release before rendering, not after.',
+        a: 'Not without permission, in most jurisdictions that matter to advertising. Personality and image rights, plus platform policy, plus advertising codes, all apply. Get the release before rendering.',
       },
     ],
     related: ['c2pa', 'disclosure', 'voice-cloning', 'trained-identity'],
@@ -265,7 +265,7 @@ const coreTerms: Term[] = [
     tags: ['models'],
     body: [
       'Fewer steps is faster and rougher. More steps is slower and, up to a point, cleaner: then it stops improving and only costs money. Every model has a plateau, and finding it once for the model you use saves more budget than any prompt trick.',
-      'For iteration, run low steps: you are judging composition, not surface. Only the frames that survive selection are worth rendering at full step count. Teams that render everything at maximum quality spend their budget rejecting beautiful pictures.',
+      'For iteration, run low steps: you are judging composition at that stage. Only the frames that survive selection are worth rendering at full step count. Teams that render everything at maximum quality spend their budget rejecting beautiful pictures.',
     ],
     qa: [
       {
@@ -305,7 +305,7 @@ const coreTerms: Term[] = [
       'Telling the audience that what they are looking at was made or materially altered by a generative model, in the place they will see it.',
     tags: ['ethics', 'strategy'],
     body: [
-      'Disclosure is now a mix of platform policy, advertising code and, in some markets, statute. The practical rule is simpler than the legal landscape: label to the strictest standard that applies, and put the label where the viewer is, not in a caption nobody expands.',
+      'Disclosure is now a mix of platform policy, advertising code and, in some markets, statute. The practical rule is simpler than the law: label to the strictest standard that applies, and put the label where the viewer is looking. A caption nobody expands does nothing.',
       'The commercial fear, that admitting a piece is synthetic destroys its credibility, has largely not survived contact with reality. What destroys credibility is being caught. Brands that label early get to compete on whether the work is good.',
     ],
     qa: [
@@ -315,7 +315,7 @@ const coreTerms: Term[] = [
       },
       {
         q: 'Where should the AI label go?',
-        a: 'In frame or on the asset, not only in the platform metadata. A metadata flag protects you with the platform; an on-asset label protects you with the audience.',
+        a: 'In frame or on the asset itself, as well as in the platform metadata. A metadata flag protects you with the platform; an on-asset label protects you with the audience.',
       },
     ],
     related: ['c2pa', 'deepfake', 'watermarking', 'synthetic-media'],
@@ -328,12 +328,12 @@ const coreTerms: Term[] = [
     tags: ['production', 'control'],
     body: [
       'Drift is dangerous precisely because it is invisible at the frame level. Reviewed one at a time, every image passes. Played in sequence, the jaw has narrowed, the can has grown a millimetre and the key light has swung fifteen degrees.',
-      'Every gate we run exists to catch it: stack and flick for faces, silhouette overlay for products, one stated key direction for a set. The rule underneath all three is the same: compare against the locked reference, never against the previous frame, because comparing to the previous frame is how drift accumulates unnoticed.',
+      'Every gate we run exists to catch it: stack and flick for faces, silhouette overlay for products, one stated key direction for a set. The rule underneath all three is the same: compare against the locked reference every time, because comparing to the previous frame is how drift accumulates unnoticed.',
     ],
     qa: [
       {
         q: 'How do you stop AI image drift across a series?',
-        a: 'Lock a master reference before the set exists and generate everything from it. Then check each new frame against that reference, not against the last one you liked.',
+        a: 'Lock a master reference before the set exists and generate everything from it. Then check every new frame against that reference, so nothing compounds off the last one you liked.',
       },
     ],
     related: ['character-consistency', 'master-plate', 'gate', 'temporal-coherence'],
@@ -386,7 +386,7 @@ const coreTerms: Term[] = [
       'A large general-purpose model trained on broad data, intended to be adapted to specific tasks before anybody uses it.',
     tags: ['models'],
     body: [
-      'The commercial significance of a foundation model is that it is a substrate, not a product. Everything useful gets built on top: adapters, skills, tool access, retrieval, and the guard rails a client will sign off.',
+      'The commercial significance of a foundation model is that it is a substrate. Everything useful gets built on top: adapters, skills, tool access, retrieval, and the guard rails a client will sign off.',
       'For a studio the practical consequence is churn. Models are replaced faster than pipelines are, so anything valuable belongs in the pipeline (the plates, the identity sheets, the gates, the ledger) and not in a particular model’s quirks.',
     ],
     qa: [
@@ -427,7 +427,7 @@ const coreTerms: Term[] = [
       'Confident invention: a model producing a certification mark, a statistic, a limb or a citation that does not exist.',
     tags: ['models', 'ethics'],
     body: [
-      'A generative model optimises for plausibility, not truth. It has no mechanism for knowing that the award badge it has drawn on your packaging is fictional, because it is not drawing an award badge; it is drawing what award badges look like.',
+      'A generative model optimises for plausibility. Truth sits outside its remit. It has no mechanism for knowing that the award badge it has drawn on your packaging is fictional, because it is drawing what award badges look like.',
       'In visual work the expensive hallucinations are the legally loaded ones: invented certifications, invented ingredient claims, invented awards. That is why the claim gate exists, and why it is separate from the label gate. A label can be checked by reading. A claim has to be checked against a document.',
     ],
     qa: [
@@ -508,7 +508,7 @@ const coreTerms: Term[] = [
     qa: [
       {
         q: 'When should you use inpainting?',
-        a: 'For removals, cleanups and small environmental fixes. Not for faces, not for logos, and not for packaging type, all of which should return to their locked source instead.',
+        a: 'For removals, cleanups and small environmental fixes. Faces, logos and packaging type all return to their locked source.',
       },
     ],
     related: ['outpainting', 'character-consistency', 'gate', 'master-plate'],
@@ -521,7 +521,7 @@ const coreTerms: Term[] = [
     tags: ['models'],
     body: [
       'Models do not manipulate pixels; they manipulate a much smaller encoded representation and decode it at the end. That is why generation is tractable at all, and why a small change to a prompt can produce a large change to a frame. You have moved to a different neighbourhood.',
-      'The practical use is interpolation. Moving smoothly between two points in latent space is what produces a morph, a style blend or a coherent transition, and it is the mechanism underneath first–last frame video.',
+      'The practical use is interpolation. Moving smoothly between two points in latent space is what produces a morph, a style blend or a coherent transition, and it is the mechanism underneath first-and-last-frame video.',
     ],
     qa: [
       {
@@ -654,7 +654,7 @@ const coreTerms: Term[] = [
     tags: ['post'],
     body: [
       'The everyday use is format. One approved frame becomes a 16:9 header, a 4:5 feed post and a 9:16 vertical without recomposing or reshooting, which is why a crop matrix belongs in the pipeline and never in a scramble the day before launch.',
-      'The limit is that outpainting invents. Extend far enough and you are generating a room the art director never approved, so extensions get reviewed like any other generation, not treated as a resize.',
+      'The limit is that outpainting invents. Extend far enough and you are generating a room the art director never approved, so extensions get reviewed like any other generation, as a resize.',
     ],
     qa: [
       {
@@ -690,7 +690,7 @@ const coreTerms: Term[] = [
     tags: ['control', 'production'],
     body: [
       'The useful version of this skill looks nothing like the tricks that circulate. It is closer to writing a shot description for a crew: subject first, then camera, then light, then the two things that must not happen. Vague adjectives are the main cause of expensive variance.',
-      'It is also the least durable part of any pipeline. Models change and prompt habits stop working; plates, identity sheets, gates and ledgers do not. Anything you want to still own in two years belongs in those, not in a prompt.',
+      'It is also the least durable part of any pipeline. Models change and prompt habits stop working; plates, identity sheets, gates and ledgers do not. Anything you want to still own in two years belongs in those files.',
     ],
     qa: [
       {
@@ -699,7 +699,7 @@ const coreTerms: Term[] = [
       },
       {
         q: 'Is prompt engineering still a useful skill?',
-        a: 'Yes, but it is a small part of production. The leverage is in the pipeline around the prompt: what is locked before generation starts and what gets checked afterwards.',
+        a: 'Yes, but it is a small part of production. The work is in the pipeline around the prompt: what is locked before generation starts and what gets checked afterwards.',
       },
     ],
     related: ['negative-prompt', 'cfg-scale', 'camera-control', 'shot-list'],
@@ -755,7 +755,7 @@ const coreTerms: Term[] = [
     qa: [
       {
         q: 'How do you stop social content looking repetitive?',
-        a: 'Decide the registers before production, not during it, and give each its own plate set and prompt vocabulary. Let the brand mark carry the continuity instead of the style.',
+        a: 'Decide the registers before production starts, and give each its own plate set and prompt vocabulary. Let the brand mark carry the continuity.',
       },
     ],
     related: ['ai-slop', 'style-transfer', 'master-plate'],
@@ -804,12 +804,12 @@ const coreTerms: Term[] = [
     tags: ['control', 'post'],
     body: [
       'Modern style control happens mostly through conditioning and adapters now, well beyond the classic two-image method, but the intent is unchanged: keep the content, change the dialect.',
-      'The brand risk is homogenisation. A style applied uniformly across a campaign produces consistency and, past a point, wallpaper. It works best as one register among several, not as the whole visual policy.',
+      'The brand risk is homogenisation. A style applied uniformly across a campaign produces consistency and, past a point, wallpaper. It works best as one register among several, inside the whole visual policy.',
     ],
     qa: [
       {
         q: 'How do you apply a brand style to AI images?',
-        a: 'Train a light adapter on a curated set of on-brand frames, or condition on a single strong reference per intention. Then check the output against the brand book, not against the reference.',
+        a: 'Train a light adapter on a curated set of on-brand frames, or condition on a single strong reference per intention. Then check the output against the brand book.',
       },
     ],
     related: ['lora', 'reference-image', 'register', 'fine-tuning'],
@@ -822,7 +822,7 @@ const coreTerms: Term[] = [
     tags: ['strategy'],
     body: [
       'The term is broader and more useful than "AI content", because it covers the middle ground where most professional work sits: a real shoot with a generated environment, a real voice with a generated read, a real product with a generated set.',
-      'That middle ground is also where the disclosure question gets interesting, and where a studio earns its fee. The skill is not generating. It is knowing which parts of a piece should be synthetic and which absolutely should not.',
+      'That middle ground is also where the disclosure question gets interesting, and where a studio earns its fee. The skill is knowing which parts of a piece should be synthetic and which parts belong in front of a lens.',
     ],
     qa: [
       {
@@ -844,7 +844,7 @@ const coreTerms: Term[] = [
     tags: ['production', 'strategy'],
     body: [
       'The commercial case is variance testing. A paid social test needs the same person delivering six openings and four asks, then needs them again next month when the offer changes. Booking a creator for that is expensive and slow; a trained identity makes variant forty cost what variant ten did.',
-      'The register is the hard part, not the face. Real creator content is badly lit, slightly wrong and shot in a room somebody lives in. Synthetic UGC that arrives beautifully lit reads as an advert and performs like one.',
+      'The register is the hard part. Real creator content is badly lit, slightly wrong and shot in a room somebody lives in. Synthetic UGC that arrives beautifully lit reads as an advert and performs like one.',
     ],
     qa: [
       {
@@ -981,7 +981,7 @@ const coreTerms: Term[] = [
     tags: ['ethics', 'post'],
     body: [
       'Modern watermarks are statistical: a pattern spread through the pixels or the audio that survives compression, cropping and re-encoding, and that a detector can read even when a human cannot see it.',
-      'They are one layer, not the answer. A determined actor can degrade a watermark; a provenance manifest can be stripped; a visible label can be cropped. Anyone serious runs all three and assumes each will fail sometimes.',
+      'They are one layer of three. A determined actor can degrade a watermark; a provenance manifest can be stripped; a visible label can be cropped. Anyone serious runs all three and assumes each will fail sometimes.',
     ],
     qa: [
       {
