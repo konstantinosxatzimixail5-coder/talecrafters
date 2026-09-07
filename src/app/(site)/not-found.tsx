@@ -15,7 +15,7 @@ export default function NotFound() {
           Lost in the <span style={{ color: 'var(--brand-cyan)' }}>void</span>?
         </div>
         <div className="mt-4 text-xl" style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-concrete-light)' }}>
-          This page doesn&apos;t exist. Unlike our content, which very much does.
+          This page does not exist. Everything else on here very much does.
         </div>
         <a
           href="/"

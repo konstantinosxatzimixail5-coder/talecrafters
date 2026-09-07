@@ -182,7 +182,7 @@ export function LocalPostArticle({ post }: { post: Post }) {
             }}
           >
             <strong style={{ color: 'var(--brand-gold)' }}>A note on what this is.</strong> A working summary
-            written by a production studio, current at the date above, not legal advice. Regulation in this area
+            written by a production studio, current at the date above. This is not legal advice. Regulation here
             is moving. Check the primary sources linked at the foot of the piece and take advice before relying
             on any of it commercially.
           </p>

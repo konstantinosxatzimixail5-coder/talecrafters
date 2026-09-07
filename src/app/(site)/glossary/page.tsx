@@ -10,7 +10,7 @@ import { abs, SITE_URL } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
-  title: `Synthetic Media & Storytelling Glossary — ${repoTerms.length} Terms`,
+  title: `Synthetic Media & Storytelling Glossary: ${repoTerms.length} Terms`,
   description:
     `${repoTerms.length} terms from synthetic media production and story craft, defined the way a maker needs them: agentic workflows, drift, master plates, temporal coherence and disclosure, alongside three-act structure, the inciting incident, hooks, open loops, value shifts and the beat sheet.`,
   path: '/glossary',

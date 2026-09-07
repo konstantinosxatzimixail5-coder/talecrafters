@@ -78,7 +78,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
           // Only emitted for films a reader can actually watch on this page.
           ...(w.videos ?? []).map((v) =>
             videoObjectSchema({
-              name: `${w.client} — ${v.title}`,
+              name: `${w.client}: ${v.title}`,
               description: v.note,
               thumbnailUrl: v.poster ? `/img/${v.poster}-960.webp` : remoteThumb(v.youtubeId),
               uploadDate: v.uploadDate,

@@ -11,7 +11,7 @@ import { pageCopy } from '@/content/copy';
 import { getWork } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'Selected Damage — Case Studies',
+  title: 'Selected Damage: Case Studies',
   description:
     `${repoWork.length} delivered engagements with the problem, the idea, what we made, the result and the artefacts. A restaurant, a consultancy, a motorcycle dealership, a data school, a supplement brand, a Horizon Europe consortium and a property group.`,
   path: '/work',

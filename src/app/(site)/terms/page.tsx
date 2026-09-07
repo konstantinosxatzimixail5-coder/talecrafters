@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "TaleCrafters Ltd Terms of Service. Terms and conditions governing the use of our website.",
   alternates: { canonical: `${SITE_URL}/terms` },
   openGraph: {
-    title: "Terms of Service — TaleCrafters",
+    title: "Terms of Service: TaleCrafters",
     url: `${SITE_URL}/terms`,
     siteName: "TaleCrafters",
     type: "website",
@@ -172,7 +172,7 @@ export default async function TermsPage() {
             3.3 Portfolio and Case Studies
           </h3>
           <p className="leading-relaxed" style={{ color: "var(--brand-white)", opacity: 0.85 }}>
-            Portfolio items, case studies, and showcased work displayed on our Website may be subject
+            Portfolio items, case studies and published work displayed on our Website may be subject
             to third-party intellectual property rights. Such content is displayed with appropriate
             permissions and is strictly for demonstration purposes. Reproduction of any portfolio
             content without express written permission is prohibited.

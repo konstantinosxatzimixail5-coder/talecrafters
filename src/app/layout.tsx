@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
     images: [
-      { url: "/brand/mark-square.png", width: 1024, height: 1024, alt: "TaleCrafters — Synthetic Media Studio" },
+      { url: "/brand/mark-square.png", width: 1024, height: 1024, alt: "TaleCrafters: Synthetic Media Studio" },
     ],
   },
   twitter: {

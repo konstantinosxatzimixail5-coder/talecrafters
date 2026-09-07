@@ -131,7 +131,7 @@ export const promptGuides: PromptGuide[] = [
     scaffold: [
       'START FRAME. The image, plus one sentence naming what state it is in.',
       'END FRAME. The image, plus one sentence naming what changed.',
-      'THE TRANSIT. How it gets from one to the other. The path, not the destination.',
+      'THE TRANSIT. How it gets from one to the other. Name the path.',
       'WHAT IS CONSTANT. Anything that must be identical in both.',
     ],
     prompt:
@@ -149,7 +149,7 @@ export const promptGuides: PromptGuide[] = [
     scaffold: [
       'SHOT SIZE. Named, and held for the whole clip.',
       'THE LINE. In quotes, short enough to fit the duration.',
-      'DELIVERY. The intention behind the line, not the emotion on top of it.',
+      'DELIVERY. The intention behind the line.',
       'LISTENING. What the face does before and after speaking.',
       'BREATH. Where they take one.',
     ],
@@ -157,7 +157,7 @@ export const promptGuides: PromptGuide[] = [
       'Medium close-up, static. She says, "We tried it for a week." She is deciding whether to admit the rest as she says it, so the line comes out slightly slower than it should. Before the line she holds a small breath. After it she does not look away.',
     failure:
       'You direct the emotion and get a performance of the emotion: eyebrows doing the work, a face announcing sadness where a person being sad should be.',
-    fix: 'Replace every emotion word with an intention. Not "sad", but "trying not to be asked a follow-up question". The face solves it better than you can specify it.',
+    fix: 'Replace every emotion word with an intention. "Sad" becomes "trying to avoid a follow-up question". The face solves it better than you can specify it.',
   },
   {
     slug: 'product-hero-motion',
@@ -188,7 +188,7 @@ export const promptGuides: PromptGuide[] = [
     scaffold: [
       'FOREGROUND. Your actual subject, fully specified.',
       'MIDGROUND. One or two figures, described only by silhouette and direction of travel.',
-      'BACKGROUND. Density and motion as a texture, never as individuals.',
+      'BACKGROUND. Density and motion, written as texture.',
       'FOCUS. State what is out of focus, because that is what makes the rest survivable.',
     ],
     prompt:
@@ -203,9 +203,9 @@ export const promptGuides: PromptGuide[] = [
     name: 'Negative prompting that works',
     family: 'video',
     purpose: 'Naming what must not be there, usefully.',
-    when: 'After a first batch, never before it.',
+    when: 'After a first batch has run.',
     scaffold: [
-      'ARTEFACTS. The specific ones you saw, not a generic list.',
+      'ARTEFACTS. The specific ones you saw in your own renders.',
       'CONTENT. Objects or actions that keep appearing and should not.',
       'STYLE. The register you keep drifting into.',
       'Nothing abstract. "Bad quality" is not a thing the model can not-do.',
@@ -226,7 +226,7 @@ export const promptGuides: PromptGuide[] = [
     scaffold: [
       'THE LOCK BLOCK. One paragraph, identical in every prompt: world, light, palette, lens family.',
       'THE SHOT BLOCK. What changes per shot: size, move, action.',
-      'THE ORDER. Generate the hardest shot first, not the first shot first.',
+      'THE ORDER. Generate the hardest shot first.',
     ],
     prompt:
       'LOCK (paste into every shot): Late afternoon, low sun from the west, warm key and cool fill, muted teal and sand palette, anamorphic 40mm look throughout, light haze in every exterior.\n\nSHOT 4: Wide, static. The car sits alone at the end of the road. No people. Hold.',
@@ -294,7 +294,7 @@ export const promptGuides: PromptGuide[] = [
     failure:
       'The subject is centred no matter what you write, because centred is the strongest prior in almost every image model.',
     fix:
-      'Describe the empty area, never the subject’s position. Models place things far more reliably when told what has to stay empty than when told where to put something.',
+      'Describe the empty area. Models place things far more reliably when told what has to stay empty than when told where to put something.',
   },
   {
     slug: 'lighting-vocabulary',
@@ -365,7 +365,7 @@ export const promptGuides: PromptGuide[] = [
       'GENERATE WIDEST. Build the 16:9 first, with headroom.',
       'SAFE AREA. State what must survive the tightest crop.',
       'MARGIN. State what is deliberately expendable at the edges.',
-      'THEN OUTPAINT. Extend upward for vertical, never re-generate.',
+      'THEN OUTPAINT. Extend upward for vertical.',
     ],
     prompt:
       'Compose 16:9. The subject and the product occupy the central square of the frame and must survive a 1:1 crop. Everything outside that square is environment only and is expendable. Leave clean, uninterrupted space above the subject for a vertical extension.',
@@ -406,7 +406,7 @@ export const promptGuides: PromptGuide[] = [
       'WHAT THE REFERENCE IS FOR. Identity, or style, or composition. One of them.',
       'WHAT TO KEEP. Named explicitly.',
       'WHAT TO CHANGE. Named explicitly.',
-      'WHAT THE REFERENCE IS NOT. Usually: not the pose, not the light.',
+      'WHAT THE REFERENCE EXCLUDES. Usually the pose and the light.',
     ],
     prompt:
       'Use the reference for facial identity only. Keep the face, hair and the scar through the eyebrow exactly. Change the pose, the wardrobe, the location and the lighting entirely. Do not carry the reference’s composition or grade.',
@@ -485,7 +485,7 @@ export const promptGuides: PromptGuide[] = [
       'THE PREMISE. One sentence, with a want and an obstacle in it.',
       'THE FORMAT AND LENGTH. So the beat count is real.',
       'ASK FOR BEATS ONLY. Explicitly forbid prose and dialogue.',
-      'ASK FOR THE TURN IN EACH BEAT. What changes, not what happens.',
+      'ASK FOR THE TURN IN EACH BEAT. State what changes.',
       'ASK FOR THREE OPTIONS. Not one.',
     ],
     prompt:
@@ -513,7 +513,7 @@ export const promptGuides: PromptGuide[] = [
     failure:
       'Twenty variations of the same sentence, because you asked for twenty hooks and not for twenty mechanisms.',
     fix:
-      'Name the mechanisms in the prompt. Variety comes from the constraint list, never from asking for variety.',
+      'Name the mechanisms in the prompt. Variety comes from the constraint list. Asking for variety produces none.',
   },
   {
     slug: 'scene-audit',
@@ -526,7 +526,7 @@ export const promptGuides: PromptGuide[] = [
       'FORBID PRAISE. Explicitly.',
       'ASK FOR THE FIVE ELEMENTS. Goal, obstacle, tactic, reversal, value shift.',
       'ASK WHICH ONE IS MISSING. Force a single answer.',
-      'ASK FOR THE CHEAPEST FIX. One change, not a rewrite.',
+      'ASK FOR THE CHEAPEST FIX. One change.',
     ],
     prompt:
       'Here is a scene. Do not tell me what works. For this scene, state: what the character is actively trying to get, what physically stops them, what tactic they switch to when the first fails, what reverses, and what is worth more or less at the end than at the start. Then name the single one of those five that is absent or weakest, and give me the smallest change that would fix it.',
@@ -562,7 +562,7 @@ export const promptGuides: PromptGuide[] = [
     purpose: 'Structure for a script that has to hold attention and then ask for something.',
     when: 'Direct response, launches, anything with a call to action at the end.',
     scaffold: [
-      'THE ONE PROBLEM. Stated in the audience’s words, not yours.',
+      'THE ONE PROBLEM. Stated in the audience’s own words.',
       'THE MECHANISM. Why the usual fix fails. This is the whole piece.',
       'PROOF. Specific, dated, checkable.',
       'THE OFFER. What it is, plainly.',
@@ -704,7 +704,7 @@ export const promptGuides: PromptGuide[] = [
       'WHAT MUST STAY IN FRAME. The subject and one other thing.',
       'WHAT IS EXPENDABLE.',
       'THE TRACKING RULE. Whether the crop follows the subject or holds.',
-      'WHERE TYPE GOES. Reserve it now, not later.',
+      'WHERE TYPE GOES. Reserve the space now.',
     ],
     prompt:
       'Reframe to 9:16. Keep the subject’s head and hands in frame at all times; everything to the left of the doorway is expendable. The crop tracks the subject horizontally but never moves vertically. Reserve the lower fifth of the frame empty for captions.',
@@ -780,7 +780,7 @@ export const promptGuides: PromptGuide[] = [
     slug: 'atomisation-prompt',
     name: 'Atomising one piece into many',
     family: 'systems',
-    purpose: 'Turning a long piece into assets that are genuinely different from each other.',
+    purpose: 'Turning a long piece into assets that differ in kind from each other.',
     when: 'Repurposing, always.',
     scaffold: [
       'INVENTORY FIRST. Every distinct claim, with its evidence.',
@@ -799,7 +799,7 @@ export const promptGuides: PromptGuide[] = [
     slug: 'research-brief-prompt',
     name: 'The research prompt',
     family: 'systems',
-    purpose: 'Getting facts you can publish, never plausible sentences.',
+    purpose: 'Getting facts you can publish.',
     when: 'Anything touching regulation, numbers, or a date.',
     scaffold: [
       'THE QUESTION. Narrow.',

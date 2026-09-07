@@ -10,7 +10,7 @@ import { pageCopy } from '@/content/copy';
 import { getPosts } from '@/content/collections';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Blog — Synthetic Media Production, Costs, Compliance and Craft',
+  title: 'Blog: Synthetic Media Production, Costs, Compliance and Craft',
   description:
     'Working notes from a synthetic media studio: what generative production costs, how to keep a product consistent across a hundred shots, what has to be disclosed, and where creative automation saves a week.',
   path: '/blog',

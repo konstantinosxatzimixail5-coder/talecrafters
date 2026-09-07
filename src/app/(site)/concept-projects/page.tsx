@@ -28,7 +28,7 @@ const words = (n: number) => WORDS[n] ?? String(n);
 const Words = (n: number) => words(n).replace(/^./, (c) => c.toUpperCase());
 
 export const metadata = pageMeta({
-  title: 'Concept Projects — Invented Brands, Real Capability',
+  title: 'Concept Projects: Invented Brands, Real Capability',
   description:
     `${brandCount} invented brands built as control experiments: label lock across five sets, four moulded flavour names, a pack claim held to camera, one face across three light sources, frosted glass with liquid behind it, and a live flame across three rooms. Nobody commissioned any of it, and we say so.`,
   path: '/concept-projects',
@@ -81,7 +81,7 @@ export default async function ConceptProjects() {
           ...conceptBrands.flatMap((b) =>
             (b.videos ?? []).map((v) =>
               videoObjectSchema({
-                name: `${b.name} — ${v.title}`,
+                name: `${b.name}: ${v.title}`,
                 description: v.note,
                 thumbnailUrl: v.poster ? `/img/${v.poster}-960.webp` : remoteThumb(v.youtubeId),
                 uploadDate: v.uploadDate,

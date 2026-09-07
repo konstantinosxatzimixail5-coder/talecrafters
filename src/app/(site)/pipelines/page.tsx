@@ -9,7 +9,7 @@ import { pageCopy } from '@/content/copy';
 import { getPipelines } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'GenAI Workflows — How the Work Gets Made',
+  title: 'GenAI Workflows: How the Work Gets Made',
   description:
     'Three of our seven generative production workflows, published in full: Identity Lock for trained presenters, Phantom Set for products, Operator Stack for the automation layer. Stages, timings and the gates each one fails on.',
   path: '/pipelines',
@@ -145,7 +145,7 @@ export default async function PipelinesIndex() {
       <CtaBar
         color="var(--brand-violet)"
         eyebrow="CREATIVE SYSTEMS"
-        title="Want the machinery, not the output?"
+        title="Want the machinery itself?"
         body="Half a day mapping how your work runs today, one to two weeks building, then a live walkthrough. It ends up inside your accounts, with a ledger showing cost per accepted asset."
         href="/systems"
         cta="SEE SYSTEMS"

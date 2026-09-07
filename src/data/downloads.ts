@@ -159,7 +159,7 @@ export const tools: Tool[] = [
           },
           {
             t: 'note',
-            text: 'Decide this here, not at delivery. A disclosure discovered late means re-exporting every asset, and sometimes recomposing the frame to make room for a label.',
+            text: 'Decide this at brief stage. A disclosure discovered late means re-exporting every asset, and sometimes recomposing the frame to make room for a label.',
           },
         ],
       },
@@ -169,7 +169,7 @@ export const tools: Tool[] = [
           {
             t: 'fields',
             fields: [
-              { label: 'Who signs off the brief', hint: 'A person, not a department', lines: 1 },
+              { label: 'Who signs off the brief', hint: 'A named person', lines: 1 },
               { label: 'Who signs off the final output', hint: 'A person, with authority to say no', lines: 1 },
               { label: 'Any other stakeholder who can stop this, and at what stage', lines: 2 },
             ],
@@ -209,7 +209,7 @@ export const tools: Tool[] = [
     ],
     howToUse: [
       'Run section 1 before generating anything. It is a set of decisions, and it takes twenty minutes.',
-      'Run section 2 on every frame or clip as it arrives. Pass or fail, not a discussion.',
+      'Run section 2 on every frame or clip as it arrives. Pass or fail. No discussion.',
       'Run section 3 on the assembled set. It catches the failure no per-frame test can.',
     ],
     sections: [
@@ -220,22 +220,22 @@ export const tools: Tool[] = [
           {
             t: 'check',
             items: [
-              'Key light direction fixed and written as a clock position, not as "soft natural light"',
+              'Key light direction fixed and written as a clock position',
               'Colour temperature stated in kelvin',
               'One surface and one background material named',
               'Lens language chosen: focal length range, and shallow or deep depth of field, held across the set',
               'A prop rule written: what is allowed in frame, and what is never',
-              'Shot-size pattern decided before the render, not discovered in the edit',
+              'Shot-size pattern decided before the render',
               'Master plate built and frozen for every product that must not change',
               'Trained identity built for any face appearing in more than nine assets',
-              'Credit ceiling per asset agreed, and encoded so the run halts, never warns',
+              'Credit ceiling per asset agreed, and encoded so the run halts',
             ],
           },
         ],
       },
       {
         title: '2. Per frame or clip',
-        kicker: 'Pass or fail. A failure returns to the source file, never to a retoucher.',
+        kicker: 'Pass or fail. A failure returns to the source file.',
         blocks: [
           {
             t: 'table',
@@ -244,12 +244,12 @@ export const tools: Tool[] = [
               ['Type', 'Every printed word read at 100% against the artwork', 'Regenerate. Never retouch a label.'],
               ['Silhouette', 'Overlay on the master plate at 40% opacity, inspect the outline', 'Regenerate from the plate with tighter conditioning'],
               ['Identity', 'Compare against the identity sheet: jaw, eye spacing, apparent age', 'Dead shot. Regenerate.'],
-              ['Light', 'One key direction and one temperature, matched to the specification', 'Regenerate the outlier, not the set'],
+              ['Light', 'One key direction and one temperature, matched to the specification', 'Regenerate the outlier on its own'],
               ['Claims', 'No invented certification, award, ingredient or percentage', 'Kill the frame. No appeal.'],
               ['Extremities', 'Count fingers. Check contact points and occlusion', 'Regenerate, or cut earlier'],
               ['Physics', 'Gravity, contact, cloth settle, hair settle', 'Cut before the drift, or regenerate'],
               ['Text in frame', 'Any readable word the model rendered', 'Recompose out of frame, or composite in post'],
-              ['Duration', 'Ends before extremity drift, not when the model stops', 'Trim to the stable opening segment'],
+              ['Duration', 'Ends before extremity drift begins', 'Trim to the stable opening segment'],
             ],
           },
         ],
@@ -264,7 +264,7 @@ export const tools: Tool[] = [
               'Contact sheet at thumbnail scale: anything that jumps out gets regenerated even if it passed every gate',
               'First frame and last frame of every clip, side by side at full size, checked for drift',
               'Every clip scrubbed backwards at speed, which reveals drift the forward motion hides',
-              'Grade applied to the sequence from one reference frame, after picture lock, not per clip',
+              'Grade applied to the whole sequence from one reference frame, after picture lock',
               'Room tone under everything, foley on the two or three actions the eye lands on',
               'No cross-dissolve between two generated clips anywhere in the edit',
               'At least one deliberately quiet beat in the sequence',
@@ -284,10 +284,10 @@ export const tools: Tool[] = [
     slug: 'ai-advertising-disclosure-checklist',
     intro: [
       'A one-page decision path for whether a generative asset has to be labelled, covering the UK position, the EU transparency obligations that took effect on 2 August 2026, and the platform policies that are usually stricter than either.',
-      'A working summary written by a production studio, not legal advice. The regulation is moving. Check the primary sources and take advice before relying on this commercially.',
+      'A working summary written by a production studio. This is not legal advice. The regulation is moving. Check the primary sources and take advice before relying on this commercially.',
     ],
     howToUse: [
-      'Run this at brief stage, once per campaign, not per asset and not at delivery.',
+      'Run this at brief stage, once per campaign.',
       'Answer section 1 to classify the asset. Section 2 gives you the obligation. Section 3 is the implementation.',
       'Keep the completed sheet. The obligation is provable or it is not satisfied.',
     ],
@@ -334,7 +334,7 @@ export const tools: Tool[] = [
               [
                 'Platforms',
                 'Self-declaration plus automated detection. The platform may apply a label you did not choose.',
-                'Contractual, not legal, enforced by reach suppression and demonetisation. Usually the most immediate constraint.',
+                'Contractual, enforced by reach suppression and demonetisation. Usually the most immediate constraint.',
               ],
             ],
           },
@@ -350,7 +350,7 @@ export const tools: Tool[] = [
           {
             t: 'check',
             items: [
-              'Disclosure decision written into the brief, not the delivery note',
+              'Disclosure decision written into the brief',
               'On-asset label, in the same visual field as the claim it qualifies',
               'Wording kept plain: "AI-generated" or "Created with AI". No hedging.',
               'Provenance metadata configured on export as well as the visible label',
@@ -383,12 +383,12 @@ export const tools: Tool[] = [
     slug: 'synthetic-ugc-consent-template',
     intro: [
       'A likeness and voice release drafted for generative production. The clause that matters is the one granting derivative training, which almost no pre-2024 release contains.',
-      'A starting point to take to a lawyer, not a substitute for one. Jurisdictions differ, performer union agreements differ, and the law on synthetic voice is the least settled part of this.',
+      'A starting point to take to a lawyer. Jurisdictions differ, performer union agreements differ, and the law on synthetic voice is the least settled part of this.',
     ],
     howToUse: [
       'Complete the schedule first. It is the part both sides negotiate.',
-      'Have it reviewed. This is a template, not advice, and the scope clauses are where the money and the risk both sit.',
-      'Signed and in the folder before the first render, not before the first delivery.',
+      'Have it reviewed. This is a template. The scope clauses are where the money and the risk both sit.',
+      'Signed and in the folder before the first render.',
     ],
     sections: [
       {
@@ -498,10 +498,10 @@ export const tools: Tool[] = [
     slug: 'creative-automation-workflow-canvas',
     intro: [
       'A one-page canvas for mapping a creative process before automating any of it. Every step gets an owner and a verdict: a person decides it, a model drafts it, or a script handles it alone at four in the morning.',
-      'The value is not the canvas. It is that filling it in forces you to notice that roughly half the week is coordination, and that the coordination half is the automatable half.',
+      'The value is that filling it in forces you to notice that roughly half the week is coordination, and that the coordination half is the automatable half.',
     ],
     howToUse: [
-      'Do this with the people who do the work, never with their managers. Half a day, once.',
+      'Do this with the people who do the work. Half a day, once.',
       'Map the process as it is, including the parts that embarrass you. A canvas of the intended process automates nothing.',
       'Then build the top two candidates. Two, shipped and adopted, beats a roadmap of eight.',
     ],
@@ -574,7 +574,7 @@ export const tools: Tool[] = [
               'A naming convention, so August’s output is findable in November',
               'Automatic versioning, so nobody spends time finding the final version',
               'Connectors into software the team already runs, so adoption is not a change-management project',
-              'Skills as loadable directories, never one instruction nobody can edit safely',
+              'Skills as loadable directories, each one editable on its own',
               'A run log with cost attached',
               'A stated stopping condition and a credit ceiling, so a confused run halts before it spends',
               'A named human gate at each point where a wrong decision is expensive',
@@ -607,7 +607,7 @@ export const tools: Tool[] = [
       'Cost per generation is the number studios quote. Cost per accepted asset is the number that appears on the invoice.',
     ],
     howToUse: [
-      'Do this once per shot type, not once per campaign. Averaging across easy and hard work hides exactly the variance the calculation exists to expose.',
+      'Do this once per shot type. Averaging across easy and hard work hides exactly the variance the calculation exists to expose.',
       'Use the acceptance-rate table for a first estimate, then replace it with your own logged numbers as soon as you have them.',
       'Compare the result against what a photographer or crew would have charged. Sometimes the honest answer is to book them.',
     ],
@@ -624,7 +624,7 @@ export const tools: Tool[] = [
       {
         title: '2. Acceptance rates to plan against',
         kicker:
-          'Starting assumptions, not benchmarks. Replace every row with your own as soon as you have logged two batches.',
+          'Starting assumptions. Replace every row with your own as soon as you have logged two batches.',
         blocks: [
           {
             t: 'table',
@@ -671,8 +671,8 @@ export const tools: Tool[] = [
             t: 'check',
             items: [
               'Operator hours included even where the operator is salaried. Salaried time is capacity.',
-              'Any asset that shipped only after significant retouching logged as a failure plus a rescue cost, not as an acceptance',
-              'Setup amortised across the assets it serves, never across the whole campaign',
+              'Any asset that shipped only after significant retouching logged as a failure plus a rescue cost',
+              'Setup amortised across the assets it serves',
               'A credit ceiling per asset set, encoded, and set to halt',
               'Result compared against a conventional shoot for the same brief',
             ],
@@ -714,7 +714,7 @@ export const tools: Tool[] = [
             t: 'scale',
             items: [
               { label: 'Master plates exist', detail: 'A frozen, versioned reference frame per product that must not change' },
-              { label: 'Plates verified against a source of truth', detail: 'Print artwork or the physical object, not the client’s website' },
+              { label: 'Plates verified against a source of truth', detail: 'Print artwork or the physical object itself' },
               { label: 'Trained identities in place of re-uploaded references', detail: 'For any face appearing across more than a handful of assets' },
               { label: 'Set specification written before generation', detail: 'Key direction, temperature, surface, lens language, prop rule' },
               { label: 'Version tags and dates on every reference artefact', detail: 'So a packaging change cuts a new plate and leaves the old one alone' },
@@ -732,7 +732,7 @@ export const tools: Tool[] = [
               { label: 'Silhouette gate', detail: 'Overlay on the plate at 40% opacity, with a stated pass criterion' },
               { label: 'Light gate', detail: 'One key direction and temperature held across the set' },
               { label: 'Claims gate', detail: 'No invented certification, award, ingredient or percentage survives' },
-              { label: 'Failures return to source', detail: 'A failed frame is regenerated, never retouched into passing' },
+              { label: 'Failures return to source', detail: 'A failed frame is regenerated from source' },
             ],
           },
         ],
@@ -744,8 +744,8 @@ export const tools: Tool[] = [
             t: 'scale',
             items: [
               { label: 'Cost per accepted asset is measured', detail: 'Not cost per generation, and not per campaign average' },
-              { label: 'The ledger is written automatically', detail: 'By the pipeline, not by a person at eleven at night' },
-              { label: 'Acceptance rates known per shot type', detail: 'A fraction, not a reassurance' },
+              { label: 'The ledger is written automatically', detail: 'By the pipeline, at any hour' },
+              { label: 'Acceptance rates known per shot type', detail: 'A fraction with two real numbers in it' },
               { label: 'Credit ceiling per asset encoded', detail: 'And it halts the run. A logged warning is not a ceiling' },
               { label: 'Operator and review time counted', detail: 'Including salaried time, which is capacity' },
             ],
@@ -758,7 +758,7 @@ export const tools: Tool[] = [
           {
             t: 'scale',
             items: [
-              { label: 'Model licences cleared before rendering', detail: 'For the specific model and version, not in general' },
+              { label: 'Model licences cleared before rendering', detail: 'For the specific model and version in use' },
               { label: 'Consent files complete before the first render', detail: 'Including derivative training, scope, territory and term' },
               { label: 'Disclosure decided at brief stage', detail: 'Set to the stricter of platform policy, UK position and EU Article 50' },
               { label: 'On-asset labelling plus provenance metadata', detail: 'Not metadata alone' },
@@ -775,7 +775,7 @@ export const tools: Tool[] = [
             items: [
               { label: 'Client owns the plates and trained identities', detail: 'So the second campaign starts from a lock' },
               { label: 'Naming convention in force', detail: 'August’s output is findable in November' },
-              { label: 'The pipeline is documented, not remembered', detail: 'It survives the operator leaving' },
+              { label: 'The pipeline is written down', detail: 'It survives the operator leaving' },
               { label: 'Systems run in the client’s accounts', detail: 'A system you cannot operate without the supplier is a dependency' },
               { label: 'A named person can stop a run', detail: 'With the authority to reject, at a defined point' },
             ],

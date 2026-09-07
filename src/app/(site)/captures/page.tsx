@@ -9,7 +9,7 @@ import { pageCopy } from '@/content/copy';
 import { getCaptures } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'Photoreal Captures — Eight Generated Human Frames, and What Each Breaks',
+  title: 'Photoreal Captures: Eight Generated Human Frames, and What Each Breaks',
   description:
     'Eight generated human frames kept for one reason each: skin under unflattering daylight, hands doing skilled work, two people with a real eyeline between them, wet ground throwing light back up. Every frame labelled as generated.',
   path: '/captures',
@@ -135,7 +135,7 @@ export default async function CapturesPage() {
           >
             A generated frame passed off as a photograph is worth less than a generated frame that
             says what it is, because the second one can be checked. The labelling is the argument
-            here, not a disclaimer bolted to the end of it.
+            here, carried on the face of every frame.
           </p>
         </div>
       </section>

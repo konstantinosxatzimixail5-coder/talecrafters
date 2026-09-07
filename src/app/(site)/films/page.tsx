@@ -10,7 +10,7 @@ import { pageCopy } from '@/content/copy';
 import { getFilms } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'AI Filmmaking Workflows — Three Original Shorts, Published With Their Process',
+  title: 'AI Filmmaking Workflows: Three Original Shorts, Published With Their Process',
   description:
     'Twin Moons, Skyrunner and Mars Drop: three original short films made inside a generative pipeline and published with the working behind each one. Every generation block, every prompt, every design reference and the locks that held the world together.',
   path: '/films',

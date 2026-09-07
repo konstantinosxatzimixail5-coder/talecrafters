@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const f = findFilm(slug);
   if (!f) return {};
   return pageMeta({
-    title: `${f.title} — An Original Short, With Its Process Sheet`,
+    title: `${f.title}: An Original Short, With Its Process Sheet`,
     description: f.logline,
     path: `/films/${f.slug}`,
     image: `/img/${f.poster}-960.webp`,

@@ -11,7 +11,7 @@ import { pageCopy } from '@/content/copy';
 import { getResources } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'The Supply Drop — Free Templates, Checklists and Reference',
+  title: 'The Supply Drop: Free Templates, Checklists and Reference',
   description:
     'The templates, checklists and reference sheets the studio works from on live jobs, published in full: production briefs, consistency and disclosure checklists, consent templates, a workflow canvas, a cost calculator, a readiness scorecard and the prompting library. No email gate, no download wall.',
   path: '/supply-drop',

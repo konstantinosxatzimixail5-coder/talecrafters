@@ -18,7 +18,7 @@ export const site = {
   description:
     'TaleCrafters is a London-based synthetic media and creative systems studio. We produce generative films, campaigns and visual worlds, build the automated creative systems that make and distribute them, and develop our own original IP.',
   address: {
-    street: '71–75 Shelton Street, Covent Garden',
+    street: '71-75 Shelton Street, Covent Garden',
     city: 'London',
     postcode: 'WC2H 9JQ',
     country: 'GB',
@@ -80,7 +80,7 @@ export const people: PersonEntity[] = [
     founder: true,
     bio: 'Founder of TaleCrafters. Writes the pipelines the studio works to, directs the films that come out of them, and publishes both.',
     body: [
-      'Konstantinos founded TaleCrafters to make one argument: generative production is a craft discipline with gates, not a prompt box with a lucky day. Everything on this site is written against that. A case study says what the problem was, what got made, what shipped, and which test each frame had to pass before it went in.',
+      'Konstantinos founded TaleCrafters to make one argument: generative production is a craft discipline with gates on it. Everything on this site is written against that. A case study says what the problem was, what got made, what shipped, and which test each frame had to pass before it went in.',
       'He directs the studio’s client work across brand film, synthetic photography, creator-style video and the content systems that keep the run going after the first cut lands. Recent engagements include a restaurant on Rhodes photographed from angles the camera never reached, four films for a Horizon Europe cyber-security consortium built entirely from a grant document, and a paid-social programme where every piece had to look like it came from a different production company.',
       'He also writes the studio’s reference material: the pipeline sheets, the glossary, and the posts on this blog. The posts carry his byline because someone should be accountable for the claims in them.',
     ],

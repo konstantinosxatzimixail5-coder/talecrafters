@@ -7,7 +7,7 @@ import { pageCopy } from '@/content/copy';
 import { getFaqGroups } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'Packages — Four Ways to Work With Us',
+  title: 'Packages: Four Ways to Work With Us',
   description:
     'The Alliance for ongoing creative partnership, The Forge for predictable monthly output, The Mission for a single project, The Shadow Protocol for white-label production. Escalation levels for Content-as-Service.',
   path: '/packages',

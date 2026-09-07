@@ -442,7 +442,7 @@ export const copyRegistry = {
         meta: [
           { label: 'Styles', value: '12' },
           { label: 'Each entry', value: 'Scaffold, keywords, failure, example' },
-          { label: 'The rule', value: 'Name the absence, not the mood' },
+          { label: 'The rule', value: 'Name the absence' },
           { label: 'Gate', value: 'None. Take it.' },
         ],
       }),

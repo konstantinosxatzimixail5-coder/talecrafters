@@ -10,7 +10,7 @@ import { pageCopy } from '@/content/copy';
 import { getFaqGroups } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'FAQ — The Questions Everyone Asks',
+  title: 'FAQ: The Questions Everyone Asks',
   description:
     'What TaleCrafters does, how fast we deliver, what it costs, how we keep a face or a product consistent, who owns the output, how we handle disclosure and likeness rights, and what a Creative Systems engagement hands over.',
   path: '/faq',

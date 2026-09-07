@@ -79,7 +79,7 @@ export async function GET() {
   lines.push('');
   for (const c of categories) {
     lines.push(
-      `- [${c.title} — ${c.descriptor}](${SITE_URL}/arsenal#${c.slug}): ${c.intro} Services: ${c.services
+      `- [${c.title}: ${c.descriptor}](${SITE_URL}/arsenal#${c.slug}): ${c.intro} Services: ${c.services
         .map((s) => s.name)
         .join(', ')}.`
     );
@@ -90,7 +90,7 @@ export async function GET() {
   lines.push('');
   for (const w of work) {
     lines.push(
-      `- [${w.client} — ${w.title}](${SITE_URL}/work/${w.slug}): ${w.summary} Discipline: ${w.discipline}. Year: ${w.year}. Result: ${w.result}`
+      `- [${w.client}: ${w.title}](${SITE_URL}/work/${w.slug}): ${w.summary} Discipline: ${w.discipline}. Year: ${w.year}. Result: ${w.result}`
     );
   }
   lines.push('');
@@ -142,7 +142,7 @@ export async function GET() {
   lines.push('');
   for (const p of pipelines) {
     lines.push(
-      `- [${p.name} — ${p.title}](${SITE_URL}/pipelines/${p.slug}): ${p.summary} Mechanism: ${p.mechanism}. Gates: ${p.gates
+      `- [${p.name}: ${p.title}](${SITE_URL}/pipelines/${p.slug}): ${p.summary} Mechanism: ${p.mechanism}. Gates: ${p.gates
         .map((g) => g.name)
         .join(', ')}.`
     );

@@ -9,7 +9,7 @@ import { abs } from '@/lib/site';
 import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
-  title: 'The Prompting Library — Prompt Guides for AI Video, Image and Story',
+  title: 'The Prompting Library: Prompt Guides for AI Video, Image and Story',
   description: `${promptGuides.length} prompting guides for generative production: video and shot prompts, photoreal stills, character consistency, story and script prompting, inpainting and extension, and system prompts that run unattended. Each one gives the scaffold, a working prompt, the failure mode and the fix. Free, no email gate.`,
   path: '/supply-drop/prompting-library',
   keywords: [
@@ -109,7 +109,7 @@ export default async function PromptingLibraryPage() {
                 '@type': 'HowToStep',
                 position: 5,
                 name: 'Keep the invariant in a file',
-                text: 'Anything repeated across shots (the lock block, the continuity line, the character brief) gets pasted, never retyped. Retyped text drifts.',
+                text: 'Anything repeated across shots (the lock block, the continuity line, the character brief) gets pasted in. Retyped text drifts.',
               },
             ],
           },

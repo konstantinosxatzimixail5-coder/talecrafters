@@ -40,7 +40,7 @@ const qa = [
   },
   {
     q: 'Where does the system live?',
-    a: 'Inside your own accounts. A system you cannot operate without us is a dependency, not an asset.',
+    a: 'Inside your own accounts. A system you cannot operate without us is a dependency.',
   },
   {
     q: 'Do we need engineers to run it?',

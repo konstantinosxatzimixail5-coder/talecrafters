@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "TaleCrafters Ltd Privacy Policy. How we collect, use, store, share, and protect your personal data.",
   alternates: { canonical: `${SITE_URL}/privacy` },
   openGraph: {
-    title: "Privacy Policy — TaleCrafters",
+    title: "Privacy Policy: TaleCrafters",
     url: `${SITE_URL}/privacy`,
     siteName: "TaleCrafters",
     type: "website",

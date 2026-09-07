@@ -11,9 +11,9 @@ import { pageCopy } from '@/content/copy';
 import { getWork } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'Create — Films, Campaigns & Visual Worlds',
+  title: 'Create: Films, Campaigns & Visual Worlds',
   description:
-    'The client-facing production arm: generative video, commercials, brand films, social campaigns, creative direction, synthetic photography, animation and visual identities. We sell production, not generations.',
+    'The client-facing production arm: generative video, commercials, brand films, social campaigns, creative direction, synthetic photography, animation and visual identities. What you buy is finished production. Generations are what happens on the way there.',
   path: '/create',
   keywords: [
     'generative video production',

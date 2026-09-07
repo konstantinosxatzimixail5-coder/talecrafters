@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getPerson(slug);
   if (!p) return {};
   return pageMeta({
-    title: `${p.name} — ${p.jobTitle}`,
+    title: `${p.name}: ${p.jobTitle}`,
     description: p.bio,
     path: `/authors/${p.slug}`,
     ...(p.image ? { image: p.image } : {}),

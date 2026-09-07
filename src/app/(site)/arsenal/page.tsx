@@ -17,7 +17,7 @@ import { pageCopy } from '@/content/copy';
 import { getCategories, getSolutions } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'The Arsenal — Every Capability, Listed Plainly',
+  title: 'The Arsenal: Every Capability, Listed Plainly',
   description:
     'Six capability groups and thirty services: generative film and motion, creative strategy and storytelling, agentic workflows and automation, websites and digital experiences, positioning and PR, digital presenters and agents.',
   path: '/arsenal',

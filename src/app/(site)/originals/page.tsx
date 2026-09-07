@@ -8,7 +8,7 @@ import { pageMeta, breadcrumbSchema, faqSchema } from '@/lib/seo';
 import { pageCopy } from '@/content/copy';
 
 export const metadata = pageMeta({
-  title: 'Originals — Our Own Films, Games and Stories',
+  title: 'Originals: Our Own Films, Games and Stories',
   description:
     'TaleCrafters Originals: seven completed feature screenplays, game concepts, animated series development, graphic narrative and long-form fiction. The part with nobody paying us to be right.',
   path: '/originals',
@@ -32,7 +32,7 @@ const qa = [
   },
   {
     q: 'Do you co-develop IP with brands?',
-    a: 'Yes. Branded narrative, owned series and character-led formats are all live conversations, and they run on the same development discipline as the originals, never as campaign work with a story bolted on.',
+    a: 'Yes. Branded narrative, owned series and character-led formats are all live conversations, and they run on the same development discipline as the originals, with the story written first.',
   },
 ];
 
@@ -68,7 +68,7 @@ export default async function OriginalsPage() {
         meta={copy.header.meta}
         cta={{
           title: 'Own something instead of renting attention.',
-          body: 'Branded narrative, owned series and character-led formats, developed on the same discipline as our own slate, never as a campaign with a story bolted on.',
+          body: 'Branded narrative, owned series and character-led formats, developed on the same discipline as our own slate, with the story written first.',
         }}
       >
         <section className="px-5 md:px-10 lg:px-14 py-10 md:py-16">
