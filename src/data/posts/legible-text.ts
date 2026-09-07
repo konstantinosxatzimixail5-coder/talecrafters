@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'Legible Text in AI Images: Why It Fails and What to Do Instead',
   metaTitle: 'Legible Text in AI-Generated Images: Why It Fails and the Fix',
   metaDescription:
-    'Why generative models still reconstruct type unreliably, why a nearly-correct word is worse than an obviously wrong one, and the plate-and-composite method that removes the problem entirely.',
+    'Why generative models still reconstruct type unreliably, why a nearly-correct word is the one that gets through and does the damage, and the plate-and-composite method that removes the problem entirely.',
   excerpt:
     'A wrong word on a label is a legal problem, and there is no partial credit.',
   published: '2026-06-30',
@@ -84,7 +84,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The fix is the same and harder: generate the move on a blank label and track the type on in post. It is more work than a still and it is still less work than forty attempts.',
+      text: 'The fix is the same and harder: generate the move on a blank label and track the type on in post. It costs an afternoon of tracking. Forty failed attempts cost three days.',
     },
     { t: 'h2', text: 'When to accept generated type' },
     {

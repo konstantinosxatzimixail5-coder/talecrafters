@@ -32,7 +32,7 @@ export const post: Post = {
     { t: 'h2', text: 'The mechanism' },
     {
       t: 'p',
-      text: 'Unfinished tasks occupy attention more than finished ones. Ask a question and leave it unanswered and the viewer is holding something; close it and the holding stops. That is the entire technique, and its consequence is that the placement of answers matters as much as their content.',
+      text: 'An unfinished task keeps its claim on attention. Ask a question and leave it unanswered and the viewer is holding something; close it and the holding stops. That is the entire technique, and its consequence is that the placement of answers matters as much as their content.',
     },
     {
       t: 'p',

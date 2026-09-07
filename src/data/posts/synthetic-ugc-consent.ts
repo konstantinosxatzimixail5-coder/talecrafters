@@ -116,7 +116,7 @@ export const post: Post = {
     { t: 'h2', text: 'The pre-render checklist' },
     {
       t: 'p',
-      text: 'Nothing on this list happens after generation. All of it happens before, because every item is cheaper to satisfy than to remediate.',
+      text: 'Nothing on this list happens after generation. All of it happens before, because every item on the list costs a phone call now and a legal bill later.',
     },
     {
       t: 'ol',

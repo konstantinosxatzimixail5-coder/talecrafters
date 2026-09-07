@@ -48,7 +48,7 @@ export const post: Post = {
     { t: 'h2', text: 'Why acceptance rate dominates everything' },
     {
       t: 'p',
-      text: 'The first multiplier is much larger than the other three and much more variable, which makes it the one worth attacking. Halving your attempts per usable shot halves the production cost of the whole job; shaving the overgeneration ratio saves you a few per cent.',
+      text: 'The first multiplier dwarfs the other three and swings hardest, which makes it the one worth attacking. Halving your attempts per usable shot halves the production cost of the whole job; shaving the overgeneration ratio saves you a few per cent.',
     },
     {
       t: 'p',

@@ -71,7 +71,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Hard shots tell you your real acceptance rate within the first hour, while there is still time to change the approach. Easy shots tell you nothing and make you optimistic, which is worse than useless on a fixed budget.',
+      text: 'Hard shots tell you your real acceptance rate within the first hour, while there is still time to change the approach. Easy shots tell you nothing and make you optimistic, which is an expensive kind of useless on a fixed budget.',
     },
     { t: 'h2', text: '4. Gate every frame, mechanically' },
     {

@@ -85,7 +85,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Keep it under a few thousand words. The point is that it is cheaper to read than the site; a file that is not cheaper to read than the site has no reason to exist.',
+      text: 'Keep it under a few thousand words. The point is that a machine reads the whole thing in one pass. A file that takes as long as the site has no reason to exist.',
     },
     { t: 'h2', text: 'What to do instead, if you only do one thing' },
     {
@@ -100,7 +100,7 @@ export const post: Post = {
       t: 'cta',
       href: '/glossary/entity-graph',
       label: 'Entity graph, defined',
-      text: 'Why consistent naming across a site does more for machine comprehension than any single file can.',
+      text: 'Why consistent naming across a site carries machine comprehension that no single file can.',
     },
   ],
   faqs: [

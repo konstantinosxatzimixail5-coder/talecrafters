@@ -35,7 +35,7 @@ export const post: Post = {
       items: [
         'Blocking. Where people stand and who faces where, resolved in minutes, where it used to take a day of sketching.',
         'Coverage decisions. Generating the same beat as a wide, a medium and a close and looking at all three before committing.',
-        'Pacing. Assembling boards into an animatic with the real intended durations exposes a slow middle earlier than any read-through.',
+        'Pacing. Assembling boards into an animatic with the real intended durations exposes a slow middle on the first pass, while a read-through leaves it buried.',
         'Alternatives. Six versions of a difficult beat is now an affordable question.',
         'Internal alignment. A director and a producer arguing about a shot can now argue about an image instead of about a description, which shortens it considerably.',
       ],
@@ -83,7 +83,7 @@ export const post: Post = {
         'Cut the animatic to real durations immediately, before refining any frame. The timing question is the one that matters.',
         'Fix structure at animatic stage. This is the whole point of the exercise and the step most often skipped in the excitement.',
         'Only then raise fidelity, and only on the frames a client needs to approve.',
-        'Carry the approved boards forward as reference frames into production, so the board and the shot share conditioning and do more than resemble each other.',
+        'Carry the approved boards forward as reference frames into production, so the board and the shot share conditioning and hold the same geometry.',
       ],
     },
     { t: 'h2', text: 'The thing boards cannot previsualise' },

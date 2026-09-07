@@ -51,7 +51,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The row worth sitting with is the failure mode. A broken automation stops and shouts. A confused agent keeps going and produces something plausible. Plausible-and-wrong is a far more expensive category of failure than stopped, and it is the one teams are least prepared for because their monitoring was built for the other kind.',
+      text: 'The row worth sitting with is the failure mode. A broken automation stops and shouts. A confused agent keeps going and produces something plausible. Plausible-and-wrong is the expensive category, and it is the one teams are least prepared for because their monitoring was built for the other kind.',
     },
     { t: 'h2', text: 'The decision rule' },
     {
@@ -152,7 +152,7 @@ export const post: Post = {
     },
     {
       q: 'Why are agentic failures harder to catch than automation failures?',
-      a: 'A broken automation stops and raises an error. A confused agent continues and produces something plausible. Plausible and wrong is more expensive than stopped, and most monitoring was built for the stopped case.',
+      a: 'A broken automation stops and raises an error. A confused agent continues and produces something plausible. Plausible and wrong is the expensive case, and most monitoring was built to catch the stopped one.',
     },
     {
       q: 'Do agentic workflows replace creative teams?',

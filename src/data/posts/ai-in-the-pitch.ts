@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'What to Tell a Client About AI in the Pitch',
   metaTitle: 'Disclosing AI Use to Clients: What to Say in the Pitch',
   metaDescription:
-    'Almost every production now uses generative tools somewhere. What to disclose to a client and when, how to answer the four questions procurement will ask, and why hiding it costs more than saying it.',
+    'Almost every production now uses generative tools somewhere. What to disclose to a client and when, how to answer the four questions procurement will ask, and what hiding it costs you.',
   excerpt:
     'The question is no longer whether you use it. It is who benefits from the efficiency, and clients have started asking it directly.',
   published: '2026-05-15',
@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'ai-in-the-pitch',
   imageAlt: 'A pitch document open at a page headed "How this was made".',
   standfirst:
-    'Disclose which stages used generative tools, what the client owns, who is accountable for the output, and how the saving is shared. Clients are asking all four. A studio that answers them unprompted is easier to buy from than one that waits to be asked.',
+    'Disclose which stages used generative tools, what the client owns, who is accountable for the output, and how the saving is shared. Clients are asking all four. A studio that answers them unprompted is the easy one to buy from.',
   body: [
     {
       t: 'p',
@@ -59,7 +59,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The fourth is the one studios fear and the one worth meeting head-on, because the true answer is more interesting than the evasion. The cost did not disappear; it moved from shooting to writing, rights, review and systems. A client who understands that is buying the right thing. A client who is told nothing assumes the saving was pocketed, and they are sometimes correct.',
+      text: 'The fourth is the one studios fear and the one worth meeting head-on, because the true answer holds a room. The cost did not disappear; it moved from shooting to writing, rights, review and systems. A client who understands that is buying the right thing. A client who is told nothing assumes the saving was pocketed, and they are sometimes correct.',
     },
     { t: 'h2', text: 'What to put in the pitch, unprompted' },
     {
@@ -70,7 +70,7 @@ export const post: Post = {
         'The deliverable specification, including what makes the work continuable without you.',
         'The disclosure position for the finished work, decided now, at brief stage, to the strictest of platform policy, advertising code and applicable law.',
         'The consent position for anybody appearing in it.',
-        'Where the budget goes, as a proportion. This single slide changes more pitch conversations than any showreel.',
+        'Where the budget goes, as a proportion. This single slide is what turns the room. The showreel gets nodded at.',
       ],
     },
     {

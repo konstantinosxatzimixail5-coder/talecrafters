@@ -24,7 +24,7 @@ export const post: Post = {
   image: 'writing-hooks',
   imageAlt: 'Twenty opening lines for the same video, sorted by the mechanism each uses.',
   standfirst:
-    'A hook is a mechanism for making continuing more attractive than leaving. Six work reliably: contradict a belief, name a cost, state a specific number, withhold the subject, admit a failure, or start mid-action. Everything else is a variation of one of them, and "make it punchy" is not a mechanism.',
+    'A hook is a mechanism that makes leaving feel expensive. Six work reliably: contradict a belief, name a cost, state a specific number, withhold the subject, admit a failure, or start mid-action. Everything else is a variation of one of them, and "make it punchy" is not a mechanism.',
   body: [
     {
       t: 'p',
@@ -43,7 +43,7 @@ export const post: Post = {
         [
           'Contradiction',
           'Creates a gap between what they believe and what you said',
-          '"Shortening the clip raised completion more than the edit did."',
+          '"Shortening the clip raised completion by nine points. The edit raised it by one."',
         ],
         [
           'Cost',
@@ -97,7 +97,7 @@ export const post: Post = {
         'Write the claim first. One sentence, the single true and specific thing the piece proves. If you cannot write it, the hook is not the problem.',
         'Write what the audience currently believes. One sentence. The gap between these two is the raw material.',
         'Take each of the six mechanisms in turn and write three or four openings using only that mechanism. Do not mix at this stage.',
-        'Cap the length. Nine words for video, twelve for a headline. The cap does more for quality than any amount of rewriting.',
+        'Cap the length. Nine words for video, twelve for a headline. The cap does the work that rewriting keeps failing to do.',
         'Ban the three defaults: the rhetorical question, "in this video", and the word "secret". All three are recognised by audiences as the shape of nothing.',
         'Read all twenty aloud. The ones that are hard to say are hard to hear, and in a feed the audio arrives before the meaning.',
       ],
@@ -136,7 +136,7 @@ export const post: Post = {
     },
     {
       q: 'How long is a hook?',
-      a: 'In short-form video, the first one to three seconds. Cap the line at about nine words for video and twelve for a headline. The cap improves quality more reliably than rewriting does.',
+      a: 'In short-form video, the first one to three seconds. Cap the line at about nine words for video and twelve for a headline. The cap improves quality where rewriting keeps missing.',
     },
     {
       q: 'How do you write twenty different hooks?',

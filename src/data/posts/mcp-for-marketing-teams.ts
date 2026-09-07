@@ -65,7 +65,7 @@ export const post: Post = {
       items: [
         'What can it read? Scope the connection to what the job needs. A model connected to an entire drive has the entire drive in play including the salary spreadsheet nobody remembered was there.',
         'What can it write, and where? Read-only is the default and write access is a decision. Write to a draft, a branch, a staging area. Somewhere a person passes through before anything is live.',
-        'Who is it acting as? A connector runs with somebody’s permissions. If those permissions are broader than the task, the task is broader than intended, and the audit log will say a person did it.',
+        'Who is it acting as? A connector runs with somebody’s permissions. If the permissions reach past the task, so does the task, and the audit log will say a person did it.',
         'What is logged? Every call, with what was read and what was written. Without it you cannot answer the only question that matters after something goes wrong, which is what happened.',
       ],
     },

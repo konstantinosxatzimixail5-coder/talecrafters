@@ -36,7 +36,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'That is a narrower category than most content calendars assume, and it is a specific one.',
+      text: 'That is a narrow, specific category, and most content calendars are pointed somewhere else entirely.',
     },
     { t: 'h2', text: 'The four page types that still work' },
     {

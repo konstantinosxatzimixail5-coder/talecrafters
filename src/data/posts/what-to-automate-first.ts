@@ -74,7 +74,7 @@ export const post: Post = {
         'Final approval. Somebody signs, at any volume. The moment approval is automated, nobody is responsible for what ships.',
         'Anything making a factual or regulated claim. A drafted claim is fine; a published one without a human check is a liability with a schedule.',
         'Anything touching a real person’s likeness or voice without a checked consent record. The check is the point and it cannot be inferred.',
-        'Anything where the failure is silent. Automation that quietly does nothing is worse than no automation, because the team stops checking.',
+        'Anything where the failure is silent. Automation that quietly does nothing is the expensive kind, because the team stops checking.',
       ],
     },
     { t: 'h2', text: 'The sequence' },

@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'AI Video Disclosure Rules for UK Advertising',
   metaTitle: 'AI Video Disclosure Rules for UK Advertising: What Applies',
   metaDescription:
-    'There is no blanket UK rule requiring every AI-assisted ad to be labelled. There is a misleadingness test, a set of platform policies that are stricter than the law, and an EU regulation that now applies to a lot of UK advertisers anyway.',
+    'There is no blanket UK rule requiring every AI-assisted ad to be labelled. There is a misleadingness test, a set of platform policies that reach past the law, and an EU regulation that now applies to a lot of UK advertisers anyway.',
   excerpt:
     'What the CAP Code requires, where the platforms go further, and the practical rule we apply on every asset we ship.',
   published: '2026-08-27',
@@ -25,7 +25,7 @@ export const post: Post = {
   imageAlt:
     'A broadcast frame with a disclosure label burned into its lower third, shown against a wall of regulatory paperwork.',
   standfirst:
-    'The UK Advertising Codes contain no rule that says "label AI". What they contain is a rule against misleading, and the test is whether an audience would be misled if you stayed quiet. That is a lower bar than a labelling mandate and a much higher bar than most advertisers assume.',
+    'The UK Advertising Codes contain no rule that says "label AI". What they contain is a rule against misleading, and the test is whether an audience would be misled if you stayed quiet. That is a misleadingness bar, and it catches a great deal of work a labelling mandate would wave through.',
   legalNotice: true,
   body: [
     {
@@ -63,19 +63,19 @@ export const post: Post = {
       t: 'ul',
       items: [
         'A synthetic person presented as a real customer, user or member of the public. This is the highest-risk category by a distance, because the entire persuasive weight of the format rests on the viewer believing a person exists.',
-        'A product depiction that shows the product doing something it does not do, or looking materially better than it does. Generative production makes exaggerated depiction trivially easy, which is exactly why it attracts scrutiny.',
+        'A product depiction that shows the product doing something it does not do, or wearing a finish it has never had on a shelf. Generative production makes exaggerated depiction trivially easy, which is exactly why it attracts scrutiny.',
         'Any synthetic endorsement, testimonial or likeness of an identifiable person. Consent is a separate and non-negotiable issue here, before disclosure is even reached.',
         'Anything in a regulated sector where the underlying claim needs substantiation. Health, finance, supplements, environmental claims. The generative question stacks on top of a substantiation question that already existed.',
       ],
     },
-    { t: 'h2', text: 'The platforms are stricter than the regulator' },
+    { t: 'h2', text: 'The platforms run ahead of the regulator' },
     {
       t: 'p',
       text: 'Teams get caught here. The ASA sets a misleadingness standard. The platforms set labelling policies, and those policies are contractual, which means they are enforced by demonetisation and reach suppression, months before any ruling arrives.',
     },
     {
       t: 'p',
-      text: 'Meta and TikTok both operate AI-content labelling regimes with a self-declaration requirement plus automated detection, and both reserve the right to apply a label you did not choose. Getting labelled by the platform after the fact is worse than labelling yourself: it looks like a correction, and it happens after the ad has already been served.',
+      text: 'Meta and TikTok both operate AI-content labelling regimes with a self-declaration requirement plus automated detection, and both reserve the right to apply a label you did not choose. Getting labelled by the platform after the fact reads as a correction, and it lands once the ad has already been served.',
     },
     {
       t: 'p',
@@ -116,7 +116,7 @@ export const post: Post = {
     { t: 'h2', text: 'The disclosure wording itself' },
     {
       t: 'p',
-      text: 'Short, plain, and in the same visual field as the claim it qualifies. "AI-generated" or "Created with AI" is sufficient and is what platform policies are written around. Avoid constructions that hedge ("partly enhanced with AI tools") because a hedge invites a reader to work out what was and was not real, which is a worse conversation than the one you were avoiding.',
+      text: 'Short, plain, and in the same visual field as the claim it qualifies. "AI-generated" or "Created with AI" is sufficient and is what platform policies are written around. Avoid constructions that hedge ("partly enhanced with AI tools") because a hedge invites a reader to work out what was real, which is the conversation you were trying to avoid, now with an audience.',
     },
     {
       t: 'cta',

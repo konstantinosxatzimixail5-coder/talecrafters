@@ -70,7 +70,7 @@ export const post: Post = {
         'Put the answer before the argument. Journalism has known this for a century and calls it the inverted pyramid; the difference now is that something automated is reading only the top.',
         'Mark up what the page is. FAQPage for question blocks, DefinedTerm for definitions, Article with a real author and dates. Schema removes ambiguity about what the claim is.',
         'Define your terms on their own pages and link to them consistently. A glossary is not a content-marketing tactic, it is an entity graph you control.',
-        'Date everything and keep it current. Freshness is a stronger signal in retrieval-based systems than it ever was in classical ranking, because a model quoting a stale number gets caught.',
+        'Date everything and keep it current. Freshness carries real weight in retrieval-based systems, because a model quoting a stale number gets caught.',
         'Cite your own sources with links. Pages that show their working are safer to quote and are treated as such.',
       ],
     },
@@ -79,14 +79,14 @@ export const post: Post = {
       title: 'The uncomfortable part',
       text: 'Optimising for citation means writing pages that answer the question without requiring a visit. That is a real trade: you are exchanging sessions for mentions. The counter-argument is that the alternative is neither, because the answer gets composed from somebody else’s page regardless.',
     },
-    { t: 'h2', text: 'Engines differ more than people assume' },
+    { t: 'h2', text: 'The engines behave differently from each other' },
     {
       t: 'p',
       text: 'Citation overlap between the major answer engines is low, which means measuring one of them measures very little. Broadly, and with the caveat that all of this moves: engines built on a conventional index inherit that index’s rankings, so classical SEO covers most of the ground. Engines that retrieve live tend to reward freshness, specificity and clean citation. Engines that lean on brand familiarity reward being mentioned in many places, and ranking in one counts for little.',
     },
     {
       t: 'p',
-      text: 'The practical consequence is that off-site mentions matter more than they did. Being quoted in somebody else’s article is an input to whether you get quoted directly, which makes the old-fashioned work of saying something worth repeating a retrieval strategy.',
+      text: 'The practical consequence is that off-site mentions now carry weight in their own right. Being quoted in somebody else’s article is an input to whether you get quoted directly, which makes the old-fashioned work of saying something worth repeating a retrieval strategy.',
     },
     { t: 'h2', text: 'What does not work' },
     {
@@ -111,7 +111,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'That last one is the honest win. Fewer visitors, arriving later, already knowing what you do. That is a better business outcome than the traffic chart suggests, and it is the one the traffic chart cannot show you.',
+      text: 'That last one is the honest win. Fewer visitors, arriving later, already knowing what you do. That is a good quarter for the business and a bad-looking quarter on the traffic chart, which is the one thing the traffic chart will never tell you.',
     },
   ],
   faqs: [

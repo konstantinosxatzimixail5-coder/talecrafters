@@ -73,7 +73,7 @@ export const post: Post = {
     { t: 'h2', text: 'Prompting to match filmed material' },
     {
       t: 'p',
-      text: 'The lock block for a hybrid job carries more than a normal one, and it is written from the on-set notes.',
+      text: 'The lock block for a hybrid job runs longer, and it is written from the on-set notes.',
     },
     {
       t: 'quote',
@@ -90,7 +90,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Then put one grain layer, one halation and one very slight lens artefact over the entire finished piece. A shared surface does more for perceived coherence than any amount of per-clip work, because it gives the audience a single physical explanation for everything they are looking at.',
+      text: 'Then put one grain layer, one halation and one very slight lens artefact over the entire finished piece. A shared surface is where perceived coherence comes from, and per-clip work will never reach it, because the surface gives the audience a single physical explanation for everything they are looking at.',
     },
     { t: 'h2', text: 'What to put in front of a lens' },
     {

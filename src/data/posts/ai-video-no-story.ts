@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'The most common note on generative work is some version of "it looks incredible and I stopped watching". It is a real observation and it is almost never about the images. The tools removed the cost of producing a shot and did nothing at all to the cost of having something to say, which means the ratio of production value to structure has moved further than at any point since the camcorder.',
+      text: 'The most common note on generative work is some version of "it looks incredible and I stopped watching". It is a real observation and it is almost never about the images. The tools removed the cost of producing a shot and did nothing at all to the cost of having something to say, which means the ratio of production value to structure has moved further in three years than in the thirty since the camcorder.',
     },
     {
       t: 'p',
@@ -59,7 +59,7 @@ export const post: Post = {
     { t: 'h2', text: 'Test four: does anything reverse?' },
     {
       t: 'p',
-      text: 'A reversal is the situation inverting using elements already in play. The advantage becoming the liability, the victory costing more than it was worth. A sequence of escalating obstacles is monotonous however large the obstacles get. Two well-placed reversals do more than five additional complications.',
+      text: 'A reversal is the situation inverting using elements already in play. The advantage becoming the liability, the victory arriving at a price the character will pay for. A sequence of escalating obstacles is monotonous however large the obstacles get. Two well-placed reversals will carry a piece that five additional complications leave flat.',
     },
     { t: 'h2', text: 'Test five: does each scene shift a value?' },
     {
@@ -75,7 +75,7 @@ export const post: Post = {
         ['A want', 'Beautiful people doing nothing in particular', 'Give one character one specific thing to get.'],
         ['An obstacle', 'No tension despite high stakes language', 'Make the opposition’s position reasonable.'],
         ['A reversal', 'The middle drags and the end is predictable', 'Invert one thing at the centre. Usually a re-order of what you already have.'],
-        ['A value shift', 'Individual scenes feel fine and add to nothing', 'Cut the scenes where nothing moves. There are more than you think.'],
+        ['A value shift', 'Individual scenes feel fine and add to nothing', 'Cut the scenes where nothing moves. Count them first and the number will annoy you.'],
       ],
     },
     {

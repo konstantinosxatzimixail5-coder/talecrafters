@@ -38,7 +38,7 @@ export const post: Post = {
       t: 'ul',
       items: [
         'Structure: face shape, bone, proportion, the asymmetry. Measurable things.',
-        'Two or three fixed marks: a scar, a mole, a gap, a crooked tooth. These carry more identity than any amount of description.',
+        'Two or three fixed marks: a scar, a mole, a gap, a crooked tooth. These carry the identity. Description alone will lose it by shot four.',
         'Hair: length, texture, parting, and how it behaves when disturbed.',
         'Wardrobe: exact, including fastenings and wear. A missing button is an identity anchor.',
         'What is deliberately unspecified: expression and pose, which have to vary.',
@@ -51,7 +51,7 @@ export const post: Post = {
     { t: 'h2', text: 'The reference set' },
     {
       t: 'p',
-      text: 'One frame is not enough, and twenty is worse than five. What you want is a small fixed set covering the angles the campaign needs (front, three-quarter, profile, and one at the shot size you will use most) approved once and never quietly extended.',
+      text: 'One frame will not hold it, and twenty starts pulling the likeness in twenty directions. What you want is a small fixed set covering the angles the campaign needs (front, three-quarter, profile, and one at the shot size you will use most) approved once and never quietly extended.',
     },
     {
       t: 'p',
@@ -91,7 +91,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The threshold is not a rule, it is a break-even. Below it, training costs more than it saves. Above it, the consistency is worth the setup, and the additional benefit is that a trained identity can hold a pose that references struggle with.',
+      text: 'The threshold is not a rule, it is a break-even. Below it, training costs you money you never get back. Above it, the consistency is worth the setup, and the additional benefit is that a trained identity can hold a pose that references struggle with.',
     },
     { t: 'h2', text: 'The rights half, which is not optional' },
     {
@@ -124,7 +124,7 @@ export const post: Post = {
     },
     {
       q: 'When is it worth training a character model instead of using references?',
-      a: 'Roughly above twenty to thirty assets, or when the presenter recurs for more than a quarter. Below that, training costs more than it saves. Note that a trained identity does not survive a model change, whereas a reference set does.',
+      a: 'Roughly above twenty to thirty assets, or when the presenter recurs for more than a quarter. Below that, the setup never pays back. Note that a trained identity does not survive a model change, whereas a reference set does.',
     },
     {
       q: 'What should a synthetic presenter character brief contain?',

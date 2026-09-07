@@ -77,7 +77,7 @@ export const post: Post = {
     { t: 'h2', text: 'What to hold constant, and how' },
     {
       t: 'p',
-      text: 'A test is only valid if everything except the tested axis is identical to the byte, which is harder in generative production than it sounds, because two generations from the same prompt are not the same asset.',
+      text: 'A test is only valid if everything except the tested axis is identical to the byte, which is hard work in generative production, because two generations from the same prompt are not the same asset.',
     },
     {
       t: 'ol',
@@ -96,7 +96,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'For structure rounds, the middle slope of the retention curve. For call-to-action rounds, conversion. Matching the metric to the axis is the step that makes the round interpretable, and it is skipped more often than any other.',
+      text: 'For structure rounds, the middle slope of the retention curve. For call-to-action rounds, conversion. Matching the metric to the axis is the step that makes the round interpretable, and it is the step most often skipped.',
     },
     {
       t: 'cta',

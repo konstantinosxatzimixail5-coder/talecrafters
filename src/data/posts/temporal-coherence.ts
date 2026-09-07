@@ -74,7 +74,7 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'Generate longer than you need. Ask for eight seconds when you want three. The cost difference is trivial and it gives you choice.',
+        'Overshoot the duration. Ask for eight seconds when you want three. The cost difference is trivial and it gives you choice.',
         'Take the stable opening. The first portion is anchored hardest and therefore best.',
         'Cut on motion. A cut during a movement hides the discontinuity between two independently generated clips, which is the same reason editors have always cut on action.',
         'Vary shot size across the cut. Two similar-sized shots joined together announce the join. Wide to close does not.',
@@ -94,7 +94,7 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'Less motion in frame. A slow move on a mostly static subject holds far longer than a subject in complex action.',
+        'Less motion in frame. A slow move on a mostly static subject holds for the whole clip, while complex action starts coming apart around three seconds.',
         'Fewer articulated objects. Hands are the enemy of length. A composition where hands are out of frame or still buys seconds.',
         'A simpler background. Every additional object is another thing that has to persist.',
         'Locked-off camera. Camera movement compounds with subject movement and halves the budget.',
@@ -145,7 +145,7 @@ export const post: Post = {
     },
     {
       q: 'How long should an AI video clip be?',
-      a: 'Short enough to end before extremity drift begins, which is usually well before the model stops producing frames. Generate longer than you need, take the stable opening portion, and assemble the piece from short clips joined by cuts on motion.',
+      a: 'Short enough to end before extremity drift begins, which is usually well before the model stops producing frames. Overshoot the duration, take the stable opening portion, and assemble the piece from short clips joined by cuts on motion.',
     },
     {
       q: 'Does adding words like "consistent" to a prompt improve coherence?',

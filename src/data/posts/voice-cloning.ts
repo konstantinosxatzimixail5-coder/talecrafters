@@ -52,10 +52,10 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'Breath placement. Insert breaths where a person would take them, which is before a clause they are about to emphasise. This single change does more than any other.',
+        'Breath placement. Insert breaths where a person would take them, which is before a clause they are about to emphasise. This single change carries the read.',
         'Pace variation. A human read speeds up through the familiar and slows through the important. A uniform pace is the loudest tell there is.',
-        'Emphasis by rewriting. Move the word you want stressed to the end of the clause. Prosody follows structure more reliably than it follows tags.',
-        'Sentence length variation in the script. Synthetic reads expose monotonous sentence rhythm far more than human ones, because a human unconsciously varies against it.',
+        'Emphasis by rewriting. Move the word you want stressed to the end of the clause. Prosody follows structure. Tags are a suggestion.',
+        'Sentence length variation in the script. A synthetic read puts monotonous rhythm on full display, because a human voice varies against it without being asked to.',
         'One imperfection. A slightly early breath, a very small stumble, one word taken at a different pace. One only.',
         'Room. A completely clean voice in a completely silent mix is not a recording of anything. Put it in a space.',
       ],
@@ -85,7 +85,7 @@ export const post: Post = {
     { t: 'h2', text: 'Disclosure' },
     {
       t: 'p',
-      text: 'A wholly synthetic voice presented as nobody in particular is, in most markets, outside the disclosure duty, though platform policies vary and are frequently stricter than law.',
+      text: 'A wholly synthetic voice presented as nobody in particular is, in most markets, outside the disclosure duty, though platform policies vary and frequently reach past the law.',
     },
     {
       t: 'p',
@@ -118,11 +118,11 @@ export const post: Post = {
     },
     {
       q: 'Does a cloned voice have to be disclosed?',
-      a: 'A cloned voice of an identifiable person generally yes: since August 2026 EU transparency obligations under Article 50 apply to synthetic audio qualifying as a deepfake. A wholly synthetic voice not presented as a specific person is usually a platform-policy question, and platform policy is often stricter than the law.',
+      a: 'A cloned voice of an identifiable person generally yes: since August 2026 EU transparency obligations under Article 50 apply to synthetic audio qualifying as a deepfake. A wholly synthetic voice not presented as a specific person is usually a platform-policy question, and platform policy routinely sets the higher bar.',
     },
     {
       q: 'Why do synthetic reads sound flat even when the voice is good?',
-      a: 'Usually because the copy was written for the eye. A uniform pace is the loudest tell there is, and synthetic reads expose monotonous sentence rhythm far more than human ones. Read the script aloud, mark where you naturally breathe and slow, and rewrite so those fall on clause boundaries.',
+      a: 'Usually because the copy was written for the eye. A uniform pace is the loudest tell there is, and a synthetic read puts monotonous rhythm on full display. Read the script aloud, mark where you naturally breathe and slow, and rewrite so those fall on clause boundaries.',
     },
   ],
   terms: ['voice-cloning', 'consent-file', 'likeness-rights', 'disclosure', 'deepfake', 'derivative-training'],

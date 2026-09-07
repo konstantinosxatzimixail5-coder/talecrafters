@@ -48,7 +48,7 @@ export const post: Post = {
     { t: 'h2', text: 'Where visual lip sync works' },
     {
       t: 'p',
-      text: 'The envelope is narrower than the demos suggest. It works when the face is close to camera, roughly front-on, evenly lit, near-still and unobstructed. Outside that, in rough order of how quickly it degrades: profile angles, distance from camera, head movement, beards and moustaches, hard side light, and anything crossing the mouth.',
+      text: 'The envelope is tight, and the demos are shot inside it. It works when the face is close to camera, roughly front-on, evenly lit, near-still and unobstructed. Outside that, in rough order of how quickly it degrades: profile angles, distance from camera, head movement, beards and moustaches, hard side light, and anything crossing the mouth.',
     },
     {
       t: 'p',
@@ -57,7 +57,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'The timing constraint nobody plans for',
-      text: 'The same sentence can be a third longer in one language than another. If a cut lands on the end of a line, that cut will be wrong in at least one market. Either leave handles on every speaking shot or accept a different edit per market, and decide which at the edit stage.',
+      text: 'A sentence gains or loses a third of its length in translation. If a cut lands on the end of a line, that cut will be wrong in at least one market. Either leave handles on every speaking shot or accept a different edit per market, and decide which at the edit stage.',
     },
     { t: 'h2', text: 'What has to be re-recorded' },
     {

@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'why-hands-fail',
   imageAlt: 'A sequence of hands from generated frames, each failing in a different way.',
   standfirst:
-    'Hands fail because they have more articulated joints than anything else in a typical frame, they occlude themselves constantly, and every viewer has spent their life looking at them. The reliable production answer is compositional: frame so the hardest hand configurations are not in shot.',
+    'Hands fail because they carry twenty-seven bones and fifteen articulated joints into every frame, they occlude themselves constantly, and every viewer has spent their life looking at them. The reliable production answer is compositional: frame so the hardest hand configurations are not in shot.',
   body: [
     {
       t: 'p',
@@ -33,9 +33,9 @@ export const post: Post = {
     {
       t: 'ul',
       items: [
-        'Articulation. A hand has more independently moving joints than the rest of a body’s visible structure combined, and the valid configurations are a small subset of the possible ones.',
+        'Articulation. A hand carries fifteen independently moving joints, and the valid configurations are a small subset of the possible ones.',
         'Self-occlusion. Fingers hide other fingers constantly, so the model is inferring geometry it cannot see from geometry it can, at every frame.',
-        'Variety in training data. Hands appear at every scale, angle and degree of blur, in far more configurations than faces, which means less consistent signal per configuration.',
+        'Variety in training data. Hands appear at every scale, angle and degree of blur, across a configuration space that dwarfs the one a face occupies, which means less consistent signal per configuration.',
         'Expertise in the viewer. Everybody has looked at hands their entire life and can detect a wrong one instantly without being able to say what is wrong.',
         'No partial credit at the extremities. A slightly wrong shoulder is invisible; a sixth finger is the only thing in the frame.',
       ],
@@ -54,11 +54,11 @@ export const post: Post = {
       items: [
         'Crop at the wrist. A frame that ends above the hands cannot have wrong hands, and it is a legitimate composition.',
         'Put hands behind an object. A hand on the far side of a cup, a counter or a laptop is half a hand.',
-        'Hands at rest and together. Interlocked or resting hands present a simpler silhouette than a hand in mid-gesture.',
+        'Hands at rest and together. Interlocked or resting hands present a simple silhouette. Mid-gesture is where the geometry comes apart.',
         'Motion blur. A hand moving fast enough to blur is a hand that does not have to resolve.',
         'Out of focus. A hand in the near foreground at f/2 is a shape, and shapes do not have finger counts.',
         'Small in frame. Fewer pixels per hand is fewer pixels in which to be wrong.',
-        'Gloves. Effective, and appropriate in more categories than people assume: food, industry, medical, laboratory, cold weather.',
+        'Gloves. Effective, and at home across food, industry, medical, laboratory and cold weather.',
         'Cut before the gesture completes. The end of a gesture is where the configuration is most specific and most likely to fail.',
       ],
     },
@@ -105,7 +105,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'Why does AI still get hands wrong?',
-      a: 'Because hands have more articulated joints than anything else in a typical frame, they occlude themselves constantly so geometry has to be inferred, they appear in far more configurations than faces in training data, and every viewer is an expert in them. There is also no partial credit: a sixth finger is the only thing in the frame.',
+      a: 'Because hands carry fifteen articulated joints into every frame, they occlude themselves constantly so geometry has to be inferred, they appear across a configuration space that dwarfs the one a face occupies, and every viewer is an expert in them. There is also no partial credit: a sixth finger is the only thing in the frame.',
     },
     {
       q: 'How do you avoid AI hand problems?',

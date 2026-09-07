@@ -86,13 +86,13 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Re-run everything on the new model. Expensive, and the correct answer more often than people want it to be, because a sequence that is nearly consistent reads worse than one that is consistently different.',
+      text: 'Re-run everything on the new model. Expensive, and usually the correct answer, because a nearly consistent sequence reads as a mistake and a consistently different one reads as a choice.',
     },
     {
       t: 'p',
       text: 'Re-run the shots that sit adjacent to new material and grade the rest towards them. That compromise usually survives, and it depends entirely on having the calibration set to grade against.',
     },
-    { t: 'h2', text: 'The grade is doing more than you think' },
+    { t: 'h2', text: 'The grade is doing most of the work' },
     {
       t: 'p',
       text: 'A significant portion of what reads as "the model’s look" is contrast curve, colour response and grain, and all three are addressable in post. Before deciding that two models cannot be matched, take a frame from each into a grading tool and try. Frequently the difference collapses to a curve and a small amount of noise.',
@@ -130,7 +130,7 @@ export const post: Post = {
     },
     {
       q: 'What should you do if a model is deprecated mid-campaign?',
-      a: 'Usually re-run everything on the new model. A sequence that is nearly consistent reads worse than one that is consistently different. The middle option (re-running only the shots adjacent to new material and grading the rest towards them) works only if you have a calibration set to grade against.',
+      a: 'Usually re-run everything on the new model. A nearly consistent sequence reads as a mistake, and a consistently different one reads as a choice. The middle option (re-running only the shots adjacent to new material and grading the rest towards them) works only if you have a calibration set to grade against.',
     },
     {
       q: 'Can colour grading fix the difference between two AI video models?',

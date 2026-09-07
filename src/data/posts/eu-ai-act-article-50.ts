@@ -34,7 +34,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'That is the point people miss: Article 50 applies regardless of whether the underlying system is classified as high-risk, which means a marketing team using an off-the-shelf video model is inside it on the same terms as anybody else.',
+      text: 'Article 50 applies regardless of whether the underlying system is classified as high-risk. A marketing team using an off-the-shelf video model sits inside it on the same terms as anybody else.',
     },
     { t: 'h2', text: 'What the obligation says' },
     {
@@ -48,7 +48,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'Provider or deployer?',
-      text: 'The provider is whoever puts the model on the market. The deployer is whoever uses it under their own authority, which for a campaign means the brand or the studio running the render. The model vendor. Deployer duties are the ones that land on you.',
+      text: 'The provider is whoever puts the model on the market. The deployer is whoever uses it under their own authority, which for a campaign means the brand or the studio running the render. Deployer duties are the ones that land on you.',
     },
     {
       t: 'p',
@@ -57,7 +57,7 @@ export const post: Post = {
     { t: 'h2', text: 'The carve-outs, and why they probably do not help you' },
     {
       t: 'p',
-      text: 'Two exceptions exist and both are narrower than they look.',
+      text: 'Two exceptions exist. Both have hard edges.',
     },
     {
       t: 'ul',
@@ -69,7 +69,7 @@ export const post: Post = {
     { t: 'h2', text: 'The December 2026 grace period, precisely' },
     {
       t: 'p',
-      text: 'There is a limited transitional arrangement and it is narrower than most summaries suggest. It applies only to AI systems placed on the market before 2 August 2026, and only in respect of the marking and detection obligation in Article 50(2), the machine-readable marking of outputs. Providers of those systems have until 2 December 2026.',
+      text: 'A limited transitional arrangement exists, and it is drawn tight. It applies only to AI systems placed on the market before 2 August 2026, and only in respect of the marking and detection obligation in Article 50(2), the machine-readable marking of outputs. Providers of those systems have until 2 December 2026.',
     },
     {
       t: 'p',
@@ -82,7 +82,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'For most paid social, EU delivery is the default and nobody decided it, and geo-excluding the EU to avoid the obligation is usually a worse commercial trade than complying. So the practical planning assumption for a UK or US advertiser running European paid media is that Article 50 applies.',
+      text: 'For most paid social, EU delivery is the default and nobody decided it, and geo-excluding the EU to avoid the obligation surrenders the audience that pays for the campaign. So the practical planning assumption for a UK or US advertiser running European paid media is that Article 50 applies.',
     },
     { t: 'h2', text: 'Penalties' },
     {
@@ -92,7 +92,7 @@ export const post: Post = {
     {
       t: 'note',
       title: 'The SME inversion',
-      text: 'For SMEs and start-ups the calculation flips: the fine is the lower of the fixed amount and the turnover percentage. For most agencies and studios reading this, that turns a headline number into a proportionate one. It is a real relief and it is not a reason to skip the process change, which costs nothing per asset once it is made.',
+      text: 'For SMEs and start-ups the calculation flips: the fine is the lower of the fixed amount and the turnover percentage. For most agencies and studios reading this, that turns a headline number into a proportionate one. The relief is real. The process change still has to happen, and it costs nothing per asset once it is made.',
     },
     { t: 'h2', text: 'What to change this quarter' },
     {

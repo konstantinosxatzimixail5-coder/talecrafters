@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'This is a working summary written by a production studio and not legal advice. It is also the conversation that stalls more generative projects than any technical problem, usually because the two sides are answering different questions.',
+      text: 'This is a working summary written by a production studio and not legal advice. It is also the single biggest cause of a stalled generative project, usually because the two sides are answering different questions.',
     },
     { t: 'h2', text: 'The copyright position, briefly' },
     {
@@ -40,7 +40,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The commercial consequence is that ownership is less automatic than everybody is used to, so it has to be constructed. Nobody gets to assume it.',
+      text: 'The commercial consequence is that ownership has to be constructed on the page, clause by clause. Nobody gets to assume it.',
     },
     { t: 'h2', text: 'The four clauses that decide it' },
     {
@@ -111,7 +111,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'That is honest on both sides, which is a better foundation than an assignment clause that promises more than the law currently supplies.',
+      text: 'That is honest on both sides, and it gives you something to build on. An assignment clause promising what the law currently withholds is a foundation made of paper.',
     },
     {
       t: 'cta',

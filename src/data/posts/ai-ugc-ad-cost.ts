@@ -74,7 +74,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The second is disclosure, which is about the audience. Since 2 August 2026, EU transparency obligations under Article 50 apply to synthetic image, audio and video content that qualifies as a deepfake, which captures a great deal of AI-generated advertising. Platform policies are frequently stricter than the law, and advertising codes apply on top of both. The practical rule is to work to the strictest of the three and to decide it at brief stage.',
+      text: 'The second is disclosure, which is about the audience. Since 2 August 2026, EU transparency obligations under Article 50 apply to synthetic image, audio and video content that qualifies as a deepfake, which captures a great deal of AI-generated advertising. Platform policies frequently reach past the law, and advertising codes apply on top of both. The practical rule is to work to the strictest of the three and to decide it at brief stage.',
     },
     {
       t: 'cta',

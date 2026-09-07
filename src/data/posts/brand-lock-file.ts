@@ -49,7 +49,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The absence line does more work than the other five combined and is the one most often missing. A model will happily add a lens flare to shot twenty-two because lens flares are common in the material it learned from, and the only defence is having said not to.',
+      text: 'The absence line carries the file, and it is the one most often missing. A model will happily add a lens flare to shot twenty-two because lens flares are common in the material it learned from, and the only defence is having said not to.',
     },
     { t: 'h2', text: 'What must not go in it' },
     {

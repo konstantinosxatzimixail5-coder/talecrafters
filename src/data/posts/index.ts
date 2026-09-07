@@ -1,6 +1,6 @@
 // The post index.
 //
-// One import per file rather than a glob, so a post that fails to compile
+// One import per file, no glob, so a post that fails to compile
 // fails the build loudly instead of quietly disappearing from the blog. The
 // export is sorted newest first, which is the order every consumer wants.
 

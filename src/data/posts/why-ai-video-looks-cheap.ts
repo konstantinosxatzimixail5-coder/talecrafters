@@ -140,7 +140,7 @@ export const post: Post = {
     },
     {
       q: 'How long should a generative video clip be?',
-      a: 'Short enough that the motion stays coherent, which for most models in 2026 means a few seconds. Generate longer than you need, use the stable opening segment, and assemble the piece from short clips joined by real edits.',
+      a: 'Short enough that the motion stays coherent, which for most models in 2026 means a few seconds. Overshoot the duration, use the stable opening segment, and assemble the piece from short clips joined by real edits.',
     },
     {
       q: 'How do you stop a face changing between AI video shots?',

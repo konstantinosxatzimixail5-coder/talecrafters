@@ -128,7 +128,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'What does creative automation save time on?',
-      a: 'Coordination, reformatting, file administration, reporting and research, which together account for roughly half a content team’s week. Drafting is a smaller share than most people expect, and editorial judgement should not be automated at all.',
+      a: 'Coordination, reformatting, file administration, reporting and research, which together account for roughly half a content team’s week. Drafting is a small slice of it, and editorial judgement should stay with a person.',
     },
     {
       q: 'Does creative automation reduce headcount?',

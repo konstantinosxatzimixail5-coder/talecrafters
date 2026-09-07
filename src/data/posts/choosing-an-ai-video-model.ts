@@ -69,7 +69,7 @@ export const post: Post = {
         [
           'Failure shape',
           'How does it go wrong?',
-          'Predictable failure is cheaper than occasionally spectacular output, because you can gate for it.',
+          'Predictable failure is the cheap kind, because you can build a gate for it. Occasionally spectacular output arrives with no gate you can write.',
         ],
       ],
     },
@@ -104,7 +104,7 @@ export const post: Post = {
         'Aspect and duration assumptions. Shot lists are written against a usable clip length. Change the length and the shot count changes and the edit changes.',
         'Your negatives. Negative prompts are written from artefacts you have personally seen, so they are model-specific by construction. A new model means a new empty list and a fortnight of rebuilding it.',
         'Acceptance-rate history. The moment you switch, every budget you have quoted from is describing a different machine.',
-        'The lock file. Palette and light behaviour tuned to one model’s response are a starting point on the next one, and no more than that.',
+        'The lock file. Palette and light behaviour tuned to one model’s response are a starting point on the next one, and the tuning happens again from there.',
       ],
     },
     {
@@ -138,7 +138,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'That number is your acceptance rate on that model for that class of work, and it is worth more than every comparison article published this year, including this one. It takes an afternoon and it is the only figure that describes your work and not somebody else’s prompt.',
+      text: 'That number is your acceptance rate on that model for that class of work. It takes an afternoon to produce, and it is the only figure in this article that was measured on your own footage. Every comparison table published this year, this one included, was measured on somebody else’s prompt.',
     },
     {
       t: 'cta',
@@ -154,7 +154,7 @@ export const post: Post = {
     },
     {
       q: 'How often should you switch AI video models?',
-      a: 'Only when a new model is better on a criterion you are currently losing on. Switching for general improvement costs you your negative-prompt list, your acceptance-rate history, and a rebuilt identity strategy, usually more than the improvement is worth.',
+      a: 'Only when a new model is better on a criterion you are currently losing on. Switching for general improvement costs you your negative-prompt list, your acceptance-rate history, and a rebuilt identity strategy. The improvement rarely covers that bill.',
     },
     {
       q: 'Why does a lower-quality model sometimes cost less to produce on?',

@@ -6,12 +6,12 @@
 // posts live here as data and the routes read both: Sanity first, these
 // second, one merged index, one sitemap.
 //
-// The body is a small block union rather than Markdown or HTML. Markdown means
+// The body is a small block union. Markdown means
 // shipping a parser and hoping nobody writes a raw <script> into a post;
 // HTML-in-a-string means dangerouslySetInnerHTML on every article. A closed set
 // of blocks renders as ordinary React, cannot inject anything, and makes the
-// shapes a post is allowed to take an explicit decision rather than whatever
-// the author typed.
+// shapes a post is allowed to take an explicit decision, decided here and not
+// by whatever the author typed.
 
 export type Block =
   | { t: 'p'; text: string }
@@ -34,8 +34,8 @@ export interface PostFaq {
 /**
  * External references, rendered at the foot of the post and emitted as
  * `citation` on the Article node. A piece that makes regulatory claims and
- * does not show where they came from is asking to be believed, which is a
- * worse position than being checkable.
+ * does not show where they came from is asking to be believed. Show the
+ * sources and it can be checked instead.
  */
 export interface PostSource {
   label: string;

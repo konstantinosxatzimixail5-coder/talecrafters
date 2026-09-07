@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'Generative production has a specific evaluation problem: the best possible output of a competent operator and the best possible output of a beginner are much closer together than they used to be. Anybody can produce a beautiful frame. The distance between a studio and a person with a subscription shows up at volume, under a deadline, with a client’s legal team reading.',
+      text: 'Generative production has a specific evaluation problem: the best possible output of a competent operator and the best possible output of a beginner now sit within a hair of each other. Anybody can produce a beautiful frame. The distance between a studio and a person with a subscription shows up at volume, under a deadline, with a client’s legal team reading.',
     },
     {
       t: 'p',
@@ -37,7 +37,7 @@ export const post: Post = {
     {
       t: 'ol',
       items: [
-        'What is your acceptance rate on the hardest shot type in this brief? A studio that has run this before will have a number and will volunteer that it is lower for legible packaging type than for environment plates. "It depends" without a follow-up means they have not logged it.',
+        'What is your acceptance rate on the hardest shot type in this brief? A studio that has run this before will have a number, and will volunteer a second one for environment plates so you can see how far apart the two sit. "It depends" without a follow-up means they have not logged it.',
         'What is your cost per accepted asset, and does it include the rejected renders? If the number excludes rejects it is a cost per generation, which flatters everybody and predicts nothing.',
         'Show me a run log from a real campaign. Not a case study. The log. Timestamps, attempt counts, what failed and why.',
       ],
@@ -81,7 +81,7 @@ export const post: Post = {
       head: ['What they say', 'What it means'],
       rows: [
         ['"We don’t track acceptance rate."', 'The quote is a guess and the overrun is yours.'],
-        ['"Consistency is just about good prompting."', 'They have not run a sequence longer than a few shots.'],
+        ['"Consistency is just about good prompting."', 'They have run three shots and stopped there.'],
         ['"We can do unlimited revisions."', 'There is no ceiling, so there is no budget control, so there is a number later.'],
         ['"Disclosure is the client’s side."', 'True in part, and a studio that will not advise on it has not read the rules.'],
         ['"We use the latest model."', 'Not a capability. Everyone has the same access.'],
@@ -91,7 +91,7 @@ export const post: Post = {
     { t: 'h2', text: 'What a good answer sounds like' },
     {
       t: 'p',
-      text: 'Specific, quantified, and slightly unflattering. A studio that tells you the packaging shots will need three times the renders of the environment plates, that the acceptance rate on faces at that shot size is lower than they would like, and that they will halt at a ceiling and come back to you, is describing a process they have run.',
+      text: 'Specific, quantified, and slightly unflattering. A studio that tells you the packaging shots will need three times the renders of the environment plates, that the acceptance rate on faces at that shot size embarrasses them, and that they will halt at a ceiling and come back to you, is describing a process they have run.',
     },
     {
       t: 'p',

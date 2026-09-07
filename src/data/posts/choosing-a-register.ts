@@ -92,7 +92,7 @@ export const post: Post = {
         'Surface: what it sits on and how that reads. Uncoated paper, board, film emulsion.',
         'Mark: how the marks were made and how visible they are. Visible brush, hard vector edge, halftone dot.',
         'Palette: three or four named colours and nothing else.',
-        'Absence: what this register does not contain. This line does more work than the other four combined.',
+        'Absence: what this register does not contain. This line carries the register.',
       ],
     },
     {
@@ -132,7 +132,7 @@ export const post: Post = {
     },
     {
       q: 'How do you specify a visual style so it stays consistent?',
-      a: 'Five properties, and never a style name: medium, surface, mark, a palette of three or four named colours, and (most importantly) an explicit list of what the register does not contain. The absence line does more for consistency than the other four combined.',
+      a: 'Five properties, and never a style name: medium, surface, mark, a palette of three or four named colours, and (most importantly) an explicit list of what the register does not contain. The absence line is what holds consistency in place.',
     },
     {
       q: 'Does stylisation remove the need for disclosure?',

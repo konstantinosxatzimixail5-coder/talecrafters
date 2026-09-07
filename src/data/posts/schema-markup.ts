@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'Which structured data types affect how AI systems understand and cite a page, what each one removes ambiguity about, and the three mistakes that make markup actively harmful.',
   excerpt:
-    'Schema does not make a claim true. It removes the question of what the claim is, and that is worth more than it sounds.',
+    'Schema does not make a claim true. It removes the question of what the claim is, which turns out to be the whole job.',
   published: '2026-08-04',
   author: 'Konstantinos Chatzimichail',
   section: 'Systems',
@@ -63,7 +63,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'A real name, a page for that person on your own site, and consistent use across everything they wrote. If the work is collective, say so with an organisation as the author and never invent a byline, which is worse than either.',
+      text: 'A real name, a page for that person on your own site, and consistent use across everything they wrote. If the work is collective, say so with an organisation as the author. An invented byline is the one thing here that will get you caught.',
     },
     { t: 'h2', text: 'The three mistakes that make markup harmful' },
     {
@@ -86,7 +86,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'This is the only way the markup stays true through two years of edits, and markup that is not true is worse than absent.',
+      text: 'This is the only way the markup stays true through two years of edits, and untrue markup is a liability with a schema wrapper on it.',
     },
     { t: 'h2', text: 'What schema will not do' },
     {

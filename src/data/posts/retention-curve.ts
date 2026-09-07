@@ -96,7 +96,7 @@ export const post: Post = {
     { t: 'h2', text: 'What the curve cannot tell you' },
     {
       t: 'p',
-      text: 'It measures attention, and attention and persuasion come apart more often than anyone comfortable would like. A piece can hold a hostile audience beautifully. A piece can lose half its viewers and convert the rest at a rate nothing else touches.',
+      text: 'It measures attention, and attention and persuasion come apart often enough to hurt. A piece can hold a hostile audience beautifully. A piece can lose half its viewers and convert the rest at a rate nothing else touches.',
     },
     {
       t: 'p',

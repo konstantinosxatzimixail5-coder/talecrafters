@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'Provenance used to be an ethics conversation held after the work. It is becoming a procurement one held before it: platforms, broadcasters and an increasing number of client legal teams now ask what an asset carries, and answering "nothing" is a slower answer than it used to be.',
+      text: 'Provenance used to be an ethics conversation held after the work. It is becoming a procurement one held before it: platforms, broadcasters and an increasing number of client legal teams now ask what an asset carries, and answering "nothing" now costs you a week while somebody escalates it.',
     },
     { t: 'h2', text: 'What a manifest contains' },
     {

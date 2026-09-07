@@ -25,7 +25,7 @@ export const post: Post = {
   imageAlt:
     'A cost ledger rendered as stacked luminous bars against a dark studio wall, each bar labelled with a production stage.',
   standfirst:
-    'In 2026 a generative video costs anywhere from about five cents a second in raw model credits to £30,000 or more for a produced campaign, and the gap between those numbers is everything that happens around the model. It is everything that happens before and after the model runs. Here is what each tier buys.',
+    'In 2026 a generative video costs anywhere from about five cents a second in raw model credits to £30,000 or more for a produced campaign. The gap between those numbers is everything that happens before and after the model runs. Here is what each tier buys.',
   body: [
     {
       t: 'p',
@@ -38,7 +38,7 @@ export const post: Post = {
     { t: 'h2', text: 'The four tiers, and what separates them' },
     {
       t: 'p',
-      text: 'There are four realistic ways to get a generative video made in 2026. They are not better and worse versions of each other. They are different products.',
+      text: 'There are four realistic ways to get a generative video made in 2026. They are four different products, and a buyer who treats them as a quality ladder ends up paying for the wrong one.',
     },
     {
       t: 'table',
@@ -79,11 +79,11 @@ export const post: Post = {
     { t: 'h2', text: 'Why the per-second price is not the price' },
     {
       t: 'p',
-      text: 'A render is not an asset. An asset is a render that passed. And the ratio between those two numbers is the whole economics of this business.',
+      text: 'An asset is a render that passed a gate. The ratio between renders attempted and assets shipped is the whole economics of this business.',
     },
     {
       t: 'p',
-      text: 'A pipeline that generates sixty frames and ships four has a real unit cost fifteen times its sticker price. That is not a failure, incidentally. Four in sixty is a normal acceptance rate for hard work like packaging with legible type on it. The failure is quoting the sticker price to a client and then discovering the ratio afterwards.',
+      text: 'A pipeline that generates sixty frames and ships four has a real unit cost fifteen times its sticker price. Four in sixty is a normal acceptance rate for hard work like packaging with legible type on it. The failure is quoting the sticker price to a client and then discovering the ratio afterwards.',
     },
     {
       t: 'note',
@@ -93,14 +93,14 @@ export const post: Post = {
     { t: 'h2', text: 'What the studio line item covers' },
     {
       t: 'p',
-      text: 'If you have only ever bought the tool, the studio number looks like a markup on compute. It is not. Roughly, here is where the hours go on a produced piece, and none of these are generation.',
+      text: 'If you have only ever bought the tool, the studio number looks like a markup on compute. Here is where the hours go on a produced piece. Generation is one line out of six.',
     },
     {
       t: 'ul',
       items: [
         'Locking the things that must not change. A product becomes a master plate: one clean frame, correct shape, correct label, that every later angle is generated from. A presenter becomes a trained identity built from a sheet of stills, held steady across every later session.',
         'Writing the set once. One key light direction, one stated colour temperature, one lens language, written down before anything renders, so shot nine and shot one belong to the same world.',
-        'Generation. The cheap part. Cheaper than you think.',
+        'Generation. The cheap part, and a rounding error against the hours either side of it.',
         'The control gates. Read every printed word at full resolution. Overlay each render on its plate at forty per cent opacity and check the outline has not drifted. Hold one light direction across the whole set. Kill any invented certification, award or ingredient claim.',
         'The rejected work. The renders that failed a gate and went back to the source file instead of into a retouching pass, because patching produces one shot that passes and a set that still drifts.',
         'Delivery. Aspect ratios cut as part of the shoot and never cropped afterwards, colour handled once, disclosure applied on the asset as well as in the metadata, and licensing cleared for commercial use before rendering.',
@@ -116,7 +116,7 @@ export const post: Post = {
       items: [
         'Legible type in frame. Packaging, labels, signage and anything with a certification mark on it. Type is where generative models fail most reliably and where a wrong render is a legal problem. Budget for a low acceptance rate.',
         'A human face that has to recur. One face across nine assets is a trained identity and a set of gates. One face in one asset is a render.',
-        'How many worlds. A campaign in one set with one light direction is cheaper than four locations, by roughly the amount you would expect.',
+        'How many worlds. One set with one light direction costs about a quarter of what four locations cost, and the arithmetic holds all the way up.',
         'Regulated claims. Supplements, finance, health and anything with a substantiation requirement move legal review from a formality to a stage.',
         'Whether you want the reusable files. Plates, trained identities and set specifications handed over means the next campaign starts from a lock. It costs more once and less every time after.',
       ],
@@ -124,7 +124,7 @@ export const post: Post = {
     { t: 'h2', text: 'When generative is not cheaper' },
     {
       t: 'p',
-      text: 'It is worth saying plainly, because a studio that will not say it is selling you something. Generative production is not cheaper when the brief needs a real face, a real place and a real product on the same real day. It is not cheaper when the client will only accept a photograph of the actual thing. And it is not cheaper on a single hero piece where a small crew and a good DoP would have got there in a day.',
+      text: 'Worth saying plainly, because a studio that stays quiet here is selling you something. Generative production costs the same or more when the brief needs a real face, a real place and a real product on the same real day. The arithmetic goes the same way for a client who will only accept a photograph of the thing itself, and for a single hero piece where a small crew and a good DoP would have got there in a day.',
     },
     {
       t: 'p',
@@ -149,7 +149,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The short version: if somebody quotes you a price per second, they are pricing compute. If they quote you a price per accepted asset, they are pricing production. Only one of those is a number you can put in a plan.',
+      text: 'The short version: a price per second prices compute. A price per accepted asset prices the production. Put the second one in your plan and the first one in your notes.',
     },
   ],
   faqs: [
@@ -159,7 +159,7 @@ export const post: Post = {
     },
     {
       q: 'Why is AI video production so much cheaper than traditional production?',
-      a: 'It removes the crew, the location, the equipment hire and the reshoot, which are the line items that make a conventional shoot expensive. It does not remove creative direction, control, revision or legal review, which is why it is not free.',
+      a: 'It removes the crew, the location, the equipment hire and the reshoot, which are the line items that make a conventional shoot expensive. Creative direction, control, revision and legal review all survive the change, which is why the number stops well above zero.',
     },
     {
       q: 'What is cost per accepted asset?',

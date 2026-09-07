@@ -39,12 +39,12 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'If nothing is named, the studio has to guess, and it will guess conservatively, which usually means a more expensive pipeline than the brief needed.',
+      text: 'If nothing is named, the studio has to guess, and it will guess conservatively, which means you pay for headroom the brief never asked for.',
     },
     { t: 'h3', text: '2. Where the legible type is' },
     {
       t: 'p',
-      text: 'Say explicitly whether any shot requires readable printed text: packaging, labels, signage, screens, certification marks. This is the largest single driver of cost, because type is where acceptance rates collapse. A brief with no readable type in frame is a fundamentally cheaper brief than one with it, and a studio that does not ask you this has not priced it.',
+      text: 'Say explicitly whether any shot requires readable printed text: packaging, labels, signage, screens, certification marks. This is the largest single driver of cost, because type is where acceptance rates collapse. A brief with no readable type in frame is a fundamentally cheaper brief, and a studio that skips this question has not priced the job.',
     },
     { t: 'h3', text: '3. Who has to recur' },
     {
