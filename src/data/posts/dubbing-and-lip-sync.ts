@@ -7,7 +7,7 @@ export const post: Post = {
   metaDescription:
     'What automated dubbing and visual lip sync can and cannot do across languages, where the failures cluster, what has to be re-recorded instead of converted, and the disclosure position in each market.',
   excerpt:
-    'Translating the words is the easy tenth. The performance, the timing and the mouth are the rest.',
+    'Translating the words is the easy tenth. The performance and the mouth are the rest.',
   published: '2026-06-26',
   author: 'Konstantinos Chatzimichail',
   section: 'Production',
@@ -23,11 +23,11 @@ export const post: Post = {
   image: 'dubbing-and-lip-sync',
   imageAlt: 'One frame of a speaking face repeated in five languages, with mouth shapes compared.',
   standfirst:
-    'Automated dubbing handles the words reliably and the performance poorly. Visual lip sync works well on close, front-on, well-lit faces and degrades quickly outside that. Plan the shot for localisation before you shoot or generate it, because almost nothing about this is fixable afterwards.',
+    'Automated dubbing handles the words reliably and the performance poorly. Visual lip sync works well on close, front-on faces in even light, and degrades quickly outside that. Plan the shot for localisation before you shoot or generate it, because almost nothing about this is fixable afterwards.',
   body: [
     {
       t: 'p',
-      text: 'A campaign in eleven markets used to mean eleven voice sessions, eleven timing passes and a lot of scheduling. It now means one process that produces eleven tracks in an afternoon and a much harder question about which of them are good enough to run.',
+      text: 'A campaign in eleven markets used to mean eleven voice sessions and a lot of scheduling. It now means one process that produces eleven tracks in an afternoon and a much harder question about which of them are good enough to run.',
     },
     { t: 'h2', text: 'The four separable problems' },
     {
@@ -52,7 +52,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The practical consequence is that lip sync is a shot design decision. If a campaign is going to be localised, the speaking shots should be composed for it (closer, flatter, steadier), and that decision has to be taken before anything is produced.',
+      text: 'The practical consequence is that lip sync is a shot design decision. If a campaign is going to be localised, the speaking shots should be composed for it (closer and steadier), and that decision has to be taken before anything is produced.',
     },
     {
       t: 'note',
@@ -73,7 +73,7 @@ export const post: Post = {
     { t: 'h2', text: 'A workable review process' },
     {
       t: 'p',
-      text: 'Automated output needs a review pass by somebody who speaks the language, and the useful version of that pass is structured, and never "does this sound alright".',
+      text: 'Automated output needs a review pass by somebody who speaks the language, and that pass has to be structured. "Does this sound alright" catches nothing.',
     },
     {
       t: 'ol',
@@ -104,7 +104,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'How good is AI dubbing in 2026?',
-      a: 'Reliable for translating meaning, moderate for timing, and poor for performance. Emphasis lands by rule and never by intention, which is wrong often enough to matter in anything where the stress carries the meaning.',
+      a: 'Reliable for translating meaning, moderate for timing, poor for performance, and good for mouth shapes inside a narrow envelope. Emphasis lands by rule, which is wrong often enough to matter in anything where the stress carries the meaning.',
     },
     {
       q: 'When does AI lip sync work well?',

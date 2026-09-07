@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'cutting-ai-video',
   imageAlt: 'An edit timeline with cut points marked on motion peaks.',
   standfirst:
-    'Two generated clips share no camera and no lens, and nothing about how either was lit. Editing is what makes them read as one piece: cut on motion, vary shot size across every join, and let sound carry the continuity the pictures cannot.',
+    'Two generated clips share no camera and no lens, and nothing about how either was lit. Editing is what makes them read as one piece: cut on motion, and let sound carry the continuity the pictures cannot.',
   body: [
     {
       t: 'p',
@@ -59,7 +59,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The first row is worth dwelling on. Light direction is the one mismatch that no editorial technique conceals, which means it has to be solved before rendering, in the lock file. Everything else on that list is fixable in post; that one is not.',
+      text: 'The first row is worth dwelling on. Light direction is the one mismatch no editorial technique conceals, so it has to be solved before rendering, in the lock file. Everything else on that list is fixable in post.',
     },
     {
       t: 'note',
@@ -87,7 +87,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'And what it is bad for: the long unbroken take, the two-hander held in a wide, and anything where the value of the shot is that it did not cut. Those are the shots to film, if they matter enough.',
+      text: 'And what it is bad for: the two-hander held in a wide, and anything where the value of the shot is that it did not cut. Those are the shots to film, if they matter enough.',
     },
     {
       t: 'cta',
@@ -115,7 +115,7 @@ export const post: Post = {
     },
     {
       q: 'What is generative footage best suited to in an edit?',
-      a: 'Montage, inserts and cutaways, establishing shots with no people, and anything stylised. All of which are short, do not have to match a wide, or have a wide tolerance for inconsistency. It is worst at the long unbroken take, where the value of the shot is that it did not cut.',
+      a: 'Montage, inserts and cutaways, establishing shots with no people, and anything stylised. Each of those is short, or free of a wide it has to match. The long unbroken take is where it fails, because the value of that shot is that it did not cut.',
     },
   ],
   terms: ['temporal-coherence', 'cutdown', 'colour-management', 'drift', 'montage', 'master-plate'],

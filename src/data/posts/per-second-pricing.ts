@@ -43,7 +43,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Multiply the ranges out and the published rate is somewhere between eight and roughly a hundred and thirty times short of the production cost, with most real jobs landing in the eight-to-twenty band. That is why the honest unit is cost per accepted asset and not cost per second.',
+      text: 'Multiply the ranges out and the published rate is somewhere between eight and roughly a hundred and thirty times short of the production cost, with most real jobs landing in the eight-to-twenty band. That is why the honest unit is cost per accepted asset.',
     },
     { t: 'h2', text: 'Why acceptance rate dominates everything' },
     {
@@ -66,7 +66,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The unit to convert to is currency per accepted second of finished footage. Not per generated second: per second that made it into the cut. Once every platform is expressed in that unit, the comparisons stop being marketing and start being procurement.',
+      text: 'The unit to convert to is currency per accepted second of finished footage, counting only the seconds that made it into the cut. Once every platform is expressed in that unit, the comparisons stop being marketing and start being procurement.',
     },
     { t: 'h2', text: 'What a defensible quote looks like' },
     {
@@ -87,11 +87,11 @@ export const post: Post = {
     { t: 'h2', text: 'The case for per-second pricing anyway' },
     {
       t: 'p',
-      text: 'None of this makes per-second rates useless. They are the right unit for comparing raw compute cost between models, for sizing an exploration budget, and for knowing whether a change of approach is even in the right order of magnitude.',
+      text: 'None of this makes per-second rates useless. They are the right unit for comparing raw compute cost between models and for sizing an exploration budget.',
     },
     {
       t: 'p',
-      text: 'They are the wrong unit for a client quote, for a campaign budget, and for any sentence containing the words "AI video costs". Those all need the accepted-asset number, and the only place that comes from is somebody’s logs.',
+      text: 'For a client quote, a campaign budget, or any sentence containing the words "AI video costs", the accepted-asset number is the one you need, and the only place it comes from is somebody’s logs.',
     },
     {
       t: 'cta',

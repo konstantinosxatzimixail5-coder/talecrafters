@@ -5,7 +5,7 @@ export const post: Post = {
   title: 'Why Hands Still Fail, and How to Frame Around Them',
   metaTitle: 'Why AI Still Gets Hands Wrong (And How to Shoot Around It)',
   metaDescription:
-    'Hands remain the most reliable generative failure because they are high-articulation, self-occluding and something every viewer is expert in. Why the problem is structural, and the eight compositional moves that avoid it.',
+    'Hands remain the most reliable generative failure because they are high-articulation and self-occluding, and every viewer is an expert in them. Why the problem is structural, and the eight compositional moves that avoid it.',
   excerpt:
     'Hands are the hardest object in the frame and the one everybody checks.',
   published: '2026-06-16',
@@ -23,11 +23,11 @@ export const post: Post = {
   image: 'why-hands-fail',
   imageAlt: 'A sequence of hands from generated frames, each failing in a different way.',
   standfirst:
-    'Hands fail because they carry twenty-seven bones and fifteen articulated joints into every frame, they occlude themselves constantly, and every viewer has spent their life looking at them. The reliable production answer is compositional: frame so the hardest hand configurations are not in shot.',
+    'Hands fail because they carry fifteen articulated joints into every frame and hide half of them behind the other half. Every viewer has spent their life looking at hands, which is the other half of the problem. The reliable production answer is compositional: frame so the hardest hand configurations are out of shot.',
   body: [
     {
       t: 'p',
-      text: 'Hands have been the standing joke about generative imagery for years, and the joke has outlived its accuracy: a still of a hand at rest is now usually fine. What has not changed is hands in motion, hands interacting with objects, and hands doing anything specific, which is, unfortunately, most of what hands do in advertising.',
+      text: 'Hands have been the standing joke about generative imagery for years, and the joke has outlived its accuracy: a still of a hand at rest is now usually fine. What has not changed is hands in motion and hands interacting with objects, which is, unfortunately, most of what hands do in advertising.',
     },
     { t: 'h2', text: 'Why it is structurally hard' },
     {

@@ -23,7 +23,7 @@ export const post: Post = {
   image: 'ai-storyboards',
   imageAlt: 'A storyboard row where three frames are sketches and three are photoreal, side by side.',
   standfirst:
-    'Generated boards are worth it for blocking, coverage and pacing decisions, where speed beats fidelity. They are dangerous for client approval, because a photoreal board sells a frame the production may not be able to deliver, and the gap becomes an argument later.',
+    'Generated boards are worth it for blocking and pacing decisions, where speed beats fidelity. They are dangerous for client approval, because a photoreal board sells a frame the production may not be able to deliver, and the gap becomes an argument later.',
   body: [
     {
       t: 'p',
@@ -68,7 +68,7 @@ export const post: Post = {
     { t: 'h2', text: 'The animatic is the artefact that earns its keep' },
     {
       t: 'p',
-      text: 'A board is a set of compositions. An animatic is a structure with durations, and durations are where films fail. Cutting boards to the intended timings, with scratch voice and temp music, tells you within one viewing whether the piece has a slow middle, whether the hook works, and whether the ending lands.',
+      text: 'A board is a set of compositions. An animatic is a structure with durations, and durations are where films fail. Cutting boards to the intended timings, with scratch voice and temp music, tells you within one viewing whether the piece has a slow middle and whether the ending lands.',
     },
     {
       t: 'p',
