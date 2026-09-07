@@ -309,7 +309,7 @@ export const storyTerms: Term[] = [
       },
       {
         q: 'How long should a denouement be?',
-        a: 'Short. Long enough to show the changed state, and no longer. If it is explaining the ending instead of showing its consequences, it is too long.',
+        a: 'Short. Long enough to show the changed state, and no longer. If it has started explaining the ending, it is too long.',
       },
     ],
     related: ['climax', 'freytags-pyramid', 'call-to-action', 'character-arc'],
@@ -644,7 +644,7 @@ export const storyTerms: Term[] = [
         a: 'Give the audience evidence and withhold the conclusion, so they perform the inference themselves. A judgement they reach is one they believe; a judgement handed to them is one they assess.',
       },
       {
-        q: 'When should you tell instead of showing?',
+        q: 'When should you tell?',
         a: 'When the information is administrative (a date, a place, a name), and only comprehension is at stake. Dramatising a caption wastes a scene.',
       },
     ],
@@ -1175,7 +1175,7 @@ export const storyTerms: Term[] = [
     qa: [
       {
         q: 'What makes a cliffhanger work?',
-        a: 'Real unresolved tension. Ending on a decision made and not yet acted on works; cutting away mid-sentence is resented because the resolution turns out to be nothing.',
+        a: 'Real unresolved tension. Ending on a decision made but still unacted works; cutting away mid-sentence is resented because the resolution turns out to be nothing.',
       },
       {
         q: 'Should short-form video use cliffhangers?',

@@ -1413,7 +1413,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
     pipelineNote:
       'Seven stages and only two of them are generation. That ratio is the finding: on a piece with no action in it, the work moves out of the render and into the writing, the casting and the timing, which is where it sits on a live-action two-hander as well.',
     tools: [
-      { name: 'Showrunner', role: 'Episodic engine', body: 'Holds the scene and the two characters across four beats. The reason this is a scene and not four clips.' },
+      { name: 'Showrunner', role: 'Episodic engine', body: 'Holds the scene and the two characters across four beats. The reason this holds as one scene.' },
       { name: 'Nano Banana 2', role: 'Design', body: 'Character sheets and the colony plates, locked before the first shot.' },
       { name: 'ChatGPT Image 2', role: 'Design', body: 'Set dressing and the second pass on the habitat and tower.' },
       { name: 'Higgsfield', role: 'Motion', body: 'The performance passes. Directed at whoever is listening.' },
@@ -1470,7 +1470,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
       },
       {
         name: 'Voice ahead of gesture',
-        symptom: 'Lines landed on the movement instead of just after it, which reads as lip-sync on a puppet.',
+        symptom: 'Lines landed on the movement, a beat early, which reads as lip-sync on a puppet.',
         lock: 'Voice is cut last, against picture, and every read is retimed after the motion pass.',
       },
     ],

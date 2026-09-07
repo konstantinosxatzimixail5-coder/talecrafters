@@ -80,7 +80,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Setup and payoff, alone. Two beats. Plant something in the first half and return to it in the second with a changed meaning. This is a complete structure and not a fragment of one.',
+      text: 'Setup and payoff, alone. Two beats. Plant something in the first half and return to it in the second with a changed meaning. This is a complete structure in its own right.',
     },
     {
       t: 'p',

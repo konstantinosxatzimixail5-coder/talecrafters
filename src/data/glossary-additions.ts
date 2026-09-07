@@ -52,7 +52,7 @@ export const additionalTerms: Term[] = [
     qa: [
       {
         q: 'Where should a credit ceiling be set?',
-        a: 'At the point where a rational person would stop and reconsider the approach instead of trying again. In practice that is roughly three times the expected render count for that shot type.',
+        a: 'At the point where a rational person would stop and reconsider the approach. In practice that is roughly three times the expected render count for that shot type.',
       },
       {
         q: 'What should happen when a batch hits the ceiling?',

@@ -133,7 +133,7 @@ export const post: Post = {
     },
     {
       q: 'Who should own the master plate after a campaign?',
-      a: 'The client. It is the asset with the longest useful life in the engagement, and a brand that holds its own plates starts the next campaign from a lock instead of paying for the same verification again.',
+      a: 'The client. It is the asset with the longest useful life in the engagement, and a brand that holds its own plates starts the next campaign from a lock, with the verification already paid for.',
     },
   ],
   terms: ['master-plate', 'character-consistency', 'temporal-coherence', 'cost-per-accepted-asset'],

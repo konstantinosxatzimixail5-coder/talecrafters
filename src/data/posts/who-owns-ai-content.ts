@@ -86,7 +86,7 @@ export const post: Post = {
         'The finished assets, in the delivery formats, with no dependency on any account or subscription.',
         'The project files: edit timelines, composites, layered masters.',
         'The lock file and the reference set, which is what allows the work to be continued by somebody else.',
-        'The consent files for every real person whose likeness or voice appears, held by the client and not only by the studio.',
+        'The consent files for every real person whose likeness or voice appears, held by the client as well as the studio.',
         'The input schedule: what went in, where it came from, and what clearance it carries.',
         'The run log, if provenance or substantiation is likely to be questioned later.',
       ],

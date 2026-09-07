@@ -71,7 +71,7 @@ export const post: Post = {
       t: 'ul',
       items: [
         'Which shot types to stop accepting briefs for. If legible packaging type costs you £180 an asset and everything else costs £40, that is a pricing decision, and not a craft complaint.',
-        'When a pipeline change paid for itself. Build a trained identity instead of re-uploading references, watch the presenter acceptance rate move from 24 to 60 per cent, and the investment justifies itself in one campaign.',
+        'When a pipeline change paid for itself. Build a trained identity, stop re-uploading references, watch the presenter acceptance rate move from 24 to 60 per cent, and the investment justifies itself in one campaign.',
         'Where the human time goes. Almost always review, almost never generation, which is the opposite of what the tooling narrative suggests.',
         'Whether a job should be generative at all. When cost per accepted asset approaches what a photographer would have charged, the honest answer is to book the photographer.',
       ],
@@ -82,7 +82,7 @@ export const post: Post = {
       items: [
         'Excluding operator hours because they are salaried. Salaried time is still capacity, and capacity spent on regenerating a bottle is capacity not spent on the next brief.',
         'Counting an asset as accepted when it shipped after two hours of retouching. It was not accepted, it was rescued. Log it as a failure plus a rescue cost, or the number quietly stops meaning anything.',
-        'Measuring per campaign instead of per shot type. An average across easy and hard work hides exactly the variance the metric exists to expose.',
+        'Measuring per campaign. Shot type is the unit that matters. An average across easy and hard work hides exactly the variance the metric exists to expose.',
       ],
     },
     { t: 'h2', text: 'Running the ledger' },
@@ -92,7 +92,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Once that exists, a credit ceiling per asset becomes enforceable. The run halts when a shot has consumed its allowance and asks a person to decide, instead of quietly spending past a number that was agreed in a meeting and never encoded anywhere.',
+      text: 'Once that exists, a credit ceiling per asset becomes enforceable. The run halts when a shot has consumed its allowance and asks a person to decide, long before it spends past a number that was agreed in a meeting and never encoded anywhere.',
     },
     {
       t: 'quote',
@@ -137,7 +137,7 @@ export const post: Post = {
     },
     {
       q: 'What is a credit ceiling per asset?',
-      a: 'An agreed maximum spend for a single asset, encoded in the pipeline itself. When a shot consumes its allowance the run halts and asks a person to decide, instead of spending past a number nobody approved.',
+      a: 'An agreed maximum spend for a single asset, encoded in the pipeline itself. When a shot consumes its allowance the run halts and asks a person to decide, before it spends past a number nobody approved.',
     },
   ],
   terms: ['cost-per-accepted-asset', 'master-plate', 'agentic-workflow', 'human-in-the-loop'],

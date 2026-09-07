@@ -111,7 +111,7 @@ export const post: Post = {
       a: 'On faces that are close to camera, roughly front-on, evenly lit, near-still and unobstructed. It degrades with profile angles, distance, head movement, facial hair, hard side light and anything crossing the mouth, so it is a shot design decision, made before production.',
     },
     {
-      q: 'What has to be re-recorded instead of converted?',
+      q: 'What has to be re-recorded from scratch?',
       a: 'Anything where emphasis carries meaning, humour, regulated claims where the wording is legally load-bearing, anything using a named person’s voice, and the single market carrying most of the spend.',
     },
     {

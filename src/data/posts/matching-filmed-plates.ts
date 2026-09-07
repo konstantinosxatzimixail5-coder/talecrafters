@@ -132,7 +132,7 @@ export const post: Post = {
       a: 'To a single reference, always. Matching clip two to clip one and clip three to clip two accumulates error, and by the ninth clip the sequence has drifted somewhere nobody chose. Pick one filmed frame as the target and pull everything to it.',
     },
     {
-      q: 'What should be filmed instead of generated?',
+      q: 'What should be filmed?',
       a: 'The product if its appearance is the claim, hands doing something specific, anything carrying legible type, a long unbroken take where not cutting is the point, and a face that has to carry a performance. Generate environments, weather, scale, distant crowds and anything that would have been a location scout and a permit.',
     },
   ],

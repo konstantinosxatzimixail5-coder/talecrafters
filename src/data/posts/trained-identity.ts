@@ -130,7 +130,7 @@ export const post: Post = {
     },
     {
       q: 'When is a LoRA worth training for character consistency?',
-      a: 'Roughly above nine assets, or whenever the assets are produced across weeks and not in one session. Below that threshold, reference conditioning plus tight per-shot gating is cheaper overall even accounting for regeneration.',
+      a: 'Roughly above nine assets, or whenever the assets are produced across weeks. Below that threshold, reference conditioning plus tight per-shot gating is cheaper overall even accounting for regeneration.',
     },
     {
       q: 'Does a trained identity survive a model upgrade?',

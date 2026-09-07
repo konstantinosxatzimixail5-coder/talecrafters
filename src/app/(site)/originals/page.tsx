@@ -67,7 +67,7 @@ export default async function OriginalsPage() {
         accentWord={copy.header.accentWord}
         meta={copy.header.meta}
         cta={{
-          title: 'Own something instead of renting attention.',
+          title: 'Own something. Renting attention is the other option.',
           body: 'Branded narrative, owned series and character-led formats, developed on the same discipline as our own slate, with the story written first.',
         }}
       >

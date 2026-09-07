@@ -27,7 +27,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'The pitch for generative creative is volume: test a hundred concepts a week instead of four. The pitch is broadly true and it hides a problem, which is that a hundred variants differing on everything at once produce a ranked list and no explanation. Next month you start again from nothing, because you learned which asset won and never why.',
+      text: 'The pitch for generative creative is volume: test a hundred concepts a week where you used to run four. The pitch is broadly true and it hides a problem, which is that a hundred variants differing on everything at once produce a ranked list and no explanation. Next month you start again from nothing, because you learned which asset won and never why.',
     },
     { t: 'h2', text: 'The difference between a test and a tournament' },
     {

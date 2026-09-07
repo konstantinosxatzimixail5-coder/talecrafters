@@ -115,7 +115,7 @@ export default async function SystemsPage() {
                 <p className="mt-6 text-xl md:text-2xl leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
                   Creative workflow automation is the machinery that produces, repurposes and
                   distributes creative work. Agentic content systems are the half of that machinery
-                  that decides its own next step instead of following a diagram somebody drew in
+                  that decides its own next step, with no diagram somebody drew in
                   advance. We build both, and hand them over running inside your accounts.
                 </p>
                 <p className="mt-5 text-lg leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.7)' }}>

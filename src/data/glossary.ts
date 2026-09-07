@@ -562,7 +562,7 @@ const coreTerms: Term[] = [
     tags: ['production', 'control'],
     body: [
       'One clean frame of the product on a transparent background: correct shape, correct label, correct proportions, nothing else in the picture. Every subsequent angle, set and motion clip references that file instead of a fresh prompt.',
-      'The plate is also the arbiter. When a frame is questioned, it is checked against the plate at forty per cent opacity: not against the previous frame, and not against memory. That single discipline is what makes ninety frames of one product survivable.',
+      'The plate is also the arbiter. When a frame is questioned, it is checked against the plate at forty per cent opacity. The previous frame and somebody’s memory are both inadmissible. That single discipline is what makes ninety frames of one product survivable.',
     ],
     qa: [
       {

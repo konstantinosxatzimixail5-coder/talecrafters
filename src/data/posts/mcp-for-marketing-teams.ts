@@ -107,7 +107,7 @@ export const post: Post = {
   faqs: [
     {
       q: 'What is MCP in simple terms?',
-      a: 'An open standard for how a model and an external system talk to each other. What the system can do, what it needs to be told, and what comes back. It is a plug socket: it does not make the appliances better, it makes it possible to plug one in without building a bespoke integration.',
+      a: 'An open standard for how a model and an external system talk to each other, covering the system’s capabilities, its required inputs and its return shape. It is a plug socket: it does not make the appliances better, it makes it possible to plug one in without building a bespoke integration.',
     },
     {
       q: 'Why do connectors matter for a marketing team?',

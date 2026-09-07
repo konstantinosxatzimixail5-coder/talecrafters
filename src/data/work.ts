@@ -184,7 +184,7 @@ export const work: CaseStudy[] = [
       { label: 'Plates', detail: 'One master plate per band, handed over' },
     ],
     method:
-      'Phantom Set, run as one continuous set instead of one product. The specification was written before anything rendered and fixed the things a viewer notices when they break: sun position, time of day, direction of light at every altitude. A pull that starts at sunrise and arrives at night has to travel through the terminator, so the light change becomes the story. Each band got its own plate, and frames were generated from the plate above and the plate below, so every seam is a match on the horizon line and the colour of the sky.',
+      'Phantom Set, run as one continuous set across every product. The specification was written before anything rendered and fixed the things a viewer notices when they break: sun position, time of day, direction of light at every altitude. A pull that starts at sunrise and arrives at night has to travel through the terminator, so the light change becomes the story. Each band got its own plate, and frames were generated from the plate above and the plate below, so every seam is a match on the horizon line and the colour of the sky.',
     gates: [
       { name: 'Geography gate', test: 'Every land mass checked against reference before it enters the cut. The orbital frames get checked twice, because that is where a model is most confident and most wrong.' },
       { name: 'Seam gate', test: 'Horizon line and sky colour must match across the join between two altitude bands.' },

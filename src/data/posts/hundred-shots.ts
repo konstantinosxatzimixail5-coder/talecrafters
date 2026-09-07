@@ -139,7 +139,7 @@ export const post: Post = {
     },
     {
       q: 'What is the contact sheet review for?',
-      a: 'It catches drift that per-frame testing cannot. At thumbnail scale the eye compares images instead of reading them, so a frame that passed every individual gate but does not belong to the set becomes obvious immediately.',
+      a: 'It catches drift that per-frame testing cannot. At thumbnail scale the eye compares images and stops reading them, so a frame that passed every individual gate but does not belong to the set becomes obvious immediately.',
     },
     {
       q: 'Should hard shots or easy shots be rendered first?',
