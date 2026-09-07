@@ -11,27 +11,20 @@ import type { HomeCopy } from '@/content/copy';
 // standing between reading and enquiring, and it costs nothing later because a
 // floor is not a quote. The Shadow Protocol has none on purpose: scope there
 // varies too much for a floor to mean anything, so it says so.
-// Four packages, four different bullet counts, on purpose: four cards carrying
-// four bullets each is the shape every generated pricing page ships, and a
-// reader clocks it before reading a word.
-//
-// Each BEST FOR line names what that client asks for on a Tuesday. They used to
-// name a segment ("brands with ongoing content needs"), which survives a
-// find-and-replace of the studio name, and that is the test it kept failing.
 const packages = [
   {
     name: "THE ALLIANCE",
     subtitle: "Ongoing Creative Partnership",
     price: "From €500",
     period: "per month",
-    description: "A standing block of production capacity every month, run by a studio that already knows your plates, your fonts and which stakeholder quietly kills the good work. No onboarding, no sad office birthday parties.",
+    description: "For brands that need consistent firepower, not one-off miracles. You get dedicated creative capacity every month. We become an extension of your team, without the overhead, the HR headaches, or the sad office birthday parties.",
     features: [
-      "A monthly output block, sized to your calendar",
-      "Priority turnaround. You go to the front of the queue.",
-      "Strategic input on the brief before anything renders",
-      "Unused output rolls into next month",
+      "Dedicated monthly outputs (customized to your needs)",
+      "Priority turnaround (you skip the queue)",
+      "Strategic input, not just execution",
+      "Rollover flexibility (because life happens)",
     ],
-    bestFor: "The brand that messages on a Tuesday wanting three more cuts of last month's film by Friday.",
+    bestFor: "Brands with ongoing content needs who are tired of the project-by-project hamster wheel.",
     color: 'var(--brand-cyan)',
     accent: false,
   },
@@ -40,29 +33,30 @@ const packages = [
     subtitle: "Predictable Content. Relentless Output.",
     price: "From €400",
     period: "per month",
-    description: "A fixed monthly subscription for teams who know what they need and want it landing like clockwork. The shape is agreed on one call, then it runs to a schedule. Scope creep has nowhere to enter.",
+    description: "A fixed monthly subscription for brands that know exactly what they need and want it delivered like clockwork. We agree the shape of it on one call, then it runs to a schedule. No scope creep, no surprises, just output.",
     features: [
-      "Social Content Engine: 12 posts a month, static and motion",
-      "Video Velocity: 4 short-form videos a month",
-      "Synthetic Spokesperson: 4 presenter videos a month",
-      "Swap the mix at the end of any month",
+      "Social Content Engine: 12 posts/month (static + motion)",
+      "Video Velocity: 4 short-form videos/month",
+      "Synthetic Spokesperson: 4 avatar videos/month",
+      "Custom configuration available",
     ],
-    bestFor: "The marketing team with a content calendar and nobody in-house left to feed it.",
+    bestFor: "Marketing teams with clear briefs who need reliable production capacity without the agency overhead.",
     color: 'var(--brand-magenta)',
     accent: true,
   },
   {
     name: "THE MISSION",
-    subtitle: "One project. One deadline.",
+    subtitle: "Single Project. Maximum Impact.",
     price: "From €350",
     period: "per project",
-    description: "Not ready to sign anything ongoing? Sensible. Take one project, watch how we work from the inside, and decide afterwards. One brief, one deadline, and a team with nothing else in the diary that week.",
+    description: "Not ready for an ongoing partnership? Fair enough. Trust is earned, not demanded. One project. One deliverable. Maximum focus. We treat your campaign like it's the only thing that matters.",
     features: [
-      "Campaign concepting through to delivery",
-      "Launch packages, brand films and hero content",
+      "Campaign concepting and execution",
+      "Product launch content packages",
       "Event coverage and highlights",
+      "Brand films and hero content",
     ],
-    bestFor: "The brand with one date in the calendar that cannot move.",
+    bestFor: "Brands that need something exceptional for a specific moment.",
     color: 'var(--brand-violet-text)',
     accent: false,
   },
@@ -71,15 +65,14 @@ const packages = [
     subtitle: "Stealth-Mode Firepower.",
     price: "Varies",
     period: "by scope and volume",
-    description: "Some brands need the work without the byline. White-label production for agencies, studios and consultancies who have won something their headcount cannot cover. We stay invisible. You keep the client.",
+    description: "Some brands need results, not credit. White-label creative production for agencies, studios, and consultancies who want to deliver excellence without scaling headcount. We stay invisible. You take the glory.",
     features: [
-      "White-label production, shipped under your brand",
-      "An NDA from the first call",
-      "We never appear in the credits, the deck, or on this website",
-      "Your project manager, our production line",
-      "Direct line to the operator, no account layer",
+      "White-label content production",
+      "Behind-the-scenes execution",
+      "Your branding, our execution",
+      "NDA-protected collaboration",
     ],
-    bestFor: "The agency that pitched a scope its studio cannot staff by the deadline.",
+    bestFor: "Agencies and studios that need production muscle without hiring full-time staff.",
     color: 'var(--brand-gold)',
     accent: false,
   },
@@ -153,7 +146,7 @@ export function PricingSection({ copy, hideHeading = false }: { copy: HomeCopy['
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Four ways to hire us. <span style={{ color: 'var(--brand-magenta)' }}>Each one starts at a number.</span>
+          Escalation levels for <span style={{ color: 'var(--brand-magenta)' }}>Content-as-Service</span>.
         </motion.p>
 
         {/* Package cards */}
@@ -334,10 +327,10 @@ export function PricingSection({ copy, hideHeading = false }: { copy: HomeCopy['
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: "Synthetic Media Natives", desc: "We were building generative pipelines while the models still could not hold one face across two shots. Seven exist. Three are published on this site with their stages, timings and gates.", color: 'var(--brand-cyan)' },
-              { title: "Story-First, Always", desc: "The beat sheet is signed before a prompt is written. When a film fails it fails in the structure, and no render budget on earth rescues a second act nobody planned.", color: 'var(--brand-magenta)' },
-              { title: "Content Reinventionists", desc: "Every case study on this site carries the problem, the idea, what we made, the result and the artefacts. Read one before the call and you already know how we work.", color: 'var(--brand-violet-text)' },
-              { title: "No Bullshit Guarantee", desc: "If your idea is bad you hear it on the first call, while changing your mind is still free. We would sooner lose the job than make something we would keep off our own showreel.", color: 'var(--brand-gold)' },
+              { title: "Synthetic Media Natives", desc: "We build the pipeline before the prompt: a locked master plate, a written set specification, four control gates and a ledger of what each accepted asset cost. Seven of them exist. Three are published on this site.", color: 'var(--brand-cyan)' },
+              { title: "Story-First, Always", desc: "Technology is the vehicle. Narrative is the destination. We obsess over story structure, emotional beats, and psychological hooks before we touch a single tool.", color: 'var(--brand-magenta)' },
+              { title: "Content Reinventionists", desc: "Every case study on this site carries the problem, the idea, what we made, the result and the artefacts. Read one before the call and you will already know how we work.", color: 'var(--brand-violet-text)' },
+              { title: "No Bullshit Guarantee", desc: "We give zero f*cks about ego, and infinite f*cks about excellence.", color: 'var(--brand-gold)' },
             ].map((item, i) => (
               <motion.div
                 key={i}

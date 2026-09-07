@@ -81,7 +81,9 @@ export function BlogSection({ copy, posts }: { copy: HomeCopy['blog']; posts: Te
           viewport={{ once: true }}
         >
           {/* Read from the copy registry. This was hardcoded, so the Studio
-              offered an editor a box for it that changed nothing on the page. */}
+              offered an editor a box for it that changed nothing on the page.
+              The default in the registry is this exact sentence, so the page
+              renders what it always did. */}
           {copy.lede}
         </motion.p>
 

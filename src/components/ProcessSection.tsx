@@ -4,14 +4,10 @@ import { useRef } from 'react';
 import { Rocket, Flame, HeartHandshake } from 'lucide-react';
 import type { HomeCopy } from '@/content/copy';
 
-// Three pillars, three different bullet counts. Everything here has to be a
-// number or a promise somebody could hold us to; the two lines that were pure
-// posture ("Safe content is forgettable content", "Controversy with purpose.
-// Tension with taste.") said nothing a reader did not already know.
 const pillars = [
   {
     icon: Rocket,
-    title: "QUALITY AT A SPEED THAT LOOKS RUDE",
+    title: "UNRIVALLED QUALITY AT STARTUP SPEED",
     description:
       "A product still set lands two working days after the plate is approved. A trained presenter goes from casting brief to nine finished variants in four days. Those are the numbers we quote from, and they are the numbers we hit.",
     note: "Two days for a still set",
@@ -24,26 +20,28 @@ const pillars = [
   },
   {
     icon: Flame,
-    title: "WE BUILD IN THE FRICTION",
+    title: "ATTENTION AS CURRENCY",
     description:
-      "Controlled friction goes into the work on purpose: a beat held a second too long, a register nobody expects from your category. People stop, and some of them argue.",
-    note: "Friction on purpose",
+      "We build controlled friction into the work: a beat held a second too long, a register nobody expects from your category. People stop, and some of them argue.",
+    note: "Provoke, don't placate",
     color: 'var(--brand-magenta)',
     details: [
+      "Safe content is forgettable content.",
       "One client run went out in seven visual registers in a fortnight, so the fifth piece would still get looked at.",
-      "Every register is tested against the same hook before it ships, and the ones that only flatter the brand get cut.",
+      "Controversy with purpose. Tension with taste.",
     ],
   },
   {
     icon: HeartHandshake,
     title: "CLIENTS AS CO-CONSPIRATORS",
     description:
-      "You signed off on this, which buys you the opinion we would give each other in the edit. Including the one about the thing you already paid for.",
+      "You signed off on this, which earns you our actual opinion. Including the one about the thing you already paid for.",
     note: "Partners in crime",
     color: 'var(--brand-violet-text)',
     details: [
-      "Every note arrives with the reason attached, so you can overrule it knowing exactly what it costs you.",
-      "When a piece is working and you are about to revise the life out of it, we say so before the next round starts.",
+      "You get the version of our opinion we would give each other.",
+      "When your brand guidelines are getting in the way, you hear it in the first week rather than the last.",
+      "We're accomplices. Our goal is to make your brand sound like it actually has a pulse.",
     ],
   },
 ];
@@ -250,10 +248,16 @@ export function ProcessSection({ copy }: { copy: HomeCopy['process'] }) {
             style={{ fontFamily: 'var(--font-display)' }}
           >
             We make algorithms jealous of human creativity.{' '}
-            <span style={{ color: 'var(--brand-cyan)' }}>Then we take their lunch money.</span>{' '}
-            Our work makes people{' '}
-            <span style={{ color: 'var(--brand-magenta)' }}>cancel a meeting to finish watching,</span>{' '}
-            then argue about it in a group chat we will never be shown.
+            <span style={{ color: 'var(--brand-cyan)' }}>Then we steal their lunch money.</span>{' '}
+            Our stories make people{' '}
+            <span style={{ color: 'var(--brand-magenta)' }}>stop mid-scroll,</span>{' '}
+            cancel meetings, and question whether they've been doing content wrong their entire lives.
+            <span
+              className="inline-block ml-3 text-base md:text-xl"
+              style={{ fontFamily: 'var(--font-mono)', color: 'var(--brand-gold)', opacity: 0.8 }}
+            >
+              (Spoiler alert: They have.)
+            </span>
           </div>
         </motion.div>
       </div>

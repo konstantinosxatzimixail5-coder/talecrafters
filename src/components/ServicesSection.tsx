@@ -258,9 +258,8 @@ export function ServicesSection({ copy, categories }: { copy: HomeCopy['services
                 Custom <span style={{ color: 'var(--brand-cyan)' }}>Everything</span>
               </h3>
               <p className="text-lg max-w-2xl" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
-                Come with the thing nobody has quoted you for. You leave with a scope, a stack and a date
-                in the calendar, or a straight answer about why we are the wrong studio for it. Both
-                take one call.
+                If it moves, speaks, or sparks emotion, we build it. Come with the impossible. Leave
+                with a delivery date. Don&apos;t see what you need? If you can imagine it, we can create it.
               </p>
             </div>
             <motion.a

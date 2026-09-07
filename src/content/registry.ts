@@ -144,15 +144,15 @@ export const copyRegistry = {
       }, 'The first screen. Five headline lines, each with one coloured part.'),
       studio: section('The Studio', {
         flag: str('Section number and label', '001 / THE STUDIO', 'The mono line in the top corner. The headline below it is drawn type and is set in code.'),
-        body1: text('First paragraph', 'We’re the unholy offspring of a film studio and a technology lab. Half of us storyboard, half of us write code, and nobody here has ever been thanked for playing it safe.', 4),
-        body2: text('Second paragraph', 'Underneath the noise sits machinery that is deeply unglamorous: one locked master plate, a written set specification, four gates every frame has to survive, and a ledger of what each accepted asset cost. Taste picks the shot. The machinery makes ninety more of it before lunch.', 4),
+        body1: text('First paragraph', 'We’re the unholy offspring of a film studio and a technology lab. Part strategists, part visual anarchists, fully committed to making your competition wonder what just happened.', 4),
+        body2: text('Second paragraph', 'We designed a system that combines human taste with machine velocity. The creative instincts that make stories resonate, accelerated by technology that refuses to sleep.', 4),
       }),
       universe: homeSection({
         title: 'The Divisions',
         flag: '002 / THE DIVISIONS',
         heading: 'THREE ARMS. ONE',
         accentWord: 'STUDIO.',
-        lede: 'Three arms, and they sell different things. Create sells the finished work. Systems sells the machinery that makes it. Originals is the slate nobody commissioned, which is where we find out what the machinery can do before a client pays to find out.',
+        lede: 'Most studios describe the technology they used to make a film. We sell the film and the machinery, and we keep a third arm for the work nobody commissions.',
         ledeNote: 'Plain text. The emphasis on "and" is applied by the page, not typed here.',
       }),
       philosophy: homeSection({
@@ -166,7 +166,7 @@ export const copyRegistry = {
         flag: '004 / WHAT WE WEAPONISE',
         heading: 'OUR',
         accentWord: 'ARSENAL',
-        lede: 'Six groups, thirty services. The group names are ours and they stay. The line underneath each one is written flat and plain, because the person forwarding this page to a finance director needs a phrase that survives the forward.',
+        lede: 'Six groups, thirty services. The group names are ours and they stay. The line underneath each one is deliberately boring, because the person forwarding this page to a finance director needs a phrase that survives the forward.',
       }),
       selectedDamage: homeSection({
         title: 'Selected Damage',
@@ -193,7 +193,7 @@ export const copyRegistry = {
         flag: '008 / THE BLOG',
         heading: 'THOUGHTS,',
         accentWord: 'UNFILTERED',
-        lede: 'What a generative shoot costs, which model breaks where, and what the law makes you disclose. Written for the person who has to make the thing on Monday.',
+        lede: 'Hot takes on creativity, technology, and why most brands are terrified of being interesting.',
       }),
       contact: homeSection({
         title: 'Start a Conspiracy',
@@ -203,8 +203,8 @@ export const copyRegistry = {
       }),
       clients: section('Trusted by', {
         eyebrow: str('Eyebrow', 'Trusted By'),
-        heading: str('Heading', 'The ones brave enough to sign it off.'),
-        headingAccent: str('Heading, coloured part', 'brave enough', 'Printed in magenta italic wherever it falls in the heading.'),
+        heading: str('Heading', 'The brands that get it.'),
+        headingAccent: str('Heading, coloured part', 'get it', 'Printed in magenta italic wherever it falls in the heading.'),
       }),
       cta: section('Closing call to action', {
         heading: str('Heading', 'YOUR', 'The first line of the closing heading.'),
