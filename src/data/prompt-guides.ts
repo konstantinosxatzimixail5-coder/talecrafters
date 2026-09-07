@@ -2,7 +2,7 @@
 //
 // The camera-movements sheet answers "how do I ask for a crane down". The
 // animation-prompting sheet answers "how do I ask for claymation". Neither
-// answers the question people actually arrive with, which is "what goes in a
+// answers the question people arrive with, which is "what goes in a
 // prompt, in what order, and why did mine come back wrong".
 //
 // So each entry here is a guide rather than a string: the slots the prompt is
@@ -78,7 +78,7 @@ export const promptFamilies: PromptFamily[] = [
     name: 'Systems & agents',
     color: 'var(--brand-cyan)',
     blurb:
-      'Prompts that run more than once. These are written like specifications rather than requests, because anything you leave to the model’s judgement will vary on run four hundred.',
+      'Prompts that run more than once. These are written like specifications, because anything you leave to the model’s judgement will vary on run four hundred.',
   },
 ];
 
@@ -102,7 +102,7 @@ export const promptGuides: PromptGuide[] = [
       'Slow dolly in. A woman in a grey wool coat stands at a rain-streaked window and slowly lifts her hand to the glass. A dim apartment interior, city lights out of focus behind her. Key light from the window, camera left, late blue evening. 50mm, shallow depth of field, focus on her eyes. Muted, cool grade.',
     failure:
       'Mood adjectives migrate to the front and take over. A prompt that opens with "cinematic, dramatic, beautiful" gets a beautifully lit shot with none of the movement you asked for, because the model spent its budget on the adjectives.',
-    fix: 'Move every adjective behind the camera move and the action. If the shot is still wrong, delete the grade line entirely and see what you actually asked for.',
+    fix: 'Move every adjective behind the camera move and the action. If the shot is still wrong, delete the grade line entirely and see what you asked for.',
   },
   {
     slug: 'image-to-video-animation',
@@ -120,7 +120,7 @@ export const promptGuides: PromptGuide[] = [
       'Only the steam from the cup moves, rising slowly and dissipating. The hands, the cup, the table and the background stay completely still. Camera locked off, no movement. Slow, calm, continuous.',
     failure:
       'You describe the picture again. The model already has the picture; re-describing it gives it permission to reinterpret, and a reinterpreted still is a different still.',
-    fix: 'Delete every sentence that describes what is already visible in the reference. If the prompt still reads as a description rather than an instruction, you have not finished cutting.',
+    fix: 'Delete every sentence that describes what is already visible in the reference. If the prompt still reads as a description, you have not finished cutting.',
   },
   {
     slug: 'first-and-last-frame',
@@ -156,7 +156,7 @@ export const promptGuides: PromptGuide[] = [
     prompt:
       'Medium close-up, static. She says, "We tried it for a week." She is deciding whether to admit the rest as she says it, so the line comes out slightly slower than it should. Before the line she holds a small breath. After it she does not look away.',
     failure:
-      'You direct the emotion and get a performance of the emotion: eyebrows doing the work, a face announcing sadness rather than a person being sad.',
+      'You direct the emotion and get a performance of the emotion: eyebrows doing the work, a face announcing sadness where a person being sad should be.',
     fix: 'Replace every emotion word with an intention. Not "sad", but "trying not to be asked a follow-up question". The face solves it better than you can specify it.',
   },
   {
@@ -175,7 +175,7 @@ export const promptGuides: PromptGuide[] = [
     prompt:
       'Slow orbit right, ninety degrees over the full clip, single axis, no vertical movement. A matte glass bottle with a paper label. The label stays sharp, unchanged and facing camera throughout. A soft strip light above and slightly behind, so the highlight travels down the shoulder of the bottle as it turns. Dark stone surface, static.',
     failure:
-      'The type on the label dissolves into plausible-looking letterforms somewhere in the second half of the move, which is a legal problem rather than an aesthetic one.',
+      'The type on the label dissolves into plausible-looking letterforms somewhere in the second half of the move, which is a legal problem.',
     fix:
       'Shorten the move, or generate the turn and composite the real label over it in post. Legible type is the one thing worth solving outside the model.',
   },
@@ -239,7 +239,7 @@ export const promptGuides: PromptGuide[] = [
     slug: 'duration-and-pacing',
     name: 'Prompting for pace',
     family: 'video',
-    purpose: 'Getting a clip that cuts well rather than one that fills its runtime.',
+    purpose: 'Getting a clip that cuts well instead of one that fills its runtime.',
     when: 'Whenever the output is destined for an edit, which is always.',
     scaffold: [
       'THE ACTION ARC. Beginning, middle and end of one movement.',
@@ -260,7 +260,7 @@ export const promptGuides: PromptGuide[] = [
     slug: 'photoreal-still',
     name: 'The photoreal still',
     family: 'image',
-    purpose: 'A frame that reads as a photograph rather than a render.',
+    purpose: 'A frame that reads as a photograph.',
     when: 'Key art, packshots, anything sitting next to real photography.',
     scaffold: [
       'CAMERA BODY AND LENS. Real ones, with real numbers.',
@@ -294,7 +294,7 @@ export const promptGuides: PromptGuide[] = [
     failure:
       'The subject is centred no matter what you write, because centred is the strongest prior in almost every image model.',
     fix:
-      'Describe the empty area rather than the subject’s position. Models place things far more reliably when told what has to stay empty than when told where to put something.',
+      'Describe the empty area, never the subject’s position. Models place things far more reliably when told what has to stay empty than when told where to put something.',
   },
   {
     slug: 'lighting-vocabulary',
@@ -330,7 +330,7 @@ export const promptGuides: PromptGuide[] = [
       'ABSENCE. What this style does not have.',
     ],
     prompt:
-      'Screen-printed on uncoated paper, three inks only, visible misregistration at the edges. Ink sits on the surface rather than soaking in. Palette limited to warm red, cream and near-black. No gradients, no soft shadows, no photographic texture.',
+      'Screen-printed on uncoated paper, three inks only, visible misregistration at the edges. Ink sits on the surface and never soaks in. Palette limited to warm red, cream and near-black. No gradients, no soft shadows, no photographic texture.',
     failure:
       'An artist’s name gets you an average of everything attributed to them, which is rarely the thing you liked, and puts a name you do not own inside your production record.',
     fix:
@@ -340,7 +340,7 @@ export const promptGuides: PromptGuide[] = [
     slug: 'text-in-image',
     name: 'Legible text in an image',
     family: 'image',
-    purpose: 'Getting words that are actually the words.',
+    purpose: 'Getting words that are the words.',
     when: 'Reluctantly, and only for short strings.',
     scaffold: [
       'THE STRING. In quotes, exact, short.',
@@ -511,7 +511,7 @@ export const promptGuides: PromptGuide[] = [
     prompt:
       'The claim: shortening a clip by two seconds raises completion more than any change to the edit. The audience currently believes completion is a function of how good the content is. Write twenty opening lines, each under nine words, each using a different mechanism: stating a cost, contradicting the belief, naming a number, withholding the subject, or admitting a failure. No rhetorical questions, no "in this video", no "secret".',
     failure:
-      'Twenty variations of the same sentence, because you asked for twenty hooks rather than for twenty mechanisms.',
+      'Twenty variations of the same sentence, because you asked for twenty hooks and not for twenty mechanisms.',
     fix:
       'Name the mechanisms in the prompt. Variety comes from the constraint list, never from asking for variety.',
   },
@@ -726,7 +726,7 @@ export const promptGuides: PromptGuide[] = [
       'INPUTS. Named, typed, with what to do when one is missing.',
       'THE PROCEDURE. Numbered, and short enough to follow.',
       'OUTPUT SHAPE. Exact, with an example.',
-      'REFUSALS. What to do rather than guess.',
+      'REFUSALS. What to do instead of guessing.',
       'NEVER. The two or three things that must not happen.',
     ],
     prompt:
@@ -752,7 +752,7 @@ export const promptGuides: PromptGuide[] = [
     prompt:
       'Invariant across all outputs: same product, same lighting setup, same 50mm lens, same grade, same empty upper third. Variable: background surface only — concrete, oak, brushed steel, linen, marble. Name each output as product_surface_v01. Reject automatically any frame where the label is not fully legible or the upper third is not clear. Maximum six attempts per surface, then stop and flag.',
     failure:
-      'Forty assets that vary on three axes because the invariant was written as a suggestion rather than a constraint.',
+      'Forty assets that vary on three axes because the invariant was written as a suggestion.',
     fix:
       'Write the invariant as a block and paste it unchanged. Anything you retype, you will change.',
   },
@@ -799,7 +799,7 @@ export const promptGuides: PromptGuide[] = [
     slug: 'research-brief-prompt',
     name: 'The research prompt',
     family: 'systems',
-    purpose: 'Getting facts you can publish rather than plausible sentences.',
+    purpose: 'Getting facts you can publish, never plausible sentences.',
     when: 'Anything touching regulation, numbers, or a date.',
     scaffold: [
       'THE QUESTION. Narrow.',
@@ -809,7 +809,7 @@ export const promptGuides: PromptGuide[] = [
       'BAN. Summarising from memory.',
     ],
     prompt:
-      'Question: what disclosure does this regulation require for synthetic media in advertising, as of today. Use primary sources only: the legislation itself, the regulator’s own guidance, or an official platform policy page. For each claim give the exact source URL and the date it was published or last amended. Where you cannot find a primary source, write NOT FOUND rather than answering from memory. Do not paraphrase legal text — quote it.',
+      'Question: what disclosure does this regulation require for synthetic media in advertising, as of today. Use primary sources only: the legislation itself, the regulator’s own guidance, or an official platform policy page. For each claim give the exact source URL and the date it was published or last amended. Where you cannot find a primary source, write NOT FOUND and never answer from memory. Do not paraphrase legal text — quote it.',
     failure:
       'A confident, well-organised summary of the regulation as it stood eighteen months ago, with no dates on anything.',
     fix:

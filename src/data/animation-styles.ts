@@ -8,7 +8,7 @@ export interface AnimationStyle {
   name: string;
   aka: string;
   color: string;
-  /** What the style actually is, in production terms. */
+  /** What the style is, in production terms. */
   what: string;
   /** The order the prompt should be written in. */
   scaffold: string[];
@@ -108,7 +108,7 @@ export const animationStyles: AnimationStyle[] = [
     aka: 'picture book, children’s illustration',
     color: 'var(--brand-cyan)',
     what:
-      'A print medium first: visible paper grain, ink that sits on a surface, and colour laid down in washes rather than lit. The paper is the part people forget to ask for, and it is the part that sells it.',
+      'A print medium first: visible paper grain, ink that sits on a surface, and colour laid down in washes. The paper is the part people forget to ask for, and it is the part that sells it.',
     scaffold: [
       'Name the medium and the surface: gouache on cold-press paper, visible tooth.',
       'Name the mark: loose ink line, uneven edges, colour slightly outside the line.',
@@ -188,7 +188,7 @@ export const animationStyles: AnimationStyle[] = [
     aka: 'traced live action, painted-over footage',
     color: 'var(--brand-cyan)',
     what:
-      'Real human motion under a drawn surface. The tension between accurate weight and unstable line is the entire appeal, so ask for the boil (the line shifting slightly frame to frame) rather than a clean trace.',
+      'Real human motion under a drawn surface. The tension between accurate weight and unstable line is the entire appeal, so ask for the boil, meaning the line shifting slightly frame to frame, and never for a clean trace.',
     scaffold: [
       'Name the source behaviour: traced from live-action, naturalistic human weight and timing.',
       'Name the surface: painted-over, visible brush edges, line boil between frames.',

@@ -1,5 +1,5 @@
 // The Supply Drop. Free reference material, published without an email gate,
-// because a prompt list behind a form is a lead magnet rather than a resource.
+// because a prompt list behind a form is a lead magnet, not a resource.
 
 import { promptGuides, promptFamilies } from './prompt-guides';
 
@@ -29,7 +29,7 @@ export const resources: Resource[] = [
   {
     slug: 'camera-movements',
     title: 'Cinematic Camera Movements',
-    kicker: 'The shot vocabulary that actually survives a generative model',
+    kicker: 'The shot vocabulary that survives a generative model',
     color: 'var(--brand-cyan)',
     count: '38 moves',
     format: 'Direction + working prompt for each',
@@ -146,7 +146,7 @@ export const resources: Resource[] = [
     count: '6 clauses',
     format: 'Template with schedule, PDF and on this page',
     blurb:
-      'A likeness and voice release drafted for generative production rather than photography. The clause that matters is the one expressly granting the right to train a model on the supplied material, which almost no pre-2024 release contains. Includes scope, territory, term, exclusions, withdrawal and end-of-term disposal.',
+      'A likeness and voice release drafted for generative production. The clause that matters is the one expressly granting the right to train a model on the supplied material, which almost no pre-2024 release contains. Includes scope, territory, term, exclusions, withdrawal and end-of-term disposal.',
     forWhom: 'Producers building a trained identity from a real performer, and performers being asked to sign one.',
     pdf: '/downloads/talecrafters-synthetic-ugc-consent-template.pdf',
     metaTitle: 'Synthetic UGC Consent Template: Likeness and Voice Release',
@@ -190,7 +190,7 @@ export const resources: Resource[] = [
     count: '5 sections',
     format: 'Worksheet, PDF and on this page',
     blurb:
-      'The arithmetic we quote from, with a starting acceptance-rate table per shot type to budget against until you have logged your own. Work through it and you get a cost per accepted asset rather than a cost per generation, which is the difference between a number you can plan with and a number that flatters everybody.',
+      'The arithmetic we quote from, with a starting acceptance-rate table per shot type to budget against until you have logged your own. Work through it and you get a cost per accepted asset instead of a cost per generation, which is the difference between a number you can plan with and a number that flatters everybody.',
     forWhom: 'Anyone comparing generative quotes, or working out whether a brief should be generative at all.',
     pdf: '/downloads/talecrafters-ai-video-cost-calculator.pdf',
     metaTitle: 'AI Video Cost Calculator: Cost Per Accepted Asset Worksheet',

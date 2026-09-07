@@ -97,7 +97,7 @@ export const work: CaseStudy[] = [
       { label: 'Stills', detail: 'Plate set, master-plate locked per dish' },
     ],
     method:
-      'Phantom Set, which is the pipeline for any subject a person can hold up against the picture. One master plate per dish, locked first: crockery, garnish, light, angle. Every later frame is generated from that plate rather than from a fresh prompt, so the plating cannot wander between shots.',
+      'Phantom Set, which is the pipeline for any subject a person can hold up against the picture. One master plate per dish, locked first: crockery, garnish, light, angle. Every later frame is generated from that plate, so the plating cannot wander between shots.',
     gates: [
       { name: 'Label gate', test: 'Zoom to full resolution and read every printed word in frame. A fail returns to the master plate, never to a retouching tool.' },
       { name: 'Silhouette gate', test: 'Lay the render over the master plate at 40% opacity. Any shift in the outline of the plate kills the frame.' },
@@ -144,7 +144,7 @@ export const work: CaseStudy[] = [
       {
         youtubeId: 'Ql-5EMhXTZQ',
         title: 'Restaurant showcase, from the room as it stands',
-        note: 'The terrace at dusk, built out of the restaurant’s own photography and its Google Maps imagery rather than a set. Tables, decking and the olive tree in the middle are where they actually are, so a diner who has eaten there recognises the room.',
+        note: 'The terrace at dusk, built out of the restaurant’s own photography and its Google Maps imagery. Tables, decking and the olive tree in the middle are where they stand in the room, so a diner who has eaten there recognises the room.',
         duration: 'PT0M15S',
         uploadDate: '2026-01-20',
         ratio: '9:16',
@@ -184,7 +184,7 @@ export const work: CaseStudy[] = [
       { label: 'Plates', detail: 'One master plate per band, handed over' },
     ],
     method:
-      'Phantom Set, run as one continuous set instead of one product. The specification was written before anything rendered and fixed the things a viewer notices when they break: sun position, time of day, direction of light at every altitude. A pull that starts at sunrise and arrives at night has to travel through the terminator, so the light change is the story rather than a mistake. Each band got its own plate, and frames were generated from the plate above and the plate below, so every seam is a match on the horizon line and the colour of the sky.',
+      'Phantom Set, run as one continuous set instead of one product. The specification was written before anything rendered and fixed the things a viewer notices when they break: sun position, time of day, direction of light at every altitude. A pull that starts at sunrise and arrives at night has to travel through the terminator, so the light change becomes the story. Each band got its own plate, and frames were generated from the plate above and the plate below, so every seam is a match on the horizon line and the colour of the sky.',
     gates: [
       { name: 'Geography gate', test: 'Every land mass checked against reference before it enters the cut. The orbital frames get checked twice, because that is where a model is most confident and most wrong.' },
       { name: 'Seam gate', test: 'Horizon line and sky colour must match across the join between two altitude bands.' },
@@ -231,7 +231,7 @@ export const work: CaseStudy[] = [
       'A locked master plate of the machine, handed over as a reusable file.',
     ],
     result:
-      'Delivered as the hero cut for the model, with the plate handed over so the next film starts from a correct bike rather than a fresh prompt.',
+      'Delivered as the hero cut for the model, with the plate handed over so the next film starts from a correct bike.',
     resultKind: 'Delivered',
     artefacts: [
       { label: 'Film', detail: 'Hero cut, 9:16' },
@@ -242,7 +242,7 @@ export const work: CaseStudy[] = [
       'Phantom Set with the gates turned up. Plate first: the bike alone, correct badge, correct fairing, correct wheel count, nothing else in the picture.',
     gates: [
       { name: 'Silhouette gate', test: 'Overlay the render on the plate at 40% opacity. Any change in the outline of the tank or fairing kills the frame.' },
-      { name: 'Spoke rule', test: 'If the spoke count changes between frames, the shot returns to the plate rather than going into a retouching pass.' },
+      { name: 'Spoke rule', test: 'If the spoke count changes between frames, the shot returns to the plate. No retouching pass.' },
       { name: 'Rights gate', test: 'Two earlier pieces for this client leaned on licensed characters. Those are not on this site, for that reason.' },
     ],
     hero: {
@@ -311,7 +311,7 @@ export const work: CaseStudy[] = [
       { label: 'Plate sets', detail: 'One per register, nothing reused between them' },
     ],
     method:
-      'Operator Stack: the pipeline for work where the value is in the run rather than in any single film. The registers were chosen first and written down as a list before a frame was made, so that no two briefs could drift into the same look under deadline. A register is a decision about lighting model, edge quality and how much the world is allowed to be wrong. Each got its own plate set and prompt vocabulary, and nothing was reused between them, because reuse is exactly what produces the sameness the job was built to avoid.',
+      'Operator Stack: the pipeline for work where the value sits in the run, not in any single film. The registers were chosen first and written down as a list before a frame was made, so that no two briefs could drift into the same look under deadline. A register is a decision about lighting model, edge quality and how much the world is allowed to be wrong. Each got its own plate set and prompt vocabulary, and nothing was reused between them, because reuse is exactly what produces the sameness the job was built to avoid.',
     gates: [
       { name: 'Brand gate', test: 'The mark, the blue and the lockup survive a register change without being redrawn. The mark is composited, never generated: a model asked to draw a logo gets it nearly right, and nearly right on a logo is worse than absent.' },
       { name: 'Anatomy gate', test: 'Every frame with a held object gets checked before it enters a cut. Cartoon registers fail here first: a magnifier, a guitar neck, a clipboard held by something with no thumbs.' },
@@ -357,7 +357,7 @@ export const work: CaseStudy[] = [
     problem:
       'Amino Alliance sells a supplement in a printed pouch and needed creator-style video ads for paid social. The requirement underneath that is volume and range at once. A paid test burns through creative: it wants the consultant and the runner and the man on a canal in Amsterdam saying different things to different audiences, then wants all three again next month when the offer moves. Booking three creators for that is a shoot, a schedule and a reshoot fee.',
     idea:
-      'Cast once, then treat the cast as an asset. Three presenters trained from stills sheets and reused across the run, so the fifth ad costs what the first one did and the tenth is a rewrite rather than a booking. Each one is cast for a different audience and kept in a place that suits them: a consultant in her own office, a man in his fifties on a canal in the middle of Amsterdam, a runner on a park path in bare winter light. The pouch runs the other line entirely. It is a real printed object with a real mark, a product name and a block of small type down the front, and none of that can be approximated in a presenter’s hand at arm’s length in daylight.',
+      'Cast once, then treat the cast as an asset. Three presenters trained from stills sheets and reused across the run, so the fifth ad costs what the first one did and the tenth is a rewrite. Each one is cast for a different audience and kept in a place that suits them: a consultant in her own office, a man in his fifties on a canal in the middle of Amsterdam, a runner on a park path in bare winter light. The pouch runs the other line entirely. It is a real printed object with a real mark, a product name and a block of small type down the front, and none of that can be approximated in a presenter’s hand at arm’s length in daylight.',
     made: [
       'Three creator video ads for paid social, presenter to camera, product in hand.',
       'Product frames for the still placements.',
@@ -417,7 +417,7 @@ export const work: CaseStudy[] = [
       {
         youtubeId: '7DNBe1uYHkY',
         title: 'Amsterdam, street cut',
-        note: 'The same product, a different decade and a different city. Shot to camera on a canal, handheld, so the ad reads as a person who happens to be outside rather than a set that happens to be a canal.',
+        note: 'The same product, a different decade and a different city. Shot to camera on a canal, handheld, so the ad reads as a person who happens to be outside.',
         duration: 'PT0M14S',
         uploadDate: '2025-11-18',
         ratio: '9:16',
@@ -469,7 +469,7 @@ export const work: CaseStudy[] = [
       { label: 'Diagram system', detail: 'One vocabulary across four pieces, colour as state' },
     ],
     method:
-      'This one ran on the writing. On the pilot film the constraint is the opposite of the usual one: the footage is real and the words have to survive review by the people who ran the trial, so every objective and milestone card is the consortium’s own language, set on screen a clause at a time rather than paraphrased. On the explainer, generation covered environments, establishing shots and the abstracted grid, and every technical claim went back to the consortium before it went into a render.',
+      'This one ran on the writing. On the pilot film the constraint is the opposite of the usual one: the footage is real and the words have to survive review by the people who ran the trial, so every objective and milestone card is the consortium’s own language, set on screen a clause at a time, with nothing paraphrased. On the explainer, generation covered environments, establishing shots and the abstracted grid, and every technical claim went back to the consortium before it went into a render.',
     gates: [
       { name: 'Claim gate', test: 'Nothing appears on screen that the grant text does not support. On the pilot film that extends to the milestones: a first is only called a first if the consortium will sign the sentence.' },
       { name: 'Vocabulary gate', test: 'One diagram system across all four pieces. A new shape means a new meaning, or it does not get drawn.' },
@@ -499,7 +499,7 @@ export const work: CaseStudy[] = [
       {
         youtubeId: 'xPn8yF-_3KY',
         title: 'Secure Energy Communities — pilot film',
-        note: 'The objectives and the two milestones, set as cards over the array, then a vertical site tour framed inside a solar cell: the van, the drive to Halkidiki, the gate, the control cabin, the inverter and the logging kit, closing on the HEDNO researcher in front of the rows. The one film on this engagement built from footage rather than from the grant document.',
+        note: 'The objectives and the two milestones, set as cards over the array, then a vertical site tour framed inside a solar cell: the van, the drive to Halkidiki, the gate, the control cabin, the inverter and the logging kit, closing on the HEDNO researcher in front of the rows. The one film on this engagement built from footage.',
         duration: 'PT1M48S',
         uploadDate: '2025-09-03',
         ratio: '16:9',
@@ -540,7 +540,7 @@ export const work: CaseStudy[] = [
       { label: 'Voice', detail: 'Cloned from the presenter\u2019s own audio' },
     ],
     method:
-      'Everything starts from the source images. They are cleaned and upscaled first, then image-to-video is driven with camera moves that respect the geometry of each room, so the walls stay where they are and the viewer reads one continuous space rather than a series of guesses. The voice model is trained on the presenter\u2019s own audio, timed to the performance and lip-synced. The final grade is matched to the light in the original photography, because a room that is graded away from its own stills stops being that room.',
+      'Everything starts from the source images. They are cleaned and upscaled first, then image-to-video is driven with camera moves that respect the geometry of each room, so the walls stay where they are and the viewer reads one continuous space. The voice model is trained on the presenter\u2019s own audio, timed to the performance and lip-synced. The final grade is matched to the light in the original photography, because a room that is graded away from its own stills stops being that room.',
     gates: [
       { name: 'Geometry gate', test: 'Walls, openings and floor lines must hold across a move. A room that changes shape between two seconds of footage goes back to the source still.' },
       { name: 'Voice gate', test: 'The delivery on screen has to match the person who picks up the phone. Trained on their own recordings, never on a stock read.' },
@@ -564,7 +564,7 @@ export const work: CaseStudy[] = [
       {
         youtubeId: 'xDGt2MejwJA',
         title: 'Spokesperson ad, vertical cut',
-        note: 'The presenter to camera at a listed villa, phone on a tripod in shot, cloned voice on the read. The villa behind him is reconstructed from the stills already on the client’s own site, which is why the grade matches the listing photography rather than sitting a stop off it.',
+        note: 'The presenter to camera at a listed villa, phone on a tripod in shot, cloned voice on the read. The villa behind him is reconstructed from the stills already on the client’s own site, which is why the grade matches the listing photography to the stop.',
         duration: 'PT0M10S',
         uploadDate: '2026-01-09',
         ratio: '9:16',
@@ -589,7 +589,7 @@ export const work: CaseStudy[] = [
     problem:
       'Product photography is where generative work gets caught. Not on the lighting, which models are good at, but on the four square centimetres of printed label a buyer holds up to their face. The FERAL can is the hard version of that: a halftone build with a magenta offset behind green type, the wordmark repeated down the body, and a small black box under it reading YUZU STATIC. Getting that right once is luck. Getting it right across five sets, a night city, a creator’s hand and an animated billboard is a pipeline.',
     idea:
-      'Build the can once and never rebuild it. One master plate carries the label, the finish and the proportions, and every later frame is generated from that file rather than from a fresh prompt, so the type cannot drift when the light and the surface change underneath it. Then take the hardest possible delivery for it: an anamorphic billboard where the can breaks the frame of the board it is printed on, over a wet night city, with liquid and cut fruit crossing the edge. A 3D break-out ad is a format that punishes any wobble in the object, because the viewer is being asked to read the same can as flat artwork and as a solid thing in the same second.',
+      'Build the can once and never rebuild it. One master plate carries the label, the finish and the proportions, and every later frame is generated from that file, so the type cannot drift when the light and the surface change underneath it. Then take the hardest possible delivery for it: an anamorphic billboard where the can breaks the frame of the board it is printed on, over a wet night city, with liquid and cut fruit crossing the edge. A 3D break-out ad is a format that punishes any wobble in the object, because the viewer is being asked to read the same can as flat artwork and as a solid thing in the same second.',
     made: [
       'A master plate of the can, label-locked, handed over as a reusable file.',
       'Five product sets from that plate: water, smoke, school lockers, an ice tray and a square crop.',
@@ -661,9 +661,9 @@ export const work: CaseStudy[] = [
     summary:
       'A spec animated two-hander built to test whether an episodic AI pipeline can carry a scene on dialogue alone, with no action to hide behind.',
     problem:
-      'Generative video is judged on spectacle because spectacle is what it does easily. A dragon, a chase, a city from orbit: all of that hides the thing that actually breaks, which is two people standing still and talking. Timing, listening, the beat before a line lands. So the brief was written to remove every escape route. Two characters, one location, no action, one hundred and seven seconds, and a joke that only works if the performances are alive.',
+      'Generative video is judged on spectacle because spectacle is what it does easily. A dragon, a chase, a city from orbit: all of that hides the thing that breaks, which is two people standing still and talking. Timing, listening, the beat before a line lands. So the brief was written to remove every escape route. Two characters, one location, no action, one hundred and seven seconds, and a joke that only works if the performances are alive.',
     idea:
-      'Write a scene about the pipeline, then make the pipeline perform it. Two stranded figures on a Mars colony, both convinced somebody teleported them there by mistake, slowly working out that they are inside a demonstration and that the person running it is watching. The comedy comes from them addressing the operator directly and asking for a better set, snappier dialogue and an actual plot, which is the honest note to end a spec piece on. Because the joke is at the pipeline’s expense, every weakness in the pipeline reads as the bit rather than as a fault, and that freed the work to be judged on the only thing left: whether the two of them are actually listening to each other.',
+      'Write a scene about the pipeline, then make the pipeline perform it. Two stranded figures on a Mars colony, both convinced somebody teleported them there by mistake, slowly working out that they are inside a demonstration and that the person running it is watching. The comedy comes from them addressing the operator directly and asking for a better set, snappier dialogue and an actual plot, which is the honest note to end a spec piece on. Because the joke is at the pipeline’s expense, every weakness in the pipeline reads as the bit, and that freed the work to be judged on the only thing left: whether the two of them are listening to each other.',
     made: [
       'A one hundred and seven second animated two-hander, written, cast and cut.',
       'A four-beat structure sheet, published with the film.',
@@ -679,9 +679,9 @@ export const work: CaseStudy[] = [
       { label: 'Voice', detail: 'Two performances, timed to the cut' },
     ],
     method:
-      'Showrunner carries the episodic scene and the character continuity; the set frames and the establishing wides come out of Nano Banana 2 and ChatGPT Image 2; Higgsfield handles the motion passes; ElevenLabs carries both voices. The scene was written first, in full, before a frame existed, and the beat sheet was fixed before anything rendered, because a dialogue two-hander assembled from whatever the model produced is a montage with subtitles rather than a scene.',
+      'Showrunner carries the episodic scene and the character continuity; the set frames and the establishing wides come out of Nano Banana 2 and ChatGPT Image 2; Higgsfield handles the motion passes; ElevenLabs carries both voices. The scene was written first, in full, before a frame existed, and the beat sheet was fixed before anything rendered, because a dialogue two-hander assembled from whatever the model produced is a montage with subtitles.',
     gates: [
-      { name: 'Listening gate', test: 'Watch the character who is not speaking. If they are idling rather than reacting, the beat goes back regardless of how the line reads.' },
+      { name: 'Listening gate', test: 'Watch the character who is not speaking. If they are idling instead of reacting, the beat goes back regardless of how the line reads.' },
       { name: 'Design gate', test: 'Both figures have to survive the cut from a wide two-shot to a single without their proportions changing. The jaw is where a fail shows first.' },
       { name: 'Parody gate', test: 'The two figures are caricatures of public figures and the piece is spec comedy about our own tooling. No brand, product or endorsement is implied, and nothing either of them says is presented as something a real person said.' },
     ],

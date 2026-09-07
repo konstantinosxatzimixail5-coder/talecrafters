@@ -80,7 +80,9 @@ export function BlogSection({ copy, posts }: { copy: HomeCopy['blog']; posts: Te
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Hot takes on creativity, technology, and why most brands are terrified of being interesting.
+          {/* Read from the copy registry. This was hardcoded, so the Studio
+              offered an editor a box for it that changed nothing on the page. */}
+          {copy.lede}
         </motion.p>
 
         {/* Featured post - full-width editorial */}

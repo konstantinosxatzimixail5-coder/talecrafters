@@ -90,7 +90,7 @@ export default async function PackagesPage() {
 
       <CtaBar
         title="None of these fit?"
-        body="Then it is a conversation rather than a package. Tell us the shape of the problem and we will tell you honestly whether we are the right studio for it."
+        body="Then it is a conversation. Tell us the shape of the problem and we will tell you honestly whether we are the right studio for it."
       />
     </>
   );

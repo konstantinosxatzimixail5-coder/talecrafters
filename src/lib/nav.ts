@@ -90,7 +90,7 @@ export const navGroups: NavGroup[] = [
       { label: 'Free Resources', href: '/supply-drop', note: 'Templates, checklists and reference. No email gate.' },
       { label: 'Prompting Library', href: '/supply-drop/prompting-library', note: 'Prompting guides for video, image and story' },
       { label: 'AI Filmmaking Workflows', href: '/films', note: 'Three originals, with the working behind each' },
-      { label: 'GenAI Workflows', href: '/pipelines', note: 'How the work actually gets made' },
+      { label: 'GenAI Workflows', href: '/pipelines', note: 'How the work gets made' },
       { label: 'Blog', href: '/blog', note: 'Dispatches from the frontline' },
       { label: 'Glossary', href: '/glossary', note: 'Synthetic media and storytelling terms' },
       { label: 'FAQ', href: '/faq', note: 'The questions everyone asks' },

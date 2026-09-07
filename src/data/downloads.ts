@@ -47,7 +47,7 @@ export const tools: Tool[] = [
     howToUse: [
       'Fill sections 1 and 2 yourself. They are the commercial brief and you already know them.',
       'Sections 3 to 6 are the generative-specific parts. Answer them even where the answer is "none", because "none" is a cheaper brief and the studio needs to know.',
-      'Send the whole thing. A studio that quotes from this will give you a date rather than a range.',
+      'Send the whole thing. A studio that quotes from this will give you a date.',
     ],
     sections: [
       {
@@ -205,7 +205,7 @@ export const tools: Tool[] = [
     slug: 'generative-film-shot-consistency-checklist',
     intro: [
       'Nine ways a generative sequence gives itself away, arranged by the stage at which each one has to be caught. Applied before the render, all of them are free. Applied after, most of them are a regeneration.',
-      'Nothing on it is model-specific, and none of it stops being true when the models improve. Run it as written or cut it down to the gates your shot types actually need.',
+      'Nothing on it is model-specific, and none of it stops being true when the models improve. Run it as written or cut it down to the gates your shot types need.',
     ],
     howToUse: [
       'Run section 1 before generating anything. It is a set of decisions, and it takes twenty minutes.',
@@ -228,7 +228,7 @@ export const tools: Tool[] = [
               'Shot-size pattern decided before the render, not discovered in the edit',
               'Master plate built and frozen for every product that must not change',
               'Trained identity built for any face appearing in more than nine assets',
-              'Credit ceiling per asset agreed, and encoded so the run halts rather than warns',
+              'Credit ceiling per asset agreed, and encoded so the run halts, never warns',
             ],
           },
         ],
@@ -334,7 +334,7 @@ export const tools: Tool[] = [
               [
                 'Platforms',
                 'Self-declaration plus automated detection. The platform may apply a label you did not choose.',
-                'Contractual rather than legal, enforced by reach suppression and demonetisation. Usually the most immediate constraint.',
+                'Contractual, not legal, enforced by reach suppression and demonetisation. Usually the most immediate constraint.',
               ],
             ],
           },
@@ -354,7 +354,7 @@ export const tools: Tool[] = [
               'On-asset label, in the same visual field as the claim it qualifies',
               'Wording kept plain: "AI-generated" or "Created with AI". No hedging.',
               'Provenance metadata configured on export as well as the visible label',
-              'Composition leaves room for the label rather than the label being added over a busy frame',
+              'Composition leaves room for the label, so nothing is added over a busy frame',
               'Model licence confirmed cleared for commercial use, for the specific model and version',
               'Signed release in the folder before rendering for any real likeness or voice',
               'No invented certification, award, ingredient or percentage anywhere in the asset',
@@ -382,11 +382,11 @@ export const tools: Tool[] = [
   {
     slug: 'synthetic-ugc-consent-template',
     intro: [
-      'A likeness and voice release drafted for generative production rather than for photography. The clause that matters is the one granting derivative training, which almost no pre-2024 release contains.',
+      'A likeness and voice release drafted for generative production. The clause that matters is the one granting derivative training, which almost no pre-2024 release contains.',
       'A starting point to take to a lawyer, not a substitute for one. Jurisdictions differ, performer union agreements differ, and the law on synthetic voice is the least settled part of this.',
     ],
     howToUse: [
-      'Complete the schedule first. It is the part both sides actually negotiate.',
+      'Complete the schedule first. It is the part both sides negotiate.',
       'Have it reviewed. This is a template, not advice, and the scope clauses are where the money and the risk both sit.',
       'Signed and in the folder before the first render, not before the first delivery.',
     ],
@@ -501,7 +501,7 @@ export const tools: Tool[] = [
       'The value is not the canvas. It is that filling it in forces you to notice that roughly half the week is coordination, and that the coordination half is the automatable half.',
     ],
     howToUse: [
-      'Do this with the people who actually do the work, not with their managers. Half a day, once.',
+      'Do this with the people who do the work, never with their managers. Half a day, once.',
       'Map the process as it is, including the parts that embarrass you. A canvas of the intended process automates nothing.',
       'Then build the top two candidates. Two, shipped and adopted, beats a roadmap of eight.',
     ],
@@ -574,9 +574,9 @@ export const tools: Tool[] = [
               'A naming convention, so August’s output is findable in November',
               'Automatic versioning, so nobody spends time finding the final version',
               'Connectors into software the team already runs, so adoption is not a change-management project',
-              'Skills as loadable directories rather than one instruction nobody can edit safely',
+              'Skills as loadable directories, never one instruction nobody can edit safely',
               'A run log with cost attached',
-              'A stated stopping condition and a credit ceiling, so a confused run halts rather than spends',
+              'A stated stopping condition and a credit ceiling, so a confused run halts before it spends',
               'A named human gate at each point where a wrong decision is expensive',
             ],
           },
@@ -672,8 +672,8 @@ export const tools: Tool[] = [
             items: [
               'Operator hours included even where the operator is salaried. Salaried time is capacity.',
               'Any asset that shipped only after significant retouching logged as a failure plus a rescue cost, not as an acceptance',
-              'Setup amortised across the assets it actually serves, not across the whole campaign',
-              'A credit ceiling per asset set, encoded, and set to halt rather than warn',
+              'Setup amortised across the assets it serves, never across the whole campaign',
+              'A credit ceiling per asset set, encoded, and set to halt',
               'Result compared against a conventional shoot for the same brief',
             ],
           },
@@ -698,7 +698,7 @@ export const tools: Tool[] = [
   {
     slug: 'production-readiness-scorecard',
     intro: [
-      'Twenty-five questions across five areas, scored zero to five, that tell you whether a team or a studio is actually ready to run generative production at volume, or is running demos and hoping.',
+      'Twenty-five questions across five areas, scored zero to five, that tell you whether a team or a studio is ready to run generative production at volume, or is running demos and hoping.',
       'Use it on a supplier you are evaluating, or on yourself before you commit to a campaign you cannot deliver.',
     ],
     howToUse: [
@@ -715,9 +715,9 @@ export const tools: Tool[] = [
             items: [
               { label: 'Master plates exist', detail: 'A frozen, versioned reference frame per product that must not change' },
               { label: 'Plates verified against a source of truth', detail: 'Print artwork or the physical object, not the client’s website' },
-              { label: 'Trained identities rather than re-uploaded references', detail: 'For any face appearing across more than a handful of assets' },
+              { label: 'Trained identities in place of re-uploaded references', detail: 'For any face appearing across more than a handful of assets' },
               { label: 'Set specification written before generation', detail: 'Key direction, temperature, surface, lens language, prop rule' },
-              { label: 'Version tags and dates on every reference artefact', detail: 'So a packaging change cuts a new plate rather than editing the old one' },
+              { label: 'Version tags and dates on every reference artefact', detail: 'So a packaging change cuts a new plate and leaves the old one alone' },
             ],
           },
         ],
@@ -746,7 +746,7 @@ export const tools: Tool[] = [
               { label: 'Cost per accepted asset is measured', detail: 'Not cost per generation, and not per campaign average' },
               { label: 'The ledger is written automatically', detail: 'By the pipeline, not by a person at eleven at night' },
               { label: 'Acceptance rates known per shot type', detail: 'A fraction, not a reassurance' },
-              { label: 'Credit ceiling per asset encoded', detail: 'And it halts the run rather than logging a warning' },
+              { label: 'Credit ceiling per asset encoded', detail: 'And it halts the run. A logged warning is not a ceiling' },
               { label: 'Operator and review time counted', detail: 'Including salaried time, which is capacity' },
             ],
           },

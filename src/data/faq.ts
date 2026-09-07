@@ -14,7 +14,7 @@ export const faqGroups: FaqGroup[] = [
     color: 'var(--brand-cyan)',
     items: [
       {
-        q: 'What does TaleCrafters actually do?',
+        q: 'What does TaleCrafters do?',
         a: 'Three things. We make campaigns, films and visual worlds. We build the systems that produce, distribute and scale creative work: agentic workflows, content engines, internal tools, sites and prototypes. And we develop our own original IP: films, games and stories. Most clients arrive for the first and stay for the second.',
       },
       {
@@ -23,7 +23,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'What does a project cost?',
-        a: 'The packages carry the number they start at: The Alliance from €500 a month, The Forge from €400 a month, The Mission from €350 a project. The Shadow Protocol varies with scope and volume. Those are floors rather than a rate card, because a run of forty variants from one trained identity and a single hero film are not the same job with a different number on it. Tell us the work and we quote it.',
+        a: 'The packages carry the number they start at: The Alliance from €500 a month, The Forge from €400 a month, The Mission from €350 a project. The Shadow Protocol varies with scope and volume. Those numbers are floors. A run of forty variants from one trained identity and a single hero film are not the same job with a different number on it. Tell us the work and we quote it.',
       },
       {
         q: 'Do you work with agencies?',
@@ -49,7 +49,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'Can you match our existing brand guidelines?',
-        a: 'Yes, and the mark itself is composited rather than generated. A model asked to draw a logo gets it nearly right, and nearly right on a logo is worse than absent.',
+        a: 'Yes, and the mark itself is composited by hand. A model asked to draw a logo gets it nearly right, and nearly right on a logo is worse than absent.',
       },
       {
         q: 'What happens when the output is wrong?',
@@ -71,7 +71,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'Do you disclose AI-generated content?',
-        a: 'Always, to the stricter of platform policy and client legal, and on the asset rather than only in metadata. A metadata flag protects you with the platform; an on-asset label protects you with the audience.',
+        a: 'Always, to the stricter of platform policy and client legal, and on the asset itself as well as in the metadata. A metadata flag protects you with the platform; an on-asset label protects you with the audience.',
       },
       {
         q: 'Do you use real people’s likenesses?',
@@ -79,7 +79,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'Is the work licensed for commercial use?',
-        a: 'Model licences are checked for commercial use under your terms before rendering, never after. If a model’s licence does not clear, we swap the model rather than the paperwork.',
+        a: 'Model licences are checked for commercial use under your terms before rendering, never after. If a model’s licence does not clear, we swap the model. The paperwork stays as it is.',
       },
       {
         q: 'What about our data?',

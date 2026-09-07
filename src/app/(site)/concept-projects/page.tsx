@@ -49,7 +49,7 @@ const crumbs = [
 const qa = [
   {
     q: 'Are these real brands?',
-    a: 'No. Every brand on this page is invented. Nobody commissioned any of it, nobody paid for it, and none of these products exist. They are labelled Concept Project rather than presented as commissioned work.',
+    a: 'No. Every brand on this page is invented. Nobody commissioned any of it, nobody paid for it, and none of these products exist. Every one is labelled Concept Project, and nothing here is presented as commissioned work.',
   },
   {
     q: 'Why show work nobody paid for?',
@@ -57,7 +57,7 @@ const qa = [
   },
   {
     q: 'Can AI product photography hold a real label?',
-    a: 'Yes, when the packaging is locked as a master plate first and every frame is generated from that file. The test is literal: zoom to full resolution and read every printed word. A fail returns to the plate rather than to a retouching tool.',
+    a: 'Yes, when the packaging is locked as a master plate first and every frame is generated from that file. The test is literal: zoom to full resolution and read every printed word. A fail returns to the plate. No retouching tool touches it.',
   },
 ];
 
@@ -232,7 +232,7 @@ export default async function ConceptProjects() {
         color="var(--brand-cyan)"
         eyebrow="COMMISSION SOMETHING REAL"
         title="Your product deserves better than a fake one."
-        body="These sets were built to prove the controls. Point them at something that actually exists and the same discipline applies, with your kitchen or your packaging team holding the last gate."
+        body="These sets were built to prove the controls. Point them at something that exists and the same discipline applies, with your kitchen or your packaging team holding the last gate."
       />
     </>
   );

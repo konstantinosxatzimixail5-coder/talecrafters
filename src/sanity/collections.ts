@@ -487,7 +487,7 @@ export const navMenu = defineType({
     defineField({ name: 'color', title: 'Accent colour', type: 'string', description: 'A CSS variable, e.g. var(--brand-gold).' }),
     defineField({
       name: 'href', title: 'Direct link', type: 'string',
-      description: 'Set only for a bar item that goes straight somewhere (BASE, WORK, ARSENAL) rather than opening a panel.',
+      description: 'Set only for a bar item that goes straight somewhere (BASE, WORK, ARSENAL) instead of opening a panel.',
     }),
     arrayOf('items', 'Items', 'navLeaf', 'Each one is a label, a link and the note that appears under it when the menu opens.'),
     order,

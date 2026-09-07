@@ -115,10 +115,14 @@ export function StudioSection({ copy }: { copy: HomeCopy['studio'] }) {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
+              {/* Real numbers. These were three jokes (0.003s render time, \u221E
+                  output, NULL boring factor), which is the one stat block every
+                  generated studio page ships. A visitor who leaves after two
+                  screens should leave holding something they could check. */}
               {[
-                { value: '0.003s', label: 'RENDER TIME', color: 'var(--brand-cyan)' },
-                { value: '\u221E', label: 'CREATIVE OUTPUT', color: 'var(--brand-magenta)' },
-                { value: 'NULL', label: 'BORING FACTOR', color: 'var(--brand-violet-text)' },
+                { value: '2 DAYS', label: 'PLATE TO STILL SET', color: 'var(--brand-cyan)' },
+                { value: '90', label: 'FRAMES IN ROUND TWO', color: 'var(--brand-magenta)' },
+                { value: '3 OF 7', label: 'PIPELINES PUBLISHED', color: 'var(--brand-violet-text)' },
               ].map((stat, i) => (
                 <div
                   key={i}
@@ -265,9 +269,9 @@ export function StudioSection({ copy }: { copy: HomeCopy['studio'] }) {
               viewport={{ once: true }}
               animate={{ y: [0, -5, 0] }}
             >
-              <div>status: <span style={{ color: 'var(--brand-magenta)' }}>OPERATIONAL</span></div>
-              <div>mode: <span style={{ color: 'var(--brand-gold)' }}>CREATIVE_OVERDRIVE</span></div>
-              <div>limits: <span style={{ color: 'var(--brand-white)' }}>NONE</span></div>
+              <div>status: <span style={{ color: 'var(--brand-magenta)' }}>SHOOTING</span></div>
+              <div>gates: <span style={{ color: 'var(--brand-gold)' }}>4/4 PASSED</span></div>
+              <div>excuses: <span style={{ color: 'var(--brand-white)' }}>NONE</span></div>
             </motion.div>
           </div>
         </div>

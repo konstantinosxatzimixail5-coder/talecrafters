@@ -47,7 +47,7 @@ const qa = [
     a: 'No. The interface layer exists so a marketer can operate the pipeline, built on React and Tailwind underneath so a prototype can graduate into a real product if you later want one.',
   },
   {
-    q: 'What can you actually automate?',
+    q: 'What can you automate?',
     a: 'Drafting, variants, format matrices, renaming, render queueing, repurposing, research, qualification and reporting. Not the brief and not the final approval: those keep a person, at any volume.',
   },
 ];
@@ -104,7 +104,7 @@ export default async function SystemsPage() {
         meta={copy.header.meta}
         cta={{
           title: 'Your team is not slow. Your process is.',
-          body: 'Tell us where the week actually goes. We will map it, build the half a machine can do, and leave you operating it.',
+          body: 'Tell us where the week goes. We will map it, build the half a machine can do, and leave you operating it.',
         }}
       >
         <section className="px-5 md:px-10 lg:px-14 py-10 md:py-16">

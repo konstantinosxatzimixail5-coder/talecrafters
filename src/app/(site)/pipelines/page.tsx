@@ -9,7 +9,7 @@ import { pageCopy } from '@/content/copy';
 import { getPipelines } from '@/content/collections';
 
 export const metadata = pageMeta({
-  title: 'GenAI Workflows — How the Work Actually Gets Made',
+  title: 'GenAI Workflows — How the Work Gets Made',
   description:
     'Three of our seven generative production workflows, published in full: Identity Lock for trained presenters, Phantom Set for products, Operator Stack for the automation layer. Stages, timings and the gates each one fails on.',
   path: '/pipelines',
@@ -39,7 +39,7 @@ const qa = [
   },
   {
     q: 'Can we use these pipelines in-house?',
-    a: 'Yes, and some clients do. When a team wants the machinery rather than the output, that becomes a Creative Systems engagement: we map how your work runs today, build the skills, scripts and connectors, and hand it over running inside your own accounts.',
+    a: 'Yes, and some clients do. When a team wants the machinery instead of the output, that becomes a Creative Systems engagement: we map how your work runs today, build the skills, scripts and connectors, and hand it over running inside your own accounts.',
   },
 ];
 

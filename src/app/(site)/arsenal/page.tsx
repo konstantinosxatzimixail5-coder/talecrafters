@@ -185,8 +185,9 @@ export default async function ArsenalPage() {
                 Custom <span style={{ color: 'var(--brand-cyan)' }}>Everything</span>
               </h2>
               <p className="text-lg max-w-2xl" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
-                If it moves, speaks, or sparks emotion, we build it. Come with the impossible. Leave
-                with a delivery date. Don&apos;t see what you need? If you can imagine it, we can create it.
+                Come with the thing nobody has quoted you for. You leave with a shape, a stack and a
+                delivery date, or a straight answer about why we are the wrong studio for it. Both
+                take one call.
               </p>
             </div>
             <Link
@@ -207,8 +208,8 @@ export default async function ArsenalPage() {
             className="mt-5 mb-6 max-w-2xl text-base leading-relaxed"
             style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}
           >
-            Nobody searches for visual warfare. These pages cover the same work under the names
-            people actually use, with the methodology, the cases and the answers attached.
+            Nobody types &ldquo;visual warfare&rdquo; into a search bar. These pages carry the same
+            work under the names people use, with the methodology, the cases and the answers attached.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {solutions.map((s) => (

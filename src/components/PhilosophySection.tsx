@@ -204,35 +204,40 @@ function CultureIcon({ color }: { color: string }) {
 
 const iconComponents = [StoryIcon, VelocityIcon, SacredCowIcon, TensionIcon, SkullIcon, CultureIcon];
 
+// Six rules, six different lengths. They used to run to a near-identical
+// sentence count each, which reads as a template before anybody finishes the
+// first card. The claims each card makes live here and nowhere else on the
+// page: the master-plate receipt is in The Studio, the week-one guidelines
+// promise is here, and How We Operate no longer repeats either.
 const principles = [
   {
     title: "STORY > EVERYTHING",
-    description: "Technology is the amplifier. Story is the signal. We refuse to let the tail wag the dog.",
+    description: "Technology is the amplifier. Story is the signal. A model with nothing to say just says it faster, in 4K, at sixty frames a second.",
     accent: 'var(--brand-magenta)',
   },
   {
     title: "SPEED WITHOUT SACRIFICE",
-    description: "Fast doesn\u2019t mean cheap. It means we\u2019re not wasting your time on things that don\u2019t move the needle.",
+    description: "Fast is a scheduling decision. Two working days from approved plate to finished still set, because the arguing happened before the render queue opened.",
     accent: 'var(--brand-cyan)',
   },
   {
     title: "NO SACRED COWS",
-    description: "Your brand guidelines aren\u2019t scripture. If they\u2019re getting in the way of great work, we\u2019ll tell you.",
+    description: "Your brand guidelines are not scripture. When they are the reason the work is dying, you hear it from us in week one, while there is still budget left to act on it.",
     accent: 'var(--brand-violet)',
   },
   {
     title: "TENSION IS CURRENCY",
-    description: "If they\u2019re not stopping mid-scroll, you\u2019ve already lost. We engineer moments that hijack attention and refuse to give it back.",
+    description: "A beat held a second too long. A cut on the wrong syllable. A register your category has never used. Somebody always complains, and they complain in the comments, under the video, where the algorithm counts it as engagement.",
     accent: 'var(--brand-gold)',
   },
   {
-    title: "HUMOR OR DEATH",
-    description: "If we can\u2019t laugh at ourselves, we\u2019re taking this way too seriously. Self-awareness is the antidote to pretension. We\u2019re confident, not delusional.",
+    title: "HUMOUR OR DEATH",
+    description: "A studio that cannot take a joke makes work nobody repeats. We get there first, on the grounds that somebody was going to.",
     accent: 'var(--brand-magenta)',
   },
   {
     title: "CONTENT = CULTURE",
-    description: "Your content shouldn\u2019t look like an ad that escaped from a boardroom. It should look and feel like the culture your audience already lives in. If people can smell the brief, you\u2019ve already failed.",
+    description: "Your content should not look like an ad that escaped from a boardroom. It should look like the culture your audience is already sitting in. If people can smell the brief, they have stopped watching.",
     accent: 'var(--brand-cyan)',
   },
 ];
@@ -430,7 +435,7 @@ export function PhilosophySection({ copy }: { copy: HomeCopy['philosophy'] }) {
               <span style={{ color: 'var(--brand-cyan)' }}>&ldquo;I have an idea&rdquo;</span>{' '}
               and{' '}
               <span style={{ color: 'var(--brand-magenta)' }}>&ldquo;holy shit,</span>{' '}
-              <span style={{ color: 'var(--brand-gold)' }}>that actually exists.&rdquo;</span>
+              <span style={{ color: 'var(--brand-gold)' }}>it&rsquo;s real.&rdquo;</span>
             </div>
           </div>
         </motion.div>

@@ -198,7 +198,7 @@ export function LocalPostArticle({ post }: { post: Post }) {
               className="text-2xl tracking-tight mb-6"
               style={{ fontFamily: 'var(--font-display)', color: 'var(--brand-gold)' }}
             >
-              Questions people actually ask
+              Questions people ask
             </h2>
             <div className="space-y-6">
               {post.faqs.map((f) => (

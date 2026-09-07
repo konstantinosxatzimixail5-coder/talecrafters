@@ -44,7 +44,7 @@ const qa = [
   },
   {
     q: 'Do these prompts work in every video model?',
-    a: 'The vocabulary transfers, because most video models were trained on film and respond to film language. The exact phrasing that lands best varies by model, so treat each prompt as a starting point rather than a magic string.',
+    a: 'The vocabulary transfers, because most video models were trained on film and respond to film language. The exact phrasing that lands best varies by model, so treat each prompt as a starting point. None of them is a magic string.',
   },
   {
     q: 'Can I use these commercially?',

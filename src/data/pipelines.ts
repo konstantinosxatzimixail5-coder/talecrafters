@@ -94,7 +94,7 @@ export const pipelines: Pipeline[] = [
     mechanism: 'The ledger layer',
     accent: 'var(--brand-gold)',
     summary:
-      'Prompting is the easy part. What earns its keep is the directory structure, the skills, the connectors and the ledger telling you what every accepted asset actually cost.',
+      'Prompting is the easy part. What earns its keep is the directory structure, the skills, the connectors and the ledger telling you what every accepted asset cost.',
     loop: 'Half a day mapping how the work runs today, one to two weeks building, then a live walkthrough. Everything sits inside the client’s own accounts.',
     useWhen:
       'A marketing team already producing at volume and losing the margin to coordination. This is the pipeline that becomes a Creative System engagement.',

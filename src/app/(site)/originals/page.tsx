@@ -32,7 +32,7 @@ const qa = [
   },
   {
     q: 'Do you co-develop IP with brands?',
-    a: 'Yes. Branded narrative, owned series and character-led formats are all live conversations, and they run on the same development discipline as the originals rather than as campaign work with a story bolted on.',
+    a: 'Yes. Branded narrative, owned series and character-led formats are all live conversations, and they run on the same development discipline as the originals, never as campaign work with a story bolted on.',
   },
 ];
 
@@ -41,8 +41,8 @@ const slate = [
   { n: '02', k: 'Short films', v: 'Personal shorts and satire pieces produced end to end inside our own pipelines.' },
   { n: '03', k: 'Animated series', v: 'Series development: bibles, trained casts, first-and-last-frame continuity across episodes.' },
   { n: '04', k: 'Games', v: 'Playable narrative concepts built through agentic development environments.' },
-  { n: '05', k: 'Graphic narratives', v: 'Sequential panel storytelling, developed as its own form rather than as a storyboard.' },
-  { n: '06', k: 'Long-form fiction', v: 'Novels and novellas in development, which is where the story muscle actually gets built.' },
+  { n: '05', k: 'Graphic narratives', v: 'Sequential panel storytelling, developed as its own form.' },
+  { n: '06', k: 'Long-form fiction', v: 'Novels and novellas in development, which is where the story muscle gets built.' },
   { n: '07', k: 'Experimental interactive', v: 'Formats where the audience does something instead of watching something.' },
 ];
 
@@ -68,7 +68,7 @@ export default async function OriginalsPage() {
         meta={copy.header.meta}
         cta={{
           title: 'Own something instead of renting attention.',
-          body: 'Branded narrative, owned series and character-led formats, developed on the same discipline as our own slate rather than as a campaign with a story bolted on.',
+          body: 'Branded narrative, owned series and character-led formats, developed on the same discipline as our own slate, never as a campaign with a story bolted on.',
         }}
       >
         <section className="px-5 md:px-10 lg:px-14 py-10 md:py-16">

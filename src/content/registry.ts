@@ -144,15 +144,15 @@ export const copyRegistry = {
       }, 'The first screen. Five headline lines, each with one coloured part.'),
       studio: section('The Studio', {
         flag: str('Section number and label', '001 / THE STUDIO', 'The mono line in the top corner. The headline below it is drawn type and is set in code.'),
-        body1: text('First paragraph', 'We’re the unholy offspring of a film studio and a technology lab. Part strategists, part visual anarchists, fully committed to making your competition wonder what just happened.', 4),
-        body2: text('Second paragraph', 'We designed a system that combines human taste with machine velocity. The creative instincts that make stories resonate, accelerated by technology that refuses to sleep.', 4),
+        body1: text('First paragraph', 'We’re the unholy offspring of a film studio and a technology lab. Half of us storyboard, half of us write code, and nobody here has ever been thanked for playing it safe.', 4),
+        body2: text('Second paragraph', 'Underneath the noise sits machinery that is deeply unglamorous: one locked master plate, a written set specification, four gates every frame has to survive, and a ledger of what each accepted asset cost. Taste picks the shot. The machinery makes ninety more of it before lunch.', 4),
       }),
       universe: homeSection({
         title: 'The Divisions',
         flag: '002 / THE DIVISIONS',
         heading: 'THREE ARMS. ONE',
         accentWord: 'STUDIO.',
-        lede: 'Most studios describe the technology they used to make a film. We sell the film and the machinery, and we keep a third arm for the work nobody commissions.',
+        lede: 'Three arms, and they sell different things. Create sells the finished work. Systems sells the machinery that makes it. Originals is the slate nobody commissioned, which is where we find out what the machinery can do before a client pays to find out.',
         ledeNote: 'Plain text. The emphasis on "and" is applied by the page, not typed here.',
       }),
       philosophy: homeSection({
@@ -166,7 +166,7 @@ export const copyRegistry = {
         flag: '004 / WHAT WE WEAPONISE',
         heading: 'OUR',
         accentWord: 'ARSENAL',
-        lede: 'Six groups, thirty services. The group names are ours and they stay. The line underneath each one is deliberately boring, because the person forwarding this page to a finance director needs a phrase that survives the forward.',
+        lede: 'Six groups, thirty services. The group names are ours and they stay. The line underneath each one is written flat and plain, because the person forwarding this page to a finance director needs a phrase that survives the forward.',
       }),
       selectedDamage: homeSection({
         title: 'Selected Damage',
@@ -193,7 +193,7 @@ export const copyRegistry = {
         flag: '008 / THE BLOG',
         heading: 'THOUGHTS,',
         accentWord: 'UNFILTERED',
-        lede: 'Hot takes on creativity, technology, and why most brands are terrified of being interesting.',
+        lede: 'What a generative shoot costs, which model breaks where, and what the law makes you disclose. Written for the person who has to make the thing on Monday.',
       }),
       contact: homeSection({
         title: 'Start a Conspiracy',
@@ -203,8 +203,8 @@ export const copyRegistry = {
       }),
       clients: section('Trusted by', {
         eyebrow: str('Eyebrow', 'Trusted By'),
-        heading: str('Heading', 'The brands that get it.'),
-        headingAccent: str('Heading, coloured part', 'get it', 'Printed in magenta italic wherever it falls in the heading.'),
+        heading: str('Heading', 'The ones brave enough to sign it off.'),
+        headingAccent: str('Heading, coloured part', 'brave enough', 'Printed in magenta italic wherever it falls in the heading.'),
       }),
       cta: section('Closing call to action', {
         heading: str('Heading', 'YOUR', 'The first line of the closing heading.'),
@@ -252,7 +252,7 @@ export const copyRegistry = {
           'synthetic media and creative systems studio',
           'Set in white inside the paragraph above. It has to appear in that paragraph word for word, or nothing is emphasised.'
         ),
-        signoff: str('Sign-off', 'The unholy offspring of a film studio and a technology lab.', 'The display line above the copyright.'),
+        signoff: str('Sign-off', 'Registered in London. Loud everywhere else.', 'The display line above the copyright.'),
         hiredForLabel: str('Services label', 'WHAT WE ARE HIRED FOR', 'Above the row of service links.'),
         rights: str('Copyright line', 'All rights reserved. We own our chaos.', 'Printed after the year.'),
       }),
@@ -291,7 +291,7 @@ export const copyRegistry = {
         eyebrow: '005 / SELECTED DAMAGE',
         title: 'SELECTED',
         accentWord: 'DAMAGE',
-        lede: `${work.length} engagements, written the sober way. Every one carries the problem it started from, the idea that solved it, what we actually made, what happened, and the files the client kept. If a claim here can be checked, we have written it so it can be.`,
+        lede: `${work.length} engagements, written without the adjectives. Each one carries the problem it started from, the idea that solved it, what we made, what happened afterwards, and the files the client walked away with. Every checkable claim on these pages is written so you can go and check it.`,
         meta: [
           { label: 'Engagements', value: `${work.length} delivered` },
           { label: 'Sectors', value: 'Hospitality, consulting, motorcycles, education, supplements, energy, property' },
@@ -357,7 +357,7 @@ export const copyRegistry = {
         eyebrow: 'AI FILMMAKING WORKFLOWS',
         title: 'THE ORIGINALS,',
         accentWord: 'PUBLISHED IN FULL',
-        lede: 'Three original shorts, written, designed, directed and cut inside a generative pipeline. Two are built shot by shot out of a video model; the third is built scene by scene out of an episodic engine, to find out what that trade actually costs. The films are here and so is the working behind each one: every generation block, the prompt as it was written, the design references, and the locks that stopped the world drifting between shots.',
+        lede: 'Three original shorts, written, designed, directed and cut inside a generative pipeline. Two are built shot by shot out of a video model; the third is built scene by scene out of an episodic engine, to find out what that trade costs. The films are here and so is the working behind each one: every generation block, the prompt as it was written, the design references, and the locks that stopped the world drifting between shots.',
         meta: [
           { label: 'Films', value: `${films.length} originals` },
           { label: 'Published', value: 'Beats, prompts and locks per film' },
@@ -382,7 +382,7 @@ export const copyRegistry = {
         eyebrow: 'THE SUPPLY DROP',
         title: 'TAKE IT.',
         accentWord: 'NO EMAIL GATE.',
-        lede: 'The templates, checklists and reference sheets we actually use, published in full and downloadable as PDFs. No form, no download wall, no drip sequence waiting on the other side. Use them commercially, change them, put your own name on the version you end up with.',
+        lede: 'The templates, checklists and reference sheets we use on live jobs, published in full and downloadable as PDFs. No form, no download wall, no drip sequence waiting on the other side. Use them commercially, change them, put your own name on the version you end up with.',
         meta: [
           { label: 'Resources', value: `${resources.length} and counting` },
           { label: 'Gate', value: 'None' },
@@ -503,7 +503,7 @@ export const copyRegistry = {
         eyebrow: 'GENAI WORKFLOWS',
         title: 'THE PART',
         accentWord: 'NOBODY POSTS',
-        lede: 'A prompt is not a pipeline. A pipeline is the order the work happens in, the one file everything downstream references, and the four tests a frame has to survive before a client sees it. Three of ours are published in full below. The other four stay in the studio.',
+        lede: 'A pipeline is the order the work happens in, the one file everything downstream references, and the four tests a frame has to survive before a client sees it. Three of ours are published in full below, stages and timings included. The other four stay in the studio, for reasons our accountant supports.',
         meta: [
           { label: 'Published', value: '3 of 7' },
           { label: 'Format', value: 'Stages, timings, gates' },
@@ -523,7 +523,7 @@ export const copyRegistry = {
         eyebrow: '004 / WHAT WE WEAPONISE',
         title: 'OUR',
         accentWord: 'ARSENAL',
-        lede: 'Six groups, thirty services. The group names are ours and they stay. The line underneath each one is deliberately boring, because the person forwarding this page to a finance director needs a phrase that survives the forward.',
+        lede: 'Six groups, thirty services. The group names are ours and they stay. The line underneath each one is written flat and plain, because the person forwarding this page to a finance director needs a phrase that survives the forward.',
       }),
     },
   },
@@ -537,7 +537,7 @@ export const copyRegistry = {
         eyebrow: '007 / PACKAGES',
         title: 'PICK YOUR',
         accentWord: 'PLOT',
-        lede: 'Four escalation levels for Content-as-Service, each with the number it starts at. Those are floors rather than a rate card: a run of forty variants from one trained identity and a single hero film are not the same job with a different number on it. Pick the shape, tell us the work, and we will quote it.',
+        lede: 'Four ways to hire us, each with the number it starts at. Those numbers are floors: a run of forty variants from one trained identity and a single hero film are two different jobs wearing the same price tag. Pick the shape, tell us the work, and we will quote it.',
         meta: [
           { label: 'Ongoing', value: 'The Alliance' },
           { label: 'Fixed monthly output', value: 'The Forge' },
@@ -557,7 +557,7 @@ export const copyRegistry = {
         eyebrow: 'WRITING & NARRATIVE',
         title: 'STORY IS',
         accentWord: 'THE SIGNAL',
-        lede: 'Technology is the amplifier. This is the part it amplifies. Commercial writing that has to move a number, voice work that has to sound like somebody else, and a body of original narrative nobody paid us to finish.',
+        lede: 'Commercial writing that has to move a number, ghostwriting that has to sound like somebody else entirely, and seven finished feature screenplays nobody commissioned. The scripts came first here. The machinery arrived later.',
         meta: [
           { label: 'Commercial', value: 'VSLs, brand films, spokesperson scripts' },
           { label: 'Voice', value: 'Ghostwriting, thought leadership' },
@@ -577,7 +577,7 @@ export const copyRegistry = {
         eyebrow: 'THE GLOSSARY',
         title: 'SYNTHETIC MEDIA',
         accentWord: 'AND STORYTELLING TERMS',
-        lede: 'Two vocabularies in one place, because the work needs both. The production half covers what the machinery does and what it costs you when it goes wrong. The story half covers the part that decides whether anybody watches: structure, beats, turns, hooks and the reasons attention leaves. Each term has its own page with the questions people actually type.',
+        lede: 'Two vocabularies in one place, because the work needs both. The production half covers what the machinery does and what it costs you when it goes wrong. The story half covers the part that decides whether anybody watches: structure, beats, turns, hooks and the reasons attention leaves. Each term has its own page, answering the questions people type at midnight.',
         meta: [
           { label: 'Terms', value: `${terms.length}` },
           { label: 'Topics', value: `${GLOSSARY_TAGS.length}` },
@@ -602,7 +602,7 @@ export const copyRegistry = {
           accentWord: str('Heading, accented word', 'UNFILTERED'),
           lede: text(
             'Lede',
-            'What generative production actually costs, how to keep a product consistent across a hundred shots, what has to be disclosed, and where creative automation saves a week. Working notes rather than thought leadership.',
+            'Posts on the parts of this job that cost money: model choice, disclosure law, keeping a product consistent across a hundred shots, and the week creative automation gives back. Working notes, written on the way out of a job.',
             5
           ),
         },
@@ -633,7 +633,7 @@ export const copyRegistry = {
         eyebrow: '009 / START A CONSPIRACY',
         title: 'TELL US WHAT',
         accentWord: 'YOU’RE PLOTTING',
-        lede: 'Bring the launch, the deadline and the constraint you think kills it. You will get a shape, a stack and a number back, not a discovery workshop and a deck about our values.',
+        lede: 'Bring the launch, the deadline and the constraint you think kills it. You will get a shape, a stack and a number back, usually the same day. Nobody here has ever run a discovery workshop and we intend to keep it that way.',
         meta: [
           { label: 'Email', value: site.email },
           { label: 'Registered', value: 'London, United Kingdom' },

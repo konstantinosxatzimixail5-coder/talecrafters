@@ -69,7 +69,7 @@ export default async function AnimationPromptingPage() {
               'Name the technique, then the surface behaviour, then what must be absent, then the subject.',
             url: abs('/supply-drop/animation-prompting'),
             step: [
-              { '@type': 'HowToStep', position: 1, name: 'Name the technique', text: 'Open with the production method (hand-drawn 2D cel animation, stop-motion claymation, layered cut paper) rather than a mood.' },
+              { '@type': 'HowToStep', position: 1, name: 'Name the technique', text: 'Open with the production method (hand-drawn 2D cel animation, stop-motion claymation, layered cut paper). Never a mood.' },
               { '@type': 'HowToStep', position: 2, name: 'Name the surface', text: 'State how the material behaves: paper tooth, thumbprints, line boil, halftone dots, pixel grid.' },
               { '@type': 'HowToStep', position: 3, name: 'Name the absence', text: 'Say what must not appear: no gradients, no anti-aliasing, no opaque white, no rim light. This does more work than any adjective.' },
               { '@type': 'HowToStep', position: 4, name: 'Then the subject', text: 'Describe who is in frame and what they are doing, then the shot.' },

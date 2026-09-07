@@ -192,7 +192,7 @@ export default async function TermPage({ params }: { params: Promise<{ slug: str
                 WHERE THIS SHOWS UP
               </div>
               <p className="text-sm leading-relaxed mb-4" style={{ fontFamily: 'var(--font-body)', color: 'var(--brand-concrete-light)' }}>
-                Every definition here comes out of production rather than a textbook. The pipelines
+                Every definition here comes straight out of production. The pipelines
                 page shows the same ideas as stages and gates you can copy.
               </p>
               <Link

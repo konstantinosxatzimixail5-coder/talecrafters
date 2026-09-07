@@ -20,7 +20,7 @@ export const writing: WritingItem[] = [
     kind: 'Commercial writing',
     color: 'var(--brand-magenta)',
     summary:
-      'Long-form VSLs, ninety-second cutdowns and hook batteries built to be tested against each other rather than admired.',
+      'Long-form VSLs, ninety-second cutdowns and hook batteries built to be tested against each other.',
     detail:
       'A VSL is not a film with a price at the end. It is an argument with a defined failure point, and the writing job is knowing where the audience stops believing you and putting the proof there. We write the full script, then the hook battery: a dozen openings for the same body, because the opening is the variable that moves the number and the body is the one that does not.',
     form: 'VSL scripts, 90-second cutdowns, hook batteries, three-script tests on one product',
@@ -44,7 +44,7 @@ export const writing: WritingItem[] = [
     summary:
       'Executive posts and articles written in somebody else’s voice, close enough that their own team cannot tell.',
     detail:
-      'The work starts with a voice file: the words this person uses, the words they never use, the structures they favour, the two opinions they will not soften. Everything after that is drafting against a specification rather than guessing. It is the same discipline as a brand voice guide, applied to one person.',
+      'The work starts with a voice file: the words this person uses, the words they never use, the structures they favour, the two opinions they will not soften. Everything after that is drafting against a specification. It is the same discipline as a brand voice guide, applied to one person.',
     form: 'LinkedIn ghostwriting, long-form articles, speeches, opinion pieces',
   },
   {
@@ -78,7 +78,7 @@ export const writing: WritingItem[] = [
     summary:
       'Seven completed feature screenplays, plus games, animated concepts and long-form fiction in development. None of it is for sale here.',
     detail:
-      'This is the part with nobody paying us to be right. Seven feature-length screenplays are finished, across thriller, psychological drama and satire; alongside them sit game concepts, animated series development and long-form fiction. The titles stay unlisted, because an unproduced screenplay is a private document until it is not. The body of work is the reason the story-first claim on this site is a description rather than a slogan.',
+      'This is the part with nobody paying us to be right. Seven feature-length screenplays are finished, across thriller, psychological drama and satire; alongside them sit game concepts, animated series development and long-form fiction. The titles stay unlisted, because an unproduced screenplay is a private document until it is not. The body of work is the reason the story-first claim on this site is a description.',
     form: 'Feature screenplays, series development, game narrative, long-form fiction',
   },
 ];

@@ -4,7 +4,7 @@
 // Six brands, and the same set the portfolio publishes. They are one body of
 // work shown in two places, so a frame missing from one of them is a bug and
 // not an editorial decision. The counts on the page are derived from this
-// array rather than typed, because they were typed once and were wrong.
+// array, not typed, because they were typed once and were wrong.
 //
 // Each entry says what it was built to prove, because that is the only reason a
 // fake brand earns a page. A spec shelf that does not state its test is a
@@ -156,7 +156,7 @@ export const conceptBrands: ConceptBrand[] = [
     proves: 'Frosted glass with liquid behind it, and a drop caught on its way out of the pipette',
     accent: 'var(--brand-gold)',
     note:
-      'Beauty is the hardest surface on this shelf and the one where a generated frame is spotted fastest, because the audience for it looks at product photography all day. Three things have to hold at once: ribbed frosted glass that reads as glass rather than as plastic, the serum behind it staying the same colour and level in every frame, and a knurled metal cap whose milling does not reinvent itself between shots. The macro exists to prove the last one: a single drop, held on the pipette, with the ribbing visible through the liquid behind it.',
+      'Beauty is the hardest surface on this shelf and the one where a generated frame is spotted fastest, because the audience for it looks at product photography all day. Three things have to hold at once: ribbed frosted glass that reads as glass and never as plastic, the serum behind it staying the same colour and level in every frame, and a knurled metal cap whose milling does not reinvent itself between shots. The macro exists to prove the last one: a single drop, held on the pipette, with the ribbing visible through the liquid behind it.',
     pipelines: [{ label: 'Phantom Set', href: '/pipelines/phantom-set' }],
     shots: [
       { src: 'spec/soie/product-01', alt: 'A SOIE Petal Veil Radiance Serum bottle standing on a travertine plinth in front of a linen curtain, rose petals at its base and hard window light raking across the wall behind.', label: 'hero, window set' },
@@ -172,7 +172,7 @@ export const conceptBrands: ConceptBrand[] = [
     proves: 'Stamped type on a fired glaze, and a live flame across three different rooms',
     accent: 'var(--brand-violet-text)',
     note:
-      'Two hard problems in one object. The first is the vessel: a speckled stoneware glaze with the maker name pressed into the clay rather than printed on it, which means the letters have to catch light as depth instead of sitting on the surface as ink. The second is the flame. A lit wick is the fastest way to expose a generated frame, because the light it throws has to agree with everything it falls on. The dark frame exists for that: one flame, one smoke trail, and every reflection in the glass beside it lining up with the source.',
+      'Two hard problems in one object. The first is the vessel: a speckled stoneware glaze with the maker name pressed into the clay, which means the letters have to catch light as depth instead of sitting on the surface as ink. The second is the flame. A lit wick is the fastest way to expose a generated frame, because the light it throws has to agree with everything it falls on. The dark frame exists for that: one flame, one smoke trail, and every reflection in the glass beside it lining up with the source.',
     pipelines: [{ label: 'Phantom Set', href: '/pipelines/phantom-set' }],
     shots: [
       { src: 'spec/klnwork/product-02', alt: 'A KLNWORK candle photographed from above on travertine, the paper band reading SMOKE & FIG No. 04 and the maker name pressed into the glaze below it, with spent matches, wax shavings, torn linen and a halved fig around it.', label: 'hero, flat lay' },

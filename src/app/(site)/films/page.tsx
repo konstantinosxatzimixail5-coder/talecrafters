@@ -146,7 +146,7 @@ export default async function FilmsIndex() {
           >
             A finished thirty-five second film proves that one thirty-five second film exists. The
             sheet behind it is the part that transfers: which block ran on which model, what the
-            prompt actually said, which reference held the character still, and where the world
+            prompt said, which reference held the character still, and where the world
             drifted anyway. Both are here in full, including the prompts, because the reference is
             not the moat.
           </p>

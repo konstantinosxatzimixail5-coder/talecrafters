@@ -19,7 +19,7 @@ const meta: Record<string, { title: string; lede: string; color: string }> = {
   },
   models: {
     title: 'MODELS',
-    lede: 'What the machinery is actually doing (diffusion, latent space, steps, seeds, adapters) explained in the amount of detail a producer needs and no more.',
+    lede: 'What the machinery is doing (diffusion, latent space, steps, seeds, adapters) explained in the amount of detail a producer needs and no more.',
     color: 'var(--brand-cyan)',
   },
   control: {
@@ -49,7 +49,7 @@ const meta: Record<string, { title: string; lede: string; color: string }> = {
   },
   story: {
     title: 'STORY & STRUCTURE',
-    lede: 'The craft terms a script is actually built from: the beats, the structures, the turns, the reversals and the value shifts. Generative tools changed how a shot gets made and changed nothing about why anybody watches it.',
+    lede: 'The craft terms a script is built from: the beats, the structures, the turns, the reversals and the value shifts. Generative tools changed how a shot gets made and changed nothing about why anybody watches it.',
     color: 'var(--brand-gold)',
   },
   audience: {

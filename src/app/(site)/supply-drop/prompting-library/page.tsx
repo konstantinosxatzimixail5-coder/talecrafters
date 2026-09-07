@@ -44,12 +44,12 @@ const qa = [
     a: 'Usually because the prompt contains more than one instruction competing for the same budget: a camera move, a complex action, a wardrobe change and a style reference all at once. Cut to a single move and a single action and the compliance rate rises immediately.',
   },
   {
-    q: 'Do negative prompts actually help?',
+    q: 'Do negative prompts help?',
     a: 'Only when they name artefacts you have personally seen in your own failed renders. A copied list of forty generic negative terms mostly describes things the model was never going to do, and dilutes the two or three terms that matter.',
   },
   {
     q: 'How do you keep the same character across several shots?',
-    a: 'With a written character brief that specifies structure rather than personality — bone, proportion, two or three fixed marks, exact wardrobe — pasted unchanged into every prompt, plus a reference image used for identity only. Description alone stops working somewhere around the third shot.',
+    a: 'With a written character brief that specifies structure and never personality — bone, proportion, two or three fixed marks, exact wardrobe — pasted unchanged into every prompt, plus a reference image used for identity only. Description alone stops working somewhere around the third shot.',
   },
   {
     q: 'Should I name an artist in a prompt to get a style?',
@@ -57,7 +57,7 @@ const qa = [
   },
   {
     q: 'What is different about a prompt that runs unattended?',
-    a: 'It has to be a specification rather than a request: named inputs, a numbered procedure, an exact output shape, and an explicit branch for what to do when the model cannot determine something. Anything left to judgement will vary by run four hundred, and improvisation is the thing automation was meant to remove.',
+    a: 'It has to be a specification: named inputs, a numbered procedure, an exact output shape, and an explicit branch for what to do when the model cannot determine something. Anything left to judgement will vary by run four hundred, and improvisation is the thing automation was meant to remove.',
   },
   {
     q: 'Is any of this gated?',
@@ -103,7 +103,7 @@ export default async function PromptingLibraryPage() {
                 '@type': 'HowToStep',
                 position: 4,
                 name: 'Name the absence',
-                text: 'Say what must not appear, using artefacts from your own failed renders rather than a generic negative list.',
+                text: 'Say what must not appear, using artefacts from your own failed renders. A generic negative list does nothing.',
               },
               {
                 '@type': 'HowToStep',
