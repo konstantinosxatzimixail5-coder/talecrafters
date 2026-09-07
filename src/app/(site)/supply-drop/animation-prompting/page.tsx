@@ -43,7 +43,7 @@ const qa = [
   },
   {
     q: 'What order should a style prompt be written in?',
-    a: 'Technique, then surface behaviour, then what must be absent, then the subject. Naming the absence (no gradients, no anti-aliasing, no opaque white) does more work than any adjective.',
+    a: 'Technique, then surface behaviour, then what must be absent, then the subject. Naming the absence (no gradients, no anti-aliasing, no opaque white) does the work no adjective can.',
   },
   {
     q: 'Can I mix two styles?',
@@ -71,7 +71,7 @@ export default async function AnimationPromptingPage() {
             step: [
               { '@type': 'HowToStep', position: 1, name: 'Name the technique', text: 'Open with the production method (hand-drawn 2D cel animation, stop-motion claymation, layered cut paper). Never a mood.' },
               { '@type': 'HowToStep', position: 2, name: 'Name the surface', text: 'State how the material behaves: paper tooth, thumbprints, line boil, halftone dots, pixel grid.' },
-              { '@type': 'HowToStep', position: 3, name: 'Name the absence', text: 'Say what must not appear: no gradients, no anti-aliasing, no opaque white, no rim light. This does more work than any adjective.' },
+              { '@type': 'HowToStep', position: 3, name: 'Name the absence', text: 'Say what must not appear: no gradients, no anti-aliasing, no opaque white, no rim light. This is the line that holds the style.' },
               { '@type': 'HowToStep', position: 4, name: 'Then the subject', text: 'Describe who is in frame and what they are doing, then the shot.' },
             ],
           },

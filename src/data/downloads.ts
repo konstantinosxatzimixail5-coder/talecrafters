@@ -3,8 +3,8 @@
 // One definition per tool, used twice: the /supply-drop/<slug> page renders it as
 // a fully usable web document, and scripts/pdf/build.mjs renders the same data
 // into a branded PDF. Neither can drift from the other, and the page is the
-// canonical thing: the PDF is a copy of a document that already ranks, rather
-// than a gate in front of one.
+// canonical thing: the PDF is a copy of a document that already ranks, never a
+// gate in front of one.
 
 export type ToolBlock =
   | { t: 'para'; text: string }
@@ -81,7 +81,7 @@ export const tools: Tool[] = [
           },
           {
             t: 'note',
-            text: 'Cutdowns are cheaper when they are planned as part of the shoot than when they are cropped afterwards. List them here even if they feel like a detail.',
+            text: 'Cutdowns cost less when they are planned as part of the shoot. Cropped afterwards, they cost you a second pass. List them here even if they feel like a detail.',
           },
         ],
       },
@@ -283,7 +283,7 @@ export const tools: Tool[] = [
   {
     slug: 'ai-advertising-disclosure-checklist',
     intro: [
-      'A one-page decision path for whether a generative asset has to be labelled, covering the UK position, the EU transparency obligations that took effect on 2 August 2026, and the platform policies that are usually stricter than either.',
+      'A one-page decision path for whether a generative asset has to be labelled, covering the UK position, the EU transparency obligations that took effect on 2 August 2026, and the platform policies that usually reach past both.',
       'A working summary written by a production studio. This is not legal advice. The regulation is moving. Check the primary sources and take advice before relying on this commercially.',
     ],
     howToUse: [
@@ -465,7 +465,7 @@ export const tools: Tool[] = [
           },
           {
             t: 'note',
-            text: 'Be honest in this clause. A withdrawal right that promises more than is technically possible is worse for both sides than one that states the limit plainly.',
+            text: 'Be honest in this clause. A withdrawal right that promises what is technically impossible hurts both sides. State the limit plainly.',
           },
         ],
       },

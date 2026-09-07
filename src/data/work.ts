@@ -80,7 +80,7 @@ export const work: CaseStudy[] = [
     problem:
       'A restaurant on Rhodes needed a fully SEO- and AIO-optimised site, a film, realistic dish photos from several angles, and synthetic social content. Its own photography covered part of the menu, shot honestly on the terrace under real light, and stopped there. The realism standard was high: everything had to survive a customer sitting down and being handed the actual plate.',
     idea:
-      'Do not fake the plates. A generated dish that looks better than the kitchen is a lie a diner catches the moment the plate arrives, so the still work was locked to the restaurant’s own reference frames and the film went the other way entirely: openly illustrated, a garden and a fire and a long day by the water, in the warm palette the room already has. An illustrated film cannot be caught pretending to be the room. A photoreal one is caught every second it runs.',
+      'Do not fake the plates. A generated dish the kitchen cannot put on a plate is a lie a diner catches the moment the food arrives, so the still work was locked to the restaurant’s own reference frames and the film went the other way entirely: openly illustrated, a garden and a fire and a long day by the water, in the warm palette the room already has. An illustrated film cannot be caught pretending to be the room. A photoreal one is caught every second it runs.',
     made: [
       'A Next.js site, designed and shipped.',
       'A ninety-second VSL script.',
@@ -313,7 +313,7 @@ export const work: CaseStudy[] = [
     method:
       'Operator Stack: the pipeline for work where the value sits in the run across every film. The registers were chosen first and written down as a list before a frame was made, so that no two briefs could drift into the same look under deadline. A register is a decision about lighting model, edge quality and how much the world is allowed to be wrong. Each got its own plate set and prompt vocabulary, and nothing was reused between them, because reuse is exactly what produces the sameness the job was built to avoid.',
     gates: [
-      { name: 'Brand gate', test: 'The mark, the blue and the lockup survive a register change without being redrawn. The mark is composited by hand: a model asked to draw a logo gets it nearly right, and nearly right on a logo is worse than absent.' },
+      { name: 'Brand gate', test: 'The mark, the blue and the lockup survive a register change without being redrawn. The mark is composited by hand: a model asked to draw a logo gets it nearly right, and nearly right on a logo is the version everybody notices.' },
       { name: 'Anatomy gate', test: 'Every frame with a held object gets checked before it enters a cut. Cartoon registers fail here first: a magnifier, a guitar neck, a clipboard held by something with no thumbs.' },
     ],
     hero: {

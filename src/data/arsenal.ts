@@ -98,7 +98,7 @@ export const categories: Category[] = [
     services: [
       { name: 'Brand Strategy', desc: 'Before we make anything, we figure out what you should be saying and why anyone should care. Positioning, messaging, the story beneath the story.', icon: 'Crosshair' },
       { name: 'Reputation Architecture', desc: 'PR and reputation for the synthetic media age, including the morning somebody claims your advert was faked. The answer is written before you need it.', icon: 'ShieldCheck' },
-      { name: 'Crisis Storytelling', desc: 'When things go sideways, the story you tell matters more than ever. We get you through a reputation storm without sounding like a corporate hostage reading a statement.', icon: 'Megaphone' },
+      { name: 'Crisis Storytelling', desc: 'When things go sideways, the story you tell is the only asset you have left. We get you through a reputation storm without sounding like a corporate hostage reading a statement.', icon: 'Megaphone' },
       { name: 'Thought Leadership Systems', desc: 'Your founders on the record saying something a competitor could not say back. Authority takes a publishing cadence and a point of view, and we build you both.', icon: 'UserCircle' },
     ],
   },
@@ -111,7 +111,7 @@ export const categories: Category[] = [
     intro:
       'Trained faces and trained voices, built under a consent gate and a disclosure gate, plus the agents that operate without one.',
     services: [
-      { name: 'Digital Avatars', desc: 'Spokespeople who represent your brand better than your CEO on a bad day. Written consent gate on the front, disclosure on the back, and no hangovers.', icon: 'ScanFace' },
+      { name: 'Digital Avatars', desc: 'Spokespeople who turn up on brand every morning, including the ones your CEO does not. Written consent gate on the front, disclosure on the back, and no hangovers.', icon: 'ScanFace' },
       { name: 'Synthetic Voices', desc: 'Podcast reads, narration and audio that sounds like a person who slept last night. Cloned under a signed consent gate and disclosed wherever the law asks.', icon: 'Podcast' },
       { name: 'Autonomous Agents', desc: 'Digital operatives working the hours you refuse to. Custom agents that run a workflow end to end and escalate to a human at the exact point where being wrong gets expensive.', icon: 'Bot' },
     ],

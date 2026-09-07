@@ -54,7 +54,7 @@ export async function GET() {
       `${markets.map((m) => m.name).join(', ')}. Half the published case studies were delivered ` +
       `for clients in Greece: a restaurant on Rhodes, a data school in Athens and a motorcycle ` +
       `dealership. There is no office outside the United Kingdom and the site is not published ` +
-      `in any language other than English.`
+      `in English only.`
   );
   lines.push('');
   lines.push(`- [AI video production in Greece](${SITE_URL}/ai-video-production-greece)`);

@@ -105,7 +105,7 @@ const coreTerms: Term[] = [
     tags: ['ethics', 'post'],
     body: [
       'C2PA writes a manifest into the asset: which tool made it, what was changed, and by whom, each step cryptographically signed. Strip it and the absence is itself information. It is the closest thing the industry has to a chain of custody for a picture.',
-      'For a brand this is becoming a procurement question. Platforms, broadcasters and an increasing number of client legal teams now ask what provenance an asset carries before it runs. Answering "none" is a slower answer than it used to be.',
+      'For a brand this is becoming a procurement question. Platforms, broadcasters and an increasing number of client legal teams now ask what provenance an asset carries before it runs. Answering "none" stops the conversation.',
       'We treat credentials as a deliverable. If a client needs them attached, that goes in the brief, because retrofitting provenance onto a finished cut is not possible.',
     ],
     qa: [
@@ -152,7 +152,7 @@ const coreTerms: Term[] = [
       'A dial controlling how literally a diffusion model obeys the prompt, trading obedience against image quality.',
     tags: ['models', 'control'],
     body: [
-      'Low guidance lets the model wander: prettier, looser, less like what you asked for. High guidance forces compliance: closer to the prompt, and past a threshold, burnt contrast, over-saturated colour and a plasticky surface. The useful range is narrower than the slider suggests.',
+      'Low guidance lets the model wander: prettier, looser, less like what you asked for. High guidance forces compliance: closer to the prompt, and past a threshold, burnt contrast, over-saturated colour and a plasticky surface. The useful range is a small band in the middle of the slider.',
       'Practically it is a diagnostic. If a frame keeps ignoring one element of the brief, raising guidance is the wrong first move: rewriting the prompt so that element leads the sentence is usually the right one. Guidance is for fine adjustment.',
     ],
     qa: [
@@ -264,7 +264,7 @@ const coreTerms: Term[] = [
       'How many passes a diffusion model takes to walk an image from noise to a finished frame.',
     tags: ['models'],
     body: [
-      'Fewer steps is faster and rougher. More steps is slower and, up to a point, cleaner: then it stops improving and only costs money. Every model has a plateau, and finding it once for the model you use saves more budget than any prompt trick.',
+      'Fewer steps is faster and rougher. More steps is slower and, up to a point, cleaner: then it stops improving and only costs money. Every model has a plateau, and finding it once for the model you use saves real money on every job after.',
       'For iteration, run low steps: you are judging composition at that stage. Only the frames that survive selection are worth rendering at full step count. Teams that render everything at maximum quality spend their budget rejecting beautiful pictures.',
     ],
     qa: [
@@ -305,7 +305,7 @@ const coreTerms: Term[] = [
       'Telling the audience that what they are looking at was made or materially altered by a generative model, in the place they will see it.',
     tags: ['ethics', 'strategy'],
     body: [
-      'Disclosure is now a mix of platform policy, advertising code and, in some markets, statute. The practical rule is simpler than the law: label to the strictest standard that applies, and put the label where the viewer is looking. A caption nobody expands does nothing.',
+      'Disclosure is now a mix of platform policy, advertising code and, in some markets, statute. The practical rule is simple: label to the strictest standard that applies, and put the label where the viewer is looking. A caption nobody expands does nothing.',
       'The commercial fear, that admitting a piece is synthetic destroys its credibility, has largely not survived contact with reality. What destroys credibility is being caught. Brands that label early get to compete on whether the work is good.',
     ],
     qa: [
@@ -346,7 +346,7 @@ const coreTerms: Term[] = [
     tags: ['models'],
     body: [
       'Full fine-tuning updates the model’s weights and needs real data and real compute. Most production work does not need it: a lightweight adapter such as a LoRA, or a trained identity inside a platform, gets ninety per cent of the benefit for a fraction of the cost and can be swapped out per project.',
-      'The reason to fine-tune properly is a house style that has to hold across thousands of assets and outlive any one tool. The reason not to is that a fine-tune is a maintenance commitment, and a stale one is worse than none.',
+      'The reason to fine-tune properly is a house style that has to hold across thousands of assets and outlive any one tool. The reason not to is that a fine-tune is a maintenance commitment, and a stale one drags the whole house style down with it.',
     ],
     qa: [
       {
@@ -387,7 +387,7 @@ const coreTerms: Term[] = [
     tags: ['models'],
     body: [
       'The commercial significance of a foundation model is that it is a substrate. Everything useful gets built on top: adapters, skills, tool access, retrieval, and the guard rails a client will sign off.',
-      'For a studio the practical consequence is churn. Models are replaced faster than pipelines are, so anything worth keeping belongs in the pipeline (the plates, the identity sheets, the gates, the ledger) and not in a particular model’s quirks.',
+      'For a studio the practical consequence is churn. Models get replaced every few months and pipelines last years, so anything worth keeping belongs in the pipeline (the plates, the identity sheets, the gates, the ledger) and not in a particular model’s quirks.',
     ],
     qa: [
       {
@@ -545,7 +545,7 @@ const coreTerms: Term[] = [
     qa: [
       {
         q: 'How many images do you need to train a LoRA?',
-        a: 'For a style, a few dozen varied examples. For a character, twenty to forty clean stills at varied angles under even light. Quality and variety matter more than quantity.',
+        a: 'For a style, a few dozen varied examples. For a character, twenty to forty clean stills at varied angles under even light. Quality and variety are what the training reads.',
       },
       {
         q: 'LoRA or full fine-tuning?',
@@ -791,7 +791,7 @@ const coreTerms: Term[] = [
     qa: [
       {
         q: 'Do you still need a shot list for AI video?',
-        a: 'More than before. The generation is cheap enough to hide the absence of a plan until the edit, where it becomes expensive.',
+        a: 'Yes, and in more detail. The generation is cheap enough to hide the absence of a plan until the edit, where it gets expensive.',
       },
     ],
     related: ['camera-control', 'first-last-frame', 'cost-per-accepted-asset'],
@@ -821,7 +821,7 @@ const coreTerms: Term[] = [
       'Any image, video, audio or text produced or materially altered by a generative model.',
     tags: ['strategy'],
     body: [
-      'The term is broader and more useful than "AI content", because it covers the middle ground where most professional work sits: a real shoot with a generated environment, a real voice with a generated read, a real product with a generated set.',
+      'The term covers the middle ground where most professional work sits and "AI content" misses: a real shoot with a generated environment, a real voice with a generated read, a real product with a generated set.',
       'That middle ground is also where the disclosure question gets interesting, and where a studio earns its fee. The skill is knowing which parts of a piece should be synthetic and which parts belong in front of a lens.',
     ],
     qa: [
@@ -927,7 +927,7 @@ const coreTerms: Term[] = [
     qa: [
       {
         q: 'How many photos do you need to train an AI character?',
-        a: 'Twenty or more, at varied angles and expressions, evenly lit, including at least one full-height frame. Variety matters more than volume.',
+        a: 'Twenty or more, at varied angles and expressions, evenly lit, including at least one full-height frame. Variety is what makes the set work.',
       },
     ],
     related: ['identity-lock', 'character-consistency', 'lora', 'synthetic-ugc'],

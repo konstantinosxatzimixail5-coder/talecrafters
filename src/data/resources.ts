@@ -124,7 +124,7 @@ export const resources: Resource[] = [
     count: '4 sections',
     format: 'Decision path, PDF and on this page',
     blurb:
-      'Whether a generative asset has to be labelled, worked out once per campaign instead of argued about at delivery. Covers the CAP misleadingness test, the EU AI Act Article 50 obligations that took effect on 2 August 2026, the platform policies that are usually stricter than either, and the two carve-outs that mostly do not help.',
+      'Whether a generative asset has to be labelled, worked out once per campaign instead of argued about at delivery. Covers the CAP misleadingness test, the EU AI Act Article 50 obligations that took effect on 2 August 2026, the platform policies that usually reach past both, and the two carve-outs that mostly do not help.',
     forWhom: 'Marketing and legal teams running generative creative across more than one market.',
     pdf: '/downloads/talecrafters-ai-advertising-disclosure-checklist.pdf',
     metaTitle: 'AI Advertising Disclosure Checklist: UK, EU and Platform Rules',

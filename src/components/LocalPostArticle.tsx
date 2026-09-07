@@ -157,7 +157,7 @@ export function LocalPostArticle({ post }: { post: Post }) {
         )}
 
         {/* The standfirst states the answer in the first fifty words. A model
-            quoting this page quotes something complete rather than a hook. */}
+            quoting this page quotes something complete, never a hook. */}
         <p
           className="mb-10"
           style={{

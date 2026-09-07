@@ -26,7 +26,7 @@ import { work, featuredWork } from '@/data/work';
 import { site } from '@/lib/site';
 import type { FieldDef, StringField, TextField, PairsField, Registry, Pair } from './types';
 
-/** Marks a fallback whose value is counted from the repo rather than typed. */
+/** Marks a fallback whose value is counted from the repo, never typed. */
 const DERIVED = 'Counted from the site data, so it keeps itself honest. Typing here freezes the number.';
 
 const str = (title: string, fallback: string, description?: string): StringField => ({
@@ -124,9 +124,9 @@ export const copyRegistry = {
     order: 10,
     sections: {
       // Only the flag. This section's headline is set as three lines with a
-      // colour break inside a word ("UN|HOLY"), which is drawn type rather than
+      // colour break inside a word ("UN|HOLY"), which is drawn type and never
       // a sentence: arbitrary text cannot render through it, so offering a box
-      // that silently mangles the heading would be worse than offering none.
+      // that silently mangles the heading costs more than it saves.
       hero: section('Hero', {
         eyebrow: str('Eyebrow', 'TaleCrafters Studio', 'The small mono label above the headline.'),
         line1: str('Headline line 1', 'WE MANUFACTURE'),

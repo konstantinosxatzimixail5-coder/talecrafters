@@ -5,7 +5,7 @@
 // same Term shape, same pages, same DefinedTerm nodes, same tag pages.
 //
 // The test every entry has to pass is whether a producer with a deadline would
-// find it useful. Definitions that are correct and useless are worse than
+// find it useful. Definitions that are correct and useless read as
 // absent, because they make the glossary look like a dictionary somebody
 // scraped, not a document somebody wrote.
 
@@ -22,7 +22,7 @@ export const additionalTerms: Term[] = [
     tags: ['production', 'strategy'],
     body: [
       'If a batch produces sixty frames and four are used, the acceptance rate is around seven per cent and the real cost of each shipped frame is fifteen renders. This is the number that turns a per-second price into a production budget, and it is the number most studios do not track.',
-      'It varies enormously by difficulty. Shots with legible packaging type sit far lower than environment plates with no product and no face in them, often by a factor of three or four. Averaging the two produces a figure that describes neither and misleads on both, which is why the number is only useful measured per shot type against your own logs.',
+      'It varies enormously by difficulty. Shots with legible packaging type run three to four times lower than environment plates with no product and no face in them. Averaging the two produces a figure that describes neither and misleads on both, which is why the number is only useful measured per shot type against your own logs.',
       'Track it per shot type, log it automatically, and quote from it. A studio that can tell you its acceptance rate on the hardest shot in your brief has run this before.',
     ],
     qa: [
@@ -118,7 +118,7 @@ export const additionalTerms: Term[] = [
     tags: ['production', 'systems'],
     body: [
       'Batching is how generative production stops being a person at a keyboard and becomes a pipeline. One set of conditioning, one credit ceiling, one run log, one review at the end, and no decision after every render.',
-      'The ordering matters more than people expect. Run the hardest shots first, whatever their position in the shot list: hard shots reveal the real acceptance rate within the first hour, while there is still time to change the approach. Easy shots make you optimistic and tell you nothing.',
+      'The ordering decides the day. Run the hardest shots first, whatever their position in the shot list: hard shots reveal the real acceptance rate within the first hour, while there is still time to change the approach. Easy shots make you optimistic and tell you nothing.',
       'A batch that produces no ledger entry is not a batch, it is a session.',
     ],
     qa: [
@@ -166,7 +166,7 @@ export const additionalTerms: Term[] = [
     tags: ['production', 'strategy'],
     body: [
       'Most campaigns need the same idea in four or five shapes: 16:9, 1:1, 4:5, 9:16, and occasionally something a specific placement demands. Writing that down as a grid before production is the difference between composing once for all of them and re-composing five times.',
-      'The matrix also exposes duplication. Nine placements often turn out to need three actual pieces in three ratios, which is a far smaller job than nine pieces, and nobody notices until the grid is on a page.',
+      'The matrix also exposes duplication. Nine placements often turn out to need three actual pieces in three ratios, which is a third of the job, and nobody notices until the grid is on a page.',
       'It is deterministic work once the decisions are made, which makes the export side of it a script.',
     ],
     qa: [
@@ -196,7 +196,7 @@ export const additionalTerms: Term[] = [
     qa: [
       {
         q: 'Who should own the master plates and trained identities?',
-        a: 'The client, in our view. They are what makes the second campaign cheaper than the first, and retaining them converts a production relationship into a dependency.',
+        a: 'The client, in our view. They are what makes the second campaign cheap, and retaining them converts a production relationship into a dependency.',
       },
       {
         q: 'What is usually missing from a delivery spec?',
@@ -210,7 +210,7 @@ export const additionalTerms: Term[] = [
     term: 'Previsualisation',
     aka: ['previs', 'pre-vis'],
     short:
-      'Rough visual planning of shots before production, now cheap enough with generative tooling that skipping it is harder to defend than doing it.',
+      'Rough visual planning of shots before production, now cheap enough with generative tooling that skipping it takes some explaining.',
     tags: ['production', 'strategy'],
     body: [
       'Previs used to be a line item only large productions could justify. Generative tooling has moved it to somewhere near free, which changes what it is for. The job now is testing the decisions, but finding out which version of it is worth making.',
@@ -238,7 +238,7 @@ export const additionalTerms: Term[] = [
     tags: ['production', 'post'],
     body: [
       'Compositional problems and motion problems are visible at low resolution. Type problems and texture problems are not. That split tells you exactly what a proxy pass is for and where it stops being useful.',
-      'The economics are simple: a proxy costs a fraction of a full render, so testing five compositions in proxy and rendering one at full quality is cheaper than rendering three at full quality and picking the least bad.',
+      'The economics are simple: a proxy costs a fraction of a full render, so five compositions in proxy and one full render costs a fraction of three full renders and a pick of the least bad.',
       'The failure mode is treating a proxy as an approval. A client who signs off a proxy has approved the composition alone, and that distinction needs saying out loud before it is discovered at delivery.',
     ],
     qa: [
@@ -312,7 +312,7 @@ export const additionalTerms: Term[] = [
     tags: ['models'],
     body: [
       'The original image diffusion models used a U-Net to predict noise. Replacing it with a transformer changed the scaling behaviour: performance improved predictably with size and data in a way the convolutional version did not, which is the reason the current generation of video models exists at all.',
-      'For a producer, the practical consequence is that quality now tracks compute more reliably than it tracks clever prompting. The gains of the last two years came from bigger models trained longer. No keyboard trick delivered any of it.',
+      'For a producer, the practical consequence is that quality now tracks compute, and clever prompting tracks nothing. The gains of the last two years came from bigger models trained longer. No keyboard trick delivered any of it.',
       'The second consequence is cost structure. Transformer attention scales badly with sequence length, and a video is a long sequence, which is why clip length is priced the way it is.',
     ],
     qa: [
@@ -341,7 +341,7 @@ export const additionalTerms: Term[] = [
     ],
     qa: [
       {
-        q: 'Why do longer AI video clips cost more than proportionally?',
+        q: 'Why do longer AI video clips cost disproportionately more?',
         a: 'Attention cost scales with roughly the square of sequence length, so doubling the clip length roughly quadruples the compute.',
       },
       {
@@ -370,7 +370,7 @@ export const additionalTerms: Term[] = [
       },
       {
         q: 'How does this affect a creative automation build?',
-        a: 'It decides whether you can paste reference material into every call or need retrieval. Most real systems need retrieval sooner than they expect.',
+        a: 'It decides whether you can paste reference material into every call or need retrieval. Most real systems need retrieval by the second month.',
       },
     ],
     related: ['token', 'rag', 'context-engineering', 'attention'],
@@ -432,7 +432,7 @@ export const additionalTerms: Term[] = [
     tags: ['models', 'control'],
     body: [
       'Two runs with the same prompt, the same seed and different samplers produce recognisably different images. The sampler is a real creative variable and it is usually left at whatever the interface defaulted to.',
-      'The trade-off is roughly speed against stability. Faster samplers converge in fewer steps and are more prone to changing character between runs; slower ones are steadier, which matters far more on a set than on a single frame.',
+      'The trade-off is roughly speed against stability. Faster samplers converge in fewer steps and are more prone to changing character between runs; slower ones are steadier, and steadiness is what a set of shots lives on.',
       'Pick one, record it in the set specification, and do not change it mid-campaign. A sampler change halfway through a set is a drift source nobody will think to look for.',
     ],
     qa: [
@@ -766,17 +766,17 @@ export const additionalTerms: Term[] = [
     term: 'Prompt Weighting',
     aka: ['token weighting', 'emphasis syntax'],
     short:
-      'Syntax for telling a model that some words in a prompt matter more than others, so nobody has to repeat them and hope.',
+      'Syntax for telling a model which words in a prompt carry the weight, so nobody has to repeat them and hope.',
     tags: ['control'],
     body: [
       'Most models accept some form of emphasis notation. It exists because a long prompt dilutes: the twentieth adjective competes with the first, and the thing you care about ends up weighted the same as the surface it is standing on.',
-      'The discipline is to weight sparingly. One or two emphasised terms per prompt read as intent; six read as noise and often produce a worse image than none.',
+      'The discipline is to weight sparingly. One or two emphasised terms per prompt read as intent; six read as noise and the image comes back worse for it.',
       'The better fix is usually a shorter prompt. Weighting is a patch for a prompt that is trying to say too much at once, and shortening it is free.',
     ],
     qa: [
       {
         q: 'How many terms should be weighted in one prompt?',
-        a: 'One or two. Beyond that the emphasis stops meaning anything, and the output often gets worse than an unweighted version of the same prompt.',
+        a: 'One or two. Beyond that the emphasis stops meaning anything, and the output degrades from there.',
       },
       {
         q: 'Is weighting better than repeating a word?',
@@ -819,7 +819,7 @@ export const additionalTerms: Term[] = [
     body: [
       'Audiences forgive a great deal in a generated face and forgive almost nothing in the mouth, because lip reading is partly involuntary. Sync that is slightly wrong reads as dubbing, and dubbing reads as untrustworthy.',
       'The technical failure modes are consistent: plosives arriving late, the jaw moving without the lips shaping, and a mouth that keeps moving fractionally after the audio stops. All three are visible at normal speed once you know to look.',
-      'The consent position is stricter here than anywhere else in synthetic production. Putting words a person did not say into a recognisable mouth is the definition of the thing regulation is aimed at, and it needs an explicit release naming synthetic dialogue.',
+      'The consent position here is the strictest in synthetic production. Putting words a person did not say into a recognisable mouth is the definition of the thing regulation is aimed at, and it needs an explicit release naming synthetic dialogue.',
     ],
     qa: [
       {
@@ -852,7 +852,7 @@ export const additionalTerms: Term[] = [
       },
       {
         q: 'How does roto help with generative work?',
-        a: 'It lets you sidestep the hardest generative problems. Compositing real packaging type into a generated scene is more reliable than asking a model to render a readable label.',
+        a: 'It lets you sidestep the hardest generative problems. Compositing real packaging type into a generated scene works every time, where asking a model to render a readable label works about one time in ten.',
       },
     ],
     related: ['segmentation-mask', 'inpainting', 'master-plate', 'colour-management'],
@@ -916,7 +916,7 @@ export const additionalTerms: Term[] = [
     term: 'Likeness Rights',
     aka: ['image rights', 'personality rights'],
     short:
-      'A person’s control over the commercial use of their appearance, which generative production engages far more often than a photoshoot does.',
+      'A person’s control over the commercial use of their appearance, which generative production engages on almost every job.',
     tags: ['ethics'],
     body: [
       'Photography captures a likeness. Generative production manufactures new ones, which is a different act and generally needs a different permission. A release drafted for the first does not usually authorise the second.',
@@ -1063,7 +1063,7 @@ export const additionalTerms: Term[] = [
       'The recorded history of how a piece of media was made and edited, travelling with the file so a platform or a viewer can check it.',
     tags: ['ethics', 'post'],
     body: [
-      'Provenance is becoming a procurement question. Platforms read it, an increasing number of client legal teams ask for it, and answering "none" is a slower answer than it was two years ago.',
+      'Provenance is becoming a procurement question. Platforms read it, an increasing number of client legal teams ask for it, and answering "none" now costs you a week of escalation.',
       'It cannot be retrofitted. A manifest describes the steps that were recorded as they happened, so a finished cut with no provenance stays a finished cut with no provenance. If a client needs it, it goes in the brief.',
       'Provenance and a visible label do different jobs. The manifest satisfies machine detection; the on-asset label satisfies a person at first exposure. Article 50 asks for both in effect, and a screenshot strips only one of them.',
     ],
@@ -1089,7 +1089,7 @@ export const additionalTerms: Term[] = [
     body: [
       'Every prompt is a disclosure to a third party. That is true even where a provider promises not to train on it, because a promise about training says nothing about logs, or about what a subpoena reaches.',
       'The operating rules are short. No credentials in a prompt, ever. No client personal data unless the engagement specifically requires it and the client has agreed the processor. No unreleased assets in a system without a contractual position on retention.',
-      'The commercial version of the argument is easier to sell internally than the compliance one: an unreleased campaign pasted into a general-purpose tool is a leak risk with a date on it.',
+      'The commercial version of the argument is the one that sells internally: an unreleased campaign pasted into a general-purpose tool is a leak risk with a date on it.',
     ],
     qa: [
       {
@@ -1139,7 +1139,7 @@ export const additionalTerms: Term[] = [
     body: [
       'The alternative to skills is a single instruction that grows every time somebody needs something new, until it is four thousand words, contradicts itself in two places and nobody will touch it.',
       'Splitting it into loadable units fixes three things at once. Each is small enough to review, each is loaded only when relevant so the context window is spent on the current job, and each can be changed without risking every other workflow.',
-      'The organisational benefit is bigger than the technical one: a skill is a written-down way of doing something, which means the studio’s method stops living in one person’s head.',
+      'The organisational benefit is the one that lasts: a skill is a written-down way of doing something, which means the studio’s method stops living in one person’s head.',
     ],
     qa: [
       {
@@ -1281,7 +1281,7 @@ export const additionalTerms: Term[] = [
       'A hard limit on what a workflow can do, enforced by the system itself.',
     tags: ['systems', 'ethics'],
     body: [
-      'The distinction that matters: an instruction is a request and a guardrail is a constraint. "Do not spend more than fifty pounds" in a prompt is a hope. A credit ceiling that halts the run is a guardrail.',
+      'The distinction that matters: an instruction is a request and a guardrail is a constraint. "Cap this run at fifty pounds" in a prompt is a hope. A credit ceiling that halts the run is a guardrail.',
       'They belong at the points where a plausible wrong answer is expensive: spend, access, publication, deletion. Everywhere else, an instruction is fine and a guardrail is friction.',
       'The test is simple. If a confused or adversarial run could ignore it, it is an instruction. If it physically cannot, it is a guardrail.',
     ],
@@ -1326,7 +1326,7 @@ export const additionalTerms: Term[] = [
     term: 'Context Engineering',
     aka: ['context design'],
     short:
-      'Deciding what a model sees for a given task, which now matters more than how the request is worded.',
+      'Deciding what a model sees for a given task, which is where the outcome is decided and the wording is not.',
     tags: ['systems', 'strategy'],
     body: [
       'Prompt engineering was about phrasing. Context engineering is about what is in the window at all: which reference material, which prior steps, which tool results, and in what order.',
@@ -1357,7 +1357,7 @@ export const additionalTerms: Term[] = [
     body: [
       'A search engine ranks pages. An answer engine extracts claims and reassembles them, so the unit of competition has changed from the page to the passage. Content that buries its answer under four paragraphs of throat-clearing does not get quoted, whatever it ranks for.',
       'What works is unglamorous. State the answer immediately, then justify it. Use the words people type as headings. Put numbers in tables. Answer the questions people ask, including the ones that do not flatter the product.',
-      'The credibility mechanics matter more than in classic search: named sources, dates, and an author that resolves to something. A confident, unattributed claim is exactly what a careful system declines to repeat.',
+      'The credibility mechanics carry real weight here: named sources, dates, and an author that resolves to something. A confident, unattributed claim is exactly what a careful system declines to repeat.',
     ],
     qa: [
       {
@@ -1381,7 +1381,7 @@ export const additionalTerms: Term[] = [
     body: [
       'A generative system recommending a supplier is doing entity reasoning. It needs to know that a company exists, what category it belongs to, which markets it serves and whether anything it says can be corroborated.',
       'So the work is partly structural and partly editorial. Consistent structured data across every page, a description that classifies plainly, markets stated explicitly, and a body of writing that is specific enough to be worth citing.',
-      'The unglamorous half is consistency. A company described four different ways across its own site is a company an entity resolver cannot pin down, and being unresolvable is worse than being uninteresting.',
+      'The unglamorous half is consistency. A company described four different ways across its own site is a company an entity resolver cannot pin down, and unresolvable is the expensive state to be in.',
     ],
     qa: [
       {
@@ -1390,7 +1390,7 @@ export const additionalTerms: Term[] = [
       },
       {
         q: 'What is the most common GEO mistake?',
-        a: 'Describing the company differently on every page. Inconsistency makes an entity unresolvable, which is a worse position than being unremarkable.',
+        a: 'Describing the company differently on every page. Inconsistency makes an entity unresolvable, which is the expensive state to be in.',
       },
     ],
     related: ['answer-engine-optimisation', 'entity-graph', 'topical-authority', 'synthetic-media'],
@@ -1405,12 +1405,12 @@ export const additionalTerms: Term[] = [
     body: [
       'The graph is built from what you publish and what corroborates it. Structured data declares the claims; profiles, registrations and citations elsewhere either support them or leave them dangling.',
       'Consistency is the whole discipline. The same name, the same address, the same founding date, the same service descriptions, everywhere. A detail that differs between your own pages is a contradiction the engine has to resolve, usually by trusting less of it.',
-      'And nothing should be asserted that cannot be corroborated. A founder node pointing at a person who resolves nowhere is a claim a system has to discount, which is worse than having no founder node at all.',
+      'And nothing should be asserted that cannot be corroborated. A founder node pointing at a person who resolves nowhere is a claim a system has to discount, which costs you the node and some credibility with it.',
     ],
     qa: [
       {
         q: 'What strengthens an entity graph?',
-        a: 'Consistent structured data across every page, details that match everywhere they appear, and external profiles or registrations that corroborate the claims and do more than repeat them.',
+        a: 'Consistent structured data across every page, details that match everywhere they appear, and external profiles or registrations that corroborate the claims from outside your own site.',
       },
       {
         q: 'Should you assert everything you can?',
@@ -1424,7 +1424,7 @@ export const additionalTerms: Term[] = [
     term: 'Topical Authority',
     aka: ['subject authority', 'topic depth'],
     short:
-      'Being demonstrably thorough on a subject, with more than one page about it, measured by coverage and depth.',
+      'Being demonstrably thorough on a subject, across several pages, measured by coverage and depth.',
     tags: ['strategy'],
     body: [
       'One article about generative video costs is a page. A costs article, a measurement methodology, a glossary of the terms it uses, a published pipeline and a calculator that shows the arithmetic is a position. Systems that decide who to cite are increasingly able to tell the difference.',
@@ -1462,7 +1462,7 @@ export const additionalTerms: Term[] = [
       },
       {
         q: 'How many usable claims does a long article contain?',
-        a: 'Typically eight to twenty in a 1,500-word piece, which is more than enough to give nine assets nine different openings.',
+        a: 'Typically eight to twenty in a 1,500-word piece, which covers nine assets with nine different openings and leaves some spare.',
       },
     ],
     related: ['topical-authority', 'agentic-workflow', 'cutdown', 'answer-engine-optimisation'],

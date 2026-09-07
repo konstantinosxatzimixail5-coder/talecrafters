@@ -83,7 +83,7 @@ export function VideoPlayer({
             />
 
             {/* The play target. A triangle in a box, in the site's own
-                furniture rather than YouTube's red pill. */}
+                furniture, with none of YouTube's red pill. */}
             <span
               className="absolute left-1/2 top-1/2 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
               style={{

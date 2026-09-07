@@ -38,7 +38,7 @@ const crumbs = [
 const qa = [
   {
     q: 'Is any of this gated?',
-    a: 'No. No email, no form, no download wall. Take it, use it commercially, change it. If it makes your work better we would rather that than have your address.',
+    a: 'No. No email, no form, no download wall. Take it, use it commercially, change it. If it makes your work better, that is payment enough. Your address is no use to us.',
   },
   {
     q: 'Why give away your working method?',

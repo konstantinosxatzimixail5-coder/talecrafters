@@ -133,8 +133,8 @@ export default async function CapturesPage() {
             className="mt-5 max-w-3xl text-lg leading-relaxed"
             style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.78)' }}
           >
-            A generated frame passed off as a photograph is worth less than a generated frame that
-            says what it is, because the second one can be checked. The labelling is the argument
+            A generated frame that says what it is can be checked. A generated frame passed off as
+            a photograph is worth whatever the first person to catch it decides. The labelling is the argument
             here, carried on the face of every frame.
           </p>
         </div>

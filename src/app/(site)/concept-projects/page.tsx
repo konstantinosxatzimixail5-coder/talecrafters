@@ -231,7 +231,7 @@ export default async function ConceptProjects() {
       <CtaBar
         color="var(--brand-cyan)"
         eyebrow="COMMISSION SOMETHING REAL"
-        title="Your product deserves better than a fake one."
+        title="Point this at something that exists."
         body="These sets were built to prove the controls. Point them at something that exists and the same discipline applies, with your kitchen or your packaging team holding the last gate."
       />
     </>

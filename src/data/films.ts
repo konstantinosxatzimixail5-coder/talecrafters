@@ -6,7 +6,7 @@
 // published on the page instead, which is why `doc` is optional.
 //
 // Every field the process sheets fix verbatim was extracted from the PDF rather
-// than retyped, which is the only way fourteen prompts arrive with their
+// and never retyped, which is the only way fourteen prompts arrive with their
 // timecodes and reference tags intact. Both documents ship under public/docs/.
 //
 // Image keys are manifest keys under films/, built by scripts/images/build.mjs
@@ -651,7 +651,7 @@ Two figures only, screen sides fixed. End the block on a static frame with both 
         ],
       },
     ],
-    lookNote: "Rain was cheaper than any effect and did more work than all of them.",
+    lookNote: "Rain cost nothing and did the work of every effect on the list.",
     locks: [
       {
         name: 'Identity drift',
@@ -1307,7 +1307,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
         name: 'Arrival',
         image: 'films/mars-drop/md-poster',
         alt: 'The wide establishing frame: two figures on the colony floor, a landed rocket to the right, a domed habitat and antenna masts to the left, red rock formations behind.',
-        note: 'The wide is held longer than is comfortable. Both men are in it, neither is centred, and the joke lands before either has moved.',
+        note: 'The wide is held past comfortable. Both men are in it, neither is centred, and the joke lands before either has moved.',
         prompt:
           'Wide establishing shot, flat 2D animation, thick ink outlines and flat colour fills. A Mars colony floor in mid-afternoon light: a landed white booster on a four-legged pad right of frame, a silver geodesic habitat and lattice antenna masts left of frame, layered orange rock formations across the background, a small second moon high in a blue sky. Two figures stand about four metres apart on the dust, both full length, both small in frame. Camera locked off at eye level. No camera move.',
       },
@@ -1490,7 +1490,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
 export const findFilm = (slug: string): Film | undefined => films.find((f) => f.slug === slug);
 
 // A beat with no still or no prompt would render a hole in the page, and Frame
-// would fail later with a less useful message than this one.
+// would fail later with a message nobody can act on.
 {
   const bad = films.flatMap((f) =>
     f.beats

@@ -5,7 +5,7 @@
 // answers the question people arrive with, which is "what goes in a
 // prompt, in what order, and why did mine come back wrong".
 //
-// So each entry here is a guide rather than a string: the slots the prompt is
+// So each entry here is a guide, never a bare string: the slots the prompt is
 // built from, in the order that survives, one written example you can paste,
 // the specific way that kind of prompt fails, and the fix. A prompt you can
 // copy is worth one shot. The scaffold behind it is worth every shot after.
@@ -24,7 +24,7 @@ export interface PromptGuide {
   /** One line: what this guide is for. Used as the card subtitle and the
    *  `description` on the ItemList node. */
   purpose: string;
-  /** When a person should reach for this rather than the one next to it. */
+  /** When a person should reach for this one and leave the one next to it. */
   when: string;
   /** The ordered slots. Order is the whole point: most prompt failures are
    *  ordering failures wearing a vocabulary costume. */
@@ -109,7 +109,7 @@ export const promptGuides: PromptGuide[] = [
     name: 'The image-to-video prompt',
     family: 'video',
     purpose: 'Animating a still you already approved, without losing what made it good.',
-    when: 'Whenever the composition matters more than the motion, which is most of the time in advertising.',
+    when: 'Whenever the composition is doing the work and the motion is incidental, which is most of the time in advertising.',
     scaffold: [
       'WHAT MOVES. Name it. One thing, or two if they move together.',
       'WHAT DOES NOT MOVE. Name that too, explicitly.',
@@ -157,7 +157,7 @@ export const promptGuides: PromptGuide[] = [
       'Medium close-up, static. She says, "We tried it for a week." She is deciding whether to admit the rest as she says it, so the line comes out slightly slower than it should. Before the line she holds a small breath. After it she does not look away.',
     failure:
       'You direct the emotion and get a performance of the emotion: eyebrows doing the work, a face announcing sadness where a person being sad should be.',
-    fix: 'Replace every emotion word with an intention. "Sad" becomes "trying to avoid a follow-up question". The face solves it better than you can specify it.',
+    fix: 'Replace every emotion word with an intention. "Sad" becomes "trying to avoid a follow-up question". The face will solve it. Your specification will not.',
   },
   {
     slug: 'product-hero-motion',
@@ -166,7 +166,7 @@ export const promptGuides: PromptGuide[] = [
     purpose: 'A product turning, catching light, staying legible.',
     when: 'Any packshot where the label has to survive at full resolution.',
     scaffold: [
-      'THE MOVE. Slow, single-axis, and slower than you think.',
+      'THE MOVE. Slow, single-axis, and then slower again.',
       'THE PRODUCT. Named plainly, with material words.',
       'THE LABEL. Stated as a hard constraint: unchanged, in frame, in focus.',
       'THE LIGHT. Where the specular highlight travels.',
@@ -294,7 +294,7 @@ export const promptGuides: PromptGuide[] = [
     failure:
       'The subject is centred no matter what you write, because centred is the strongest prior in almost every image model.',
     fix:
-      'Describe the empty area. Models place things far more reliably when told what has to stay empty than when told where to put something.',
+      'Describe the empty area. Models place things reliably when told what has to stay empty. Told where to put something, they drift.',
   },
   {
     slug: 'lighting-vocabulary',
@@ -314,7 +314,7 @@ export const promptGuides: PromptGuide[] = [
     failure:
       '"Cinematic lighting" produces a soft, safe, three-point studio look, because that is the average of everything labelled cinematic in the training data.',
     fix:
-      'Name the source and the ratio. "No fill" is worth more than any adjective you could put in front of the word lighting.',
+      'Name the source and the ratio. "No fill" does the work that no adjective in front of the word lighting can.',
   },
   {
     slug: 'style-without-artist-names',
@@ -334,7 +334,7 @@ export const promptGuides: PromptGuide[] = [
     failure:
       'An artist’s name gets you an average of everything attributed to them, which is rarely the thing you liked, and puts a name you do not own inside your production record.',
     fix:
-      'Decompose the look into medium, surface, mark, palette and absence. The absence line does more work than the other four combined.',
+      'Decompose the look into medium, surface, mark, palette and absence. The absence line is what holds the look together.',
   },
   {
     slug: 'text-in-image',
@@ -351,7 +351,7 @@ export const promptGuides: PromptGuide[] = [
     prompt:
       'The word "OPEN" in the window, uppercase, heavy condensed sans, painted directly on the glass, facing camera flat. No other text or lettering anywhere in the frame.',
     failure:
-      'Anything past a single short word degrades, and a nearly-correct word is worse than an obviously wrong one because it ships.',
+      'Anything past a single short word degrades, and a nearly-correct word is the dangerous one, because it ships.',
     fix:
       'Generate the plate without the text and set the type in post. This is not a workaround, it is how the shot should have been built.',
   },
@@ -425,7 +425,7 @@ export const promptGuides: PromptGuide[] = [
       'THE TRIGGER. Exactly as trained, once, early.',
       'MINIMAL DESCRIPTION. The model already knows the face; describing it again fights the weights.',
       'THE SHOT. Everything the training does not cover: pose, action, light, lens.',
-      'STRENGTH. Lower than the default, almost always.',
+      'STRENGTH. Below the default, almost always.',
     ],
     prompt:
       '<trigger> stands at a workbench, sleeves pushed up, sorting components into trays. Overhead fluorescent, flat and slightly green. 35mm, waist up, static. No description of her face.',
@@ -553,7 +553,7 @@ export const promptGuides: PromptGuide[] = [
     failure:
       'Everyone is articulate, everyone answers the question, and everyone says exactly what they mean, which is how nobody has ever spoken.',
     fix:
-      '"Nobody answers the question they are asked" fixes more dialogue than any note about voice.',
+      '"Nobody answers the question they are asked" fixes dialogue that no note about voice will touch.',
   },
   {
     slug: 'vsl-structure',
@@ -642,7 +642,7 @@ export const promptGuides: PromptGuide[] = [
     name: 'Outpainting a frame',
     family: 'post',
     purpose: 'Extending a composition for another ratio.',
-    when: 'Vertical cutdowns, banner crops, anything needing more frame than you generated.',
+    when: 'Vertical cutdowns, banner crops, anything needing frame you did not generate.',
     scaffold: [
       'DIRECTION AND AMOUNT.',
       'WHAT CONTINUES. The surfaces and lines running out of frame.',
@@ -673,7 +673,7 @@ export const promptGuides: PromptGuide[] = [
     failure:
       'The second clip starts from rest, so the join reads as a stutter no matter how well the frames match.',
     fix:
-      'Always state that the motion is already in progress and at what speed. Matching velocity matters more than matching pixels.',
+      'Always state that the motion is already in progress and at what speed. Match the velocity and the pixels will follow.',
   },
   {
     slug: 'upscale-and-restore',

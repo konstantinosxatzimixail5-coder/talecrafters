@@ -49,7 +49,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'Can you match our existing brand guidelines?',
-        a: 'Yes, and the mark itself is composited by hand. A model asked to draw a logo gets it nearly right, and nearly right on a logo is worse than absent.',
+        a: 'Yes, and the mark itself is composited by hand. A model asked to draw a logo gets it nearly right, and nearly right on a logo is the version everybody notices.',
       },
       {
         q: 'What happens when the output is wrong?',

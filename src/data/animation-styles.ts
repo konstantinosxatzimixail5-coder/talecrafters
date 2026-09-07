@@ -88,7 +88,7 @@ export const animationStyles: AnimationStyle[] = [
     aka: 'Pixar-flavoured, feature-animation 3D',
     color: 'var(--brand-violet-text)',
     what:
-      'Appealing proportions, soft global illumination, subsurface scattering on skin, and materials that read as slightly idealised versions of the real thing. The technical vocabulary works here better than any style name, and it avoids naming a studio.',
+      'Appealing proportions, soft global illumination, subsurface scattering on skin, and materials that read as slightly idealised versions of the real thing. The technical vocabulary is what works here, and it avoids naming a studio.',
     scaffold: [
       'State the render character: soft global illumination, subsurface scattering, gentle rim light.',
       'State proportion: large head-to-body ratio, oversized eyes, simplified hands.',
@@ -128,7 +128,7 @@ export const animationStyles: AnimationStyle[] = [
     aka: 'explainer, kinetic design, infographic animation',
     color: 'var(--brand-gold)',
     what:
-      'Vector shapes, a locked palette and a grid. This is the style where a system matters more than a look: if colour carries meaning, say what each colour means, and never let the model add a sixth colour to a five-colour system.',
+      'Vector shapes, a locked palette and a grid. This is the style where the system carries it: if colour carries meaning, say what each colour means, and never let the model add a sixth colour to a five-colour system.',
     scaffold: [
       'State the construction: flat vector shapes, no texture, no lighting.',
       'State the palette as a closed set, and what each colour means.',
@@ -192,7 +192,7 @@ export const animationStyles: AnimationStyle[] = [
     scaffold: [
       'Name the source behaviour: traced from live-action, naturalistic human weight and timing.',
       'Name the surface: painted-over, visible brush edges, line boil between frames.',
-      'Name the palette limit: rotoscope tends to work with fewer colours than you expect.',
+      'Name the palette limit: rotoscope tends to work on four or five colours.',
       'Then the shot.',
     ],
     works: ['rotoscoped', 'traced from live action', 'line boil', 'painterly fill', 'naturalistic motion, stylised surface'],

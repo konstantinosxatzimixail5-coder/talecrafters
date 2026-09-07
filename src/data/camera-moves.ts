@@ -31,7 +31,7 @@ export const families: { key: FamilyKey; name: string; note: string; color: stri
   { key: 'orbit', name: 'Orbits & Arcs', note: 'Circling the subject. Speed changes the meaning completely. The same path fast is adrenaline, slow is thought.', color: 'var(--brand-gold)' },
   { key: 'altitude', name: 'Crane & Altitude', note: 'Leaving the ground. Endings, arrivals and establishing scale, plus the moves only an imaginary camera can make.', color: 'var(--brand-cyan)' },
   { key: 'lens', name: 'Lens Moves', note: 'The camera body stays put and only the glass changes. It feels different from a dolly, and audiences know it.', color: 'var(--brand-magenta)' },
-  { key: 'handheld', name: 'Handheld & Follow', note: 'Register more than movement. This family decides whether a piece reads as documentary or as advertising.', color: 'var(--brand-gold)' },
+  { key: 'handheld', name: 'Handheld & Follow', note: 'This family is about register. It decides whether a piece reads as documentary or as advertising.', color: 'var(--brand-gold)' },
 ];
 
 export const cameraMoves: CameraMove[] = [
@@ -51,7 +51,7 @@ export const cameraMoves: CameraMove[] = [
     family: 'push-pull',
     camera: 'SLOW DOLLY OUT (PULL). The camera smoothly tracks backward from the subject, reducing their screen presence while progressively unveiling the surrounding environment.',
     prompt: 'A lone astronaut stands motionless on a barren alien plain at dusk as the camera performs a slow dolly out, gradually revealing the vast, desolate landscape under a fading purple sky.',
-    useFor: 'Isolation, or a punchline that needs the room to land in. Ends bigger than it starts.',
+    useFor: 'Isolation, or a punchline that needs the room to land in. Ends on the wide.',
   },
   {
     num: '03',
@@ -114,7 +114,7 @@ export const cameraMoves: CameraMove[] = [
     family: 'reveal',
     camera: 'LATERAL WIPE REVEAL. The frame begins fully obscured by a foreground element (wall, pillar, doorframe) and slides sideways to unveil the concealed subject.',
     prompt: 'Cinematic lateral wipe reveal from behind a concrete pillar, sliding sideways to reveal a person leaning against a wall, half-hidden and waiting, inside a stark parking garage with thick pillars and harsh overhead lights.',
-    useFor: 'A reveal that keeps the viewer waiting half a second longer than they expect.',
+    useFor: 'A reveal that keeps the viewer waiting an extra half second.',
   },
   {
     num: '10',
