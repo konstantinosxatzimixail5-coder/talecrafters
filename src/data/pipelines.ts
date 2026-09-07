@@ -74,7 +74,7 @@ export const pipelines: Pipeline[] = [
     stages: [
       { name: 'Plate', tool: 'GPT Image 2, or a phone against white', fixes: 'One clean product frame on a transparent background. Everything downstream references this file, so the bottle keeps its shape.', time: 'One hour' },
       { name: 'Label lock', tool: 'GPT Image 2', fixes: 'Small type, logos and packaging text held through edits as transparent PNGs, so the label stays readable while the set changes around it.', time: 'One hour' },
-      { name: 'Set', tool: 'Written as a specification', fixes: 'Surface, backdrop, props and lighting specified once and reused, never improvised per frame: one key, one fill, one practical, one stated colour temperature.', time: 'Half a day' },
+      { name: 'Set', tool: 'Written as a specification', fixes: 'Surface, backdrop, props and lighting specified once and reused: one key, one fill, one practical, one stated colour temperature, written down before anything renders.', time: 'Half a day' },
       { name: 'Angles', tool: 'Nano Banana Pro, GPT Image 2', fixes: 'Hero three-quarter, macro texture, flat lay, in-hand, lifestyle and splash. One set, one lighting rig, six crops for six placements.', time: 'One day' },
       { name: 'Motion', tool: 'Kling, Veo 3.1', fixes: 'Image to video for the pour, the orbit, the lid lift and the cap reveal. Eight seconds each, cut down to two for paid.', time: 'Half a day' },
       { name: 'Formats', tool: 'Photoshop, Figma Make', fixes: 'Crop matrix per placement: 1:1 grid, 4:5 feed, 9:16 Reels and TikTok, 16:9 site header, plus the marketplace sizes.', time: 'Two hours' },
@@ -108,7 +108,7 @@ export const pipelines: Pipeline[] = [
     ],
     gates: [
       { name: 'Human gate', test: 'A person signs off the brief and the final cut, at any volume.', fail: 'No exception has ever been worth it.' },
-      { name: 'Rights gate', test: 'Model licence checked for commercial use under the client terms.', fail: 'Swap the model before rendering, never after.' },
+      { name: 'Rights gate', test: 'Model licence checked for commercial use under the client terms.', fail: 'Swap the model before rendering.' },
       { name: 'Secret gate', test: 'No keys, client data or unreleased assets inside a prompt.', fail: 'Rotate the key and route through the connector.' },
       { name: 'Cost gate', test: 'Credit ceiling per asset agreed before a batch starts.', fail: 'The job halts and asks for a decision.' },
     ],

@@ -548,7 +548,7 @@ Two figures only, screen sides fixed. End the block on a static frame with both 
         num: '05',
         name: 'PERFORMANCE',
         tool: 'tig-acting-task',
-        body: 'For the beats where a stance carries the story, the character is given a task to play instead of a face to pull. Stance, weight shift and head angle are written as doing, not as mood.',
+        body: 'For the beats where a stance carries the story, the character gets a task to play. Stance, weight shift and head angle are all written as doing.',
       },
       {
         num: '06',
@@ -616,7 +616,7 @@ Two figures only, screen sides fixed. End the block on a static frame with both 
       },
     ],
     stackNote:
-      'The prompt is an engineering document, not copy. Every failed generation costs money and time.',
+      'The prompt is an engineering document. Every failed generation costs money and time.',
     look: [
       {
         key: 'Animation style',
@@ -637,7 +637,7 @@ Two figures only, screen sides fixed. End the block on a static frame with both 
       {
         key: 'Camera grammar',
         lines: [
-          'Wide lenses for the arena and the run, long lenses for the duel. Scale comes from lens choice, not from stacking effects.',
+          'Wide lenses for the arena and the run, long lenses for the duel. Scale comes from the lens.',
           'The camera behaves like an operator on the deck: it can be knocked, it cannot fly.',
           'Cuts land on motion. Whip pans, blade passes and the explosion flash cover the joins between generations.',
         ],
@@ -666,7 +666,7 @@ Two figures only, screen sides fixed. End the block on a static frame with both 
       {
         name: 'Weapon colour bleed',
         symptom: 'Magenta crept onto the katana and blue onto the poleblade.',
-        lock: 'Colour ownership stated as a positive rule next to the blocking, not as a list of things to avoid.',
+        lock: 'Colour ownership stated as a positive rule, written next to the blocking.',
       },
       {
         name: 'Flat front light',
@@ -1177,7 +1177,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
         body: 'Turns a beat into a production-ready Seedance prompt: blocking, optics, timing, physics, lighting locks, audio. Chase-camera work lives or dies on the distance and height being written down.',
       },
     ],
-    stackNote: 'Speed is written, not wished for. Metres, seconds and one direction of travel.',
+    stackNote: 'Speed is written down. Metres, seconds and one direction of travel.',
     look: [
       {
         key: 'Animation style',
@@ -1395,7 +1395,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
         num: '05',
         name: 'Performance pass',
         tool: 'Higgsfield',
-        body: 'Motion on each block, directed to the listening, never the speaking. The reaction is generated first and the line is timed to it.',
+        body: 'Motion on each block, directed to the listening. The reaction is generated first and the line is timed to it.',
       },
       {
         num: '06',
@@ -1416,7 +1416,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
       { name: 'Showrunner', role: 'Episodic engine', body: 'Holds the scene and the two characters across four beats. The reason this is a scene and not four clips.' },
       { name: 'Nano Banana 2', role: 'Design', body: 'Character sheets and the colony plates, locked before the first shot.' },
       { name: 'ChatGPT Image 2', role: 'Design', body: 'Set dressing and the second pass on the habitat and tower.' },
-      { name: 'Higgsfield', role: 'Motion', body: 'The performance passes. Directed at the listener, not the speaker.' },
+      { name: 'Higgsfield', role: 'Motion', body: 'The performance passes. Directed at whoever is listening.' },
       { name: 'ElevenLabs', role: 'Voice', body: 'Both reads, retimed against the motion.' },
       { name: 'CapCut', role: 'Assembly', body: 'Cut, mix and burned-in subtitles.' },
     ],

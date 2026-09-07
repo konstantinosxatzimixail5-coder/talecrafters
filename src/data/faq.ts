@@ -45,7 +45,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'How do you keep a character or product consistent?',
-        a: 'By locking it before the set exists. A face is trained once from a sheet of twenty-plus stills and every scene is generated from that identity. A product is locked as a master plate and every angle references that file. Then each output is checked against the lock, never against the previous frame.',
+        a: 'By locking it before the set exists. A face is trained once from a sheet of twenty-plus stills and every scene is generated from that identity. A product is locked as a master plate and every angle references that file. Then each output is checked against the lock itself, so drift has nothing to compound against.',
       },
       {
         q: 'Can you match our existing brand guidelines?',
@@ -67,7 +67,7 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: 'Who owns the output?',
-        a: 'You do, on delivery, along with the reusable assets underneath it: the master plate, the trained identity, the set specification. A system you cannot operate without us is a dependency, not an asset.',
+        a: 'You do, on delivery, along with the reusable assets underneath it: the master plate, the trained identity, the set specification. A system you cannot operate without us is a dependency.',
       },
       {
         q: 'Do you disclose AI-generated content?',
@@ -79,7 +79,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'Is the work licensed for commercial use?',
-        a: 'Model licences are checked for commercial use under your terms before rendering, never after. If a model’s licence does not clear, we swap the model. The paperwork stays as it is.',
+        a: 'Model licences are checked for commercial use under your terms before rendering. If a model’s licence does not clear, we swap the model. The paperwork stays as it is.',
       },
       {
         q: 'What about our data?',

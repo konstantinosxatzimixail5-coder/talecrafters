@@ -22,7 +22,7 @@ export const writing: WritingItem[] = [
     summary:
       'Long-form VSLs, ninety-second cutdowns and hook batteries built to be tested against each other.',
     detail:
-      'A VSL is not a film with a price at the end. It is an argument with a defined failure point, and the writing job is knowing where the audience stops believing you and putting the proof there. We write the full script, then the hook battery: a dozen openings for the same body, because the opening is the variable that moves the number and the body is the one that does not.',
+      'A VSL is an argument with a defined failure point. The writing job is knowing where the audience stops believing you, and putting the proof exactly there. We write the full script, then the hook battery: a dozen openings for the same body, because the opening is the variable that moves the number.',
     form: 'VSL scripts, 90-second cutdowns, hook batteries, three-script tests on one product',
   },
   {

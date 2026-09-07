@@ -99,7 +99,7 @@ export const work: CaseStudy[] = [
     method:
       'Phantom Set, which is the pipeline for any subject a person can hold up against the picture. One master plate per dish, locked first: crockery, garnish, light, angle. Every later frame is generated from that plate, so the plating cannot wander between shots.',
     gates: [
-      { name: 'Label gate', test: 'Zoom to full resolution and read every printed word in frame. A fail returns to the master plate, never to a retouching tool.' },
+      { name: 'Label gate', test: 'Zoom to full resolution and read every printed word in frame. A fail returns to the master plate. No retouching tool.' },
       { name: 'Silhouette gate', test: 'Lay the render over the master plate at 40% opacity. Any shift in the outline of the plate kills the frame.' },
       { name: 'Kitchen gate', test: 'Somebody who cooks the dish looks at it and says whether it is theirs.' },
     ],
@@ -143,14 +143,14 @@ export const work: CaseStudy[] = [
       },
       {
         youtubeId: 'Ql-5EMhXTZQ',
-        title: 'Restaurant showcase, from the room as it stands',
+        title: 'Restaurant film, from the room as it stands',
         note: 'The terrace at dusk, built out of the restaurant’s own photography and its Google Maps imagery. Tables, decking and the olive tree in the middle are where they stand in the room, so a diner who has eaten there recognises the room.',
         duration: 'PT0M15S',
         uploadDate: '2026-01-20',
         ratio: '9:16',
         poster: 'mariposa/showcase',
         posterAlt:
-          'A frame from the showcase: the Mariposa terrace from above at dusk, laid tables on dark decking around a mature olive tree.',
+          'A frame from the film: the Mariposa terrace from above at dusk, laid tables on dark decking around a mature olive tree.',
       },
     ],
   },
@@ -268,7 +268,7 @@ export const work: CaseStudy[] = [
     videos: [
       {
         youtubeId: 'ijdaD3ktY8E',
-        title: 'Indian Elite showcase, studio cut',
+        title: 'Indian Elite film, studio cut',
         note: 'One of several films made for the dealership: a slow orbit of the Elite on a black studio floor. No studio was hired and no bike was moved. The badge, the gold pinstripe, the pannier lettering and the spoke count are the plate, held frame to frame while the light travels around it.',
         duration: 'PT0M10S',
         uploadDate: '2026-02-04',
@@ -290,9 +290,9 @@ export const work: CaseStudy[] = [
     featured: true,
     accent: 'var(--brand-magenta)',
     summary:
-      'A dynamic, if unconventional, content calendar that blended pop culture with data education, and lifted the brand image with it.',
+      'An unconventional content calendar that put pop culture next to data education, and lifted the brand image with it.',
     problem:
-      'Big Blue Data Academy teaches data science to career changers. The audience is on a phone, mid-scroll, and has already learned to skip anything shaped like a course advert. The ask was volume: not one film with a long approval cycle, but a run of short pieces that could go out week after week and keep working. We ran the social strategy and the paid media campaigns, from the brainstorm to the final cut.',
+      'Big Blue Data Academy teaches data science to career changers. The audience is on a phone, mid-scroll, and has already learned to skip anything shaped like a course advert. The ask was volume: a run of short pieces that could go out week after week and keep working, with no long approval cycle attached to any of them. We ran the social strategy and the paid media campaigns, from the brainstorm to the final cut.',
     idea:
       'Invert the house style. Volume and sameness normally arrive together: a house style makes the second piece cheap and the fifth piece invisible, because by then the audience has learned the shape of it. So the constraint was set the other way: every piece had to look like it came from a different production company, and the brand had to survive all of them.',
     made: [
@@ -311,9 +311,9 @@ export const work: CaseStudy[] = [
       { label: 'Plate sets', detail: 'One per register, nothing reused between them' },
     ],
     method:
-      'Operator Stack: the pipeline for work where the value sits in the run, not in any single film. The registers were chosen first and written down as a list before a frame was made, so that no two briefs could drift into the same look under deadline. A register is a decision about lighting model, edge quality and how much the world is allowed to be wrong. Each got its own plate set and prompt vocabulary, and nothing was reused between them, because reuse is exactly what produces the sameness the job was built to avoid.',
+      'Operator Stack: the pipeline for work where the value sits in the run across every film. The registers were chosen first and written down as a list before a frame was made, so that no two briefs could drift into the same look under deadline. A register is a decision about lighting model, edge quality and how much the world is allowed to be wrong. Each got its own plate set and prompt vocabulary, and nothing was reused between them, because reuse is exactly what produces the sameness the job was built to avoid.',
     gates: [
-      { name: 'Brand gate', test: 'The mark, the blue and the lockup survive a register change without being redrawn. The mark is composited, never generated: a model asked to draw a logo gets it nearly right, and nearly right on a logo is worse than absent.' },
+      { name: 'Brand gate', test: 'The mark, the blue and the lockup survive a register change without being redrawn. The mark is composited by hand: a model asked to draw a logo gets it nearly right, and nearly right on a logo is worse than absent.' },
       { name: 'Anatomy gate', test: 'Every frame with a held object gets checked before it enters a cut. Cartoon registers fail here first: a magnifier, a guitar neck, a clipboard held by something with no thumbs.' },
     ],
     hero: {
@@ -335,7 +335,7 @@ export const work: CaseStudy[] = [
       { stage: 'Register list', tool: 'Fixed before any frame' },
       { stage: 'Plates', tool: 'Nano Banana Pro, separate set per register' },
       { stage: 'Motion', tool: 'Higgsfield Cinema Studio' },
-      { stage: 'Mark', tool: 'Composited in the cut, never generated' },
+      { stage: 'Mark', tool: 'Composited in the cut, by hand' },
       { stage: 'Cut', tool: 'CapCut' },
       { stage: 'Implementation', tool: 'Google Veo 3' },
       { stage: 'Creative ideation', tool: 'Canva' },
@@ -375,7 +375,7 @@ export const work: CaseStudy[] = [
     method:
       'Identity Lock for the presenters, Phantom Set for the pouch, and the two lines meet at the frame where a hand touches packaging. Casting brief first, then twenty-plus stills of one face at varied angles under even light, then a trained identity that carries across sessions without re-uploading a reference. Voice is cloned per presenter and timed to the performance, because three people who share one read are three people nobody believes.',
     gates: [
-      { name: 'Label gate', test: 'Zoom to full resolution and read every word on the front of the pouch. A fail returns to the plate, never to a retouching pass.' },
+      { name: 'Label gate', test: 'Zoom to full resolution and read every word on the front of the pouch. A fail returns to the plate. No retouching pass.' },
       { name: 'Hand gate', test: 'Every frame where fingers touch the pouch gets frozen and checked. A bad one gets rerolled or cropped above the wrist.' },
       { name: 'Consent gate', test: 'Signed release for the voice and the likeness reference. Nothing renders until both sit in the folder.' },
       { name: 'Disclosure gate', test: 'These presenters are synthetic and the ads carry that. A creator ad that hides what it is fails here before it fails anywhere else.' },
@@ -498,7 +498,7 @@ export const work: CaseStudy[] = [
     videos: [
       {
         youtubeId: 'xPn8yF-_3KY',
-        title: 'Secure Energy Communities — pilot film',
+        title: 'Secure Energy Communities, pilot film',
         note: 'The objectives and the two milestones, set as cards over the array, then a vertical site tour framed inside a solar cell: the van, the drive to Halkidiki, the gate, the control cabin, the inverter and the logging kit, closing on the HEDNO researcher in front of the rows. The one film on this engagement built from footage.',
         duration: 'PT1M48S',
         uploadDate: '2025-09-03',
@@ -543,7 +543,7 @@ export const work: CaseStudy[] = [
       'Everything starts from the source images. They are cleaned and upscaled first, then image-to-video is driven with camera moves that respect the geometry of each room, so the walls stay where they are and the viewer reads one continuous space. The voice model is trained on the presenter\u2019s own audio, timed to the performance and lip-synced. The final grade is matched to the light in the original photography, because a room that is graded away from its own stills stops being that room.',
     gates: [
       { name: 'Geometry gate', test: 'Walls, openings and floor lines must hold across a move. A room that changes shape between two seconds of footage goes back to the source still.' },
-      { name: 'Voice gate', test: 'The delivery on screen has to match the person who picks up the phone. Trained on their own recordings, never on a stock read.' },
+      { name: 'Voice gate', test: 'The delivery on screen has to match the person who picks up the phone. Trained on their own recordings.' },
       { name: 'Grade gate', test: 'The final grade matches the light in the original photography, so the film and the listing pictures read as the same property.' },
     ],
     hero: {
@@ -587,7 +587,7 @@ export const work: CaseStudy[] = [
     summary:
       'An invented energy drink, given the product shoot and the out-of-home spot a real launch would buy. Nobody commissioned it, which is the point: the label had nowhere to hide.',
     problem:
-      'Product photography is where generative work gets caught. Not on the lighting, which models are good at, but on the four square centimetres of printed label a buyer holds up to their face. The FERAL can is the hard version of that: a halftone build with a magenta offset behind green type, the wordmark repeated down the body, and a small black box under it reading YUZU STATIC. Getting that right once is luck. Getting it right across five sets, a night city, a creator’s hand and an animated billboard is a pipeline.',
+      'Product photography is where generative work gets caught, on the four square centimetres of printed label a buyer holds up to their face. Models handle the lighting fine. The FERAL can is the hard version of that: a halftone build with a magenta offset behind green type, the wordmark repeated down the body, and a small black box under it reading YUZU STATIC. Getting that right once is luck. Getting it right across five sets, a night city, a creator’s hand and an animated billboard is a pipeline.',
     idea:
       'Build the can once and never rebuild it. One master plate carries the label, the finish and the proportions, and every later frame is generated from that file, so the type cannot drift when the light and the surface change underneath it. Then take the hardest possible delivery for it: an anamorphic billboard where the can breaks the frame of the board it is printed on, over a wet night city, with liquid and cut fruit crossing the edge. A 3D break-out ad is a format that punishes any wobble in the object, because the viewer is being asked to read the same can as flat artwork and as a solid thing in the same second.',
     made: [
@@ -608,8 +608,8 @@ export const work: CaseStudy[] = [
     method:
       'Phantom Set for the can and Identity Lock for the creator, run as two separate lines that meet only where a hand touches the product. The plate is made first and nothing is generated from a text description of the can after that. The billboard is built the other way round: the board is set as a flat surface in a night street, the can is composited as the object breaking out of it, and the lighting on the street has to agree with the lighting on the can or the illusion dies in the first second.',
     gates: [
-      { name: 'Label gate', test: 'Zoom to full resolution and read every printed word: the wordmark, the halftone offset behind it and the YUZU STATIC box. A fail returns to the plate, never to a retouching tool.' },
-      { name: 'Break-out gate', test: 'The part of the can that leaves the board has to cast and receive light from the street, not from the artwork. If it reads as a sticker, the frame is dead.' },
+      { name: 'Label gate', test: 'Zoom to full resolution and read every printed word: the wordmark, the halftone offset behind it and the YUZU STATIC box. A fail returns to the plate. No retouching tool.' },
+      { name: 'Break-out gate', test: 'The part of the can that leaves the board has to cast and receive light from the street it stands on. If it reads as a sticker, the frame is dead.' },
       { name: 'Drift gate', test: 'Stack the five sets and flick through them. Proportions, finish and type position have to sit still while everything around them changes.' },
     ],
     hero: {
@@ -637,7 +637,7 @@ export const work: CaseStudy[] = [
     videos: [
       {
         youtubeId: '5VgtoylYaFw',
-        title: 'FERAL — anamorphic billboard',
+        title: 'FERAL, anamorphic billboard',
         note: 'The can leaving the board over a wet night street, liquid and cut fruit crossing the frame. Built from the same locked plate as the five product sets, which is the only reason the wordmark survives being read as artwork and as a solid object in the same shot.',
         duration: 'PT0M8S',
         uploadDate: '2026-02-11',

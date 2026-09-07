@@ -33,7 +33,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'This is the failure that kills most generative product work, and it is not solved by better prompting. It is solved by refusing to let the model invent the product more than once.',
+      text: 'This is the failure that kills most generative product work. The fix is to let the model invent the product exactly once, then hold it to that file for every frame afterwards.',
     },
     { t: 'h2', text: 'What a master plate is' },
     {

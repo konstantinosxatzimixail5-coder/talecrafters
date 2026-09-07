@@ -50,7 +50,7 @@ export const solutions: Solution[] = [
     title: 'GENERATIVE VIDEO',
     accentWord: 'PRODUCTION',
     plainName: 'Generative video production',
-    metaTitle: 'Generative Video Production — Films, Ads and Social, Built on Named Pipelines',
+    metaTitle: 'Generative Video Production: Films, Ads and Social, Built on Named Pipelines',
     metaDescription:
       'Generative video production for brands: commercials, brand films, product cinematics and short-form, built on hybrid generative and post-production workflows with named control gates. Two days for a still set, four days from casting brief to nine finished variants.',
     keywords: [
@@ -74,13 +74,13 @@ export const solutions: Solution[] = [
     body: [
       'Most generative video fails in the same place. A model produces a beautiful eight-second clip, the brand looks at it, and nobody can say what happens when they need forty more that match. The frame was never the hard part. The hard part is a set of frames that hold the same product, the same face and the same light across a campaign, on a deadline, inside a budget somebody agreed in advance.',
       'So we lock things before we generate. A product becomes a master plate: one clean frame, correct shape, correct label, referenced by every later angle. A presenter becomes a trained identity built from a sheet of stills, reused across sessions without re-uploading a reference. A set becomes a written specification with one key direction and one stated colour temperature. Only then does anything move.',
-      'After generation, four tests. Read every printed word at full resolution. Overlay each render on its plate at forty per cent opacity and check the outline. Hold one light direction across the whole set. Let no invented certification, award or ingredient claim survive. A frame that fails goes back to its source file, never into a retouching pass, because patching produces a shot that passes and a set that still drifts.',
+      'After generation, four tests. Read every printed word at full resolution. Overlay each render on its plate at forty per cent opacity and check the outline. Hold one light direction across the whole set. Let no invented certification, award or ingredient claim survive. A frame that fails goes back to its source file. Patching produces a shot that passes and a set that still drifts.',
       'What a client buys is the second half of that paragraph. The generation is cheap. The discipline around it is the job.',
     ],
     deliverables: [
       { name: 'Brand films', detail: 'Hero pieces, 30 to 90 seconds, with a named pipeline behind each one' },
       { name: 'Commercials and product cinematics', detail: 'Plate-locked, label-checked, cut for the placements you run' },
-      { name: 'Short-form', detail: '9:16 and 4:5 cutdowns, built into the shoot, never cropped out of it afterwards' },
+      { name: 'Short-form', detail: '9:16 and 4:5 cutdowns, built into the shoot' },
       { name: 'Creator-style pieces', detail: 'Presenter to camera, trained identity, room lighting' },
       { name: 'Product stills', detail: 'Thirty frames for selection, then ninety frames and six clips' },
       { name: 'The reusable files', detail: 'Master plates, trained identities and set specifications, handed over' },
@@ -120,7 +120,7 @@ export const solutions: Solution[] = [
     title: 'A SYNTHETIC MEDIA',
     accentWord: 'STUDIO',
     plainName: 'Synthetic media studio',
-    metaTitle: 'Synthetic Media Studio — What One Is and How to Pick One',
+    metaTitle: 'Synthetic Media Studio: What One Is and How to Pick One',
     metaDescription:
       'TaleCrafters is a synthetic media studio: films, campaigns, product photography, synthetic UGC and the systems that produce them. What a synthetic media studio does, what to ask one, and where the work goes wrong.',
     keywords: [
@@ -133,7 +133,7 @@ export const solutions: Solution[] = [
     ],
     color: 'var(--brand-cyan)',
     lede:
-      'Synthetic media is any image, video, audio or text produced or materially altered by a generative model. A studio that works in it well is not one that generates the most. It is one that knows which half of a piece should be synthetic and which absolutely should not.',
+      'Synthetic media is any image, video, audio or text produced or materially altered by a generative model. A studio that works in it well knows which half of a piece should be synthetic and which half belongs in front of a lens.',
     meta: [
       { label: 'Category', value: 'Synthetic media production' },
       { label: 'Registered', value: 'London, United Kingdom' },
@@ -143,7 +143,7 @@ export const solutions: Solution[] = [
     body: [
       'The term is broader and more useful than "AI content", because it covers the middle ground where most professional work sits: a real shoot with a generated environment, a real product with a generated set, a real voice with a generated read. That middle ground is where a studio earns its fee, and it is also where the disclosure question gets interesting.',
       'Almost anyone can produce a striking single frame now. What separates a studio from a subscription is everything the frame does not show you: whether the packaging type survives a full-resolution zoom, whether the presenter has the same jawline in advert nine as in advert one, whether the light comes from the same direction across the set, and whether a person with authority signed off before it went live.',
-      'Ask any studio you are considering four things. What is locked before you generate anything? What is the test that a frame has to pass, and what happens when it fails? Who owns the reusable files afterwards? And what is your cost per accepted asset, not per generation? A studio that cannot answer those is selling you the cheapest part of the job.',
+      'Ask any studio you are considering four things. What is locked before you generate anything? What is the test that a frame has to pass, and what happens when it fails? Who owns the reusable files afterwards? And what is your cost per accepted asset? A studio that cannot answer those is selling you the cheapest part of the job.',
       'Our answers sit on this site, in public, where you can read them before you email anybody. Three of our seven production pipelines are published in full, with their stages, their timings and the four gates each one fails on. Every delivered engagement carries the problem, the idea, what we made and the artefacts the client kept. Over a hundred terms are defined the way a producer needs them.',
     ],
     deliverables: [
@@ -220,14 +220,14 @@ export const solutions: Solution[] = [
       'A prompt gets you one answer. An agentic workflow gets you a sequence: the model reads the brief, calls the tools it needs, checks its own output against a rule, and stops at the points where a person has to decide. The difference that matters commercially is not intelligence, it is scope. One is a reply. The other is a job that runs.',
       'The engineering is unglamorous and it is where the value sits. A directory of skills the model can load. Connectors into the software the team already runs. A naming convention so the outputs are findable next quarter. A ledger recording cost per accepted asset. Teams that skip that part get a demo that works once, in front of an audience, and never again.',
       'The engagement is three steps. Half a day mapping how the work runs today, with an owner written against every step: what a person decides, what a model drafts, what a script handles alone at four in the morning. One to two weeks building the skills, the code, the connectors and an interface a non-technical person can operate. Then a live walkthrough, and we leave.',
-      'Four rules hold across everything we build. A person signs off the brief and the final cut, at any volume. Model licences clear for commercial use before rendering, never after. No keys, client data or unreleased assets go inside a prompt. A credit ceiling per asset is agreed before a batch starts, and the job halts and asks for a decision before it spends past that ceiling.',
+      'Four rules hold across everything we build. A person signs off the brief and the final cut, at any volume. Model licences clear for commercial use before rendering. No keys, client data or unreleased assets go inside a prompt. A credit ceiling per asset is agreed before a batch starts, and the job halts and asks for a decision before it spends past that ceiling.',
     ],
     deliverables: [
       { name: 'Content production systems', detail: 'Brief in, brand-correct assets out, with naming and versioning attached' },
       { name: 'Agentic workflows', detail: 'Skills, tools and connectors wired into the software you already run' },
       { name: 'Repurposing engines', detail: 'One article into nine assets: cutdowns, carousels, infographic frames, a podcast read' },
       { name: 'Research and lead-gen workflows', detail: 'Find it, qualify it, put it in front of a person in a format they can act on' },
-      { name: 'Internal tools and prototypes', detail: 'Lightweight applications that run, not mockups' },
+      { name: 'Internal tools and prototypes', detail: 'Lightweight applications that run' },
       { name: 'The cost ledger', detail: 'Run log and cost per accepted asset, which is what makes this explainable to finance' },
     ],
     pipelines: ['operator-stack'],
@@ -252,7 +252,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'Where does the system live afterwards?',
-        a: 'Inside your own accounts. A system you cannot operate without us is a dependency, not an asset.',
+        a: 'Inside your own accounts. A system you cannot operate without us is a dependency.',
       },
     ],
     cta: {
@@ -265,7 +265,7 @@ export const solutions: Solution[] = [
     title: 'AI VIDEO PRODUCTION',
     accentWord: 'IN LONDON',
     plainName: 'AI video production in London',
-    metaTitle: 'AI Video Production, London — Generative Film and Campaign Studio',
+    metaTitle: 'AI Video Production, London: Generative Film and Campaign Studio',
     metaDescription:
       'A London-registered synthetic media studio producing AI video, generative brand films, commercials and social campaigns for UK, European and US brands. Named pipelines, control gates, and a date with the quote.',
     keywords: [
@@ -278,9 +278,9 @@ export const solutions: Solution[] = [
     ],
     color: 'var(--brand-gold)',
     lede:
-      'Registered in London, working across the UK, Europe and the United States. The production is remote-native by construction, which means the useful question is not where we sit but what we lock before we generate anything.',
+      'Registered in London, working across the UK, Europe and the United States. The production is remote-native by construction, which means the useful question is what we lock before we generate anything.',
     meta: [
-      { label: 'Registered office', value: '71–75 Shelton Street, Covent Garden, London' },
+      { label: 'Registered office', value: '71-75 Shelton Street, Covent Garden, London' },
       { label: 'Working', value: 'UK, Europe, United States' },
       { label: 'Languages', value: 'English, Greek' },
       { label: 'Delivered', value: 'Hospitality, energy, education, retail, consulting' },
@@ -296,7 +296,7 @@ export const solutions: Solution[] = [
       { name: 'Social campaigns', detail: 'Runs built in multiple registers so the fifth piece still gets watched' },
       { name: 'Product and food photography', detail: 'Plate-locked, label-checked stills' },
       { name: 'Paid social creative', detail: 'Trained presenters across many openings and asks' },
-      { name: 'Websites and digital experiences', detail: 'Designed and shipped, not mocked up' },
+      { name: 'Websites and digital experiences', detail: 'Designed and shipped' },
       { name: 'White-label production', detail: 'For agencies and studios, under NDA, without credit' },
     ],
     pipelines: ['phantom-set', 'identity-lock', 'operator-stack'],
@@ -305,7 +305,7 @@ export const solutions: Solution[] = [
     faqs: [
       {
         q: 'Are you based in London?',
-        a: 'TaleCrafters Ltd is registered at 71–75 Shelton Street, Covent Garden, London. The production is remote-native and the team works across the UK and Europe, so treat London as the contracting and invoicing answer. It is not a claim about where every frame gets made.',
+        a: 'TaleCrafters Ltd is registered at 71-75 Shelton Street, Covent Garden, London. The production is remote-native and the team works across the UK and Europe, so treat London as the contracting and invoicing answer. It is not a claim about where every frame gets made.',
       },
       {
         q: 'Do you work with London agencies?',
@@ -331,7 +331,7 @@ export const solutions: Solution[] = [
     title: 'AI VIDEO PRODUCTION',
     accentWord: 'IN GREECE',
     plainName: 'AI video production in Greece',
-    metaTitle: 'AI Video Production in Greece — Generative Film and Campaign Studio',
+    metaTitle: 'AI Video Production in Greece: Generative Film and Campaign Studio',
     metaDescription:
       'Generative video, brand films, synthetic food and product photography and creative automation for Greek brands, hotels, restaurants and agencies. Three delivered engagements in Greece, UK contracting, work and reporting in English.',
     keywords: [
@@ -356,8 +356,8 @@ export const solutions: Solution[] = [
       { label: 'Travel', value: 'Not required for any of it' },
     ],
     body: [
-      'Greek brands hit the same wall as everybody else, only sooner, because the budgets are tighter and a two-day shoot with a crew, a stylist and a food photographer is often simply not happening. A restaurant on Rhodes came to us with a menu that had never been photographed and no realistic way to photograph it in season. What it got was a set of plate-locked stills, a ninety-second film and a website, produced without a camera ever arriving.',
-      'That is the honest case for generative production in this market. Not that it is more impressive than a shoot, but that it exists at a price and a timescale where the shoot does not. A hotel that needs forty rooms shot before June, a dealership with a bike that has not landed yet, a school that needs seven pieces in seven registers before an intake closes: those are the briefs where the arithmetic changes.',
+      'Greek brands hit the same wall as everybody else, only sooner, because the budgets are tighter and a two-day shoot with a crew, a stylist and a food photographer is often not happening. A restaurant on Rhodes came to us with a menu that had never been photographed and no realistic way to photograph it in season. What it got was a set of plate-locked stills, a ninety-second film and a website, produced without a camera ever arriving.',
+      'That is the honest case for generative production in this market. It exists at a price and a timescale where a shoot does not. A hotel that needs forty rooms shot before June, a dealership with a bike that has not landed yet, a school that needs seven pieces in seven registers before an intake closes: those are the briefs where the arithmetic changes.',
       'The method does not change by country. A product becomes a master plate before anything is generated. A presenter becomes a trained identity built from a sheet of stills. A set becomes a written specification with one key direction and one stated colour temperature. Then every frame is tested against the lock: read the printed words at full resolution, overlay the render on its plate at forty per cent, hold one light direction across the set, and let no invented claim survive.',
       'Everything is delivered, briefed and reported in English. Treatments and breakdowns have been written in Greek before and can be again, but the working language of the engagement, the documentation and this site is English, and we would rather say that plainly than imply a bilingual service we do not run.',
       'Contracting is through the UK entity. For a Greek client that means a UK invoice and, for VAT-registered businesses in Greece, the usual EU reverse-charge treatment, which your accountant will find unremarkable. Nothing about the production requires anybody to be in the same country, which is how all three of the engagements below were made.',
@@ -410,7 +410,7 @@ export const solutions: Solution[] = [
     title: 'CONTENT & COMMUNICATIONS',
     accentWord: 'STRATEGY',
     plainName: 'Content and communications strategy',
-    metaTitle: 'Content & Communications Strategy — Positioning, Messaging and the Plan Under It',
+    metaTitle: 'Content & Communications Strategy: Positioning, Messaging and the Plan Under It',
     metaDescription:
       'Content and communications strategy for brands that already produce plenty and are not landing: positioning, message architecture, the register map, the channel plan and the measurement that tells you which part is working.',
     keywords: [
@@ -431,11 +431,11 @@ export const solutions: Solution[] = [
       { label: 'Engagement', value: 'Two to four weeks' },
       { label: 'You get', value: 'Positioning, message architecture, channel plan' },
       { label: 'Runs on', value: 'Your team, with or without us' },
-      { label: 'Measured by', value: 'What moves, not what publishes' },
+      { label: 'Measured by', value: 'What moves' },
     ],
     body: [
       'The symptom is always the same. A team is publishing steadily, the calendar is full, and nothing compounds. Ask five people in that company what the brand claims and you get five answers, all reasonable, none the same. That is not an execution problem and more execution will not fix it.',
-      'So the first artefact is a claim. One sentence a stranger could act on, that the company can support, and that is not true of its three closest competitors. Most of the work is the last clause: a claim everyone in the category could make is a description, not a position.',
+      'So the first artefact is a claim. One sentence a stranger could act on, that the company can support, and that is not true of its three closest competitors. Most of the work is the last clause: a claim everyone in the category could make is a description.',
       'Under it goes the message architecture: the two or three arguments that carry the claim, the evidence each one rests on, and the objection each one exists to answer. This is what turns a brand voice document from a list of adjectives into something a writer can use at four in the afternoon.',
       'Then the register map. The same argument sounds different on a landing page, in a founder post, in a paid script and in an answer-engine snippet, and a team without a register map flattens all four into the same middle voice. We write the registers down and give each one a rule about what it may and may not do.',
       'Last is the plan, and the plan is mostly subtraction. Which channels to stop, which formats to stop, and what the remaining capacity buys. A strategy that adds work to a team already at capacity is a strategy nobody will follow past week three.',
@@ -501,7 +501,7 @@ export const solutions: Solution[] = [
     ],
     color: 'var(--brand-magenta)',
     lede:
-      'Advertising built to run, not to screen once. The hero cut and every variant around it come out of a single pass, sized for the placements your media plan buys.',
+      'Advertising built to run and keep running. The hero cut and every variant around it come out of a single pass, sized for the placements your media plan buys.',
     meta: [
       { label: 'Formats', value: 'Paid social, pre-roll, connected TV, display' },
       { label: 'Turnaround', value: '5 to 15 working days' },
@@ -512,10 +512,10 @@ export const solutions: Solution[] = [
       'Most video ad production stalls on a question nobody asks early enough: what happens when the media plan wants forty executions by Friday? A single beautiful cut is a portfolio piece. Paid channels need hooks tested against offers, each sized for placements that crop differently, delivered before the buying window shuts. A studio priced per film cannot answer without repricing the job, and by then the flight has started.',
       'Agencies respond by quoting a second project, which lands after the results that would have justified it. In-house teams shoot everything up front instead, committing to messaging before a single figure returns. Both routes trade away what performance advertising exists for, namely learning which argument persuades while budget remains to act on the lesson.',
       'So the grid comes before the camera moves. A brief turns into labelled coordinates: three openings, two propositions, four aspect ratios, each combination named so a buyer reading the report knows which one earned its spend. The hero piece sits inside that structure and is shot to carry everything else around it. Remaining executions come out of that same pass, which is why our nine-by-sixteen never resembles a landscape frame with the sides amputated.',
-      'Generation sits in the middle of a disciplined process, never at the front of it. A product becomes a master plate: one clean capture, true silhouette, legible label, referenced by every angle that follows. A presenter starts life as a trained identity built from a sheet of stills, reused across sessions with nothing re-uploaded. Environments are written down as specifications carrying a stated key direction and colour temperature, agreed before anything renders.',
+      'Generation sits in the middle of a disciplined process. A product becomes a master plate: one clean capture, true silhouette, legible label, referenced by every angle that follows. A presenter starts life as a trained identity built from a sheet of stills, reused across sessions with nothing re-uploaded. Environments are written down as specifications carrying a stated key direction and colour temperature, agreed before anything renders.',
       'Four tests run before a buyer sees anything. Printed copy is read at full resolution, including the small type everyone assumes nobody inspects. Each render lies over its plate at forty per cent opacity, so a drifting outline appears as a measurable offset instead of a hunch. Lighting holds one direction throughout the campaign. No invented certification, award or ingredient claim survives, since a legal team catching that after launch costs more than the shoot did.',
       'Delivery is a folder. Masters at the size and codec each platform demands, captions burned and supplied separately, thumbnails lifted from finished frames, plus a naming convention that survives contact with an advertising account. Beneath those sit the reusable sources: plates, identities, environment documents. Hire us twice and a second campaign begins from assets you already hold, which is the only honest route to a falling price.',
-      'Cost per accepted asset is the number we report against, not the price of a render. A method yielding ninety frames cheaply where three prove legally usable is worse value than a slower one clearing eighty per cent of what it produces. Every attempt is logged with its spend and its verdict, and the ledger transfers with the files. Finance reads it unaided, which tends to be what releases a further budget.',
+      'Cost per accepted asset is the number we report against. A method yielding ninety frames cheaply where three prove legally usable is worse value than a slower one clearing eighty per cent of what it produces. Every attempt is logged with its spend and its verdict, and the ledger transfers with the files. Finance reads it unaided, which tends to be what releases a further budget.',
       'Scale is where this either compounds or collapses. A range covering nine products and four markets means thirty-six variations of every execution, and a conventional supplier bills each as a separate deliverable. Because our environments and identities persist, the last one costs a fraction of the opening. Localisation follows the same economics: swapping a caption, a currency or a spoken language means re-rendering the affected shots against documents that already exist. Nobody commissions a fresh crew in another country.',
       'None of this makes creative judgement optional. Somebody still has to decide what the advertisement argues, which objection it meets, and whether the opening two seconds deserve the attention they are asking for. Machinery removes the excuses that once concealed a weak proposition: the schedule, the location, the reshoot bill. What remains is the idea itself, tested properly, which is an uncomfortable place to stand and a far better one to sell from.',
     ],
@@ -549,11 +549,11 @@ export const solutions: Solution[] = [
       },
       {
         q: 'How is this priced?',
-        a: 'Per flight, not per second. You agree a credit ceiling before a batch begins, and the job stops and asks you first.',
+        a: 'Per flight. You agree a credit ceiling before a batch begins, and the job stops and asks you first.',
       },
     ],
     cta: {
-      title: 'Bring the media plan, not the script.',
+      title: 'Bring the media plan.',
       body: 'Show us the placements and the buying window. We will come back with the grid, the ceiling and a date.',
     },
   },
@@ -587,7 +587,7 @@ export const solutions: Solution[] = [
       'UGC ad creative works because it does not look bought. That is also why it breaks so easily: the moment a face repeats across nine executions with subtly different bone structure, or a kitchen changes shape behind the same speaker, the format loses the one quality it had. Volume is the point of this channel, and remaining consistent at scale is exactly what most production methods cannot manage.',
       'Booking genuine creators fixes believability and introduces a scheduling problem instead. A script changes on Tuesday, the talent is unavailable until the following month, and a test that should have taken four days consumes five weeks. Brands react by filming everything at once, which commits them to messaging before any of it has been measured. The economics quietly push you towards guessing.',
       'We build the presenter once and reuse them. A sheet of stills becomes a trained identity with fixed proportions, held steady through every later session without re-uploading a reference each time. The environment is written down before anything is generated: one window, a single practical lamp, a stated colour temperature, surfaces named. A rewrite then costs a render, and that difference is what makes honest testing affordable. Nothing about the room needs negotiating twice.',
-      'Performance is directed, not left to the model. Delivery gets timed against the cut so a claim lands where the edit expects it. Eye contact breaks the way people genuinely do, on a thought instead of a metronome. Hands do something, because a speaker whose arms hang motionless reads as a hostage video however good the skin looks. Where a voice is cloned we hold signed permission for it, and nothing runs without that file.',
+      'Performance is directed at every take. Delivery gets timed against the cut so a claim lands where the edit expects it. Eye contact breaks on a thought, the way it does in life. Hands do something, because a speaker whose arms hang motionless reads as a hostage video however good the skin looks. Where a voice is cloned we hold signed permission for it, and nothing runs without that file.',
       'Disclosure is designed in from the first session. Synthetic presenters are labelled, provenance travels with the asset wherever a platform reads it, and no execution implies a customer said something nobody ever said. That constraint costs nothing in performance and removes the single version of this work capable of generating a genuine crisis.',
       'You receive nine finished variants from a four-day cycle: the same person, the same room, nine separate arguments. Alongside them come the stills, the consent paperwork, the trained identity itself and the environment specification. Test the batch, find the two that pay, then commission twelve more of that shape the following week without restarting from an empty page. Everything in that handover is yours, including the files which produced it.',
       'The economics change once the identity exists. A first batch carries the setup: building the presenter, writing the room, agreeing the register. Everything afterwards inherits all three, so the second cycle yields roughly twice the output for equivalent money, and by the sixth it is considerably more. Brands running always-on paid social feel this quickly, because the fixed portion of their creative bill stops recurring.',
@@ -595,7 +595,7 @@ export const solutions: Solution[] = [
       'The output is judged on spend behaviour. Hook rate, hold-through, cost per acquisition, and how a variant performs in week three once novelty has worn off. Those numbers decide what gets rebuilt and what gets retired, and they explain why the work ships as a batch. One expensive execution is a thing nobody can iterate on.',
     ],
     deliverables: [
-      { name: 'Presenter pieces', detail: '20 to 45 seconds to camera, handheld feel, room lighting, never studio' },
+      { name: 'Presenter pieces', detail: '20 to 45 seconds to camera, handheld feel, room lighting' },
       { name: 'Trained identity', detail: 'Built from a sheet of stills and reusable in every later session' },
       { name: 'Nine-variant batches', detail: 'One person, one environment, nine separate arguments, produced in four days' },
       { name: 'Voice work', detail: 'Cloned where a signed consent file exists, cast where it does not' },
@@ -608,7 +608,7 @@ export const solutions: Solution[] = [
     faqs: [
       {
         q: 'Is synthetic UGC legal to run as advertising?',
-        a: 'Yes, with disclosure and honest claims. Article 50 of the EU AI Act requires that synthetic media be labelled. Advertising standards separately require that anything presented as a customer experience genuinely happened. We hold both lines.',
+        a: 'Yes, with disclosure and honest claims. Article 50 of the EU AI Act requires that synthetic media be labelled. Advertising standards separately require that anything presented as a customer experience did happen. We hold both lines.',
       },
       {
         q: 'Can you clone a real person from our team?',
@@ -660,14 +660,14 @@ export const solutions: Solution[] = [
     ],
     body: [
       'Brand film production has always been rationed by geography. The idea wants a tulip field at dawn and an orbital view of the same coastline eight seconds later, and the budget answers with one afternoon in a rented warehouse. Ambition gets negotiated downwards in a meeting nobody enjoys, and the finished piece describes a smaller company than the client who commissioned it.',
-      'Generative methods remove that negotiation, which turns out to be the dangerous half. When anything is available, most output becomes a showreel: nine unrelated gorgeous shots with no argument running between them. Capability is not a story. A picture that can travel anywhere still needs a reason to move, and that motive has to come from what the business genuinely claims about itself.',
+      'Generative methods remove that negotiation, which turns out to be the dangerous half. When anything is available, most output becomes a showreel: nine unrelated gorgeous shots with no argument running between them. Capability is not a story. A picture that can travel anywhere still needs a reason to move, and that motive has to come from what the business claims about itself.',
       'So we write before rendering. The narrative is built around a single spine, usually one transformation stated in a sentence a chief executive would repeat unprompted. Shots earn their place by advancing that line. Anything merely spectacular is cut at the treatment stage, where losing it costs a conversation instead of a fortnight.',
-      'Then the world gets specified. Locations become written documents: architecture, era, palette, one key direction, a stated colour temperature. Continuity survives because paperwork enforces it, not because an editor happened to notice. A hero object becomes a master plate referenced by every angle. Where a face recurs it is a trained identity, locked before the first shot, so whoever appears at ninety seconds is recognisably the same individual at twelve.',
+      'Then the world gets specified. Locations become written documents: architecture, era, palette, one key direction, a stated colour temperature. Continuity survives because paperwork enforces it. A hero object becomes a master plate referenced by every angle. Where a face recurs it is a trained identity, locked before the first shot, so whoever appears at ninety seconds is recognisably the same individual at twelve.',
       'The grade decides whether a generated sequence becomes cinema or stays a collection of clips. Everything travels through a single look: matched contrast, a shared black point, grain applied over the whole timeline. Sound follows identical logic, scored as one arc instead of assembled from stings. Most of what separates our work from an impressive demonstration happens in these two stages, after the interesting part has finished.',
       'You receive the graded master at delivery specification, the cutdowns your channels need, a stills set pulled from real frames, and the sources underneath: plates, world documents, identities, project files. Your next picture starts from that library. Companies commissioning one a year find the second costs meaningfully less than the first, which is the entire argument for keeping materials instead of renting them.',
-      'Approval is where these projects run late. So the treatment carries frames, and the previsualisation exists before anybody expensive is committed. A stakeholder sees roughly what will arrive while changing it is still cheap, and the awkward conversation about whether the opening truly works happens in the first week. Nothing about generative tooling fixes a decision-making culture, but showing pictures earlier helps more than any other single intervention.',
+      'Approval is where these projects run late. So the treatment carries frames, and the previsualisation exists before anybody expensive is committed. A stakeholder sees roughly what will arrive while changing it is still cheap, and the awkward conversation about whether the opening works happens in the first week. Nothing about generative tooling fixes a decision-making culture, but showing pictures earlier helps more than any other single intervention.',
       'Rights are settled up front and written into the contract. Model licences cleared for commercial exhibition before rendering, music either scored originally or properly licensed, any recognisable likeness consented in scope and duration. Broadcasters and large advertisers increasingly ask for that paperwork, and assembling it retrospectively is unpleasant. Producing it alongside the work costs almost nothing.',
-      'What we will not do is pretend the method suits every brief. A documentary resting on genuine testimony should be filmed with a camera and a person. So should anything where the value lies in proving something unrepeatable happened. Where the subject is aspiration, scale, transformation or a place that cannot exist yet, this approach is not a compromise on the conventional route. It is simply better at the job. Saying so out loud matters, because a supplier who never declines anything is selling you something.',
+      'What we will not do is pretend the method suits every brief. A documentary resting on genuine testimony should be filmed with a camera and a person. So should anything where the value lies in proving something unrepeatable happened. Where the subject is aspiration, scale, transformation or a place that cannot exist yet, this approach wins on its own terms. Saying so out loud matters, because a supplier who never declines anything is selling you something.',
     ],
     deliverables: [
       { name: 'The hero film', detail: '60 to 180 seconds, one spine, graded and scored as a single piece' },
@@ -737,11 +737,11 @@ export const solutions: Solution[] = [
       'AI product photography fails on packaging, and it does so quietly. The composition is gorgeous, the light is expensive, and the ingredients panel says something that is not a word. Nobody spots it during review because everyone is looking at the whole frame, and then it reaches a retailer whose compliance officer reads that text first. The picture was never the risk. What was written on the object was.',
       'The second weakness is shape. A bottle narrowing a little too sharply, a cap sitting a millimetre proud, a seam in the wrong place. Individually these pass. Across a catalogue they produce a range that looks subtly counterfeit, and customers register the wrongness without being able to name it. Returns climb, support tickets multiply, and nobody connects any of it to the imagery.',
       'Both problems share a cause: generating from a description instead of from the object. So we begin with a master plate. One clean capture, correct geometry, sharp label, colour measured on a chart. Every later angle references it. The model is not being asked to imagine your packaging, only to relight something already fixed, which is a far smaller job with far fewer ways to go wrong. Everything downstream inherits that accuracy automatically.',
-      'Verification runs on every frame before you see any of them. Printed copy is read at full resolution, including the fine type people assume nobody checks. Each render lies over its source at forty per cent opacity, so a drifting edge appears as a visible offset instead of a hunch. Colour is compared against measured values, never against memory.',
+      'Verification runs on every frame before you see any of them. Printed copy is read at full resolution, including the fine type people assume nobody checks. Each render lies over its source at forty per cent opacity, so a drifting edge appears as a visible offset a person can point at. Colour is compared against measured values.',
       'Where an image fails, it returns to the plate. Nothing is patched during retouching, because that yields one picture which passes and a catalogue still drifting. This sounds inefficient and is the opposite: fixing a cause once beats correcting its symptom ninety times, and the difference compounds across a range you intend to reuse for several seasons.',
       'A set specification does the same work for environments. Surface, era, key direction, colour temperature, all written before rendering. That is why an autumn campaign matches the spring one instead of approximating it, and why a product introduced in June sits inside a scene built in February without anybody rebuilding either. Consistency stops being a matter of memory.',
       'Delivery opens with thirty frames for selection, roughly what a studio day yields, arriving in two. Approved directions expand to ninety stills and six short clips, cut for the placements you run. Beneath those sit the plates and specifications, yours to keep. Your next launch begins with the environment already standing, and the only fresh work is the object itself. Turnaround assumes you can approve inside twenty-four hours; where sign-off travels through three departments, the schedule stretches by however long that takes and nothing we do shortens it.',
-      'Cost behaves differently from a conventional shoot, and it is worth understanding how. A single hero image lands somewhere near studio rates, because building the plate takes real effort. Everything after that is close to free. Photographing the eleventh variant in an existing scene is a render, not a booking, so ranges and seasonal refreshes are where this stops being comparable and starts being uncompetitive to match.',
+      'Cost behaves differently from a conventional shoot, and it is worth understanding how. A single hero image lands somewhere near studio rates, because building the plate takes real effort. Everything after that is close to free. Photographing the eleventh variant in an existing scene costs a render, so ranges and seasonal refreshes are where this stops being comparable and starts being uncompetitive to match.',
       'Some categories still want a camera. Anything sold on texture at extreme magnification, anything whose appeal depends on documented provenance, and anything a regulator expects to have been photographed. We will tell you when yours falls into that group. For the ordinary bulk of commercial imagery, meaning packshots, lifestyle scenes, seasonal campaigns and the endless variations a marketplace listing demands, the arithmetic is no longer close.',
     ],
     deliverables: [
@@ -789,7 +789,7 @@ export const solutions: Solution[] = [
     plainName: 'SEO and AIO content production',
     metaTitle: 'SEO & AIO Content Production',
     metaDescription:
-      'SEO and AIO content built to be cited, not just ranked. Entity-first structure, answerable pages and a publishing system your team can run without us.',
+      'SEO and AIO content built to be cited. Entity-first structure, answerable pages and a publishing system your team can run without us.',
     keywords: [
       'SEO content',
       'AIO content',
@@ -812,9 +812,9 @@ export const solutions: Solution[] = [
       'SEO and AIO content have quietly separated. A search engine ranks your page and dispatches a visitor to read it. An assistant consumes the article itself, synthesises a reply, and may never forward anybody at all. Writing for the first behaviour while ignoring the second means winning a position on a results screen fewer people scroll each quarter.',
       'What models cite is not what keyword density used to reach. Assistants favour material stating a claim plainly, attributing it, and offering passages that survive being lifted out of context. Long preambles, buried conclusions and vague hedging are invisible to that process. So is anything whose central assertion only becomes clear in paragraph nine.',
       'We begin with entities. What is this business, what does it make, which concepts does it legitimately own, and how do those connect to questions people type or speak aloud? That map becomes a publishing plan: definitional pages establishing vocabulary, comparison articles capturing evaluation intent, and long essays earning the right to be quoted on a subject where being wrong would embarrass you.',
-      'Structure follows. Every article opens with its answer, then argues for it. Headings are phrased as questions wherever one is genuinely being asked. Claims carry a source or a figure. Schema describes what the page is instead of decorating it. None of this constitutes a trick, and that matters, because the tactical version of this work stopped functioning around the point models grew competent at recognising filler.',
+      'Structure follows. Every article opens with its answer, then argues for it. Headings are phrased as questions wherever one is being asked. Claims carry a source or a figure. Schema describes what the page is. None of this constitutes a trick, and that matters, because the tactical version of this work stopped functioning around the point models grew competent at recognising filler.',
       'Production is a system, and you can switch it off at the end of any month. Briefs generate from the entity map. Composition runs through an agentic workflow assembling research and structure, then a person edits, because an unedited draft always reads like one. Distribution, internal linking and index submission happen automatically, so a piece is discoverable within minutes of approval instead of whenever a crawler wanders past.',
-      'Reporting covers both halves. Traditional positions and impressions, alongside citation tracking across the assistants your buyers genuinely use, plus the assisted pipeline your library touched. At handover the machinery runs inside your own accounts, with briefs, prompts and workflows documented. You can continue without us, which is the only real test of whether anything was built. A dependency you cannot exit was never a system, it was a subscription.',
+      'Reporting covers both halves. Traditional positions and impressions, alongside citation tracking across the assistants your buyers use, plus the assisted pipeline your library touched. At handover the machinery runs inside your own accounts, with briefs, prompts and workflows documented. You can continue without us, which is the only real test of whether anything was built. A dependency you cannot exit is a subscription.',
       'Volume is deliberately modest. Four to twelve pieces a month, because a hundred thin articles now actively damage a domain that publishes them, and because the compounding comes from depth on a narrow subject. A site owning six topics completely outranks and outcites one gesturing at sixty. Restraint here is the strategy, and it is a deliberate ambition.',
       'Older archives usually hold more value than anybody expects. Before writing anything new we audit what a domain already carries, and a meaningful share typically needs restructuring: an answer moved to the top, a claim sourced, a heading rewritten as the question it was secretly answering. That work is cheap, lands fast, and often produces the first movement anybody observes, weeks ahead of the new material. Repairing a page that earns impressions beats publishing beside it.',
       'Nobody can guarantee a citation, and anyone who does is selling something. Assistants change their retrieval behaviour without notice, and a position held in March may evaporate in May. What can be promised is a body of material that deserves quoting, structured so a machine can quote it accurately, published on infrastructure that tells the index within minutes. Those three conditions are the controllable part. We concentrate entirely on them. Anything beyond that is weather, and we will report it honestly. Taking credit for weather is how agencies get found out.',
@@ -849,7 +849,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'What happens if we stop?',
-        a: 'You keep the map, the briefs, the workflows and the archive, all inside your own accounts. The system was built to be operated by your team from the first month, not the twelfth.',
+        a: 'You keep the map, the briefs, the workflows and the archive, all inside your own accounts. The system was built to be operated by your team from the first month.',
       },
     ],
     cta: {
@@ -887,11 +887,11 @@ export const solutions: Solution[] = [
       'Most web design goes wrong at the handover between two suppliers. A studio delivers beautiful flat artwork, a development shop interprets it, and the outcome is heavier, slower and less coherent than either party intended. Nobody is at fault and everybody ends up mildly disappointed. Six months later the marketing team wants a fresh page and discovers that adding one requires a ticket, a sprint and a quotation.',
       'The other common failure is architectural. A site launches looking excellent and ranking for nothing, because structure was treated as a task for afterwards. Headings describe visual hierarchy instead of meaning. Every route renders identically to a crawler. There is no sitemap worth reading and no structured data whatsoever. Retrofitting all that costs more than building it correctly would have. Discoverability is decided while the thing is assembled, long before anybody writes a word about it.',
       'We handle design and engineering as a single engagement, in code from an early stage. Layout decisions get made against production typography, the actual copy and measured load times, so the thing being approved is the thing that ships. Motion is specified where it clarifies and refused where it merely performs. Accessibility is checked as the build proceeds, while a repair is still one component and not thirty.',
-      'Underneath sits a headless content system, modelled around your material instead of around a page builder. Each section becomes a named field a marketer can edit safely, and none of them can break the layout. Fresh routes are entries, not deployments. That single decision keeps a site alive after the agency relationship ends, and its absence explains why so many rebuilds happen every three years.',
-      'The search groundwork ships with the opening release. Semantic markup, schema describing the organisation and its offering, a generated sitemap reflecting what genuinely exists, and instant index submission so a published change is known about within minutes. Core Web Vitals are budgeted during construction. Redirects from an old structure are mapped before launch, while a missing one is still a line in a file and not a spike in your error log.',
-      'Handover includes the repository, the content system, the documentation and a walkthrough. You own all of it. We remain available afterwards for the work that genuinely needs us, and pointedly unnecessary for the work that does not, meaning publishing a page, changing a headline or launching a campaign section. That independence is the deliverable, and the visual design is what makes people notice it.',
+      'Underneath sits a headless content system, modelled around your material. Each section becomes a named field a marketer can edit safely, and none of them can break the layout. Fresh routes are entries. That single decision keeps a site alive after the agency relationship ends, and its absence explains why so many rebuilds happen every three years.',
+      'The search groundwork ships with the opening release. Semantic markup, schema describing the organisation and its offering, a generated sitemap reflecting what exists, and instant index submission so a published change is known about within minutes. Core Web Vitals are budgeted during construction. Redirects from an old structure are mapped before launch, while a missing one is still a line in a file and not a spike in your error log.',
+      'Handover includes the repository, the content system, the documentation and a walkthrough. You own all of it. We remain available afterwards for the work that needs us, and pointedly unnecessary for publishing a page, changing a headline or launching a campaign section. That independence is the deliverable, and the visual design is what makes people notice it.',
       'Pictures are usually the bottleneck nobody plans for. A site design assumes imagery that does not exist yet, and launch slips by a month waiting for a shoot. Because we produce it synthetically in the same building, that dependency collapses: the hero frame, the section headers and the case study images are made against the layout while it is still being built, sized correctly, in one consistent light.',
-      'Measurement is installed before launch, not bolted on when somebody asks how the site is performing. Events that correspond to commercial reality, a search console properly verified, and dashboards a marketing lead can read without a translator. It is unglamorous and it is the difference between a website you can argue about with evidence and one everybody has an opinion about. Numbers settle arguments faster than seniority.',
+      'Measurement is installed before launch, in the same week as the first template. Events that correspond to commercial reality, a search console properly verified, and dashboards a marketing lead can read without a translator. It is unglamorous and it is the difference between a website you can argue about with evidence and one everybody has an opinion about. Numbers settle arguments faster than seniority.',
       'We are not the right studio for everything. A large transactional platform, a complex product application, or anything demanding a bespoke checkout wants specialists who do that daily. Where a company needs a fast, well-structured, editable presence that earns attention and can grow one page at a time without a rebuild, this is the whole of what we do, and the constraint is deliberate.',
     ],
     deliverables: [
@@ -924,7 +924,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'How long does a site take?',
-        a: 'Four to eight weeks for a marketing site, depending on how many templates it genuinely needs. The variable is rarely engineering, it is how quickly content decisions get made.',
+        a: 'Four to eight weeks for a marketing site, depending on how many templates it needs. The variable is rarely engineering, it is how quickly content decisions get made.',
       },
     ],
     cta: {

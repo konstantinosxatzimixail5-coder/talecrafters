@@ -30,7 +30,7 @@ export const categories: Category[] = [
       'Commercials, brand films, product cinematics and short-form built on a hybrid generative and post-production workflow. Delivery measured in days, with a named pipeline behind every piece.',
     services: [
       { name: 'Product Cinematics', desc: 'Your product as the main character, shot off a locked plate so the label still reads at full resolution after the camera move. The kind of ad somebody forwards without being asked to.', icon: 'Clapperboard' },
-      { name: 'Short-Form Detonations', desc: 'Nine-by-sixteen built as nine-by-sixteen, with the hook inside the first eighteen frames. Cut for the feed it lands in, never cropped down from a landscape master.', icon: 'MonitorPlay' },
+      { name: 'Short-Form Detonations', desc: 'Nine-by-sixteen built as nine-by-sixteen, with the hook inside the first eighteen frames. Cut for the feed it lands in, at the size it will be watched.', icon: 'MonitorPlay' },
       { name: 'Motion Alchemy', desc: 'Motion design with three espressos in it. Type that lands with weight, transitions that carry the argument, and nothing moving purely because it can.', icon: 'Flame' },
       { name: 'Synthetic Cinematography', desc: 'Camera language, lighting and coverage out of a generative pipeline. No fifty-person crew, no location fee, no nervous breakdown on day two of a three-day shoot.', icon: 'Wand2' },
       { name: 'Comic Panel Narratives', desc: 'Sequential art with a brand inside it. Illustrated panel sequences that survive a screenshot and outlive the campaign that paid for them.', icon: 'LayoutPanelLeft' },
@@ -111,7 +111,7 @@ export const categories: Category[] = [
     intro:
       'Trained faces and trained voices, built under a consent gate and a disclosure gate, plus the agents that operate without one.',
     services: [
-      { name: 'Digital Avatars', desc: 'Spokespeople who represent your brand better than your CEO on a bad day. Written consent gate on the front, disclosure on the back, never hungover.', icon: 'ScanFace' },
+      { name: 'Digital Avatars', desc: 'Spokespeople who represent your brand better than your CEO on a bad day. Written consent gate on the front, disclosure on the back, and no hangovers.', icon: 'ScanFace' },
       { name: 'Synthetic Voices', desc: 'Podcast reads, narration and audio that sounds like a person who slept last night. Cloned under a signed consent gate and disclosed wherever the law asks.', icon: 'Podcast' },
       { name: 'Autonomous Agents', desc: 'Digital operatives working the hours you refuse to. Custom agents that run a workflow end to end and escalate to a human at the exact point where being wrong gets expensive.', icon: 'Bot' },
     ],

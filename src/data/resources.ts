@@ -58,7 +58,7 @@ export const resources: Resource[] = [
     blurb:
       `${promptGuides.length} prompting guides across ${promptFamilies.length} families: video and shot prompts, photoreal stills, character consistency, story and script prompting, inpainting and extension, and the system prompts that have to behave identically on run four hundred. Each one gives the slots in the order that survives, a prompt you can paste, the specific way that shape of prompt fails, and what to change when it does.`,
     forWhom: 'Anyone whose prompts work sometimes and who wants to know which part was doing the work.',
-    metaTitle: 'The Prompting Library — Prompt Guides for AI Video, Image and Story',
+    metaTitle: 'The Prompting Library: Prompt Guides for AI Video, Image and Story',
     metaDescription:
       `${promptGuides.length} prompting guides for generative production: shot prompts, photoreal stills, character consistency, story and script prompting, post fixes and system prompts. Scaffold, working prompt, failure mode and fix for each.`,
     keywords: [

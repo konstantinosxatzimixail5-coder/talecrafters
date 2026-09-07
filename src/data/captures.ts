@@ -33,7 +33,7 @@ export const captures: Capture[] = [
     title: 'The late shift',
     alt: 'A woman in a black work fleece with a name badge rests her head against a bus window at night, holding a phone, her face reflected in the glass alongside the traffic and shop lights of the street outside.',
     proves:
-      'A reflection that is a second performance. The face in the glass has to be the same face, at the correct angle, over a street that is genuinely behind her.',
+      'A reflection that is a second performance. The face in the glass has to be the same face, at the correct angle, over the street that is behind her.',
     register: 'Night interior, fluorescent overhead, wide and close',
   },
   {
@@ -83,7 +83,7 @@ export const captures: Capture[] = [
     title: 'The doorstep',
     alt: 'A woman in a grey t-shirt stands in a doorway holding up a dark supplement jar toward the camera, mid-sentence, with an unmade room and a mirror behind her.',
     proves:
-      'The register a creator advert lives in. Unlit skin, a real doorway, and a product held at the angle a person holds one, never the angle a product shot wants.',
+      'The register a creator advert lives in. Unlit skin, a real doorway, and a product held at the angle a person holds one.',
     register: 'Creator testimonial, phone camera, no grade',
     focus: '52% 40%',
   },

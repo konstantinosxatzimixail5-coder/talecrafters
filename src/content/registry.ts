@@ -166,7 +166,7 @@ export const copyRegistry = {
         flag: '004 / WHAT WE WEAPONISE',
         heading: 'OUR',
         accentWord: 'ARSENAL',
-        lede: 'Six groups, thirty services. The group names are ours and they stay. The line underneath each one is deliberately boring, because the person forwarding this page to a finance director needs a phrase that survives the forward.',
+        lede: 'Six groups, thirty services. The group names are ours and they stay. The line underneath each one is written flat and plain, because the person forwarding this page to a finance director needs a phrase that survives the forward.',
       }),
       selectedDamage: homeSection({
         title: 'Selected Damage',

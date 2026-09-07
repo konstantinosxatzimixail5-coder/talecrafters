@@ -30,7 +30,7 @@ export const post: Post = {
   body: [
     {
       t: 'p',
-      text: 'Creator-style advertising works on a borrowed assumption. The shaky frame, the room lighting, the unpolished delivery all say: this is a person, not a campaign. Generative production can reproduce every one of those signals perfectly, and the moment it does, the assumption becomes something you are responsible for.',
+      text: 'Creator-style advertising works on a borrowed assumption. A shaky frame and room lighting tell a viewer they are watching a person. Generative production reproduces both signals perfectly, and the moment it does, that assumption becomes something you are responsible for.',
     },
     {
       t: 'p',

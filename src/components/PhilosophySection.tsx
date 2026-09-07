@@ -212,7 +212,7 @@ const principles = [
   },
   {
     title: "SPEED WITHOUT SACRIFICE",
-    description: "Fast doesn\u2019t mean cheap. It means we\u2019re not wasting your time on things that don\u2019t move the needle.",
+    description: "Fast is a scheduling decision. Two working days from approved plate to finished still set, because the arguing happened before the render queue opened.",
     accent: 'var(--brand-cyan)',
   },
   {

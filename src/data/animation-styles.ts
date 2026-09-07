@@ -257,7 +257,7 @@ export const animationStyles: AnimationStyle[] = [
     ],
     works: ['low-poly', 'PS1-era rendering', 'affine texture warping', 'vertex lighting', 'low-resolution textures', 'no anti-aliasing'],
     breaks:
-      'A clean modern render with pastel colours and a chrome sphere. Ask for the artefacts, not the mood.',
+      'A clean modern render with pastel colours and a chrome sphere. Ask for the artefacts.',
     example:
       'Retro low-poly 3D, PS1-era rendering. Low polygon count, low-resolution textures, affine texture warping, vertex lighting, no anti-aliasing, hard shadow edges. An empty shopping mall atrium at night with a single escalator running.',
   },
