@@ -533,7 +533,7 @@ export const promptGuides: PromptGuide[] = [
     failure:
       'The model opens with what it likes about the scene, and the useful half of the answer arrives after you have stopped reading.',
     fix:
-      '"Do not tell me what works" is the most valuable sentence in any editorial prompt. Put it near the top.',
+      '"Do not tell me what works" is the sentence that earns its place in any editorial prompt. Put it near the top.',
   },
   {
     slug: 'dialogue-pass',

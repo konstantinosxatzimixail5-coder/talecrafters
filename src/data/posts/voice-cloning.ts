@@ -76,7 +76,7 @@ export const post: Post = {
         'Explicit grant to create a model from the supplied recordings, named as such.',
         'Scope: which brands, which product categories, which media. A voice licensed for internal training that appears in an advert is a breach nobody documented.',
         'Term, with an end date and never "in perpetuity", and a defined disposal obligation for the model at the end of it.',
-        'Territory, which matters because personality and likeness rights differ substantially between jurisdictions.',
+        'Territory, which matters because personality and likeness rights differ sharply between jurisdictions.',
         'Exclusions: categories the performer will not be used for. Political, gambling, alcohol, health claims. Whatever they choose.',
         'Withdrawal: a mechanism, a notice period, and what happens to assets already in market.',
         'Rate structure for use, as well as for the session. A session fee for something that runs forever is the arrangement performers are right to resist.',

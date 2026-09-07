@@ -602,7 +602,7 @@ Two figures only, screen sides fixed. End the block on a static frame with both 
       {
         name: 'tig-scene-engine',
         role: 'Structure',
-        body: 'Goal, obstacle, tactic, reversal, value shift, applied with bespoke definitions. Used to write the spine and to audit it afterwards.',
+        body: 'Goal, obstacle, tactic, reversal, value shift, applied with his own definitions. Used to write the spine and to audit it afterwards.',
       },
       {
         name: 'tig-acting-task',
@@ -1164,7 +1164,7 @@ Style, light, colour, materials and every surface in the shot come from @spires_
       {
         name: 'tig-scene-engine',
         role: 'Structure',
-        body: 'Goal, obstacle, tactic, reversal, value shift, applied with bespoke definitions. Used to place the reversal on the landing instead of somewhere in the air.',
+        body: 'Goal, obstacle, tactic, reversal, value shift, applied with his own definitions. Used to place the reversal on the landing instead of somewhere in the air.',
       },
       {
         name: 'tig-acting-task',

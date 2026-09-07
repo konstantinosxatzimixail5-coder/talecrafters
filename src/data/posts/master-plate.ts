@@ -60,7 +60,7 @@ export const post: Post = {
       title: 'The flatness rule',
       text: 'A dramatic plate is a useless plate. Every bit of atmosphere in the reference is a bit of information the model has to guess at, and it will guess differently every time. Boring reference, dramatic output.',
     },
-    { t: 'h2', text: 'What the plate unlocks: the silhouette overlay' },
+    { t: 'h2', text: 'What the plate makes possible: the silhouette overlay' },
     {
       t: 'p',
       text: 'The plate’s real value shows up at the gate. Once a plate exists, every campaign render can be tested.',

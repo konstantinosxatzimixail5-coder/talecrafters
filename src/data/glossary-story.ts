@@ -252,7 +252,7 @@ export const storyTerms: Term[] = [
     body: [
       'The midpoint exists to solve a specific problem: the middle of a story is the part most likely to become a sequence of obstacles with no shape. Putting a genuine reversal at the centre splits act two into two halves that behave differently (reactive before, active after), which gives the middle a direction.',
       'It usually takes one of two forms. A false victory, where the protagonist appears to get what they wanted and it turns out to cost more than it is worth. Or a false defeat, where they lose and the loss reveals what the real problem was. Both convert a want into a need, which is why the midpoint is where character work usually happens.',
-      'In a short piece the midpoint is often the only turn there is room for, which makes it the most valuable thirty seconds to get right.',
+      'In a short piece the midpoint is often the only turn there is room for, which makes it the thirty seconds worth most to get right.',
     ],
     qa: [
       {
@@ -732,7 +732,7 @@ export const storyTerms: Term[] = [
     body: [
       'Hitchcock’s formulation remains the clearest: two people talking at a table is a scene, and the same two people talking with a bomb under the table that only the audience knows about is fifteen minutes of suspense. Nothing in the dialogue changed. The audience’s knowledge did all of it.',
       'It is the most efficient tension device available, because it costs one earlier shot and buys tension across every subsequent scene involving the character who does not know. Its cost is that surprise is spent: you have traded a later reveal for sustained anxiety, and you cannot have both.',
-      'The usual mistake is hoarding information in the belief that a twist is more valuable. In most cases it is not. Ten seconds of surprise at the end is worth less than three minutes of dread before it, and dread is what people remember.',
+      'The usual mistake is hoarding information in the belief that a twist pays better. In most cases it does not. Ten seconds of surprise at the end is worth less than three minutes of dread before it, and dread is what people remember.',
     ],
     qa: [
       {
@@ -1313,7 +1313,7 @@ export const storyTerms: Term[] = [
     tags: ['audience', 'story', 'strategy'],
     body: [
       'Tone is established almost immediately and is expensive to change later. An audience decides in the first few seconds whether a piece is serious, ironic, warm or cold, and everything subsequent is interpreted through that decision. A joke arriving in minute three of something that established itself as sincere does not read as funny; it reads as a mistake.',
-      'The most common commercial failure is tonal inconsistency introduced by committee, where each stakeholder’s note pushes the piece a little further from wherever it started. The result is a piece that is not confusing in any particular moment and is unaccountably difficult to watch.',
+      'The most common commercial failure is tonal inconsistency introduced by committee, where each stakeholder’s note drags the piece a little further from wherever it started. The result is a piece that is not confusing in any particular moment and is unaccountably difficult to watch.',
       'It is distinct from mood, which varies scene to scene, and from voice, which belongs to a speaker. A piece can move through many moods while holding one tone, and it usually should.',
     ],
     qa: [

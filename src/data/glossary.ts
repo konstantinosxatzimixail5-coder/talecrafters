@@ -229,7 +229,7 @@ const coreTerms: Term[] = [
       },
       {
         q: 'Is generative production cheaper?',
-        a: 'For the right brief, substantially: no crew, no location, no reshoot. For a brief that needs a real face, a real place and a real product on the same day, often not. We say which one you have before quoting.',
+        a: 'For the right brief, by a wide margin: no crew, no location, no reshoot. For a brief that needs a real face, a real place and a real product on the same day, often not. We say which one you have before quoting.',
       },
     ],
     related: ['agentic-workflow', 'operator-stack', 'gate'],
@@ -387,7 +387,7 @@ const coreTerms: Term[] = [
     tags: ['models'],
     body: [
       'The commercial significance of a foundation model is that it is a substrate. Everything useful gets built on top: adapters, skills, tool access, retrieval, and the guard rails a client will sign off.',
-      'For a studio the practical consequence is churn. Models are replaced faster than pipelines are, so anything valuable belongs in the pipeline (the plates, the identity sheets, the gates, the ledger) and not in a particular model’s quirks.',
+      'For a studio the practical consequence is churn. Models are replaced faster than pipelines are, so anything worth keeping belongs in the pipeline (the plates, the identity sheets, the gates, the ledger) and not in a particular model’s quirks.',
     ],
     qa: [
       {
@@ -580,7 +580,7 @@ const coreTerms: Term[] = [
       'An open protocol for connecting a model to external tools and data through a standard interface, so a capability written once works across clients.',
     tags: ['systems'],
     body: [
-      'Before a standard existed, every integration between a model and a piece of software was bespoke. MCP makes the connection a server: expose the tool once, and any compatible client can use it. That is the difference between a demo and infrastructure.',
+      'Before a standard existed, every integration between a model and a piece of software was hand-built. MCP makes the connection a server: expose the tool once, and any compatible client can use it. That is the difference between a demo and infrastructure.',
       'For a studio the payoff is that the pipeline stops being tool-shaped. Generation, asset storage, the tracker and the approvals channel all become things the workflow can reach, which is what allows a batch job to run overnight and leave a person a decision in the morning.',
     ],
     qa: [
@@ -718,7 +718,7 @@ const coreTerms: Term[] = [
     qa: [
       {
         q: 'Does RAG stop hallucination?',
-        a: 'It reduces it substantially and makes the remainder checkable, which matters more. A retrieved source can be verified; a recalled fact cannot.',
+        a: 'It reduces it a great deal and makes the remainder checkable, which matters more. A retrieved source can be verified; a recalled fact cannot.',
       },
     ],
     related: ['hallucination', 'agentic-workflow', 'gate'],

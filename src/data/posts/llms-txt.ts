@@ -79,7 +79,7 @@ export const post: Post = {
         'A short paragraph of context: where you are, what you make, who for. Facts a model can attach to an entity.',
         'Sections by page type. Services, case studies, reference, definitions, writing.',
         'One line per page: the title as a link, then what is in it. Not marketing copy. A description.',
-        'Numbers where you have them. Counts, dates, published figures. This is the material that gets quoted.',
+        'Numbers where you have them. Counts, dates, published figures. Numbers get quoted.',
         'A contact route and the canonical URLs for the organisation’s profiles.',
       ],
     },

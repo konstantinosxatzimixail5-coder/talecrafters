@@ -66,7 +66,7 @@ export const post: Post = {
         [
           'Third-party material',
           'Are references, likenesses, music or trained identities cleared?',
-          'A schedule listing every input and its clearance. This is the clause that saves projects.',
+          'A schedule listing every input and its clearance. That clause saves projects.',
         ],
       ],
     },

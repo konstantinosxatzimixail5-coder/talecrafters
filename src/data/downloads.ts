@@ -87,7 +87,7 @@ export const tools: Tool[] = [
       },
       {
         title: '3. What must not change',
-        kicker: 'The most valuable section in this document',
+        kicker: 'The section that earns this document its keep',
         blocks: [
           {
             t: 'para',

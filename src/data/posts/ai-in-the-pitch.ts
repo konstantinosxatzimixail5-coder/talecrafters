@@ -86,7 +86,7 @@ export const post: Post = {
         'Do not board at a fidelity you cannot deliver. A photoreal board for an uncertain shot is a promise somebody will hold you to.',
         'Do not quote a traditional rate for an automated stage and hope nobody asks. They now ask.',
         'Do not treat disclosure as the client’s problem. Legal responsibility usually sits with the advertiser, and a studio that will not advise on it has not read the rules.',
-        'Never claim the work is entirely human. This is the one that ends relationships, and it is entirely avoidable.',
+        'Never claim the work is entirely human. It ends relationships, and it is entirely avoidable.',
       ],
     },
     { t: 'h2', text: 'When the client does not want AI used' },

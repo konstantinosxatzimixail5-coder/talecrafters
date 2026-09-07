@@ -103,7 +103,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'The consent file exists before the first render. This is the discipline that trained identity as a production artefact enforces by construction, and it is the main reason we treat it as a documented artefact and never as a file on somebody’s machine.',
+      text: 'The consent file exists before the first render. Trained identity as a production artefact enforces by construction, and it is the main reason we treat it as a documented artefact and never as a file on somebody’s machine.',
     },
     { t: 'h2', text: 'What to do this week' },
     {

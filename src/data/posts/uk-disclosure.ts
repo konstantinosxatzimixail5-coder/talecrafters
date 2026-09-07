@@ -71,7 +71,7 @@ export const post: Post = {
     { t: 'h2', text: 'The platforms are stricter than the regulator' },
     {
       t: 'p',
-      text: 'This is the part that catches teams out. The ASA sets a misleadingness standard. The platforms set labelling policies, and those policies are contractual, which means they are enforced by demonetisation and reach suppression, months before any ruling arrives.',
+      text: 'Teams get caught here. The ASA sets a misleadingness standard. The platforms set labelling policies, and those policies are contractual, which means they are enforced by demonetisation and reach suppression, months before any ruling arrives.',
     },
     {
       t: 'p',

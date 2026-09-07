@@ -116,7 +116,7 @@ export const post: Post = {
     },
     {
       q: 'Is synthetic UGC cheaper than hiring creators?',
-      a: 'For high variant counts, many markets and frequent creative refresh, substantially. For a single hero asset, barely. One well-written film costs about the same either way. For categories where the audience has to believe a real person used the product, synthetic material starts at a credibility deficit that no cost saving covers.',
+      a: 'For high variant counts, many markets and frequent creative refresh, by a wide margin. For a single hero asset, barely. One well-written film costs about the same either way. For categories where the audience has to believe a real person used the product, synthetic material starts at a credibility deficit that no cost saving covers.',
     },
     {
       q: 'What is the most under-budgeted line in synthetic UGC?',

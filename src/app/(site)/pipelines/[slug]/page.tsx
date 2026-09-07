@@ -150,7 +150,7 @@ export default async function PipelinePage({ params }: { params: Promise<{ slug:
             style={{ fontFamily: 'var(--font-body)', color: 'rgba(245,245,240,0.7)' }}
           >
             Every gate has a test two people would run the same way and a stated action on failure.
-            This is the part that makes volume survivable.
+            Volume survives on this.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {p.gates.map((g, i) => (

@@ -99,7 +99,7 @@ export const post: Post = {
         'Read only the headings. Do they read as a list of questions somebody would type?',
         'Read only the first sentence under each heading. Does that alone answer the page?',
         'Find every pronoun in the first sentence of every section and check it has a referent inside that sentence.',
-        'Count the falsifiable claims. Fewer than three on a long page means the page says nothing specific.',
+        'Count the falsifiable claims. Fewer than three on a long page means you have written nothing specific.',
         'Check every number has a condition attached and a date if it could change.',
         'Paste three random paragraphs into a blank document and see whether they survive alone.',
       ],

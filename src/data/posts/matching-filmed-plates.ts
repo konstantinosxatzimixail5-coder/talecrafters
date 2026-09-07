@@ -67,7 +67,7 @@ export const post: Post = {
     },
     {
       t: 'note',
-      title: 'The single most valuable item',
+      title: 'The one item worth most on set',
       text: 'The two balls. Light direction is the one mismatch no editorial or grading technique conceals, and a chrome ball tells you where every source was, precisely, months later when nobody remembers.',
     },
     { t: 'h2', text: 'Prompting to match filmed material' },

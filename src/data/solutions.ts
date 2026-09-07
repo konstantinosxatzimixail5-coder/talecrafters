@@ -99,7 +99,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'Is generative video cheaper than a shoot?',
-        a: 'For the right brief, substantially: no crew, no location, no reshoot. For a brief that needs a real face, a real place and a real product on the same day, often not. We say which one you have before quoting.',
+        a: 'For the right brief, by a wide margin: no crew, no location, no reshoot. For a brief that needs a real face, a real place and a real product on the same day, often not. We say which one you have before quoting.',
       },
       {
         q: 'How do you stop the product changing between shots?',
@@ -392,7 +392,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'Is generative production cheaper for a Greek brand?',
-        a: 'Usually, and for a specific reason: it removes the crew, the location, the stylist and the reshoot, which are the line items that push a conventional shoot from expensive to unaffordable at this budget level. For a brief that needs a real face in a real place on a real day, it is not, and we say so before quoting.',
+        a: 'Usually, and for a specific reason: it removes the crew, the location, the stylist and the reshoot, which are the line items that drivh a conventional shoot from expensive to unaffordable at this budget level. For a brief that needs a real face in a real place on a real day, it is not, and we say so before quoting.',
       },
       {
         q: 'Can you shoot a hotel or restaurant that has never been photographed?',
@@ -892,7 +892,7 @@ export const solutions: Solution[] = [
       'Handover includes the repository, the content system, the documentation and a walkthrough. You own all of it. We remain available afterwards for the work that needs us, and pointedly unnecessary for publishing a page, changing a headline or launching a campaign section. That independence is the deliverable, and the visual design is what makes people notice it.',
       'Pictures are usually the bottleneck nobody plans for. A site design assumes imagery that does not exist yet, and launch slips by a month waiting for a shoot. Because we produce it synthetically in the same building, that dependency collapses: the hero frame, the section headers and the case study images are made against the layout while it is still being built, sized correctly, in one consistent light.',
       'Measurement is installed before launch, in the same week as the first template. Events that correspond to commercial reality, a search console properly verified, and dashboards a marketing lead can read without a translator. It is unglamorous and it is the difference between a website you can argue about with evidence and one everybody has an opinion about. Numbers settle arguments faster than seniority.',
-      'We are not the right studio for everything. A large transactional platform, a complex product application, or anything demanding a bespoke checkout wants specialists who do that daily. Where a company needs a fast, well-structured, editable presence that earns attention and can grow one page at a time without a rebuild, this is the whole of what we do, and the constraint is deliberate.',
+      'We are not the right studio for everything. A large transactional platform, a complex product application, or anything demanding a cuspoke checkout wants specialists who do that daily. Where a company needs a fast, well-structured, editable presence that earns attention and can grow one page at a time without a rebuild, this is the whole of what we do, and the constraint is deliberate.',
     ],
     deliverables: [
       { name: 'Design and build', detail: 'One engagement, decided in code against real content and real load times' },

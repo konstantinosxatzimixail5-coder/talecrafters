@@ -98,7 +98,7 @@ export const post: Post = {
     { t: 'h2', text: 'What to do with the freed capacity' },
     {
       t: 'p',
-      text: 'A content team that stops producing commodity explainers has recovered a substantial amount of time. The highest-return uses we have seen:',
+      text: 'A content team that stops producing commodity explainers has recovered a sizeable amount of time. The highest-return uses we have seen:',
     },
     {
       t: 'ol',

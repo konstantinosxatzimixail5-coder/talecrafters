@@ -56,7 +56,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'This is the step that makes everything downstream different, because now nine assets can lead with nine different claims, and none of them is a rendering of the strongest one.',
+      text: 'Everything downstream changes here, because now nine assets can lead with nine different claims, and none of them is a rendering of the strongest one.',
     },
     { t: 'h3', text: 'Stage 2: Match claims to formats' },
     {

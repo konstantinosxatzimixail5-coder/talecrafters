@@ -384,7 +384,7 @@ export const additionalTerms: Term[] = [
     tags: ['models', 'systems'],
     body: [
       'Embeddings are how a system finds things by meaning and not by keyword. Two descriptions of the same shot land near each other even with no words in common, which is what makes a searchable asset library possible.',
-      'For a studio the practical use is unglamorous and valuable: find the frame that looks like this, find the brief that resembles that one, find whether we have already made this. All of which are otherwise a person scrolling.',
+      'For a studio the practical use is unglamorous and it pays: find the frame that looks like this, find the brief that resembles that one, find whether we have already made this. All of which are otherwise a person scrolling.',
       'They are also the mechanism underneath retrieval, so understanding that they encode similarity and never truth explains why a retrieval system sometimes confidently returns something adjacent and wrong.',
     ],
     qa: [
@@ -723,7 +723,7 @@ export const additionalTerms: Term[] = [
     body: [
       'Words are a poor interface for motion. "The steam rises gently" gets you steam, a swaying plant, a drifting camera and a person shifting their weight, because the model has no way to know which of those you meant.',
       'A motion brush makes it explicit: this region moves this way, everything else holds. For product work that is precisely the requirement, since the product must be the still thing while its environment lives.',
-      'It also lengthens usable clips. Restricting motion to a small region gives the model less to keep coherent, which pushes drift further out.',
+      'It also lengthens usable clips. Restricting motion to a small region gives the model less to keep coherent, which moves drift further out.',
     ],
     qa: [
       {
@@ -1448,7 +1448,7 @@ export const additionalTerms: Term[] = [
     term: 'Content Atomisation',
     aka: ['content decomposition', 'repurposing'],
     short:
-      'Breaking one substantial piece into a set of claims and rebuilding each as a native asset for a different format.',
+      'Breaking one long piece into a set of claims and rebuilding each as a native asset for a different format.',
     tags: ['strategy', 'systems'],
     body: [
       'The naive version summarises once and reformats the summary nine times, which produces nine assets that all lead with the same sentence in different aspect ratios. Reach does not move, because nothing new was said.',

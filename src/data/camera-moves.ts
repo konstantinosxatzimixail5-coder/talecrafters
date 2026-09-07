@@ -294,7 +294,7 @@ export const cameraMoves: CameraMove[] = [
     family: 'altitude',
     camera: 'Wide-scale drone orbit, a smooth, continuous aerial circle around the subject, maintaining distance to hold the full scale of the environment.',
     prompt: 'Wide drone orbit circling a central structure within a vast natural landscape, emphasising immense scale.',
-    useFor: 'Showing a structure\'s relationship to its landscape. Distance is the message.',
+    useFor: 'Showing a structure\'s relationship to the ground it stands on. Distance is the message.',
   },
   {
     num: '30',

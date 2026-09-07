@@ -95,7 +95,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Which is why the sequencing advice holds: fix naming and filing first, then connect. A connector is a multiplier and multipliers work in both directions.',
+      text: 'So the sequencing advice holds: fix naming and filing first, then connect. A connector is a multiplier and multipliers work in both directions.',
     },
     {
       t: 'cta',

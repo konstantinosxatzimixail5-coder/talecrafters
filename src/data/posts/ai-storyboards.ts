@@ -65,7 +65,7 @@ export const post: Post = {
       title: 'The rule we work to',
       text: 'A board is only shown to a client at a fidelity the production can definitely deliver. If the final shots will be stylised, the boards are stylised. If we are unsure whether a shot is achievable, the board for it is deliberately rough, because the roughness is the honest signal, and a beautiful board for an unachievable shot is a promise somebody will hold us to.',
     },
-    { t: 'h2', text: 'The animatic is the more valuable artefact' },
+    { t: 'h2', text: 'The animatic is the artefact that earns its keep' },
     {
       t: 'p',
       text: 'A board is a set of compositions. An animatic is a structure with durations, and durations are where films fail. Cutting boards to the intended timings, with scratch voice and temp music, tells you within one viewing whether the piece has a slow middle, whether the hook works, and whether the ending lands.',

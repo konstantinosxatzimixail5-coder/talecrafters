@@ -97,14 +97,14 @@ export const pipelines: Pipeline[] = [
       'Prompting is the easy part. What earns its keep is the directory structure, the skills, the connectors and the ledger telling you what every accepted asset cost.',
     loop: 'Half a day mapping how the work runs today, one to two weeks building, then a live walkthrough. Everything sits inside the client’s own accounts.',
     useWhen:
-      'A marketing team already producing at volume and losing the margin to coordination. This is the pipeline that becomes a Creative System engagement.',
+      'A marketing team already producing at volume and losing the margin to coordination. It becomes a Creative System engagement.',
     stages: [
       { name: 'Map', tool: 'A whiteboard and an owner per step', fixes: 'Every step written down with an owner: what a person decides, what a model drafts, what a script handles alone at four in the morning.', time: 'Half a day' },
       { name: 'Skills', tool: 'Claude Skills', fixes: 'A skill is a directory holding a SKILL.md file plus references, templates and scripts. Its description stays in context and the body loads only when a task matches, so instruction sets stay out of the way until needed.', time: 'Two days' },
       { name: 'Code', tool: 'Claude Code', fixes: 'The repetitive end: batch renaming, render queues, spreadsheet updates, site copy edits and the client-facing pages themselves.', time: 'Three days' },
       { name: 'Connect', tool: 'MCP servers', fixes: 'The studio gets wired to the tools already in use: generation, asset storage, the tracker, the approvals channel.', time: 'One day' },
       { name: 'Interface', tool: 'Figma Make', fixes: 'A pipeline turns into something the client can operate. React and Tailwind underneath, so a prototype can graduate into the real product.', time: 'Two days' },
-      { name: 'Ledger', tool: 'Sheets, a run log', fixes: 'Naming convention, version tags, run log and cost per accepted asset. This is the part that makes a creative studio explainable to a finance team.', time: 'Ongoing' },
+      { name: 'Ledger', tool: 'Sheets, a run log', fixes: 'Naming convention, version tags, run log and cost per accepted asset. A creative studio becomes explainable to a finance team.', time: 'Ongoing' },
     ],
     gates: [
       { name: 'Human gate', test: 'A person signs off the brief and the final cut, at any volume.', fail: 'No exception has ever been worth it.' },

@@ -66,7 +66,7 @@ export const post: Post = {
       t: 'p',
       text: 'The interesting line is that the presenter variants cost roughly three times per asset what the stills did, despite fewer renders, because the human hours are where the money went. Measured per generation you would have concluded the opposite: the two look almost identical, and the difference that matters disappears.',
     },
-    { t: 'h2', text: 'What the number tells you that nothing else does' },
+    { t: 'h2', text: 'What you learn from this number and nowhere else' },
     {
       t: 'ul',
       items: [

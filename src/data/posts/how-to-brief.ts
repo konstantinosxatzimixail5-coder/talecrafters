@@ -80,7 +80,7 @@ export const post: Post = {
     },
     {
       t: 'note',
-      title: 'The most valuable thing in a reference pack',
+      title: 'The one thing a reference pack must carry',
       text: 'Not the things you like. The things a previous studio delivered that got rejected internally, with the reason. That tells us where your organisation’s real threshold is, which no moodboard does.',
     },
     { t: 'h2', text: 'What a good studio should ask you back' },

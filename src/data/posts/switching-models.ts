@@ -90,7 +90,7 @@ export const post: Post = {
     },
     {
       t: 'p',
-      text: 'Re-run the shots that sit adjacent to new material and grade the rest towards them. This is the compromise that usually survives, and it depends entirely on having the calibration set to grade against.',
+      text: 'Re-run the shots that sit adjacent to new material and grade the rest towards them. That compromise usually survives, and it depends entirely on having the calibration set to grade against.',
     },
     { t: 'h2', text: 'The grade is doing more than you think' },
     {
