@@ -85,7 +85,7 @@ export const post: Post = {
         ['Consistency ceiling', 'Good, degrades with unusual angles', 'High, holds across poses'],
         ['Flexibility', 'Full', 'Constrained to what it was trained on'],
         ['Portability', 'Survives a model change', 'Does not'],
-        ['Worth it above', '—', 'Roughly twenty to thirty assets, or a presenter recurring for over a quarter'],
+        ['Worth it above', 'n/a', 'Roughly twenty to thirty assets, or a presenter recurring for over a quarter'],
         ['Rights burden', 'Consent for the source material', 'Consent plus an explicit derivative-training clause'],
       ],
     },
